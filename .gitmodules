@@ -1,0 +1,7 @@
+[submodule "cryptonote"]
+	path = cryptonote
+	url = https://github.com/TheCircleFoundation/concealx
+[submodule "libqrencode"]
+	path = libqrencode
+	url = https://github.com/fukuchi/libqrencode
+	branch = 3.4

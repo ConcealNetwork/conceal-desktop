@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Conceal Wallet
+Comment=Conceal GUI Wallet
+Exec=ConcealGUI
+Terminal=false
+Type=Application
+Icon=conceal
+MimeType=x-scheme-handler/concealwallet;
+Categories=Office;Finance;Cryptocurrency
