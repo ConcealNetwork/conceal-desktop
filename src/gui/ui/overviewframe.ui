@@ -106,6 +106,12 @@
         <height>500</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
@@ -166,14 +172,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>160</y>
+        <y>120</y>
         <width>121</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -186,15 +192,15 @@
      <widget class="QLabel" name="m_tickerLabel1">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>80</y>
+        <x>287</x>
+        <y>60</y>
         <width>31</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -208,14 +214,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>120</y>
+        <y>90</y>
         <width>121</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -228,15 +234,15 @@
      <widget class="QLabel" name="m_actualBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>123</x>
-        <y>80</y>
+        <x>140</x>
+        <y>60</y>
         <width>141</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -273,15 +279,15 @@
      <widget class="QLabel" name="m_tickerLabel2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>120</y>
+        <x>287</x>
+        <y>90</y>
         <width>31</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -294,15 +300,15 @@
      <widget class="QLabel" name="m_totalBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>103</x>
-        <y>160</y>
+        <x>120</x>
+        <y>120</y>
         <width>161</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -318,15 +324,15 @@
      <widget class="QLabel" name="m_pendingBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>153</x>
-        <y>120</y>
+        <x>170</x>
+        <y>90</y>
         <width>111</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -342,15 +348,15 @@
      <widget class="QLabel" name="m_tickerLabel3">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>160</y>
+        <x>287</x>
+        <y>120</y>
         <width>31</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -364,14 +370,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>80</y>
+        <y>60</y>
         <width>111</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -385,14 +391,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>400</y>
+        <y>330</y>
         <width>71</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -406,14 +412,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>360</y>
+        <y>300</y>
         <width>81</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -427,14 +433,14 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>320</y>
+        <y>270</y>
         <width>101</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -448,7 +454,7 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>260</y>
+        <y>230</y>
         <width>221</width>
         <height>25</height>
        </rect>
@@ -468,15 +474,15 @@
      <widget class="QLabel" name="m_tickerLabel6">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>400</y>
+        <x>290</x>
+        <y>330</y>
         <width>31</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -489,15 +495,15 @@
      <widget class="QLabel" name="m_tickerLabel5">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>360</y>
+        <x>290</x>
+        <y>300</y>
         <width>31</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -510,15 +516,15 @@
      <widget class="QLabel" name="m_tickerLabel4">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>320</y>
+        <x>290</x>
+        <y>270</y>
         <width>31</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -531,15 +537,15 @@
      <widget class="QLabel" name="m_totalDepositLabel">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>400</y>
+        <x>170</x>
+        <y>330</y>
         <width>111</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -555,15 +561,15 @@
      <widget class="QLabel" name="m_unlockedDepositLabel">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>360</y>
+        <x>170</x>
+        <y>300</y>
         <width>111</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -579,15 +585,15 @@
      <widget class="QLabel" name="m_lockedDepositLabel">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>320</y>
+        <x>170</x>
+        <y>270</y>
         <width>111</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -604,7 +610,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>450</y>
+        <y>380</y>
         <width>300</width>
         <height>30</height>
        </rect>
@@ -632,7 +638,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>210</y>
+        <y>170</y>
         <width>300</width>
         <height>30</height>
        </rect>
@@ -654,6 +660,29 @@
       </property>
       <property name="text">
        <string>SEND FUNDS</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>450</y>
+        <width>281</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>115</height>
+       </size>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;ccx7HWNxR6pebf4kwRABiXdPMMxumwE8u6G2nLb3Bi1bC124fsQMe7QJYp65rjo8JNaWGsEYQaKUbhpzSh9k7Zat4XVd2ADJTt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <zorder>label_6</zorder>
@@ -678,6 +707,7 @@
      <zorder>m_tickerLabel5</zorder>
      <zorder>m_depositButton</zorder>
      <zorder>m_depositButton_2</zorder>
+     <zorder>textBrowser</zorder>
     </widget>
    </item>
   </layout>
