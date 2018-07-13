@@ -32,7 +32,7 @@ QVariant RecentTransactionsModel::data(const QModelIndex& _index, int _role) con
 }
 
 bool RecentTransactionsModel::filterAcceptsRow(int _sourceRow, const QModelIndex& _sourceParent) const {
-  return _sourceRow < 7;
+  return _sourceRow < 6;
 }
 
 

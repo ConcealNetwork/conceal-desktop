@@ -205,6 +205,12 @@
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>60</height>
+    </size>
+   </property>
    <property name="font">
     <font>
      <family>Source Sans Pro</family>
@@ -217,7 +223,7 @@
     <string>toolBar</string>
    </property>
    <property name="styleSheet">
-    <string notr="true">border: 0px; padding: 3px;</string>
+    <string notr="true">border: 0px; padding: 3px; width: 56px;</string>
    </property>
    <property name="movable">
     <bool>false</bool>
@@ -250,6 +256,10 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
+   </property>
    <property name="text">
     <string>OVERVIEW</string>
    </property>
@@ -266,6 +276,10 @@
    </property>
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
    </property>
    <property name="text">
     <string>SEND</string>
@@ -284,6 +298,10 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
+   </property>
    <property name="text">
     <string>KEYS</string>
    </property>
@@ -300,6 +318,10 @@
    </property>
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
    </property>
    <property name="text">
     <string>TRANSACTIONS</string>
@@ -328,6 +350,10 @@
    </property>
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
    </property>
    <property name="text">
     <string>ADDRESS BOOK</string>
@@ -426,6 +452,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
+   </property>
    <property name="text">
     <string>MESSAGES</string>
    </property>
@@ -439,6 +469,10 @@
   <action name="m_sendMessageAction">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
    </property>
    <property name="text">
     <string>SEND MESSAGE</string>
@@ -459,6 +493,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-mining.png</normaloff>:/icons/icon-mining.png</iconset>
+   </property>
    <property name="text">
     <string>MINING</string>
    </property>
@@ -472,6 +510,10 @@
   <action name="m_depositsAction">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../resources.qrc">
+     <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
     <string>DEPOSITS</string>

@@ -40,15 +40,15 @@
      <widget class="QSpinBox" name="m_timeSpin">
       <property name="geometry">
        <rect>
-        <x>116</x>
-        <y>110</y>
+        <x>90</x>
+        <y>130</y>
         <width>101</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -62,15 +62,15 @@
      <widget class="QLabel" name="m_feeLabel">
       <property name="geometry">
        <rect>
-        <x>109</x>
-        <y>150</y>
+        <x>140</x>
+        <y>160</y>
         <width>181</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -82,14 +82,14 @@
       <property name="geometry">
        <rect>
         <x>33</x>
-        <y>110</y>
+        <y>130</y>
         <width>57</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -100,15 +100,15 @@
      <widget class="QDoubleSpinBox" name="m_amountSpin">
       <property name="geometry">
        <rect>
-        <x>113</x>
+        <x>150</x>
         <y>70</y>
-        <width>101</width>
+        <width>171</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -127,7 +127,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -166,15 +166,15 @@
      <widget class="QLabel" name="m_nativeTimeLabel">
       <property name="geometry">
        <rect>
-        <x>223</x>
-        <y>110</y>
+        <x>200</x>
+        <y>130</y>
         <width>121</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -185,15 +185,15 @@
      <widget class="QLabel" name="m_interestLabel">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>70</y>
-        <width>121</width>
+        <x>120</x>
+        <y>100</y>
+        <width>201</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -205,14 +205,14 @@
       <property name="geometry">
        <rect>
         <x>33</x>
-        <y>150</y>
-        <width>71</width>
+        <y>160</y>
+        <width>101</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -259,7 +259,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -271,14 +271,14 @@
       <property name="geometry">
        <rect>
         <x>596</x>
-        <y>110</y>
+        <y>115</y>
         <width>121</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -302,7 +302,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -314,14 +314,14 @@
       <property name="geometry">
        <rect>
         <x>586</x>
-        <y>150</y>
+        <y>160</y>
         <width>131</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -338,14 +338,14 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>110</y>
+        <y>115</y>
         <width>81</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -364,7 +364,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -381,14 +381,14 @@
       <property name="geometry">
        <rect>
         <x>720</x>
-        <y>150</y>
+        <y>160</y>
         <width>31</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -400,14 +400,14 @@
       <property name="geometry">
        <rect>
         <x>720</x>
-        <y>110</y>
+        <y>115</y>
         <width>31</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -419,14 +419,14 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>150</y>
+        <y>160</y>
         <width>71</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Courier</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -474,6 +474,25 @@
       </property>
       <property name="text">
        <string>NEW DEPOSIT</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>33</x>
+        <y>100</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Interest:</string>
       </property>
      </widget>
     </widget>

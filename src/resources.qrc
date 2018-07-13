@@ -45,5 +45,14 @@
         <file>icons/baseline_home_white_18dp.png</file>
         <file>icons/tx_input.png</file>
         <file>icons/home.png</file>
+        <file>icons/home-icon.png</file>
+        <file>icons/icon-send.png</file>
+        <file>icons/icon-deposit.png</file>
+        <file>icons/icon-mining.png</file>
+        <file>icons/icon-messages.png</file>
+        <file>icons/icon-tx.png</file>
+        <file>icons/icon-keys.png</file>
+        <file>icons/icon-address.png</file>
+        <file>icons/icon-sendmsg.png</file>
     </qresource>
 </RCC>
