@@ -6,49 +6,78 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>675</width>
-    <height>359</height>
+    <width>775</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Courier</family>
+    <pointsize>10</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #cdcdcd;</string>
+   <string notr="true">background-color: #fff;</string>
   </property>
   <property name="frameShape">
-   <enum>QFrame::StyledPanel</enum>
+   <enum>QFrame::NoFrame</enum>
   </property>
   <property name="frameShadow">
-   <enum>QFrame::Raised</enum>
+   <enum>QFrame::Plain</enum>
+  </property>
+  <property name="lineWidth">
+   <number>0</number>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
     <widget class="QTreeView" name="m_messagesView">
+     <property name="maximumSize">
+      <size>
+       <width>780</width>
+       <height>550</height>
+      </size>
+     </property>
      <property name="font">
       <font>
-       <family>Source Sans Pro</family>
-       <pointsize>10</pointsize>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
     background-color: #e5e5e5;
     color: #262626;
-    font: 12px;
-   height: 30px;
- text-align: center;
-
+    font: 11px;
+    height: 30px;
+   font-family: 'Courier';
+   border: 0px;
 }
 
 QTreeView::item
 {
-    font: 11px;
+    font: 10px;
     height: 30px;
     color: #262626;
+   font-family: 'Courier';
 }
 
-    color: #262626;</string>
+    color: #262626;
+border: 0px;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -63,7 +92,7 @@ QTreeView::item
       <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
      </property>
      <property name="alternatingRowColors">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="rootIsDecorated">
       <bool>false</bool>
@@ -102,13 +131,44 @@ QTreeView::item
      </item>
      <item>
       <widget class="QPushButton" name="m_replyButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">padding: 5px; background-color: #262626; color: yellow;</string>
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
        </property>
        <property name="text">
         <string>REPLY</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

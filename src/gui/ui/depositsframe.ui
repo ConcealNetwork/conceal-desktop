@@ -7,14 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>798</width>
-    <height>557</height>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #fff; color: #262626;</string>
+   <string notr="true">border: 0px; background-color: #F1F3F5; color: #262626;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -23,6 +35,18 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="maximumSize">
@@ -40,7 +64,7 @@
      <widget class="QSpinBox" name="m_timeSpin">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>70</x>
         <y>130</y>
         <width>101</width>
         <height>23</height>
@@ -48,8 +72,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="minimum">
@@ -70,8 +94,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -81,7 +105,7 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>33</x>
+        <x>13</x>
         <y>130</y>
         <width>57</width>
         <height>23</height>
@@ -89,8 +113,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -100,7 +124,7 @@
      <widget class="QDoubleSpinBox" name="m_amountSpin">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>130</x>
         <y>70</y>
         <width>171</width>
         <height>23</height>
@@ -108,8 +132,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="maximum">
@@ -119,7 +143,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>33</x>
+        <x>13</x>
         <y>70</y>
         <width>57</width>
         <height>23</height>
@@ -127,8 +151,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -138,26 +162,26 @@
      <widget class="QPushButton" name="m_depositButton">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>196</y>
         <width>300</width>
-        <height>30</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
         <width>250</width>
-        <height>30</height>
+        <height>20</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+       <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
       </property>
       <property name="text">
        <string>DEPOSIT</string>
@@ -174,8 +198,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -193,8 +217,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -204,7 +228,7 @@
      <widget class="QLabel" name="m_feeTextLabel">
       <property name="geometry">
        <rect>
-        <x>33</x>
+        <x>13</x>
         <y>160</y>
         <width>101</width>
         <height>23</height>
@@ -212,8 +236,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -226,23 +250,23 @@
         <x>450</x>
         <y>196</y>
         <width>300</width>
-        <height>30</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>30</height>
+        <height>20</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+       <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
       </property>
       <property name="text">
        <string>WIDTHDRAW</string>
@@ -259,8 +283,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -278,8 +302,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -302,8 +326,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -321,8 +345,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -345,8 +369,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -364,8 +388,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -388,8 +412,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -407,8 +431,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -426,8 +450,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -437,8 +461,8 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>20</y>
+        <x>450</x>
+        <y>10</y>
         <width>221</width>
         <height>31</height>
        </rect>
@@ -458,9 +482,9 @@
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>20</y>
-        <width>131</width>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
         <height>31</height>
        </rect>
       </property>
@@ -479,7 +503,7 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>33</x>
+        <x>13</x>
         <y>100</y>
         <width>81</width>
         <height>23</height>
@@ -487,8 +511,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Courier</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="text">
@@ -501,31 +525,31 @@
     <widget class="QTreeView" name="m_depositView">
      <property name="maximumSize">
       <size>
-       <width>800</width>
+       <width>760</width>
        <height>320</height>
       </size>
      </property>
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>10</pointsize>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-    background-color: #eee;
-    color: #262626;
-    font: 12px;
-    border: 0px solid black;
+background-color: #5eb6b5; color: #ffff;
+    font: 13px;
+    border: 0px solid white;
    height: 30px;
- text-align: center;
 
 }
 
 QTreeView::item
 {
-    font: 11px;
+    font: 10px;
     height: 30px;
+
+
 }</string>
      </property>
      <property name="frameShape">
@@ -533,6 +557,9 @@ QTreeView::item
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
+     </property>
+     <property name="indentation">
+      <number>5</number>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>

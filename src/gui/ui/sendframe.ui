@@ -6,15 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>866</width>
+    <width>800</width>
     <height>590</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>10</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #fff; color: #262626;</string>
+   <string notr="true">border: 0px; background-color: #F1F3F5; color: #262626;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -23,6 +29,18 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QVBoxLayout" name="m_send_frame_main_layout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
     <widget class="QScrollArea" name="m_transfersScrollarea">
      <property name="frameShape">
@@ -36,8 +54,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>846</width>
-        <height>411</height>
+        <width>770</width>
+        <height>425</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_send_frame_layout">
@@ -79,8 +97,8 @@
       <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -95,12 +113,12 @@
       <widget class="QLineEdit" name="m_paymentIdEdit">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px;</string>
+        <string notr="true">padding: 3px; background-color: white;</string>
        </property>
       </widget>
      </item>
@@ -108,8 +126,8 @@
       <widget class="QLabel" name="label_6">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -143,6 +161,12 @@
          <width>200</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
        </property>
        <property name="minimum">
         <number>2</number>
@@ -205,8 +229,8 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -221,12 +245,12 @@
       <widget class="QDoubleSpinBox" name="m_feeSpin">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px;</string>
+        <string notr="true">padding: 3px; background-color: white;</string>
        </property>
        <property name="decimals">
         <number>6</number>
@@ -251,16 +275,28 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="m_sendButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>12</pointsize>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding:3px;</string>
        </property>
        <property name="text">
         <string>SEND FUNDS</string>
@@ -269,16 +305,28 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_clearAllButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>12</pointsize>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding:3px;</string>
        </property>
        <property name="text">
         <string>CLEAR ALL</string>
@@ -287,16 +335,28 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_addRecipientButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>12</pointsize>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding:3px;</string>
        </property>
        <property name="text">
         <string>ADD RECIPIENT</string>
@@ -320,8 +380,8 @@
       <widget class="QLabel" name="label_4">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -336,8 +396,8 @@
       <widget class="QLabel" name="m_balanceLabel">
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">

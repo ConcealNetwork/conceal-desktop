@@ -6,33 +6,123 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>874</width>
+    <width>800</width>
     <height>585</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: #262626;
+border: 0px;
+background-color: #fff;</string>
+  </property>
   <property name="frameShape">
-   <enum>QFrame::StyledPanel</enum>
+   <enum>QFrame::NoFrame</enum>
   </property>
   <property name="frameShadow">
-   <enum>QFrame::Raised</enum>
+   <enum>QFrame::Plain</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
-    <widget class="QTreeView" name="m_addressBookView"/>
+    <widget class="QTreeView" name="m_addressBookView">
+     <property name="minimumSize">
+      <size>
+       <width>760</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QHeaderView::section {
+    background-color: #eee;
+    color: #000;
+    font: 13px;
+    height: 30px; 
+   border: 0px;
+}
+
+QTreeView::item {
+    font: 10px;
+    height: 30px;
+  color: #262626;
+}
+
+color: #262626;
+border: 0px;
+background-color: #fff;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="indentation">
+      <number>5</number>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="m_addAddressButton">
-       <property name="text">
-        <string>New address</string>
+       <property name="minimumSize">
+        <size>
+         <width>140</width>
+         <height>30</height>
+        </size>
        </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+       </property>
+       <property name="text">
+        <string>ADD NEW ADDRESS</string>
        </property>
       </widget>
      </item>
@@ -41,12 +131,29 @@
        <property name="enabled">
         <bool>false</bool>
        </property>
-       <property name="text">
-        <string>Delete address</string>
+       <property name="minimumSize">
+        <size>
+         <width>140</width>
+         <height>30</height>
+        </size>
        </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+       </property>
+       <property name="text">
+        <string>REMOVE ADDRESS</string>
        </property>
       </widget>
      </item>
@@ -55,12 +162,29 @@
        <property name="enabled">
         <bool>false</bool>
        </property>
-       <property name="text">
-        <string>Copy address</string>
+       <property name="minimumSize">
+        <size>
+         <width>140</width>
+         <height>30</height>
+        </size>
        </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/copy</normaloff>:/icons/copy</iconset>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+       </property>
+       <property name="text">
+        <string>COPY ADDRESS</string>
        </property>
       </widget>
      </item>
@@ -81,9 +205,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>m_addAddressButton</sender>

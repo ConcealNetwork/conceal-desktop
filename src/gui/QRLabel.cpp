@@ -36,7 +36,7 @@ void QRLabel::showQRCode(const QString& _dataString) {
   }
 
   QRcode_free(qrcode);
-  setPixmap(QPixmap::fromImage(qrCodeImage).scaled(300, 300));
+  setPixmap(QPixmap::fromImage(qrCodeImage).scaled(150, 150));
   setEnabled(true);
 }
 

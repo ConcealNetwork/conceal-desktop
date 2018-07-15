@@ -54,5 +54,6 @@
         <file>icons/icon-keys.png</file>
         <file>icons/icon-address.png</file>
         <file>icons/icon-sendmsg.png</file>
+        <file>icons/home-icon-new.png</file>
     </qresource>
 </RCC>

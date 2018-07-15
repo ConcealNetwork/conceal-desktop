@@ -96,15 +96,15 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_STATE:
       return QVariant();
     case COLUMN_DATE:
-      return tr("DATE");
+      return tr("Date");
     case COLUMN_TYPE:
-      return tr("TYPE");
+      return tr("Type");
     case COLUMN_HASH:
-      return tr("HASH");
+      return tr("    Hash");
     case COLUMN_ADDRESS:
-      return tr("ADDRESS");
+      return tr("    Address");
     case COLUMN_AMOUNT:
-      return tr("AMOUNT");
+      return tr("Amount");
     case COLUMN_PAYMENT_ID:
       return tr("PAYMENT ID");
     case COLUMN_MESSAGE:
