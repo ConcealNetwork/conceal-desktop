@@ -12,15 +12,15 @@
   </property>
   <property name="font">
    <font>
-    <family>Courier</family>
-    <pointsize>10</pointsize>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
    </font>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #fff;</string>
+   <string notr="true">background-color: #222; color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -36,7 +36,7 @@
     <number>15</number>
    </property>
    <property name="topMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>15</number>
@@ -44,6 +44,19 @@
    <property name="bottomMargin">
     <number>15</number>
    </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Oswald</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>MESSAGE HISTORY</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QTreeView" name="m_messagesView">
      <property name="maximumSize">
@@ -60,24 +73,24 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-    background-color: #e5e5e5;
-    color: #262626;
-    font: 11px;
-    height: 30px;
-   font-family: 'Courier';
-   border: 0px;
+background-color: #555; color: #ffff;
+    font: 13px;
+    border: 0px solid white;
+   height: 30px;
+
 }
 
 QTreeView::item
 {
     font: 10px;
+    color: #ddd;
     height: 30px;
-    color: #262626;
-   font-family: 'Courier';
+
+
 }
 
-    color: #262626;
-border: 0px;</string>
+padding: 0px;
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -115,26 +128,26 @@ border: 0px;</string>
     </widget>
    </item>
    <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
      <item>
       <widget class="QPushButton" name="m_replyButton">
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>0</height>
+         <height>25</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -150,7 +163,7 @@ border: 0px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
         <string>REPLY</string>

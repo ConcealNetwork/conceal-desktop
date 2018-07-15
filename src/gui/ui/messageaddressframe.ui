@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>737</width>
-    <height>36</height>
+    <height>43</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px;</string>
+   <string notr="true">border: 0px; background-color: #333; color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -24,16 +24,16 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="leftMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="topMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="rightMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="bottomMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <item>
     <widget class="QLabel" name="label">
@@ -66,7 +66,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #fff; border: 0px;</string>
+      <string notr="true">background-color: #777; border: 0px; color: #e5e5e5;</string>
      </property>
     </widget>
    </item>

@@ -40,9 +40,6 @@
         <file>images/conceal.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>icons/baseline_account_balance_white_18dp.png</file>
-        <file>icons/baseline_arrow_upward_white_18dp.png</file>
-        <file>icons/baseline_home_white_18dp.png</file>
         <file>icons/tx_input.png</file>
         <file>icons/home.png</file>
         <file>icons/home-icon.png</file>
@@ -54,6 +51,5 @@
         <file>icons/icon-keys.png</file>
         <file>icons/icon-address.png</file>
         <file>icons/icon-sendmsg.png</file>
-        <file>icons/home-icon-new.png</file>
     </qresource>
 </RCC>

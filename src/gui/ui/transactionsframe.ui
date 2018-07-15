@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
+    <width>800</width>
     <height>600</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>810</width>
+    <width>800</width>
     <height>600</height>
    </size>
   </property>
@@ -26,8 +26,9 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #F1F3F5;
-border: 0px;</string>
+   <string notr="true">background-color: #222;
+border: 0px;
+color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -43,7 +44,7 @@ border: 0px;</string>
     <number>15</number>
    </property>
    <property name="topMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>15</number>
@@ -52,17 +53,30 @@ border: 0px;</string>
     <number>15</number>
    </property>
    <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Oswald</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>TRANSACTION HISTORY</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QTreeView" name="m_transactionsView">
      <property name="minimumSize">
       <size>
-       <width>780</width>
-       <height>570</height>
+       <width>770</width>
+       <height>480</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>790</width>
-       <height>570</height>
+       <width>770</width>
+       <height>480</height>
       </size>
      </property>
      <property name="font">
@@ -73,7 +87,7 @@ border: 0px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #5eb6b5; color: #000;
+background-color: #555; color: #ffff;
     font: 13px;
     border: 0px solid white;
    height: 30px;
@@ -83,10 +97,14 @@ background-color: #5eb6b5; color: #000;
 QTreeView::item
 {
     font: 10px;
+    color: #ddd;
     height: 30px;
-  color: #262626;
 
-}</string>
+
+}
+
+padding: 0px;
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -142,13 +160,26 @@ QTreeView::item
     </widget>
    </item>
    <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="m_csvButton">
        <property name="minimumSize">
         <size>
          <width>200</width>
-         <height>0</height>
+         <height>25</height>
         </size>
        </property>
        <property name="font">
@@ -158,7 +189,7 @@ QTreeView::item
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px;</string>
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
         <string>EXPORT TO CSV</string>

@@ -100,7 +100,7 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_TYPE:
       return tr("Type");
     case COLUMN_HASH:
-      return tr("    Hash");
+      return tr("  Transaction Hash");
     case COLUMN_ADDRESS:
       return tr("    Address");
     case COLUMN_AMOUNT:
@@ -265,7 +265,7 @@ QVariant TransactionsModel::getDecorationRole(const QModelIndex& _index) const {
     quint64 numberOfConfirmations = _index.data(ROLE_NUMBER_OF_CONFIRMATIONS).value<quint64>();
     switch (numberOfConfirmations) {
     case 0:
-      return QPixmap(":icons/unconfirmed");
+      return QPixmap(":icons/clock1");
     case 1: case 2:
       return QPixmap(":icons/clock1");
     case 3: case 4:

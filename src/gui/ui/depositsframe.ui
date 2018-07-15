@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #F1F3F5; color: #262626;</string>
+   <string notr="true">border: 0px; background-color: #222; color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -165,23 +165,23 @@
         <x>10</x>
         <y>196</y>
         <width>300</width>
-        <height>25</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
         <width>250</width>
-        <height>20</height>
+        <height>30</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>9</pointsize>
+        <family>Oswald</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
        <string>DEPOSIT</string>
@@ -250,23 +250,23 @@
         <x>450</x>
         <y>196</y>
         <width>300</width>
-        <height>25</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>0</width>
-        <height>20</height>
+        <width>250</width>
+        <height>30</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>9</pointsize>
+        <family>Oswald</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
        <string>WIDTHDRAW</string>
@@ -462,7 +462,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>10</y>
+        <y>0</y>
         <width>221</width>
         <height>31</height>
        </rect>
@@ -483,7 +483,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>0</y>
         <width>161</width>
         <height>31</height>
        </rect>
@@ -537,7 +537,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #5eb6b5; color: #ffff;
+background-color: #555; color: #ffff;
     font: 13px;
     border: 0px solid white;
    height: 30px;
@@ -547,6 +547,7 @@ background-color: #5eb6b5; color: #ffff;
 QTreeView::item
 {
     font: 10px;
+    color: #ddd;
     height: 30px;
 
 

@@ -13,9 +13,28 @@
   <property name="windowTitle">
    <string>Select address</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222; color: #e5e5e5;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
-    <widget class="QTreeView" name="m_addressBookView"/>
+    <widget class="QTreeView" name="m_addressBookView">
+     <property name="styleSheet">
+      <string notr="true">background-color: #777; color: #e5e5e5;</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -34,8 +53,23 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_okButton">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       </property>
        <property name="text">
-        <string>Choose</string>
+        <string>CHOOSE</string>
        </property>
       </widget>
      </item>

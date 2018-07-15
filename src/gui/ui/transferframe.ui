@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>885</width>
-    <height>136</height>
+    <height>150</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #eee; color: #262626; border: 0px;
+   <string notr="true">background-color: #333; color: #e5e5e5; border: 0px;
 </string>
   </property>
   <property name="frameShape">
@@ -25,16 +25,16 @@
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,1,1,1,1,1">
    <property name="leftMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="topMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="rightMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <property name="bottomMargin">
-    <number>5</number>
+    <number>9</number>
    </property>
    <item row="2" column="0">
     <widget class="QLabel" name="label_3">
@@ -45,7 +45,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; color: #e5e5e5;</string>
      </property>
      <property name="text">
       <string>Amount</string>
@@ -61,7 +61,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #fff; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
      </property>
      <property name="placeholderText">
       <string>Enter a label for this address to add it to your address book</string>
@@ -99,7 +99,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; color: #e5e5e5;</string>
      </property>
      <property name="text">
       <string>Label</string>
@@ -118,7 +118,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #fff; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
      </property>
      <property name="suffix">
       <string notr="true"/>
@@ -153,7 +153,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #fff; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
      </property>
     </widget>
    </item>
@@ -177,7 +177,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; color: #e5e5e5;</string>
      </property>
      <property name="text">
       <string>Pay to</string>
@@ -193,7 +193,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; color: #e5e5e5;</string>
      </property>
      <property name="text">
       <string>Crypto comment</string>
@@ -209,7 +209,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #fff; color: #262626;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
      </property>
     </widget>
    </item>

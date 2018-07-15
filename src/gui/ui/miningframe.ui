@@ -10,11 +10,19 @@
     <height>469</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #fff;</string>
+   <string notr="true">background-color: #222;
+color: #e5e5e5;
+border: 0px;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -34,17 +42,20 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>50</y>
+        <x>10</x>
+        <y>0</y>
         <width>81</width>
-        <height>31</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Oswald</family>
-        <pointsize>20</pointsize>
+        <pointsize>18</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="text">
        <string>MINING</string>
@@ -53,8 +64,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>110</y>
+        <x>10</x>
+        <y>50</y>
         <width>141</width>
         <height>23</height>
        </rect>
@@ -64,6 +75,9 @@
         <family>Open Sans</family>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="text">
        <string>Select a mining pool</string>
@@ -72,20 +86,20 @@
      <widget class="QComboBox" name="m_poolCombo">
       <property name="geometry">
        <rect>
-        <x>318</x>
-        <y>110</y>
+        <x>168</x>
+        <y>50</y>
         <width>151</width>
-        <height>20</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #eee; padding: 3px; </string>
+       <string notr="true">background-color: #777; padding: 3px; color: #e5e5e5;</string>
       </property>
       <property name="editable">
        <bool>false</bool>
@@ -94,8 +108,8 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>150</y>
+        <x>10</x>
+        <y>90</y>
         <width>141</width>
         <height>20</height>
        </rect>
@@ -106,6 +120,9 @@
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: #e5e5e5;</string>
+      </property>
       <property name="text">
        <string>Number of CPU cores</string>
       </property>
@@ -113,39 +130,39 @@
      <widget class="QComboBox" name="m_cpuCombo">
       <property name="geometry">
        <rect>
-        <x>318</x>
-        <y>150</y>
+        <x>168</x>
+        <y>90</y>
         <width>161</width>
-        <height>20</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
-        <pointsize>10</pointsize>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #eee; padding: 3px; </string>
+       <string notr="true">background-color: #777; padding: 3px; color: #e5e5e5;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="m_addPoolButton">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>110</y>
-        <width>75</width>
+        <x>340</x>
+        <y>50</y>
+        <width>125</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 2px; padding: 2px;</string>
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
        <string>ADD POOL</string>
@@ -192,22 +209,20 @@
      <widget class="QPushButton" name="m_startButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>220</y>
+        <x>10</x>
+        <y>130</y>
         <width>300</width>
-        <height>40</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>12</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
        <string>START MINING</string>
@@ -225,20 +240,20 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>270</y>
+        <x>10</x>
+        <y>160</y>
         <width>300</width>
-        <height>40</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #262626; color: #e5e5e5; border-radius: 5px; padding: 6px;</string>
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
        <string>PAUSE</string>

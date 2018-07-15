@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>585</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -22,13 +22,19 @@
     <height>600</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #262626;
+   <string notr="true">color: #e5e5e5;
 border: 0px;
-background-color: #fff;</string>
+background-color: #222;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -41,7 +47,7 @@ background-color: #fff;</string>
     <number>15</number>
    </property>
    <property name="topMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>15</number>
@@ -49,6 +55,19 @@ background-color: #fff;</string>
    <property name="bottomMargin">
     <number>15</number>
    </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Oswald</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>ADDRESS BOOK</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QTreeView" name="m_addressBookView">
      <property name="minimumSize">
@@ -65,22 +84,21 @@ background-color: #fff;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-    background-color: #eee;
-    color: #000;
+background-color: #555; color: #ffff;
     font: 13px;
-    height: 30px; 
-   border: 0px;
+    border: 0px solid white;
+   height: 30px;
+
 }
 
-QTreeView::item {
+QTreeView::item
+{
     font: 10px;
+    color: #ddd;
     height: 30px;
-  color: #262626;
-}
 
-color: #262626;
-border: 0px;
-background-color: #fff;</string>
+
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -97,13 +115,26 @@ background-color: #fff;</string>
     </widget>
    </item>
    <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="m_addAddressButton">
        <property name="minimumSize">
         <size>
          <width>140</width>
-         <height>30</height>
+         <height>25</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -119,7 +150,7 @@ background-color: #fff;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
         <string>ADD NEW ADDRESS</string>
@@ -134,7 +165,7 @@ background-color: #fff;</string>
        <property name="minimumSize">
         <size>
          <width>140</width>
-         <height>30</height>
+         <height>25</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -150,7 +181,7 @@ background-color: #fff;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
         <string>REMOVE ADDRESS</string>
@@ -165,7 +196,7 @@ background-color: #fff;</string>
        <property name="minimumSize">
         <size>
          <width>140</width>
-         <height>30</height>
+         <height>25</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -181,7 +212,7 @@ background-color: #fff;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #316162; color: #fff; border-radius: 5px; padding: 5px;</string>
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>

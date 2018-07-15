@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #316162; color: #f1f3f5;</string>
+   <string notr="true">background-color: #333; color: #fff;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -172,7 +172,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #316162; color: #fff;</string>
+    <string notr="true">background-color: #333; color: #fff;</string>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
@@ -226,7 +226,7 @@
     <string>toolBar</string>
    </property>
    <property name="styleSheet">
-    <string notr="true">border: 0px; padding: 3px; width: 56px; background-color: #5eb6b5;
+    <string notr="true">border: 0px; padding: 3px; width: 56px; background-color: #555;
 
 </string>
    </property>

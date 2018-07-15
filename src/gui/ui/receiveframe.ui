@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #F1F3F5; color: #262626;</string>
+   <string notr="true">border: 0px; background-color: #262626; color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -24,10 +24,10 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="rightMargin">
     <number>15</number>
@@ -49,28 +49,28 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>0</y>
+        <x>20</x>
+        <y>10</y>
         <width>101</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
+        <family>Oswald</family>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>ADDRESS</string>
+       <string>KEYS</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="m_addressEdit">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>200</y>
-        <width>561</width>
+        <x>190</x>
+        <y>130</y>
+        <width>551</width>
         <height>41</height>
        </rect>
       </property>
@@ -81,7 +81,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -94,27 +94,27 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>250</y>
+        <x>20</x>
+        <y>270</y>
         <width>91</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
+        <family>Oswald</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>GUI Keys</string>
+       <string>GUI KEYS</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="m_keyEdit">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>290</y>
+        <x>20</x>
+        <y>310</y>
         <width>561</width>
         <height>41</height>
        </rect>
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -139,8 +139,8 @@ p, li { white-space: pre-wrap; }
      <widget class="WalletGui::QRLabel" name="m_qrLabel">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>40</y>
+        <x>20</x>
+        <y>100</y>
         <width>150</width>
         <height>150</height>
        </rect>
@@ -167,8 +167,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QTextBrowser" name="m_keyEdit_3">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>380</y>
+        <x>20</x>
+        <y>410</y>
         <width>561</width>
         <height>41</height>
        </rect>
@@ -180,7 +180,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -193,46 +193,46 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>340</y>
+        <x>20</x>
+        <y>370</y>
         <width>201</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
+        <family>Oswald</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Private Spend Key</string>
+       <string>PRIVATE SPEND KEY</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>430</y>
+        <x>20</x>
+        <y>460</y>
         <width>151</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
+        <family>Oswald</family>
+        <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Private View Key</string>
+       <string>PRIVATE VIEW KEY</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="m_keyEdit_4">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>470</y>
+        <x>20</x>
+        <y>510</y>
         <width>561</width>
         <height>41</height>
        </rect>
@@ -244,7 +244,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -252,6 +252,38 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>711</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save and set aside your keys to recover your wallet later. Remember, do not share this information with anyone.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>WALLET ADDRESS</string>
       </property>
      </widget>
     </widget>

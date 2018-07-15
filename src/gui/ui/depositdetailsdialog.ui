@@ -13,9 +13,38 @@
   <property name="windowTitle">
    <string>Deposit</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;
+color: #e5e5e5;
+border: 0px;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>9</number>
+   </property>
    <item>
-    <widget class="QTextBrowser" name="m_detailsBrowser"/>
+    <widget class="QTextBrowser" name="m_detailsBrowser">
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #777;
+color: #e5e5e5;
+border: 0px;</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -34,8 +63,23 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_closeButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       </property>
        <property name="text">
-        <string>Close</string>
+        <string>CLOSE</string>
        </property>
       </widget>
      </item>

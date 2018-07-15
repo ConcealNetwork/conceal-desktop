@@ -13,21 +13,54 @@
   <property name="windowTitle">
    <string>New pool</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;
+color: #e5e5e5;
+border: 0px;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Host:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="m_hostEdit"/>
+      <widget class="QLineEdit" name="m_hostEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #777;</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Port:</string>
        </property>
@@ -35,6 +68,21 @@
      </item>
      <item>
       <widget class="QSpinBox" name="m_portSpin">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #777;</string>
+       </property>
        <property name="minimum">
         <number>1</number>
        </property>
@@ -62,13 +110,43 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_cancelButton">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       </property>
        <property name="text">
-        <string>Cancel</string>
+        <string>CANCEL</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="m_okButton">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       </property>
        <property name="text">
         <string>OK</string>
        </property>

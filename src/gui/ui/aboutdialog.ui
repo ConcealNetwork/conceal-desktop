@@ -31,6 +31,9 @@
   <property name="windowTitle">
    <string>About %1</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222; color: #e5e5e5;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
    <item>
     <widget class="QLabel" name="m_aboutLabel">
@@ -39,6 +42,12 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal wallet version %1&lt;/p&gt;&lt;p&gt;Conceal is a decentrilized privacy protected peer-to-peer cryptocurrency and encrypted messaging system. Conceal is open-source; its design is public, nobody owns or controls Conceal and everyone can take part.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -71,8 +80,17 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_closeButton">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       </property>
        <property name="text">
-        <string>Close</string>
+        <string>CLOSE</string>
        </property>
       </widget>
      </item>

@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Saving data</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;
+color: #e5e5e5;
+border: 0px;</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
    <item>
     <widget class="QLabel" name="m_clockLabel">
@@ -23,6 +28,12 @@
    </item>
    <item>
     <widget class="QLabel" name="m_label">
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>%1 wallet is saving data.
 Please wait...</string>
