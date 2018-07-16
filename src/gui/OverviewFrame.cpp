@@ -46,10 +46,15 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->setupUi(this);
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
 
   QFont font;
   font.setFamily("Oswald");
   font.setPointSize(18);
+
+  QFont font2;
+  font2.setFamily("Open Sans");
+  font.setPointSize(9);
 
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal,
     this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);

@@ -54,5 +54,6 @@
         <file>images/city.jpg</file>
         <file>images/sunrise.jpg</file>
         <file>fonts/Oswald-Regular.ttf</file>
+        <file>fonts/OpenSans-Regular.ttf</file>
     </qresource>
 </RCC>
