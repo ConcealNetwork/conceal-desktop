@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Arial</family>
+    <family>Open Sans</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -70,7 +70,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <family>Open Sans</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -161,7 +161,7 @@ padding: 0px;
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
+         <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
        </property>

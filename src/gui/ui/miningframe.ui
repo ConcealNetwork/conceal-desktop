@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Arial</family>
+    <family>Open Sans</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -94,7 +94,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -138,7 +138,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -157,7 +157,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -179,7 +179,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -195,13 +195,13 @@ border: 0px;</string>
        <rect>
         <x>130</x>
         <y>200</y>
-        <width>71</width>
+        <width>181</width>
         <height>23</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -223,7 +223,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -254,7 +254,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Open Sans</family>
         <pointsize>10</pointsize>
        </font>
       </property>

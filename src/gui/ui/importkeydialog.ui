@@ -24,7 +24,7 @@ border: 0px;</string>
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Arial</family>
+         <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -43,7 +43,7 @@ border: 0px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
+         <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -58,7 +58,7 @@ color: #e5e5e5;</string>
       <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
-         <family>Arial</family>
+         <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -77,7 +77,7 @@ color: #e5e5e5;</string>
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
+         <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -135,8 +135,8 @@ color: #e5e5e5;</string>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -157,8 +157,8 @@ color: #e5e5e5;</string>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">

@@ -61,8 +61,8 @@
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">

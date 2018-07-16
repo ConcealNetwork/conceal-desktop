@@ -45,7 +45,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <family>Open Sans</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -88,8 +88,8 @@
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">

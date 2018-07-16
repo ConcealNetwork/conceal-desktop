@@ -24,7 +24,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Arial</family>
+    <family>Open Sans</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -81,7 +81,7 @@ background-color: #333;</string>
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <family>Open Sans</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -148,8 +148,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -179,8 +179,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -210,8 +210,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>11</pointsize>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">

@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Arial</family>
+    <family>Open Sans</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -256,6 +256,11 @@
    <addaction name="m_miningAction"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">padding: 5px;</string>
    </property>

@@ -30,7 +30,7 @@ border: 0px;</string>
     <widget class="QLabel" name="m_label">
      <property name="font">
       <font>
-       <family>Arial</family>
+       <family>Open Sans</family>
        <pointsize>9</pointsize>
       </font>
      </property>
