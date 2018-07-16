@@ -148,8 +148,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>9</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -179,8 +179,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>9</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -210,8 +210,8 @@ QTreeView::item
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>9</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">

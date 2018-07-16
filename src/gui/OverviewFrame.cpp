@@ -8,6 +8,9 @@
 #include "CurrencyAdapter.h"
 #include "OverviewFrame.h"
 #include "TransactionFrame.h"
+#include <QFont>
+#include <QFontDatabase>
+#include <QMessageBox>
 #include "RecentTransactionsModel.h"
 #include "WalletAdapter.h"
 
@@ -41,6 +44,13 @@ public:
 OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame),
   m_transactionModel(new RecentTransactionsModel) {
   m_ui->setupUi(this);
+
+  int id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
+
+  QFont font;
+  font.setFamily("Oswald");
+  font.setPointSize(18);
+
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal,
     this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingBalanceUpdatedSignal,

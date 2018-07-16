@@ -60,7 +60,6 @@ TransactionFrame::TransactionFrame(const QModelIndex& _index, QWidget* _parent) 
   m_dataMapper.addMapping(m_ui->m_amountLabel, TransactionsModel::COLUMN_AMOUNT);
   m_dataMapper.addMapping(m_ui->m_timeLabel, TransactionsModel::COLUMN_DATE);
   m_dataMapper.addMapping(m_ui->m_hashLabel, TransactionsModel::COLUMN_HASH);
-  m_dataMapper.addMapping(m_ui->m_messageLabel, TransactionsModel::COLUMN_MESSAGE);
   m_dataMapper.setCurrentModelIndex(m_index);
 }
 

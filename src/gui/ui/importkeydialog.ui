@@ -135,8 +135,8 @@ color: #e5e5e5;</string>
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>10</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -157,8 +157,8 @@ color: #e5e5e5;</string>
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>10</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">

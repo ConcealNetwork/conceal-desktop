@@ -86,6 +86,12 @@
          <height>25</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>

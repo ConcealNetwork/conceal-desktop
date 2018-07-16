@@ -1054,3 +1054,5 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.cc \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc
 RESOURCES += src/resources.qrc
+
+DISTFILES +=

@@ -177,7 +177,7 @@
       <property name="font">
        <font>
         <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -262,7 +262,7 @@
       <property name="font">
        <font>
         <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <pointsize>11</pointsize>
        </font>
       </property>
       <property name="styleSheet">

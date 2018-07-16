@@ -71,8 +71,8 @@ border: 0px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Arial</family>
-         <pointsize>10</pointsize>
+         <family>Oswald</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
