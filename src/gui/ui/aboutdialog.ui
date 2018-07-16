@@ -32,7 +32,7 @@
    <string>About %1</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #222; color: #e5e5e5;</string>
+   <string notr="true">background-color: #333; color: #e5e5e5;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
    <item>

@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #222; color: #e5e5e5;</string>
+   <string notr="true">border: 0px; background-color: #333; color: #e5e5e5;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -56,7 +56,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 0px;</string>
+      <string notr="true">padding: 0px; color: white;</string>
      </property>
      <property name="text">
       <string>TRANSFER FUNDS</string>

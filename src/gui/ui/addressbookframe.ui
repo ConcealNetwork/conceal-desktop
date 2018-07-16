@@ -34,7 +34,7 @@
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
 border: 0px;
-background-color: #222;</string>
+background-color: #333;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -62,6 +62,9 @@ background-color: #222;</string>
        <family>Oswald</family>
        <pointsize>18</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
      </property>
      <property name="text">
       <string>ADDRESS BOOK</string>

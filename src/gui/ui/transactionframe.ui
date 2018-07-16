@@ -91,6 +91,9 @@
            <pointsize>9</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>TextLabel</string>
          </property>
@@ -144,7 +147,7 @@
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>10</pointsize>
+         <pointsize>12</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>

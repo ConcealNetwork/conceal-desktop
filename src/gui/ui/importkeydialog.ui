@@ -14,7 +14,7 @@
    <string>Import private key</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #222; color: #e5e5e5;
+   <string notr="true">background-color: #333; color: #e5e5e5;
 border: 0px;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">

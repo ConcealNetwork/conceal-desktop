@@ -30,8 +30,8 @@
   </property>
   <property name="font">
    <font>
-    <family>Open Sans</family>
-    <pointsize>10</pointsize>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333; color: #fff;</string>
+   <string notr="true">background-color: #444; color: #e5e5e5;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">

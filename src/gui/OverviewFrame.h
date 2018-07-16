@@ -33,6 +33,7 @@ private:
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void layoutChanged();
+  void updateWalletAddress(const QString& _address);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
   void actualDepositBalanceUpdated(quint64 _balance);

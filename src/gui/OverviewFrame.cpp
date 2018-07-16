@@ -54,6 +54,8 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   connect(m_transactionModel.data(), &QAbstractItemModel::rowsInserted, this, &OverviewFrame::transactionsInserted);
   connect(m_transactionModel.data(), &QAbstractItemModel::layoutChanged, this, &OverviewFrame::layoutChanged);
 
+  connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
+  
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
@@ -73,6 +75,11 @@ void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first,
     m_ui->m_recentTransactionsView->openPersistentEditor(recentModelIndex);
   }
 }
+
+void OverviewFrame::updateWalletAddress(const QString& _address) {
+  m_ui->m_myAddress->setText(_address);
+}
+
 
 void OverviewFrame::layoutChanged() {
   for (quint32 i = 0; i <= m_transactionModel->rowCount(); ++i) {

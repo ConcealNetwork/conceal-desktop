@@ -51,5 +51,7 @@
         <file>icons/icon-keys.png</file>
         <file>icons/icon-address.png</file>
         <file>icons/icon-sendmsg.png</file>
+        <file>images/city.jpg</file>
+        <file>images/sunrise.jpg</file>
     </qresource>
 </RCC>

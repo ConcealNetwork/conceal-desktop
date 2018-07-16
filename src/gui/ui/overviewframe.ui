@@ -26,7 +26,8 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333; color: #e5e5e5;</string>
+   <string notr="true">color: #e5e5e5;
+background: url(:/images/city.jpg);</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -74,7 +75,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; background-color: #222; color: #e5e5e5;</string>
+      <string notr="true">border: 0px; background-color: #333; color: #e5e5e5;</string>
      </property>
      <property name="title">
       <string/>
@@ -85,8 +86,8 @@
      <widget class="QLabel" name="m_tickerLabel1">
       <property name="geometry">
        <rect>
-        <x>277</x>
-        <y>140</y>
+        <x>287</x>
+        <y>160</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -97,6 +98,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -106,8 +108,8 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>170</y>
+        <x>30</x>
+        <y>190</y>
         <width>121</width>
         <height>25</height>
        </rect>
@@ -118,6 +120,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -127,8 +130,8 @@
      <widget class="QLabel" name="m_actualBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>140</y>
+        <x>140</x>
+        <y>160</y>
         <width>141</width>
         <height>24</height>
        </rect>
@@ -139,6 +142,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -151,7 +155,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>30</x>
         <y>20</y>
         <width>211</width>
         <height>25</height>
@@ -163,6 +167,7 @@
         <pointsize>18</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
@@ -175,8 +180,8 @@
      <widget class="QLabel" name="m_tickerLabel2">
       <property name="geometry">
        <rect>
-        <x>277</x>
-        <y>170</y>
+        <x>287</x>
+        <y>190</y>
         <width>31</width>
         <height>25</height>
        </rect>
@@ -187,6 +192,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -196,10 +202,10 @@
      <widget class="QLabel" name="m_totalBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>230</y>
-        <width>281</width>
-        <height>24</height>
+        <x>30</x>
+        <y>250</y>
+        <width>290</width>
+        <height>35</height>
        </rect>
       </property>
       <property name="font">
@@ -208,10 +214,11 @@
         <pointsize>18</pointsize>
         <weight>75</weight>
         <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange;</string>
+       <string notr="true">background-color: orange; color: #222;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -223,8 +230,8 @@
      <widget class="QLabel" name="m_pendingBalanceLabel">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>170</y>
+        <x>170</x>
+        <y>190</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -235,6 +242,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -247,8 +255,8 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>140</y>
+        <x>30</x>
+        <y>160</y>
         <width>111</width>
         <height>24</height>
        </rect>
@@ -259,6 +267,7 @@
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -268,8 +277,8 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>400</y>
+        <x>30</x>
+        <y>440</y>
         <width>81</width>
         <height>25</height>
        </rect>
@@ -289,8 +298,8 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>370</y>
+        <x>30</x>
+        <y>410</y>
         <width>101</width>
         <height>25</height>
        </rect>
@@ -310,8 +319,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>330</y>
+        <x>30</x>
+        <y>350</y>
         <width>221</width>
         <height>25</height>
        </rect>
@@ -334,8 +343,8 @@
      <widget class="QLabel" name="m_tickerLabel5">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>400</y>
+        <x>290</x>
+        <y>440</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -355,8 +364,8 @@
      <widget class="QLabel" name="m_tickerLabel4">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>370</y>
+        <x>290</x>
+        <y>410</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -376,11 +385,17 @@
      <widget class="QLabel" name="m_totalDepositLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>470</y>
-        <width>281</width>
-        <height>25</height>
+        <x>30</x>
+        <y>510</y>
+        <width>290</width>
+        <height>35</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -391,7 +406,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange;</string>
+       <string notr="true">background-color: orange; color: #222;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -403,8 +418,8 @@
      <widget class="QLabel" name="m_unlockedDepositLabel">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>370</y>
+        <x>170</x>
+        <y>410</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -427,8 +442,8 @@
      <widget class="QLabel" name="m_lockedDepositLabel">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>400</y>
+        <x>170</x>
+        <y>440</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -448,79 +463,11 @@
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="m_depositButton">
+     <widget class="QTextBrowser" name="m_myAddress">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>510</y>
-        <width>291</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #fff; border-radius: 0px; border: 1px solid; border-color: #fff;</string>
-      </property>
-      <property name="text">
-       <string>MANAGE DEPOSITS</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="m_depositButton_2">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>270</y>
-        <width>291</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>250</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #fff; border-radius: 0px; border: 1px solid; border-color: #fff;</string>
-      </property>
-      <property name="text">
-       <string>SEND FUNDS</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="textBrowser">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>80</y>
+        <x>30</x>
+        <y>100</y>
         <width>291</width>
         <height>61</height>
        </rect>
@@ -535,6 +482,7 @@
        <font>
         <family>Arial</family>
         <pointsize>10</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
@@ -578,7 +526,7 @@ p, li { white-space: pre-wrap; }
         <x>370</x>
         <y>70</y>
         <width>400</width>
-        <height>461</height>
+        <height>491</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -627,8 +575,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>200</y>
+        <x>30</x>
+        <y>220</y>
         <width>281</width>
         <height>25</height>
        </rect>
@@ -639,6 +587,7 @@ p, li { white-space: pre-wrap; }
         <pointsize>9</pointsize>
         <weight>75</weight>
         <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
@@ -651,8 +600,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>440</y>
+        <x>30</x>
+        <y>480</y>
         <width>281</width>
         <height>25</height>
        </rect>
@@ -675,8 +624,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>60</y>
+        <x>30</x>
+        <y>80</y>
         <width>101</width>
         <height>16</height>
        </rect>
@@ -685,10 +634,45 @@ p, li { white-space: pre-wrap; }
        <font>
         <family>Arial</family>
         <pointsize>9</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="text">
        <string>Wallet Address:</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>310</y>
+        <width>300</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #444;</string>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
      <zorder>m_tickerLabel1</zorder>
@@ -707,14 +691,13 @@ p, li { white-space: pre-wrap; }
      <zorder>m_unlockedDepositLabel</zorder>
      <zorder>m_lockedDepositLabel</zorder>
      <zorder>m_tickerLabel5</zorder>
-     <zorder>m_depositButton</zorder>
-     <zorder>m_depositButton_2</zorder>
-     <zorder>textBrowser</zorder>
+     <zorder>m_myAddress</zorder>
      <zorder>label_8</zorder>
      <zorder>m_recentTransactionsView</zorder>
      <zorder>label_6</zorder>
      <zorder>label_9</zorder>
      <zorder>label_10</zorder>
+     <zorder>line</zorder>
     </widget>
    </item>
   </layout>

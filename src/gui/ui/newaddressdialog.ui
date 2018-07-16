@@ -14,7 +14,7 @@
    <string>New address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #222;
+   <string notr="true">background-color: #333;
 color: #e5e5e5;
 border: 0px;</string>
   </property>
