@@ -172,7 +172,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>20</x>
         <y>390</y>
-        <width>561</width>
+        <width>321</width>
         <height>41</height>
        </rect>
       </property>
@@ -198,8 +198,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>20</x>
         <y>350</y>
-        <width>201</width>
-        <height>31</height>
+        <width>200</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
@@ -215,10 +215,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>440</y>
-        <width>151</width>
-        <height>31</height>
+        <x>400</x>
+        <y>350</y>
+        <width>200</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
@@ -234,9 +234,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QTextBrowser" name="m_keyEdit_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>490</y>
-        <width>561</width>
+        <x>400</x>
+        <y>390</y>
+        <width>351</width>
         <height>41</height>
        </rect>
       </property>
