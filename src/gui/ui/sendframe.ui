@@ -46,7 +46,7 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>25</height>
+       <height>29</height>
       </size>
      </property>
      <property name="font">
@@ -255,7 +255,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; background-color: #777; border: 0px;</string>
+        <string notr="true">padding: 3px; border: 0px;</string>
        </property>
        <property name="text">
         <string notr="true">2</string>

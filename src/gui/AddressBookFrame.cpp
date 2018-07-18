@@ -22,6 +22,7 @@ namespace WalletGui {
 AddressBookFrame::AddressBookFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::AddressBookFrame) {
   m_ui->setupUi(this);
   m_ui->m_addressBookView->setModel(&AddressBookModel::instance());
+  m_ui->m_addressBookView->setAttribute(Qt::WA_MacShowFocusRect, 0); 
 
   connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &AddressBookFrame::currentAddressChanged);
 }
@@ -58,6 +59,8 @@ void AddressBookFrame::deleteClicked() {
 void AddressBookFrame::currentAddressChanged(const QModelIndex& _index) {
   m_ui->m_copyAddressButton->setEnabled(_index.isValid());
   m_ui->m_deleteAddressButton->setEnabled(_index.isValid());
+  m_ui->m_copyAddressButton->setAttribute(Qt::WA_MacShowFocusRect, 0);
+  m_ui->m_deleteAddressButton->setAttribute(Qt::WA_MacShowFocusRect, 0);    
 }
 
 void AddressBookFrame::addressDoubleClicked(const QModelIndex& _index) {
