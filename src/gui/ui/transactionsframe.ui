@@ -10,10 +10,16 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="maximumSize">
+  <property name="minimumSize">
    <size>
     <width>800</width>
     <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="font">
@@ -78,8 +84,8 @@ color: #e5e5e5;</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>770</width>
-       <height>480</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">

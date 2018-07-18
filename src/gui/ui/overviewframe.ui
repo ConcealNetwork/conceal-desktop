@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-background: url(:/images/city.jpg);</string>
+background-color: #333;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -70,12 +70,12 @@ background: url(:/images/city.jpg);</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>800</width>
-       <height>600</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; background-color: #333; color: #e5e5e5;</string>
+      <string notr="true">border: 0px; color: #e5e5e5;</string>
      </property>
      <property name="title">
       <string/>
@@ -526,19 +526,19 @@ p, li { white-space: pre-wrap; }
         <x>350</x>
         <y>70</y>
         <width>425</width>
-        <height>491</height>
+        <height>500</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
         <width>425</width>
-        <height>0</height>
+        <height>500</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>425</width>
-        <height>500</height>
+        <width>16777215</width>
+        <height>16777215</height>
        </size>
       </property>
       <property name="font">

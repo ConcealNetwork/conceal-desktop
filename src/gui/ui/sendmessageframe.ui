@@ -62,7 +62,7 @@
         <x>0</x>
         <y>0</y>
         <width>743</width>
-        <height>127</height>
+        <height>129</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_addressesLayout">
@@ -245,11 +245,20 @@ p, li { white-space: pre-wrap; }
      </property>
      <item row="1" column="1">
       <widget class="QSlider" name="m_mixinSlider">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>38</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>200</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 3px; border: 0px; </string>
        </property>
        <property name="maximum">
         <number>10</number>
@@ -292,6 +301,12 @@ p, li { white-space: pre-wrap; }
      </item>
      <item row="1" column="2">
       <widget class="QLineEdit" name="m_mixinEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>38</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>30</width>
@@ -305,10 +320,10 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px;</string>
+        <string notr="true">padding: 3px; border: 0px; </string>
        </property>
        <property name="text">
-        <string notr="true"/>
+        <string notr="true">2</string>
        </property>
        <property name="maxLength">
         <number>5</number>
@@ -355,11 +370,20 @@ p, li { white-space: pre-wrap; }
      </item>
      <item row="0" column="1">
       <widget class="QDoubleSpinBox" name="m_feeSpin">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>25</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Open Sans</family>
          <pointsize>9</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string>padding: 3px; border: 0px; background-color: #777;</string>
        </property>
        <property name="decimals">
         <number>6</number>
