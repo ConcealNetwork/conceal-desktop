@@ -215,7 +215,7 @@
        </font>
       </property>
       <property name="text">
-       <string/>
+       <string>21900 blocks</string>
       </property>
      </widget>
      <widget class="QLabel" name="m_interestLabel">

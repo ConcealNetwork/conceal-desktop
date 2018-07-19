@@ -27,7 +27,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-background-color: #333;</string>
+background-color: #333;
+background: url(:/images/city.png);</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -101,6 +102,9 @@ background-color: #333;</string>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string notr="true">CCX</string>
       </property>
@@ -123,6 +127,9 @@ background-color: #333;</string>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string>Unconfirmed:</string>
       </property>
@@ -144,6 +151,9 @@ background-color: #333;</string>
         <bold>false</bold>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -171,7 +181,8 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #fff;</string>
+       <string notr="true">background: transparent;
+color: white;</string>
       </property>
       <property name="text">
        <string>YOUR WALLET</string>
@@ -194,6 +205,9 @@ background-color: #333;</string>
         <bold>false</bold>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string notr="true">CCX</string>
@@ -218,7 +232,9 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: orange; color: #222;</string>
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);
+</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -245,6 +261,9 @@ background-color: #333;</string>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string notr="true">0.00</string>
       </property>
@@ -270,6 +289,9 @@ background-color: #333;</string>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string>Balance:</string>
       </property>
@@ -291,6 +313,9 @@ background-color: #333;</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string>Unlocked:</string>
       </property>
@@ -311,6 +336,9 @@ background-color: #333;</string>
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string>Locked:</string>
@@ -334,7 +362,8 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #fff;</string>
+       <string notr="true">background: transparent;
+color: white;</string>
       </property>
       <property name="text">
        <string>YOUR DEPOSITS</string>
@@ -357,6 +386,9 @@ background-color: #333;</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string notr="true">CCX</string>
       </property>
@@ -377,6 +409,9 @@ background-color: #333;</string>
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string notr="true">CCX</string>
@@ -406,7 +441,9 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: orange; color: #222;</string>
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);
+</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -432,6 +469,9 @@ background-color: #333;</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string notr="true">0.00</string>
       </property>
@@ -455,6 +495,9 @@ background-color: #333;</string>
         <weight>50</weight>
         <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -486,7 +529,7 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;</string>
+       <string notr="true">background: transparent;</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -514,7 +557,8 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #fff;</string>
+       <string notr="true">background: transparent;
+color: white;</string>
       </property>
       <property name="text">
        <string>LATEST TRANSACTIONS</string>
@@ -551,7 +595,7 @@ p, li { white-space: pre-wrap; }
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
+       <string notr="true">background: transparent;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -596,6 +640,9 @@ p, li { white-space: pre-wrap; }
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
       <property name="text">
        <string>TOTAL</string>
       </property>
@@ -620,6 +667,9 @@ p, li { white-space: pre-wrap; }
         <bold>true</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
       <property name="text">
        <string>TOTAL DEPOSITS</string>
       </property>
@@ -642,6 +692,9 @@ p, li { white-space: pre-wrap; }
         <pointsize>9</pointsize>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
       </property>
       <property name="text">
        <string>Wallet Address:</string>
@@ -674,7 +727,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #444;</string>
+       <string notr="true">background: transparent;</string>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Plain</enum>

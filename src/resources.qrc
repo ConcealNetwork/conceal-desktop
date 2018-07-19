@@ -51,9 +51,10 @@
         <file>icons/icon-keys.png</file>
         <file>icons/icon-address.png</file>
         <file>icons/icon-sendmsg.png</file>
-        <file>images/city.jpg</file>
-        <file>images/sunrise.jpg</file>
         <file>fonts/Oswald-Regular.ttf</file>
         <file>fonts/OpenSans-Regular.ttf</file>
+        <file>images/city.png</file>
+        <file>images/sunkist.png</file>
+        <file>images/s_sunkist.png</file>
     </qresource>
 </RCC>
