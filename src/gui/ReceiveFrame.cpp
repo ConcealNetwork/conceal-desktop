@@ -56,7 +56,7 @@ void ReceiveFrame::walletOpened(int _error) {
   if (deterministic_private_keys){
   crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, mnemonic_seed, "English");
   } else {
-     mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet." 
+     mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
   }
 
   m_ui->m_keyEdit->setText(privateKeys);
