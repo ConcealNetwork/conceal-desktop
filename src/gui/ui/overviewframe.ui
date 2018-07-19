@@ -27,8 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-background-color: #333;
-background: url(:/images/city.png);</string>
+background-color: #333;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -233,7 +232,7 @@ color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #222;
-background: url(:/images/s_sunkist.png);
+background-color: orange;
 </string>
       </property>
       <property name="text">
@@ -442,7 +441,7 @@ color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #222;
-background: url(:/images/s_sunkist.png);
+background-color: orange;
 </string>
       </property>
       <property name="text">
