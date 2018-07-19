@@ -32,6 +32,7 @@
 #include "CurrencyAdapter.h"
 #include "ExitWidget.h"
 #include "ImportKeyDialog.h"
+#include "importsecretkeys.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -522,6 +523,82 @@ void MainWindow::payTo(const QModelIndex& _index) {
   m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   m_ui->m_sendAction->trigger();
 }
+
+
+
+
+
+void MainWindow::importsecretkeys() {
+  importSecretKeys dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    QString spendKey = dlg.getSpendKeyString().trimmed();
+    QString viewKey = dlg.getViewKeyString().trimmed();    
+    QString filePath = dlg.getFilePath();
+    if (spendKey.isEmpty() || filePath.isEmpty()) {
+      return;
+    }
+
+    if (!filePath.endsWith(".wallet")) {
+      filePath.append(".wallet");
+    }
+
+    std::string private_spend_key_string = spendKey.toStdString();
+    std::string private_view_key_string = viewKey.toStdString();
+
+    Crypto::SecretKey private_spend_key;
+    Crypto::SecretKey private_view_key;
+
+    Crypto::Hash private_spend_key_hash;
+    Crypto::Hash private_view_key_hash;
+
+    size_t size;
+    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      return;
+    }
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      return;
+    }
+
+    private_spend_key = *(struct Crypto::SecretKey *) &private_spend_key_hash;
+    private_view_key = *(struct Crypto::SecretKey *) &private_view_key_hash;
+    
+    Crypto::PublicKey spendPublicKey;
+    Crypto::PublicKey viewPublicKey;
+    Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
+    Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
+      
+    CryptoNote::AccountPublicAddress publicKeys;
+    publicKeys.spendPublicKey = spendPublicKey;
+    publicKeys.viewPublicKey = viewPublicKey;
+    
+    CryptoNote::AccountKeys keys;
+    keys.address = publicKeys;
+    keys.spendSecretKey = private_spend_key;
+    keys.viewSecretKey = private_view_key;
+    
+    if (WalletAdapter::instance().isOpen()) {
+      WalletAdapter::instance().close();
+    }
+
+    WalletAdapter::instance().setWalletFile(filePath);
+    WalletAdapter::instance().createWithKeys(keys); 
+  
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #ifdef Q_OS_WIN
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason) {

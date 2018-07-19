@@ -181,6 +181,7 @@
     <addaction name="m_createWalletAction"/>
     <addaction name="m_openWalletAction"/>
     <addaction name="m_importKeyAction"/>
+    <addaction name="m_importSecretKeysAction"/>
     <addaction name="m_backupWalletAction"/>
     <addaction name="m_resetAction"/>
     <addaction name="m_exitAction"/>
@@ -502,7 +503,7 @@
   </action>
   <action name="m_importKeyAction">
    <property name="text">
-    <string>Import private key</string>
+    <string>Import GUI key</string>
    </property>
   </action>
   <action name="m_miningAction">
@@ -547,6 +548,11 @@
    </property>
    <property name="toolTip">
     <string>Reset wallet</string>
+   </property>
+  </action>
+  <action name="m_importSecretKeysAction">
+   <property name="text">
+    <string>Import spend/view key</string>
    </property>
   </action>
  </widget>
@@ -621,8 +627,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>112</x>
-     <y>333</y>
+     <x>88</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>
@@ -637,8 +643,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>337</x>
-     <y>333</y>
+     <x>177</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>
@@ -653,8 +659,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>562</x>
-     <y>333</y>
+     <x>266</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>
@@ -669,8 +675,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>787</x>
-     <y>333</y>
+     <x>355</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>
@@ -685,8 +691,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>809</x>
-     <y>320</y>
+     <x>443</x>
+     <y>392</y>
     </hint>
    </hints>
   </connection>
@@ -861,8 +867,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>843</x>
-     <y>322</y>
+     <x>532</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -877,8 +883,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>854</x>
-     <y>322</y>
+     <x>621</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -909,8 +915,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>862</x>
-     <y>322</y>
+     <x>710</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -925,8 +931,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>868</x>
-     <y>322</y>
+     <x>799</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -946,6 +952,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_importSecretKeysAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>importsecretkeys()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -958,6 +980,7 @@
   <slot>setMinimizeToTray(bool)</slot>
   <slot>setCloseToTray(bool)</slot>
   <slot>importKey()</slot>
+  <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>
  </slots>
 </ui>

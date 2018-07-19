@@ -559,7 +559,9 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/crypto/keccak.c \
            cryptonote/src/crypto/random.c \
            cryptonote/src/Common/Base58.cpp \
-           cryptonote/src/P2p/PeerListManager.cpp
+           cryptonote/src/P2p/PeerListManager.cpp \
+    src/gui/ui/importsecretkeys.h \
+    src/gui/importsecretkeys.h
 FORMS += src/gui/ui/aboutdialog.ui \
          src/gui/ui/addressbookdialog.ui \
          src/gui/ui/addressbookframe.ui \
@@ -584,7 +586,8 @@ FORMS += src/gui/ui/aboutdialog.ui \
          src/gui/ui/transactiondetailsdialog.ui \
          src/gui/ui/transactionframe.ui \
          src/gui/ui/transactionsframe.ui \
-         src/gui/ui/transferframe.ui
+         src/gui/ui/transferframe.ui \
+    src/gui/ui/importsecretkeys.ui
 SOURCES += libqrencode/bitstream.c \
            libqrencode/mask.c \
            libqrencode/mmask.c \
@@ -1052,7 +1055,9 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Platform/Windows/System/TcpListener.cpp \
            cryptonote/src/Platform/Windows/System/Timer.cpp \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.cc \
-           cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc
+           cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
+    src/gui/ui/importsecretkeys.cpp \
+    src/gui/importsecretkeys.cpp
 RESOURCES += src/resources.qrc
 
 DISTFILES +=

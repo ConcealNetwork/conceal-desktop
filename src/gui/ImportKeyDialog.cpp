@@ -9,7 +9,6 @@
 #include <QFileDialog>
 
 #include "ImportKeyDialog.h"
-
 #include "ui_importkeydialog.h"
 
 namespace WalletGui {
