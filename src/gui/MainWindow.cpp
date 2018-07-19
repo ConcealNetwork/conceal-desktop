@@ -12,6 +12,10 @@
 #include <QSystemTrayIcon>
 #include <QTimer>
 
+#include <boost/lexical_cast.hpp>
+#include <boost/program_options.hpp>
+#include <boost/algorithm/string.hpp>
+
 #include <Common/Base58.h>
 #include <Common/Util.h>
 
@@ -21,9 +25,10 @@
 #include "Common/PathTools.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/CryptoNoteTools.h"
+#include "CryptoNoteCore/Account.cpp"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
-
+#include "Mnemonics/electrum-words.cpp"
 
 #include "AboutDialog.h"
 #include "AddressBookModel.h"
@@ -33,6 +38,7 @@
 #include "ExitWidget.h"
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
+#include "importseed.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -581,14 +587,64 @@ void MainWindow::importsecretkeys() {
     }
 
     WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys); 
-  
+    WalletAdapter::instance().createWithKeys(keys);   
   }
 
 
 }
 
 
+void MainWindow::importSeed() {
+  ImportSeed dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    QString seed = dlg.getKeyString().trimmed();
+    QString filePath = dlg.getFilePath();
+    if (seed.isEmpty() || filePath.isEmpty()) {
+      return;
+    }  
+
+  static std::string languages[] = {"English"};
+  static const int num_of_languages = 1;
+  static const int mnemonic_phrase_length = 25;
+
+  std::string mnemonic_phrase = seed.toStdString();
+
+  std::vector<std::string> words;
+
+  words = boost::split(words, mnemonic_phrase, ::isspace);
+
+  Crypto::SecretKey private_spend_key;
+  Crypto::SecretKey private_view_key;  
+
+  crypto::ElectrumWords::words_to_bytes(mnemonic_phrase, private_spend_key, languages[0]);
+  
+  Crypto::PublicKey unused_dummy_variable;
+
+  CryptoNote::AccountBase::generateViewFromSpend(private_spend_key, private_view_key, unused_dummy_variable);
+
+  Crypto::PublicKey spendPublicKey;
+  Crypto::PublicKey viewPublicKey;
+  Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
+  Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
+    
+  CryptoNote::AccountPublicAddress publicKeys;
+  publicKeys.spendPublicKey = spendPublicKey;
+  publicKeys.viewPublicKey = viewPublicKey;
+  
+  CryptoNote::AccountKeys keys;
+  keys.address = publicKeys;
+  keys.spendSecretKey = private_spend_key;
+  keys.viewSecretKey = private_view_key;
+  
+  if (WalletAdapter::instance().isOpen()) {
+    WalletAdapter::instance().close();
+  }
+
+  WalletAdapter::instance().setWalletFile(filePath);
+  WalletAdapter::instance().createWithKeys(keys);   
+
+  }
+}
 
 
 

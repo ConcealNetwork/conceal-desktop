@@ -7,7 +7,6 @@
 
 #include <QApplication>
 #include <QFileDialog>
-
 #include "importsecretkeys.h"
 #include "ui_importsecretkeys.h"
 

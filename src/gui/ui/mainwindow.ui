@@ -182,6 +182,7 @@
     <addaction name="m_openWalletAction"/>
     <addaction name="m_importKeyAction"/>
     <addaction name="m_importSecretKeysAction"/>
+    <addaction name="m_seedAction"/>
     <addaction name="m_backupWalletAction"/>
     <addaction name="m_resetAction"/>
     <addaction name="m_exitAction"/>
@@ -553,6 +554,11 @@
   <action name="m_importSecretKeysAction">
    <property name="text">
     <string>Import spend/view key</string>
+   </property>
+  </action>
+  <action name="m_seedAction">
+   <property name="text">
+    <string>Import mnemonic seed</string>
    </property>
   </action>
  </widget>
@@ -968,6 +974,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_seedAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>importSeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -980,6 +1002,7 @@
   <slot>setMinimizeToTray(bool)</slot>
   <slot>setCloseToTray(bool)</slot>
   <slot>importKey()</slot>
+  <slot>importSeed()</slot>
   <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>
  </slots>
