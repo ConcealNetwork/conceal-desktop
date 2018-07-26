@@ -316,7 +316,7 @@ background-color: orange;
        <string>background: transparent;</string>
       </property>
       <property name="text">
-       <string>Unlocked:</string>
+       <string>Locked:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_5">
@@ -340,7 +340,7 @@ background-color: orange;
        <string>background: transparent;</string>
       </property>
       <property name="text">
-       <string>Locked:</string>
+       <string>Unlocked:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
