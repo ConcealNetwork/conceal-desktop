@@ -1,4 +1,3 @@
-// Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
 //  
 // Copyright (c) 2018 The Circle Foundation
@@ -11,7 +10,8 @@
 #include "ImportKeyDialog.h"
 #include "ui_importkeydialog.h"
 
-namespace WalletGui {
+namespace WalletGui 
+{
 
 ImportKeyDialog::ImportKeyDialog(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ImportKeyDialog) {
   m_ui->setupUi(this);

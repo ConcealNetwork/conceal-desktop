@@ -13,6 +13,10 @@
 #include "TransferFrame.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
+#include <Common/Base58.h>
+#include <Common/Util.h>
+#include <Common/Base58.h>
+#include "Common/StringTools.h"
 
 #include "ui_sendframe.h"
 
@@ -84,49 +88,89 @@ void SendFrame::clearAllClicked() {
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
 }
 
+//-----------------------------------------------------------------------------------------
+
 void SendFrame::sendClicked() {
+  // this is what is triggered when you send funds
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
+  CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
-  Q_FOREACH (TransferFrame * transfer, m_transfers) {
+
+  // the one-time transaction secret key
+  Crypto::SecretKey transactionSK;
+
+  // run through each of the transactions in the frame
+  // the send tab allows multiple transaction at once
+  Q_FOREACH (TransferFrame * transfer, m_transfers) 
+  {
     QString address = transfer->getAddress();
-    if (!CurrencyAdapter::instance().validateAddress(address)) {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
+
+    // check address validity, or abort
+    if (!CurrencyAdapter::instance().validateAddress(address)) 
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), 
+                        new ShowMessageEvent(tr("Invalid recipient address"), 
+                        QtCriticalMsg));
       return;
     }
 
-    CryptoNote::WalletLegacyTransfer walletTransfer;
+    // get the transaction details
     walletTransfer.address = address.toStdString();
     uint64_t amount = CurrencyAdapter::instance().parseAmount(transfer->getAmountString());
     walletTransfer.amount = amount;
     walletTransfers.push_back(walletTransfer);
     QString label = transfer->getLabel();
+
+    // add to the address book if a label is given
     if (!label.isEmpty()) {
       AddressBookModel::instance().addAddress(label, address);
     }
 
+    // add the comment to the transaction
     QString comment = transfer->getComment();
     if (!comment.isEmpty()) {
-      walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
+      walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), 
+                            address.toStdString()});
     }
   }
 
-  quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
-  if (fee < CurrencyAdapter::instance().getMinimumFee()) {
-    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Incorrect fee value"), QtCriticalMsg));
-    return;
-  }
-
-  if (WalletAdapter::instance().isOpen()) {
-    QByteArray paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-    if (!isValidPaymentId(paymentIdString)) {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
+    // incorrect fee, abort
+    quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
+    if (fee < CurrencyAdapter::instance().getMinimumFee()) 
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), 
+                                  new ShowMessageEvent(tr("Incorrect fee value"), 
+                                  QtCriticalMsg));
       return;
     }
 
-    WalletAdapter::instance().sendTransaction(walletTransfers, fee, m_ui->m_paymentIdEdit->text(), m_ui->m_mixinSlider->value(),
-      walletMessages);
+  // if the wallet is open we proceed
+  if (WalletAdapter::instance().isOpen()) 
+  {
+    QByteArray paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+
+    // check payment id validity, or about
+    if (!isValidPaymentId(paymentIdString)) 
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), 
+                                  new ShowMessageEvent(tr("Invalid payment ID"), 
+                                  QtCriticalMsg));
+      return;
+    }
+
+    // send the transaction
+    WalletAdapter::instance().sendTransaction(transactionSK, 
+                                              walletTransfers, 
+                                              fee, 
+                                              m_ui->m_paymentIdEdit->text(), 
+                                              m_ui->m_mixinSlider->value(),
+                                              walletMessages);
+
+    std::string str = Common::podToHex(transactionSK);
   }
 }
+
+//----------------------------------------------------------------------------------------------
 
 void SendFrame::mixinValueChanged(int _value) {
   m_ui->m_mixinEdit->setText(QString::number(_value));

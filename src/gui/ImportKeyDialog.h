@@ -1,4 +1,3 @@
-// Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
 //  
 // Copyright (c) 2018 The Circle Foundation
@@ -9,26 +8,26 @@
 
 #include <QDialog>
 
-namespace Ui {
-class ImportKeyDialog;
+namespace Ui 
+{
+  class ImportKeyDialog;
 }
 
-namespace WalletGui {
+namespace WalletGui 
+{
 
-class ImportKeyDialog : public QDialog {
-  Q_OBJECT
+  class ImportKeyDialog : public QDialog 
+  {
+    Q_OBJECT
 
-public:
-  ImportKeyDialog(QWidget* _parent);
-  ~ImportKeyDialog();
+    public:
+      ImportKeyDialog(QWidget* _parent);
+      ~ImportKeyDialog();
+      QString getKeyString() const;
+      QString getFilePath() const;
 
-  QString getKeyString() const;
-  QString getFilePath() const;
-
-private:
-  QScopedPointer<Ui::ImportKeyDialog> m_ui;
-
-  Q_SLOT void selectPathClicked();
-};
-
+    private:
+      QScopedPointer<Ui::ImportKeyDialog> m_ui;
+      Q_SLOT void selectPathClicked();
+  };
 }
