@@ -12,8 +12,6 @@
 
 #include <Common/Base58.h>
 #include <Common/Util.h>
-#include <Common/Base58.h>
-#include "Common/StringTools.h"
 #include <Wallet/WalletErrors.h>
 #include <Wallet/LegacyKeysImporter.h>
 
@@ -306,34 +304,25 @@ bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) {
   return false;
 }
 
-void WalletAdapter::sendTransaction(Crypto::SecretKey& _transactionsk,
-                                   const QVector<CryptoNote::WalletLegacyTransfer>& _transfers,
-                                   quint64 _fee, 
-                                   const QString& _paymentId, 
-                                   quint64 _mixin,
-                                   const QVector<CryptoNote::TransactionMessage>& _messages) {
+void WalletAdapter::sendTransaction(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _paymentId, quint64 _mixin,
+    const QVector<CryptoNote::TransactionMessage>& _messages) {
   Q_CHECK_PTR(m_wallet);
   try {
     lock();
-    m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, _transfers.toStdVector(), _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
+    m_sentTransactionId = m_wallet->sendTransaction(_transfers.toStdVector(), _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
-    Q_EMIT walletStateChangedSignal(tr("Sending"));
+    Q_EMIT walletStateChangedSignal(tr("Sending transaction"));
   } catch (std::system_error&) {
     unlock();
   }
 }
 
-void WalletAdapter::sendMessage(
-                                const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
-                                quint64 _fee, 
-                                quint64 _mixin,
-                                const QVector<CryptoNote::TransactionMessage>& _messages, 
-                                quint64 _ttl) {
+void WalletAdapter::sendMessage(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
+  const QVector<CryptoNote::TransactionMessage>& _messages, quint64 _ttl) {
   Q_CHECK_PTR(m_wallet);
-  Crypto::SecretKey _transactionsk;
   try {
     lock();
-    m_sentMessageId = m_wallet->sendTransaction(_transactionsk, _transfers.toStdVector(), _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
+    m_sentMessageId = m_wallet->sendTransaction(_transfers.toStdVector(), _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
     Q_EMIT walletStateChangedSignal(tr("Sending messages"));
   } catch (std::system_error&) {
     unlock();

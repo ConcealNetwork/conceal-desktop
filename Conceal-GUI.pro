@@ -562,8 +562,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/P2p/PeerListManager.cpp \
             src/gui/ui/importsecretkeys.h \
             src/gui/importsecretkeys.h \
-            src/gui/importseed.h \
-            src/gui/transactionconfirmation.h
+            src/gui/importseed.h
 FORMS += src/gui/ui/aboutdialog.ui \
          src/gui/ui/addressbookdialog.ui \
          src/gui/ui/addressbookframe.ui \
@@ -590,8 +589,7 @@ FORMS += src/gui/ui/aboutdialog.ui \
          src/gui/ui/transactionsframe.ui \
          src/gui/ui/transferframe.ui \
     src/gui/ui/importsecretkeys.ui \
-    src/gui/ui/importseed.ui \
-    src/gui/ui/transactionconfirmation.ui
+    src/gui/ui/importseed.ui
 SOURCES += libqrencode/bitstream.c \
            libqrencode/mask.c \
            libqrencode/mmask.c \
@@ -1062,8 +1060,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
-           src/gui/importseed.cpp \
-           src/gui/transactionconfirmation.cpp \
+           src/gui/importseed.cpp
 RESOURCES += src/resources.qrc
 
 DISTFILES +=
