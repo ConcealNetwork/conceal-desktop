@@ -10,6 +10,7 @@
 #include "MainWindow.h"
 #include "NodeAdapter.h"
 #include "SendFrame.h"
+#include "transactionconfirmation.h"
 #include "TransferFrame.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
@@ -167,6 +168,14 @@ void SendFrame::sendClicked() {
                                               walletMessages);
 
     std::string str = Common::podToHex(transactionSK);
+    QString qstr = QString::fromStdString(str);
+
+    transactionconfirmation dlg(this);
+    dlg.setKey(qstr);
+    if (dlg.exec() == QDialog::Accepted) {
+      return;
+    }
+
   }
 }
 
