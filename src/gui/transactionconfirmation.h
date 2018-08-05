@@ -21,7 +21,7 @@ namespace WalletGui {
         public:
             transactionconfirmation(QWidget* _parent);
             ~transactionconfirmation();
-            QString setKey(QString key);
+            void setKey(QString key);
 
         private:
             QScopedPointer<Ui::transactionconfirmation> m_ui;   

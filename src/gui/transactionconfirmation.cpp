@@ -19,9 +19,8 @@ namespace WalletGui
     {
     }
 
-    QString transactionconfirmation::setKey(QString key) {
+    void transactionconfirmation::setKey(QString key) {
         m_ui->m_trxsk->setText(key);
-        return 1;
     }
 
 }
