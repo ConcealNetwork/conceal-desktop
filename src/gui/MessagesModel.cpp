@@ -16,18 +16,21 @@
 #include "MessagesModel.h"
 #include "WalletAdapter.h"
 
-namespace WalletGui {
+namespace WalletGui 
+{
 
-enum class MessageType : quint8 {INPUT, OUTPUT};
+  enum class MessageType : quint8 {INPUT, OUTPUT};
 
-const int MESSAGES_MODEL_COLUMN_COUNT =
+  const int MESSAGES_MODEL_COLUMN_COUNT =
   MessagesModel::staticMetaObject.enumerator(MessagesModel::staticMetaObject.indexOfEnumerator("Columns")).keyCount();
 
-const QString MessagesModel::HEADER_REPLY_TO_KEY = "Reply-To";
+  const QString MessagesModel::HEADER_REPLY_TO_KEY = "Reply-To";
 
-MessagesModel& MessagesModel::instance() {
-  static MessagesModel inst;
-  return inst;
+  MessagesModel& MessagesModel::instance() 
+  {
+  
+    static MessagesModel inst;
+    return inst;
 }
 
 MessagesModel::MessagesModel() : QAbstractItemModel() {
@@ -60,8 +63,12 @@ int MessagesModel::rowCount(const QModelIndex& _parent) const {
   return m_messages.size();
 }
 
-QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, int _role) const {
-  if(_orientation != Qt::Horizontal) {
+QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, int _role) const 
+{
+
+  if(_orientation != Qt::Horizontal) 
+  {
+  
     return QVariant();
   }
 
@@ -93,8 +100,12 @@ QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, i
   return QVariant();
 }
 
-QVariant MessagesModel::data(const QModelIndex& _index, int _role) const {
-  if(!_index.isValid()) {
+QVariant MessagesModel::data(const QModelIndex& _index, int _role) const 
+{
+
+  if(!_index.isValid()) 
+  {
+    
     return QVariant();
   }
 
@@ -102,11 +113,15 @@ QVariant MessagesModel::data(const QModelIndex& _index, int _role) const {
   CryptoNote::TransactionId transactionId = m_messages.value(_index.row()).first;
   Message message = m_messages.value(_index.row()).second;
 
-  if(!WalletAdapter::instance().getTransaction(transactionId, transaction)) {
+  if(!WalletAdapter::instance().getTransaction(transactionId, transaction)) 
+  {
+
     return QVariant();
   }
 
-  switch(_role) {
+  switch(_role) 
+  {
+
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
@@ -256,19 +271,35 @@ void MessagesModel::reloadWalletTransactions() {
   }
 }
 
-void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId, quint32& _insertedRowCount) {
+void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId, quint32& _insertedRowCount) 
+{
+
   CryptoNote::WalletLegacyTransaction transaction;
-  if (!WalletAdapter::instance().getTransaction(_transactionId, transaction)) {
+  if (!WalletAdapter::instance().getTransaction(_transactionId, transaction)) 
+  {
+
     return;
   }
 
   m_transactionRow.insert(_transactionId, qMakePair(std::numeric_limits<quint32>::max(), std::numeric_limits<quint32>::max()));
-  if (transaction.messages.empty()) {
+  if (transaction.messages.empty()) 
+  {
+
+    return;
+  }
+
+  /* ignore any transaction with the message P01 (for pool earnings), and I01 (for interest earnings) */
+  if ((transaction.messages[0] == "P01") || (transaction.messages[0] == "I01"))
+  {
+
     return;
   }
 
   m_transactionRow[_transactionId] = qMakePair(m_messages.size(), transaction.messages.size());
-  for (quint32 i = 0; i < transaction.messages.size(); ++i) {
+
+  for (quint32 i = 0; i < transaction.messages.size(); ++i) 
+  {
+    
     Message message(QString::fromStdString(transaction.messages[i]));
     m_messages.append(TransactionMessageId(_transactionId, std::move(message)));
     ++_insertedRowCount;
