@@ -35,9 +35,12 @@ public:
   quint16 getP2pExternalPort() const;
   QStringList getExclusiveNodes() const;
   QStringList getPeers() const;
+  quint16 getCurrentLocalDaemonPort() const;  
   QStringList getPriorityNodes() const;
   QStringList getSeedNodes() const;
-
+  QStringList getRpcNodesList() const;
+  QString getCurrentRemoteNode() const;  
+  QString getConnection() const;    
   QString getWalletFile() const;
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
@@ -53,6 +56,10 @@ public:
   void setEncrypted(bool _encrypted);
   void setCurrentTheme(const QString& _theme);
   void setStartOnLoginEnabled(bool _enable);
+  void setConnection(const QString& _connection);
+  void setCurrentLocalDaemonPort(const quint16& _daemonPort);
+  void setCurrentRemoteNode(const QString& _remoteNode);
+  void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
 #ifdef Q_OS_WIN
   void setMinimizeToTrayEnabled(bool _enable);
@@ -63,6 +70,9 @@ private:
   QJsonObject m_settings;
   QString m_addressBookFile;
   CommandLineParser* m_cmdLineParser;
+  QString m_connectionMode;
+  QString m_remoteNode;  
+  quint16 m_daemonPort;  
 
   Settings();
   ~Settings();
