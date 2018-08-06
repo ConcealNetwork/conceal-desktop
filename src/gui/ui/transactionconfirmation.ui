@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>647</width>
-    <height>257</height>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <x>10</x>
      <y>10</y>
      <width>621</width>
-     <height>241</height>
+     <height>271</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -82,8 +82,8 @@ p, li { white-space: pre-wrap; }
      <rect>
       <x>10</x>
       <y>170</y>
-      <width>601</width>
-      <height>30</height>
+      <width>561</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="font">
@@ -100,69 +100,88 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget_2">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>210</y>
-      <width>621</width>
-      <height>27</height>
+      <x>580</x>
+      <y>160</y>
+      <width>31</width>
+      <height>31</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_okButton">
-       <property name="minimumSize">
-        <size>
-         <width>125</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-       </property>
-       <property name="text">
-        <string>CLOSE</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../resources.qrc">
+      <normaloff>:/icons/copy</normaloff>:/icons/copy</iconset>
+    </property>
    </widget>
   </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>621</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="m_okButton">
+      <property name="minimumSize">
+       <size>
+        <width>125</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+      </property>
+      <property name="text">
+       <string>CLOSE</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_okButton</sender>
