@@ -10,24 +10,24 @@
 #include <QDialog>
 
 namespace Ui {
-class ImportSeed2;
+class NodeSettings;
 }
 
 namespace WalletGui {
 
-class ImportSeed2 : public QDialog {
+class NodeSettings : public QDialog {
   Q_OBJECT
 
 public:
-  ImportSeed2(QWidget* _parent);
-  ~ImportSeed2();
+  NodeSettings(QWidget* _parent);
+  ~NodeSettings();
 
   QString setConnectionMode() const;
   void initConnectionSettings();
 
 
 private:
-  QScopedPointer<Ui::ImportSeed2> m_ui;
+  QScopedPointer<Ui::NodeSettings> m_ui;
 
 
 };

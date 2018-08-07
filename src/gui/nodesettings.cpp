@@ -14,14 +14,14 @@
 
 namespace WalletGui {
 
-  ImportSeed2::ImportSeed2(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ImportSeed2) {
+  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::NodeSettings) {
     m_ui->setupUi(this);
   }
 
-  ImportSeed2::~ImportSeed2() {
+  NodeSettings::~NodeSettings() {
   }
 
-  void ImportSeed2::initConnectionSettings() {
+  void NodeSettings::initConnectionSettings() {
   QString connection = Settings::instance().getConnection();
       if(connection.compare("remote") == 0) {
           m_ui->radioButton->setChecked(true);
@@ -31,7 +31,7 @@ namespace WalletGui {
       }
   }
 
-  QString ImportSeed2::setConnectionMode() const {
+  QString NodeSettings::setConnectionMode() const {
       QString connectionMode;
       if(m_ui->radioButton->isChecked())
       {

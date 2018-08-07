@@ -647,10 +647,10 @@ void MainWindow::importSeed() {
   }
 }
 
-void MainWindow::importSeed2() 
+void MainWindow::nodeSettings() 
 {
 
-  ImportSeed2 dlg(this);
+  NodeSettings dlg(this);
 
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
