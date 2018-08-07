@@ -563,7 +563,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
-           src/gui/importseed2.h \
+           src/gui/nodesettings.h \
            src/gui/transactionconfirmation.h \     
 
 SOURCES += libqrencode/bitstream.c \
@@ -1037,7 +1037,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
-           src/gui/importseed2.cpp \
+           src/gui/nodesettings.cpp \
            src/gui/transactionconfirmation.cpp 
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
@@ -1068,9 +1068,10 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/importsecretkeys.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
-            src/gui/ui/importseed2.ui \
+            src/gui/ui/nodesettings.ui \
 
 
 RESOURCES += src/resources.qrc
 
 DISTFILES +=
+RC_FILE = conceal.rc

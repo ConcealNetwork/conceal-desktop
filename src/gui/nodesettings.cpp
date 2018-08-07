@@ -9,8 +9,8 @@
 #include <QFileDialog>
 
 #include "Settings.h"
-#include "importseed2.h"
-#include "ui_importseed2.h"
+#include "nodesettings.h"
+#include "ui_nodesettings.h"
 
 namespace WalletGui {
 

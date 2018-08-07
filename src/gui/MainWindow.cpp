@@ -39,7 +39,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
-#include "importseed2.h"
+#include "nodesettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
