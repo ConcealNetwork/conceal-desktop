@@ -39,6 +39,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "importseed2.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -643,6 +644,24 @@ void MainWindow::importSeed() {
   WalletAdapter::instance().setWalletFile(filePath);
   WalletAdapter::instance().createWithKeys(keys);   
 
+  }
+}
+
+void MainWindow::importSeed2() 
+{
+
+  ImportSeed2 dlg(this);
+
+  dlg.initConnectionSettings();
+  dlg.setConnectionMode();
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
+    QString connection = dlg.setConnectionMode();
+    Settings::instance().setConnection(connection);
+
+    QMessageBox::information(this, tr("Conection settings saved"), tr("Please restart the wallet for the new settings to take effect."), QMessageBox::Ok);
   }
 }
 

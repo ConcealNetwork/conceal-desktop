@@ -563,35 +563,9 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
+           src/gui/importseed2.h \
            src/gui/transactionconfirmation.h \     
-FORMS += src/gui/ui/aboutdialog.ui \
-         src/gui/ui/addressbookdialog.ui \
-         src/gui/ui/addressbookframe.ui \
-         src/gui/ui/changepassworddialog.ui \
-         src/gui/ui/depositdetailsdialog.ui \
-         src/gui/ui/depositsframe.ui \
-         src/gui/ui/exitwidget.ui \
-         src/gui/ui/importkeydialog.ui \
-         src/gui/ui/mainwindow.ui \
-         src/gui/ui/messageaddressframe.ui \
-         src/gui/ui/messagedetailsdialog.ui \
-         src/gui/ui/messagesframe.ui \
-         src/gui/ui/miningframe.ui \
-         src/gui/ui/newaddressdialog.ui \
-         src/gui/ui/newpassworddialog.ui \
-         src/gui/ui/newpooldialog.ui \
-         src/gui/ui/overviewframe.ui \
-         src/gui/ui/passworddialog.ui \
-         src/gui/ui/receiveframe.ui \
-         src/gui/ui/sendframe.ui \
-         src/gui/ui/sendmessageframe.ui \
-         src/gui/ui/transactiondetailsdialog.ui \
-         src/gui/ui/transactionframe.ui \
-         src/gui/ui/transactionsframe.ui \
-         src/gui/ui/transferframe.ui \
-    src/gui/ui/importsecretkeys.ui \
-    src/gui/ui/transactionconfirmation.ui \    
-    src/gui/ui/importseed.ui \
+
 SOURCES += libqrencode/bitstream.c \
            libqrencode/mask.c \
            libqrencode/mmask.c \
@@ -1063,8 +1037,40 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
+           src/gui/importseed2.cpp \
            src/gui/transactionconfirmation.cpp 
-           
+
+FORMS +=    src/gui/ui/aboutdialog.ui \
+            src/gui/ui/addressbookdialog.ui \
+            src/gui/ui/addressbookframe.ui \
+            src/gui/ui/changepassworddialog.ui \
+            src/gui/ui/depositdetailsdialog.ui \
+            src/gui/ui/depositsframe.ui \
+            src/gui/ui/exitwidget.ui \
+            src/gui/ui/importkeydialog.ui \
+            src/gui/ui/mainwindow.ui \
+            src/gui/ui/messageaddressframe.ui \
+            src/gui/ui/messagedetailsdialog.ui \
+            src/gui/ui/messagesframe.ui \
+            src/gui/ui/miningframe.ui \
+            src/gui/ui/newaddressdialog.ui \
+            src/gui/ui/newpassworddialog.ui \
+            src/gui/ui/newpooldialog.ui \
+            src/gui/ui/overviewframe.ui \
+            src/gui/ui/passworddialog.ui \
+            src/gui/ui/receiveframe.ui \
+            src/gui/ui/sendframe.ui \
+            src/gui/ui/sendmessageframe.ui \
+            src/gui/ui/transactiondetailsdialog.ui \
+            src/gui/ui/transactionframe.ui \
+            src/gui/ui/transactionsframe.ui \
+            src/gui/ui/transferframe.ui \
+            src/gui/ui/importsecretkeys.ui \
+            src/gui/ui/transactionconfirmation.ui \    
+            src/gui/ui/importseed.ui \
+            src/gui/ui/importseed2.ui \
+
+
 RESOURCES += src/resources.qrc
 
 DISTFILES +=
