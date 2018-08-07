@@ -531,21 +531,29 @@ void MainWindow::payTo(const QModelIndex& _index) {
   m_ui->m_sendAction->trigger();
 }
 
+/* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 
+void MainWindow::importsecretkeys() 
+{
 
-
-
-void MainWindow::importsecretkeys() {
   importSecretKeys dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString spendKey = dlg.getSpendKeyString().trimmed();
     QString viewKey = dlg.getViewKeyString().trimmed();    
     QString filePath = dlg.getFilePath();
-    if (spendKey.isEmpty() || filePath.isEmpty()) {
+
+    if (spendKey.isEmpty() || filePath.isEmpty()) 
+    {
+
       return;
     }
 
-    if (!filePath.endsWith(".wallet")) {
+    if (!filePath.endsWith(".wallet")) 
+    {
+
       filePath.append(".wallet");
     }
 
@@ -583,24 +591,32 @@ void MainWindow::importsecretkeys() {
     keys.spendSecretKey = private_spend_key;
     keys.viewSecretKey = private_view_key;
     
-    if (WalletAdapter::instance().isOpen()) {
+    if (WalletAdapter::instance().isOpen()) 
+    {
+
       WalletAdapter::instance().close();
     }
 
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);   
   }
-
-
 }
 
+/* --------------------------- IMPORT MNEMONIC SEED --------------------------------------- */
 
-void MainWindow::importSeed() {
+void MainWindow::importSeed() 
+{
+
   ImportSeed dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString seed = dlg.getKeyString().trimmed();
     QString filePath = dlg.getFilePath();
-    if (seed.isEmpty() || filePath.isEmpty()) {
+    if (seed.isEmpty() || filePath.isEmpty()) 
+    {
+
       return;
     }  
 
@@ -617,11 +633,15 @@ void MainWindow::importSeed() {
   Crypto::SecretKey private_spend_key;
   Crypto::SecretKey private_view_key;  
 
-  crypto::ElectrumWords::words_to_bytes(mnemonic_phrase, private_spend_key, languages[0]);
+  crypto::ElectrumWords::words_to_bytes(mnemonic_phrase, 
+                                        private_spend_key, 
+                                        languages[0]);
   
   Crypto::PublicKey unused_dummy_variable;
 
-  CryptoNote::AccountBase::generateViewFromSpend(private_spend_key, private_view_key, unused_dummy_variable);
+  CryptoNote::AccountBase::generateViewFromSpend(private_spend_key, 
+                                                 private_view_key,
+                                                 unused_dummy_variable);
 
   Crypto::PublicKey spendPublicKey;
   Crypto::PublicKey viewPublicKey;
@@ -637,15 +657,18 @@ void MainWindow::importSeed() {
   keys.spendSecretKey = private_spend_key;
   keys.viewSecretKey = private_view_key;
   
-  if (WalletAdapter::instance().isOpen()) {
+  if (WalletAdapter::instance().isOpen()) 
+  {
+
     WalletAdapter::instance().close();
   }
 
   WalletAdapter::instance().setWalletFile(filePath);
   WalletAdapter::instance().createWithKeys(keys);   
-
   }
 }
+
+/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
 void MainWindow::nodeSettings() 
 {
@@ -661,18 +684,12 @@ void MainWindow::nodeSettings()
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
 
-    QMessageBox::information(this, tr("Conection settings saved"), tr("Please restart the wallet for the new settings to take effect."), QMessageBox::Ok);
+    QMessageBox::information(this, 
+                             tr("Conection settings saved"), 
+                             tr("Please restart the wallet for the new settings to take effect."), 
+                             QMessageBox::Ok);
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 #ifdef Q_OS_WIN
