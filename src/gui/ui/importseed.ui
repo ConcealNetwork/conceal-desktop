@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>647</width>
-    <height>131</height>
+    <height>180</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,46 +20,12 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>50</y>
      <width>621</width>
-     <height>58</height>
+     <height>81</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="label">
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Seed</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1" colspan="2">
-     <widget class="QLineEdit" name="m_seed">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #777;
-boder: 0px;
-color: #e5e5e5;</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
       <property name="font">
@@ -73,8 +39,8 @@ color: #e5e5e5;</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="m_pathEdit">
+    <item row="0" column="1" colspan="2">
+     <widget class="QLineEdit" name="m_seed">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -101,13 +67,47 @@ color: #e5e5e5;</string>
       </property>
      </widget>
     </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="m_pathEdit">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #777;
+boder: 0px;
+color: #e5e5e5;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Seed</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>13</x>
-     <y>90</y>
+     <x>10</x>
+     <y>140</y>
      <width>621</width>
      <height>27</height>
     </rect>
@@ -127,28 +127,6 @@ color: #e5e5e5;</string>
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="m_cancelButton">
-      <property name="minimumSize">
-       <size>
-        <width>125</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-      </property>
-      <property name="text">
-       <string>CANCEL</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="m_okButton">
       <property name="minimumSize">
        <size>
@@ -166,11 +144,68 @@ color: #e5e5e5;</string>
        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
       </property>
       <property name="text">
-       <string>OK</string>
+       <string>IMPORT</string>
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QPushButton" name="m_cancelButton">
+      <property name="minimumSize">
+       <size>
+        <width>125</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+      </property>
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>300</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Oswald</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string>IMPORT WITH MNEMONIC SEED</string>
+   </property>
   </widget>
  </widget>
  <resources/>
