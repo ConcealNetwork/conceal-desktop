@@ -170,8 +170,9 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/MessageAddressFrame.h \
            src/gui/MessageDetailsDialog.h \
            src/gui/MessagesFrame.h \
-           src/gui/MessagesModel.h \
+           src/gui/MessagesModel.h \           
            src/gui/MiningFrame.h \
+           src/gui/WelcomeFrame.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
            src/gui/NewPoolDialog.h \
@@ -626,6 +627,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/MessagesFrame.cpp \
            src/gui/MessagesModel.cpp \
            src/gui/MiningFrame.cpp \
+           src/gui/WelcomeFrame.cpp \           
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
            src/gui/NewPoolDialog.cpp \
@@ -1053,6 +1055,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
             src/gui/ui/miningframe.ui \
+            src/gui/ui/welcomeframe.ui \            
             src/gui/ui/newaddressdialog.ui \
             src/gui/ui/newpassworddialog.ui \
             src/gui/ui/newpooldialog.ui \

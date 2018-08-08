@@ -62,6 +62,32 @@
      <number>0</number>
     </property>
     <item>
+     <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame" native="true">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>    
+        <item>
+     <widget class="WalletGui::MiningFrame" name="m_miningFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -130,20 +156,7 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::MiningFrame" name="m_miningFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
+    </item>    
     <item>
      <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
       <property name="frameShape">
@@ -571,6 +584,12 @@
   </action>
  </widget>
  <customwidgets>
+   <customwidget>
+   <class>WalletGui::MiningFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/MiningFrame.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>WalletGui::OverviewFrame</class>
    <extends>QFrame</extends>
@@ -613,12 +632,12 @@
    <header>gui/SendMessageFrame.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>WalletGui::MiningFrame</class>
+<customwidget>
+   <class>WalletGui::WelcomeFrame</class>
    <extends>QFrame</extends>
-   <header>gui/MiningFrame.h</header>
+   <header>gui/WelcomeFrame.h</header>
    <container>1</container>
-  </customwidget>
+  </customwidget>  
   <customwidget>
    <class>WalletGui::DepositsFrame</class>
    <extends>QFrame</extends>
