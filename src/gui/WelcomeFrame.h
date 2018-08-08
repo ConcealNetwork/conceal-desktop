@@ -26,6 +26,7 @@ public:
 
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
+  Q_SLOT void importSeed();  
 
 private:
   QScopedPointer<Ui::WelcomeFrame> m_ui;
@@ -33,6 +34,7 @@ private:
 Q_SIGNALS:
   void createWalletClickedSignal();
   void openWalletClickedSignal(); 
+  void importSeedClickedSignal();   
 };
 
 }

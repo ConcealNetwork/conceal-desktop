@@ -26,4 +26,8 @@ namespace WalletGui {
     Q_EMIT openWalletClickedSignal();
     }
 
+    void WelcomeFrame::importSeed() {
+    Q_EMIT importSeedClickedSignal();
+    }
+
 }

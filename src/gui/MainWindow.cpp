@@ -101,6 +101,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);  
 }
 
 void MainWindow::initUi() {
@@ -338,7 +339,7 @@ void MainWindow::importKey()
       {
 
       std::memcpy(&keys, data.data(), sizeof(keys));
-      
+
       if (WalletAdapter::instance().isOpen()) 
       {
 
@@ -481,15 +482,24 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   }
 }
 
-void MainWindow::askForWalletPassword(bool _error) {
-    
+/* ----------------------------- PASSWORD PROMPT ------------------------------------ */
+
+void MainWindow::askForWalletPassword(bool _error) 
+{
+  /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide(); 
+
   PasswordDialog dlg(_error, this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
   }
 }
+
+/* ----------------------------------------------------------------- */
 
 void MainWindow::encryptedFlagChanged(bool _encrypted) {
   m_ui->m_encryptWalletAction->setEnabled(!_encrypted);
@@ -543,11 +553,20 @@ void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   }
 }
 
-void MainWindow::walletClosed() {
+/* ----------------------------- WALLET CLOSED ------------------------------------ */
+/* this is what happens when the wallet goes into a closed state which includes the 
+   period between closing the current wallet and opening/creating a new one */
+
+void MainWindow::walletClosed() 
+{
+
+  /* actions */
   m_ui->m_backupWalletAction->setEnabled(false);
   m_ui->m_encryptWalletAction->setEnabled(false);
   m_ui->m_changePasswordAction->setEnabled(false);
   m_ui->m_resetAction->setEnabled(false);
+
+  /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
   m_ui->m_transactionsFrame->hide();
@@ -557,13 +576,20 @@ void MainWindow::walletClosed() {
   m_ui->m_miningFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
+
+  /* labels */
   m_encryptionStateIconLabel->hide();
   m_synchronizationStateIconLabel->hide();
   QList<QAction*> tabActions = m_tabActionGroup->actions();
-  Q_FOREACH(auto action, tabActions) {
+
+  Q_FOREACH(auto action, tabActions) 
+  {
+
     action->setEnabled(false);
   }
 }
+
+/* ------------------------------------------------------------------------------------- */
 
 void MainWindow::replyTo(const QModelIndex& _index) {
   m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
@@ -611,9 +637,16 @@ void MainWindow::importsecretkeys()
     Crypto::Hash private_view_key_hash;
 
     size_t size;
-    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+    if (!Common::fromHex(private_spend_key_string, 
+                         &private_spend_key_hash, 
+                         sizeof(private_spend_key_hash), 
+                         size) 
+                         || size != sizeof(private_spend_key_hash)) 
+    {
+
       return;
     }
+
     if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
       return;
     }
