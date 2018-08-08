@@ -1002,7 +1002,7 @@
    <sender>m_ConnectionAction</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
-   <slot>importSeed2()</slot>
+   <slot>nodeSettings()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1027,7 +1027,7 @@
   <slot>setCloseToTray(bool)</slot>
   <slot>importKey()</slot>
   <slot>importSeed()</slot>
-  <slot>importSeed2()</slot>
+  <slot>nodeSettings()</slot>
   <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>
  </slots>

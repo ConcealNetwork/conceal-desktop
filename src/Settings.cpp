@@ -12,9 +12,7 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QTextCodec>
-
 #include <Common/Util.h>
-
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "Settings.h"
@@ -45,47 +43,80 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
   m_cmdLineParser = _cmdLineParser;
 }
 
-void Settings::load() {
+void Settings::load() 
+{
+
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
-  if (cfgFile.open(QIODevice::ReadOnly)) {
+
+  if (cfgFile.open(QIODevice::ReadOnly)) 
+  {
+
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
-    if (!m_settings.contains(OPTION_WALLET_FILE)) {
+
+    if (!m_settings.contains(OPTION_WALLET_FILE)) 
+    {
+
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+
     } else {
+
       m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
-    if (!m_settings.contains(OPTION_CONNECTION)) {
-         m_connectionMode = "remote";
-    }
-
-    if (!m_settings.contains(OPTION_REMOTE_NODE)) {
-         m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
-    }
-
-    if (m_settings.contains(OPTION_CONNECTION)) {
-          m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
-    }
-
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
-          m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
+      m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
     }
 
+  } else 
+  {
 
-  } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+  }
+
+  if (!m_settings.contains(OPTION_CONNECTION)) 
+  {
+
+    m_settings.insert(OPTION_CONNECTION, "remote");
+  }
+
+  if (!m_settings.contains(OPTION_REMOTE_NODE)) 
+  {
+
+    m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
+  }
+
+  if (m_settings.contains(OPTION_CONNECTION)) 
+  {
+
+    m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
+  }
+
+  if (m_settings.contains(OPTION_REMOTE_NODE)) 
+  {
+
+    m_connectionMode = m_settings.value(OPTION_REMOTE_NODE).toString();
   }
 
   QStringList defaultPoolList;
   defaultPoolList << "ccxpool.dreamitsystems.com:23333" << "ccx.go-mine.it:3333" << "conceal.herominers.com:10361";
-  if (!m_settings.contains(OPTION_MINING_POOLS)) {
+
+  if (!m_settings.contains(OPTION_MINING_POOLS)) 
+  {
+
     setMiningPoolList(QStringList() << defaultPoolList);
-  } else {
+  } else 
+  {
+
     QStringList poolList = getMiningPoolList();
-    Q_FOREACH (const QString& pool, defaultPoolList) {
-      if (!poolList.contains(pool)) {
+
+    Q_FOREACH (const QString& pool, defaultPoolList) 
+    {
+
+      if (!poolList.contains(pool)) 
+      {
+
         poolList << pool;
       }
     }
@@ -95,6 +126,7 @@ void Settings::load() {
 
   QStringList defaultNodesList;
   defaultNodesList << "node.conceal.network:16000";
+  
   if (!m_settings.contains(OPTION_RPCNODES)) 
   {
 
@@ -102,7 +134,9 @@ void Settings::load() {
   } else {
 
     QStringList nodesList = getRpcNodesList();
-    Q_FOREACH (const QString& node, defaultNodesList) {
+    Q_FOREACH (const QString& node, defaultNodesList) 
+    {
+
       if (!nodesList.contains(node)) 
       {
 
@@ -111,10 +145,6 @@ void Settings::load() {
     }
     setRpcNodesList(nodesList);
   }
-
-
-
-
 }
 
 

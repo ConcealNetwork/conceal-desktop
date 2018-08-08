@@ -189,7 +189,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>m_okButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSeed2</receiver>
+   <receiver>NodeSettings</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -205,7 +205,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>m_cancelButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSeed2</receiver>
+   <receiver>NodeSettings</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
