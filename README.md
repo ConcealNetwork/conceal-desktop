@@ -1,6 +1,6 @@
 ![image](https://github.com/TheCircleFoundation/conceal-assets/blob/master/splash.png)
 
-# Conceal GUI
+# Conceal Wallet (GUI)
 Latest Release: v.4.2.1
 Maintained by The Circle Team.
 
