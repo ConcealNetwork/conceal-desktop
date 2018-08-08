@@ -1,7 +1,7 @@
 ![image](https://github.com/TheCircleFoundation/conceal-assets/blob/master/splash.png)
 
 # Conceal GUI
-Latest Release: v.4.1.1
+Latest Release: v.4.2.1
 Maintained by The Circle Team.
 
 ## Information
@@ -40,7 +40,7 @@ To acquire the source via git and build the release version, run the following c
 - `cd ~`
 - `git clone https://github.com/TheCircleFoundation/conceal-wallet`
 - `cd conceal-wallet`
-- `git submodule add https://github.com/TheCircleFoundation/conceal-core.git cryptonote`
+- `git clone https://github.com/TheCircleFoundation/conceal-core.git cryptonote`
 - `make build-release`
 - `mkdir bin && mv build/release/CONCEAL-GUI bin/`
 - `make clean`
