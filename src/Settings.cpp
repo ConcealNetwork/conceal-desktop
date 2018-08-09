@@ -57,7 +57,7 @@ void Settings::load() {
   }
 
   QStringList defaultPoolList;
-  defaultPoolList << "ccxpool.dreamitsystems.com:23333" << "ccx.go-mine.it:3333" << "conceal.herominers.com:10361";
+  defaultPoolList << "pool.conceal.network:3333" << "ccx.go-mine.it:3333" << "conceal.herominers.com:10361";
   if (!m_settings.contains(OPTION_MINING_POOLS)) {
     setMiningPoolList(QStringList() << defaultPoolList);
   } else {
