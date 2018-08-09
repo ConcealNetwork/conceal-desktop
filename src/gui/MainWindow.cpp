@@ -39,6 +39,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "nodesettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -71,7 +72,6 @@ MainWindow::MainWindow() : QMainWindow(), m_ui(new Ui::MainWindow), m_trayIcon(n
 
   connectToSignals();
   initUi();
-
   walletClosed();
 }
 
@@ -81,10 +81,8 @@ MainWindow::~MainWindow() {
 void MainWindow::connectToSignals() {
   connect(&WalletAdapter::instance(), &WalletAdapter::openWalletWithPasswordSignal, this, &MainWindow::askForWalletPassword, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::changeWalletPasswordSignal, this, &MainWindow::encryptWallet, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationProgressUpdatedSignal, this, &MainWindow::walletSynchronizationInProgress,
-    Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &MainWindow::walletSynchronized,
-    Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationProgressUpdatedSignal, this, &MainWindow::walletSynchronizationInProgress, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &MainWindow::walletSynchronized, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &MainWindow::setStatusBarText);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &MainWindow::walletOpened);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MainWindow::walletClosed);
@@ -101,6 +99,9 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
   connect(m_ui->m_messagesFrame, &MessagesFrame::replyToSignal, this, &MainWindow::replyTo);
   connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);  
 }
 
 void MainWindow::initUi() {
@@ -133,13 +134,13 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_miningAction);
   m_tabActionGroup->addAction(m_ui->m_depositsAction);
 
+
   m_ui->m_overviewAction->toggle();
   encryptedFlagChanged(false);
   statusBar()->addPermanentWidget(m_connectionStateIconLabel);
   statusBar()->addPermanentWidget(m_encryptionStateIconLabel);
   statusBar()->addPermanentWidget(m_synchronizationStateIconLabel);
   qobject_cast<AnimatedLabel*>(m_synchronizationStateIconLabel)->setSprite(QPixmap(":icons/sync_sprite"), QSize(16, 16), 5, 24);
-  m_connectionStateIconLabel->setPixmap(QPixmap(":icons/disconnected").scaled(16, 16, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
 
 #ifdef Q_OS_MAC
   installDockHandler();
@@ -242,41 +243,64 @@ bool MainWindow::event(QEvent* _event) {
   return QMainWindow::event(_event);
 }
 
-void MainWindow::createWallet() {
+/* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
+
+void MainWindow::createWallet() 
+{
+
+  m_ui->m_welcomeFrame->hide();  
+
   QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
+
   #ifdef Q_OS_WIN
       QApplication::applicationDirPath(),
   #else
       QDir::homePath(),
   #endif
-      tr("Wallets (*.wallet)")
-      );
+      tr("Wallets (*.wallet)"));
 
-    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
+    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) 
+    {
+
       filePath.append(".wallet");
     }
 
-    if (!filePath.isEmpty() && !QFile::exists(filePath)) {
-      if (WalletAdapter::instance().isOpen()) {
+    if (!filePath.isEmpty() && !QFile::exists(filePath)) 
+    {
+
+      if (WalletAdapter::instance().isOpen()) 
+      {
+
         WalletAdapter::instance().close();
       }
 
       WalletAdapter::instance().setWalletFile(filePath);
-      WalletAdapter::instance().open("");
+      WalletAdapter::instance().createWallet();
     }
 }
 
-void MainWindow::openWallet() {
+/* ----------------------------- OPEN AN EXISTING WALLET FILE ------------------------------------ */
+
+void MainWindow::openWallet() 
+{  
+
+  m_ui->m_welcomeFrame->hide();
+
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
-#ifdef Q_OS_WIN
-    QApplication::applicationDirPath(),
-#else
-    QDir::homePath(),
-#endif
+
+  #ifdef Q_OS_WIN
+      QApplication::applicationDirPath(),
+  #else
+      QDir::homePath(),
+  #endif
     tr("Wallet (*.wallet *.keys)"));
 
-  if (!filePath.isEmpty()) {
-    if (WalletAdapter::instance().isOpen()) {
+  if (!filePath.isEmpty()) 
+  {
+
+    if (WalletAdapter::instance().isOpen()) 
+    {
+
       WalletAdapter::instance().close();
     }
 
@@ -285,12 +309,21 @@ void MainWindow::openWallet() {
   }
 }
 
-void MainWindow::importKey() {
+/* ----------------------------- IMPORT THE GUI KEY ------------------------------------ */
+
+void MainWindow::importKey() 
+{
+
   ImportKeyDialog dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString keyString = dlg.getKeyString().trimmed();
     QString filePath = dlg.getFilePath();
-    if (keyString.isEmpty() || filePath.isEmpty()) {
+    if (keyString.isEmpty() || filePath.isEmpty()) 
+    {
+
       return;
     }
 
@@ -302,9 +335,14 @@ void MainWindow::importKey() {
     std::string data;
     CryptoNote::AccountKeys keys;
     if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
-      data.size() == sizeof(keys)) {
+      data.size() == sizeof(keys)) 
+      {
+
       std::memcpy(&keys, data.data(), sizeof(keys));
-      if (WalletAdapter::instance().isOpen()) {
+
+      if (WalletAdapter::instance().isOpen()) 
+      {
+
         WalletAdapter::instance().close();
       }
 
@@ -313,6 +351,7 @@ void MainWindow::importKey() {
     }
     else if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix())
     {
+
       //serialize as public keys then convert to secret keys
       CryptoNote::AccountPublicAddress decodedKeys;
       CryptoNote::fromBinaryArray(decodedKeys, Common::asBinaryArray(data));
@@ -335,7 +374,9 @@ void MainWindow::importKey() {
       keys.spendSecretKey = spendSecretKey;
       keys.viewSecretKey = viewSecretKey;
       
-      if (WalletAdapter::instance().isOpen()) {
+      if (WalletAdapter::instance().isOpen()) 
+      {
+
         WalletAdapter::instance().close();
       }
 
@@ -441,13 +482,24 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   }
 }
 
-void MainWindow::askForWalletPassword(bool _error) {
+/* ----------------------------- PASSWORD PROMPT ------------------------------------ */
+
+void MainWindow::askForWalletPassword(bool _error) 
+{
+  /* hide the welcome frame when waiting for the password */
+  m_ui->m_welcomeFrame->hide(); 
+
   PasswordDialog dlg(_error, this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
   }
 }
+
+/* ----------------------------------------------------------------- */
 
 void MainWindow::encryptedFlagChanged(bool _encrypted) {
   m_ui->m_encryptWalletAction->setEnabled(!_encrypted);
@@ -480,6 +532,7 @@ void MainWindow::walletSynchronized(int _error, const QString& _error_text) {
 }
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
+    m_ui->m_welcomeFrame->hide();
   if (!_error) {
     m_encryptionStateIconLabel->show();
     m_synchronizationStateIconLabel->show();
@@ -491,6 +544,7 @@ void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     Q_FOREACH(auto action, tabActions) {
       action->setEnabled(true);
     }
+    
 
     m_ui->m_overviewAction->trigger();
     m_ui->m_overviewFrame->show();
@@ -499,11 +553,20 @@ void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   }
 }
 
-void MainWindow::walletClosed() {
+/* ----------------------------- WALLET CLOSED ------------------------------------ */
+/* this is what happens when the wallet goes into a closed state which includes the 
+   period between closing the current wallet and opening/creating a new one */
+
+void MainWindow::walletClosed() 
+{
+
+  /* actions */
   m_ui->m_backupWalletAction->setEnabled(false);
   m_ui->m_encryptWalletAction->setEnabled(false);
   m_ui->m_changePasswordAction->setEnabled(false);
   m_ui->m_resetAction->setEnabled(false);
+
+  /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
   m_ui->m_transactionsFrame->hide();
@@ -511,14 +574,22 @@ void MainWindow::walletClosed() {
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_miningFrame->hide();
+  m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
+
+  /* labels */
   m_encryptionStateIconLabel->hide();
   m_synchronizationStateIconLabel->hide();
   QList<QAction*> tabActions = m_tabActionGroup->actions();
-  Q_FOREACH(auto action, tabActions) {
+
+  Q_FOREACH(auto action, tabActions) 
+  {
+
     action->setEnabled(false);
   }
 }
+
+/* ------------------------------------------------------------------------------------- */
 
 void MainWindow::replyTo(const QModelIndex& _index) {
   m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
@@ -530,21 +601,29 @@ void MainWindow::payTo(const QModelIndex& _index) {
   m_ui->m_sendAction->trigger();
 }
 
+/* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 
+void MainWindow::importsecretkeys() 
+{
 
-
-
-void MainWindow::importsecretkeys() {
   importSecretKeys dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString spendKey = dlg.getSpendKeyString().trimmed();
     QString viewKey = dlg.getViewKeyString().trimmed();    
     QString filePath = dlg.getFilePath();
-    if (spendKey.isEmpty() || filePath.isEmpty()) {
+
+    if (spendKey.isEmpty() || filePath.isEmpty()) 
+    {
+
       return;
     }
 
-    if (!filePath.endsWith(".wallet")) {
+    if (!filePath.endsWith(".wallet")) 
+    {
+
       filePath.append(".wallet");
     }
 
@@ -558,9 +637,16 @@ void MainWindow::importsecretkeys() {
     Crypto::Hash private_view_key_hash;
 
     size_t size;
-    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+    if (!Common::fromHex(private_spend_key_string, 
+                         &private_spend_key_hash, 
+                         sizeof(private_spend_key_hash), 
+                         size) 
+                         || size != sizeof(private_spend_key_hash)) 
+    {
+
       return;
     }
+
     if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
       return;
     }
@@ -582,24 +668,32 @@ void MainWindow::importsecretkeys() {
     keys.spendSecretKey = private_spend_key;
     keys.viewSecretKey = private_view_key;
     
-    if (WalletAdapter::instance().isOpen()) {
+    if (WalletAdapter::instance().isOpen()) 
+    {
+
       WalletAdapter::instance().close();
     }
 
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);   
   }
-
-
 }
 
+/* --------------------------- IMPORT MNEMONIC SEED --------------------------------------- */
 
-void MainWindow::importSeed() {
+void MainWindow::importSeed() 
+{
+
   ImportSeed dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
     QString seed = dlg.getKeyString().trimmed();
     QString filePath = dlg.getFilePath();
-    if (seed.isEmpty() || filePath.isEmpty()) {
+    if (seed.isEmpty() || filePath.isEmpty()) 
+    {
+
       return;
     }  
 
@@ -616,11 +710,15 @@ void MainWindow::importSeed() {
   Crypto::SecretKey private_spend_key;
   Crypto::SecretKey private_view_key;  
 
-  crypto::ElectrumWords::words_to_bytes(mnemonic_phrase, private_spend_key, languages[0]);
+  crypto::ElectrumWords::words_to_bytes(mnemonic_phrase, 
+                                        private_spend_key, 
+                                        languages[0]);
   
   Crypto::PublicKey unused_dummy_variable;
 
-  CryptoNote::AccountBase::generateViewFromSpend(private_spend_key, private_view_key, unused_dummy_variable);
+  CryptoNote::AccountBase::generateViewFromSpend(private_spend_key, 
+                                                 private_view_key,
+                                                 unused_dummy_variable);
 
   Crypto::PublicKey spendPublicKey;
   Crypto::PublicKey viewPublicKey;
@@ -636,24 +734,39 @@ void MainWindow::importSeed() {
   keys.spendSecretKey = private_spend_key;
   keys.viewSecretKey = private_view_key;
   
-  if (WalletAdapter::instance().isOpen()) {
+  if (WalletAdapter::instance().isOpen()) 
+  {
+
     WalletAdapter::instance().close();
   }
 
   WalletAdapter::instance().setWalletFile(filePath);
   WalletAdapter::instance().createWithKeys(keys);   
-
   }
 }
 
+/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
+void MainWindow::nodeSettings() 
+{
 
+  NodeSettings dlg(this);
 
+  dlg.initConnectionSettings();
+  dlg.setConnectionMode();
 
+  if (dlg.exec() == QDialog::Accepted) 
+  {
 
+    QString connection = dlg.setConnectionMode();
+    Settings::instance().setConnection(connection);
 
-
-
+    QMessageBox::information(this, 
+                             tr("Conection settings saved"), 
+                             tr("Please restart the wallet for the new settings to take effect."), 
+                             QMessageBox::Ok);
+  }
+}
 
 
 #ifdef Q_OS_WIN

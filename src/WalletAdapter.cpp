@@ -101,17 +101,25 @@ quint64 WalletAdapter::getPendingDepositBalance() const {
   }
 }
 
-void WalletAdapter::open(const QString& _password) {
+void WalletAdapter::open(const QString& _password) 
+{
+
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(!_password.isEmpty());
-  Q_EMIT walletStateChangedSignal(tr("Opening wallet"));
+  Q_EMIT walletStateChangedSignal(tr(""));
 
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
 
-  if (QFile::exists(Settings::instance().getWalletFile())) {
-    if (Settings::instance().getWalletFile().endsWith(".keys")) {
-      if(!importLegacyWallet(_password)) {
+  if (QFile::exists(Settings::instance().getWalletFile())) 
+  {
+
+    if (Settings::instance().getWalletFile().endsWith(".keys")) 
+    {
+
+      if(!importLegacyWallet(_password)) 
+      {
+
         return;
       }
     }
@@ -126,15 +134,35 @@ void WalletAdapter::open(const QString& _password) {
       }
     }
   } else {
-    Settings::instance().setEncrypted(false);
-    try {
-      m_wallet->initAndGenerate("");
-    } catch (std::system_error&) {
-      delete m_wallet;
-      m_wallet = nullptr;
-    }
+
   }
 }
+
+void WalletAdapter::createWallet() 
+{
+
+  Q_ASSERT(m_wallet == nullptr);
+  Settings::instance().setEncrypted(false);
+  Q_EMIT walletStateChangedSignal(tr(""));
+
+  m_wallet = NodeAdapter::instance().createWallet();
+  m_wallet->addObserver(this);
+
+  try {
+    m_wallet->initAndGenerate("");
+  } catch (std::system_error&) {
+    delete m_wallet;
+    m_wallet = nullptr;
+  }
+}
+
+
+
+
+
+
+
+
 
 void WalletAdapter::createWithKeys(const CryptoNote::AccountKeys& _keys) {
     m_wallet = NodeAdapter::instance().createWallet();

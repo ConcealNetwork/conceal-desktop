@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WelcomeFrame</class>
+ <widget class="QFrame" name="WelcomeFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>818</width>
+    <height>618</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Open Sans</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Frame</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: url(:/images/city.png);
+color: #e5e5e5;
+border: 0px;</string>
+  </property>
+  <property name="frameShape">
+   <enum>QFrame::StyledPanel</enum>
+  </property>
+  <property name="frameShadow">
+   <enum>QFrame::Raised</enum>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="minimumSize">
+      <size>
+       <width>800</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px; color: #262626;</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>331</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white; background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>WELCOME TO THE CONCEAL WALLET</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>160</y>
+        <width>250</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);</string>
+      </property>
+      <property name="text">
+       <string>CREATE NEW WALLET</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>220</y>
+        <width>250</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);</string>
+      </property>
+      <property name="text">
+       <string>OPEN EXISTING WALLET</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="seedButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>280</y>
+        <width>250</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);</string>
+      </property>
+      <property name="text">
+       <string>IMPORT SEED</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="guikeyButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>340</y>
+        <width>250</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);</string>
+      </property>
+      <property name="text">
+       <string>IMPORT GUI KEY</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="spendkeyButton">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>400</y>
+        <width>250</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Oswald</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #222;
+background: url(:/images/s_sunkist.png);</string>
+      </property>
+      <property name="text">
+       <string>IMPORT SPEND/VIEW KEYS</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WelcomeFrame</receiver>
+   <slot>createWallet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>WelcomeFrame</receiver>
+   <slot>openWallet()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>474</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>seedButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WelcomeFrame</receiver>
+   <slot>importSeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>403</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>createWalletClickedSignal()</signal>
+  <signal>openWalletClickedSignal()</signal>
+  <slot>okClicked()</slot>
+  <slot>passwordChanged(QString)</slot>
+ </slots>
+</ui>

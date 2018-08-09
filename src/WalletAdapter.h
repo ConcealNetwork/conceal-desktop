@@ -31,6 +31,7 @@ public:
   bool save(bool _details, bool _cache);
   void backup(const QString& _file);
   void reset();
+  void createWallet();
 
   QString getAddress() const;
   quint64 getActualBalance() const;
