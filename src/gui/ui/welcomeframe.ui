@@ -242,6 +242,38 @@ background: url(:/images/s_sunkist.png);</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>guikeyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WelcomeFrame</receiver>
+   <slot>importKey()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>403</x>
+     <y>368</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spendkeyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>WelcomeFrame</receiver>
+   <slot>importsecretkeys()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>403</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>createWalletClickedSignal()</signal>

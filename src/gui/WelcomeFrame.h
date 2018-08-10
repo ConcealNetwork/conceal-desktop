@@ -17,24 +17,28 @@ class WelcomeFrame;
 
 namespace WalletGui {
 
-class WelcomeFrame : public QFrame {
-  Q_OBJECT
+  class WelcomeFrame : public QFrame {
+    Q_OBJECT
 
-public:
-  WelcomeFrame(QWidget* _parent);
-  ~WelcomeFrame();
+  public:
+    WelcomeFrame(QWidget* _parent);
+    ~WelcomeFrame();
 
-  Q_SLOT void createWallet();
-  Q_SLOT void openWallet();
-  Q_SLOT void importSeed();  
+    Q_SLOT void createWallet();
+    Q_SLOT void openWallet();
+    Q_SLOT void importSeed();  
+    Q_SLOT void importsecretkeys();  
+    Q_SLOT void importKey();
 
-private:
-  QScopedPointer<Ui::WelcomeFrame> m_ui;
+  private:
+    QScopedPointer<Ui::WelcomeFrame> m_ui;
 
-Q_SIGNALS:
-  void createWalletClickedSignal();
-  void openWalletClickedSignal(); 
-  void importSeedClickedSignal();   
-};
+  Q_SIGNALS:
+    void createWalletClickedSignal();
+    void openWalletClickedSignal(); 
+    void importSeedClickedSignal();   
+    void importsecretkeysClickedSignal();  
+    void importKeyClickedSignal();  
+  };
 
 }

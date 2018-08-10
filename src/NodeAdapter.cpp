@@ -215,8 +215,9 @@ bool NodeAdapter::init() {
 
       initTimer.stop();
       Q_EMIT nodeInitCompletedSignal();
-      return true;
+      
     }
+    return true;
   }
 }
 

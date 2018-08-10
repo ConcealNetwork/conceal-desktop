@@ -30,4 +30,11 @@ namespace WalletGui {
     Q_EMIT importSeedClickedSignal();
     }
 
+    void WelcomeFrame::importsecretkeys() {
+    Q_EMIT importsecretkeysClickedSignal();
+    }
+
+    void WelcomeFrame::importKey() {
+    Q_EMIT importKeyClickedSignal();
+    }
 }
