@@ -78,7 +78,7 @@ void Settings::load()
   if (!m_settings.contains(OPTION_CONNECTION)) 
   {
 
-    m_settings.insert(OPTION_CONNECTION, "remote");
+    m_settings.insert(OPTION_CONNECTION, "embedded");
   }
 
   if (!m_settings.contains(OPTION_REMOTE_NODE)) 
