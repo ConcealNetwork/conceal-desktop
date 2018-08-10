@@ -221,8 +221,8 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
   
   if(connection.compare("remote") == 0) 
     {
-
-      return _index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper();
+      
+      return "not supported in remote-node connections";
     } else 
     
     {
