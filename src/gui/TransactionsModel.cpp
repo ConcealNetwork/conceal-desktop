@@ -11,7 +11,6 @@
 #include <QPixmap>
 #include <QTextStream>
 
-#include "Settings.h"
 #include "CurrencyAdapter.h"
 #include "Message.h"
 #include "NodeAdapter.h"
@@ -212,47 +211,6 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
   case COLUMN_HASH:
     return _index.data(ROLE_HASH).toByteArray().toHex().toUpper();
 
-
-  /* process and pass the secret key */
-  case COLUMN_SECRETKEY: {
-
-  /* get connection type */
-  QString connection = Settings::instance().getConnection();
-  
-  if(connection.compare("remote") == 0) 
-    {
-
-      return _index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper();
-    } else 
-    
-    {
-
-      /* existing outbound transactions not in the same sessions should be empty */
-      if (_index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper() == "0000000000000000000000000000000000000000000000000000000000000000") 
-      {
-
-        return "";  
-      } else 
-      {
-
-        /* get the type of transaction */
-        TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
-
-        /* we dont need the key if its incoming, in-out, or a mined block */
-        if (transactionType == TransactionType::INPUT || transactionType == TransactionType::MINED ||
-            transactionType == TransactionType::INOUT) 
-            {
-
-              return "";    
-        } else 
-        {
-              /* return the proper transaction secret key */
-              return _index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper();    
-        }
-      }
-    }
-  }
-
   case COLUMN_ADDRESS: {
     TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
     QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
@@ -335,10 +293,7 @@ QVariant TransactionsModel::getAlignmentRole(const QModelIndex& _index) const {
 
 QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, CryptoNote::TransactionId _transactionId,
   const CryptoNote::WalletLegacyTransaction& _transaction, CryptoNote::TransferId _transferId, const CryptoNote::WalletLegacyTransfer& _transfer,
-  CryptoNote::DepositId _depositId, const CryptoNote::Deposit& _deposit) const 
-  
-  {
-
+  CryptoNote::DepositId _depositId, const CryptoNote::Deposit& _deposit) const {
   switch(_role) {
   case ROLE_DATE:
     return (_transaction.timestamp > 0 ? QDateTime::fromTime_t(_transaction.timestamp) : QDateTime());
@@ -360,9 +315,6 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
   case ROLE_HASH:
     return QByteArray(reinterpret_cast<const char*>(&_transaction.hash), sizeof(_transaction.hash));
-
-  case ROLE_SECRETKEY:
-    return QByteArray(reinterpret_cast<const char*>(&_transaction.transactionSK), sizeof(_transaction.transactionSK));
 
   case ROLE_ADDRESS:
     return QString::fromStdString(_transfer.address);
