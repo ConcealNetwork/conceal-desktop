@@ -102,6 +102,8 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);  
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);  
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importKeyClickedSignal, this, &MainWindow::importKey, Qt::QueuedConnection);      
 }
 
 void MainWindow::initUi() {
