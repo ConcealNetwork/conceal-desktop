@@ -167,6 +167,7 @@ void SendFrame::sendClicked() {
                                               m_ui->m_mixinSlider->value(),
                                               walletMessages);
 
+    /* disable the transaction confirmation popup for the moment
     std::string str = Common::podToHex(transactionSK);
     QString qstr = QString::fromStdString(str);
 
@@ -174,7 +175,7 @@ void SendFrame::sendClicked() {
     dlg.setKey(qstr);
     if (dlg.exec() == QDialog::Accepted) {
       return;
-    }
+    } */
 
   }
 }
