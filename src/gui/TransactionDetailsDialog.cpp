@@ -25,9 +25,10 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     "<span style=\" font-weight:600;\">To: </span>%4<br>\n"
     "<span style=\" font-weight:600;\">Amount: </span>%5<br>\n"
     "<span style=\" font-weight:600;\">Fee: </span>%6<br>\n"
-    "<span style=\" font-weight:600;\">Transaction hash: </span>%8<br><br>\n"
-    "<span style=\" font-weight:600;\">Transaction secret key: </span>%9<br><br>\n"    
-    "<span style=\" font-weight:600;\">Messages: </span><br>%10<br><br>\n"
+    "<span style=\" font-weight:600;\">Payment ID: </span>%8<br><br>\n"
+    "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
+    "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n"   
+    "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
     "%11"
     "</body></html>") {
   m_ui->setupUi(this);
@@ -98,6 +99,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_ADDRESS).data().toString()).
     arg(amountText).
     arg(feeText).
+    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_PAYMENT_ID).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_HASH).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_SECRETKEY).data().toString()).    
     arg(messageList.join("<br/><br/>=========<br/><br/>")).
