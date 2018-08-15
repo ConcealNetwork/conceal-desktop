@@ -33,7 +33,6 @@ public:
   void reset();
   void createWallet();
 
-  size_t unlockedOutputs();
   QString getAddress() const;
   quint64 getActualBalance() const;
   quint64 getPendingBalance() const;
@@ -42,15 +41,16 @@ public:
   quint64 getTransactionCount() const;
   quint64 getTransferCount() const;
   quint64 getDepositCount() const;
+  quint64 getNumUnlockedOutputs() const;
   bool getTransaction(CryptoNote::TransactionId _id, CryptoNote::WalletLegacyTransaction& _transaction);
   bool getTransfer(CryptoNote::TransferId _id, CryptoNote::WalletLegacyTransfer& _transfer);
   bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
   bool getAccountKeys(CryptoNote::AccountKeys& _keys);
   bool isOpen() const;
-  void sendTransaction(Crypto::SecretKey& _transactionsk, const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
+  void sendTransaction(Crypto::SecretKey& _transactionsk, QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages);
-  void cosolidateWallet();
-  void sendMessage(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
+  void consolidateWallet();
+  void sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages, quint64 _ttl);
   void deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn);
   void withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _depositIds, quint64 _fee);

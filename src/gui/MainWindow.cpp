@@ -251,14 +251,17 @@ bool MainWindow::event(QEvent* _event) {
 
 void MainWindow::consolidateClicked() {
   transactionconfirmation dlg(this);
-  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   if (dlg.exec() == QDialog::Accepted) {
-    do {
-    WalletAdapter::instance().cosolidateWallet();
-    actualBalance = WalletAdapter::instance().getActualBalance();
-    } while (actualBalance > 1);
-
-  } else {return;}
+    quint64 numUnlockedOutputs;
+    while (true) {
+      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+      if (numUnlockedOutputs == 0) break;
+      WalletAdapter::instance().consolidateWallet();
+      while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+      }
+    }
+  }
 } 
 
 
