@@ -126,6 +126,7 @@ void SendFrame::sendClicked() {
   Q_FOREACH (TransferFrame * transfer, m_transfers) 
   {
     QString address = transfer->getAddress();   
+    QString int_address = transfer->getAddress();   
 
     /* integrated address check */
     if (address.toStdString().length() == 186) 
@@ -172,8 +173,19 @@ void SendFrame::sendClicked() {
     QString label = transfer->getLabel();
 
     // add to the address book if a label is given
-    if (!label.isEmpty()) {
-      AddressBookModel::instance().addAddress(label, address);
+    if (!label.isEmpty()) 
+    {
+      
+      if (isIntegrated == true) 
+      {
+
+        AddressBookModel::instance().addAddress(label, int_address);
+      }
+      else 
+      {
+
+        AddressBookModel::instance().addAddress(label, address);
+      }
     }
 
     // add the comment to the transaction
