@@ -168,21 +168,6 @@ void MainWindow::minimizeToTray(bool _on) {
 }
 #endif
 
-void MainWindow::consolidateClicked() {
-  transactionconfirmation dlg(this);
-  std::string outputs = "OUTPUTS";
-  size_t noutputs = WalletAdapter::instance().unlockedOutputs();
-  if (noutputs > 0) {
-    outputs = std::to_string(WalletAdapter::instance().unlockedOutputs());
-  } else {
-    outputs = "0";
-  }
-  QString qstr = QString::fromStdString(outputs);
-  if (dlg.exec() == QDialog::Accepted) {
-    dlg.setKey(qstr);
-    WalletAdapter::instance().cosolidateWallet();
-  } else {return;}
-} 
 
 
 
@@ -263,6 +248,19 @@ bool MainWindow::event(QEvent* _event) {
 
   return QMainWindow::event(_event);
 }
+
+void MainWindow::consolidateClicked() {
+  transactionconfirmation dlg(this);
+  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+  if (dlg.exec() == QDialog::Accepted) {
+    do {
+    WalletAdapter::instance().cosolidateWallet();
+    actualBalance = WalletAdapter::instance().getActualBalance();
+    } while (actualBalance > 1);
+
+  } else {return;}
+} 
+
 
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
 
