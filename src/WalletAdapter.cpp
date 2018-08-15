@@ -16,6 +16,7 @@
 #include "Common/StringTools.h"
 #include <Wallet/WalletErrors.h>
 #include <Wallet/LegacyKeysImporter.h>
+#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 
 #include "NodeAdapter.h"
 #include "Settings.h"
@@ -351,12 +352,32 @@ void WalletAdapter::sendTransaction(Crypto::SecretKey& _transactionsk,
   }
 }
 
+void WalletAdapter::cosolidateWallet() {
+  Q_CHECK_PTR(m_wallet);
+  std::vector<CryptoNote::WalletLegacyTransfer> transfers;
+  std::vector<CryptoNote::TransactionMessage> messages;
+  std::string extraString;
+  uint64_t fee = CryptoNote::parameters::MINIMUM_FEE;
+  uint64_t mixIn = 2;
+  uint64_t unlockTimestamp = 0;
+  uint64_t ttl = 0;
+  Crypto::SecretKey transactionSK;
+  try {
+    lock();
+    m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
+    Q_EMIT walletStateChangedSignal(tr("Consolidating"));
+  } catch (std::system_error&) {
+    unlock();
+  }
+}
+
 void WalletAdapter::sendMessage(
                                 const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
                                 quint64 _fee, 
                                 quint64 _mixin,
                                 const QVector<CryptoNote::TransactionMessage>& _messages, 
                                 quint64 _ttl) {
+                                  
   Q_CHECK_PTR(m_wallet);
   Crypto::SecretKey _transactionsk;
   try {

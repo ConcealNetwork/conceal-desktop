@@ -35,15 +35,18 @@ void AddressBookFrame::addClicked() {
   if (dlg.exec() == QDialog::Accepted) {
     QString label = dlg.getLabel();
     QString address = dlg.getAddress();
-    if (!CurrencyAdapter::instance().validateAddress(address)) {
+
+    if (address.toStdString().length() == 186) {
+      AddressBookModel::instance().addAddress(label, address);     
+    } else if (!CurrencyAdapter::instance().validateAddress(address)) {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
       return;
     } else if (label.trimmed().isEmpty()) {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Empty label"), QtCriticalMsg));
       return;
-    }
-
+    } else {
     AddressBookModel::instance().addAddress(label, address);
+    }
   }
 }
 

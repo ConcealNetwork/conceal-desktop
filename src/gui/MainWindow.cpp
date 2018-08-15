@@ -39,6 +39,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "transactionconfirmation.h"
 #include "nodesettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
@@ -166,6 +167,15 @@ void MainWindow::minimizeToTray(bool _on) {
   }
 }
 #endif
+
+void MainWindow::consolidateClicked() {
+  transactionconfirmation dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    WalletAdapter::instance().cosolidateWallet();
+  } else {return;}
+} 
+
+
 
 void MainWindow::scrollToTransaction(const QModelIndex& _index) {
   m_ui->m_transactionsAction->setChecked(true);
