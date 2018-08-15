@@ -19,15 +19,17 @@ namespace WalletGui {
 TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QWidget* _parent) : QDialog(_parent),
   m_ui(new Ui::TransactionDetailsDialog), m_detailsTemplate(
     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-    "</style></head><body style=\" font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-    "<span style=\" font-weight:600;\">Status: </span>%1</p><br>\n"
-    "<span style=\" font-weight:600;\">Date: </span>%2</p><br>\n"
-    "<span style=\" font-weight:600;\">To: </span>%4</p><br>\n"
-    "<span style=\" font-weight:600;\">Amount: </span>%5</p><br>\n"
-    "<span style=\" font-weight:600;\">Fee: </span>%6</p><br>\n"
-    "<span style=\" font-weight:600;\">Transaction hash: </span>%8</p><br><br>\n"
-    "<span style=\" font-weight:600;\">Messages: </span></p><br>%9<br><br>\n"
-    "%10"
+    "</style></head><body style=\" font-family:'Open Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+    "<span style=\" font-weight:600;\">Status: </span>%1<br>\n"
+    "<span style=\" font-weight:600;\">Date: </span>%2<br>\n"
+    "<span style=\" font-weight:600;\">To: </span>%4<br>\n"
+    "<span style=\" font-weight:600;\">Amount: </span>%5<br>\n"
+    "<span style=\" font-weight:600;\">Fee: </span>%6<br>\n"
+    "<span style=\" font-weight:600;\">Payment ID: </span>%8<br><br>\n"
+    "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
+    "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n"   
+    "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
+    "%11"
     "</body></html>") {
   m_ui->setupUi(this);
 
@@ -72,10 +74,12 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
       "<span style=\" font-weight:600;\">Spending transaction: </span>%12</p><br>\n"
       "<span style=\" font-weight:600;\">Spending height: </span>%13</p><br>\n"
       "<span style=\" font-weight:600;\">Spending time: </span>%14</p><br>\n";
+
       depositInfo = depositInfoTemplate.
           arg(depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_STATE).data().toString()).
           arg(depositAmount).
-          arg(depositInterest).arg(depositSum).
+          arg(depositInterest).
+          arg(depositSum).
           arg(depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_TERM_RATE).data().toString()).
           arg(depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_TERM).data().toString()).
           arg(depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_UNLOCK_HEIGHT).data().toString()).
@@ -88,10 +92,16 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
           arg(depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_SPENDING_TIME).data().toString());
   }
 
-  m_ui->m_detailsBrowser->setHtml(m_detailsTemplate.arg(QString("%1 confirmations").arg(numberOfConfirmations)).
-    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_DATE).data().toString()).arg(transactionIndex.sibling(transactionIndex.row(),
-    TransactionsModel::COLUMN_ADDRESS).data().toString()).arg(amountText).arg(feeText).
+  m_ui->m_detailsBrowser->setHtml(m_detailsTemplate.
+    arg(QString("%1 confirmations").
+    arg(numberOfConfirmations)).
+    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_DATE).data().toString()).
+    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_ADDRESS).data().toString()).
+    arg(amountText).
+    arg(feeText).
+    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_PAYMENT_ID).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_HASH).data().toString()).
+    arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_SECRETKEY).data().toString()).    
     arg(messageList.join("<br/><br/>=========<br/><br/>")).
     arg(depositInfo));
 }
