@@ -352,6 +352,12 @@ void WalletAdapter::sendTransaction(Crypto::SecretKey& _transactionsk,
   }
 }
 
+size_t WalletAdapter::unlockedOutputs() {
+  Q_CHECK_PTR(m_wallet);
+  return m_wallet->getNumUnlockedOutputs();
+}  
+
+
 void WalletAdapter::cosolidateWallet() {
   Q_CHECK_PTR(m_wallet);
   std::vector<CryptoNote::WalletLegacyTransfer> transfers;

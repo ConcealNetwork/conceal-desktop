@@ -11,11 +11,16 @@ namespace WalletGui
 {
 
     transactionconfirmation::transactionconfirmation(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::transactionconfirmation) {
-        m_ui->setupUi(this);  
+        m_ui->setupUi(this);
+        m_ui->m_trxsk->setText("");        
     }
 
     transactionconfirmation::~transactionconfirmation()
     {
+    }
+
+    void transactionconfirmation::setKey(QString key) {
+        m_ui->m_trxsk->setText(key);
     }
 
 }

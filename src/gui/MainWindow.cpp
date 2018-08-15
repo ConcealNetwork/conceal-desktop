@@ -170,7 +170,16 @@ void MainWindow::minimizeToTray(bool _on) {
 
 void MainWindow::consolidateClicked() {
   transactionconfirmation dlg(this);
+  std::string outputs = "OUTPUTS";
+  size_t noutputs = WalletAdapter::instance().unlockedOutputs();
+  if (noutputs > 0) {
+    outputs = std::to_string(WalletAdapter::instance().unlockedOutputs());
+  } else {
+    outputs = "0";
+  }
+  QString qstr = QString::fromStdString(outputs);
   if (dlg.exec() == QDialog::Accepted) {
+    dlg.setKey(qstr);
     WalletAdapter::instance().cosolidateWallet();
   } else {return;}
 } 

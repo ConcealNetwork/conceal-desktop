@@ -33,6 +33,7 @@ public:
   void reset();
   void createWallet();
 
+  size_t unlockedOutputs();
   QString getAddress() const;
   quint64 getActualBalance() const;
   quint64 getPendingBalance() const;
