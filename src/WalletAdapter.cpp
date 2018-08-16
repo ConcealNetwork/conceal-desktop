@@ -358,7 +358,7 @@ quint64 WalletAdapter::getNumUnlockedOutputs() const {
   return m_wallet->getNumUnlockedOutputs();
 }  
 
-void WalletAdapter::consolidateWallet() {
+void WalletAdapter::optimizeWallet() {
   Q_CHECK_PTR(m_wallet);
   std::vector<CryptoNote::WalletLegacyTransfer> transfers;
   std::vector<CryptoNote::TransactionMessage> messages;
@@ -371,7 +371,7 @@ void WalletAdapter::consolidateWallet() {
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
-    Q_EMIT walletStateChangedSignal(tr("Consolidating"));
+    Q_EMIT walletStateChangedSignal(tr("Optimizing"));
   } catch (std::system_error&) {
     unlock();
   }
