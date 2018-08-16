@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>647</width>
-    <height>275</height>
+    <height>175</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,7 +50,7 @@
      <string notr="true">color: white;</string>
     </property>
     <property name="text">
-     <string>CONSOLIDATE WALLET</string>
+     <string>OPTIMIZE WALLET</string>
     </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
@@ -59,7 +59,7 @@
       <x>10</x>
       <y>40</y>
       <width>601</width>
-      <height>131</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -73,14 +73,14 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Open Sans'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you have issues sending or depositing large amounts or you constantly get errors that the transaction is too big. You can use the consolidate function to reduce the number of outputs in your wallet. Think of it as exchanging several smaller bank notes for fewer larger ones.&lt;br /&gt;&lt;br /&gt;Each time you consolidate, you will need to wait 11 blocks (approximately 22 minutes) for the funds to come back to your account. You can consolidate as many times you like as long as there are unlocked funds available.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This process will optimize your wallet for large transactions. The process will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>230</y>
+      <y>120</y>
       <width>621</width>
       <height>27</height>
      </rect>
@@ -117,7 +117,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
        </property>
        <property name="text">
-        <string>CONSOLIDATE</string>
+        <string>OPTIMIZE</string>
        </property>
       </widget>
      </item>
@@ -157,19 +157,6 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
     </layout>
-   </widget>
-   <widget class="QLabel" name="m_trxsk">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>190</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>OUTPUTS</string>
-    </property>
    </widget>
   </widget>
  </widget>

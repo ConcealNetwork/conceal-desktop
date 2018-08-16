@@ -378,8 +378,7 @@ void WalletAdapter::consolidateWallet() {
   }
 }
 
-void WalletAdapter::sendMessage(
-                                QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
+void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
                                 quint64 _fee, 
                                 quint64 _mixin,
                                 const QVector<CryptoNote::TransactionMessage>& _messages, 

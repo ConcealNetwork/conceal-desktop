@@ -215,6 +215,7 @@ void SendFrame::sendClicked() {
     }
 
     paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+    m_ui->m_paymentIdEdit->setText("");
 
     // check payment id validity, or about
     if (!isValidPaymentId(paymentIdString)) 
@@ -229,7 +230,7 @@ void SendFrame::sendClicked() {
     WalletAdapter::instance().sendTransaction(transactionSK, 
                                               walletTransfers, 
                                               fee, 
-                                              m_ui->m_paymentIdEdit->text(), 
+                                              paymentIdString, 
                                               m_ui->m_mixinSlider->value(),
                                               walletMessages);
 
