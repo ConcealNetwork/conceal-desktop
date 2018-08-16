@@ -585,7 +585,7 @@
   </action>
   <action name="m_consolidateAction">
    <property name="text">
-    <string>Consolidate wallet</string>
+    <string>Optimize wallet</string>
    </property>
   </action>
  </widget>
