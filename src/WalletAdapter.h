@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-//  
+//
 // Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -46,9 +46,9 @@ public:
   bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
   bool getAccountKeys(CryptoNote::AccountKeys& _keys);
   bool isOpen() const;
-  void sendTransaction(Crypto::SecretKey& _transactionsk, const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
+  void sendTransaction(Crypto::SecretKey& _transactionsk, QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages);
-  void sendMessage(const QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
+  void sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages, quint64 _ttl);
   void deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn);
   void withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _depositIds, quint64 _fee);
