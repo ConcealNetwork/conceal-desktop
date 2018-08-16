@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-//  
+//
 // Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -102,7 +102,7 @@ quint64 WalletAdapter::getPendingDepositBalance() const {
   }
 }
 
-void WalletAdapter::open(const QString& _password) 
+void WalletAdapter::open(const QString& _password)
 {
 
   Q_ASSERT(m_wallet == nullptr);
@@ -112,13 +112,13 @@ void WalletAdapter::open(const QString& _password)
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
 
-  if (QFile::exists(Settings::instance().getWalletFile())) 
+  if (QFile::exists(Settings::instance().getWalletFile()))
   {
 
-    if (Settings::instance().getWalletFile().endsWith(".keys")) 
+    if (Settings::instance().getWalletFile().endsWith(".keys"))
     {
 
-      if(!importLegacyWallet(_password)) 
+      if(!importLegacyWallet(_password))
       {
 
         return;
@@ -139,7 +139,7 @@ void WalletAdapter::open(const QString& _password)
   }
 }
 
-void WalletAdapter::createWallet() 
+void WalletAdapter::createWallet()
 {
 
   Q_ASSERT(m_wallet == nullptr);
@@ -358,7 +358,6 @@ quint64 WalletAdapter::getNumUnlockedOutputs() const {
   return m_wallet->getNumUnlockedOutputs();
 }  
 
-
 void WalletAdapter::consolidateWallet() {
   Q_CHECK_PTR(m_wallet);
   std::vector<CryptoNote::WalletLegacyTransfer> transfers;
@@ -381,7 +380,7 @@ void WalletAdapter::consolidateWallet() {
 void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
                                 quint64 _fee, 
                                 quint64 _mixin,
-                                const QVector<CryptoNote::TransactionMessage>& _messages, 
+                                const QVector<CryptoNote::TransactionMessage>& _messages,
                                 quint64 _ttl) {
                                   
   Q_CHECK_PTR(m_wallet);
