@@ -100,7 +100,7 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_consolidateButton">
+      <widget class="QPushButton" name="m_optimizeButton">
        <property name="minimumSize">
         <size>
          <width>125</width>
@@ -179,7 +179,8 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_consolidateButton</sender>
+   <sender>m_optimizeButton</sender>
+   <sender>m_optimizeButton</sender>
    <signal>clicked()</signal>
    <receiver>transactionconfirmation</receiver>
    <slot>accept()</slot>

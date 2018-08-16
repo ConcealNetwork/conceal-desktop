@@ -207,7 +207,7 @@
      <string>SETTINGS</string>
     </property>
     <addaction name="m_encryptWalletAction"/>
-    <addaction name="m_consolidateAction"/>
+    <addaction name="m_optimizeAction"/>
     <addaction name="m_changePasswordAction"/>
     <addaction name="m_ConnectionAction"/>
     <addaction name="separator"/>
@@ -583,7 +583,7 @@
     <string>Connection settings</string>
    </property>
   </action>
-  <action name="m_consolidateAction">
+  <action name="m_optimizeAction">
    <property name="text">
     <string>Optimize wallet</string>
    </property>
@@ -1040,10 +1040,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>m_consolidateAction</sender>
+   <sender>m_optimizeAction</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
-   <slot>consolidateClicked()</slot>
+   <slot>optimizeClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1060,7 +1060,7 @@
   <slot>createWallet()</slot>
   <slot>openWallet()</slot>
   <slot>encryptWallet()</slot>
-  <slot>consolidateClicked()</slot>
+  <slot>optimizeClicked()</slot>
   <slot>aboutQt()</slot>
   <slot>backupWallet()</slot>
   <slot>about()</slot>
