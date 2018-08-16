@@ -36,7 +36,9 @@ private:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString& _errorText);
   void walletActualBalanceUpdated(quint64 _balance);
   void updateFee();
+  
   static bool isValidPaymentId(const QByteArray& _paymentIdString);
+
 
   Q_SLOT void addRecipientClicked();
   Q_SLOT void clearAllClicked();

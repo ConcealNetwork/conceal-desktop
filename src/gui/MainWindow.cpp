@@ -39,6 +39,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "transactionconfirmation.h"
 #include "nodesettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
@@ -167,6 +168,9 @@ void MainWindow::minimizeToTray(bool _on) {
 }
 #endif
 
+
+
+
 void MainWindow::scrollToTransaction(const QModelIndex& _index) {
   m_ui->m_transactionsAction->setChecked(true);
   m_ui->m_transactionsFrame->scrollToTransaction(_index);
@@ -244,6 +248,22 @@ bool MainWindow::event(QEvent* _event) {
 
   return QMainWindow::event(_event);
 }
+
+void MainWindow::consolidateClicked() {
+  transactionconfirmation dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    quint64 numUnlockedOutputs;
+    while (true) {
+      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+      if (numUnlockedOutputs == 0) break;
+      WalletAdapter::instance().consolidateWallet();
+      while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+      }
+    }
+  }
+} 
+
 
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
 

@@ -15,9 +15,27 @@
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include <Common/Base58.h>
+#include <CryptoNoteCore/CryptoNoteTools.h>
 #include <Common/Util.h>
 #include <Common/Base58.h>
 #include "Common/StringTools.h"
+#include "Common/CommandLine.h"
+#include "Common/StringTools.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteCore/Account.h"
+#include "crypto/hash.h"
+#include "CryptoNoteCore/CryptoNoteBasic.h"
+#include "CryptoNoteCore/CryptoNoteBasicImpl.h"
+#include "WalletLegacy/WalletHelper.h"
+#include "Common/Base58.h"
+#include "Common/CommandLine.h"
+#include "Common/SignalHandler.h"
+#include "Common/StringTools.h"
+#include "Common/PathTools.h"
+#include "Common/Util.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteCore/CryptoNoteTools.h"
+#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 
 #include "ui_sendframe.h"
 
@@ -96,17 +114,49 @@ void SendFrame::sendClicked() {
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
-
+  bool isIntegrated = false;
   // the one-time transaction secret key
   Crypto::SecretKey transactionSK;
-
+  std::string paymentID;
+  std::string spendPublicKey;
+  std::string viewPublicKey;
+  QByteArray paymentIdString;
   // run through each of the transactions in the frame
   // the send tab allows multiple transaction at once
   Q_FOREACH (TransferFrame * transfer, m_transfers) 
   {
-    QString address = transfer->getAddress();
+    QString address = transfer->getAddress();   
+    QString int_address = transfer->getAddress();   
 
-    // check address validity, or abort
+    /* integrated address check */
+    if (address.toStdString().length() == 186) 
+    {
+      isIntegrated = true;
+
+      const uint64_t paymentIDLen = 64;
+
+      /* extract and commit the payment id to extra */
+      std::string decoded;
+      uint64_t prefix;
+      if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded)) 
+      {
+        
+        paymentID = decoded.substr(0, paymentIDLen);
+      }
+
+    /* create the address from the public keys */
+    std::string keys = decoded.substr(paymentIDLen, std::string::npos);
+    CryptoNote::AccountPublicAddress addr;
+    CryptoNote::BinaryArray ba = Common::asBinaryArray(keys);
+
+    CryptoNote::fromBinaryArray(addr, ba);
+
+
+    std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, 
+                                                            addr);   
+    address = QString::fromStdString(address_string);
+    }
+
     if (!CurrencyAdapter::instance().validateAddress(address)) 
     {
       QCoreApplication::postEvent(&MainWindow::instance(), 
@@ -123,8 +173,19 @@ void SendFrame::sendClicked() {
     QString label = transfer->getLabel();
 
     // add to the address book if a label is given
-    if (!label.isEmpty()) {
-      AddressBookModel::instance().addAddress(label, address);
+    if (!label.isEmpty()) 
+    {
+      
+      if (isIntegrated == true) 
+      {
+
+        AddressBookModel::instance().addAddress(label, int_address);
+      }
+      else 
+      {
+
+        AddressBookModel::instance().addAddress(label, address);
+      }
     }
 
     // add the comment to the transaction
@@ -148,7 +209,13 @@ void SendFrame::sendClicked() {
   // if the wallet is open we proceed
   if (WalletAdapter::instance().isOpen()) 
   {
-    QByteArray paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+
+    if (isIntegrated == true) {
+        m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
+    }
+
+    paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+    m_ui->m_paymentIdEdit->setText("");
 
     // check payment id validity, or about
     if (!isValidPaymentId(paymentIdString)) 
@@ -163,7 +230,7 @@ void SendFrame::sendClicked() {
     WalletAdapter::instance().sendTransaction(transactionSK, 
                                               walletTransfers, 
                                               fee, 
-                                              m_ui->m_paymentIdEdit->text(), 
+                                              paymentIdString, 
                                               m_ui->m_mixinSlider->value(),
                                               walletMessages);
 

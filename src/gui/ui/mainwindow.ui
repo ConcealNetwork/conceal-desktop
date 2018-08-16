@@ -62,7 +62,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame" native="true">
+     <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -73,8 +73,8 @@
        <number>0</number>
       </property>
      </widget>
-    </item>    
-        <item>
+    </item>
+    <item>
      <widget class="WalletGui::MiningFrame" name="m_miningFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -156,7 +156,7 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-    </item>    
+    </item>
     <item>
      <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
       <property name="frameShape">
@@ -207,6 +207,7 @@
      <string>SETTINGS</string>
     </property>
     <addaction name="m_encryptWalletAction"/>
+    <addaction name="m_consolidateAction"/>
     <addaction name="m_changePasswordAction"/>
     <addaction name="m_ConnectionAction"/>
     <addaction name="separator"/>
@@ -582,9 +583,14 @@
     <string>Connection settings</string>
    </property>
   </action>
+  <action name="m_consolidateAction">
+   <property name="text">
+    <string>Consolidate wallet</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
-   <customwidget>
+  <customwidget>
    <class>WalletGui::MiningFrame</class>
    <extends>QFrame</extends>
    <header>gui/MiningFrame.h</header>
@@ -632,12 +638,12 @@
    <header>gui/SendMessageFrame.h</header>
    <container>1</container>
   </customwidget>
-<customwidget>
+  <customwidget>
    <class>WalletGui::WelcomeFrame</class>
    <extends>QFrame</extends>
    <header>gui/WelcomeFrame.h</header>
    <container>1</container>
-  </customwidget>  
+  </customwidget>
   <customwidget>
    <class>WalletGui::DepositsFrame</class>
    <extends>QFrame</extends>
@@ -1033,11 +1039,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_consolidateAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>consolidateClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
   <slot>openWallet()</slot>
   <slot>encryptWallet()</slot>
+  <slot>consolidateClicked()</slot>
   <slot>aboutQt()</slot>
   <slot>backupWallet()</slot>
   <slot>about()</slot>

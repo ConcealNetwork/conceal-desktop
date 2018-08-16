@@ -73,6 +73,7 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "sparse_hash_map": "cpp",
-        "sparse_hash_set": "cpp"
+        "sparse_hash_set": "cpp",
+        "sparsetable": "cpp"
     }
 }
