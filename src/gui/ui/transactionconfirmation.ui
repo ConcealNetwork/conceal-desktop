@@ -180,7 +180,6 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>m_optimizeButton</sender>
-   <sender>m_optimizeButton</sender>
    <signal>clicked()</signal>
    <receiver>transactionconfirmation</receiver>
    <slot>accept()</slot>
