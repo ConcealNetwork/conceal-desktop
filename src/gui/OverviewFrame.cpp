@@ -13,6 +13,14 @@
 #include <QMessageBox>
 #include "RecentTransactionsModel.h"
 #include "WalletAdapter.h"
+#include "PriceProvider.h"
+
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkReply>
+#include <QStringList>
+#include <QUrl>
 
 #include "ui_overviewframe.h"
 
@@ -41,8 +49,9 @@ public:
   }
 };
 
-OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame),
-  m_transactionModel(new RecentTransactionsModel) {
+OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) 
+{
+
   m_ui->setupUi(this);
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
@@ -70,15 +79,16 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   connect(m_transactionModel.data(), &QAbstractItemModel::layoutChanged, this, &OverviewFrame::layoutChanged);
 
   connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
+  connect(m_priceProvider, &PriceProvider::priceFoundSignal, this, &OverviewFrame::onPriceFound);  
   
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel5->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
-
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
   reset();
+
 }
 
 OverviewFrame::~OverviewFrame() {
@@ -127,11 +137,16 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
 }
 
+void OverviewFrame::onPriceFound(const QString& _name, const QString& _address) {
+  m_ui->label_9->setText(_name);
+}
+
 void OverviewFrame::reset() {
   actualBalanceUpdated(0);
   pendingBalanceUpdated(0);
   actualDepositBalanceUpdated(0);
   pendingDepositBalanceUpdated(0);
+  m_priceProvider->getPrice(); 
 }
 
 }
