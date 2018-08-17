@@ -34,6 +34,16 @@ void PriceProvider::getPrice() {
 void PriceProvider::readyRead() {
   QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
   QString data = (QString)reply->readAll();
+  Q_EMIT priceFoundSignal(data, data);
+
+  QJsonObject obj;
+
+  QJsonDocument doc = QJsonDocument::fromJson(data.toUtf8());
+  if(doc.isObject())
+  {
+      obj = doc.object();        
+      Q_EMIT priceFoundSignal("object", "object");
+  }
  /* if (doc.isNull()) {
     return;
 
