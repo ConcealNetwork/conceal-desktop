@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QSystemTrayIcon>
 #include <QTimer>
+#include <QThread>
 
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
@@ -273,6 +274,7 @@ void MainWindow::optimizeClicked()
     {
 
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+
       if (numUnlockedOutputs == 0) break;
 
       WalletAdapter::instance().optimizeWallet();
@@ -280,7 +282,7 @@ void MainWindow::optimizeClicked()
       while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) 
       {
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        QThread::msleep(500);
       }
     }
   }
