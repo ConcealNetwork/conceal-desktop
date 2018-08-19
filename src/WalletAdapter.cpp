@@ -335,8 +335,7 @@ bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) {
   return false;
 }
 
-void WalletAdapter::sendTransaction(Crypto::SecretKey& _transactionsk,
-                                   QVector<CryptoNote::WalletLegacyTransfer>& _transfers,
+void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers,
                                    quint64 _fee, 
                                    const QString& _paymentId, 
                                    quint64 _mixin,
@@ -344,6 +343,7 @@ void WalletAdapter::sendTransaction(Crypto::SecretKey& _transactionsk,
   Q_CHECK_PTR(m_wallet);
   try {
     lock();
+    Crypto::SecretKey _transactionsk;
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
