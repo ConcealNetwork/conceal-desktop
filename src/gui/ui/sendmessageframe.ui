@@ -62,7 +62,7 @@
         <x>0</x>
         <y>0</y>
         <width>743</width>
-        <height>129</height>
+        <height>119</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_addressesLayout">
@@ -260,6 +260,9 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">padding: 3px; border: 0px; </string>
        </property>
+       <property name="minimum">
+        <number>2</number>
+       </property>
        <property name="maximum">
         <number>10</number>
        </property>
@@ -267,7 +270,7 @@ p, li { white-space: pre-wrap; }
         <number>1</number>
        </property>
        <property name="value">
-        <number>1</number>
+        <number>2</number>
        </property>
        <property name="tracking">
         <bool>false</bool>
@@ -389,16 +392,16 @@ p, li { white-space: pre-wrap; }
         <number>6</number>
        </property>
        <property name="minimum">
-        <double>0.000010</double>
+        <double>0.000010000000000</double>
        </property>
        <property name="maximum">
-        <double>100000000.000000</double>
+        <double>100000000.000000000000000</double>
        </property>
        <property name="singleStep">
-        <double>0.000010</double>
+        <double>0.000010000000000</double>
        </property>
        <property name="value">
-        <double>0.000010</double>
+        <double>0.000010000000000</double>
        </property>
       </widget>
      </item>
