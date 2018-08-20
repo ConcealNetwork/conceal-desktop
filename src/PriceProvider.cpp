@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = "https://maplechange.com/api/v2/tickers/ccxbtc.json";
+  QUrl url = "https://explorer.conceal.network/q/maple/ccx-usd.php";
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
@@ -36,32 +36,6 @@ void PriceProvider::readyRead() {
   QString data = (QString)reply->readAll();
   Q_EMIT priceFoundSignal(data, data);
 
-  QJsonObject obj;
-
-  QJsonDocument doc = QJsonDocument::fromJson(data.toUtf8());
-  if(doc.isObject())
-  {
-      obj = doc.object();        
-      Q_EMIT priceFoundSignal("object", "object");
-  }
- /* if (doc.isNull()) {
-    return;
-
-
- Q_EMIT priceFoundSignal(data, data);
-
-  if (jsonArray.isEmpty()) {
-             
-    return;
-  }
-
-  QJsonObject obj = jsonArray.first().toObject();
-  QString name = obj.value("last").toString();
-  QString address = obj.value("high").toString();
-
-  if (!name.isEmpty()) {
-    Q_EMIT priceFoundSignal(name, address);
-  }*/
 }
 
 }

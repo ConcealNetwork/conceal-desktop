@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1200</width>
     <height>600</height>
    </rect>
   </property>
@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-background-color: #333;</string>
+background: url(:/images/city.png);</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -87,7 +87,7 @@ background-color: #333;</string>
       <property name="geometry">
        <rect>
         <x>287</x>
-        <y>160</y>
+        <y>220</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -112,7 +112,7 @@ background-color: #333;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>190</y>
+        <y>250</y>
         <width>121</width>
         <height>25</height>
        </rect>
@@ -137,7 +137,7 @@ background-color: #333;</string>
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>160</y>
+        <y>220</y>
         <width>141</width>
         <height>24</height>
        </rect>
@@ -164,24 +164,24 @@ background-color: #333;</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>20</y>
+        <x>20</x>
+        <y>60</y>
         <width>211</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <weight>75</weight>
+        <bold>true</bold>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background: transparent;
-color: white;</string>
+color: orange;</string>
       </property>
       <property name="text">
        <string>YOUR WALLET</string>
@@ -191,7 +191,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>287</x>
-        <y>190</y>
+        <y>250</y>
         <width>31</width>
         <height>25</height>
        </rect>
@@ -216,7 +216,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>250</y>
+        <y>310</y>
         <width>290</width>
         <height>35</height>
        </rect>
@@ -231,9 +231,7 @@ color: white;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222;
-background-color: orange;
-</string>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -246,7 +244,7 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>190</y>
+        <y>250</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -274,7 +272,7 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>160</y>
+        <y>220</y>
         <width>111</width>
         <height>24</height>
        </rect>
@@ -323,7 +321,7 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>410</y>
+        <y>470</y>
         <width>101</width>
         <height>25</height>
        </rect>
@@ -347,22 +345,22 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>350</y>
+        <y>390</y>
         <width>221</width>
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background: transparent;
-color: white;</string>
+color: orange;</string>
       </property>
       <property name="text">
        <string>YOUR DEPOSITS</string>
@@ -372,7 +370,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>440</y>
+        <y>470</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -396,7 +394,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>290</x>
-        <y>410</y>
+        <y>440</y>
         <width>31</width>
         <height>24</height>
        </rect>
@@ -420,7 +418,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>510</y>
+        <y>540</y>
         <width>290</width>
         <height>35</height>
        </rect>
@@ -440,9 +438,7 @@ color: white;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222;
-background-color: orange;
-</string>
+       <string notr="true">color: #e5e5e5;</string>
       </property>
       <property name="text">
        <string notr="true">0.00</string>
@@ -455,7 +451,7 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>410</y>
+        <y>440</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -482,7 +478,7 @@ background-color: orange;
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>440</y>
+        <y>470</y>
         <width>111</width>
         <height>25</height>
        </rect>
@@ -505,59 +501,26 @@ background-color: orange;
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="m_myAddress">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>90</y>
-        <width>291</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>115</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>10</pointsize>
-        <stylestrategy>PreferAntialias</stylestrategy>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: transparent;</string>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Open Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ccx7HWNxR6pebf4kwRABiXdPMMxumwE8u6G2nLb3Bi1bC124fsQMe7QJYp65rjo8JNaWGsEYQaKUbhpzSh9k7Zat4XVd2ADJTt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
         <x>350</x>
-        <y>20</y>
+        <y>60</y>
         <width>401</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background: transparent;
-color: white;</string>
+color: orange;</string>
       </property>
       <property name="text">
        <string>LATEST TRANSACTIONS</string>
@@ -567,15 +530,15 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>350</x>
-        <y>70</y>
+        <y>110</y>
         <width>425</width>
-        <height>500</height>
+        <height>461</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
         <width>425</width>
-        <height>500</height>
+        <height>400</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -625,7 +588,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>220</y>
+        <y>280</y>
         <width>281</width>
         <height>25</height>
        </rect>
@@ -653,7 +616,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>480</y>
+        <y>510</y>
         <width>281</width>
         <height>25</height>
        </rect>
@@ -676,19 +639,47 @@ color: white;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>70</y>
-        <width>101</width>
-        <height>16</height>
+        <x>820</x>
+        <y>60</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: orange;</string>
+      </property>
+      <property name="text">
+       <string>NETWORK STATS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>160</y>
+        <width>111</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Open Sans</family>
         <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
@@ -696,47 +687,562 @@ color: white;</string>
        <string>background: transparent;</string>
       </property>
       <property name="text">
-       <string>Wallet Address:</string>
+       <string notr="true">314 KH/s</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="Line" name="line">
+     <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>310</y>
-        <width>300</width>
-        <height>1</height>
+        <x>820</x>
+        <y>160</y>
+        <width>121</width>
+        <height>25</height>
        </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>1</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>21</height>
-       </size>
       </property>
       <property name="font">
        <font>
         <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: transparent;</string>
+       <string>background: transparent;</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+      <property name="text">
+       <string>Hashrate</string>
       </property>
-      <property name="lineWidth">
-       <number>1</number>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>130</y>
+        <width>111</width>
+        <height>24</height>
+       </rect>
       </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
       </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Height</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>130</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">52,000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>190</y>
+        <width>111</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Difficulty</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>220</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">5.5 CCX</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>190</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">38m</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>220</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Reward</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>250</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">12,456,789</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>280</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Deposits</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>280</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">72,000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>250</y>
+        <width>111</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Circulating Supply</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>390</y>
+        <width>111</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>CCX-BTC</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_9">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>420</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">$ 0.0376</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel_9">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>390</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00000567 BTC</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>340</y>
+        <width>211</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: orange;</string>
+      </property>
+      <property name="text">
+       <string>MARKET</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>420</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>CCX-USD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_10">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>450</y>
+        <width>111</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">$ 6,456</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>450</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>BTC</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #000;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>131</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>18</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>CONCEAL</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="m_myAddress">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>10</y>
+         <width>761</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Open Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ccx7HWNxR6pebf4kwRABiXdPMMxumwE8u6G2nLb3Bi1bC124fsQMe7QJYp65rjo8JNaWGsEYQaKUbhpzSh9k7Zat4XVd2ADJTt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
      </widget>
      <zorder>m_tickerLabel1</zorder>
      <zorder>label_4</zorder>
@@ -754,13 +1260,31 @@ color: white;</string>
      <zorder>m_unlockedDepositLabel</zorder>
      <zorder>m_lockedDepositLabel</zorder>
      <zorder>m_tickerLabel5</zorder>
-     <zorder>m_myAddress</zorder>
      <zorder>label_8</zorder>
      <zorder>m_recentTransactionsView</zorder>
      <zorder>label_6</zorder>
      <zorder>label_9</zorder>
-     <zorder>label_10</zorder>
-     <zorder>line</zorder>
+     <zorder>label_11</zorder>
+     <zorder>m_pendingBalanceLabel_2</zorder>
+     <zorder>label_12</zorder>
+     <zorder>label_13</zorder>
+     <zorder>m_actualBalanceLabel_2</zorder>
+     <zorder>label_14</zorder>
+     <zorder>m_pendingBalanceLabel_3</zorder>
+     <zorder>m_actualBalanceLabel_3</zorder>
+     <zorder>label_15</zorder>
+     <zorder>m_actualBalanceLabel_4</zorder>
+     <zorder>label_16</zorder>
+     <zorder>m_pendingBalanceLabel_4</zorder>
+     <zorder>label_17</zorder>
+     <zorder>label_35</zorder>
+     <zorder>m_pendingBalanceLabel_9</zorder>
+     <zorder>m_actualBalanceLabel_9</zorder>
+     <zorder>label_36</zorder>
+     <zorder>label_37</zorder>
+     <zorder>m_pendingBalanceLabel_10</zorder>
+     <zorder>label_38</zorder>
+     <zorder>groupBox_2</zorder>
     </widget>
    </item>
   </layout>
