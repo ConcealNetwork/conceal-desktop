@@ -61,11 +61,38 @@
      <property name="title">
       <string/>
      </property>
+     <widget class="QLabel" name="m_amountLabel">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: orange;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
      <widget class="QLabel" name="m_iconLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>30</y>
         <width>36</width>
         <height>36</height>
        </rect>
@@ -88,8 +115,8 @@
        <rect>
         <x>70</x>
         <y>20</y>
-        <width>150</width>
-        <height>20</height>
+        <width>193</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -105,46 +132,19 @@
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="m_amountLabel">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>30</y>
-        <width>141</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>11</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: orange;</string>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="m_hashLabel">
       <property name="geometry">
        <rect>
         <x>70</x>
         <y>40</y>
-        <width>150</width>
-        <height>20</height>
+        <width>171</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Open Sans</family>
-        <pointsize>9</pointsize>
+        <pointsize>8</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -167,6 +167,34 @@
       </property>
       <property name="textInteractionFlags">
        <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>401</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #444;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </widget>
