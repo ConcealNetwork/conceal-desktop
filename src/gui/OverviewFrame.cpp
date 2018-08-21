@@ -13,6 +13,15 @@
 #include <QMessageBox>
 #include "RecentTransactionsModel.h"
 #include "WalletAdapter.h"
+#include "PriceProvider.h"
+#include "NodeAdapter.h"
+
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkReply>
+#include <QStringList>
+#include <QUrl>
 
 #include "ui_overviewframe.h"
 
@@ -41,8 +50,9 @@ public:
   }
 };
 
-OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame),
-  m_transactionModel(new RecentTransactionsModel) {
+OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) 
+{
+
   m_ui->setupUi(this);
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
@@ -70,15 +80,16 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   connect(m_transactionModel.data(), &QAbstractItemModel::layoutChanged, this, &OverviewFrame::layoutChanged);
 
   connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
+  connect(m_priceProvider, &PriceProvider::priceFoundSignal, this, &OverviewFrame::onPriceFound);  
   
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel5->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
-
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
   reset();
+
 }
 
 OverviewFrame::~OverviewFrame() {
@@ -112,6 +123,10 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+  m_ui->m_totalPortfolioLabel->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance) + " CCX");
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualBalance) + " CCX");
 }
 
@@ -127,11 +142,22 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
 }
 
+void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward) {
+  m_ui->m_ccxusd->setText("$" + _ccxusd);
+  m_ui->m_ccxbtc->setText(_ccxbtc + " sats");
+  m_ui->m_btc->setText("$" + _btc);
+  m_ui->m_difficulty->setText(_diff);
+  m_ui->m_hashrate->setText(_hashrate);
+  m_ui->m_reward->setText(_reward);
+  m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
+}
+
 void OverviewFrame::reset() {
   actualBalanceUpdated(0);
   pendingBalanceUpdated(0);
   actualDepositBalanceUpdated(0);
   pendingDepositBalanceUpdated(0);
+  m_priceProvider->getPrice(); 
 }
 
 }

@@ -56,5 +56,8 @@
         <file>images/city.png</file>
         <file>images/sunkist.png</file>
         <file>images/s_sunkist.png</file>
+        <file>images/carbon.png</file>
+        <file>images/dark.png</file>
+        <file>images/cryptonote2.png</file>
     </qresource>
 </RCC>

@@ -258,6 +258,23 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
     return (amount < 0 ? "-" + amountStr : amountStr);
   }
 
+  case COLUMN_CONFIRMATIONS: {
+
+  quint64 transactionHeight = _index.data(ROLE_HEIGHT).value<quint64>();
+    if (transactionHeight == CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      return "Unconfirmed";
+    }
+
+    quint64 confirmations = NodeAdapter::instance().getLastKnownBlockHeight() - transactionHeight + 1;
+
+    if (confirmations >= 10) {
+      return NodeAdapter::instance().getLastKnownBlockHeight();
+
+    }
+
+
+  }  
+
   case COLUMN_PAYMENT_ID:
     return _index.data(ROLE_PAYMENT_ID);
 
