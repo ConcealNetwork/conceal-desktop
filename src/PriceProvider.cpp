@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2014-2017 XDN developers 
+// Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2018 The Circle Foundation
 //
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = "https://explorer.conceal.network/q/maple/ccx-usd.php";
+  QUrl url = QUrl::fromUserInput(QString("https://explorer.conceal.network/q/maple/ccx-usd.php"));
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
