@@ -11,6 +11,7 @@
 #include <QMessageBox>
 #include <QSystemTrayIcon>
 #include <QTimer>
+#include <QThread>
 
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
@@ -249,16 +250,39 @@ bool MainWindow::event(QEvent* _event) {
   return QMainWindow::event(_event);
 }
 
-void MainWindow::consolidateClicked() {
+void MainWindow::optimizeClicked() 
+{
+
   transactionconfirmation dlg(this);
-  if (dlg.exec() == QDialog::Accepted) {
-    quint64 numUnlockedOutputs;
-    while (true) {
+
+  quint64 numUnlockedOutputs;
+  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+
+  if (numUnlockedOutputs >= 100) 
+  {
+
+    dlg.setMessage("Optimization recommended for this wallet");
+  } else {
+
+    dlg.setMessage("This wallet does not require optimization");
+  }
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
+    while (true) 
+    {
+
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+
       if (numUnlockedOutputs == 0) break;
-      WalletAdapter::instance().consolidateWallet();
-      while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+      WalletAdapter::instance().optimizeWallet();
+
+      while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) 
+      {
+
+        QThread::msleep(500);
       }
     }
   }

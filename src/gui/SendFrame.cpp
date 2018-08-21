@@ -115,8 +115,6 @@ void SendFrame::sendClicked() {
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
   bool isIntegrated = false;
-  // the one-time transaction secret key
-  Crypto::SecretKey transactionSK;
   std::string paymentID;
   std::string spendPublicKey;
   std::string viewPublicKey;
@@ -227,23 +225,11 @@ void SendFrame::sendClicked() {
     }
 
     // send the transaction
-    WalletAdapter::instance().sendTransaction(transactionSK, 
-                                              walletTransfers, 
+    WalletAdapter::instance().sendTransaction(walletTransfers,
                                               fee, 
                                               paymentIdString, 
                                               m_ui->m_mixinSlider->value(),
                                               walletMessages);
-
-    /* disable the transaction confirmation popup for the moment
-    std::string str = Common::podToHex(transactionSK);
-    QString qstr = QString::fromStdString(str);
-
-    transactionconfirmation dlg(this);
-    dlg.setKey(qstr);
-    if (dlg.exec() == QDialog::Accepted) {
-      return;
-    } */
-
   }
 }
 

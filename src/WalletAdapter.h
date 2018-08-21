@@ -47,9 +47,9 @@ public:
   bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
   bool getAccountKeys(CryptoNote::AccountKeys& _keys);
   bool isOpen() const;
-  void sendTransaction(Crypto::SecretKey& _transactionsk, QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
+  void sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages);
-  void consolidateWallet();
+  void optimizeWallet();
   void sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages, quint64 _ttl);
   void deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn);

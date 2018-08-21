@@ -215,23 +215,22 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
   /* process and pass the secret key */
   case COLUMN_SECRETKEY: {
 
-    /* existing outbound transactions not in the same sessions should be empty */
-    if (_index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper() == "0000000000000000000000000000000000000000000000000000000000000000") 
-    {
+    /* get the type of transaction */
+    TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
 
-      return "expired";
+    /* we dont need the key if it's incoming, in-out, or a mined block */
+    if (transactionType == TransactionType::INPUT || transactionType == TransactionType::MINED ||
+        transactionType == TransactionType::INOUT)
+        {
+
+          return "not applicable";
     } else 
     {
+      /* existing outbound transactions not in the same sessions should be empty */
+      if (_index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper() == "0000000000000000000000000000000000000000000000000000000000000000") 
+      {
 
-      /* get the type of transaction */
-      TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
-
-      /* we dont need the key if its incoming, in-out, or a mined block */
-      if (transactionType == TransactionType::INPUT || transactionType == TransactionType::MINED ||
-          transactionType == TransactionType::INOUT) 
-          {
-
-            return "not applicable";    
+        return "expired";
       } else 
       {
           /* return the proper transaction secret key */

@@ -9,6 +9,7 @@
 #include <QDialog>
 
 namespace Ui {
+  
     class transactionconfirmation;
 }
 
@@ -16,11 +17,13 @@ namespace WalletGui {
 
     class transactionconfirmation : public QDialog
     {
+    
         Q_OBJECT
 
         public:
             transactionconfirmation(QWidget* _parent);
             ~transactionconfirmation();
+            void setMessage(QString optimizationMessage);
 
         private:
             QScopedPointer<Ui::transactionconfirmation> m_ui;   
