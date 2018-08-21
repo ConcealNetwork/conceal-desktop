@@ -14,6 +14,7 @@
 #include "RecentTransactionsModel.h"
 #include "WalletAdapter.h"
 #include "PriceProvider.h"
+#include "NodeAdapter.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -122,6 +123,10 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+  m_ui->m_totalPortfolioLabel->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance) + " CCX");
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualBalance) + " CCX");
 }
 
@@ -137,8 +142,14 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
 }
 
-void OverviewFrame::onPriceFound(const QString& _name, const QString& _address) {
-  m_ui->label_9->setText(_name);
+void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward) {
+  m_ui->m_ccxusd->setText("$" + _ccxusd);
+  m_ui->m_ccxbtc->setText(_ccxbtc + " sats");
+  m_ui->m_btc->setText("$" + _btc);
+  m_ui->m_difficulty->setText(_diff);
+  m_ui->m_hashrate->setText(_hashrate);
+  m_ui->m_reward->setText(_reward);
+  m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
 }
 
 void OverviewFrame::reset() {

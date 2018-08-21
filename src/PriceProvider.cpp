@@ -34,7 +34,15 @@ void PriceProvider::getPrice() {
 void PriceProvider::readyRead() {
   QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
   QString data = (QString)reply->readAll();
-  Q_EMIT priceFoundSignal(data, data);
+  QStringList pairs = data.split(" ");
+  QString ccxusd = pairs[0];
+  QString ccxbtc = pairs[1];
+  QString btc = pairs[2];
+  QString diff = pairs[3];
+  QString hashrate = pairs[4];
+  QString reward = pairs[5];
+
+  Q_EMIT priceFoundSignal(ccxusd, ccxbtc, btc, diff, hashrate, reward);
 
 }
 

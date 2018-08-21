@@ -35,7 +35,7 @@ private:
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
   PriceProvider* m_priceProvider;  
 
-  void onPriceFound(const QString& _name, const QString& _address);
+  void onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void layoutChanged();

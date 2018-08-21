@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1350</width>
-    <height>767</height>
+    <width>1200</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -184,7 +184,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1350</width>
+     <width>1200</width>
      <height>23</height>
     </rect>
    </property>
@@ -245,7 +245,7 @@
    </property>
    <property name="maximumSize">
     <size>
-     <width>60</width>
+     <width>16777215</width>
      <height>16777215</height>
     </size>
    </property>
@@ -269,7 +269,7 @@
     <bool>false</bool>
    </property>
    <property name="orientation">
-    <enum>Qt::Vertical</enum>
+    <enum>Qt::Horizontal</enum>
    </property>
    <property name="iconSize">
     <size>

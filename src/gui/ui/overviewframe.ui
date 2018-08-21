@@ -228,7 +228,7 @@ color: orange;</string>
        <property name="title">
         <string/>
        </property>
-       <widget class="QLabel" name="m_totalBalanceLabel">
+       <widget class="QLabel" name="m_totalPortfolioLabel">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -376,7 +376,7 @@ background: transparent;</string>
          <string>background: transparent;</string>
         </property>
         <property name="text">
-         <string>Unlocked:</string>
+         <string>Locked</string>
         </property>
        </widget>
        <widget class="QLabel" name="m_tickerLabel4">
@@ -451,7 +451,7 @@ background: transparent;</string>
          <string>background: transparent;</string>
         </property>
         <property name="text">
-         <string>Locked:</string>
+         <string>Matured</string>
         </property>
        </widget>
        <widget class="QLabel" name="m_lockedDepositLabel">
@@ -774,7 +774,7 @@ background: transparent;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="m_totalDepositLabel_2">
+       <widget class="QLabel" name="m_totalBalanceLabel">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -949,7 +949,7 @@ border: 1px solid orange;</string>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_actualBalanceLabel_9">
+      <widget class="QLabel" name="m_ccxbtc">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -971,13 +971,13 @@ border: 1px solid orange;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">0.00000567 BTC</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_10">
+      <widget class="QLabel" name="m_btc">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -999,7 +999,7 @@ border: 1px solid orange;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">$ 6,456</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1131,7 +1131,7 @@ color: white;</string>
         <string>CCX-BTC</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_3">
+      <widget class="QLabel" name="m_reward">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -1153,7 +1153,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">5.5 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1184,7 +1184,7 @@ color: white;</string>
         <string>Hashrate</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel_3">
+      <widget class="QLabel" name="m_difficulty">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1206,13 +1206,13 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">38m</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel_4">
+      <widget class="QLabel" name="m_supply">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1234,13 +1234,13 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">12,456,789</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel_2">
+      <widget class="QLabel" name="m_height">
        <property name="geometry">
         <rect>
          <x>190</x>
@@ -1262,7 +1262,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">52,000</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1293,7 +1293,7 @@ color: white;</string>
         <string>CCX-USD</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_9">
+      <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -1315,7 +1315,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">$ 0.0376</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1397,7 +1397,7 @@ color: white;</string>
         <string>MARKET</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_2">
+      <widget class="QLabel" name="m_hashrate">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -1419,13 +1419,13 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">314 KH/s</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_4">
+      <widget class="QLabel" name="m_deposits">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -1447,7 +1447,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">72,000 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1551,7 +1551,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">114 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1604,7 +1604,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">3114 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1657,7 +1657,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">114 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1760,7 +1760,7 @@ color: white;</string>
         <string>background: transparent;</string>
        </property>
        <property name="text">
-        <string notr="true">3114 CCX</string>
+        <string notr="true">-</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
