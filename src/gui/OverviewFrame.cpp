@@ -32,6 +32,7 @@ class RecentTransactionsDelegate : public QStyledItemDelegate {
 
 public:
   RecentTransactionsDelegate(QObject* _parent) : QStyledItemDelegate(_parent) {
+
   }
 
   ~RecentTransactionsDelegate() {
@@ -57,7 +58,6 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
   int id2 = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
-
   QFont font;
   font.setFamily("Oswald");
   font.setPointSize(18);
@@ -88,6 +88,9 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_tickerLabel5->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
+
+
+
   reset();
 
 }
@@ -116,23 +119,29 @@ void OverviewFrame::layoutChanged() {
 
 void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance;
+  m_ui->m_totalPortfolioLabel->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");  
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingBalance) + " CCX");
 }
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-  m_ui->m_totalPortfolioLabel->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance) + " CCX");
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualBalance) + " CCX");
 }
 
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) {
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance;
+  m_ui->m_totalPortfolioLabel->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");   
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance) + " CCX");
 }
 
@@ -143,12 +152,23 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
 }
 
 void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward) {
+  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance;
+
   m_ui->m_ccxusd->setText("$" + _ccxusd);
-  m_ui->m_ccxbtc->setText(_ccxbtc + " sats");
-  m_ui->m_btc->setText("$" + _btc);
+
+  float ccxusd = _ccxusd.toFloat();
+  float total = (float)totalBalance * ccxusd;
+
+  m_ui->m_ccxbtc->setText(_ccxbtc + " satoshi");
+  m_ui->m_btc->setText("USD " + _btc);
   m_ui->m_difficulty->setText(_diff);
   m_ui->m_hashrate->setText(_hashrate);
   m_ui->m_reward->setText(_reward);
+  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total / 1000000, 'f', 2)); 
   m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
 }
 

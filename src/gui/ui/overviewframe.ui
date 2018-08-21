@@ -285,7 +285,7 @@ background: transparent;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="m_totalBalanceLabel_2">
+       <widget class="QLabel" name="m_totalPortfolioLabelUSD">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -308,7 +308,7 @@ background: transparent;</string>
 background: transparent;</string>
         </property>
         <property name="text">
-         <string notr="true">1,348.00 USD</string>
+         <string notr="true">-</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
