@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>1200</width>
     <height>700</height>
+=======
+    <width>800</width>
+    <height>600</height>
+>>>>>>> parent of 24a9cdf... more changes
    </rect>
   </property>
   <property name="sizePolicy">
@@ -80,7 +85,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+       <enum>QFrame::Raised</enum>
       </property>
       <property name="lineWidth">
        <number>0</number>
@@ -169,22 +174,16 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusBar">
-   <property name="font">
-    <font>
-     <family>Open Sans</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">padding: 5px;</string>
-   </property>
-  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
+<<<<<<< HEAD
      <width>1200</width>
+=======
+     <width>800</width>
+>>>>>>> parent of 24a9cdf... more changes
      <height>23</height>
     </rect>
    </property>
@@ -243,12 +242,15 @@
      <height>0</height>
     </size>
    </property>
+<<<<<<< HEAD
    <property name="maximumSize">
     <size>
      <width>16777215</width>
      <height>16777215</height>
     </size>
    </property>
+=======
+>>>>>>> parent of 24a9cdf... more changes
    <property name="font">
     <font>
      <family>Source Sans Pro</family>
@@ -268,17 +270,17 @@
    <property name="movable">
     <bool>false</bool>
    </property>
+<<<<<<< HEAD
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
+=======
+>>>>>>> parent of 24a9cdf... more changes
    <property name="iconSize">
     <size>
      <width>24</width>
      <height>36</height>
     </size>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonIconOnly</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -295,6 +297,16 @@
    <addaction name="m_sendMessageAction"/>
    <addaction name="m_addressBookAction"/>
    <addaction name="m_miningAction"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <family>Open Sans</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">padding: 5px;</string>
+   </property>
   </widget>
   <action name="m_overviewAction">
    <property name="checkable">
@@ -316,12 +328,6 @@
      <pointsize>10</pointsize>
     </font>
    </property>
-   <property name="visible">
-    <bool>true</bool>
-   </property>
-   <property name="shortcutVisibleInContextMenu">
-    <bool>false</bool>
-   </property>
   </action>
   <action name="m_sendAction">
    <property name="checkable">
@@ -336,9 +342,6 @@
    </property>
    <property name="text">
     <string>SEND</string>
-   </property>
-   <property name="statusTip">
-    <string/>
    </property>
    <property name="font">
     <font>

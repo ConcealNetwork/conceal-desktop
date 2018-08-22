@@ -61,6 +61,7 @@
      <property name="title">
       <string/>
      </property>
+<<<<<<< HEAD
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
@@ -88,6 +89,8 @@
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
+=======
+>>>>>>> parent of 24a9cdf... more changes
      <widget class="QLabel" name="m_iconLabel">
       <property name="geometry">
        <rect>
@@ -115,8 +118,8 @@
        <rect>
         <x>70</x>
         <y>20</y>
-        <width>193</width>
-        <height>21</height>
+        <width>150</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -132,19 +135,50 @@
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="m_hashLabel">
+     <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>40</y>
-        <width>171</width>
-        <height>21</height>
+        <x>240</x>
+        <y>30</y>
+        <width>141</width>
+        <height>29</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Open Sans</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: orange;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_hashLabel">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>40</y>
+        <width>150</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+<<<<<<< HEAD
         <pointsize>7</pointsize>
+=======
+        <pointsize>9</pointsize>
+>>>>>>> parent of 24a9cdf... more changes
        </font>
       </property>
       <property name="styleSheet">
@@ -169,6 +203,7 @@
        <set>Qt::NoTextInteraction</set>
       </property>
      </widget>
+<<<<<<< HEAD
      <widget class="Line" name="line">
       <property name="geometry">
        <rect>
@@ -197,6 +232,8 @@
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
+=======
+>>>>>>> parent of 24a9cdf... more changes
     </widget>
    </item>
   </layout>
