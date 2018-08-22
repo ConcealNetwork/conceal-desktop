@@ -7,7 +7,11 @@
     <x>0</x>
     <y>0</y>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <width>1200</width>
+=======
+    <width>800</width>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
     <width>800</width>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
@@ -32,7 +36,11 @@
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
 <<<<<<< HEAD
+<<<<<<< HEAD
 background: url(:/images/city.png);</string>
+=======
+background-color: #333;</string>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
 background-color: #333;</string>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
@@ -96,6 +104,7 @@ background-color: #333;</string>
        <rect>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <x>20</x>
         <y>160</y>
         <width>361</width>
@@ -106,6 +115,11 @@ background-color: #333;</string>
         <width>31</width>
         <height>24</height>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+        <x>287</x>
+        <y>160</y>
+        <width>31</width>
+        <height>24</height>
 =======
         <x>287</x>
         <y>160</y>
@@ -123,6 +137,86 @@ background-color: #333;</string>
        </font>
       </property>
       <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">CCX</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>121</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Unconfirmed:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>160</y>
+        <width>141</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>211</width>
+        <height>25</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+<<<<<<< HEAD
        <string>background: transparent;</string>
       </property>
       <property name="text">
@@ -287,35 +381,57 @@ color: white;</string>
      <widget class="QLabel" name="m_tickerLabel2">
       <property name="geometry">
        <rect>
+=======
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>YOUR WALLET</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_tickerLabel2">
+      <property name="geometry">
+       <rect>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <x>287</x>
         <y>190</y>
         <width>31</width>
         <height>25</height>
+<<<<<<< HEAD
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
         <y>200</y>
         <width>461</width>
         <height>481</height>
 >>>>>>> parent of ca7a951... changed overview tx width
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </rect>
       </property>
       <property name="font">
        <font>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <family>Poppins</family>
         <pointsize>18</pointsize>
         <weight>75</weight>
         <bold>true</bold>
 =======
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <family>Open Sans</family>
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+<<<<<<< HEAD
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
+<<<<<<< HEAD
 <<<<<<< HEAD
        <string notr="true">background: transparent;
 color: orange;</string>
@@ -332,6 +448,8 @@ color: orange;</string>
         <width>31</width>
         <height>25</height>
 =======
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        <string>background: transparent;</string>
       </property>
       <property name="text">
@@ -345,12 +463,16 @@ color: orange;</string>
         <y>250</y>
         <width>290</width>
         <height>35</height>
+<<<<<<< HEAD
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Open Sans</family>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <pointsize>9</pointsize>
         <weight>50</weight>
@@ -360,10 +482,16 @@ color: orange;</string>
         <weight>75</weight>
         <bold>true</bold>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
+        <pointsize>15</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <stylestrategy>PreferAntialias</stylestrategy>
        </font>
       </property>
       <property name="styleSheet">
+<<<<<<< HEAD
 <<<<<<< HEAD
        <string>background: transparent;</string>
       </property>
@@ -379,6 +507,8 @@ color: orange;</string>
         <width>290</width>
         <height>35</height>
 =======
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        <string notr="true">color: #222;
 background-color: orange;
 </string>
@@ -397,6 +527,9 @@ background-color: orange;
         <y>190</y>
         <width>111</width>
         <height>25</height>
+<<<<<<< HEAD
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </rect>
       </property>
@@ -404,9 +537,15 @@ background-color: orange;
        <font>
         <family>Open Sans</family>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pointsize>15</pointsize>
         <weight>75</weight>
         <bold>true</bold>
+=======
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
         <pointsize>9</pointsize>
         <weight>50</weight>
@@ -417,7 +556,11 @@ background-color: orange;
       </property>
       <property name="styleSheet">
 <<<<<<< HEAD
+<<<<<<< HEAD
        <string notr="true">color: #e5e5e5;</string>
+=======
+       <string>background: transparent;</string>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
        <string>background: transparent;</string>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
@@ -426,6 +569,7 @@ background-color: orange;
        <string notr="true">0.00</string>
       </property>
       <property name="alignment">
+<<<<<<< HEAD
 <<<<<<< HEAD
        <set>Qt::AlignCenter</set>
       </property>
@@ -494,6 +638,69 @@ background-color: orange;
        </rect>
       </property>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>160</y>
+        <width>111</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Balance:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>440</y>
+        <width>81</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Locked:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>410</y>
+        <width>101</width>
+        <height>25</height>
+       </rect>
+      </property>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
       <property name="font">
        <font>
         <family>Open Sans</family>
@@ -501,7 +708,10 @@ background-color: orange;
         <weight>50</weight>
         <bold>false</bold>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <stylestrategy>PreferAntialias</stylestrategy>
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </font>
@@ -510,6 +720,7 @@ background-color: orange;
        <string>background: transparent;</string>
       </property>
       <property name="text">
+<<<<<<< HEAD
 <<<<<<< HEAD
        <string>Balance:</string>
       </property>
@@ -1305,11 +1516,23 @@ border: 1px solid orange;</string>
         <x>30</x>
         <y>470</y>
         <width>101</width>
+=======
+       <string>Unlocked:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>350</y>
+        <width>221</width>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <height>25</height>
        </rect>
       </property>
       <property name="font">
        <font>
+<<<<<<< HEAD
         <family>Open Sans</family>
         <pointsize>9</pointsize>
         <weight>50</weight>
@@ -1385,11 +1608,16 @@ color: orange;</string>
        <font>
         <family>Open Sans</family>
         <pointsize>9</pointsize>
+=======
+        <family>Oswald</family>
+        <pointsize>18</pointsize>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
+<<<<<<< HEAD
        <string>background: transparent;</string>
       </property>
       <property name="text">
@@ -2648,6 +2876,10 @@ color: white;</string>
       <property name="styleSheet">
        <string notr="true">background: transparent;
 color: white;</string>
+=======
+       <string notr="true">background: transparent;
+color: white;</string>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
       </property>
       <property name="text">
        <string>YOUR DEPOSITS</string>
@@ -2789,6 +3021,7 @@ background-color: orange;
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
+<<<<<<< HEAD
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
      </widget>
      <widget class="QLabel" name="m_actualBalanceLabel_3">
@@ -2966,14 +3199,23 @@ background-color: orange;
       <property name="text">
        <string>Circulating Supply</string>
       </property>
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
      </widget>
      <widget class="QLabel" name="label_35">
       <property name="geometry">
        <rect>
+<<<<<<< HEAD
         <x>820</x>
         <y>390</y>
         <width>111</width>
         <height>24</height>
+=======
+        <x>30</x>
+        <y>90</y>
+        <width>291</width>
+        <height>71</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </rect>
       </property>
       <property name="font">
@@ -3020,6 +3262,7 @@ background-color: orange;
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
+<<<<<<< HEAD
      <widget class="QLabel" name="m_actualBalanceLabel_9">
       <property name="geometry">
        <rect>
@@ -3027,6 +3270,15 @@ background-color: orange;
         <y>390</y>
         <width>141</width>
         <height>24</height>
+=======
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>20</y>
+        <width>401</width>
+        <height>31</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </rect>
       </property>
       <property name="font">
@@ -3035,6 +3287,7 @@ background-color: orange;
         <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
+<<<<<<< HEAD
        </font>
       </property>
       <property name="styleSheet">
@@ -3063,6 +3316,8 @@ background-color: orange;
         <weight>75</weight>
         <bold>true</bold>
         <stylestrategy>PreferAntialias</stylestrategy>
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        </font>
       </property>
       <property name="styleSheet">
@@ -3070,6 +3325,7 @@ background-color: orange;
 color: white;</string>
       </property>
       <property name="text">
+<<<<<<< HEAD
 <<<<<<< HEAD
        <string>MARKET</string>
       </property>
@@ -3095,10 +3351,20 @@ color: white;</string>
      <widget class="QTreeView" name="m_recentTransactionsView">
       <property name="geometry">
        <rect>
+=======
+       <string>LATEST TRANSACTIONS</string>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="m_recentTransactionsView">
+      <property name="geometry">
+       <rect>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <x>350</x>
         <y>70</y>
         <width>425</width>
         <height>500</height>
+<<<<<<< HEAD
+=======
        </rect>
       </property>
       <property name="minimumSize">
@@ -3123,6 +3389,74 @@ color: white;</string>
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::NoSelection</enum>
+      </property>
+      <property name="rootIsDecorated">
+       <bool>false</bool>
+      </property>
+      <property name="uniformRowHeights">
+       <bool>true</bool>
+      </property>
+      <property name="itemsExpandable">
+       <bool>false</bool>
+      </property>
+      <property name="headerHidden">
+       <bool>true</bool>
+      </property>
+      <property name="expandsOnDoubleClick">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>220</y>
+        <width>281</width>
+        <height>25</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>425</width>
+        <height>500</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+<<<<<<< HEAD
+        <family>Courier</family>
+        <pointsize>10</pointsize>
+=======
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+<<<<<<< HEAD
        <string notr="true">background: transparent;</string>
       </property>
       <property name="frameShape">
@@ -3239,6 +3573,23 @@ color: white;</string>
         <y>480</y>
         <width>281</width>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>TOTAL</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>480</y>
+        <width>281</width>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
         <height>25</height>
        </rect>
       </property>
@@ -3246,6 +3597,7 @@ color: white;</string>
        <font>
         <family>Open Sans</family>
         <pointsize>9</pointsize>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <weight>50</weight>
         <bold>false</bold>
@@ -3302,6 +3654,42 @@ color: white;</string>
        <string>background: transparent;</string>
       </property>
       <property name="text">
+=======
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>TOTAL DEPOSITS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>background: transparent;</string>
+      </property>
+      <property name="text">
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
        <string>Wallet Address:</string>
       </property>
      </widget>
@@ -3319,6 +3707,32 @@ color: white;</string>
         <width>0</width>
         <height>1</height>
        </size>
+<<<<<<< HEAD
+=======
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>21</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
       </property>
       <property name="maximumSize">
        <size>
@@ -3428,6 +3842,10 @@ p, li { white-space: pre-wrap; }
      <zorder>m_lockedDepositLabel</zorder>
      <zorder>m_tickerLabel5</zorder>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+     <zorder>m_myAddress</zorder>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
      <zorder>m_myAddress</zorder>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
@@ -3435,6 +3853,7 @@ p, li { white-space: pre-wrap; }
      <zorder>m_recentTransactionsView</zorder>
      <zorder>label_6</zorder>
      <zorder>label_9</zorder>
+<<<<<<< HEAD
 <<<<<<< HEAD
      <zorder>label_11</zorder>
      <zorder>m_pendingBalanceLabel_2</zorder>
@@ -3457,6 +3876,10 @@ p, li { white-space: pre-wrap; }
      <zorder>m_pendingBalanceLabel_10</zorder>
      <zorder>label_38</zorder>
      <zorder>groupBox_2</zorder>
+=======
+     <zorder>label_10</zorder>
+     <zorder>line</zorder>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
      <zorder>label_10</zorder>
      <zorder>line</zorder>

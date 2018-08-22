@@ -57,8 +57,11 @@
         <file>images/sunkist.png</file>
         <file>images/s_sunkist.png</file>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <file>images/carbon.png</file>
         <file>images/dark.png</file>
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
     </qresource>

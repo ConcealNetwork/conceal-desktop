@@ -8,12 +8,17 @@
     <y>0</y>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <width>1200</width>
     <height>700</height>
 =======
     <width>800</width>
     <height>600</height>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+    <width>800</width>
+    <height>600</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
     <width>800</width>
     <height>600</height>
@@ -186,10 +191,14 @@
      <y>0</y>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      <width>1200</width>
 =======
      <width>800</width>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+     <width>800</width>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
      <width>800</width>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
@@ -253,6 +262,7 @@
    </property>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    <property name="maximumSize">
     <size>
      <width>16777215</width>
@@ -261,6 +271,8 @@
    </property>
 =======
 >>>>>>> parent of 24a9cdf... more changes
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
    <property name="font">
@@ -284,11 +296,14 @@
    </property>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
 =======
 >>>>>>> parent of 24a9cdf... more changes
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
    <property name="iconSize">

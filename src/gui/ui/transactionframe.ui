@@ -63,6 +63,7 @@
      </property>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
@@ -239,6 +240,11 @@
      </widget>
 =======
 >>>>>>> parent of 24a9cdf... more changes
+=======
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
 =======
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
