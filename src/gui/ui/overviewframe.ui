@@ -94,7 +94,7 @@ background: url(:/images/carbon.png);</string>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -190,15 +190,15 @@ color: orange;</string>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>90</x>
          <y>70</y>
-         <width>131</width>
+         <width>141</width>
          <height>25</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
+         <family>Poppins</family>
          <pointsize>18</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -239,7 +239,7 @@ color: orange;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>16</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -268,7 +268,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -341,7 +341,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Oswald</family>
+          <family>Poppins</family>
           <pointsize>18</pointsize>
           <weight>50</weight>
           <bold>false</bold>
@@ -672,7 +672,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Oswald</family>
+          <family>Poppins</family>
           <pointsize>18</pointsize>
           <weight>50</weight>
           <bold>false</bold>
@@ -697,7 +697,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -730,7 +730,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>15</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -758,7 +758,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -791,7 +791,7 @@ background: transparent;</string>
         </property>
         <property name="font">
          <font>
-          <family>Open Sans</family>
+          <family>Poppins</family>
           <pointsize>15</pointsize>
           <weight>75</weight>
           <bold>true</bold>
@@ -820,8 +820,8 @@ background: transparent;</string>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>14</pointsize>
+         <family>Poppins</family>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -859,7 +859,7 @@ border: 1px solid orange;</string>
         </property>
         <property name="font">
          <font>
-          <family>Oswald</family>
+          <family>Poppins</family>
           <pointsize>11</pointsize>
          </font>
         </property>
@@ -897,7 +897,7 @@ border: 1px solid orange;</string>
         </property>
         <property name="font">
          <font>
-          <family>Oswald</family>
+          <family>Poppins</family>
           <pointsize>11</pointsize>
          </font>
         </property>
@@ -920,8 +920,8 @@ border: 1px solid orange;</string>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
-         <pointsize>14</pointsize>
+         <family>Poppins</family>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -1010,13 +1010,13 @@ border: 1px solid orange;</string>
         <rect>
          <x>20</x>
          <y>260</y>
-         <width>91</width>
+         <width>121</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
+         <family>Poppins</family>
          <pointsize>18</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -1376,13 +1376,13 @@ color: white;</string>
         <rect>
          <x>20</x>
          <y>520</y>
-         <width>81</width>
+         <width>111</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
+         <family>Poppins</family>
          <pointsize>18</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -1482,14 +1482,14 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>10</y>
-         <width>111</width>
+         <y>20</y>
+         <width>131</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Oswald</family>
+         <family>Poppins</family>
          <pointsize>18</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -1771,7 +1771,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
+        <y>60</y>
         <width>391</width>
         <height>51</height>
        </rect>
@@ -1804,14 +1804,14 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>10</y>
-        <width>91</width>
+        <y>20</y>
+        <width>111</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
         <weight>50</weight>
         <bold>false</bold>
@@ -1829,16 +1829,16 @@ color: orange;</string>
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>110</y>
+        <x>160</x>
+        <y>120</y>
         <width>201</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>12</pointsize>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -1854,15 +1854,15 @@ border: 1px solid orange;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>110</y>
-        <width>121</width>
+        <y>120</y>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>11</pointsize>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
