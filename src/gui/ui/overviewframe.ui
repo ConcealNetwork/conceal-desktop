@@ -97,7 +97,7 @@ background-color: #333;</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
         <x>20</x>
-        <y>170</y>
+        <y>160</y>
         <width>361</width>
         <height>31</height>
 =======
@@ -267,6 +267,7 @@ background-color: #333;</string>
        <rect>
         <x>20</x>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <y>210</y>
         <width>461</width>
         <height>471</height>
@@ -291,6 +292,11 @@ color: white;</string>
         <width>31</width>
         <height>25</height>
 >>>>>>> parent of 1a513fe... Merge branch 'master' into master
+=======
+        <y>200</y>
+        <width>461</width>
+        <height>481</height>
+>>>>>>> parent of ca7a951... changed overview tx width
        </rect>
       </property>
       <property name="font">
@@ -1166,7 +1172,7 @@ background: transparent;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QPushButton" name="sendButton">
+      <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1266,7 +1272,7 @@ border: 1px solid orange;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QPushButton" name="depositButton_2">
+      <widget class="QPushButton" name="pushButton_2">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -3073,7 +3079,7 @@ color: white;</string>
        <rect>
 <<<<<<< HEAD
         <x>150</x>
-        <y>110</y>
+        <y>100</y>
         <width>201</width>
         <height>31</height>
 =======
@@ -3181,6 +3187,7 @@ color: white;</string>
        <rect>
 <<<<<<< HEAD
         <x>20</x>
+<<<<<<< HEAD
         <y>110</y>
 =======
         <x>960</x>
@@ -3214,6 +3221,9 @@ color: white;</string>
         <x>820</x>
         <y>450</y>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+        <y>100</y>
+>>>>>>> parent of ca7a951... changed overview tx width
         <width>121</width>
 =======
        <string>TOTAL</string>

@@ -66,10 +66,10 @@
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>10</y>
+        <x>240</x>
+        <y>20</y>
         <width>141</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -96,7 +96,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>30</y>
         <width>36</width>
         <height>36</height>
        </rect>
@@ -176,10 +176,14 @@
        <font>
         <family>Open Sans</family>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pointsize>7</pointsize>
 =======
         <pointsize>9</pointsize>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+        <pointsize>8</pointsize>
+>>>>>>> parent of ca7a951... changed overview tx width
        </font>
       </property>
       <property name="styleSheet">
@@ -210,7 +214,7 @@
        <rect>
         <x>0</x>
         <y>80</y>
-        <width>461</width>
+        <width>401</width>
         <height>1</height>
        </rect>
       </property>
@@ -227,7 +231,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #333;</string>
+       <string notr="true">background-color: #444;</string>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
