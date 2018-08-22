@@ -9,7 +9,6 @@
 #include <QDialog>
 
 namespace Ui {
-  
     class transactionconfirmation;
 }
 
@@ -17,7 +16,6 @@ namespace WalletGui {
 
     class transactionconfirmation : public QDialog
     {
-    
         Q_OBJECT
 
         public:

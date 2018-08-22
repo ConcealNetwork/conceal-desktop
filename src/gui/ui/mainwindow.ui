@@ -7,12 +7,17 @@
     <x>0</x>
     <y>0</y>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <width>1200</width>
     <height>700</height>
 =======
     <width>800</width>
     <height>600</height>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+    <width>800</width>
+    <height>600</height>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
    </rect>
   </property>
   <property name="sizePolicy">
@@ -180,10 +185,14 @@
      <x>0</x>
      <y>0</y>
 <<<<<<< HEAD
+<<<<<<< HEAD
      <width>1200</width>
 =======
      <width>800</width>
 >>>>>>> parent of 24a9cdf... more changes
+=======
+     <width>800</width>
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
      <height>23</height>
     </rect>
    </property>
@@ -243,6 +252,7 @@
     </size>
    </property>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <property name="maximumSize">
     <size>
      <width>16777215</width>
@@ -251,6 +261,8 @@
    </property>
 =======
 >>>>>>> parent of 24a9cdf... more changes
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
    <property name="font">
     <font>
      <family>Source Sans Pro</family>
@@ -271,11 +283,14 @@
     <bool>false</bool>
    </property>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
 =======
 >>>>>>> parent of 24a9cdf... more changes
+=======
+>>>>>>> parent of 1a513fe... Merge branch 'master' into master
    <property name="iconSize">
     <size>
      <width>24</width>

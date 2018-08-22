@@ -8,7 +8,6 @@
 #pragma once
 
 #include <QFrame>
-#include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
 
 namespace Ui {
@@ -16,8 +15,6 @@ class OverviewFrame;
 }
 
 namespace WalletGui {
-
-class PriceProvider;
 
 class RecentTransactionsModel;
 
@@ -30,12 +27,9 @@ public:
   ~OverviewFrame();
 
 private:
-  QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
-  PriceProvider* m_priceProvider;  
 
-  void onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void layoutChanged();
