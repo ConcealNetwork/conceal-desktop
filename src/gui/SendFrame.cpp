@@ -110,7 +110,8 @@ void SendFrame::clearAllClicked() {
 //-----------------------------------------------------------------------------------------
 
 void SendFrame::sendClicked() {
-  // this is what is triggered when you send funds
+
+  /* send funds */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
@@ -119,12 +120,14 @@ void SendFrame::sendClicked() {
   std::string spendPublicKey;
   std::string viewPublicKey;
   QByteArray paymentIdString;
-  // run through each of the transactions in the frame
-  // the send tab allows multiple transaction at once
+
+  /* run through each of the transactions in the frame
+  the send tab allows multiple transactions at once */
   Q_FOREACH (TransferFrame * transfer, m_transfers) 
   {
     QString address = transfer->getAddress();   
-    QString int_address = transfer->getAddress();   
+    
+    QString int_address = transfer->getAddress();
 
     /* integrated address check */
     if (address.toStdString().length() == 186) 
@@ -133,7 +136,7 @@ void SendFrame::sendClicked() {
 
       const uint64_t paymentIDLen = 64;
 
-      /* extract and commit the payment id to extra */
+      /* extract the payment id */
       std::string decoded;
       uint64_t prefix;
       if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded)) 
@@ -149,28 +152,29 @@ void SendFrame::sendClicked() {
 
     CryptoNote::fromBinaryArray(addr, ba);
 
-
     std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, 
                                                             addr);   
     address = QString::fromStdString(address_string);
     }
 
+    /* validate the address */
     if (!CurrencyAdapter::instance().validateAddress(address)) 
     {
+
       QCoreApplication::postEvent(&MainWindow::instance(), 
                         new ShowMessageEvent(tr("Invalid recipient address"), 
                         QtCriticalMsg));
       return;
     }
 
-    // get the transaction details
+    /* get the transaction details */
     walletTransfer.address = address.toStdString();
     uint64_t amount = CurrencyAdapter::instance().parseAmount(transfer->getAmountString());
     walletTransfer.amount = amount;
     walletTransfers.push_back(walletTransfer);
     QString label = transfer->getLabel();
 
-    // add to the address book if a label is given
+    /* add to the address book if a label is given */
     if (!label.isEmpty()) 
     {
       
@@ -186,15 +190,17 @@ void SendFrame::sendClicked() {
       }
     }
 
-    // add the comment to the transaction
+    /* add the comment to the transaction */
     QString comment = transfer->getComment();
-    if (!comment.isEmpty()) {
+    if (!comment.isEmpty()) 
+    {
+
       walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), 
                             address.toStdString()});
     }
   }
 
-    // incorrect fee, abort
+    /* incorrect fee, abort */
     quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
     if (fee < CurrencyAdapter::instance().getMinimumFee()) 
     {
@@ -204,18 +210,20 @@ void SendFrame::sendClicked() {
       return;
     }
 
-  // if the wallet is open we proceed
+  /* if the wallet is open we proceed */
   if (WalletAdapter::instance().isOpen()) 
   {
 
-    if (isIntegrated == true) {
+    /* if its an integrated address, use the extracted payment ID */
+    if (isIntegrated == true) 
+    {
+
         m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
     }
-
     paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
     m_ui->m_paymentIdEdit->setText("");
 
-    // check payment id validity, or about
+    /* validate the payment ID */
     if (!isValidPaymentId(paymentIdString)) 
     {
       QCoreApplication::postEvent(&MainWindow::instance(), 
@@ -224,7 +232,7 @@ void SendFrame::sendClicked() {
       return;
     }
 
-    // send the transaction
+    /* finally, send the transaction */
     WalletAdapter::instance().sendTransaction(walletTransfers,
                                               fee, 
                                               paymentIdString, 
