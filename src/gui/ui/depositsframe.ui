@@ -70,71 +70,8 @@
      <widget class="QSpinBox" name="m_timeSpin">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>130</y>
-        <width>101</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #777;</string>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>12</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="m_feeLabel">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>160</y>
-        <width>181</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>130</y>
-        <width>57</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Time:</string>
-      </property>
-     </widget>
-     <widget class="QDoubleSpinBox" name="m_amountSpin">
-      <property name="geometry">
-       <rect>
         <x>130</x>
-        <y>70</y>
+        <y>110</y>
         <width>171</width>
         <height>23</height>
        </rect>
@@ -148,15 +85,96 @@
       <property name="styleSheet">
        <string notr="true">background-color: #777;</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>12</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_feeLabel">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>170</y>
+        <width>181</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>110</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Term</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="m_amountSpin">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #777;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="minimum">
+       <double>1.000000000000000</double>
+      </property>
       <property name="maximum">
        <double>20000000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>1.000000000000000</double>
       </property>
      </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
         <x>13</x>
-        <y>70</y>
+        <y>50</y>
         <width>57</width>
         <height>23</height>
        </rect>
@@ -175,7 +193,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>196</y>
+        <y>210</y>
         <width>300</width>
         <height>30</height>
        </rect>
@@ -202,9 +220,9 @@
      <widget class="QLabel" name="m_nativeTimeLabel">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>130</y>
-        <width>121</width>
+        <x>130</x>
+        <y>140</y>
+        <width>171</width>
         <height>23</height>
        </rect>
       </property>
@@ -217,13 +235,16 @@
       <property name="text">
        <string>21900 blocks</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="m_interestLabel">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>100</y>
-        <width>201</width>
+        <x>130</x>
+        <y>80</y>
+        <width>171</width>
         <height>23</height>
        </rect>
       </property>
@@ -236,12 +257,15 @@
       <property name="text">
        <string/>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="m_feeTextLabel">
       <property name="geometry">
        <rect>
         <x>13</x>
-        <y>160</y>
+        <y>170</y>
         <width>101</width>
         <height>23</height>
        </rect>
@@ -260,7 +284,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>196</y>
+        <y>210</y>
         <width>300</width>
         <height>30</height>
        </rect>
@@ -288,7 +312,7 @@
       <property name="geometry">
        <rect>
         <x>720</x>
-        <y>70</y>
+        <y>50</y>
         <width>31</width>
         <height>23</height>
        </rect>
@@ -307,7 +331,7 @@
       <property name="geometry">
        <rect>
         <x>596</x>
-        <y>115</y>
+        <y>95</y>
         <width>121</width>
         <height>23</height>
        </rect>
@@ -331,7 +355,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>70</y>
+        <y>50</y>
         <width>81</width>
         <height>23</height>
        </rect>
@@ -350,7 +374,7 @@
       <property name="geometry">
        <rect>
         <x>586</x>
-        <y>160</y>
+        <y>140</y>
         <width>131</width>
         <height>23</height>
        </rect>
@@ -374,7 +398,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>115</y>
+        <y>95</y>
         <width>81</width>
         <height>23</height>
        </rect>
@@ -393,7 +417,7 @@
       <property name="geometry">
        <rect>
         <x>596</x>
-        <y>70</y>
+        <y>50</y>
         <width>121</width>
         <height>23</height>
        </rect>
@@ -417,7 +441,7 @@
       <property name="geometry">
        <rect>
         <x>720</x>
-        <y>160</y>
+        <y>140</y>
         <width>31</width>
         <height>23</height>
        </rect>
@@ -436,7 +460,7 @@
       <property name="geometry">
        <rect>
         <x>720</x>
-        <y>115</y>
+        <y>95</y>
         <width>31</width>
         <height>23</height>
        </rect>
@@ -455,7 +479,7 @@
       <property name="geometry">
        <rect>
         <x>450</x>
-        <y>160</y>
+        <y>140</y>
         <width>71</width>
         <height>23</height>
        </rect>
@@ -522,8 +546,8 @@
       <property name="geometry">
        <rect>
         <x>13</x>
-        <y>100</y>
-        <width>81</width>
+        <y>80</y>
+        <width>91</width>
         <height>23</height>
        </rect>
       </property>
@@ -535,6 +559,25 @@
       </property>
       <property name="text">
        <string>Interest:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>140</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Open Sans</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Term (in blocks)</string>
       </property>
      </widget>
     </widget>
