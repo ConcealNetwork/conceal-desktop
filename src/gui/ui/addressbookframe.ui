@@ -76,7 +76,7 @@ background-color: #333;</string>
      <property name="minimumSize">
       <size>
        <width>760</width>
-       <height>300</height>
+       <height>470</height>
       </size>
      </property>
      <property name="font">
