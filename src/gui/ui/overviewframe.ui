@@ -241,8 +241,8 @@ color: orange;</string>
          <font>
           <family>Poppins</family>
           <pointsize>16</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
           <stylestrategy>PreferAntialias</stylestrategy>
          </font>
         </property>
@@ -270,8 +270,8 @@ background: transparent;</string>
          <font>
           <family>Poppins</family>
           <pointsize>9</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
           <stylestrategy>PreferAntialias</stylestrategy>
          </font>
         </property>
@@ -1033,7 +1033,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>80</y>
+         <y>70</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1058,7 +1058,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>230</y>
+         <y>220</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1083,7 +1083,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>200</y>
+         <y>190</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1133,7 +1133,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>170</y>
+         <y>160</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1161,7 +1161,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>110</y>
+         <y>100</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1186,7 +1186,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>140</y>
+         <y>130</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1214,7 +1214,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>200</y>
+         <y>190</y>
          <width>191</width>
          <height>24</height>
         </rect>
@@ -1242,7 +1242,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>80</y>
+         <y>70</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1348,7 +1348,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>140</y>
+         <y>130</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1399,7 +1399,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>110</y>
+         <y>100</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1427,7 +1427,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>230</y>
+         <y>220</y>
          <width>191</width>
          <height>25</height>
         </rect>
@@ -1455,7 +1455,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>170</y>
+         <y>160</y>
          <width>121</width>
          <height>25</height>
         </rect>

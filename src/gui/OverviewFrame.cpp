@@ -161,7 +161,7 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   m_ui->m_ccxusd->setText("USD " + _ccxusd);
 
   float ccxusd = _ccxusd.toFloat();
-  float total = ccxusd;
+  float total = ccxusd * (float)totalBalance;
 
   m_ui->m_ccxbtc->setText(_ccxbtc + " satoshi");
   m_ui->m_btc->setText("USD " + _btc);
@@ -170,7 +170,7 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   m_ui->m_supply->setText(_supply + " CCX");    
   m_ui->m_hashrate->setText(_hashrate + " KH/s");
   m_ui->m_reward->setText(_reward + " CCX");
-  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total, 'f', 2)); 
+  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total / 1000000, 'f', 2)); 
   m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
 }
 
