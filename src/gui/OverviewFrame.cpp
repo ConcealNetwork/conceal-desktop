@@ -151,25 +151,43 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
 }
 
-void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward) {
+void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) {
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance;
 
-  m_ui->m_ccxusd->setText("$" + _ccxusd);
+  m_ui->m_ccxusd->setText("USD " + _ccxusd);
 
   float ccxusd = _ccxusd.toFloat();
-  float total = (float)totalBalance * ccxusd;
+  float total = ccxusd;
 
   m_ui->m_ccxbtc->setText(_ccxbtc + " satoshi");
   m_ui->m_btc->setText("USD " + _btc);
-  m_ui->m_difficulty->setText(_diff);
-  m_ui->m_hashrate->setText(_hashrate);
-  m_ui->m_reward->setText(_reward);
-  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total / 1000000, 'f', 2)); 
+  m_ui->m_difficulty->setText(_diff + " mn");
+  m_ui->m_deposits->setText(_deposits + " CCX");  
+  m_ui->m_supply->setText(_supply + " CCX");    
+  m_ui->m_hashrate->setText(_hashrate + " KH/s");
+  m_ui->m_reward->setText(_reward + " CCX");
+  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total, 'f', 2)); 
   m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
+}
+
+void OverviewFrame::sendClicked() {
+  Q_EMIT sendSignal();
+}
+
+void OverviewFrame::depositClicked() {
+  Q_EMIT depositSignal();
+}
+
+void OverviewFrame::backupClicked() {
+  Q_EMIT backupSignal();
+}
+
+void OverviewFrame::rescanClicked() {
+  Q_EMIT rescanSignal();
 }
 
 void OverviewFrame::reset() {
@@ -178,6 +196,7 @@ void OverviewFrame::reset() {
   actualDepositBalanceUpdated(0);
   pendingDepositBalanceUpdated(0);
   m_priceProvider->getPrice(); 
+  m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight()));
 }
 
 }

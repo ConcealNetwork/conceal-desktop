@@ -26,7 +26,7 @@ private:
   void readyRead();
 
 Q_SIGNALS:
-  void priceFoundSignal(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward);
+  void priceFoundSignal(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply);
 };
 
 }

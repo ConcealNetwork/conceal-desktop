@@ -35,7 +35,7 @@ private:
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
   PriceProvider* m_priceProvider;  
 
-  void onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward);
+  void onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void layoutChanged();
@@ -45,6 +45,17 @@ private:
   void actualDepositBalanceUpdated(quint64 _balance);
   void pendingDepositBalanceUpdated(quint64 _balance);
   void reset();
+  Q_SLOT void sendClicked();  
+  Q_SLOT void depositClicked();  
+  Q_SLOT void backupClicked();      
+  Q_SLOT void rescanClicked();        
+
+Q_SIGNALS:
+  void sendSignal();
+  void depositSignal();  
+  void backupSignal();    
+  void rescanSignal();
+
 };
 
 }

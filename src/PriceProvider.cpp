@@ -41,8 +41,10 @@ void PriceProvider::readyRead() {
   QString diff = pairs[3];
   QString hashrate = pairs[4];
   QString reward = pairs[5];
+  QString deposits = pairs[6];
+  QString supply = pairs[7];
 
-  Q_EMIT priceFoundSignal(ccxusd, ccxbtc, btc, diff, hashrate, reward);
+  Q_EMIT priceFoundSignal(ccxusd, ccxbtc, btc, diff, hashrate, reward, deposits, supply);
 
 }
 

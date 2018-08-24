@@ -106,6 +106,14 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);  
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);  
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importKeyClickedSignal, this, &MainWindow::importKey, Qt::QueuedConnection);      
+
+  /* signals from overview frame buttons */
+  connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);  
+
+
 }
 
 void MainWindow::initUi() {
@@ -646,6 +654,23 @@ void MainWindow::payTo(const QModelIndex& _index) {
   m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   m_ui->m_sendAction->trigger();
 }
+
+void MainWindow::sendTo() {
+  m_ui->m_sendAction->trigger();
+}
+
+void MainWindow::depositTo() {
+  m_ui->m_depositsAction->trigger();
+}
+
+void MainWindow::backupTo() {
+  m_ui->m_receiveAction->trigger();
+}
+
+void MainWindow::rescanTo() {
+  MainWindow::resetWallet();
+}
+
 
 /* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 

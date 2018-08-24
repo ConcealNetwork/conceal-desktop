@@ -62,6 +62,11 @@ private:
   void walletClosed();
   void replyTo(const QModelIndex& _index);
   void payTo(const QModelIndex& _index);
+  void sendTo();
+  void depositTo();
+  void backupTo();
+  void rescanTo();
+
 
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();

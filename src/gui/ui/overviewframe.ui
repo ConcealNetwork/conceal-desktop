@@ -298,8 +298,8 @@ background: transparent;</string>
          <font>
           <family>Open Sans</family>
           <pointsize>9</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
           <stylestrategy>PreferAntialias</stylestrategy>
          </font>
         </property>
@@ -699,8 +699,8 @@ background: transparent;</string>
          <font>
           <family>Poppins</family>
           <pointsize>9</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -732,8 +732,8 @@ background: transparent;</string>
          <font>
           <family>Poppins</family>
           <pointsize>15</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -760,8 +760,8 @@ background: transparent;</string>
          <font>
           <family>Poppins</family>
           <pointsize>9</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -793,8 +793,8 @@ background: transparent;</string>
          <font>
           <family>Poppins</family>
           <pointsize>15</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -809,7 +809,7 @@ background: transparent;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QPushButton" name="sendButton">
+      <widget class="QPushButton" name="m_sendButton">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -848,12 +848,12 @@ border: 1px solid orange;</string>
        <property name="title">
         <string/>
        </property>
-       <widget class="QLabel" name="label_19">
+       <widget class="QPushButton" name="m_settingsButton">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-1</y>
-          <width>141</width>
+          <y>0</y>
+          <width>150</width>
           <height>41</height>
          </rect>
         </property>
@@ -865,9 +865,6 @@ border: 1px solid orange;</string>
         </property>
         <property name="text">
          <string>SETTINGS</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </widget>
@@ -886,12 +883,12 @@ border: 1px solid orange;</string>
        <property name="title">
         <string/>
        </property>
-       <widget class="QLabel" name="label_20">
+       <widget class="QPushButton" name="m_backupButton">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>0</x>
           <y>0</y>
-          <width>151</width>
+          <width>150</width>
           <height>41</height>
          </rect>
         </property>
@@ -904,12 +901,13 @@ border: 1px solid orange;</string>
         <property name="text">
          <string>BACKUP</string>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
+        <property name="icon">
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/icons/tx_input.png</normaloff>:/icons/tx_input.png</iconset>
         </property>
        </widget>
       </widget>
-      <widget class="QPushButton" name="depositButton_2">
+      <widget class="QPushButton" name="m_depositButton">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -953,7 +951,7 @@ border: 1px solid orange;</string>
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>580</y>
+         <y>340</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -981,7 +979,7 @@ border: 1px solid orange;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>640</y>
+         <y>400</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1005,11 +1003,11 @@ border: 1px solid orange;</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="m_networkTitle">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>260</y>
+         <y>20</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -1035,7 +1033,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>320</y>
+         <y>80</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1060,7 +1058,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>470</y>
+         <y>230</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1085,7 +1083,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>440</y>
+         <y>200</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1110,7 +1108,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>580</y>
+         <y>340</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1135,7 +1133,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>410</y>
+         <y>170</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1163,7 +1161,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>350</y>
+         <y>110</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1188,7 +1186,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>380</y>
+         <y>140</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1215,9 +1213,9 @@ color: white;</string>
       <widget class="QLabel" name="m_supply">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>440</y>
-         <width>141</width>
+         <x>140</x>
+         <y>200</y>
+         <width>191</width>
          <height>24</height>
         </rect>
        </property>
@@ -1244,7 +1242,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>190</x>
-         <y>320</y>
+         <y>80</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1272,7 +1270,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>610</y>
+         <y>370</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1297,7 +1295,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>610</y>
+         <y>370</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1325,7 +1323,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>640</y>
+         <y>400</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1350,7 +1348,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>380</y>
+         <y>140</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1375,7 +1373,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>520</y>
+         <y>280</y>
          <width>111</width>
          <height>31</height>
         </rect>
@@ -1401,7 +1399,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>350</y>
+         <y>110</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1428,9 +1426,9 @@ color: white;</string>
       <widget class="QLabel" name="m_deposits">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>470</y>
-         <width>111</width>
+         <x>140</x>
+         <y>230</y>
+         <width>191</width>
          <height>25</height>
         </rect>
        </property>
@@ -1457,7 +1455,7 @@ color: white;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>410</y>
+         <y>170</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1476,294 +1474,6 @@ color: white;</string>
        </property>
        <property name="text">
         <string>Reward</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_22">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>18</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;</string>
-       </property>
-       <property name="text">
-        <string>INCOMING</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_23">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>90</y>
-         <width>121</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>Last 24 Hours</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_5">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>90</y>
-         <width>111</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string notr="true">-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_24">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>60</y>
-         <width>111</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>from Pools</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_6">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>120</y>
-         <width>111</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string notr="true">-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_25">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>121</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>All-time</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_7">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>180</y>
-         <width>111</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string notr="true">-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_27">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>180</y>
-         <width>121</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>Last 24 Hours</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_28">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>150</y>
-         <width>111</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>from Interest</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_26">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>210</y>
-         <width>121</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string>All-time</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_8">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>210</y>
-         <width>111</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>background: transparent;</string>
-       </property>
-       <property name="text">
-        <string notr="true">-</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </widget>
@@ -1826,7 +1536,7 @@ color: orange;</string>
        <string>ADDRESS</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="m_rescanButton">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -1850,7 +1560,7 @@ border: 1px solid orange;</string>
        <string>RESCAN BLOCKCHAIN</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="m_qrbutton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1878,6 +1588,79 @@ border: 1px solid orange;</string>
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>m_sendButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>sendClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>954</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_depositButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>depositClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1114</x>
+     <y>670</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_rescanButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>rescanClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>135</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_backupButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>backupClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>953</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>sendClicked()</slot>
+  <slot>depositClicked()</slot>
+  <slot>backupClicked()</slot>
+  <slot>rescanClicked()</slot>
+ </slots>
 </ui>
