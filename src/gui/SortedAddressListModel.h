@@ -7,28 +7,21 @@
 
 #pragma once
 
-#include <QDialog>
-
-namespace Ui {
-class NewAddressDialog;
-}
+#include <QSortFilterProxyModel>
 
 namespace WalletGui {
 
-class NewAddressDialog : public QDialog {
+class SortedAddressListModel : public QSortFilterProxyModel {
   Q_OBJECT
-  Q_DISABLE_COPY(NewAddressDialog)
 
 public:
-  NewAddressDialog(QWidget* _parent);
-  ~NewAddressDialog();
+  static SortedAddressListModel& instance();
 
-  QString getAddress() const;
-  QString getLabel() const;
-  QString getPaymentId() const;  
+protected:
 
 private:
-  QScopedPointer<Ui::NewAddressDialog> m_ui;
+  SortedAddressListModel();
+  ~SortedAddressListModel();
 };
 
 }

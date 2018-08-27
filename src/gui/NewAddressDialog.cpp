@@ -22,6 +22,9 @@ QString NewAddressDialog::getAddress() const {
   return m_ui->m_addressEdit->text();
 }
 
+QString NewAddressDialog::getPaymentId() const {
+  return m_ui->m_paymentIdEdit->text();
+}
 
 QString NewAddressDialog::getLabel() const {
   return m_ui->m_labelEdit->text();

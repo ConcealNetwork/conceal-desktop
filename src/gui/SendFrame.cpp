@@ -74,6 +74,10 @@ void SendFrame::setAddress(const QString& _address) {
   m_transfers.last()->setAddress(_address);
 }
 
+void SendFrame::setPaymentId(const QString& _paymentId) {
+  m_ui->m_paymentIdEdit->setText(_paymentId);
+}
+
 void SendFrame::addRecipientClicked() {
   TransferFrame* newTransfer = new TransferFrame(m_ui->m_transfersScrollarea);
   m_ui->m_send_frame_layout->insertWidget(m_transfers.size(), newTransfer);
@@ -170,6 +174,23 @@ void SendFrame::sendClicked() {
     walletTransfers.push_back(walletTransfer);
     QString label = transfer->getLabel();
 
+    /* payment id */
+    if (isIntegrated == true) {
+        m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
+    }
+
+    paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+    m_ui->m_paymentIdEdit->setText("");
+
+    // check payment id validity, or about
+    if (!isValidPaymentId(paymentIdString)) 
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), 
+                                  new ShowMessageEvent(tr("Invalid payment ID"), 
+                                  QtCriticalMsg));
+      return;
+    }
+
     // add to the address book if a label is given
     if (!label.isEmpty()) 
     {
@@ -177,12 +198,12 @@ void SendFrame::sendClicked() {
       if (isIntegrated == true) 
       {
 
-        AddressBookModel::instance().addAddress(label, int_address);
+        AddressBookModel::instance().addAddress(label, int_address, "");
       }
       else 
       {
 
-        AddressBookModel::instance().addAddress(label, address);
+        AddressBookModel::instance().addAddress(label, address, paymentIdString);
       }
     }
 
@@ -206,23 +227,7 @@ void SendFrame::sendClicked() {
 
   // if the wallet is open we proceed
   if (WalletAdapter::instance().isOpen()) 
-  {
-
-    if (isIntegrated == true) {
-        m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
-    }
-
-    paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-    m_ui->m_paymentIdEdit->setText("");
-
-    // check payment id validity, or about
-    if (!isValidPaymentId(paymentIdString)) 
-    {
-      QCoreApplication::postEvent(&MainWindow::instance(), 
-                                  new ShowMessageEvent(tr("Invalid payment ID"), 
-                                  QtCriticalMsg));
-      return;
-    }
+  {    
 
     // send the transaction
     WalletAdapter::instance().sendTransaction(walletTransfers,

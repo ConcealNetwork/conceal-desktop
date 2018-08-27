@@ -15,6 +15,8 @@ class AddressBookFrame;
 
 namespace WalletGui {
 
+class AddressListModel;
+
 class AddressBookFrame : public QFrame {
   Q_OBJECT
   Q_DISABLE_COPY(AddressBookFrame)
@@ -25,6 +27,7 @@ public:
 
 private:
   QScopedPointer<Ui::AddressBookFrame> m_ui;
+  QScopedArrayPointer<AddressListModel> m_addressBookModel;
 
   Q_SLOT void addClicked();
   Q_SLOT void copyClicked();
