@@ -38,7 +38,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../resources.qrc">
+   <iconset>
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
@@ -204,6 +204,7 @@
     <addaction name="m_createWalletAction"/>
     <addaction name="m_openWalletAction"/>
     <addaction name="m_backupWalletAction"/>
+    <addaction name="m_viewWalletAction"/>
     <addaction name="m_resetAction"/>
     <addaction name="separator"/>
     <addaction name="m_importKeyAction"/>
@@ -304,7 +305,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
    </property>
    <property name="text">
@@ -331,7 +332,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
    </property>
    <property name="text">
@@ -355,7 +356,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
    </property>
    <property name="text">
@@ -376,7 +377,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
    </property>
    <property name="text">
@@ -408,7 +409,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
    </property>
    <property name="text">
@@ -509,7 +510,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
    </property>
    <property name="text">
@@ -527,7 +528,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
    </property>
    <property name="text">
@@ -550,7 +551,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-mining.png</normaloff>:/icons/icon-mining.png</iconset>
    </property>
    <property name="text">
@@ -568,7 +569,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
@@ -607,6 +608,11 @@
   <action name="m_optimizeAction">
    <property name="text">
     <string>Optimize wallet</string>
+   </property>
+  </action>
+  <action name="m_viewWalletAction">
+   <property name="text">
+    <string>Import view wallet</string>
    </property>
   </action>
  </widget>
@@ -672,9 +678,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>m_overviewAction</sender>
@@ -1076,6 +1080,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_viewWalletAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>importTracking()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -1090,6 +1110,7 @@
   <slot>setCloseToTray(bool)</slot>
   <slot>importKey()</slot>
   <slot>importSeed()</slot>
+  <slot>importTracking()</slot>  
   <slot>nodeSettings()</slot>
   <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>

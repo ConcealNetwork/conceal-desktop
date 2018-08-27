@@ -12,11 +12,9 @@
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
-
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
-
 #include <Common/Base58.h>
 #include <Common/Util.h>
 
@@ -40,6 +38,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "importtracking.h"
 #include "transactionconfirmation.h"
 #include "nodesettings.h"
 #include "MainWindow.h"
@@ -815,6 +814,75 @@ void MainWindow::importSeed()
   WalletAdapter::instance().createWithKeys(keys);   
   }
 }
+
+/* --------------------------------------------------------------------------------------- */
+
+void MainWindow::importTracking() {
+  ImportTracking dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    QString keyString = dlg.getKeyString().trimmed();
+    QString filePath = dlg.getFilePath();
+    if (keyString.isEmpty() || filePath.isEmpty()) {
+      return;
+    }
+    if (keyString.size() != 192) {
+      QMessageBox::warning(this, tr("Tracking key is not valid"), tr("The tracking key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+
+    if (!filePath.endsWith(".wallet")) {
+      filePath.append(".wallet");
+    }
+
+    CryptoNote::AccountKeys keys;
+
+    std::string public_spend_key_string = keyString.mid(0,64).toStdString();
+    std::string public_view_key_string = keyString.mid(64,64).toStdString();
+    std::string private_spend_key_string = "0000000000000000000000000000000000000000000000000000000000000000";
+    std::string private_view_key_string = keyString.mid(192,64).toStdString();
+
+    Crypto::Hash public_spend_key_hash;
+    Crypto::Hash public_view_key_hash;
+    Crypto::Hash private_spend_key_hash;
+    Crypto::Hash private_view_key_hash;
+
+    size_t size;
+    if (!Common::fromHex(public_spend_key_string, &public_spend_key_hash, sizeof(public_spend_key_hash), size) || size != sizeof(public_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The public spend key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(public_view_key_string, &public_view_key_hash, sizeof(public_view_key_hash), size) || size != sizeof(public_view_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The public view key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+
+    Crypto::PublicKey public_spend_key = *(struct Crypto::PublicKey *) &public_spend_key_hash;
+    Crypto::PublicKey public_view_key = *(struct Crypto::PublicKey *) &public_view_key_hash;
+    Crypto::SecretKey private_spend_key = *(struct Crypto::SecretKey *) &private_spend_key_hash;
+    Crypto::SecretKey private_view_key = *(struct Crypto::SecretKey *) &private_view_key_hash;
+
+    keys.address.spendPublicKey = public_spend_key;
+    keys.address.viewPublicKey = public_view_key;
+    keys.spendSecretKey = private_spend_key;
+    keys.viewSecretKey = private_view_key;
+
+      if (WalletAdapter::instance().isOpen()) {
+        WalletAdapter::instance().close();
+      }
+      WalletAdapter::instance().setWalletFile(filePath);
+      WalletAdapter::instance().createWithKeys(keys);
+   // }
+  }
+}
+
 
 /* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
