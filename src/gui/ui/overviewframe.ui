@@ -86,8 +86,8 @@ background: url(:/images/carbon.png);</string>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>170</y>
+        <x>10</x>
+        <y>20</y>
         <width>361</width>
         <height>31</height>
        </rect>
@@ -111,10 +111,10 @@ color: orange;</string>
      <widget class="QTreeView" name="m_recentTransactionsView">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>210</y>
+        <x>10</x>
+        <y>60</y>
         <width>461</width>
-        <height>471</height>
+        <height>560</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -950,8 +950,8 @@ border: 1px solid orange;</string>
       <widget class="QLabel" name="m_ccxbtc">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>340</y>
+         <x>200</x>
+         <y>590</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -978,8 +978,8 @@ border: 1px solid orange;</string>
       <widget class="QLabel" name="m_btc">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>400</y>
+         <x>230</x>
+         <y>650</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1006,8 +1006,8 @@ border: 1px solid orange;</string>
       <widget class="QLabel" name="m_networkTitle">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>20</y>
+         <x>30</x>
+         <y>270</y>
          <width>121</width>
          <height>31</height>
         </rect>
@@ -1032,8 +1032,8 @@ color: white;</string>
       <widget class="QLabel" name="label_13">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>70</y>
+         <x>30</x>
+         <y>320</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1057,8 +1057,8 @@ color: white;</string>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>220</y>
+         <x>30</x>
+         <y>470</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1082,8 +1082,8 @@ color: white;</string>
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>190</y>
+         <x>30</x>
+         <y>440</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1107,8 +1107,8 @@ color: white;</string>
       <widget class="QLabel" name="label_35">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>340</y>
+         <x>30</x>
+         <y>590</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1132,8 +1132,8 @@ color: white;</string>
       <widget class="QLabel" name="m_reward">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>160</y>
+         <x>230</x>
+         <y>410</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1160,8 +1160,8 @@ color: white;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>100</y>
+         <x>30</x>
+         <y>350</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1185,8 +1185,8 @@ color: white;</string>
       <widget class="QLabel" name="m_difficulty">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>130</y>
+         <x>200</x>
+         <y>380</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1213,8 +1213,8 @@ color: white;</string>
       <widget class="QLabel" name="m_supply">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>190</y>
+         <x>150</x>
+         <y>440</y>
          <width>191</width>
          <height>24</height>
         </rect>
@@ -1241,8 +1241,8 @@ color: white;</string>
       <widget class="QLabel" name="m_height">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>70</y>
+         <x>200</x>
+         <y>320</y>
          <width>141</width>
          <height>24</height>
         </rect>
@@ -1269,8 +1269,8 @@ color: white;</string>
       <widget class="QLabel" name="label_37">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>370</y>
+         <x>30</x>
+         <y>620</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1294,8 +1294,8 @@ color: white;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>370</y>
+         <x>230</x>
+         <y>620</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1322,8 +1322,8 @@ color: white;</string>
       <widget class="QLabel" name="label_38">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>400</y>
+         <x>30</x>
+         <y>650</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1347,8 +1347,8 @@ color: white;</string>
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>130</y>
+         <x>30</x>
+         <y>380</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -1372,8 +1372,8 @@ color: white;</string>
       <widget class="QLabel" name="label_36">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>280</y>
+         <x>30</x>
+         <y>530</y>
          <width>111</width>
          <height>31</height>
         </rect>
@@ -1398,8 +1398,8 @@ color: white;</string>
       <widget class="QLabel" name="m_hashrate">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>100</y>
+         <x>230</x>
+         <y>350</y>
          <width>111</width>
          <height>25</height>
         </rect>
@@ -1426,8 +1426,8 @@ color: white;</string>
       <widget class="QLabel" name="m_deposits">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>220</y>
+         <x>150</x>
+         <y>470</y>
          <width>191</width>
          <height>25</height>
         </rect>
@@ -1454,8 +1454,8 @@ color: white;</string>
       <widget class="QLabel" name="label_15">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>160</y>
+         <x>30</x>
+         <y>410</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -1476,71 +1476,119 @@ color: white;</string>
         <string>Reward</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QTextBrowser" name="m_myAddress">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>391</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>115</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Open Sans</family>
-        <pointsize>10</pointsize>
-        <stylestrategy>PreferAntialias</stylestrategy>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: transparent;</string>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>18</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;
+color: orange;</string>
+       </property>
+       <property name="text">
+        <string>ADDRESS</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="m_myAddress">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>60</y>
+         <width>321</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>115</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Open Sans</family>
+         <pointsize>10</pointsize>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;</string>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Open Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ccx7HWNxR6pebf4kwRABiXdPMMxumwE8u6G2nLb3Bi1bC124fsQMe7QJYp65rjo8JNaWGsEYQaKUbhpzSh9k7Zat4XVd2ADJTt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins</family>
-        <pointsize>18</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-        <stylestrategy>PreferAntialias</stylestrategy>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: transparent;
-color: orange;</string>
-      </property>
-      <property name="text">
-       <string>ADDRESS</string>
-      </property>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_qrbutton">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: orange;
+background: transparent;
+border: 1px solid orange;</string>
+       </property>
+       <property name="text">
+        <string>SHOW QR CODE</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_qrbutton_2">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>140</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: orange;
+background: transparent;
+border: 1px solid orange;</string>
+       </property>
+       <property name="text">
+        <string>COPY</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="m_rescanButton">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>120</y>
+        <x>20</x>
+        <y>650</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1558,30 +1606,6 @@ border: 1px solid orange;</string>
       </property>
       <property name="text">
        <string>RESCAN BLOCKCHAIN</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="m_qrbutton">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>120</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: orange;
-background: transparent;
-border: 1px solid orange;</string>
-      </property>
-      <property name="text">
-       <string>SHOW QR CODE</string>
       </property>
      </widget>
     </widget>
