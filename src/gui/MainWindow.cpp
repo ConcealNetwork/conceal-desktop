@@ -651,6 +651,11 @@ void MainWindow::replyTo(const QModelIndex& _index) {
 
 void MainWindow::payTo(const QModelIndex& _index) {
   m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
+  if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "") 
+  {
+      m_ui->m_sendFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());  
+  }
+
   m_ui->m_sendAction->trigger();
 }
 

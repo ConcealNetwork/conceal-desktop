@@ -86,7 +86,7 @@ background: url(:/images/carbon.png);</string>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>20</y>
         <width>361</width>
         <height>31</height>

@@ -28,6 +28,7 @@ public:
   ~SendFrame();
 
   void setAddress(const QString& _address);
+  void setPaymentId(const QString& _paymendId);  
 
 private:
   QScopedPointer<Ui::SendFrame> m_ui;

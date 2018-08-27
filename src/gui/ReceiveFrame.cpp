@@ -79,9 +79,9 @@ void ReceiveFrame::walletOpened(int _error)
 
   /* create the tracking key for the view only wallet */
   keys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
-  QString trackingWalletKeys = QString::fromStdString(Common::podToHex(keys));
+  QString trackingKey = QString::fromStdString(Common::podToHex(keys));
 
-  m_ui->m_trackingKey->setText(trackingWalletKeys);
+  m_ui->m_trackingKey->setText(trackingKey);
 }
 
 void ReceiveFrame::walletClosed() {
