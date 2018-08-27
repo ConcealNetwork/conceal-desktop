@@ -74,6 +74,10 @@ void SendFrame::setAddress(const QString& _address) {
   m_transfers.last()->setAddress(_address);
 }
 
+void SendFrame::setPaymentId(const QString& _paymentId) {
+  m_ui->m_paymentIdEdit->setText(_paymentId);
+}
+
 void SendFrame::addRecipientClicked() {
   TransferFrame* newTransfer = new TransferFrame(m_ui->m_transfersScrollarea);
   m_ui->m_send_frame_layout->insertWidget(m_transfers.size(), newTransfer);
@@ -110,8 +114,7 @@ void SendFrame::clearAllClicked() {
 //-----------------------------------------------------------------------------------------
 
 void SendFrame::sendClicked() {
-
-  /* send funds */
+  // this is what is triggered when you send funds
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
@@ -120,14 +123,12 @@ void SendFrame::sendClicked() {
   std::string spendPublicKey;
   std::string viewPublicKey;
   QByteArray paymentIdString;
-
-  /* run through each of the transactions in the frame
-  the send tab allows multiple transactions at once */
+  // run through each of the transactions in the frame
+  // the send tab allows multiple transaction at once
   Q_FOREACH (TransferFrame * transfer, m_transfers) 
   {
     QString address = transfer->getAddress();   
-    
-    QString int_address = transfer->getAddress();
+    QString int_address = transfer->getAddress();   
 
     /* integrated address check */
     if (address.toStdString().length() == 186) 
@@ -136,7 +137,7 @@ void SendFrame::sendClicked() {
 
       const uint64_t paymentIDLen = 64;
 
-      /* extract the payment id */
+      /* extract and commit the payment id to extra */
       std::string decoded;
       uint64_t prefix;
       if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded)) 
@@ -152,55 +153,69 @@ void SendFrame::sendClicked() {
 
     CryptoNote::fromBinaryArray(addr, ba);
 
+
     std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, 
                                                             addr);   
     address = QString::fromStdString(address_string);
     }
 
-    /* validate the address */
     if (!CurrencyAdapter::instance().validateAddress(address)) 
     {
-
       QCoreApplication::postEvent(&MainWindow::instance(), 
                         new ShowMessageEvent(tr("Invalid recipient address"), 
                         QtCriticalMsg));
       return;
     }
 
-    /* get the transaction details */
+    // get the transaction details
     walletTransfer.address = address.toStdString();
     uint64_t amount = CurrencyAdapter::instance().parseAmount(transfer->getAmountString());
     walletTransfer.amount = amount;
     walletTransfers.push_back(walletTransfer);
     QString label = transfer->getLabel();
 
-    /* add to the address book if a label is given */
+    /* payment id */
+    if (isIntegrated == true) {
+        m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
+    }
+
+    paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+    m_ui->m_paymentIdEdit->setText("");
+
+    // check payment id validity, or about
+    if (!isValidPaymentId(paymentIdString)) 
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), 
+                                  new ShowMessageEvent(tr("Invalid payment ID"), 
+                                  QtCriticalMsg));
+      return;
+    }
+
+    // add to the address book if a label is given
     if (!label.isEmpty()) 
     {
       
       if (isIntegrated == true) 
       {
 
-        AddressBookModel::instance().addAddress(label, int_address);
+        AddressBookModel::instance().addAddress(label, int_address, "");
       }
       else 
       {
 
-        AddressBookModel::instance().addAddress(label, address);
+        AddressBookModel::instance().addAddress(label, address, paymentIdString);
       }
     }
 
-    /* add the comment to the transaction */
+    // add the comment to the transaction
     QString comment = transfer->getComment();
-    if (!comment.isEmpty()) 
-    {
-
+    if (!comment.isEmpty()) {
       walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), 
                             address.toStdString()});
     }
   }
 
-    /* incorrect fee, abort */
+    // incorrect fee, abort
     quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
     if (fee < CurrencyAdapter::instance().getMinimumFee()) 
     {
@@ -210,29 +225,11 @@ void SendFrame::sendClicked() {
       return;
     }
 
-  /* if the wallet is open we proceed */
+  // if the wallet is open we proceed
   if (WalletAdapter::instance().isOpen()) 
-  {
+  {    
 
-    /* if its an integrated address, use the extracted payment ID */
-    if (isIntegrated == true) 
-    {
-
-        m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
-    }
-    paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-    m_ui->m_paymentIdEdit->setText("");
-
-    /* validate the payment ID */
-    if (!isValidPaymentId(paymentIdString)) 
-    {
-      QCoreApplication::postEvent(&MainWindow::instance(), 
-                                  new ShowMessageEvent(tr("Invalid payment ID"), 
-                                  QtCriticalMsg));
-      return;
-    }
-
-    /* finally, send the transaction */
+    // send the transaction
     WalletAdapter::instance().sendTransaction(walletTransfers,
                                               fee, 
                                               paymentIdString, 

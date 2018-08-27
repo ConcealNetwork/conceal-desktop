@@ -76,7 +76,7 @@ background-color: #333;</string>
      <property name="minimumSize">
       <size>
        <width>760</width>
-       <height>470</height>
+       <height>300</height>
       </size>
      </property>
      <property name="font">
@@ -115,6 +115,12 @@ QTreeView::item
      <property name="indentation">
       <number>5</number>
      </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="headerShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
     </widget>
    </item>
    <item>

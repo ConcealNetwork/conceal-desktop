@@ -9,6 +9,7 @@
 
 #include <QAbstractItemModel>
 #include <QJsonArray>
+#include <QSortFilterProxyModel>
 
 namespace WalletGui {
   
@@ -18,8 +19,8 @@ class AddressBookModel : public QAbstractItemModel
   Q_DISABLE_COPY(AddressBookModel)
 
 public:
-  enum Columns {COLUMN_LABEL = 0, COLUMN_ADDRESS};
-  enum Roles { ROLE_LABEL = Qt::UserRole, ROLE_ADDRESS };
+  enum Columns {COLUMN_LABEL = 0, COLUMN_ADDRESS, COLUMN_PAYMENTID};
+  enum Roles { ROLE_LABEL = Qt::UserRole, ROLE_ADDRESS, ROLE_PAYMENTID };
 
   static AddressBookModel& instance();
   int columnCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -30,7 +31,7 @@ public:
   QModelIndex	parent(const QModelIndex& _index) const Q_DECL_OVERRIDE;
   int rowCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
-  void addAddress(const QString& _label, const QString& _address);
+  void addAddress(const QString& _label, const QString& _address, const QString& _paymentid);
   void removeAddress(quint32 _row);
 
 private:
