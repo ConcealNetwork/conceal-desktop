@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = "https://explorer.conceal.network/q/maple/ccx-usd.php";
+  QUrl url = QUrl::fromUserInput(QString("https://explorer.conceal.network/q/maple/ccx-usd.php"));
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
