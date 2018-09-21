@@ -14,6 +14,7 @@ namespace WalletGui {
 ChangePasswordDialog::ChangePasswordDialog(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ChangePasswordDialog) {
   m_ui->setupUi(this);
   m_ui->m_errorLabel->setText("");
+  m_ui->m_newPasswordEdit->setAttribute(Qt::WA_MacShowFocusRect, 0);   
 }
 
 ChangePasswordDialog::~ChangePasswordDialog() {

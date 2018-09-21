@@ -13,7 +13,7 @@ namespace WalletGui {
 
 PasswordDialog::PasswordDialog(bool _error, QWidget* _parent) : QDialog(_parent), m_ui(new Ui::PasswordDialog) {
   m_ui->setupUi(this);
-  m_ui->m_passwordEdit->setAttribute(Qt::WA_MacShowFocusRect, 0); 
+
   if (!_error) {
     m_ui->m_errorLabel->hide();
   }

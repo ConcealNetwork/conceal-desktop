@@ -23,6 +23,7 @@ class MessagesFrame : public QFrame {
 public:
   MessagesFrame(QWidget* _parent);
   ~MessagesFrame();
+  int test;
 
 private:
   QScopedPointer<Ui::MessagesFrame> m_ui;
@@ -32,8 +33,12 @@ private:
 
   Q_SLOT void messageDoubleClicked(const QModelIndex& _index);
   Q_SLOT void replyClicked();
+  Q_SLOT void backClicked();
+  Q_SLOT void newMessageClicked();
 
 Q_SIGNALS:
+  void backSignal();
+  void newMessageSignal();
   void replyToSignal(const QModelIndex& _index);
 };
 

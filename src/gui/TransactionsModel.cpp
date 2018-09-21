@@ -96,26 +96,30 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_STATE:
       return QVariant();
     case COLUMN_DATE:
-      return tr("Date");
+      return tr("DATE");
     case COLUMN_TYPE:
-      return tr("Type");
-    case COLUMN_HASH:
-      return tr("  Transaction Hash");
+      return tr("TYPE");
     case COLUMN_ADDRESS:
-      return tr("    Address");
+      return tr("ADDRESS");
     case COLUMN_AMOUNT:
-      return tr("Amount");
+      return tr("AMOUNT");
+    case COLUMN_FEE:
+      return tr("FEE");
+    case COLUMN_HEIGHT:
+      return tr("HEIGHT");
     case COLUMN_PAYMENT_ID:
       return tr("PAYMENT ID");
     case COLUMN_MESSAGE:
       return tr("MESSAGE");
+    case COLUMN_HASH:
+      return tr("HASH");      
     default:
       break;
     }
 
   case Qt::TextAlignmentRole:
     if (_section == COLUMN_AMOUNT) {
-      return static_cast<int>(Qt::AlignRight | Qt::AlignVCenter);
+      return static_cast<int>(Qt::AlignLeft | Qt::AlignVCenter);
     }
 
     return QVariant();
@@ -257,6 +261,23 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
     QString amountStr = CurrencyAdapter::instance().formatAmount(qAbs(amount));
     return (amount < 0 ? "-" + amountStr : amountStr);
   }
+
+  case COLUMN_CONFIRMATIONS: {
+
+  quint64 transactionHeight = _index.data(ROLE_HEIGHT).value<quint64>();
+    if (transactionHeight == CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      return "Unconfirmed";
+    }
+
+    quint64 confirmations = NodeAdapter::instance().getLastKnownBlockHeight() - transactionHeight + 1;
+
+    if (confirmations >= 10) {
+      return NodeAdapter::instance().getLastKnownBlockHeight();
+
+    }
+
+
+  }  
 
   case COLUMN_PAYMENT_ID:
     return _index.data(ROLE_PAYMENT_ID);

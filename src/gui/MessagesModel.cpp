@@ -1,7 +1,5 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
-//  
-// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,16 +32,14 @@ namespace WalletGui
 }
 
 MessagesModel::MessagesModel() : QAbstractItemModel() {
-  connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this, &MessagesModel::reloadWalletTransactions,
-    Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this,
-    static_cast<void(MessagesModel::*)(CryptoNote::TransactionId)>(&MessagesModel::appendTransaction), Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this, &MessagesModel::updateWalletTransaction,
-    Qt::QueuedConnection);
-  connect(&NodeAdapter::instance(), &NodeAdapter::lastKnownBlockHeightUpdatedSignal, this, &MessagesModel::lastKnownHeightUpdated,
-    Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MessagesModel::reset,
-    Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this, &MessagesModel::reloadWalletTransactions, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, static_cast<void(MessagesModel::*)(CryptoNote::TransactionId)>(&MessagesModel::appendTransaction), Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this, &MessagesModel::updateWalletTransaction, Qt::QueuedConnection);
+  connect(&NodeAdapter::instance(), &NodeAdapter::lastKnownBlockHeightUpdatedSignal, this, &MessagesModel::lastKnownHeightUpdated, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MessagesModel::reset, Qt::QueuedConnection);
+
+  quint64 dayPoolAmount = 0;
+  quint64 totalPoolAmount = 0;
 }
 
 MessagesModel::~MessagesModel() {
@@ -292,6 +288,20 @@ void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId, 
   if ((transaction.messages[0] == "P01") || (transaction.messages[0] == "I01"))
   {
 
+    /* if its an incoming transfer, add amount to the total */
+    if (transaction.totalAmount > 0)
+    {
+
+        totalPoolAmount = totalPoolAmount + transaction.totalAmount;
+
+        if (transaction.blockHeight > (NodeAdapter::instance().getLastKnownBlockHeight() - 720)) 
+        {
+
+          dayPoolAmount = dayPoolAmount + transaction.totalAmount;
+        }      
+    }
+
+    Q_EMIT poolEarningsSignal(dayPoolAmount, totalPoolAmount);
     return;
   }
 
@@ -306,40 +316,63 @@ void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId, 
   }
 }
 
-void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId) {
-  if (m_transactionRow.contains(_transactionId)) {
+void MessagesModel::appendTransaction(CryptoNote::TransactionId _transactionId) 
+{
+  
+  if (m_transactionRow.contains(_transactionId)) 
+  {
+
     return;
   }
 
   quint32 oldRowCount = rowCount();
   quint32 insertedRowCount = 0;
-  for (quint64 transactionId = m_transactionRow.size(); transactionId <= _transactionId; ++transactionId) {
+  for (quint64 transactionId = m_transactionRow.size(); transactionId <= _transactionId; ++transactionId) 
+  {
+
     appendTransaction(transactionId, insertedRowCount);
   }
 
-  if (insertedRowCount > 0) {
+  if (insertedRowCount > 0) 
+  {
+
     beginInsertRows(QModelIndex(), oldRowCount, oldRowCount + insertedRowCount - 1);
     endInsertRows();
   }
 }
 
-void MessagesModel::updateWalletTransaction(CryptoNote::TransactionId _id) {
+void MessagesModel::updateWalletTransaction(CryptoNote::TransactionId _id) 
+{
+
   quint32 firstRow = m_transactionRow.value(_id).first;
   quint32 lastRow = firstRow + m_transactionRow.value(_id).second - 1;
   Q_EMIT dataChanged(index(firstRow, COLUMN_DATE), index(lastRow, COLUMN_HEIGHT));
 }
 
-void MessagesModel::lastKnownHeightUpdated(quint64 _height) {
+void MessagesModel::lastKnownHeightUpdated(quint64 _height) 
+{
+
   if(rowCount() > 0) {
     Q_EMIT dataChanged(index(0, COLUMN_DATE), index(rowCount() - 1, COLUMN_HEIGHT));
   }
 }
 
-void MessagesModel::reset() {
+void MessagesModel::reset() 
+{
+
+  /* reset pool transaction totals */
+  dayPoolAmount = 0;
+  totalPoolAmount = 0;
+
+  Q_EMIT poolEarningsSignal(dayPoolAmount, totalPoolAmount);  
+
+  /* reset everything else */
   beginResetModel();
   m_messages.clear();
   m_transactionRow.clear();
   endResetModel();
+
+
 }
 
 }

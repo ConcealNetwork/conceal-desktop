@@ -25,8 +25,8 @@ namespace WalletGui {
     m_ui->m_addressBookView->setAttribute(Qt::WA_MacShowFocusRect, 0); 
     m_ui->m_addressBookView->sortByColumn(0, Qt::SortOrder::AscendingOrder);
     m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_LABEL, 100);    
-    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_ADDRESS, 350);        
-    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_PAYMENTID, 100);         
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_ADDRESS, 750);        
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_PAYMENTID, 140);         
 
     connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &AddressBookFrame::currentAddressChanged);
   }
@@ -70,6 +70,10 @@ namespace WalletGui {
     m_ui->m_copyAddressButton->setAttribute(Qt::WA_MacShowFocusRect, 0);
     m_ui->m_deleteAddressButton->setAttribute(Qt::WA_MacShowFocusRect, 0);    
   }
+
+void AddressBookFrame::backClicked() {
+  Q_EMIT backSignal();
+}
 
   void AddressBookFrame::addressDoubleClicked(const QModelIndex& _index) {
     if (!_index.isValid()) {

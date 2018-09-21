@@ -20,28 +20,23 @@
 #include <Common/Base58.h>
 #include "Common/StringTools.h"
 #include "Common/CommandLine.h"
-#include "Common/StringTools.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/Account.h"
 #include "crypto/hash.h"
 #include "CryptoNoteCore/CryptoNoteBasic.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "WalletLegacy/WalletHelper.h"
-#include "Common/Base58.h"
-#include "Common/CommandLine.h"
 #include "Common/SignalHandler.h"
-#include "Common/StringTools.h"
 #include "Common/PathTools.h"
 #include "Common/Util.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
-#include "CryptoNoteCore/CryptoNoteTools.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 
 #include "ui_sendframe.h"
 
 namespace WalletGui {
 
-Q_DECL_CONSTEXPR int DEFAULT_MIXIN = 2;
+Q_DECL_CONSTEXPR int DEFAULT_MIXIN = 9;
 Q_DECL_CONSTEXPR quint64 COMMENT_CHAR_PRICE = 10;
 
 SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame) {
@@ -275,5 +270,10 @@ bool SendFrame::isValidPaymentId(const QByteArray& _paymentIdString) {
   QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
   return (paymentId.size() == sizeof(Crypto::Hash)) && (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
 }
+
+void SendFrame::backClicked() {
+  Q_EMIT backSignal();
+}
+
 
 }

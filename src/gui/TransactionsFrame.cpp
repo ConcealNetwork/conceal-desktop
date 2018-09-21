@@ -24,9 +24,10 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   m_ui->setupUi(this);
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
   m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 25);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_ADDRESS, 400);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
+  m_ui->m_transactionsView->header()->moveSection( 3, 5 );
 }
 
 TransactionsFrame::~TransactionsFrame() {
@@ -59,6 +60,10 @@ void TransactionsFrame::showTransactionDetails(const QModelIndex& _index) {
 
   TransactionDetailsDialog dlg(_index, &MainWindow::instance());
   dlg.exec();
+}
+
+void TransactionsFrame::backClicked() {
+  Q_EMIT backSignal();
 }
 
 }

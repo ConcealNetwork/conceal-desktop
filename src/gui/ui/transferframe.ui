@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>885</width>
-    <height>150</height>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333; color: #e5e5e5; border: 0px;
+   <string notr="true">background-color: #111; color: #aaa; border: 0px;
 </string>
   </property>
   <property name="frameShape">
@@ -40,8 +40,8 @@
     <widget class="QLabel" name="label_3">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -56,12 +56,12 @@
     <widget class="QLineEdit" name="m_labelEdit">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
      </property>
      <property name="placeholderText">
       <string>Enter a label for this address to add it to your address book</string>
@@ -94,8 +94,8 @@
     <widget class="QLabel" name="label_2">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -110,15 +110,15 @@
     <widget class="QDoubleSpinBox" name="m_amountSpin">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
      </property>
      <property name="suffix">
       <string notr="true"/>
@@ -148,12 +148,12 @@
     <widget class="QLineEdit" name="m_addressEdit">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
      </property>
     </widget>
    </item>
@@ -172,8 +172,8 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -188,8 +188,8 @@
     <widget class="QLabel" name="label_4">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
@@ -204,12 +204,12 @@
     <widget class="QLineEdit" name="m_transactionCommentEdit">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
      </property>
     </widget>
    </item>

@@ -34,6 +34,13 @@ private:
 
   Q_SLOT void exportToCsv();
   Q_SLOT void showTransactionDetails(const QModelIndex& _index);
+  Q_SLOT void backClicked();
+
+Q_SIGNALS:
+  void backSignal();
+
+
+
 };
 
 }

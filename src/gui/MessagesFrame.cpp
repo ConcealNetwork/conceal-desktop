@@ -21,16 +21,10 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
   m_ui->setupUi(this);
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
-  m_ui->m_replyButton->setEnabled(false);
 
-  connect(m_ui->m_messagesView->selectionModel(), &QItemSelectionModel::currentChanged, this, &MessagesFrame::currentMessageChanged);
 }
 
 MessagesFrame::~MessagesFrame() {
-}
-
-void MessagesFrame::currentMessageChanged(const QModelIndex& _currentIndex) {
-  m_ui->m_replyButton->setEnabled(_currentIndex.isValid() && !_currentIndex.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString().isEmpty());
 }
 
 void MessagesFrame::messageDoubleClicked(const QModelIndex& _index) {
@@ -46,6 +40,16 @@ void MessagesFrame::messageDoubleClicked(const QModelIndex& _index) {
 
 void MessagesFrame::replyClicked() {
   Q_EMIT replyToSignal(m_ui->m_messagesView->selectionModel()->currentIndex());
+}
+
+void MessagesFrame::backClicked() {
+  Q_EMIT backSignal();
+}
+
+void MessagesFrame::newMessageClicked() 
+{
+
+  Q_EMIT newMessageSignal();
 }
 
 }

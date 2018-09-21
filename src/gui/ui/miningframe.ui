@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>469</height>
+    <width>1270</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="font">
    <font>
-    <family>Open Sans</family>
+    <family>Poppins</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -20,9 +20,8 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333;
-color: #e5e5e5;
-border: 0px;</string>
+   <string notr="true">color: #aaa;
+background:#111;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -43,19 +42,21 @@ border: 0px;</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>0</y>
+        <y>10</y>
         <width>81</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Oswald</family>
-        <pointsize>18</pointsize>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">color: #ddd; 
+font-size: 20px;
+font-family: Poppins;</string>
       </property>
       <property name="text">
        <string>MINING</string>
@@ -64,42 +65,48 @@ border: 0px;</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>141</width>
-        <height>23</height>
+        <x>450</x>
+        <y>90</y>
+        <width>351</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #e5e5e5;</string>
+       <string notr="true">color: #aaa;</string>
       </property>
       <property name="text">
        <string>Select a mining pool</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QComboBox" name="m_poolCombo">
       <property name="geometry">
        <rect>
-        <x>168</x>
-        <y>50</y>
-        <width>160</width>
-        <height>25</height>
+        <x>450</x>
+        <y>120</y>
+        <width>351</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #777; padding: 3px; color: #e5e5e5;</string>
+       <string notr="true">background-color: #222;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;</string>
       </property>
       <property name="editable">
        <bool>false</bool>
@@ -108,127 +115,143 @@ border: 0px;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>90</y>
-        <width>141</width>
-        <height>20</height>
+        <x>450</x>
+        <y>190</y>
+        <width>351</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #e5e5e5;</string>
+       <string notr="true">color: #aaa;</string>
       </property>
       <property name="text">
        <string>Number of CPU cores</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QComboBox" name="m_cpuCombo">
       <property name="geometry">
        <rect>
-        <x>168</x>
-        <y>90</y>
-        <width>160</width>
-        <height>25</height>
+        <x>450</x>
+        <y>220</y>
+        <width>351</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #777; padding: 3px; color: #e5e5e5;</string>
+       <string notr="true">background-color: #222;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="m_addPoolButton">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>50</y>
-        <width>125</width>
-        <height>23</height>
+        <x>450</x>
+        <y>510</y>
+        <width>351</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       <string notr="true">color: #aaa; background-color: #333; 
+border-right: 0px;</string>
       </property>
       <property name="text">
-       <string>ADD POOL</string>
+       <string>ADD MINING POOL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>200</y>
-        <width>101</width>
-        <height>23</height>
+        <x>450</x>
+        <y>280</y>
+        <width>351</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #e5e5e5;</string>
+       <string notr="true">color: #aaa;</string>
       </property>
       <property name="text">
        <string>Mining status :</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="m_stateLabel">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>200</y>
-        <width>181</width>
-        <height>23</height>
+        <x>450</x>
+        <y>310</y>
+        <width>351</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
-        <pointsize>9</pointsize>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #e5e5e5;</string>
+       <string notr="true">color: #aaa;</string>
       </property>
       <property name="text">
        <string>Stopped</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="m_startButton">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>130</y>
-        <width>300</width>
-        <height>25</height>
+        <x>450</x>
+        <y>390</y>
+        <width>351</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       <string notr="true">color: #222; background-color: orange; border-top: 3px solid orange;
+border-right: 0px;</string>
       </property>
       <property name="text">
        <string>START MINING</string>
@@ -246,23 +269,24 @@ border: 0px;</string>
       </property>
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>300</width>
-        <height>25</height>
+        <x>450</x>
+        <y>450</y>
+        <width>351</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Open Sans</family>
+        <family>Poppins</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+       <string notr="true">color: #aaa; background-color: #333; 
+border-right: 0px;</string>
       </property>
       <property name="text">
-       <string>PAUSE</string>
+       <string>PAUSE MINING</string>
       </property>
       <property name="checkable">
        <bool>true</bool>
@@ -273,6 +297,28 @@ border: 0px;</string>
       <attribute name="buttonGroup">
        <string notr="true">m_miningButtonGroup</string>
       </attribute>
+     </widget>
+     <widget class="QPushButton" name="m_backButton">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>10</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+      </property>
+      <property name="text">
+       <string>BACK</string>
+      </property>
      </widget>
     </widget>
    </item>
@@ -341,6 +387,22 @@ border: 0px;</string>
     <hint type="destinationlabel">
      <x>379</x>
      <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MiningFrame</receiver>
+   <slot>addPoolClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1165</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
     </hint>
    </hints>
   </connection>

@@ -41,7 +41,13 @@ private:
   void stopMining();
   void walletClosed();
   Q_SLOT void addPoolClicked();
+  Q_SLOT void backClicked();  
   Q_SLOT void startStopClicked(QAbstractButton* _button);
+
+  Q_SIGNALS:
+    void backSignal();
+
+
 };
 
 }

@@ -192,4 +192,9 @@ void SendMessageFrame::ttlValueChanged(int _ttlValue) {
   m_ui->m_ttlLabel->setText(QString("%1h %2m").arg(hours).arg(minutes));
 }
 
+
+void SendMessageFrame::backClicked() {
+  Q_EMIT backSignal();
+}
+
 }

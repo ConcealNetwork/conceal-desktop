@@ -122,4 +122,8 @@ void MiningFrame::startStopClicked(QAbstractButton* _button) {
   }
 }
 
+void MiningFrame::backClicked() {
+  Q_EMIT backSignal();
+}
+
 }

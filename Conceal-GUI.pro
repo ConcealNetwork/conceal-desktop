@@ -3,6 +3,8 @@
 ######################################################################
 
 TEMPLATE = app
+QT += webkit webkitwidgets
+QT += charts
 TARGET = 
 DEPENDPATH += . \
               libqrencode \
@@ -566,6 +568,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/importseed.h \
            src/gui/nodesettings.h \
            src/gui/transactionconfirmation.h \     
+           src/gui/ShowQRCode.h \                
 
 SOURCES += libqrencode/bitstream.c \
            libqrencode/mask.c \
@@ -627,7 +630,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/MessagesFrame.cpp \
            src/gui/MessagesModel.cpp \
            src/gui/MiningFrame.cpp \
-           src/gui/WelcomeFrame.cpp \           
+           src/gui/WelcomeFrame.cpp \    
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
            src/gui/NewPoolDialog.cpp \
@@ -1041,6 +1044,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/importseed.cpp \
            src/gui/nodesettings.cpp \
            src/gui/transactionconfirmation.cpp 
+           src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/addressbookdialog.ui \
@@ -1072,9 +1076,11 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
             src/gui/ui/nodesettings.ui \
+            src/gui/ui/showqrcode.ui \            
 
 
 RESOURCES += src/resources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    src/images/logo-proper.png
 RC_FILE = conceal.rc

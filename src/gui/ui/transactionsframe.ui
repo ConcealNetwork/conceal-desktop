@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1270</width>
+    <height>700</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1270</width>
+    <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -24,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Open Sans</family>
+    <family>Poppins</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -32,9 +38,9 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333;
+   <string notr="true">background-color: #111;
 border: 0px;
-color: #e5e5e5;</string>
+color: #aaaaaa;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -56,30 +62,99 @@ color: #e5e5e5;</string>
     <number>15</number>
    </property>
    <property name="bottomMargin">
-    <number>15</number>
+    <number>25</number>
    </property>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <family>Oswald</family>
-       <pointsize>18</pointsize>
-      </font>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>10</number>
      </property>
-     <property name="styleSheet">
-      <string notr="true">color: white;</string>
+     <property name="topMargin">
+      <number>15</number>
      </property>
-     <property name="text">
-      <string>TRANSACTION HISTORY</string>
+     <property name="bottomMargin">
+      <number>10</number>
      </property>
-    </widget>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>15</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;</string>
+       </property>
+       <property name="text">
+        <string>TRANSACTION HISTORY</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_csvButton">
+       <property name="minimumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+       </property>
+       <property name="text">
+        <string>EXPORT TO CSV</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_backButton">
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QTreeView" name="m_transactionsView">
      <property name="minimumSize">
       <size>
-       <width>770</width>
-       <height>480</height>
+       <width>1230</width>
+       <height>550</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -90,15 +165,18 @@ color: #e5e5e5;</string>
      </property>
      <property name="font">
       <font>
-       <family>Open Sans</family>
+       <family>Poppins</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #555; color: #ffff;
-    font: 13px;
+background-color: #222; 
+   color: #aaa;
+font-family: Poppins;
+    font-size: 12px;
     border: 0px solid white;
+border-bottom: 1px solid orange;
    height: 30px;
 
 }
@@ -106,13 +184,20 @@ background-color: #555; color: #ffff;
 QTreeView::item
 {
     font: 10px;
-    color: #ddd;
+    color: #999;
     height: 30px;
-
-
 }
 
-padding: 0px;
+QTreeView::branch:selected {
+  background-color: orange;
+  color: black;
+}
+
+QWidget:item:selected {
+  background-color: #111;
+  color: #999;
+}
+
 </string>
      </property>
      <property name="frameShape">
@@ -131,7 +216,7 @@ padding: 0px;
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
      <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustIgnored</enum>
+      <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::EditKeyPressed</set>
@@ -149,7 +234,7 @@ padding: 0px;
       <bool>true</bool>
      </property>
      <property name="itemsExpandable">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="sortingEnabled">
       <bool>false</bool>
@@ -180,45 +265,6 @@ padding: 0px;
       </size>
      </property>
     </spacer>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="m_csvButton">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-       </property>
-       <property name="text">
-        <string>EXPORT TO CSV</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>
@@ -256,9 +302,26 @@ padding: 0px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TransactionsFrame</receiver>
+   <slot>backClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1198</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>exportToCsv()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
+  <slot>backClicked()</slot>
  </slots>
 </ui>

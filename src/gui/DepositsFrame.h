@@ -37,6 +37,14 @@ private:
   Q_SLOT void showDepositDetails(const QModelIndex& _index);
   Q_SLOT void timeChanged(int _value);
   Q_SLOT void withdrawClicked();
+  Q_SLOT void backClicked();
+  Q_SLOT void allButtonClicked();
+  Q_SLOT void investmentsClicked();
+  Q_SLOT void depositsClicked();  
+
+Q_SIGNALS:
+  void backSignal();
+
 };
 
 }

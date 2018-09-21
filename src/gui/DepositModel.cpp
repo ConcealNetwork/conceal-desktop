@@ -8,6 +8,7 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QMetaEnum>
+#include <QSize>
 
 #include "DepositModel.h"
 
@@ -129,6 +130,9 @@ QVariant DepositModel::data(const QModelIndex& _index, int _role) const {
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
+
+  case Qt::SizeHintRole:
+    return QSize(300, 35);
 
   case Qt::DecorationRole:
     return getDecorationRole(_index);
@@ -349,6 +353,20 @@ void DepositModel::appendDeposit(CryptoNote::DepositId _depositId) {
   if (_depositId < m_depositCount) {
     return;
   }
+
+  CryptoNote::Deposit deposit;
+
+  if(!WalletAdapter::instance().getDeposit(_depositId, deposit)) {
+    return;
+  }
+
+  if (!deposit.locked) {
+    if (deposit.spendingTransactionId != CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+   return;
+    }
+  }  
+
+
 
   beginInsertRows(QModelIndex(), m_depositCount, _depositId);
   m_depositCount = _depositId + 1;

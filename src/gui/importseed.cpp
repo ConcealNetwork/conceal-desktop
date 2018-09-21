@@ -15,6 +15,8 @@ namespace WalletGui {
 
 ImportSeed::ImportSeed(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ImportSeed) {
   m_ui->setupUi(this);
+
+
 }
 
 ImportSeed::~ImportSeed() {

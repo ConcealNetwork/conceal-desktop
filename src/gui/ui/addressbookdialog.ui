@@ -10,11 +10,16 @@
     <height>525</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Poppins</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Select address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333; color: #e5e5e5;</string>
+   <string notr="true">background-color: #111; color: #aaa;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -31,8 +36,13 @@
    </property>
    <item>
     <widget class="QTreeView" name="m_addressBookView">
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">background-color: #222; color: #aaa; border: 0px;</string>
      </property>
     </widget>
    </item>
@@ -56,22 +66,39 @@
        <property name="minimumSize">
         <size>
          <width>125</width>
-         <height>25</height>
+         <height>31</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+        <string notr="true">color: #aaa; 
+background-color: #333; 
+border-top: 3px solid orange; 
+font-size: 13px;
+font-family: Poppins;</string>
        </property>
        <property name="text">
         <string>CHOOSE</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

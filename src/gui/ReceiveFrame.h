@@ -30,6 +30,18 @@ private:
   void walletOpened(int _error);
   void walletClosed();
 
+  Q_SLOT void backClicked(); 
+  Q_SLOT void copyGUIClicked(); 
+  Q_SLOT void copySpendKeyClicked();
+  Q_SLOT void copyViewKeyClicked();
+  Q_SLOT void copySeedClicked(); 
+  Q_SLOT void backupClicked();
+  Q_SLOT void copyTrackingKeyClicked();
+
+Q_SIGNALS:
+  void backSignal();
+  void backupSignal();
+
 };
 
 }

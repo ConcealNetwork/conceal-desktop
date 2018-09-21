@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1270</width>
+    <height>700</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1270</width>
+    <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -24,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Open Sans</family>
+    <family>Poppins</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -32,9 +38,9 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #e5e5e5;
+   <string notr="true">color: #aaa;
 border: 0px;
-background-color: #333;</string>
+background-color: #111;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -47,7 +53,7 @@ background-color: #333;</string>
     <number>15</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>5</number>
    </property>
    <property name="rightMargin">
     <number>15</number>
@@ -56,40 +62,183 @@ background-color: #333;</string>
     <number>15</number>
    </property>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <family>Oswald</family>
-       <pointsize>18</pointsize>
-      </font>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="topMargin">
+      <number>10</number>
      </property>
-     <property name="styleSheet">
-      <string notr="true">color: white;</string>
+     <property name="bottomMargin">
+      <number>10</number>
      </property>
-     <property name="text">
-      <string>ADDRESS BOOK</string>
-     </property>
-    </widget>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; 
+font-size: 20px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>ADDRESS BOOK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_copyAddressButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; 
+background-color: #333; 
+border-top: 3px solid orange; 
+font-size: 13px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>COPY ADDRESS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_deleteAddressButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; 
+background-color: #333; 
+border-top: 3px solid orange; 
+font-size: 13px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>REMOVE ADDRESS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_addAddressButton">
+       <property name="minimumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; 
+background-color: #333; 
+border-top: 3px solid orange; 
+font-size: 13px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>ADD NEW ADDRESS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_backButton">
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #aaa; 
+background-color: #333; 
+border-top: 3px solid orange; 
+font-size: 13px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QTreeView" name="m_addressBookView">
      <property name="minimumSize">
       <size>
-       <width>760</width>
-       <height>300</height>
+       <width>1270</width>
+       <height>550</height>
       </size>
      </property>
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <family>Poppins</family>
+       <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #555; color: #ffff;
-    font: 13px;
+background-color: #222; 
+   color: #aaa;
+font-family: Poppins;
+    font-size: 12px;
     border: 0px solid white;
+border-bottom: 1px solid orange;
    height: 30px;
 
 }
@@ -97,11 +246,21 @@ background-color: #555; color: #ffff;
 QTreeView::item
 {
     font: 10px;
-    color: #ddd;
+    color: #999;
     height: 30px;
+}
 
+QTreeView::branch:selected {
+  background-color: orange;
+  color: black;
+}
 
-}</string>
+QWidget:item:selected {
+  background-color: #111;
+  color: #999;
+}
+
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -135,113 +294,6 @@ QTreeView::item
       </size>
      </property>
     </spacer>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="m_addAddressButton">
-       <property name="minimumSize">
-        <size>
-         <width>140</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-       </property>
-       <property name="text">
-        <string>ADD NEW ADDRESS</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_deleteAddressButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>140</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-       </property>
-       <property name="text">
-        <string>REMOVE ADDRESS</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_copyAddressButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>140</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
-       </property>
-       <property name="text">
-        <string>COPY ADDRESS</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>
@@ -311,9 +363,26 @@ QTreeView::item
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AddressBookFrame</receiver>
+   <slot>backClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1198</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addClicked()</slot>
+  <slot>backClicked()</slot>
   <slot>deleteClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>addressDoubleClicked(QModelIndex)</slot>

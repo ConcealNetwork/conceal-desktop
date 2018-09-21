@@ -29,6 +29,7 @@ public:
   void setEditorData(QWidget* _editor, const QModelIndex& _index) const Q_DECL_OVERRIDE {
     switch(_index.column()) {
     case TransactionsModel::COLUMN_AMOUNT:
+    case TransactionsModel::COLUMN_CONFIRMATIONS:
     case TransactionsModel::COLUMN_HASH:
     case TransactionsModel::COLUMN_DATE:
       static_cast<QLabel*>(_editor)->setText(_index.data().toString());

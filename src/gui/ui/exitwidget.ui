@@ -14,7 +14,7 @@
    <string>Saving data</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333;
+   <string notr="true">background-color: #111;
 color: #e5e5e5;
 border: 0px;</string>
   </property>
@@ -30,7 +30,7 @@ border: 0px;</string>
     <widget class="QLabel" name="m_label">
      <property name="font">
       <font>
-       <family>Open Sans</family>
+       <family>Poppins</family>
        <pointsize>9</pointsize>
       </font>
      </property>

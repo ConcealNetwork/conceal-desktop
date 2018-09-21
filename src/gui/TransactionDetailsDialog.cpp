@@ -19,7 +19,7 @@ namespace WalletGui {
 TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QWidget* _parent) : QDialog(_parent),
   m_ui(new Ui::TransactionDetailsDialog), m_detailsTemplate(
     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-    "</style></head><body style=\" font-family:'Open Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+    "</style></head><body style=\" font-family:'Poppins'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
     "<span style=\" font-weight:600;\">Status: </span>%1<br>\n"
     "<span style=\" font-weight:600;\">Date: </span>%2<br>\n"
     "<span style=\" font-weight:600;\">To: </span>%4<br>\n"
@@ -27,9 +27,8 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     "<span style=\" font-weight:600;\">Fee: </span>%6<br>\n"
     "<span style=\" font-weight:600;\">Payment ID: </span>%8<br><br>\n"
     "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
-    "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n"   
+    /* "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n" */
     "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
-    "%11"
     "</body></html>") {
   m_ui->setupUi(this);
 

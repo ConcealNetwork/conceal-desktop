@@ -35,9 +35,6 @@ protected:
 
 private:
   QScopedPointer<Ui::MainWindow> m_ui;
-  QLabel* m_connectionStateIconLabel;
-  QLabel* m_encryptionStateIconLabel;
-  QLabel* m_synchronizationStateIconLabel;
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
   bool m_isAboutToQuit;
@@ -51,23 +48,30 @@ private:
   void initUi();
 
   void minimizeToTray(bool _on);
-  void setStatusBarText(const QString& _text);
   void showMessage(const QString& _text, QtMsgType _type);
   void askForWalletPassword(bool _error);
-  void encryptedFlagChanged(bool _encrypted);
-  void peerCountUpdated(quint64 _peer_count);
-  void walletSynchronizationInProgress();
-  void walletSynchronized(int _error, const QString& _error_text);
   void walletOpened(bool _error, const QString& _error_text);
   void walletClosed();
   void replyTo(const QModelIndex& _index);
   void payTo(const QModelIndex& _index);
-
+  void sendTo();
+  void depositTo();
+  void showQRCode(const QString& _address);
+  void backupTo();
+  void rescanTo();
+  void dashboardTo();
+  void transactionTo();
+  void addressBookTo();
+  void sendMessageTo();
+  void messageTo();
+  void miningTo();
+  
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
   Q_SLOT void importKey();
   Q_SLOT void importsecretkeys();
   Q_SLOT void importSeed();
+  Q_SLOT void importTracking();
   Q_SLOT void nodeSettings();  
   Q_SLOT void backupWallet();
   Q_SLOT void resetWallet();

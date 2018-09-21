@@ -9,7 +9,6 @@
 
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
-
 #include <IWalletLegacy.h>
 
 #include "Message.h"
@@ -35,8 +34,9 @@ public:
   };
 
   static const QString HEADER_REPLY_TO_KEY;
-
   static MessagesModel& instance();
+  quint64 dayPoolAmount;
+  quint64 totalPoolAmount;
 
   Qt::ItemFlags flags(const QModelIndex& _index) const Q_DECL_OVERRIDE;
   int columnCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -61,11 +61,16 @@ private:
     const Message& _message) const;
 
   void reloadWalletTransactions();
+  void resetPoolTotal();
   void appendTransaction(CryptoNote::TransactionId _id, quint32& _row_count);
   void appendTransaction(CryptoNote::TransactionId _id);
   void updateWalletTransaction(CryptoNote::TransactionId _id);
   void lastKnownHeightUpdated(quint64 _height);
   void reset();
+
+Q_SIGNALS:
+  void poolEarningsSignal(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
+
 };
 
 }

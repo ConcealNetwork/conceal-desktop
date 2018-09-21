@@ -85,6 +85,7 @@ int main(int argc, char* argv[]) {
 
   splash->finish(&MainWindow::instance());
   MainWindow::instance().show();
+  
   WalletAdapter::instance().open("");
   QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, []() {
     MainWindow::instance().quit();

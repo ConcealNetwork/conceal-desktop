@@ -45,7 +45,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Open Sans</family>
+       <family>Poppins</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -88,7 +88,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Open Sans</family>
+         <family>Poppins</family>
          <pointsize>10</pointsize>
         </font>
        </property>

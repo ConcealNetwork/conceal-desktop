@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1270</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Open Sans</family>
+    <family>Poppins</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #444; color: #e5e5e5;</string>
+   <string notr="true">background-color: #111; color: #aaa;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -80,7 +80,7 @@
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <property name="lineWidth">
        <number>0</number>
@@ -169,121 +169,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #333; color: #fff;</string>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>FILE</string>
-    </property>
-    <addaction name="m_createWalletAction"/>
-    <addaction name="m_openWalletAction"/>
-    <addaction name="m_backupWalletAction"/>
-    <addaction name="m_resetAction"/>
-    <addaction name="separator"/>
-    <addaction name="m_importKeyAction"/>
-    <addaction name="m_importSecretKeysAction"/>
-    <addaction name="m_seedAction"/>
-    <addaction name="separator"/>
-    <addaction name="m_exitAction"/>
-   </widget>
-   <widget class="QMenu" name="menuSettings">
-    <property name="title">
-     <string>SETTINGS</string>
-    </property>
-    <addaction name="m_encryptWalletAction"/>
-    <addaction name="m_optimizeAction"/>
-    <addaction name="m_changePasswordAction"/>
-    <addaction name="m_ConnectionAction"/>
-    <addaction name="separator"/>
-    <addaction name="m_startOnLoginAction"/>
-    <addaction name="m_minimizeToTrayAction"/>
-    <addaction name="m_closeToTrayAction"/>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>HELP</string>
-    </property>
-    <addaction name="m_aboutCryptonoteAction"/>
-    <addaction name="m_aboutQtAction"/>
-   </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuSettings"/>
-   <addaction name="menuHelp"/>
-  </widget>
-  <widget class="QToolBar" name="toolBar">
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 0px; padding: 3px; width: 56px; background-color: #555;
-
-</string>
-   </property>
-   <property name="movable">
-    <bool>false</bool>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>36</height>
-    </size>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="m_overviewAction"/>
-   <addaction name="m_depositsAction"/>
-   <addaction name="m_sendAction"/>
-   <addaction name="m_receiveAction"/>
-   <addaction name="m_transactionsAction"/>
-   <addaction name="m_messagesAction"/>
-   <addaction name="m_sendMessageAction"/>
-   <addaction name="m_addressBookAction"/>
-   <addaction name="m_miningAction"/>
-  </widget>
-  <widget class="QStatusBar" name="statusBar">
-   <property name="font">
-    <font>
-     <family>Open Sans</family>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">padding: 5px;</string>
-   </property>
-  </widget>
   <action name="m_overviewAction">
    <property name="checkable">
     <bool>true</bool>
@@ -304,6 +189,12 @@
      <pointsize>10</pointsize>
     </font>
    </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="shortcutVisibleInContextMenu">
+    <bool>false</bool>
+   </property>
   </action>
   <action name="m_sendAction">
    <property name="checkable">
@@ -318,6 +209,9 @@
    </property>
    <property name="text">
     <string>SEND</string>
+   </property>
+   <property name="statusTip">
+    <string/>
    </property>
    <property name="font">
     <font>
@@ -586,6 +480,11 @@
   <action name="m_optimizeAction">
    <property name="text">
     <string>Optimize wallet</string>
+   </property>
+  </action>
+  <action name="m_viewWalletAction">
+   <property name="text">
+    <string>Import view wallet</string>
    </property>
   </action>
  </widget>
@@ -1055,6 +954,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_viewWalletAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>importTracking()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -1069,6 +984,7 @@
   <slot>setCloseToTray(bool)</slot>
   <slot>importKey()</slot>
   <slot>importSeed()</slot>
+  <slot>importTracking()</slot>
   <slot>nodeSettings()</slot>
   <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>

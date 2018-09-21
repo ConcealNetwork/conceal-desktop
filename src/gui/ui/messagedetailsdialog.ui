@@ -28,6 +28,12 @@
       </property>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Block height</string>
         </property>
@@ -35,6 +41,12 @@
       </item>
       <item row="0" column="1">
        <widget class="QLabel" name="m_heightLabel">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -42,6 +54,12 @@
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Amount</string>
         </property>
@@ -49,6 +67,12 @@
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="m_hashLabel">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -56,6 +80,12 @@
       </item>
       <item row="2" column="1">
        <widget class="QLabel" name="m_amountLabel">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -63,6 +93,12 @@
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Transaction hash</string>
         </property>
@@ -70,6 +106,12 @@
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Message size (bytes)</string>
         </property>
@@ -77,6 +119,12 @@
       </item>
       <item row="3" column="1">
        <widget class="QLabel" name="m_sizeLabel">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -87,6 +135,9 @@
    </item>
    <item>
     <widget class="QTextEdit" name="m_messageTextEdit">
+     <property name="styleSheet">
+      <string notr="true">background: #111;</string>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -96,6 +147,18 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="m_replyButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Reply</string>
        </property>
@@ -106,6 +169,18 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_saveButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Save to file</string>
        </property>
@@ -126,6 +201,11 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_prevButton">
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+        </font>
+       </property>
        <property name="text">
         <string>&lt;&lt;</string>
        </property>
@@ -133,6 +213,11 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_nextButton">
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+        </font>
+       </property>
        <property name="text">
         <string>&gt;&gt;</string>
        </property>
@@ -140,6 +225,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="m_okButton">
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Ok</string>
        </property>

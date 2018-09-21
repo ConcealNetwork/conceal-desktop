@@ -34,9 +34,13 @@ private:
   Q_SLOT void deleteClicked();
   Q_SLOT void currentAddressChanged(const QModelIndex& _index);
   Q_SLOT void addressDoubleClicked(const QModelIndex& _index);
+  Q_SLOT void backClicked();
+
+
 
 Q_SIGNALS:
   void payToSignal(const QModelIndex& _index);
+  void backSignal();  
 };
 
 }

@@ -12,11 +12,9 @@
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
-
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
-
 #include <Common/Base58.h>
 #include <Common/Util.h>
 
@@ -24,12 +22,14 @@
 #include "Common/SignalHandler.h"
 #include "Common/StringTools.h"
 #include "Common/PathTools.h"
+
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/CryptoNoteTools.h"
 #include "CryptoNoteCore/Account.cpp"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "Mnemonics/electrum-words.cpp"
+#include "ShowQRCode.h"
 
 #include "AboutDialog.h"
 #include "AddressBookModel.h"
@@ -40,6 +40,7 @@
 #include "ImportKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
+#include "importtracking.h"
 #include "transactionconfirmation.h"
 #include "nodesettings.h"
 #include "MainWindow.h"
@@ -57,8 +58,12 @@ namespace WalletGui {
 
 MainWindow* MainWindow::m_instance = nullptr;
 
-MainWindow& MainWindow::instance() {
-  if (m_instance == nullptr) {
+MainWindow& MainWindow::instance() 
+{
+
+  if (m_instance == nullptr) 
+  {
+
     m_instance = new MainWindow;
   }
 
@@ -68,10 +73,6 @@ MainWindow& MainWindow::instance() {
 MainWindow::MainWindow() : QMainWindow(), m_ui(new Ui::MainWindow), m_trayIcon(nullptr), m_tabActionGroup(new QActionGroup(this)),
   m_isAboutToQuit(false) {
   m_ui->setupUi(this);
-  m_connectionStateIconLabel = new QLabel(this);
-  m_encryptionStateIconLabel = new QLabel(this);
-  m_synchronizationStateIconLabel = new AnimatedLabel(this);
-
   connectToSignals();
   initUi();
   walletClosed();
@@ -83,9 +84,6 @@ MainWindow::~MainWindow() {
 void MainWindow::connectToSignals() {
   connect(&WalletAdapter::instance(), &WalletAdapter::openWalletWithPasswordSignal, this, &MainWindow::askForWalletPassword, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::changeWalletPasswordSignal, this, &MainWindow::encryptWallet, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationProgressUpdatedSignal, this, &MainWindow::walletSynchronizationInProgress, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &MainWindow::walletSynchronized, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &MainWindow::setStatusBarText);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &MainWindow::walletOpened);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MainWindow::walletClosed);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, [this]() {
@@ -97,15 +95,49 @@ void MainWindow::connectToSignals() {
       m_ui->m_transactionsAction->setChecked(true);
     }
   });
-  connect(&NodeAdapter::instance(), &NodeAdapter::peerCountUpdatedSignal, this, &MainWindow::peerCountUpdated, Qt::QueuedConnection);
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
   connect(m_ui->m_messagesFrame, &MessagesFrame::replyToSignal, this, &MainWindow::replyTo);
   connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
+  connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);    
+
+  connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::newTransferSignal, this, &MainWindow::sendTo, Qt::QueuedConnection);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::newMessageSignal, this, &MainWindow::sendMessageTo);    
+
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);  
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);  
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importKeyClickedSignal, this, &MainWindow::importKey, Qt::QueuedConnection);      
+
+  /* signals from overview frame buttons */
+  connect(m_ui->m_overviewFrame, &OverviewFrame::openWalletSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);    
+  connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);      
+  connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);        
+  connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
+  connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);      
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);    
+  connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);      
+
+  connect(m_ui->m_miningFrame, &MiningFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);    
+  connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);    
+  connect(m_ui->m_addressBookFrame, &AddressBookFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);    
+  connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);      
+  
 }
 
 void MainWindow::initUi() {
@@ -138,13 +170,8 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_miningAction);
   m_tabActionGroup->addAction(m_ui->m_depositsAction);
 
-
   m_ui->m_overviewAction->toggle();
-  encryptedFlagChanged(false);
-  statusBar()->addPermanentWidget(m_connectionStateIconLabel);
-  statusBar()->addPermanentWidget(m_encryptionStateIconLabel);
-  statusBar()->addPermanentWidget(m_synchronizationStateIconLabel);
-  qobject_cast<AnimatedLabel*>(m_synchronizationStateIconLabel)->setSprite(QPixmap(":icons/sync_sprite"), QSize(16, 16), 5, 24);
+
 
 #ifdef Q_OS_MAC
   installDockHandler();
@@ -294,7 +321,7 @@ void MainWindow::optimizeClicked()
 void MainWindow::createWallet() 
 {
 
-  m_ui->m_welcomeFrame->hide();  
+
 
   QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
 
@@ -330,7 +357,6 @@ void MainWindow::createWallet()
 void MainWindow::openWallet() 
 {  
 
-  m_ui->m_welcomeFrame->hide();
 
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
 
@@ -480,7 +506,7 @@ void MainWindow::encryptWallet() {
         return;
       }
 
-      encryptedFlagChanged(WalletAdapter::instance().changePassword("", password));
+      //encryptedFlagChanged(WalletAdapter::instance().changePassword("", password));
     }
   }
 }
@@ -511,9 +537,9 @@ void MainWindow::about() {
   dlg.exec();
 }
 
-void MainWindow::setStatusBarText(const QString& _text) {
+/* void MainWindow::setStatusBarText(const QString& _text) {
   statusBar()->showMessage(_text);
-}
+} */
 
 void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   switch (_type) {
@@ -542,49 +568,24 @@ void MainWindow::askForWalletPassword(bool _error)
 
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
+  } else {
+
+    m_ui->m_welcomeFrame->raise();
+    m_ui->m_welcomeFrame->show();
+
+
+
   }
-}
-
-/* ----------------------------------------------------------------- */
-
-void MainWindow::encryptedFlagChanged(bool _encrypted) {
-  m_ui->m_encryptWalletAction->setEnabled(!_encrypted);
-  m_ui->m_changePasswordAction->setEnabled(_encrypted);
-  QString encryptionIconPath = _encrypted ? ":icons/encrypted" : ":icons/decrypted";
-  QPixmap encryptionIcon = QPixmap(encryptionIconPath).scaled(16, 16, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-  m_encryptionStateIconLabel->setPixmap(encryptionIcon);
-  QString encryptionLabelTooltip = _encrypted ? tr("Encrypted") : tr("Not encrypted");
-  m_encryptionStateIconLabel->setToolTip(encryptionLabelTooltip);
-}
-
-void MainWindow::peerCountUpdated(quint64 _peerCount) {
-  QString connectionIconPath = _peerCount > 0 ? ":icons/connected" : ":icons/disconnected";
-  QPixmap connectionIcon = QPixmap(connectionIconPath).scaled(16, 16, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-  m_connectionStateIconLabel->setPixmap(connectionIcon);
-  m_connectionStateIconLabel->setToolTip(QString(tr("%1 peers").arg(_peerCount)));
-}
-
-void MainWindow::walletSynchronizationInProgress() {
-  qobject_cast<AnimatedLabel*>(m_synchronizationStateIconLabel)->startAnimation();
-  m_synchronizationStateIconLabel->setToolTip(tr("Synchronization in progress"));
-}
-
-void MainWindow::walletSynchronized(int _error, const QString& _error_text) {
-  QPixmap syncIcon = QPixmap(":icons/synced").scaled(16, 16, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-  qobject_cast<AnimatedLabel*>(m_synchronizationStateIconLabel)->stopAnimation();
-  m_synchronizationStateIconLabel->setPixmap(syncIcon);
-  QString syncLabelTooltip = _error > 0 ? tr("Not synchronized") : tr("Synchronized");
-  m_synchronizationStateIconLabel->setToolTip(syncLabelTooltip);
-}
+  
+  
+  }
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     m_ui->m_welcomeFrame->hide();
   if (!_error) {
-    m_encryptionStateIconLabel->show();
-    m_synchronizationStateIconLabel->show();
+
     m_ui->m_backupWalletAction->setEnabled(true);
     m_ui->m_resetAction->setEnabled(true);
-    encryptedFlagChanged(Settings::instance().isEncrypted());
 
     QList<QAction*> tabActions = m_tabActionGroup->actions();
     Q_FOREACH(auto action, tabActions) {
@@ -624,8 +625,6 @@ void MainWindow::walletClosed()
   m_ui->m_depositsFrame->hide();
 
   /* labels */
-  m_encryptionStateIconLabel->hide();
-  m_synchronizationStateIconLabel->hide();
   QList<QAction*> tabActions = m_tabActionGroup->actions();
 
   Q_FOREACH(auto action, tabActions) 
@@ -651,6 +650,53 @@ void MainWindow::payTo(const QModelIndex& _index) {
 
   m_ui->m_sendAction->trigger();
 }
+
+void MainWindow::sendTo() {
+  m_ui->m_sendAction->trigger();
+}
+
+void MainWindow::dashboardTo() {
+  m_ui->m_overviewAction->trigger();
+  m_ui->m_overviewFrame->raise();
+}
+
+void MainWindow::depositTo() {
+  m_ui->m_depositsAction->trigger();
+}
+
+void MainWindow::backupTo() 
+{
+
+  m_ui->m_receiveAction->trigger();
+
+}
+
+void MainWindow::transactionTo() {
+  m_ui->m_transactionsAction->trigger();
+}
+
+void MainWindow::addressBookTo() {
+  m_ui->m_addressBookAction->trigger();
+}
+
+void MainWindow::messageTo() {
+  m_ui->m_messagesAction->trigger();
+}
+
+void MainWindow::miningTo() {
+  m_ui->m_miningAction->trigger();
+}
+
+void MainWindow::sendMessageTo() 
+{
+
+  m_ui->m_sendMessageAction->trigger();
+}
+
+void MainWindow::rescanTo() {
+  MainWindow::resetWallet();
+}
+
 
 /* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 
@@ -796,6 +842,75 @@ void MainWindow::importSeed()
   }
 }
 
+/* --------------------------------------------------------------------------------------- */
+
+void MainWindow::importTracking() {
+  ImportTracking dlg(this);
+  if (dlg.exec() == QDialog::Accepted) {
+    QString keyString = dlg.getKeyString().trimmed();
+    QString filePath = dlg.getFilePath();
+    if (keyString.isEmpty() || filePath.isEmpty()) {
+      return;
+    }
+    if (keyString.size() != 192) {
+      QMessageBox::warning(this, tr("Tracking key is not valid"), tr("The tracking key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+
+    if (!filePath.endsWith(".wallet")) {
+      filePath.append(".wallet");
+    }
+
+    CryptoNote::AccountKeys keys;
+
+    std::string public_spend_key_string = keyString.mid(0,64).toStdString();
+    std::string public_view_key_string = keyString.mid(64,64).toStdString();
+    std::string private_spend_key_string = "0000000000000000000000000000000000000000000000000000000000000000";
+    std::string private_view_key_string = keyString.mid(192,64).toStdString();
+
+    Crypto::Hash public_spend_key_hash;
+    Crypto::Hash public_view_key_hash;
+    Crypto::Hash private_spend_key_hash;
+    Crypto::Hash private_view_key_hash;
+
+    size_t size;
+    if (!Common::fromHex(public_spend_key_string, &public_spend_key_hash, sizeof(public_spend_key_hash), size) || size != sizeof(public_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The public spend key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(public_view_key_string, &public_view_key_hash, sizeof(public_view_key_hash), size) || size != sizeof(public_view_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The public view key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+      QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
+      return;
+    }
+
+    Crypto::PublicKey public_spend_key = *(struct Crypto::PublicKey *) &public_spend_key_hash;
+    Crypto::PublicKey public_view_key = *(struct Crypto::PublicKey *) &public_view_key_hash;
+    Crypto::SecretKey private_spend_key = *(struct Crypto::SecretKey *) &private_spend_key_hash;
+    Crypto::SecretKey private_view_key = *(struct Crypto::SecretKey *) &private_view_key_hash;
+
+    keys.address.spendPublicKey = public_spend_key;
+    keys.address.viewPublicKey = public_view_key;
+    keys.spendSecretKey = private_spend_key;
+    keys.viewSecretKey = private_view_key;
+
+      if (WalletAdapter::instance().isOpen()) {
+        WalletAdapter::instance().close();
+      }
+      WalletAdapter::instance().setWalletFile(filePath);
+      WalletAdapter::instance().createWithKeys(keys);
+   // }
+  }
+}
+
+
 /* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
 void MainWindow::nodeSettings() 
@@ -818,6 +933,19 @@ void MainWindow::nodeSettings()
                              QMessageBox::Ok);
   }
 }
+
+void MainWindow::showQRCode(const QString& _address)
+{
+
+  ShowQRCode dlg(this);
+  dlg.showQR(_address);
+
+  if (dlg.exec() == QDialog::Accepted) 
+  {
+
+  }
+}
+
 
 
 #ifdef Q_OS_WIN

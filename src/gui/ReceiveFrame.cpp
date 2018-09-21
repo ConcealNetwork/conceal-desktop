@@ -30,13 +30,20 @@ ReceiveFrame::ReceiveFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::Rec
 ReceiveFrame::~ReceiveFrame() {
 }
 
-void ReceiveFrame::updateWalletAddress(const QString& _address) {
-  m_ui->m_addressEdit->setText(_address);
-  m_ui->m_qrLabel->showQRCode(_address);
+void ReceiveFrame::updateWalletAddress(const QString& _address) 
+{
+
 }
 
-void ReceiveFrame::walletOpened(int _error) {
-  if (_error != 0) {
+/* SHOW KEYS */
+/* generate and display the gui key, secret keys, mnemonic seed, and tracking key */
+
+void ReceiveFrame::walletOpened(int _error) 
+{
+
+  if (_error != 0) 
+  {
+
     return;
   }
 
@@ -45,30 +52,74 @@ void ReceiveFrame::walletOpened(int _error) {
   std::string secretKeysData = std::string(reinterpret_cast<char*>(&keys.spendSecretKey), sizeof(keys.spendSecretKey)) + std::string(reinterpret_cast<char*>(&keys.viewSecretKey), sizeof(keys.viewSecretKey));
   QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), secretKeysData));
 
-  // check if the wallet is deterministic
-  // we do this by generating a view key from the spend key and them comparing it to the existing view key
+  /* check if the wallet is deterministic
+  generate a view key from the spend key and them compare it to the existing view key */
   Crypto::PublicKey unused_dummy_variable;
   Crypto::SecretKey deterministic_private_view_key;
   std::string mnemonic_seed = "";
   CryptoNote::AccountBase::generateViewFromSpend(keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
   bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
   
-  if (deterministic_private_keys){
-  crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, mnemonic_seed, "English");
-  } else {
-     mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
+  if (deterministic_private_keys)
+  {
+
+    crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, mnemonic_seed, "English");
+  } else 
+  {
+
+    mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
   }
 
-  m_ui->m_keyEdit->setText(privateKeys);
-  m_ui->m_keyEdit_3->setText(QString::fromStdString(Common::podToHex(keys.spendSecretKey)));
-  m_ui->m_keyEdit_4->setText(QString::fromStdString(Common::podToHex(keys.viewSecretKey)));
+  m_ui->m_guiKey->setText(privateKeys);
+  m_ui->m_spendKey->setText(QString::fromStdString(Common::podToHex(keys.spendSecretKey)));
+  m_ui->m_viewKey->setText(QString::fromStdString(Common::podToHex(keys.viewSecretKey)));
   m_ui->m_seed->setText(QString::fromStdString(mnemonic_seed));  
+
+  /* create the tracking key for the view only wallet */
+  keys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
+  QString trackingKey = QString::fromStdString(Common::podToHex(keys));
+
+  m_ui->m_trackingKey->setText(trackingKey);
 }
 
 void ReceiveFrame::walletClosed() {
-  m_ui->m_addressEdit->clear();
-  m_ui->m_keyEdit->clear();
-  m_ui->m_qrLabel->clear();
+  m_ui->m_guiKey->clear();
+}
+
+void ReceiveFrame::backClicked() {
+  Q_EMIT backSignal();
+}
+
+void ReceiveFrame::copyGUIClicked() {
+
+    QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
+}
+
+void ReceiveFrame::copySpendKeyClicked() {
+
+    QApplication::clipboard()->setText(m_ui->m_spendKey->toPlainText());
+}
+
+void ReceiveFrame::copyViewKeyClicked() {
+
+    QApplication::clipboard()->setText(m_ui->m_viewKey->toPlainText());
+}
+
+void ReceiveFrame::copySeedClicked() {
+
+    QApplication::clipboard()->setText(m_ui->m_seed->toPlainText());
+}
+
+void ReceiveFrame::copyTrackingKeyClicked() {
+
+    QApplication::clipboard()->setText(m_ui->m_trackingKey->toPlainText());
+}
+
+void ReceiveFrame::backupClicked() 
+{
+
+  Q_EMIT backupSignal();
+
 }
 
 }

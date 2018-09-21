@@ -1,6 +1,5 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-//
 // Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -12,7 +11,6 @@
 
 #include <Common/Base58.h>
 #include <Common/Util.h>
-#include <Common/Base58.h>
 #include "Common/StringTools.h"
 #include <Wallet/WalletErrors.h>
 #include <Wallet/LegacyKeysImporter.h>
@@ -493,7 +491,7 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
 
 void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _total) {
   m_isSynchronized = false;
-  Q_EMIT walletStateChangedSignal(QString("%1 %2/%3").arg(tr("  Synchronizing")).arg(_current).arg(_total));
+  Q_EMIT walletStateChangedSignal(QString("%1<br />Height: %2/%3").arg(tr("Status: Synchronizing")).arg(_current).arg(_total));
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
 
@@ -610,15 +608,26 @@ void WalletAdapter::updateBlockStatusText() {
     return;
   }
 
+  std::string walletSecurity = "";
+
+  bool encrypted = Settings::instance().isEncrypted();
+  if (!encrypted) {
+    walletSecurity = "Wallet: Unencrypted";
+  } else
+  {
+    walletSecurity = "Wallet: Encrypted";
+  }
+
   const QDateTime currentTime = QDateTime::currentDateTimeUtc();
   const QDateTime blockTime = NodeAdapter::instance().getLastLocalBlockTimestamp();
   quint64 blockAge = blockTime.msecsTo(currentTime);
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" :
-    QString("  Warning: last block was received %1 hours %2 minutes ago").arg(blockAge / MSECS_IN_HOUR).arg(blockAge % MSECS_IN_HOUR / MSECS_IN_MINUTE);
-  Q_EMIT walletStateChangedSignal(QString(tr("  Wallet synchronized. Height: %1  |  Time (UTC): %2%3")).
+    QString("Warning: last block was received %1 hours %2 minutes ago").arg(blockAge / MSECS_IN_HOUR).arg(blockAge % MSECS_IN_HOUR / MSECS_IN_MINUTE);
+  Q_EMIT walletStateChangedSignal(QString(tr("Status: Synchronized<br />Height: %1<br />Date: %2%3<br />%4")).
     arg(NodeAdapter::instance().getLastLocalBlockHeight()).
-    arg(QLocale(QLocale::English).toString(blockTime, "dd MMM yyyy, HH:mm:ss")).
-    arg(warningString));
+    arg(QLocale(QLocale::English).toString(blockTime, "dd MMM yyyy")).
+    arg(warningString).
+    arg(QString::fromStdString(walletSecurity)));
 
   QTimer::singleShot(LAST_BLOCK_INFO_UPDATING_INTERVAL, this, SLOT(updateBlockStatusText()));
 }
