@@ -394,7 +394,7 @@ border-right: 0px;</string>
    <sender>m_backButton</sender>
    <signal>clicked()</signal>
    <receiver>MiningFrame</receiver>
-   <slot>addPoolClicked()</slot>
+   <slot>backClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1165</x>
@@ -410,6 +410,7 @@ border-right: 0px;</string>
  <slots>
   <slot>startStopClicked(QAbstractButton*)</slot>
   <slot>addPoolClicked()</slot>
+  <slot>backClicked()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="m_miningButtonGroup"/>
