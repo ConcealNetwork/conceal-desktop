@@ -357,29 +357,31 @@ void OverviewFrame::settingsClicked()
     m_ui->m_subButton1->setText("Optimize Wallet");
     m_ui->m_subButton2->setText("Connection Settings");
     m_ui->m_subButton3->setText("Rescan Wallet");    
-    m_ui->m_subButton4->setText("Minimize to Tray");    
-    m_ui->m_subButton5->setText("Close to Tray");       
 
-    
-    if (!Settings::instance().isMinimizeToTrayEnabled()) 
-    {
+    #ifdef Q_OS_WIN        
+      m_ui->m_subButton4->setText("Minimize to Tray");    
+      m_ui->m_subButton5->setText("Close to Tray");       
 
-      m_ui->m_subButton4->setText("Minimize to Tray Off");    
-    } else 
-    {
+      if (!Settings::instance().isMinimizeToTrayEnabled()) 
+      {
 
-      m_ui->m_subButton4->setText("Minimize to Tray On");    
-    } 
+        m_ui->m_subButton4->setText("Minimize to Tray Off");    
+      } else 
+      {
 
-    if (!Settings::instance().isCloseToTrayEnabled())
-    {
+        m_ui->m_subButton4->setText("Minimize to Tray On");    
+      } 
 
-    m_ui->m_subButton5->setText("Close to Tray Off");       
-    } else 
-    {
+      if (!Settings::instance().isCloseToTrayEnabled())
+      {
 
-    m_ui->m_subButton5->setText("Close to Tray On");       
-    }
+      m_ui->m_subButton5->setText("Close to Tray Off");       
+      } else 
+      {
+
+      m_ui->m_subButton5->setText("Close to Tray On");       
+      }
+    #endif
     subMenu = 2;
   } else  {
 
@@ -516,7 +518,7 @@ void OverviewFrame::subButton4Clicked()
 
     Q_EMIT encryptWalletSignal();
   }
-
+#ifdef Q_OS_WIN
   if (subMenu == 2)
   {
 
@@ -533,12 +535,13 @@ void OverviewFrame::subButton4Clicked()
     m_ui->m_subButton4->setText("Minimize to Tray Off");    
 
     }
-
   }  
+#endif  
 }
 
 void OverviewFrame::subButton5Clicked() 
 {
+#ifdef Q_OS_WIN
   if (subMenu == 2) 
   {
 
@@ -556,7 +559,7 @@ void OverviewFrame::subButton5Clicked()
 
     }
   }
-
+#endif
   if (subMenu == 3) 
   {
 
