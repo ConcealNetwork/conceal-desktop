@@ -192,9 +192,6 @@
    <property name="visible">
     <bool>true</bool>
    </property>
-   <property name="shortcutVisibleInContextMenu">
-    <bool>false</bool>
-   </property>
   </action>
   <action name="m_sendAction">
    <property name="checkable">
