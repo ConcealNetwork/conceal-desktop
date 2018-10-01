@@ -263,21 +263,30 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance;
 
-  float ccxusd = _ccxusd.toFloat();
-  float total = ccxusd * (float)totalBalance;
+  float ccxusd = 0;
+  float total = 0;
+
+  if (_ccxusd == "0.00") {
+    ccxusd = 0;
+    total = 0;
+  } else {
+    ccxusd = _ccxusd.toFloat();
+    total = ccxusd * (float)totalBalance;
+  }
+
   m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total / 1000000, 'f', 2)); 
   m_ui->m_ccxusd->setText(_ccxusd);  
   m_ui->m_btcusd->setText(_btc);
-  /* 
-  
-  m_ui->m_ccxbtc->setText(_ccxbtc + " satoshi");
 
+  /* 
+  m_ui->m_ccxbtc->setText(_ccxbtc + " satoshi");
   m_ui->m_difficulty->setText(_diff + " mn");
   m_ui->m_deposits->setText(_deposits + " CCX");  
   m_ui->m_supply->setText(_supply + " CCX");    
   m_ui->m_hashrate->setText(_hashrate + " KH/s");
   m_ui->m_reward->setText(_reward + " CCX");
-  m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight())); */
+  m_ui->m_height->setText(QString::number(NodeAdapter::instance().getLastKnownBlockHeight())); 
+  */ 
 }
 
 void OverviewFrame::sendClicked() 
