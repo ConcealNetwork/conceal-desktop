@@ -914,7 +914,7 @@ font-family: Poppins;
 font-size: 23px;</string>
        </property>
        <property name="text">
-        <string notr="true">12,345,678.900000</string>
+        <string notr="true">0.000000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1171,7 +1171,7 @@ font-family: Poppins;
 font-size: 23px;</string>
        </property>
        <property name="text">
-        <string notr="true">12,345,678.900000</string>
+        <string notr="true">0.000000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1655,11 +1655,13 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: none;</string>
+        <string notr="true">text-align: left; color: #aaa; margin-left: 0px;
+font-family: Poppins;
+font-size: 13px; border: none;</string>
        </property>
        <property name="text">
         <string>Address</string>
@@ -1708,7 +1710,7 @@ font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">12,345,678.900000 CCX</string>
+       <string notr="true">0.000000 CCX</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1761,7 +1763,7 @@ font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">USD 1,900.99</string>
+       <string notr="true">USD 0.00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

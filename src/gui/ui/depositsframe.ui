@@ -348,7 +348,7 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>160</y>
-         <width>371</width>
+         <width>341</width>
          <height>23</height>
         </rect>
        </property>
@@ -362,7 +362,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #aaa;</string>
        </property>
        <property name="text">
-        <string>5,040 blocks</string>
+        <string>21,900 blocks</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -459,7 +459,7 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>40</y>
-         <width>371</width>
+         <width>341</width>
          <height>21</height>
         </rect>
        </property>
