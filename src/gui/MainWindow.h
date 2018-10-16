@@ -59,6 +59,7 @@ private:
   void showQRCode(const QString& _address);
   void backupTo();
   void rescanTo();
+  void delay();
   void dashboardTo();
   void transactionTo();
   void addressBookTo();

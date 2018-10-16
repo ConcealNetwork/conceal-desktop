@@ -204,6 +204,14 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
   m_ui->m_transactionsFrame->scrollToTransaction(_index);
 }
 
+
+void MainWindow::delay()
+{
+    QTime dieTime= QTime::currentTime().addSecs(1);
+    while (QTime::currentTime() < dieTime)
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
 void MainWindow::quit() {
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
@@ -279,38 +287,29 @@ bool MainWindow::event(QEvent* _event) {
 
 void MainWindow::optimizeClicked() 
 {
-
   transactionconfirmation dlg(this);
-
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
 
-  if (numUnlockedOutputs >= 100) 
-  {
-
+  if (numUnlockedOutputs >= 100) {
     dlg.setMessage("Optimization recommended for this wallet");
   } else {
-
     dlg.setMessage("This wallet does not require optimization");
   }
 
-  if (dlg.exec() == QDialog::Accepted) 
-  {
+  if (dlg.exec() == QDialog::Accepted) {
 
-    while (true) 
-    {
+    transactionconfirmation dlg(this);
+    dlg.setMessage("Starting optimization..");
+    int rounds = 1;
 
+    while (WalletAdapter::instance().getNumUnlockedOutputs()> 100) {
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-
       if (numUnlockedOutputs == 0) break;
-
       WalletAdapter::instance().optimizeWallet();
-
-      while (numUnlockedOutputs == WalletAdapter::instance().getNumUnlockedOutputs()) 
-      {
-
-        QThread::msleep(500);
-      }
+      dlg.setMessage("Optimization round " + QString::number(rounds));
+      MainWindow::delay();
+      rounds++;
     }
   }
 } 
@@ -321,8 +320,6 @@ void MainWindow::optimizeClicked()
 void MainWindow::createWallet() 
 {
 
-
-
   QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
 
   #ifdef Q_OS_WIN
@@ -332,21 +329,13 @@ void MainWindow::createWallet()
   #endif
       tr("Wallets (*.wallet)"));
 
-    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) 
-    {
-
+    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
       filePath.append(".wallet");
     }
-
-    if (!filePath.isEmpty() && !QFile::exists(filePath)) 
-    {
-
-      if (WalletAdapter::instance().isOpen()) 
-      {
-
+    if (!filePath.isEmpty() && !QFile::exists(filePath)) {
+      if (WalletAdapter::instance().isOpen()) {
         WalletAdapter::instance().close();
       }
-
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWallet();
     }
@@ -783,14 +772,10 @@ void MainWindow::importSeed()
 
   ImportSeed dlg(this);
 
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString seed = dlg.getKeyString().trimmed();
     QString filePath = dlg.getFilePath();
-    if (seed.isEmpty() || filePath.isEmpty()) 
-    {
-
+    if (seed.isEmpty() || filePath.isEmpty()) {
       return;
     }  
 
@@ -831,9 +816,7 @@ void MainWindow::importSeed()
   keys.spendSecretKey = private_spend_key;
   keys.viewSecretKey = private_view_key;
   
-  if (WalletAdapter::instance().isOpen()) 
-  {
-
+  if (WalletAdapter::instance().isOpen()) {
     WalletAdapter::instance().close();
   }
 
@@ -845,6 +828,7 @@ void MainWindow::importSeed()
 /* --------------------------------------------------------------------------------------- */
 
 void MainWindow::importTracking() {
+
   ImportTracking dlg(this);
   if (dlg.exec() == QDialog::Accepted) {
     QString keyString = dlg.getKeyString().trimmed();
@@ -901,32 +885,24 @@ void MainWindow::importTracking() {
     keys.spendSecretKey = private_spend_key;
     keys.viewSecretKey = private_view_key;
 
-      if (WalletAdapter::instance().isOpen()) {
+    if (WalletAdapter::instance().isOpen()) {
         WalletAdapter::instance().close();
-      }
-      WalletAdapter::instance().setWalletFile(filePath);
-      WalletAdapter::instance().createWithKeys(keys);
+    }
+
+    WalletAdapter::instance().setWalletFile(filePath);
+    WalletAdapter::instance().createWithKeys(keys);
    // }
   }
 }
 
-
-/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
-
-void MainWindow::nodeSettings() 
-{
+void MainWindow::nodeSettings() {
 
   NodeSettings dlg(this);
-
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
-
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 
                              tr("Please restart the wallet for the new settings to take effect."), 
@@ -934,19 +910,13 @@ void MainWindow::nodeSettings()
   }
 }
 
-void MainWindow::showQRCode(const QString& _address)
-{
+void MainWindow::showQRCode(const QString& _address) {
 
   ShowQRCode dlg(this);
   dlg.showQR(_address);
-
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
   }
 }
-
-
 
 #ifdef Q_OS_WIN
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason) {
