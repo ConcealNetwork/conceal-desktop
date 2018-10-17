@@ -292,27 +292,25 @@ void MainWindow::optimizeClicked()
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
 
   if (numUnlockedOutputs >= 100) {
-    dlg.setMessage("Optimization recommended for this wallet");
+    dlg.setMessage("Optimization recommended [" + QString::number(numUnlockedOutputs) + "]");
   } else {
-    dlg.setMessage("This wallet does not require optimization");
+    dlg.setMessage("Optimization not required [" + QString::number(numUnlockedOutputs) + "]");
   }
 
   if (dlg.exec() == QDialog::Accepted) {
-
-    transactionconfirmation dlg(this);
-    dlg.setMessage("Starting optimization..");
-    int rounds = 1;
 
     while (WalletAdapter::instance().getNumUnlockedOutputs()> 100) {
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
       if (numUnlockedOutputs == 0) break;
       WalletAdapter::instance().optimizeWallet();
-      dlg.setMessage("Optimization round " + QString::number(rounds));
       MainWindow::delay();
-      rounds++;
     }
+
+    m_ui->m_overviewAction->trigger();
+    m_ui->m_overviewFrame->show();
+
   }
-} 
+}  
 
 
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
@@ -525,10 +523,6 @@ void MainWindow::about() {
   AboutDialog dlg(this);
   dlg.exec();
 }
-
-/* void MainWindow::setStatusBarText(const QString& _text) {
-  statusBar()->showMessage(_text);
-} */
 
 void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   switch (_type) {
