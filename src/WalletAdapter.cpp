@@ -378,7 +378,7 @@ void WalletAdapter::optimizeWallet() {
   std::vector<CryptoNote::TransactionMessage> messages;
   std::string extraString;
   uint64_t fee = CryptoNote::parameters::MINIMUM_FEE;
-  uint64_t mixIn = 0;
+  uint64_t mixIn = 2;
   uint64_t unlockTimestamp = 0;
   uint64_t ttl = 0;
   Crypto::SecretKey transactionSK;
