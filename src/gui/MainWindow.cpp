@@ -299,6 +299,7 @@ void MainWindow::optimizeClicked()
 
   if (dlg.exec() == QDialog::Accepted) {
 
+    WalletAdapter::instance().optimizeWallet();
     while (WalletAdapter::instance().getNumUnlockedOutputs()> 100) {
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
       if (numUnlockedOutputs == 0) break;
