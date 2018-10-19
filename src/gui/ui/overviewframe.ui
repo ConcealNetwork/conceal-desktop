@@ -311,7 +311,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>320</y>
+         <y>280</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -375,7 +375,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>280</y>
+         <y>240</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -401,41 +401,11 @@ font-size: 13px;</string>
         </size>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_importButton">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>240</y>
-         <width>81</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
-font-family: Poppins;
-font-size: 13px;</string>
-       </property>
-       <property name="text">
-        <string>Import</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-      </widget>
       <widget class="Line" name="line">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>370</y>
+         <y>330</y>
          <width>131</width>
          <height>1</height>
         </rect>
@@ -451,7 +421,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>390</y>
+         <y>350</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -481,7 +451,7 @@ font-size: 12px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>430</y>
+         <y>390</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -511,7 +481,7 @@ font-size: 12px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>470</y>
+         <y>430</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -541,7 +511,7 @@ font-size: 12px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>510</y>
+         <y>470</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -571,7 +541,7 @@ font-size: 12px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>550</y>
+         <y>510</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -600,9 +570,9 @@ font-size: 12px;</string>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>50</x>
-         <y>30</y>
-         <width>111</width>
+         <x>40</x>
+         <y>20</y>
+         <width>131</width>
          <height>31</height>
         </rect>
        </property>
@@ -618,7 +588,7 @@ font-size: 12px;</string>
         <string notr="true">color: #ddd;</string>
        </property>
        <property name="text">
-        <string>TESTNET</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/images/conceal.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -1208,7 +1178,7 @@ font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string>My Testnet Wallet</string>
+       <string>My Conceal Wallet</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="addressBox">
@@ -2250,22 +2220,6 @@ font-size: 12px;</string>
     <hint type="sourcelabel">
      <x>100</x>
      <y>480</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>importClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>520</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
