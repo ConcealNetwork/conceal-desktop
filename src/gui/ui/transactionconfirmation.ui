@@ -112,9 +112,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="m_optimizeButton">
     <property name="geometry">
      <rect>
-      <x>25</x>
+      <x>50</x>
       <y>260</y>
-      <width>401</width>
+      <width>351</width>
       <height>40</height>
      </rect>
     </property>
