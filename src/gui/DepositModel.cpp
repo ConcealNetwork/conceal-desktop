@@ -25,13 +25,12 @@ Q_DECL_CONSTEXPR quint32 YEAR_SECONDS = 365 * 24 * 60 * 60;
 
 namespace {
 
-QDateTime getExpectedTimeForHeight(quint64 _height) {
-  quint64 lastLocalBlockHeight = NodeAdapter::instance().getLastLocalBlockHeight();
-  QDateTime localLocalBlockTimestamp = NodeAdapter::instance().getLastLocalBlockTimestamp();
+  QDateTime getExpectedTimeForHeight(quint64 _height) {
+    quint64 lastLocalBlockHeight = NodeAdapter::instance().getLastLocalBlockHeight();
+    QDateTime localLocalBlockTimestamp = NodeAdapter::instance().getLastLocalBlockTimestamp();
 
-  return localLocalBlockTimestamp.addSecs((_height - lastLocalBlockHeight) * CurrencyAdapter::instance().getDifficultyTarget());
-}
-
+    return localLocalBlockTimestamp.addSecs((_height - lastLocalBlockHeight) * CurrencyAdapter::instance().getDifficultyTarget());
+  }
 }
 
 enum class MessageType : quint8 {INPUT, OUTPUT};
@@ -45,16 +44,11 @@ DepositModel& DepositModel::instance() {
 }
 
 DepositModel::DepositModel() : QAbstractItemModel(), m_depositCount(0) {
-  connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this, &DepositModel::reloadWalletDeposits,
-    Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this,
-    static_cast<void(DepositModel::*)(CryptoNote::TransactionId)>(&DepositModel::transactionCreated), Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this,
-    &DepositModel::transactionUpdated, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &DepositModel::reset,
-    Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletDepositsUpdatedSignal, this, &DepositModel::depositsUpdated,
-    Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this, &DepositModel::reloadWalletDeposits, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, static_cast<void(DepositModel::*)(CryptoNote::TransactionId)>(&DepositModel::transactionCreated), Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this, &DepositModel::transactionUpdated, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &DepositModel::reset, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletDepositsUpdatedSignal, this, &DepositModel::depositsUpdated, Qt::QueuedConnection);
 }
 
 DepositModel::~DepositModel() {
@@ -62,7 +56,6 @@ DepositModel::~DepositModel() {
 
 Qt::ItemFlags DepositModel::flags(const QModelIndex& _index) const {
   Qt::ItemFlags flags = Qt::ItemIsEnabled | Qt::ItemNeverHasChildren | Qt::ItemIsSelectable;
-
   return flags;
 }
 
@@ -110,6 +103,8 @@ QVariant DepositModel::headerData(int _section, Qt::Orientation _orientation, in
       return tr("Spending height");
     case COLUMN_SPENDING_TIME:
       return tr("Spending time");
+    case COLUMN_TYPE:
+      return tr("Type");      
     default:
       break;
     }
@@ -182,14 +177,13 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   case COLUMN_INTEREST:
     return CurrencyAdapter::instance().formatAmount(_index.data(ROLE_DEPOSIT_INTEREST).value<quint64>());
   case COLUMN_SUM:
-    return CurrencyAdapter::instance().formatAmount(_index.data(ROLE_DEPOSIT_AMOUNT).value<quint64>() +
-      _index.data(ROLE_DEPOSIT_INTEREST).value<quint64>());
+    return CurrencyAdapter::instance().formatAmount(_index.data(ROLE_DEPOSIT_AMOUNT).value<quint64>() + _index.data(ROLE_DEPOSIT_INTEREST).value<quint64>());
   case COLUMN_TERM_RATE: {
     quint64 amount = _index.data(ROLE_DEPOSIT_AMOUNT).value<quint64>();
     quint64 interest = _index.data(ROLE_DEPOSIT_INTEREST).value<quint64>();
     quint32 term = _index.data(ROLE_DEPOSIT_TERM).value<quint32>();
     qreal termRate = calculateRate(amount, interest);
-    return QString("%1 %").arg(QString::number(termRate * 100, 'f', 2));
+    return QString("%1 %").arg(QString::number(termRate * 100, 'f', 6));
   }
   case COLUMN_TERM:
     return _index.data(ROLE_DEPOSIT_TERM);
@@ -200,6 +194,19 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     }
 
     return unlockHeight > 0 ? unlockHeight - 1 : 0;
+  }
+
+  case COLUMN_TYPE: {
+    quint32 term = _index.data(ROLE_DEPOSIT_TERM).value<quint32>();
+    if (term % 64800 == 0) {
+      return QString("Investment");
+    }
+    if (term % 21900 == 0) {
+      return QString("Legacy Deposit");
+    }
+    if (term % 5040 == 0) {
+      return QString("Deposit");
+    }
   }
 
   case COLUMN_UNLOCK_TIME: {
@@ -296,7 +303,8 @@ QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
     return static_cast<quint64>(deposit.amount);
 
   case ROLE_DEPOSIT_INTEREST:
-    return static_cast<quint64>(deposit.interest);
+    return CurrencyAdapter::instance().calculateInterest(deposit.amount, deposit.term, NodeAdapter::instance().getLastKnownBlockHeight());
+  
 
   case ROLE_STATE:
     if (deposit.locked) {

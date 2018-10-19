@@ -92,6 +92,22 @@ quint64 WalletAdapter::getActualDepositBalance() const {
   }
 }
 
+quint64 WalletAdapter::getActualInvestmentBalance() const {
+  try {
+    return m_wallet == nullptr ? 0 : m_wallet->actualInvestmentBalance();
+  } catch (std::system_error&) {
+    return 0;
+  }
+}
+
+quint64 WalletAdapter::getPendingInvestmentBalance() const {
+  try {
+    return m_wallet == nullptr ? 0 : m_wallet->pendingInvestmentBalance();
+  } catch (std::system_error&) {
+    return 0;
+  }
+}
+
 quint64 WalletAdapter::getPendingDepositBalance() const {
   try {
     return m_wallet == nullptr ? 0 : m_wallet->pendingDepositBalance();
@@ -362,7 +378,7 @@ void WalletAdapter::optimizeWallet() {
   std::vector<CryptoNote::TransactionMessage> messages;
   std::string extraString;
   uint64_t fee = CryptoNote::parameters::MINIMUM_FEE;
-  uint64_t mixIn = 2;
+  uint64_t mixIn = 0;
   uint64_t unlockTimestamp = 0;
   uint64_t ttl = 0;
   Crypto::SecretKey transactionSK;
@@ -449,6 +465,8 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
     Q_EMIT walletPendingBalanceUpdatedSignal(m_wallet->pendingBalance());
     Q_EMIT walletActualDepositBalanceUpdatedSignal(m_wallet->actualDepositBalance());
     Q_EMIT walletPendingDepositBalanceUpdatedSignal(m_wallet->pendingDepositBalance());
+    Q_EMIT walletActualInvestmentBalanceUpdatedSignal(m_wallet->actualInvestmentBalance());
+    Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(m_wallet->pendingInvestmentBalance());    
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress()));
     Q_EMIT reloadWalletTransactionsSignal();
     Q_EMIT walletStateChangedSignal(tr("Ready"));
@@ -518,6 +536,15 @@ Q_EMIT walletActualDepositBalanceUpdatedSignal(_actualDepositBalance);
 void WalletAdapter::pendingDepositBalanceUpdated(uint64_t _pendingDepositBalance) {
   Q_EMIT walletPendingDepositBalanceUpdatedSignal(_pendingDepositBalance);
 }
+
+void WalletAdapter::actualInvestmentBalanceUpdated(uint64_t _actualInvestmentBalance) {
+Q_EMIT walletActualInvestmentBalanceUpdatedSignal(_actualInvestmentBalance);
+}
+
+void WalletAdapter::pendingInvestmentBalanceUpdated(uint64_t _pendingInvestmentBalance) {
+  Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(_pendingInvestmentBalance);
+}
+
 
 void WalletAdapter::externalTransactionCreated(CryptoNote::TransactionId _transactionId) {
   if (!m_isSynchronized) {

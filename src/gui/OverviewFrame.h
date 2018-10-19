@@ -55,6 +55,8 @@ private:
   void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
   void actualDepositBalanceUpdated(quint64 _balance);
   void pendingDepositBalanceUpdated(quint64 _balance);  
+  void actualInvestmentBalanceUpdated(quint64 _balance);
+  void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void reset();
   

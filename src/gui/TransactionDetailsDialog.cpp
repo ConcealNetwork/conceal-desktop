@@ -27,7 +27,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     "<span style=\" font-weight:600;\">Fee: </span>%6<br>\n"
     "<span style=\" font-weight:600;\">Payment ID: </span>%8<br><br>\n"
     "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
-    "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n"
+    /* "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n" */
     "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
     "</body></html>") {
   m_ui->setupUi(this);
