@@ -1187,7 +1187,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #aaa;</string>
        </property>
        <property name="text">
-        <string>67500 blocks</string>
+        <string>68400 blocks</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
