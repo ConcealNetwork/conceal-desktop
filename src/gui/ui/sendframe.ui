@@ -241,8 +241,8 @@ font-family: Poppins;</string>
        </property>
        <property name="maximumSize">
         <size>
-         <width>130</width>
-         <height>25</height>
+         <width>0</width>
+         <height>0</height>
         </size>
        </property>
        <property name="font">
@@ -252,22 +252,22 @@ font-family: Poppins;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; color: #ddd;</string>
+        <string notr="true">padding: 3px; border: 0px; color: #000d;</string>
        </property>
        <property name="minimum">
-        <number>1</number>
+        <number>4</number>
        </property>
        <property name="maximum">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="pageStep">
         <number>1</number>
        </property>
        <property name="value">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="sliderPosition">
-        <number>3</number>
+        <number>4</number>
        </property>
        <property name="tracking">
         <bool>false</bool>
@@ -307,7 +307,7 @@ font-family: Poppins;</string>
         <string notr="true">padding: 3px; border: 0px;</string>
        </property>
        <property name="text">
-        <string notr="true">3</string>
+        <string notr="true">4</string>
        </property>
        <property name="maxLength">
         <number>5</number>
