@@ -11,11 +11,10 @@
 
 #include <Common/Base58.h>
 #include <Common/Util.h>
-#include "Common/StringTools.h"
 #include <Wallet/WalletErrors.h>
 #include <Wallet/LegacyKeysImporter.h>
+#include "Common/StringTools.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
-
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "WalletAdapter.h"
@@ -116,8 +115,7 @@ quint64 WalletAdapter::getPendingDepositBalance() const {
   }
 }
 
-void WalletAdapter::open(const QString& _password)
-{
+void WalletAdapter::open(const QString& _password) {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(!_password.isEmpty());
@@ -126,15 +124,9 @@ void WalletAdapter::open(const QString& _password)
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
 
-  if (QFile::exists(Settings::instance().getWalletFile()))
-  {
-
-    if (Settings::instance().getWalletFile().endsWith(".keys"))
-    {
-
-      if(!importLegacyWallet(_password))
-      {
-
+  if (QFile::exists(Settings::instance().getWalletFile())) {
+    if (Settings::instance().getWalletFile().endsWith(".keys")) {
+      if(!importLegacyWallet(_password)) {
         return;
       }
     }
@@ -148,13 +140,10 @@ void WalletAdapter::open(const QString& _password)
         m_wallet = nullptr;
       }
     }
-  } else {
-
-  }
+  } else {}
 }
 
-void WalletAdapter::createWallet()
-{
+void WalletAdapter::createWallet() {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(false);
@@ -170,14 +159,6 @@ void WalletAdapter::createWallet()
     m_wallet = nullptr;
   }
 }
-
-
-
-
-
-
-
-
 
 void WalletAdapter::createWithKeys(const CryptoNote::AccountKeys& _keys) {
     m_wallet = NodeAdapter::instance().createWallet();
@@ -378,7 +359,7 @@ void WalletAdapter::optimizeWallet() {
   std::vector<CryptoNote::TransactionMessage> messages;
   std::string extraString;
   uint64_t fee = CryptoNote::parameters::MINIMUM_FEE;
-  uint64_t mixIn = 2;
+  uint64_t mixIn = 0;
   uint64_t unlockTimestamp = 0;
   uint64_t ttl = 0;
   Crypto::SecretKey transactionSK;
@@ -414,7 +395,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   try {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
-    Q_EMIT walletStateChangedSignal(tr("Creating deposit"));
+    Q_EMIT walletStateChangedSignal(tr("Creating"));
   } catch (std::system_error&) {
     unlock();
   }
@@ -425,7 +406,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _dep
   try {
     lock();
     m_depositWithdrawalId = m_wallet->withdrawDeposits(_depositIds.toStdVector(), _fee);
-    Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"));
+    Q_EMIT walletStateChangedSignal(tr("Withdrawing"));
   } catch (std::system_error&) {
     unlock();
   }
