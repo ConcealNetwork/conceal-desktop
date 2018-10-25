@@ -279,7 +279,7 @@ bool MainWindow::event(QEvent* _event) {
 
 void MainWindow::delay()
 {
-    QTime dieTime= QTime::currentTime().addSecs(1);
+    QTime dieTime= QTime::currentTime().addSecs(2);
     while (QTime::currentTime() < dieTime)
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
