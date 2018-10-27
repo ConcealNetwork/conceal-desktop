@@ -37,7 +37,9 @@ public:
   quint64 getActualBalance() const;
   quint64 getPendingBalance() const;
   quint64 getActualDepositBalance() const;
+  quint64 getActualInvestmentBalance() const;  
   quint64 getPendingDepositBalance() const;
+  quint64 getPendingInvestmentBalance() const;  
   quint64 getTransactionCount() const;
   quint64 getTransferCount() const;
   quint64 getDepositCount() const;
@@ -65,6 +67,8 @@ public:
   void pendingBalanceUpdated(uint64_t _pendingBalance) Q_DECL_OVERRIDE;
   void actualDepositBalanceUpdated(uint64_t _actualDepositBalance) Q_DECL_OVERRIDE;
   void pendingDepositBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;
+  void actualInvestmentBalanceUpdated(uint64_t _actualDepositBalance) Q_DECL_OVERRIDE;
+  void pendingInvestmentBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;  
   void externalTransactionCreated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, std::error_code _result) Q_DECL_OVERRIDE;
   void transactionUpdated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
@@ -112,6 +116,8 @@ Q_SIGNALS:
   void walletPendingBalanceUpdatedSignal(quint64 _pendingBalance);
   void walletActualDepositBalanceUpdatedSignal(quint64 _actualDepositBalance);
   void walletPendingDepositBalanceUpdatedSignal(quint64 _pendingDepositBalance);
+  void walletActualInvestmentBalanceUpdatedSignal(quint64 _actualInvestmentBalance);
+  void walletPendingInvestmentBalanceUpdatedSignal(quint64 _pendingInvestmentBalance);  
   void walletTransactionCreatedSignal(CryptoNote::TransactionId _transactionId);
   void walletSendTransactionCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);
   void walletSendMessageCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);

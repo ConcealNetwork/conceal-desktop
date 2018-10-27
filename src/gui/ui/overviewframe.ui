@@ -114,7 +114,7 @@ font-family: Poppins;</string>
         <x>220</x>
         <y>441</y>
         <width>681</width>
-        <height>241</height>
+        <height>181</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -187,24 +187,11 @@ font-family: Poppins;</string>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="logo">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>20</y>
-         <width>131</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/images/conceal.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="m_bankingButton">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>80</y>
+         <y>190</y>
          <width>91</width>
          <height>35</height>
         </rect>
@@ -234,7 +221,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>160</y>
+         <y>250</y>
          <width>101</width>
          <height>35</height>
         </rect>
@@ -264,7 +251,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>200</y>
+         <y>280</y>
          <width>121</width>
          <height>35</height>
         </rect>
@@ -294,7 +281,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>120</y>
+         <y>220</y>
          <width>111</width>
          <height>35</height>
         </rect>
@@ -324,7 +311,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>320</y>
+         <y>340</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -354,7 +341,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>610</y>
+         <y>600</y>
          <width>181</width>
          <height>81</height>
         </rect>
@@ -388,7 +375,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>280</y>
+         <y>310</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -414,41 +401,11 @@ font-size: 13px;</string>
         </size>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_importButton">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>240</y>
-         <width>81</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
-font-family: Poppins;
-font-size: 13px;</string>
-       </property>
-       <property name="text">
-        <string>Import</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-      </widget>
       <widget class="Line" name="line">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>370</y>
+         <y>380</y>
          <width>131</width>
          <height>1</height>
         </rect>
@@ -478,7 +435,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 12px;</string>
        </property>
        <property name="text">
         <string>First</string>
@@ -494,7 +451,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>430</y>
+         <y>420</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -508,7 +465,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 12px;</string>
        </property>
        <property name="text">
         <string>Second</string>
@@ -524,7 +481,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>470</y>
+         <y>450</y>
          <width>151</width>
          <height>35</height>
         </rect>
@@ -538,7 +495,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 12px;</string>
        </property>
        <property name="text">
         <string>Third</string>
@@ -551,6 +508,36 @@ font-size: 13px;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="m_subButton4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>480</y>
+         <width>151</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">text-align: left; color: #777; margin-left: 20px;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string>Fourth</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_subButton5">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -568,37 +555,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
-       </property>
-       <property name="text">
-        <string>Fourth</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="m_subButton5">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>550</y>
-         <width>151</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">text-align: left; color: #777; margin-left: 20px;
-font-family: Poppins;
-font-size: 13px;</string>
+font-size: 12px;</string>
        </property>
        <property name="text">
         <string>Fifth</string>
@@ -608,6 +565,30 @@ font-size: 13px;</string>
          <width>18</width>
          <height>18</height>
         </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>131</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/images/conceal.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -639,20 +620,14 @@ font-size: 13px;</string>
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="m_priceLabelTitle">
+      <widget class="QPushButton" name="pushButton_2">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>171</width>
-         <height>25</height>
+         <x>10</x>
+         <y>15</y>
+         <width>75</width>
+         <height>23</height>
         </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #999;
@@ -664,31 +639,8 @@ font-family: Poppins;</string>
         <string>PRICE</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_sendButton_2">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>20</y>
-         <width>71</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string>in Satoshi</string>
-       </property>
-      </widget>
+      <zorder>pushButton_2</zorder>
+      <zorder>m_chart</zorder>
      </widget>
      <widget class="QGroupBox" name="fundsBox">
       <property name="geometry">
@@ -1087,7 +1039,7 @@ font-family: Poppins;
 font-size: 12px;</string>
        </property>
        <property name="text">
-        <string>Widthrawable</string>
+        <string>Withdrawable</string>
        </property>
       </widget>
       <widget class="QLabel" name="m_lockedDepositLabel">
@@ -1204,385 +1156,6 @@ font-size: 23px;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="investmentsBox">
-      <property name="geometry">
-       <rect>
-        <x>920</x>
-        <y>131</y>
-        <width>331</width>
-        <height>191</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: #222;border-radius: 2px;</string>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <widget class="QLabel" name="label_7">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>150</y>
-         <width>141</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string>Pool Earnings: All Time</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>131</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string>Pool Earnings: 24 Hours</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel_3">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>120</y>
-         <width>141</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_3">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>150</y>
-         <width>111</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel2_3">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>150</y>
-         <width>31</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1_3">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>31</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_investmentsTitle">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>171</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-size: 20px;
-font-family: Poppins;</string>
-       </property>
-       <property name="text">
-        <string>STATS</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="m_investmentsButton">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>20</y>
-         <width>24</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_11">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>90</y>
-         <width>131</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string>Price: BTC-USD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_12">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>60</y>
-         <width>131</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string>Price: CCX-USD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_ccxusd">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>60</y>
-         <width>141</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_btcusd">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>90</y>
-         <width>141</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1_4">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>90</y>
-         <width>31</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">USD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1_5">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>60</y>
-         <width>31</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #999;
-background: transparent;
-font-family: Poppins;
-font-size: 12px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">USD</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QLabel" name="m_myConcealWalletTitle">
       <property name="geometry">
        <rect>
@@ -1655,13 +1228,11 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #aaa; margin-left: 0px;
-font-family: Poppins;
-font-size: 13px; border: none;</string>
+        <string notr="true">border: none;</string>
        </property>
        <property name="text">
         <string>Address</string>
@@ -1691,9 +1262,9 @@ font-size: 13px; border: none;</string>
      <widget class="QLabel" name="m_totalPortfolioLabel">
       <property name="geometry">
        <rect>
-        <x>900</x>
+        <x>930</x>
         <y>26</y>
-        <width>221</width>
+        <width>171</width>
         <height>21</height>
        </rect>
       </property>
@@ -1704,13 +1275,12 @@ font-size: 13px; border: none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange;
-background: transparent;
+       <string notr="true">background: transparent;
 font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">0.000000 CCX</string>
+       <string notr="true">000000.000000</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1719,7 +1289,7 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="m_portfolioTitle">
       <property name="geometry">
        <rect>
-        <x>820</x>
+        <x>860</x>
         <y>26</y>
         <width>61</width>
         <height>21</height>
@@ -1744,9 +1314,9 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
       <property name="geometry">
        <rect>
-        <x>1120</x>
+        <x>1100</x>
         <y>26</y>
-        <width>131</width>
+        <width>151</width>
         <height>21</height>
        </rect>
       </property>
@@ -1763,7 +1333,7 @@ font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">USD 0.00</string>
+       <string notr="true">USD 000000.00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1938,6 +1508,604 @@ background: transparent;</string>
        <string>currentWallet</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="statsBox_2">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>130</y>
+        <width>331</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #222;border-radius: 2px;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>150</y>
+         <width>141</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string>Locked</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>131</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string>Withdrawable</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_unlockedInvestmentsLabel">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>120</y>
+         <width>141</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_lockedInvestmentLabel">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>150</y>
+         <width>111</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_tickerLabel2_5">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>150</y>
+         <width>31</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">CCX</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_tickerLabel1_9">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>120</y>
+         <width>31</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">CCX</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_investmentsTitle">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>171</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #999;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>INVESTMENTS</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_investmentsButton">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>20</y>
+         <width>24</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../resources.qrc">
+         <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_totalInvestmentLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>291</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #bbb;
+background: transparent;
+font-family: Poppins;
+font-size: 23px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0.000000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="m_tickerLabel1_5">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>660</y>
+        <width>31</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">USD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>660</y>
+        <width>60</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #aaa;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>CCX/USD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_ccxusd">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>660</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_tickerLabel1_4">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>660</y>
+        <width>31</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">USD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>660</y>
+        <width>60</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #aaa;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>BTC/USD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_btcusd">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>660</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>660</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #aaa;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>Pools/24h</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_tickerLabel1_3">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>660</y>
+        <width>31</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">CCX</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_actualBalanceLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>660</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>660</y>
+        <width>51</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #aaa;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>Pools</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_pendingBalanceLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>660</y>
+        <width>61</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_tickerLabel2_3">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>660</y>
+        <width>31</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #777;
+background: transparent;
+font-family: Poppins;
+font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">CCX</string>
+      </property>
+     </widget>
+     <zorder>m_latestTransactionsTitle</zorder>
+     <zorder>m_recentTransactionsView</zorder>
+     <zorder>leftMenu</zorder>
+     <zorder>fundsBox</zorder>
+     <zorder>depositsBox</zorder>
+     <zorder>m_myConcealWalletTitle</zorder>
+     <zorder>addressBox</zorder>
+     <zorder>m_totalPortfolioLabel</zorder>
+     <zorder>m_portfolioTitle</zorder>
+     <zorder>m_totalPortfolioLabelUSD</zorder>
+     <zorder>m_newTransferButton</zorder>
+     <zorder>m_newWalletButton</zorder>
+     <zorder>m_newDepositButton</zorder>
+     <zorder>m_newMessageButton</zorder>
+     <zorder>m_currentWalletTitle</zorder>
+     <zorder>statsBox_2</zorder>
+     <zorder>m_tickerLabel1_5</zorder>
+     <zorder>label_12</zorder>
+     <zorder>m_ccxusd</zorder>
+     <zorder>m_tickerLabel1_4</zorder>
+     <zorder>label_11</zorder>
+     <zorder>m_btcusd</zorder>
+     <zorder>label_9</zorder>
+     <zorder>m_tickerLabel1_3</zorder>
+     <zorder>m_actualBalanceLabel_3</zorder>
+     <zorder>label_7</zorder>
+     <zorder>m_pendingBalanceLabel_3</zorder>
+     <zorder>m_tickerLabel2_3</zorder>
+     <zorder>priceBox</zorder>
     </widget>
    </item>
   </layout>
@@ -1974,22 +2142,6 @@ background: transparent;</string>
     </hint>
     <hint type="destinationlabel">
      <x>599</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_investmentsButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>depositClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1225</x>
-     <y>160</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
      <y>349</y>
     </hint>
    </hints>
@@ -2067,22 +2219,6 @@ background: transparent;</string>
     <hint type="sourcelabel">
      <x>100</x>
      <y>480</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>importClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>520</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -2294,6 +2430,22 @@ background: transparent;</string>
     </hint>
     <hint type="destinationlabel">
      <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_investmentsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>depositClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1225</x>
+     <y>160</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
      <y>349</y>
     </hint>
    </hints>

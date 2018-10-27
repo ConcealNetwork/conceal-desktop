@@ -32,15 +32,18 @@ private:
   void pendingDepositBalanceUpdated(quint64 _balance);
   void reset();
 
-  Q_SLOT void depositClicked();
+  Q_SLOT void depositClicked(); /* new deposits */
+  Q_SLOT void investmentClicked(); /* new investment */
   Q_SLOT void depositParamsChanged();
+  Q_SLOT void investmentParamsChanged();  
   Q_SLOT void showDepositDetails(const QModelIndex& _index);
   Q_SLOT void timeChanged(int _value);
+  Q_SLOT void timeChanged2(int _value);  
   Q_SLOT void withdrawClicked();
-  Q_SLOT void backClicked();
-  Q_SLOT void allButtonClicked();
-  Q_SLOT void investmentsClicked();
-  Q_SLOT void depositsClicked();  
+  Q_SLOT void backClicked(); /* back to overview */
+  Q_SLOT void allButtonClicked(); /* add all funds */
+  Q_SLOT void investmentsClicked(); /* show investments tab */
+  Q_SLOT void depositsClicked(); /* show deposits tab */
 
 Q_SIGNALS:
   void backSignal();
