@@ -158,7 +158,7 @@ void DepositsFrame::depositClicked()
   quint32 term = m_ui->m_timeSpin->value() * 5040;
 
   /* initiate the desposit */
-  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 2);
+  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -180,7 +180,7 @@ void DepositsFrame::investmentClicked()
   quint32 term = m_ui->m_timeSpin2->value() * 64800;
 
   /* initiate the investment */
-  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 2);
+  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
 }
 
 /* ------------------------------------------------------------------------------------------- */
