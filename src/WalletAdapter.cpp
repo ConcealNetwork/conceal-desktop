@@ -362,7 +362,7 @@ void WalletAdapter::optimizeWallet() {
   std::vector<CryptoNote::TransactionMessage> messages;
   std::string extraString;
   uint64_t fee = CryptoNote::parameters::MINIMUM_FEE;
-  uint64_t mixIn = 0;
+  uint64_t mixIn = 2;
   uint64_t unlockTimestamp = 0;
   uint64_t ttl = 0;
   Crypto::SecretKey transactionSK;
@@ -623,7 +623,7 @@ void WalletAdapter::updateBlockStatusText() {
   quint64 blockAge = blockTime.msecsTo(currentTime);
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" :
     QString("Warning: last block was received %1 hours %2 minutes ago").arg(blockAge / MSECS_IN_HOUR).arg(blockAge % MSECS_IN_HOUR / MSECS_IN_MINUTE);
-  Q_EMIT walletStateChangedSignal(QString(tr("Status: <span style='color: orange;'>Synchronized</span><br />Height: %1<br />Date: %2%3<br />%4")).
+  Q_EMIT walletStateChangedSignal(QString(tr("Status: Synchronized<br />Height: %1<br />Date: %2%3<br />%4")).
     arg(NodeAdapter::instance().getLastLocalBlockHeight()).
     arg(QLocale(QLocale::English).toString(blockTime, "dd MMM yyyy")).
     arg(warningString).
