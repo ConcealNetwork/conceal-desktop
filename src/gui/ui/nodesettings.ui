@@ -91,9 +91,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>280</x>
       <y>180</y>
-      <width>101</width>
+      <width>111</width>
       <height>21</height>
      </rect>
     </property>
@@ -115,7 +115,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QRadioButton" name="radioButton_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>60</x>
       <y>180</y>
       <width>121</width>
       <height>21</height>
