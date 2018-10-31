@@ -20,7 +20,7 @@ QRLabel::~QRLabel() {
 }
 
 void QRLabel::showQRCode(const QString& _dataString) {
-  QRcode *qrcode = QRcode_encodeString(_dataString.toStdString().c_str(), 1, QR_ECLEVEL_L, QR_MODE_8, 0);
+  QRcode *qrcode = QRcode_encodeString(_dataString.toStdString().c_str(), 1, QR_ECLEVEL_L, QR_MODE_8, 1);
   if (qrcode == nullptr) {
     return;
   }
