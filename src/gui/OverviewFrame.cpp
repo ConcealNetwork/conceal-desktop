@@ -671,8 +671,8 @@ void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount)
 }
 
 void OverviewFrame::copyClicked() {
-
     QApplication::clipboard()->setText(m_ui->m_myAddress->text());
+    QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
 
 
