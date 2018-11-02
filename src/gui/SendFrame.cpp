@@ -13,6 +13,8 @@
 #include "transactionconfirmation.h"
 #include "TransferFrame.h"
 #include "WalletAdapter.h"
+#include <QMessageBox>
+
 #include "WalletEvents.h"
 #include <Common/Base58.h>
 #include <CryptoNoteCore/CryptoNoteTools.h>
@@ -184,6 +186,15 @@ void SendFrame::sendClicked() {
                                   new ShowMessageEvent(tr("Invalid payment ID"), 
                                   QtCriticalMsg));
       return;
+    }
+
+    if (paymentIdString.toStdString().length() < 64) {
+      if (QMessageBox::warning(&MainWindow::instance(), tr("Transaction Confirmation"),
+        tr("Please note that there is no payment ID, are you sure you want to proceed?"), 
+        QMessageBox::Cancel, 
+        QMessageBox::Ok) != QMessageBox::Ok) {
+        return;
+      }
     }
 
     // add to the address book if a label is given
