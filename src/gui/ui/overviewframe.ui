@@ -205,7 +205,9 @@ font-family: Poppins;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 13px;
+
+</string>
        </property>
        <property name="text">
         <string>Banking</string>
@@ -1199,7 +1201,7 @@ font-family: Poppins;</string>
       <widget class="QPushButton" name="m_copyAddressButton">
        <property name="geometry">
         <rect>
-         <x>990</x>
+         <x>950</x>
          <y>0</y>
          <width>41</width>
          <height>41</height>
@@ -1228,7 +1230,7 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -1241,7 +1243,7 @@ font-family: Poppins;</string>
       <widget class="QPushButton" name="m_qrcodebutton">
        <property name="geometry">
         <rect>
-         <x>940</x>
+         <x>990</x>
          <y>0</y>
          <width>41</width>
          <height>41</height>
