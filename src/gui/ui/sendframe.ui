@@ -126,7 +126,7 @@ font-family: Poppins;</string>
         <x>0</x>
         <y>0</y>
         <width>1240</width>
-        <height>457</height>
+        <height>455</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_send_frame_layout">
@@ -169,7 +169,7 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -185,11 +185,11 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px;</string>
+        <string notr="true">padding: 3px; color: #ddd;</string>
        </property>
        <property name="text">
         <string>Payment ID</string>
@@ -306,7 +306,7 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -328,7 +328,7 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -362,7 +362,7 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
