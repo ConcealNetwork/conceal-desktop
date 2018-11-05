@@ -15,6 +15,7 @@
 #include "NodeAdapter.h"
 #include "ui_depositsframe.h"
 
+#include <QMessageBox>
 #include <QPainter>
 #include <QColor>
 
@@ -141,10 +142,9 @@ void DepositsFrame::allButtonClicked()
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::depositClicked() 
-{
-  quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
+void DepositsFrame::depositClicked() {
 
+  quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
   if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("New deposits only work after height 108,000"), QtCriticalMsg));
     return;
@@ -157,14 +157,22 @@ void DepositsFrame::depositClicked()
 
   quint32 term = m_ui->m_timeSpin->value() * 5040;
 
+  /* warn the user */
+  if (QMessageBox::warning(&MainWindow::instance(), tr("Deposit Confirmation"),
+    tr("Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?"), 
+    QMessageBox::Cancel, 
+    QMessageBox::Ok) != QMessageBox::Ok) {
+    return;
+  }
+
   /* initiate the desposit */
   WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
 }
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::investmentClicked() 
-{
+void DepositsFrame::investmentClicked() {
+
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin2->cleanText());
 
   if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) {
@@ -179,6 +187,14 @@ void DepositsFrame::investmentClicked()
 
   quint32 term = m_ui->m_timeSpin2->value() * 64800;
 
+  /* warn the user */
+  if (QMessageBox::warning(&MainWindow::instance(), tr("Investment Confirmation"),
+    tr("Please note that once funds are locked in an investment, you will not have access until maturity. Are you sure you want to proceed?"), 
+    QMessageBox::Cancel, 
+    QMessageBox::Ok) != QMessageBox::Ok) {
+    return;
+  }
+ 
   /* initiate the investment */
   WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
 }
