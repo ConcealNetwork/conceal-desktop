@@ -1164,7 +1164,7 @@ font-size: 23px;</string>
         <x>220</x>
         <y>26</y>
         <width>201</width>
-        <height>25</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -1174,7 +1174,7 @@ font-size: 23px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
 font-family: Poppins;</string>
@@ -1276,7 +1276,7 @@ font-family: Poppins;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: none;</string>
+        <string notr="true">border: none; color: #ddd;</string>
        </property>
        <property name="text">
         <string>ADDRESS</string>
@@ -1286,9 +1286,9 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="m_totalPortfolioLabel">
       <property name="geometry">
        <rect>
-        <x>910</x>
+        <x>880</x>
         <y>26</y>
-        <width>191</width>
+        <width>221</width>
         <height>21</height>
        </rect>
       </property>
@@ -1299,12 +1299,13 @@ font-family: Poppins;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: transparent;
+       <string notr="true">color: #777;
+background: transparent;
 font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">000000.000000</string>
+       <string notr="true">00000000.000000 CCX</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1313,7 +1314,7 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="m_portfolioTitle">
       <property name="geometry">
        <rect>
-        <x>840</x>
+        <x>820</x>
         <y>26</y>
         <width>61</width>
         <height>21</height>
@@ -1332,7 +1333,7 @@ font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string>TOTAL</string>
+       <string>Total</string>
       </property>
      </widget>
      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
@@ -1351,13 +1352,13 @@ font-family: Poppins;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #777;
 background: transparent;
 font-size: 20px;
 font-family: Poppins;</string>
       </property>
       <property name="text">
-       <string notr="true">USD 000000.00</string>
+       <string notr="true">000000.00 USD</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1474,8 +1475,8 @@ font-size: 13px;</string>
      <widget class="QLabel" name="m_currentWalletTitle">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>30</y>
+        <x>660</x>
+        <y>26</y>
         <width>151</width>
         <height>21</height>
        </rect>
@@ -1483,14 +1484,14 @@ font-size: 13px;</string>
       <property name="font">
        <font>
         <family>Poppins</family>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #777;
-background: transparent;</string>
+background: transparent;
+font-size: 20px;
+font-family: Poppins;</string>
       </property>
       <property name="text">
        <string>currentWallet</string>
@@ -2065,6 +2066,31 @@ font-size: 12px;</string>
        <string notr="true">CCX</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>26</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #999;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;</string>
+      </property>
+      <property name="text">
+       <string>Wallet</string>
+      </property>
+     </widget>
      <zorder>m_latestTransactionsTitle</zorder>
      <zorder>m_recentTransactionsView</zorder>
      <zorder>leftMenu</zorder>
@@ -2093,6 +2119,7 @@ font-size: 12px;</string>
      <zorder>m_pendingBalanceLabel_3</zorder>
      <zorder>m_tickerLabel2_3</zorder>
      <zorder>priceBox</zorder>
+     <zorder>label_5</zorder>
     </widget>
    </item>
   </layout>

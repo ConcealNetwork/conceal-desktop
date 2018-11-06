@@ -36,33 +36,25 @@ namespace WalletGui {
 
   public:
     RecentTransactionsDelegate(QObject* _parent) : QStyledItemDelegate(_parent) {
-
     }
 
     ~RecentTransactionsDelegate() {
     }
 
-  QWidget* createEditor(QWidget* _parent, const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE 
-  {
+  QWidget* createEditor(QWidget* _parent, const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE {
 
-    if (!_index.isValid()) 
-    {
-
+    if (!_index.isValid()) {
       return nullptr;
     }
-
     return new TransactionFrame(_index, _parent);
   }
 
-  QSize sizeHint(const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE 
-  {
-
+  QSize sizeHint(const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE {
     return QSize(346, 64);
   }
 };
 
-OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) 
-{
+OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) {
 
   m_ui->setupUi(this);
 
@@ -122,33 +114,26 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
 
 }
 
-OverviewFrame::~OverviewFrame() 
-{
-
+OverviewFrame::~OverviewFrame() {
 }
 
-void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first, int _last) 
-{
+void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first, int _last) {
 
-  for (quint32 i = _first; i <= _last; ++i) 
-  {
-
+  for (quint32 i = _first; i <= _last; ++i) {
     QModelIndex recentModelIndex = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recentModelIndex);
     m_priceProvider->getPrice(); 
   }
 }
 
-void OverviewFrame::updateWalletAddress(const QString& _address) 
-{
+void OverviewFrame::updateWalletAddress(const QString& _address) {
 
   m_ui->m_myAddress->setText(_address);
   showCurrentWallet();
 }
 
 
-void OverviewFrame::showCurrentWallet() 
-{
+void OverviewFrame::showCurrentWallet() {
 
   /* show the name of the open wallet */
   QString walletFile = Settings::instance().getWalletFile();
@@ -157,27 +142,23 @@ void OverviewFrame::showCurrentWallet()
   /* Remove directory if present.
   Do this before extension removal incase directory has a period character. */
   const size_t last_slash_idx = wallet.find_last_of("\\/");
-  if (std::string::npos != last_slash_idx)
-  {
+  if (std::string::npos != last_slash_idx) {
       wallet.erase(0, last_slash_idx + 1);
   }
 
   /*  remove extension if present */
   const size_t period_idx = wallet.rfind('.');
-  if (std::string::npos != period_idx)
-  {
+  if (std::string::npos != period_idx) {
       wallet.erase(period_idx);
   }
 
   /* back to QString and display */
   walletFile = QString::fromStdString(wallet);
   m_ui->m_currentWalletTitle->setText(walletFile);
-
 }
 
 
-void OverviewFrame::downloadFinished(QNetworkReply *reply)
-{
+void OverviewFrame::downloadFinished(QNetworkReply *reply) {
 
     /* download is done
     set the chart as the pixmap */
@@ -188,9 +169,7 @@ void OverviewFrame::downloadFinished(QNetworkReply *reply)
 
 void OverviewFrame::layoutChanged() {
 
-  for (quint32 i = 0; i <= m_transactionModel->rowCount(); ++i) 
-  {
-
+  for (quint32 i = 0; i <= m_transactionModel->rowCount(); ++i) {
     QModelIndex recent_index = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
     m_priceProvider->getPrice();     
@@ -198,8 +177,8 @@ void OverviewFrame::layoutChanged() {
   showCurrentWallet();
 }
 
-void OverviewFrame::actualBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
+
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -216,8 +195,7 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice();   
 }
 
-void OverviewFrame::pendingBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
 
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -234,8 +212,7 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) {
 
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -252,8 +229,7 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
 
   m_ui->m_unlockedInvestmentsLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -270,8 +246,7 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
 
   m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -289,8 +264,7 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance) 
-{
+void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance) {
 
   m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -307,8 +281,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) 
-{
+void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) {
 
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -320,41 +293,35 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
 
   float ccxusd = _ccxusd.toFloat();
   float total = ccxusd * (float)totalBalance;
-  m_ui->m_totalPortfolioLabelUSD->setText("USD " + QString::number(total / 1000000, 'f', 2)); 
+  m_ui->m_totalPortfolioLabelUSD->setText(QString::number(total / 1000000, 'f', 2) + " USD"); 
   m_ui->m_ccxusd->setText(_ccxusd);  
   m_ui->m_btcusd->setText(_btc);
 
 }
 
-void OverviewFrame::sendClicked() 
-{
+void OverviewFrame::sendClicked() {
   
   Q_EMIT sendSignal();
 }
 
-void OverviewFrame::depositClicked() 
-{
+void OverviewFrame::depositClicked() {
 
   Q_EMIT depositSignal();
 }
 
-void OverviewFrame::transactionClicked() 
-{
+void OverviewFrame::transactionClicked() {
 
   Q_EMIT transactionSignal();
 }
 
-void OverviewFrame::addressBookClicked() 
-{
+void OverviewFrame::addressBookClicked() {
 
   Q_EMIT addressBookSignal();
 }
 
-void OverviewFrame::importClicked() 
-{
-  if (subMenu != 1) 
-  {
+void OverviewFrame::importClicked() {
 
+  if (subMenu != 1) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -370,7 +337,6 @@ void OverviewFrame::importClicked()
     m_ui->m_subButton2->setText("Import GUI Key");
     subMenu = 1;
   } else {
-
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -385,11 +351,9 @@ void OverviewFrame::importClicked()
   }
 }
 
-void OverviewFrame::settingsClicked() 
-{
-  if (subMenu != 2) 
-  {
+void OverviewFrame::settingsClicked() {
 
+  if (subMenu != 2) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -408,29 +372,20 @@ void OverviewFrame::settingsClicked()
       m_ui->m_subButton4->setText("Minimize to Tray");    
       m_ui->m_subButton5->setText("Close to Tray");       
 
-      if (!Settings::instance().isMinimizeToTrayEnabled()) 
-      {
-
+      if (!Settings::instance().isMinimizeToTrayEnabled()) {
         m_ui->m_subButton4->setText("Minimize to Tray Off");    
-      } else 
-      {
-
+      } else {
         m_ui->m_subButton4->setText("Minimize to Tray On");    
       } 
 
-      if (!Settings::instance().isCloseToTrayEnabled())
-      {
-
-      m_ui->m_subButton5->setText("Close to Tray Off");       
-      } else 
-      {
-
-      m_ui->m_subButton5->setText("Close to Tray On");       
+      if (!Settings::instance().isCloseToTrayEnabled()) {
+        m_ui->m_subButton5->setText("Close to Tray Off");       
+      } else {
+        m_ui->m_subButton5->setText("Close to Tray On");       
       }
     #endif
     subMenu = 2;
   } else  {
-
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -557,30 +512,20 @@ void OverviewFrame::subButton3Clicked()
 }
 
 
-void OverviewFrame::subButton4Clicked() 
-{
-  if (subMenu == 3) 
+void OverviewFrame::subButton4Clicked() {
 
-  {
-
+  if (subMenu == 3) {
     Q_EMIT encryptWalletSignal();
   }
+
 #ifdef Q_OS_WIN
-  if (subMenu == 2)
-  {
-
-    if (!Settings::instance().isMinimizeToTrayEnabled()) 
-    {
-
-    Settings::instance().setMinimizeToTrayEnabled(true);
-    m_ui->m_subButton4->setText("Minimize to Tray On");    
-
-    } else 
-    {
-
-    Settings::instance().setMinimizeToTrayEnabled(false);    
-    m_ui->m_subButton4->setText("Minimize to Tray Off");    
-
+  if (subMenu == 2) {
+    if (!Settings::instance().isMinimizeToTrayEnabled()) {
+      Settings::instance().setMinimizeToTrayEnabled(true);
+      m_ui->m_subButton4->setText("Minimize to Tray On");    
+    } else {
+      Settings::instance().setMinimizeToTrayEnabled(false);    
+      m_ui->m_subButton4->setText("Minimize to Tray Off");    
     }
   }  
 #endif  
