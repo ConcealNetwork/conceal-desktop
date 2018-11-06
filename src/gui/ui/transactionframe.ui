@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
+    <width>311</width>
     <height>66</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>670</width>
+    <width>311</width>
     <height>60</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>16777215</width>
+    <width>670</width>
     <height>100</height>
    </size>
   </property>
@@ -54,8 +54,14 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="minimumSize">
       <size>
-       <width>670</width>
+       <width>311</width>
        <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>311</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="title">
@@ -64,16 +70,16 @@
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>207</x>
         <y>20</y>
-        <width>141</width>
+        <width>91</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>9</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -113,16 +119,16 @@
      <widget class="QLabel" name="m_timeLabel">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>60</x>
         <y>20</y>
-        <width>193</width>
-        <height>16</height>
+        <width>141</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -135,8 +141,8 @@
      <widget class="QLabel" name="m_hashLabel">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>20</y>
+        <x>1</x>
+        <y>1</y>
         <width>1</width>
         <height>1</height>
        </rect>
