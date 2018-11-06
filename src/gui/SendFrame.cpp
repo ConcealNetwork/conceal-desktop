@@ -190,7 +190,7 @@ void SendFrame::walletActualBalanceUpdated(quint64 _balance) {
 void SendFrame::updateFee() {
   /* calculate fee based on number of characters in the message */
   quint64 commentsFee = 0;
-  std::string words = (m_ui->m_addressEdit->text()).toStdString();
+  std::string words = (m_ui->m_messageEdit->text()).toStdString();
   commentsFee = words.length() * COMMENT_CHAR_PRICE;
   m_ui->m_feeSpin->setMinimum( CurrencyAdapter::instance().formatAmount(commentsFee + CurrencyAdapter::instance().getMinimumFee()).toDouble());
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
