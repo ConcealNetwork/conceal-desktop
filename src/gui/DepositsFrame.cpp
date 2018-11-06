@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2018 The Circle Foundation
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -43,8 +44,8 @@ namespace {
 
 /* ------------------------------------------------------------------------------------------- */
 
-DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::DepositsFrame), m_depositModel(new DepositListModel) 
-{
+DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::DepositsFrame), m_depositModel(new DepositListModel) {
+
   m_ui->setupUi(this);
   m_ui->m_timeSpin->setMinimum(1);
   m_ui->m_timeSpin->setMaximum(52);
@@ -71,7 +72,6 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->investmentsBox->hide();  
   
   /* pixmap for deposits */
-
   QPixmap pixmap(860,290);
   pixmap.fill(QColor("transparent"));
 
@@ -112,30 +112,30 @@ DepositsFrame::~DepositsFrame() {
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) 
-{
+void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) {
+
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::pendingDepositBalanceUpdated(quint64 _balance) 
-{
+void DepositsFrame::pendingDepositBalanceUpdated(quint64 _balance) {
+
   m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::reset() 
-{
+void DepositsFrame::reset() {
+
   actualDepositBalanceUpdated(0);
   pendingDepositBalanceUpdated(0);
 }
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::allButtonClicked() 
-{
+void DepositsFrame::allButtonClicked() {
+
   double amount = (double)WalletAdapter::instance().getActualBalance() - (double)CurrencyAdapter::instance().getMinimumFee();
   m_ui->m_amountSpin->setValue(amount / 1000000);
 }
@@ -145,16 +145,20 @@ void DepositsFrame::allButtonClicked()
 void DepositsFrame::depositClicked() {
 
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
+
+  /* deposits 2.0 launch */
   if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("New deposits only work after height 108,000"), QtCriticalMsg));
     return;
   }
 
+  /* insufficient funds */
   if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFee() > WalletAdapter::instance().getActualBalance()) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
   }
 
+  /* a week is set as 5040 blocks */
   quint32 term = m_ui->m_timeSpin->value() * 5040;
 
   /* warn the user */
@@ -175,21 +179,24 @@ void DepositsFrame::investmentClicked() {
 
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin2->cleanText());
 
+  /* investments 1.0 launch */
   if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("New investments only work after height 108,000"), QtCriticalMsg));
     return;
   }
 
+  /* insufficient funds */
   if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFee() > WalletAdapter::instance().getActualBalance()) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
   }
 
+  /* a quarter is set as 64800 blocks */
   quint32 term = m_ui->m_timeSpin2->value() * 64800;
 
   /* warn the user */
   if (QMessageBox::warning(&MainWindow::instance(), tr("Investment Confirmation"),
-    tr("Please note that once funds are locked in an investment, you will not have access until maturity. Are you sure you want to proceed?"), 
+    tr("Please note that once funds are locked in an investment, you will not have access to those funds until maturity. Are you sure you want to proceed?"), 
     QMessageBox::Cancel, 
     QMessageBox::Ok) != QMessageBox::Ok) {
     return;
@@ -201,8 +208,8 @@ void DepositsFrame::investmentClicked() {
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::depositParamsChanged() 
-{
+void DepositsFrame::depositParamsChanged() {
+
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
   quint32 term = m_ui->m_timeSpin->value() * 5040;
   quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
@@ -220,8 +227,7 @@ void DepositsFrame::depositParamsChanged()
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::showDepositDetails(const QModelIndex& _index) 
-{
+void DepositsFrame::showDepositDetails(const QModelIndex& _index) {
   if (!_index.isValid()) {
     return;
   }
@@ -231,8 +237,8 @@ void DepositsFrame::showDepositDetails(const QModelIndex& _index)
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::investmentParamsChanged() 
-{
+void DepositsFrame::investmentParamsChanged() {
+
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin2->cleanText());
   quint32 term = m_ui->m_timeSpin2->value() * 64800;
   quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
@@ -250,18 +256,22 @@ void DepositsFrame::investmentParamsChanged()
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::timeChanged(int _value) 
-{
+void DepositsFrame::timeChanged(int _value) {
+
   m_ui->m_nativeTimeLabel->setText(weeksToBlocks(m_ui->m_timeSpin->value()));
 }
 
-void DepositsFrame::timeChanged2(int _value) 
-{
+/* ------------------------------------------------------------------------------------------- */
+
+void DepositsFrame::timeChanged2(int _value) {
+
   m_ui->m_nativeTimeLabel2->setText(quartersToBlocks(m_ui->m_timeSpin2->value()));
 }
 
-void DepositsFrame::withdrawClicked() 
-{
+/* ------------------------------------------------------------------------------------------- */
+
+void DepositsFrame::withdrawClicked() {
+
   QModelIndexList unlockedDepositIndexList = DepositModel::instance().match(DepositModel::instance().index(0, 0), DepositModel::ROLE_STATE, DepositModel::STATE_UNLOCKED, -1);
   if (unlockedDepositIndexList.isEmpty()) {
     return;
@@ -277,14 +287,14 @@ void DepositsFrame::withdrawClicked()
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::backClicked() 
-{
+void DepositsFrame::backClicked() {
   /* back to overview frame */
   Q_EMIT backSignal();
 }
 
-void DepositsFrame::investmentsClicked() 
-{
+/* ------------------------------------------------------------------------------------------- */
+
+void DepositsFrame::investmentsClicked() {
   /* switch to investment graph and box */
   m_ui->investmentsBox->show();
   m_ui->depositsBox->hide();
@@ -320,8 +330,7 @@ void DepositsFrame::investmentsClicked()
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::depositsClicked() 
-{
+void DepositsFrame::depositsClicked() {
   /* switch to deposit graph and box */
   m_ui->investmentsBox->hide();
   m_ui->depositsBox->show();
@@ -357,7 +366,5 @@ void DepositsFrame::depositsClicked()
   m_ui->m_bar->raise();
   DepositsFrame::depositParamsChanged();
 }
-
-/* ------------------------------------------------------------------------------------------- */
 
 }
