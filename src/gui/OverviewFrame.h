@@ -10,17 +10,13 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-/* #include <QtCharts/QtCharts>
-#include <QtCharts/QChartView> */
+
 
 namespace Ui {
-class OverviewFrame;
+  class OverviewFrame;
 }
 
 namespace WalletGui {
-
-/* using namespace QtCharts;*/
-
 
 class PriceProvider;
 
@@ -34,14 +30,12 @@ public:
   OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
 
-
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
-
 
   void onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
@@ -71,7 +65,8 @@ private:
   Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
-  Q_SLOT void importClicked();  
+  Q_SLOT void importClicked();
+  Q_SLOT void aboutClicked();
   Q_SLOT void walletClicked();    
   Q_SLOT void settingsClicked();
   Q_SLOT void subButton1Clicked();
@@ -79,7 +74,6 @@ private:
   Q_SLOT void subButton3Clicked();
   Q_SLOT void subButton4Clicked();
   Q_SLOT void subButton5Clicked();  
-
 
 Q_SIGNALS:
   void sendSignal();
@@ -98,12 +92,12 @@ Q_SIGNALS:
   void importSignal();
   void miningSignal();
   void addressBookSignal();
+  void aboutSignal();
+  void aboutQTSignal();
   void importSeedSignal();
   void importGUIKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();
-
 };
-
 }

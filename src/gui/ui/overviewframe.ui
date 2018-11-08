@@ -160,11 +160,11 @@ font-size: 13px;</string>
         </size>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_addressBook">
+      <widget class="QPushButton" name="m_about">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>280</y>
+         <y>340</y>
          <width>121</width>
          <height>35</height>
         </rect>
@@ -181,7 +181,7 @@ font-family: Poppins;
 font-size: 13px;</string>
        </property>
        <property name="text">
-        <string>Address Book</string>
+        <string>About</string>
        </property>
        <property name="iconSize">
         <size>
@@ -224,7 +224,7 @@ font-size: 13px;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>340</y>
+         <y>310</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -288,7 +288,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>310</y>
+         <y>280</y>
          <width>81</width>
          <height>35</height>
         </rect>
@@ -2087,10 +2087,10 @@ font-size: 12px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>m_addressBook</sender>
+   <sender>m_about</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>addressBookClicked()</slot>
+   <slot>aboutClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -2355,6 +2355,7 @@ font-size: 12px;</string>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
   <slot>importClicked()</slot>
+  <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
   <slot>newTransferClicked()</slot>
   <slot>walletClicked()</slot>

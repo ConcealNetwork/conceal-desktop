@@ -313,6 +313,37 @@ void OverviewFrame::addressBookClicked() {
   Q_EMIT addressBookSignal();
 }
 
+void OverviewFrame::aboutClicked() {
+
+  if (subMenu != 4) {
+    m_ui->m_subButton1->setText("");
+    m_ui->m_subButton2->setText("");
+    m_ui->m_subButton3->setText("");
+    m_ui->m_subButton4->setText("");
+    m_ui->m_subButton5->setText("");        
+    m_ui->m_subButton1->setEnabled(true);
+    m_ui->m_subButton2->setEnabled(true);
+    m_ui->m_subButton3->setEnabled(false);
+    m_ui->m_subButton4->setEnabled(false);
+    m_ui->m_subButton5->setEnabled(false);    
+    m_ui->m_subButton1->setText("About Conceal");
+    m_ui->m_subButton2->setText("About QT");
+    subMenu = 4;
+  } else {
+    m_ui->m_subButton1->setEnabled(false);
+    m_ui->m_subButton2->setEnabled(false);
+    m_ui->m_subButton3->setEnabled(false);
+    m_ui->m_subButton4->setEnabled(false);
+    m_ui->m_subButton5->setEnabled(false);        
+    m_ui->m_subButton1->setText("");
+    m_ui->m_subButton2->setText("");
+    m_ui->m_subButton3->setText("");
+    m_ui->m_subButton4->setText("");
+    m_ui->m_subButton5->setText("");  
+    subMenu = 0;
+  }
+}
+
 void OverviewFrame::importClicked() {
 
   if (subMenu != 1) {
@@ -394,11 +425,9 @@ void OverviewFrame::settingsClicked() {
   }
 }
 
-void OverviewFrame::walletClicked() 
-{
-  if (subMenu != 3) 
-  {
+void OverviewFrame::walletClicked() {
 
+  if (subMenu != 3) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -438,73 +467,55 @@ void OverviewFrame::walletClicked()
   }
 }
 
-void OverviewFrame::subButton1Clicked() 
-{
-  if (subMenu == 2) 
-  {
+void OverviewFrame::subButton1Clicked() {
 
+  if (subMenu == 2) {
     Q_EMIT optimizeSignal();
   }
 
-  if (subMenu == 1)
-  {
-
+  if (subMenu == 1) {
     Q_EMIT importSeedSignal();  
   }
   
-  if (subMenu == 3)
-  {
-
+  if (subMenu == 3) {
     Q_EMIT openWalletSignal();
   }
 
+  if (subMenu == 4) {
+    Q_EMIT aboutSignal();
+  }  
+
 }
 
-void OverviewFrame::subButton2Clicked() 
-{
-  if (subMenu == 2) 
+void OverviewFrame::subButton2Clicked() {
 
-  {
-
+  if (subMenu == 2) {
     Q_EMIT connectionSettingsSignal();
   }
-
-  if (subMenu == 1)
-  {
-
+  if (subMenu == 1) {
     Q_EMIT importGUIKeySignal();  
   }  
-
-  if (subMenu == 3)
-  {
-
+  if (subMenu == 3) {
     Q_EMIT newWalletSignal();
+  }
+  if (subMenu == 4) {
+    Q_EMIT aboutQTSignal();
   }
 
 }
 
-void OverviewFrame::subButton3Clicked() 
-{
-  if (subMenu == 2) 
+void OverviewFrame::subButton3Clicked() {
 
-  {
-
+  if (subMenu == 2) {
     Q_EMIT rescanSignal();
   }
-
-  if (subMenu == 1)
-  {
-
+  if (subMenu == 1) {
     Q_EMIT importSecretKeysSignal();  
   }  
-
-  if (subMenu == 3)
-  {
-
+  if (subMenu == 3) {
     Q_EMIT backupSignal();
   }  
 }
-
 
 void OverviewFrame::subButton4Clicked() {
 
@@ -528,64 +539,52 @@ void OverviewFrame::subButton4Clicked() {
 void OverviewFrame::subButton5Clicked() 
 {
 #ifdef Q_OS_WIN
-  if (subMenu == 2) 
-  {
-
-    if (!Settings::instance().isCloseToTrayEnabled())
-    {
-
-    Settings::instance().setCloseToTrayEnabled(true);
-    m_ui->m_subButton5->setText("Close to Tray On");       
-    } else 
-    {
-
-    Settings::instance().setCloseToTrayEnabled(false);   
-    m_ui->m_subButton5->setText("Close to Tray Off");       
-
-
+  if (subMenu == 2) {
+    if (!Settings::instance().isCloseToTrayEnabled()) {
+      Settings::instance().setCloseToTrayEnabled(true);
+      m_ui->m_subButton5->setText("Close to Tray On");       
+    } else {
+      Settings::instance().setCloseToTrayEnabled(false);   
+      m_ui->m_subButton5->setText("Close to Tray Off");       
     }
   }
 #endif
-  if (subMenu == 3) 
-  {
-
+  if (subMenu == 3) {
     OverviewFrame::importClicked();
   }
-
 }
 
-void OverviewFrame::qrCodeClicked() 
-{
+void OverviewFrame::qrCodeClicked() {
 
   Q_EMIT qrSignal(m_ui->m_myAddress->text());
 }
 
-void OverviewFrame::miningClicked() 
-{
+void OverviewFrame::miningClicked() {
 
   Q_EMIT miningSignal();
 }
 
-void OverviewFrame::messageClicked() 
-{
+void OverviewFrame::messageClicked() {
 
   Q_EMIT messageSignal();
 }
 
 void OverviewFrame::newWalletClicked() {
+
   Q_EMIT newWalletSignal();
 }
 
 void OverviewFrame::newTransferClicked() {
+
   Q_EMIT newTransferSignal();
 }
 
 void OverviewFrame::newMessageClicked() {
+
   Q_EMIT newMessageSignal();
 }
 
-void OverviewFrame::reset() 
-{
+void OverviewFrame::reset() {
 
   actualBalanceUpdated(0);
   pendingBalanceUpdated(0);
@@ -596,27 +595,21 @@ void OverviewFrame::reset()
   Q_EMIT resetWalletSignal();
 }
 
-void OverviewFrame::setStatusBarText(const QString& _text) 
-{
-
+void OverviewFrame::setStatusBarText(const QString& _text) {
   m_ui->m_statusBox->setText(_text);
 } 
 
-void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount) 
-{
+void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount) {
 
   m_ui->m_actualBalanceLabel_3->setText(CurrencyAdapter::instance().formatAmount(_dayPoolAmount));
   m_ui->m_pendingBalanceLabel_3->setText(CurrencyAdapter::instance().formatAmount(_totalPoolAmount));
 }
 
 void OverviewFrame::copyClicked() {
+
     QApplication::clipboard()->setText(m_ui->m_myAddress->text());
     QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
-
-
-
-
 
 }
 

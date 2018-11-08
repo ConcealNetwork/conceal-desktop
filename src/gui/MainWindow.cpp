@@ -58,15 +58,11 @@ namespace WalletGui {
 
 MainWindow* MainWindow::m_instance = nullptr;
 
-MainWindow& MainWindow::instance() 
-{
+MainWindow& MainWindow::instance() {
 
-  if (m_instance == nullptr) 
-  {
-
+  if (m_instance == nullptr) {
     m_instance = new MainWindow;
   }
-
   return *m_instance;
 }
 
@@ -118,7 +114,8 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);    
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);      
-  connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);        
+  connect(m_ui->m_overviewFrame, &OverviewFrame::aboutSignal, this, &MainWindow::about);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::aboutQTSignal, this, &MainWindow::aboutQt);        
   connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);      
@@ -196,9 +193,6 @@ void MainWindow::minimizeToTray(bool _on) {
   }
 }
 #endif
-
-
-
 
 void MainWindow::scrollToTransaction(const QModelIndex& _index) {
   m_ui->m_transactionsAction->setChecked(true);
@@ -316,10 +310,7 @@ void MainWindow::optimizeClicked()
 
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
 
-void MainWindow::createWallet() 
-{
-
-
+void MainWindow::createWallet() {
 
   QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
 
@@ -330,31 +321,19 @@ void MainWindow::createWallet()
   #endif
       tr("Wallets (*.wallet)"));
 
-    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) 
-    {
-
+    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
       filePath.append(".wallet");
     }
-
-    if (!filePath.isEmpty() && !QFile::exists(filePath)) 
-    {
-
-      if (WalletAdapter::instance().isOpen()) 
-      {
-
+    if (!filePath.isEmpty() && !QFile::exists(filePath)) {
+      if (WalletAdapter::instance().isOpen()) {
         WalletAdapter::instance().close();
       }
-
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWallet();
     }
 }
 
-/* ----------------------------- OPEN AN EXISTING WALLET FILE ------------------------------------ */
-
-void MainWindow::openWallet() 
-{  
-
+void MainWindow::openWallet() {  
 
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
 
@@ -365,35 +344,24 @@ void MainWindow::openWallet()
   #endif
     tr("Wallet (*.wallet *.keys)"));
 
-  if (!filePath.isEmpty()) 
-  {
-
-    if (WalletAdapter::instance().isOpen()) 
-    {
-
+  if (!filePath.isEmpty()) {
+    if (WalletAdapter::instance().isOpen()) {
       WalletAdapter::instance().close();
     }
-
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().open("");
   }
 }
 
-/* ----------------------------- IMPORT THE GUI KEY ------------------------------------ */
-
-void MainWindow::importKey() 
-{
+void MainWindow::importKey() {
 
   ImportKeyDialog dlg(this);
 
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString keyString = dlg.getKeyString().trimmed();
     QString filePath = dlg.getFilePath();
-    if (keyString.isEmpty() || filePath.isEmpty()) 
-    {
 
+    if (keyString.isEmpty() || filePath.isEmpty()) {
       return;
     }
 
@@ -404,23 +372,19 @@ void MainWindow::importKey()
     uint64_t addressPrefix;
     std::string data;
     CryptoNote::AccountKeys keys;
-    if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
-      data.size() == sizeof(keys)) 
-      {
 
+    if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
+      data.size() == sizeof(keys)) {
       std::memcpy(&keys, data.data(), sizeof(keys));
 
-      if (WalletAdapter::instance().isOpen()) 
-      {
-
+      if (WalletAdapter::instance().isOpen()) {
         WalletAdapter::instance().close();
       }
 
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
     }
-    else if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix())
-    {
+    else if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix()) {
 
       //serialize as public keys then convert to secret keys
       CryptoNote::AccountPublicAddress decodedKeys;
