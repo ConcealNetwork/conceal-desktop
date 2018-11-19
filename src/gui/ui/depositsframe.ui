@@ -614,7 +614,7 @@ font-family: Poppins;</string>
         <string>Unlocked Investments</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_lockedDepositLabel">
+      <widget class="QLabel" name="m_unlockedInvestmentLabel">
        <property name="geometry">
         <rect>
          <x>210</x>
