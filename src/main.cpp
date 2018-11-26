@@ -33,24 +33,27 @@ int main(int argc, char* argv[]) {
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
-#ifndef Q_OS_MAC
-  QApplication::setStyle(QStyleFactory::create("Fusion"));
-#endif
+  #ifndef Q_OS_MAC
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+  #endif
+  
+  QGuiApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+
 
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());
   Settings::instance().load();
 
-#ifdef Q_OS_WIN
-  if(!cmdLineParseResult) {
-    QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
-    return app.exec();
-  } else if (cmdLineParser.hasHelpOption()) {
-    QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
-    return app.exec();
-  }
-#endif
+  #ifdef Q_OS_WIN
+    if(!cmdLineParseResult) {
+      QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
+      return app.exec();
+    } else if (cmdLineParser.hasHelpOption()) {
+      QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
+      return app.exec();
+    }
+  #endif
 
   LoggerAdapter::instance().init();
 
