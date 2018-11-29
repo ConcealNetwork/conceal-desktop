@@ -147,7 +147,9 @@ void Settings::load()
 }
 
 
-
+QString Settings::getVersion() const {
+  return VERSION;
+}
 
 
 bool Settings::isTestnet() const {

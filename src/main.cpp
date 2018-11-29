@@ -16,6 +16,7 @@
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
+#include "Update.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "SignalHandler.h"
@@ -87,6 +88,8 @@ int main(int argc, char* argv[]) {
   }
 
   splash->finish(&MainWindow::instance());
+  Updater *d = new Updater();
+  d->checkForUpdate();  
   MainWindow::instance().show();
   
   WalletAdapter::instance().open("");
