@@ -1,4 +1,6 @@
 // Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2018 The Circle Foundation
+//  
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,8 +12,6 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QUrl>
-
-const static QString KRBCOIN_UPDATE_URL = "https://explorer.conceal.network/wallet/version.txt";
 
 class Updater : public QObject
 {
