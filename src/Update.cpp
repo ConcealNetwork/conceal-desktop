@@ -1,8 +1,12 @@
 // Copyright (c) 2016 The Karbowanec developers
+// Copyright (c) 2018 The Circle Foundation
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "Update.h"
 #include "Settings.h"
+
 #include <QDesktopServices>
 #include <QApplication>
 #include <QMessageBox>
@@ -61,13 +65,11 @@ std::istream& operator>>(std::istream& str, Version::VersionDigit& digit)
 
 void Updater::checkForUpdate()
 {
-    manager = new QNetworkAccessManager(this);
-    if(manager->networkAccessible() == QNetworkAccessManager::Accessible)
-    {
-        connect(manager, SIGNAL(finished(QNetworkReply*)),
-                this, SLOT(replyFinished(QNetworkReply*)));
-        manager->get(QNetworkRequest(QUrl(KRBCOIN_UPDATE_URL)));
-    }
+  QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+  connect(nam, &QNetworkAccessManager::finished, this, &Updater::replyFinished);
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/wallet/version.txt");
+  QNetworkRequest request(url);
+  nam->get(request);
 }
 
 void Updater::replyFinished (QNetworkReply *reply)
@@ -87,7 +89,7 @@ void Updater::replyFinished (QNetworkReply *reply)
 
          if (ourVersion < remoteVersion) {
 
-             if (QMessageBox::warning(nullptr, QObject::tr("Thnere is a new version available"), QObject::tr("There is an update available.\nWould you like to download it now?"), QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok) {
+             if (QMessageBox::warning(nullptr, QObject::tr("Conceal Wallet Update"), QObject::tr("There is an update to the wallet available.\nWould you like to go to the download page?"), QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok) {
                  QString link = "https://github.com/ConcealNetwork/conceal-wallet/releases";
                  QDesktopServices::openUrl(QUrl(link));
              }
