@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers  
+// Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation
 //
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -16,6 +17,7 @@
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
+#include "Update.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "SignalHandler.h"
@@ -87,6 +89,8 @@ int main(int argc, char* argv[]) {
   }
 
   splash->finish(&MainWindow::instance());
+  Updater *d = new Updater();
+  d->checkForUpdate();  
   MainWindow::instance().show();
   
   WalletAdapter::instance().open("");
