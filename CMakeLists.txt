@@ -10,7 +10,7 @@ WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
 
 set(CRYPTONOTE_LIB cryptonote)
-set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\")
+set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.2\\msvc2017_64\\lib\\cmake\\")
 
 include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -99,6 +99,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/CryptoNoteCore/CryptoNoteTools.cpp
   cryptonote/src/CryptoNoteCore/Currency.cpp
   cryptonote/src/CryptoNoteCore/DepositIndex.cpp
+  cryptonote/src/CryptoNoteCore/InvestmentIndex.cpp
   cryptonote/src/CryptoNoteCore/MinerConfig.cpp
   cryptonote/src/CryptoNoteCore/Transaction.cpp
   cryptonote/src/CryptoNoteCore/Account.cpp

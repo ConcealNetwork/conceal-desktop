@@ -1,7 +1,7 @@
-![image](https://github.com/TheCircleFoundation/conceal-assets/blob/master/splash.png)
+![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Wallet (GUI)
-Latest Release: v5.0.3
+Latest Release: v5.1.0
 Maintained by The Circle Team.
 
 ## Information
@@ -9,7 +9,7 @@ Conceal is a free open source privacy protected peer-to-peer digital cash system
 
 ## Resources
 - Web: [conceal.network](https://conceal.network/)
-- GitHub: [https://github.com/TheCircleFoundation/conceal-core](https://github.com/TheCircleFoundation/conceal-core)
+- GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
 - Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
 - Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
 - Medium: [https://medium.com/@ConcealNetwork](https://medium.com/@ConcealNetwork)
@@ -38,9 +38,9 @@ Alternatively, it may be possible to install them using a package manager.
 To acquire the source via git and build the release version, run the following commands:
 
 - `cd ~`
-- `git clone https://github.com/TheCircleFoundation/conceal-wallet`
+- `git clone https://github.com/ConcealNetwork/conceal-wallet`
 - `cd conceal-wallet`
-- `git clone https://github.com/TheCircleFoundation/conceal-core.git cryptonote`
+- `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
 - `make build-release`
 - `mkdir bin && mv build/release/CONCEAL-GUI bin/`
 - `make clean`
@@ -61,8 +61,8 @@ If the build is successful the binaries will be in the bin folder.
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 - Edit the CMakeLists.txt file and set the path to QT cmake folder. For exampple: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
-- `git clone https://github.com/TheCircleFoundation/conceal-core`
-- `git clone https://github.com/TheCircleFoundation/conceal-wallet`
+- `git clone https://github.com/ConcealNetwork/conceal-core`
+- `git clone https://github.com/ConcealNetwork/conceal-wallet`
 - Copy the contents of the conceal-core folder into conceal-wallet\cryptonote
 - `cd conceal-wallet`
 - `mkdir build`

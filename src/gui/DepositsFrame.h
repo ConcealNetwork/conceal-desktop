@@ -29,7 +29,7 @@ private:
   QScopedArrayPointer<DepositListModel> m_depositModel;
 
   void actualDepositBalanceUpdated(quint64 _balance);
-  void pendingDepositBalanceUpdated(quint64 _balance);
+  void actualInvestmentBalanceUpdated(quint64 _balance);
   void reset();
 
   Q_SLOT void depositClicked(); /* new deposits */

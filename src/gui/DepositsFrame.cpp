@@ -62,7 +62,7 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_depositView->header()->resizeSection(1, 110);
   m_ui->m_depositView->header()->resizeSection(2, 60);
   m_ui->m_depositView->header()->resizeSection(3, 40);
-  m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(0));
+  m_ui->m_unlockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(0));
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(0));
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
@@ -100,7 +100,7 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
 
   DepositsFrame::depositParamsChanged();
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualDepositBalanceUpdatedSignal, this, &DepositsFrame::actualDepositBalanceUpdated, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &DepositsFrame::pendingDepositBalanceUpdated, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &DepositsFrame::actualInvestmentBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &DepositsFrame::reset, Qt::QueuedConnection);
   reset();
 }
@@ -119,9 +119,9 @@ void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) {
 
 /* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::pendingDepositBalanceUpdated(quint64 _balance) {
+void DepositsFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
 
-  m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  m_ui->m_unlockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -129,7 +129,7 @@ void DepositsFrame::pendingDepositBalanceUpdated(quint64 _balance) {
 void DepositsFrame::reset() {
 
   actualDepositBalanceUpdated(0);
-  pendingDepositBalanceUpdated(0);
+  actualInvestmentBalanceUpdated(0);
 }
 
 /* ------------------------------------------------------------------------------------------- */

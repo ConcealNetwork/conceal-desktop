@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers  
+// Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation
 //
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -16,6 +17,7 @@
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
+#include "Update.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "SignalHandler.h"
@@ -33,24 +35,27 @@ int main(int argc, char* argv[]) {
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
-#ifndef Q_OS_MAC
-  QApplication::setStyle(QStyleFactory::create("Fusion"));
-#endif
+  #ifndef Q_OS_MAC
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
+  #endif
+  
+  QGuiApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+
 
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());
   Settings::instance().load();
 
-#ifdef Q_OS_WIN
-  if(!cmdLineParseResult) {
-    QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
-    return app.exec();
-  } else if (cmdLineParser.hasHelpOption()) {
-    QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
-    return app.exec();
-  }
-#endif
+  #ifdef Q_OS_WIN
+    if(!cmdLineParseResult) {
+      QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
+      return app.exec();
+    } else if (cmdLineParser.hasHelpOption()) {
+      QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
+      return app.exec();
+    }
+  #endif
 
   LoggerAdapter::instance().init();
 
@@ -84,6 +89,8 @@ int main(int argc, char* argv[]) {
   }
 
   splash->finish(&MainWindow::instance());
+  Updater *d = new Updater();
+  d->checkForUpdate();  
   MainWindow::instance().show();
   
   WalletAdapter::instance().open("");

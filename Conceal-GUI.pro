@@ -282,6 +282,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/CryptoNoteCore/CryptoNoteTools.h \
            cryptonote/src/CryptoNoteCore/Currency.h \
            cryptonote/src/CryptoNoteCore/DepositIndex.h \
+           cryptonote/src/CryptoNoteCore/InvestmentIndex.h \
            cryptonote/src/CryptoNoteCore/Difficulty.h \
            cryptonote/src/CryptoNoteCore/IBlock.h \
            cryptonote/src/CryptoNoteCore/IBlockchainStorageObserver.h \
@@ -733,6 +734,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/CryptoNoteCore/CryptoNoteTools.cpp \
            cryptonote/src/CryptoNoteCore/Currency.cpp \
            cryptonote/src/CryptoNoteCore/DepositIndex.cpp \
+           cryptonote/src/CryptoNoteCore/InvestmentIndex.cpp \
            cryptonote/src/CryptoNoteCore/Difficulty.cpp \
            cryptonote/src/CryptoNoteCore/IBlock.cpp \
            cryptonote/src/CryptoNoteCore/ITimeProvider.cpp \
