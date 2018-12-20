@@ -121,7 +121,8 @@ void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) {
 
 void DepositsFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
 
-  m_ui->m_unlockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
+  m_ui->m_unlockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
 }
 
 /* ------------------------------------------------------------------------------------------- */
