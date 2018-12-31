@@ -54,8 +54,8 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_timeSpin2->setMaximum(20);
   m_ui->m_timeSpin2->setSuffix(QString(" %1").arg(tr("Quarters")));
   m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
-  m_ui->m_amountSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getDepositMinAmount()).toDouble());
-  m_ui->m_amountSpin->setDecimals(CurrencyAdapter::instance().getNumberOfDecimalPlaces());
+//  m_ui->m_amountSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getDepositMinAmount()).toDouble());
+//  m_ui->m_amountSpin->setDecimals(CurrencyAdapter::instance().getNumberOfDecimalPlaces());
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_depositView->sortByColumn(5, Qt::SortOrder::AscendingOrder); //COLUMN_UNLOCK_HEIGHT, ascending
   m_ui->m_depositView->header()->resizeSection(0, 70);
@@ -66,8 +66,8 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(0));
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
-  m_ui->m_feeLabel->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFee())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
-  m_ui->m_feeLabel2->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFee())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
+  m_ui->m_feeLabel->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
+  m_ui->m_feeLabel2->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
   
   m_ui->investmentsBox->hide();  
   
@@ -137,8 +137,9 @@ void DepositsFrame::reset() {
 
 void DepositsFrame::allButtonClicked() {
 
-  double amount = (double)WalletAdapter::instance().getActualBalance() - (double)CurrencyAdapter::instance().getMinimumFee();
-  m_ui->m_amountSpin->setValue(amount / 1000000);
+  double amount = (double)WalletAdapter::instance().getActualBalance() - (double)CurrencyAdapter::instance().getMinimumFeeBanking();
+  int wholeAmount = (int)(amount/1000000);
+  m_ui->m_amountSpin->setValue(wholeAmount);
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -154,7 +155,7 @@ void DepositsFrame::depositClicked() {
   }
 
   /* insufficient funds */
-  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFee() > WalletAdapter::instance().getActualBalance()) {
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance()) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
   }
@@ -171,7 +172,7 @@ void DepositsFrame::depositClicked() {
   }
 
   /* initiate the desposit */
-  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
+  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -187,7 +188,7 @@ void DepositsFrame::investmentClicked() {
   }
 
   /* insufficient funds */
-  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFee() > WalletAdapter::instance().getActualBalance()) {
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance()) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
   }
@@ -204,7 +205,7 @@ void DepositsFrame::investmentClicked() {
   }
  
   /* initiate the investment */
-  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFee(), 4);
+  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -283,7 +284,7 @@ void DepositsFrame::withdrawClicked() {
     depositIds.append(index.row());
   }
 
-  WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFee());
+  WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
 }
 
 /* ------------------------------------------------------------------------------------------- */

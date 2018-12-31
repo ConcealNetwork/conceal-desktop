@@ -47,7 +47,7 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
   clearAllClicked();
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &SendFrame::sendTransactionCompleted, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &SendFrame::walletActualBalanceUpdated, Qt::QueuedConnection);
-  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFee()).toDouble());
+  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeV1()).toDouble());
 }
 
 SendFrame::~SendFrame() {
@@ -154,7 +154,7 @@ void SendFrame::sendClicked() {
 
   /* incorrect fee */
   quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
-  if (fee < CurrencyAdapter::instance().getMinimumFee()) {
+  if (fee < CurrencyAdapter::instance().getMinimumFeeV1()) {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Incorrect fee value"), QtCriticalMsg));
     return;
   }
@@ -192,7 +192,7 @@ void SendFrame::updateFee() {
   quint64 commentsFee = 0;
   std::string words = (m_ui->m_messageEdit->text()).toStdString();
   commentsFee = words.length() * COMMENT_CHAR_PRICE;
-  m_ui->m_feeSpin->setMinimum( CurrencyAdapter::instance().formatAmount(commentsFee + CurrencyAdapter::instance().getMinimumFee()).toDouble());
+  m_ui->m_feeSpin->setMinimum( CurrencyAdapter::instance().formatAmount(commentsFee + CurrencyAdapter::instance().getMinimumFeeV1()).toDouble());
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
 }
 

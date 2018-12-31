@@ -20,10 +20,10 @@
 
 namespace WalletGui {
 
-Q_DECL_CONSTEXPR quint64 MESSAGE_AMOUNT = 10;
+Q_DECL_CONSTEXPR quint64 MESSAGE_AMOUNT = 1000;
 Q_DECL_CONSTEXPR quint64 MESSAGE_CHAR_PRICE = 10;
-Q_DECL_CONSTEXPR quint64 MINIMAL_MESSAGE_FEE = MESSAGE_CHAR_PRICE;
-Q_DECL_CONSTEXPR int DEFAULT_MESSAGE_MIXIN = 2;
+Q_DECL_CONSTEXPR quint64 MINIMAL_MESSAGE_FEE = 10;
+Q_DECL_CONSTEXPR int DEFAULT_MESSAGE_MIXIN = 4;
 
 Q_DECL_CONSTEXPR quint32 MINUTE_SECONDS = 60;
 Q_DECL_CONSTEXPR quint32 HOUR_SECONDS = 60 * MINUTE_SECONDS;
@@ -33,7 +33,6 @@ Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
 
 SendMessageFrame::SendMessageFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendMessageFrame) {
   m_ui->setupUi(this);
-  m_ui->m_mixinSlider->setValue(DEFAULT_MESSAGE_MIXIN);
   m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(MESSAGE_AMOUNT + MINIMAL_MESSAGE_FEE).toDouble());
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
   m_ui->m_ttlSlider->setVisible(false);
@@ -66,7 +65,6 @@ void SendMessageFrame::sendMessageCompleted(CryptoNote::TransactionId _transacti
 }
 
 void SendMessageFrame::reset() {
-  m_ui->m_mixinSlider->setValue(DEFAULT_MESSAGE_MIXIN);
   m_ui->m_feeSpin->setValue(MESSAGE_AMOUNT + MINIMAL_MESSAGE_FEE);
   m_ui->m_messageTextEdit->clear();
 
@@ -96,11 +94,13 @@ void SendMessageFrame::recalculateFeeValue() {
   }
 
   quint64 fee = MINIMAL_MESSAGE_FEE;
+  quint64 fee2 = MESSAGE_AMOUNT;
   if (m_ui->m_ttlCheck->checkState() == Qt::Checked) {
     fee = 0;
+    fee2 = 100;
   }
 
-  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(MESSAGE_AMOUNT * m_addressFrames.size() +
+  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(fee2 * m_addressFrames.size() +
     fee + messageSize * MESSAGE_CHAR_PRICE).toDouble());
 
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
@@ -134,7 +134,6 @@ void SendMessageFrame::messageTextChanged() {
 }
 
 void SendMessageFrame::mixinValueChanged(int _value) {
-  m_ui->m_mixinEdit->setText(QString::number(_value));
 }
 
 void SendMessageFrame::sendClicked() {
@@ -177,7 +176,7 @@ void SendMessageFrame::sendClicked() {
   }
 
   if (WalletAdapter::instance().isOpen()) {
-    WalletAdapter::instance().sendMessage(transfers, fee, m_ui->m_mixinSlider->value(), messages, ttl);
+    WalletAdapter::instance().sendMessage(transfers, fee, DEFAULT_MESSAGE_MIXIN, messages, ttl);
   }
 }
 

@@ -224,6 +224,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
            cryptonote/src/Common/ConsoleTools.h \
+           cryptonote/src/Common/DnsTools.h \
            cryptonote/src/Common/IInputStream.h \
            cryptonote/src/Common/int-util.h \
            cryptonote/src/Common/IOutputStream.h \
@@ -682,6 +683,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/CommandLine.cpp \
            cryptonote/src/Common/ConsoleHandler.cpp \
            cryptonote/src/Common/ConsoleTools.cpp \
+           cryptonote/src/Common/DnsTools.cpp \
            cryptonote/src/Common/IInputStream.cpp \
            cryptonote/src/Common/IOutputStream.cpp \
            cryptonote/src/Common/JsonValue.cpp \
