@@ -59,34 +59,6 @@ font-family: Poppins;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="m_addRecipientButton">
-       <property name="minimumSize">
-        <size>
-         <width>171</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>171</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
-       </property>
-       <property name="text">
-        <string>ADD RECIPIENT</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="m_sendButton">
        <property name="minimumSize">
         <size>
@@ -158,7 +130,7 @@ font-family: Poppins;</string>
         <x>0</x>
         <y>0</y>
         <width>1240</width>
-        <height>209</height>
+        <height>225</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_addressesLayout">
@@ -339,118 +311,6 @@ p, li { white-space: pre-wrap; }
      <property name="topMargin">
       <number>5</number>
      </property>
-     <item row="1" column="1">
-      <widget class="QSlider" name="m_mixinSlider">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; </string>
-       </property>
-       <property name="minimum">
-        <number>9</number>
-       </property>
-       <property name="maximum">
-        <number>15</number>
-       </property>
-       <property name="pageStep">
-        <number>1</number>
-       </property>
-       <property name="value">
-        <number>9</number>
-       </property>
-       <property name="tracking">
-        <bool>false</bool>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksBothSides</enum>
-       </property>
-       <property name="tickInterval">
-        <number>1</number>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px;</string>
-       </property>
-       <property name="text">
-        <string>Anonimity level:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLineEdit" name="m_mixinEdit">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>38</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; </string>
-       </property>
-       <property name="text">
-        <string notr="true">9</string>
-       </property>
-       <property name="maxLength">
-        <number>5</number>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>298</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_4">
        <property name="font">
@@ -466,6 +326,22 @@ p, li { white-space: pre-wrap; }
         <string>Fee:</string>
        </property>
       </widget>
+     </item>
+     <item row="1" column="2">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>298</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item row="0" column="1">
       <widget class="QDoubleSpinBox" name="m_feeSpin">
@@ -524,22 +400,6 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_mixinSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>SendMessageFrame</receiver>
-   <slot>mixinValueChanged(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>217</x>
-     <y>548</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>386</x>
-     <y>287</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_messageTextEdit</sender>
    <signal>textChanged()</signal>
    <receiver>SendMessageFrame</receiver>
@@ -548,22 +408,6 @@ p, li { white-space: pre-wrap; }
     <hint type="sourcelabel">
      <x>386</x>
      <y>227</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>386</x>
-     <y>287</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_addRecipientButton</sender>
-   <signal>clicked()</signal>
-   <receiver>SendMessageFrame</receiver>
-   <slot>addRecipientClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>179</x>
-     <y>546</y>
     </hint>
     <hint type="destinationlabel">
      <x>386</x>

@@ -417,7 +417,10 @@ font-family: Poppins;</string>
         <set>Qt::AlignCenter</set>
        </property>
        <property name="decimals">
-        <number>6</number>
+        <number>0</number>
+       </property>
+       <property name="minimum">
+        <double>1.000000000000000</double>
        </property>
        <property name="maximum">
         <double>20000000.000000000000000</double>
@@ -448,7 +451,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #aaa;</string>
        </property>
        <property name="text">
-        <string>feeLabel</string>
+        <string>0.001000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1245,7 +1248,7 @@ font-family: Poppins;</string>
         <string> CCX</string>
        </property>
        <property name="decimals">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="minimum">
         <double>50000.000000000000000</double>
@@ -1282,7 +1285,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #aaa;</string>
        </property>
        <property name="text">
-        <string>0.000010</string>
+        <string>0.001000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

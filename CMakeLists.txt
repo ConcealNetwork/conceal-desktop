@@ -63,6 +63,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/Util.cpp
   cryptonote/src/Common/StringTools.cpp
   cryptonote/src/Common/JsonValue.cpp
+  cryptonote/src/Common/DnsTools.cpp
   cryptonote/src/Common/ConsoleTools.cpp
   cryptonote/src/Common/MemoryInputStream.cpp
   cryptonote/src/Common/PathTools.cpp
