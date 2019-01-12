@@ -32,6 +32,7 @@
 #include "ShowQRCode.h"
 
 #include "AboutDialog.h"
+#include "DisclaimerDialog.h"
 #include "AddressBookModel.h"
 #include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
@@ -498,6 +499,11 @@ void MainWindow::setCloseToTray(bool _on) {
 
 void MainWindow::about() {
   AboutDialog dlg(this);
+  dlg.exec();
+}
+
+void MainWindow::disclaimer() {
+  DisclaimerDialog dlg(this);
   dlg.exec();
 }
 
