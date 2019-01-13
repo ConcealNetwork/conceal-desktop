@@ -308,11 +308,12 @@ void OverviewFrame::aboutClicked() {
     m_ui->m_subButton5->setText("");        
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
-    m_ui->m_subButton3->setEnabled(false);
+    m_ui->m_subButton3->setEnabled(true);
     m_ui->m_subButton4->setEnabled(false);
     m_ui->m_subButton5->setEnabled(false);    
     m_ui->m_subButton1->setText("About Conceal");
     m_ui->m_subButton2->setText("About QT");
+    m_ui->m_subButton3->setText("Disclaimer");
     subMenu = 4;
   } else {
     m_ui->m_subButton1->setEnabled(false);
@@ -499,7 +500,11 @@ void OverviewFrame::subButton3Clicked() {
   }  
   if (subMenu == 3) {
     Q_EMIT backupSignal();
+  }
+  if (subMenu == 4) {
+    Q_EMIT disclaimerSignal();
   }  
+
 }
 
 void OverviewFrame::subButton4Clicked() {

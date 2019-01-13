@@ -94,6 +94,7 @@ Q_SIGNALS:
   void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
+  void disclaimerSignal();
   void importSeedSignal();
   void importGUIKeySignal();
   void importSecretKeysSignal();
