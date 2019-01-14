@@ -157,6 +157,7 @@ HEADERS += libqrencode/bitstream.h \
            libqrencode/tests/decoder.h \
            src/gui/AboutDialog.h \
            src/gui/DisclaimerDialog.h \
+           src/gui/LinksDialog.h \           
            src/gui/AddressBookDialog.h \
            src/gui/AddressBookFrame.h \
            src/gui/AddressBookModel.h \
@@ -616,6 +617,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/tests/view_qrcode.c \
            src/gui/AboutDialog.cpp \
            src/gui/DisclaimerDialog.cpp \          
+           src/gui/Links.cpp \              
            src/gui/AddressBookDialog.cpp \
            src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
@@ -1054,6 +1056,7 @@ SOURCES += libqrencode/bitstream.c \
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/disclaimerdialog.ui \
+            src/gui/ui/linksdialog.ui \            
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \

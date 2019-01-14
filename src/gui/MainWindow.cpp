@@ -33,6 +33,7 @@
 
 #include "AboutDialog.h"
 #include "DisclaimerDialog.h"
+#include "LinksDialog.h"
 #include "AddressBookModel.h"
 #include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
@@ -118,6 +119,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutSignal, this, &MainWindow::about);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutQTSignal, this, &MainWindow::aboutQt);        
   connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);        
+  connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);     
   
   connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
@@ -509,9 +511,10 @@ void MainWindow::disclaimer() {
   dlg.exec();
 }
 
-/* void MainWindow::setStatusBarText(const QString& _text) {
-  statusBar()->showMessage(_text);
-} */
+void MainWindow::links() {
+  LinksDialog dlg(this);
+  dlg.exec();
+}
 
 void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   switch (_type) {
