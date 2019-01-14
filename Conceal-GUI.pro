@@ -617,7 +617,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/tests/view_qrcode.c \
            src/gui/AboutDialog.cpp \
            src/gui/DisclaimerDialog.cpp \          
-           src/gui/Links.cpp \              
+           src/gui/LinksDialog.cpp \              
            src/gui/AddressBookDialog.cpp \
            src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
