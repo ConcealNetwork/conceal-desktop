@@ -1053,6 +1053,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
+            src/gui/ui/disclaimerdialog.ui \
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DisclaimerDialog</class>
- <widget class="QDialog" name="DisclaimerDialog">
+ <class>LinksDialog</class>
+ <widget class="QDialog" name="LinksDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>850</height>
+    <width>450</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,18 +18,18 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>300</width>
-    <height>300</height>
+    <width>450</width>
+    <height>450</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>700</width>
-    <height>900</height>
+    <width>450</width>
+    <height>650</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Legal Disclaimer</string>
+   <string>About %1</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
@@ -47,9 +47,9 @@
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>80</y>
-        <width>550</width>
-        <height>650</height>
+        <y>70</y>
+        <width>351</width>
+        <height>461</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -69,7 +69,7 @@
 border-right: 0px;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Website&lt;br/&gt;&lt;a href=&quot;https://conceal.network&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Discord&lt;br/&gt;&lt;a href=&quot;https://discord.conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://discord.conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Telegram&lt;br/&gt;&lt;a href=&quot;https://t.co/55klBHKGUR&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://t.co/55klBHKGUR&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Twitter&lt;br/&gt;&lt;a href=&quot;https://twitter.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://twitter.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Reddit&lt;br/&gt;&lt;a href=&quot;https://www.reddit.com/r/ConcealNetwork/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://www.reddit.com/r/ConcealNetwork/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Medium&lt;br/&gt;&lt;a href=&quot;https://medium.com/@ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://medium.com/@ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Github&lt;br/&gt;&lt;a href=&quot;https://github.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://github.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bitcointalk&lt;br/&gt;&lt;a href=&quot;https://bitcointalk.org/index.php?topic=5086106&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://bitcointalk.org/index.php?topic=5086106&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="textFormat">
        <enum>Qt::RichText</enum>
@@ -84,10 +84,10 @@ border-right: 0px;</string>
      <widget class="QPushButton" name="m_closeButton">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>760</y>
+        <x>40</x>
+        <y>570</y>
         <width>351</width>
-        <height>40</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -113,9 +113,9 @@ border-right: 0px;</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>30</y>
-        <width>551</width>
+        <x>60</x>
+        <y>20</y>
+        <width>321</width>
         <height>31</height>
        </rect>
       </property>
@@ -130,7 +130,7 @@ border-right: 0px;</string>
 border-right: 0px;</string>
       </property>
       <property name="text">
-       <string>Legal Disclaimer</string>
+       <string>Links</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -145,7 +145,7 @@ border-right: 0px;</string>
   <connection>
    <sender>m_closeButton</sender>
    <signal>clicked()</signal>
-   <receiver>DisclaimerDialog</receiver>
+   <receiver>LinksDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
