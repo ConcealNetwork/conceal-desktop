@@ -7,7 +7,7 @@
 #include "LinksDialog.h"
 #include "Settings.h"
 
-#include "ui_LinksDialog.h"
+#include "ui_linksdialog.h"
 
 namespace WalletGui {
 
