@@ -1,7 +1,7 @@
 ![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Wallet (GUI)
-Latest Release: v5.1.7
+Latest Release: v5.1.8
 Maintained by The Circle Team.
 
 ## Information
