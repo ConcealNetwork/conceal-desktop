@@ -192,8 +192,13 @@ void SendFrame::updateFee() {
   quint64 commentsFee = 0;
   std::string words = (m_ui->m_messageEdit->text()).toStdString();
   commentsFee = words.length() * COMMENT_CHAR_PRICE;
-  m_ui->m_feeSpin->setMinimum( CurrencyAdapter::instance().formatAmount(commentsFee + CurrencyAdapter::instance().getMinimumFeeV1()).toDouble());
-  m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
+
+  quint64 currentFee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
+  quint64 minCurrentFee = commentsFee + CurrencyAdapter::instance().getMinimumFeeV1();
+  if (currentFee < minCurrentFee) {
+    m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(commentsFee + CurrencyAdapter::instance().getMinimumFeeV1()).toDouble());
+    m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());   
+  }
 }
 
 bool SendFrame::isValidPaymentId(const QByteArray& _paymentIdString) {

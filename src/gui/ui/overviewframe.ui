@@ -1181,7 +1181,7 @@ font-family: Poppins;</string>
       <widget class="QLabel" name="m_myAddress">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>110</x>
          <y>5</y>
          <width>811</width>
          <height>31</height>
@@ -1339,7 +1339,7 @@ font-family: Poppins;
 font-size: 13px;</string>
       </property>
       <property name="text">
-       <string>DEPOSIT</string>
+       <string>BANKING</string>
       </property>
      </widget>
      <widget class="QPushButton" name="m_newMessageButton">

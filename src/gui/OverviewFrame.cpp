@@ -308,11 +308,13 @@ void OverviewFrame::aboutClicked() {
     m_ui->m_subButton5->setText("");        
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
-    m_ui->m_subButton3->setEnabled(false);
-    m_ui->m_subButton4->setEnabled(false);
+    m_ui->m_subButton3->setEnabled(true);
+    m_ui->m_subButton4->setEnabled(true);
     m_ui->m_subButton5->setEnabled(false);    
     m_ui->m_subButton1->setText("About Conceal");
     m_ui->m_subButton2->setText("About QT");
+    m_ui->m_subButton3->setText("Disclaimer");
+    m_ui->m_subButton4->setText("Links");    
     subMenu = 4;
   } else {
     m_ui->m_subButton1->setEnabled(false);
@@ -499,7 +501,11 @@ void OverviewFrame::subButton3Clicked() {
   }  
   if (subMenu == 3) {
     Q_EMIT backupSignal();
+  }
+  if (subMenu == 4) {
+    Q_EMIT disclaimerSignal();
   }  
+
 }
 
 void OverviewFrame::subButton4Clicked() {
@@ -507,6 +513,10 @@ void OverviewFrame::subButton4Clicked() {
   if (subMenu == 3) {
     Q_EMIT encryptWalletSignal();
   }
+
+  if (subMenu == 4) {
+    Q_EMIT linksSignal();
+  } 
 
 #ifdef Q_OS_WIN
   if (subMenu == 2) {
@@ -540,37 +550,30 @@ void OverviewFrame::subButton5Clicked()
 }
 
 void OverviewFrame::qrCodeClicked() {
-
   Q_EMIT qrSignal(m_ui->m_myAddress->text());
 }
 
 void OverviewFrame::miningClicked() {
-
   Q_EMIT miningSignal();
 }
 
 void OverviewFrame::messageClicked() {
-
   Q_EMIT messageSignal();
 }
 
 void OverviewFrame::newWalletClicked() {
-
   Q_EMIT newWalletSignal();
 }
 
 void OverviewFrame::newTransferClicked() {
-
   Q_EMIT newTransferSignal();
 }
 
 void OverviewFrame::newMessageClicked() {
-
   Q_EMIT newMessageSignal();
 }
 
 void OverviewFrame::reset() {
-
   actualBalanceUpdated(0);
   pendingBalanceUpdated(0);
   actualDepositBalanceUpdated(0);

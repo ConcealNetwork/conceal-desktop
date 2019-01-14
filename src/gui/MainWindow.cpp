@@ -32,6 +32,8 @@
 #include "ShowQRCode.h"
 
 #include "AboutDialog.h"
+#include "DisclaimerDialog.h"
+#include "LinksDialog.h"
 #include "AddressBookModel.h"
 #include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
@@ -116,6 +118,9 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutSignal, this, &MainWindow::about);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutQTSignal, this, &MainWindow::aboutQt);        
+  connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);        
+  connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);     
+  
   connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);      
@@ -501,9 +506,15 @@ void MainWindow::about() {
   dlg.exec();
 }
 
-/* void MainWindow::setStatusBarText(const QString& _text) {
-  statusBar()->showMessage(_text);
-} */
+void MainWindow::disclaimer() {
+  DisclaimerDialog dlg(this);
+  dlg.exec();
+}
+
+void MainWindow::links() {
+  LinksDialog dlg(this);
+  dlg.exec();
+}
 
 void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   switch (_type) {
