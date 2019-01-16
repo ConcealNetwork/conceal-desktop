@@ -303,5 +303,24 @@ padding: 5px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_selectPathButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImportSeed</receiver>
+   <slot>selectPathClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>selectPathClicked()</slot>
+ </slots>
 </ui>
