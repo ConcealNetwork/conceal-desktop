@@ -42,5 +42,7 @@
         <file>icons/close.png</file>
         <file>icons/minimize.png</file>
         <file>icons/maximize.png</file>
+        <file>images/conceal-small.png</file>
+        <file>images/lock.png</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <QClipboard>
+#include <QMessageBox>
 
 #include <Common/Base58.h>
 #include "Common/StringTools.h"
@@ -30,20 +31,14 @@ ReceiveFrame::ReceiveFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::Rec
 ReceiveFrame::~ReceiveFrame() {
 }
 
-void ReceiveFrame::updateWalletAddress(const QString& _address) 
-{
-
+void ReceiveFrame::updateWalletAddress(const QString& _address) {
 }
 
-/* SHOW KEYS */
-/* generate and display the gui key, secret keys, mnemonic seed, and tracking key */
 
-void ReceiveFrame::walletOpened(int _error) 
-{
+/* generate and display the gui key, secret keys, mnemonic seed */
 
-  if (_error != 0) 
-  {
-
+void ReceiveFrame::walletOpened(int _error) {
+  if (_error != 0) {
     return;
   }
 
@@ -53,20 +48,16 @@ void ReceiveFrame::walletOpened(int _error)
   QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), secretKeysData));
 
   /* check if the wallet is deterministic
-  generate a view key from the spend key and them compare it to the existing view key */
+     generate a view key from the spend key and them compare it to the existing view key */
   Crypto::PublicKey unused_dummy_variable;
   Crypto::SecretKey deterministic_private_view_key;
   std::string mnemonic_seed = "";
   CryptoNote::AccountBase::generateViewFromSpend(keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
   bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
   
-  if (deterministic_private_keys)
-  {
-
+  if (deterministic_private_keys) {
     crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, mnemonic_seed, "English");
-  } else 
-  {
-
+  } else {
     mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
   }
 
@@ -75,11 +66,11 @@ void ReceiveFrame::walletOpened(int _error)
   m_ui->m_viewKey->setText(QString::fromStdString(Common::podToHex(keys.viewSecretKey)));
   m_ui->m_seed->setText(QString::fromStdString(mnemonic_seed));  
 
-  /* create the tracking key for the view only wallet */
-  keys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
-  QString trackingKey = QString::fromStdString(Common::podToHex(keys));
+  m_ui->seedBox->hide();
+  m_ui->introBox->show();
+  m_ui->privateKeyBox->hide();
+  m_ui->guiKeyBox->hide();
 
-  m_ui->m_trackingKey->setText(trackingKey);
 }
 
 void ReceiveFrame::walletClosed() {
@@ -91,35 +82,52 @@ void ReceiveFrame::backClicked() {
 }
 
 void ReceiveFrame::copyGUIClicked() {
-
     QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
+    QMessageBox::information(this, tr("GUI Key"), "GUI key copied to clipboard"); 
 }
 
 void ReceiveFrame::copySpendKeyClicked() {
-
     QApplication::clipboard()->setText(m_ui->m_spendKey->toPlainText());
+    QMessageBox::information(this, tr("Private Spend-Key"), "Private spend-key copied to clipboard"); 
 }
 
 void ReceiveFrame::copyViewKeyClicked() {
-
     QApplication::clipboard()->setText(m_ui->m_viewKey->toPlainText());
+    QMessageBox::information(this, tr("Private View-Key"), "Private view-key copied to clipboard");    
 }
 
 void ReceiveFrame::copySeedClicked() {
-
     QApplication::clipboard()->setText(m_ui->m_seed->toPlainText());
+    QMessageBox::information(this, tr("Seed"), "Seed copied to clipboard");
 }
 
-void ReceiveFrame::copyTrackingKeyClicked() {
-
-    QApplication::clipboard()->setText(m_ui->m_trackingKey->toPlainText());
+void ReceiveFrame::showSeed() {
+  m_ui->seedBox->show();
+  m_ui->introBox->hide();
+  m_ui->privateKeyBox->hide();
+  m_ui->guiKeyBox->hide();
 }
 
-void ReceiveFrame::backupClicked() 
-{
+void ReceiveFrame::showGUI() {
+  m_ui->guiKeyBox->show();
+  m_ui->seedBox->hide();
+  m_ui->introBox->hide();
+  m_ui->privateKeyBox->hide();
+}
 
+void ReceiveFrame::showPrivate() {
+  m_ui->guiKeyBox->hide();
+  m_ui->seedBox->hide();
+  m_ui->introBox->hide();
+  m_ui->privateKeyBox->show();
+}
+
+void ReceiveFrame::backupClicked() {
+  m_ui->seedBox->hide();
+  m_ui->introBox->show();
+  m_ui->privateKeyBox->hide();
+  m_ui->guiKeyBox->hide();  
   Q_EMIT backupSignal();
-
 }
 
 }
