@@ -706,6 +706,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/Util.cpp \
            cryptonote/src/Common/VectorOutputStream.cpp \
            cryptonote/src/ConnectivityTool/ConnectivityTool.cpp \
+           cryptonote/src/crypto/aesb.c \
            cryptonote/src/crypto/blake256.c \
            cryptonote/src/crypto/chacha.c \
            cryptonote/src/crypto/crypto-ops-data.c \

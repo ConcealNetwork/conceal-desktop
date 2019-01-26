@@ -1230,12 +1230,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: none; color: #ddd;</string>
+        <string notr="true">border: none; color: #ddd; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>ADDRESS</string>

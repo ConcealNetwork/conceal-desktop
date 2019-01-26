@@ -130,4 +130,11 @@ void ReceiveFrame::backupClicked() {
   Q_EMIT backupSignal();
 }
 
+void ReceiveFrame::back2Clicked() {
+  m_ui->seedBox->hide();
+  m_ui->introBox->show();
+  m_ui->privateKeyBox->hide();
+  m_ui->guiKeyBox->hide();  
+}
+
 }

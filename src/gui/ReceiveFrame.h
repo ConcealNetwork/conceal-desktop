@@ -37,9 +37,9 @@ private:
   Q_SLOT void copySeedClicked(); 
   Q_SLOT void backupClicked();
   Q_SLOT void showSeed();
-  //Q_SLOT void showGUI();  
-  //Q_SLOT void showPrivate();  
-  //Q_SLOT void showAdvanced();  
+  Q_SLOT void showGUI();  
+  Q_SLOT void showPrivate();  
+  Q_SLOT void back2Clicked();    
 
 Q_SIGNALS:
   void backSignal();

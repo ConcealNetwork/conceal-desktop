@@ -109,14 +109,19 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>14</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; \nfont-size: 16px;\nfont-family: Poppins;</string>
+        <string notr="true">color: #ddd;
+font-size: 19px;
+font-family: Poppins;</string>
        </property>
        <property name="text">
         <string>YOUR 25 WORD MNEMONIC SEED</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QTextBrowser" name="m_seed">
@@ -131,17 +136,19 @@ font-family: Poppins;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>14</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #e5e5e5;</string>
+        <string notr="true">color: #ddd;
+font-size: 16px;
+font-family: Poppins;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -246,70 +253,82 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>520</x>
+         <x>490</x>
          <y>70</y>
-         <width>200</width>
+         <width>231</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>14</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; \nfont-size: 16px;\nfont-family: Poppins;</string>
+        <string notr="true">color: #ddd;
+font-size: 19px;
+font-family: Poppins;</string>
        </property>
        <property name="text">
         <string>SECRET SPEND KEY</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>260</y>
-         <width>200</width>
+         <x>500</x>
+         <y>250</y>
+         <width>221</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>14</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; \nfont-size: 16px;\nfont-family: Poppins;</string>
+        <string notr="true">color: #ddd;
+font-size: 19px;
+font-family: Poppins;</string>
        </property>
        <property name="text">
         <string>PRIVATE VIEW KEY</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QTextBrowser" name="m_spendKey">
        <property name="geometry">
         <rect>
          <x>380</x>
-         <y>150</y>
+         <y>120</y>
          <width>470</width>
-         <height>51</height>
+         <height>100</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #e5e5e5;</string>
+        <string notr="true">color: #ddd;
+font-size: 16px;
+font-family: Poppins;color: #e5e5e5;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;secret spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -317,25 +336,27 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>380</x>
-         <y>330</y>
+         <y>300</y>
          <width>470</width>
-         <height>51</height>
+         <height>100</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #e5e5e5;</string>
+        <string notr="true">color: #ddd;
+font-size: 16px;
+font-family: Poppins;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;secret view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -407,9 +428,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>11</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;</string>
        </property>
        <property name="text">
         <string>■  Keep your seed and password safe</string>
@@ -426,9 +449,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>11</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;</string>
        </property>
        <property name="text">
         <string>■  Make a backup of your wallet file</string>
@@ -445,9 +470,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>11</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;</string>
        </property>
        <property name="text">
         <string>■  Be aware of phishing websites and programs</string>
@@ -464,9 +491,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>11</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;</string>
        </property>
        <property name="text">
         <string>■  Store a copy of your seed in a safe place</string>
@@ -475,23 +504,25 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_10">
        <property name="geometry">
         <rect>
-         <x>360</x>
+         <x>330</x>
          <y>70</y>
-         <width>461</width>
+         <width>501</width>
          <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>13</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white;</string>
+        <string notr="true">color: white; font-size: 19px;</string>
        </property>
        <property name="text">
         <string>We care about your safety: Please read the following</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QPushButton" name="m_showSeed">
@@ -552,7 +583,7 @@ p, li { white-space: pre-wrap; }
         <string>BACK</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_showGUI">
+      <widget class="QPushButton" name="m_showPrivate">
        <property name="geometry">
         <rect>
          <x>600</x>
@@ -563,12 +594,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; font-size: 15px;</string>
        </property>
        <property name="text">
         <string>private keys</string>
@@ -590,23 +620,22 @@ p, li { white-space: pre-wrap; }
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_showGui">
+      <widget class="QPushButton" name="m_showGUI">
        <property name="geometry">
         <rect>
          <x>740</x>
          <y>540</y>
          <width>61</width>
-         <height>21</height>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; font-size: 15px;</string>
        </property>
        <property name="text">
         <string>gui key</string>
@@ -623,12 +652,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #aaa; font-size: 15px;</string>
        </property>
        <property name="text">
         <string>advanced uses can also backup thier</string>
@@ -645,12 +673,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #aaa; font-size: 15px;</string>
        </property>
        <property name="text">
         <string>or the</string>
@@ -663,9 +690,9 @@ p, li { white-space: pre-wrap; }
       <zorder>label_9</zorder>
       <zorder>label_10</zorder>
       <zorder>m_showSeed</zorder>
-      <zorder>m_showGUI</zorder>
+      <zorder>m_showPrivate</zorder>
       <zorder>line_2</zorder>
-      <zorder>m_showGui</zorder>
+      <zorder>m_showGUI</zorder>
       <zorder>label_12</zorder>
       <zorder>label_13</zorder>
      </widget>
@@ -738,23 +765,26 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>530</x>
+         <x>440</x>
          <y>90</y>
-         <width>131</width>
+         <width>301</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>14</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; \nfont-size: 16px;\nfont-family: Poppins;</string>
+        <string notr="true">color: #ddd; font-size: 19px;font-family: Poppins;</string>
        </property>
        <property name="text">
         <string>YOUR GUI KEY</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QTextBrowser" name="m_guiKey">
@@ -768,18 +798,17 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #e5e5e5;</string>
+        <string notr="true">color: #e5e5e5; font-size: 16px;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -802,7 +831,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
        </property>
        <property name="text">
-        <string>DASHBOARD</string>
+        <string>BACK</string>
        </property>
       </widget>
       <widget class="Line" name="line_3">
@@ -822,12 +851,12 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
-     <zorder>guiKeyBox</zorder>
      <zorder>label</zorder>
      <zorder>label_11</zorder>
      <zorder>logoLine</zorder>
      <zorder>seedBox</zorder>
      <zorder>privateKeyBox</zorder>
+     <zorder>guiKeyBox</zorder>
      <zorder>introBox</zorder>
     </widget>
    </item>
@@ -935,7 +964,7 @@ p, li { white-space: pre-wrap; }
    <sender>m_backButton_2</sender>
    <signal>clicked()</signal>
    <receiver>ReceiveFrame</receiver>
-   <slot>backClicked()</slot>
+   <slot>back2Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>744</x>
@@ -951,7 +980,7 @@ p, li { white-space: pre-wrap; }
    <sender>m_backButton_3</sender>
    <signal>clicked()</signal>
    <receiver>ReceiveFrame</receiver>
-   <slot>backClicked()</slot>
+   <slot>back2Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>744</x>
@@ -967,7 +996,7 @@ p, li { white-space: pre-wrap; }
    <sender>m_backButton_4</sender>
    <signal>clicked()</signal>
    <receiver>ReceiveFrame</receiver>
-   <slot>backClicked()</slot>
+   <slot>back2Clicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>884</x>
@@ -980,10 +1009,10 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_showGUI</sender>
+   <sender>m_showPrivate</sender>
    <signal>clicked()</signal>
    <receiver>ReceiveFrame</receiver>
-   <slot>backClicked()</slot>
+   <slot>showPrivate()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>854</x>
@@ -995,9 +1024,26 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_showGUI</sender>
+   <signal>clicked()</signal>
+   <receiver>ReceiveFrame</receiver>
+   <slot>showGUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>800</x>
+     <y>650</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backClicked()</slot>
+  <slot>back2Clicked()</slot>
   <slot>copyGUIClicked()</slot>
   <slot>copySpendKeyClicked()</slot>
   <slot>copyViewKeyClicked()</slot>
