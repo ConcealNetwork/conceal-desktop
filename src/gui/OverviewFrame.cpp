@@ -105,7 +105,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   /* pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/maple/chart2.php");
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/maple/chart.php");
   QNetworkRequest request(url);
   nam->get(request);
 

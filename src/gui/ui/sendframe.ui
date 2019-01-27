@@ -149,7 +149,7 @@ font-family: Lato;</string>
      <widget class="QLineEdit" name="m_paymentIdEdit">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>290</y>
         <width>831</width>
         <height>31</height>
@@ -199,7 +199,7 @@ font-family: Lato;</string>
      <widget class="QLineEdit" name="m_addressEdit">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>170</y>
         <width>831</width>
         <height>31</height>
@@ -227,7 +227,7 @@ font-family: Lato;</string>
      <widget class="QLineEdit" name="m_labelEdit">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>410</y>
         <width>831</width>
         <height>31</height>
@@ -277,7 +277,7 @@ font-family: Lato;</string>
      <widget class="QLineEdit" name="m_amountEdit">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>510</y>
         <width>831</width>
         <height>31</height>
@@ -601,7 +601,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="m_messageEdit">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>630</y>
         <width>831</width>
         <height>31</height>
