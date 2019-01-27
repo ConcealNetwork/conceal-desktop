@@ -59,9 +59,9 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->setupUi(this);
 
   /* load the new app-wide font */
-  int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
+  int id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
   QFont font;
-  font.setFamily("Poppins");
+  font.setFamily("Lato");
   font.setPointSize(12);
 
   /* connect signals */
