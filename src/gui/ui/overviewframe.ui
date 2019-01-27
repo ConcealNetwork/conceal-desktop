@@ -116,9 +116,7 @@ background:#111;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;
-
-</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Banking</string>
@@ -148,7 +146,7 @@ font-size: 13px;
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Messages</string>
@@ -178,7 +176,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>About</string>
@@ -208,7 +206,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Transactions</string>
@@ -238,7 +236,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Settings</string>
@@ -268,7 +266,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">color: #777;
 font-family: Poppins;
-font-size: 10px;</string>
+font-size: 12px;</string>
        </property>
        <property name="verticalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -280,7 +278,7 @@ font-size: 10px;</string>
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:10px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#777777;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -302,7 +300,7 @@ p, li { white-space: pre-wrap; }
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #aaa; margin-left: 20px;
 font-family: Poppins;
-font-size: 13px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Wallet</string>
@@ -348,7 +346,7 @@ font-size: 13px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>First</string>
@@ -378,7 +376,7 @@ font-size: 12px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Second</string>
@@ -408,7 +406,7 @@ font-size: 12px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Third</string>
@@ -438,7 +436,7 @@ font-size: 12px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Fourth</string>
@@ -468,7 +466,7 @@ font-size: 12px;</string>
        <property name="styleSheet">
         <string notr="true">text-align: left; color: #777; margin-left: 20px;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Fifth</string>
@@ -562,15 +560,14 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Courier</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="focusPolicy">
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: transparent;</string>
+        <string notr="true">background: transparent; font-size: 13px;</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -638,7 +635,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Pending</string>
@@ -663,7 +660,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Available</string>
@@ -688,7 +685,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -716,7 +713,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -744,7 +741,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -769,7 +766,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -920,7 +917,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Locked</string>
@@ -945,7 +942,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -970,7 +967,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -998,7 +995,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Withdrawable</string>
@@ -1023,7 +1020,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1051,7 +1048,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -1183,7 +1180,7 @@ font-family: Poppins;</string>
         <rect>
          <x>110</x>
          <y>5</y>
-         <width>811</width>
+         <width>831</width>
          <height>31</height>
         </rect>
        </property>
@@ -1436,7 +1433,7 @@ font-family: Poppins;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Locked</string>
@@ -1461,7 +1458,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Withdrawable</string>
@@ -1486,7 +1483,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1514,7 +1511,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1542,7 +1539,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -1567,7 +1564,7 @@ font-size: 12px;</string>
         <string notr="true">color: #999;
 background: transparent;
 font-family: Poppins;
-font-size: 12px;</string>
+font-size: 13px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>

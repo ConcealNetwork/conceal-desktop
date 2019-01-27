@@ -69,14 +69,12 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 20px;
-font-family: Poppins;</string>
+font-size: 20px;</string>
       </property>
       <property name="text">
        <string>WALLET SEED AND KEYS</string>
@@ -108,14 +106,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 19px;
-font-family: Poppins;</string>
+</string>
        </property>
        <property name="text">
         <string>YOUR 25 WORD MNEMONIC SEED</string>
@@ -135,14 +132,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 16px;
-font-family: Poppins;</string>
+font-size: 16px;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -163,12 +158,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -201,12 +195,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -239,12 +232,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -371,12 +363,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -393,12 +384,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -548,14 +538,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -572,12 +559,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -586,7 +572,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="m_showPrivate">
        <property name="geometry">
         <rect>
-         <x>600</x>
+         <x>590</x>
          <y>540</y>
          <width>91</width>
          <height>20</height>
@@ -598,7 +584,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; font-size: 15px;</string>
+        <string notr="true">color: orange; background-color: #1; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>private keys</string>
@@ -635,7 +621,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; font-size: 15px;</string>
+        <string notr="true">color: orange; background-color: #1; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>gui key</string>
@@ -646,7 +632,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>350</x>
          <y>540</y>
-         <width>251</width>
+         <width>241</width>
          <height>20</height>
         </rect>
        </property>
@@ -656,7 +642,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 15px;</string>
+        <string notr="true">color: #aaa; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>advanced uses can also backup thier</string>
@@ -665,7 +651,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_13">
        <property name="geometry">
         <rect>
-         <x>700</x>
+         <x>690</x>
          <y>540</y>
          <width>41</width>
          <height>20</height>
@@ -677,7 +663,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 15px;</string>
+        <string notr="true">color: #aaa; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>or the</string>
@@ -751,12 +737,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -802,14 +787,14 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #e5e5e5; font-size: 16px;</string>
+        <string notr="true">color: #e5e5e5; font-size: 17px;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="m_backButton_3">
@@ -823,12 +808,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -854,10 +838,10 @@ p, li { white-space: pre-wrap; }
      <zorder>label</zorder>
      <zorder>label_11</zorder>
      <zorder>logoLine</zorder>
-     <zorder>seedBox</zorder>
-     <zorder>privateKeyBox</zorder>
      <zorder>guiKeyBox</zorder>
      <zorder>introBox</zorder>
+     <zorder>privateKeyBox</zorder>
+     <zorder>seedBox</zorder>
     </widget>
    </item>
   </layout>
