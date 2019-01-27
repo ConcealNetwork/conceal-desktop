@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; color: #aaa; border: 0px;
+   <string notr="true">background-color: #212529; color: #eee; border: 0px;
 </string>
   </property>
   <property name="frameShape">
@@ -40,7 +40,7 @@
     <widget class="QLabel" name="label_3">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -56,12 +56,12 @@
     <widget class="QLineEdit" name="m_labelEdit">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
      </property>
      <property name="placeholderText">
       <string>Enter a label for this address to add it to your address book</string>
@@ -94,7 +94,7 @@
     <widget class="QLabel" name="label_2">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -110,7 +110,7 @@
     <widget class="QDoubleSpinBox" name="m_amountSpin">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -118,7 +118,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
      </property>
      <property name="suffix">
       <string notr="true"/>
@@ -148,12 +148,12 @@
     <widget class="QLineEdit" name="m_addressEdit">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
      </property>
     </widget>
    </item>
@@ -172,7 +172,7 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -188,7 +188,7 @@
     <widget class="QLabel" name="label_4">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -204,12 +204,12 @@
     <widget class="QLineEdit" name="m_transactionCommentEdit">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
      </property>
     </widget>
    </item>

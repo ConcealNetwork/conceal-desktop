@@ -32,7 +32,7 @@
    <string>Legal Disclaimer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+   <string notr="true">background-color: #212529; border-right: 4px solid orange;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
    <item>
@@ -60,12 +60,12 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;
+       <string notr="true">color: #eee;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -98,7 +98,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -121,7 +121,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>16</pointsize>
        </font>
       </property>

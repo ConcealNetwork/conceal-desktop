@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; color: #aaa;</string>
+   <string notr="true">background-color: #282d31; color: #fff;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">

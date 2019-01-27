@@ -20,8 +20,8 @@
    <string>Deposit</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
-color: #aaa;
+   <string notr="true">background-color: #212529;
+color: #eee;
 border: 0px;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -41,13 +41,13 @@ border: 0px;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #111;
-color: #aaa;
+      <string notr="true">background-color: #212529;
+color: #eee;
 border: 0px;</string>
      </property>
     </widget>
@@ -77,12 +77,12 @@ border: 0px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; \nbackground-color: #333; \nborder-top: 3px solid orange; \nfont-size: 13px;\nfont-family: Poppins;</string>
+        <string notr="true">color: #eee; \nbackground-color: #333; \nborder-top: 3px solid orange; \nfont-size: 13px;\nfont-family: Lato;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

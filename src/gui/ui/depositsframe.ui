@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; color: #aaa;</string>
+   <string notr="true">border: 0px; color: #eee;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -65,7 +65,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; background-color: #111;</string>
+      <string notr="true">border: 0px; background-color: #212529;</string>
      </property>
      <property name="title">
       <string/>
@@ -100,9 +100,9 @@
        <string notr="true">font-size: 15px;
 
 QHeaderView::section {
-background-color: #222; 
-   color: #aaa;
-font-family: Poppins;
+background-color: #212529; 
+   color: #eee;
+font-family: Lato;
     font-size: 13px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
@@ -113,7 +113,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 13px;
-    color: #999;
+    color: #eee;
     height: 30px;
 }
 
@@ -123,8 +123,8 @@ QTreeView::branch:selected {
 }
 
 QWidget:item:selected {
-  background-color: #111;
-  color: #999;
+  background-color: #212529;
+  color: #eee;
 }</string>
       </property>
       <property name="frameShape">
@@ -164,7 +164,7 @@ QWidget:item:selected {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange; font-size: 16px;</string>
+       <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -202,7 +202,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -573,7 +573,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -835,7 +835,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -866,7 +866,7 @@ font-size: 20px;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string>background-color: #222;</string>
+        <string>background-color: #212529;</string>
        </property>
        <property name="text">
         <string/>
@@ -908,7 +908,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 13px;</string>
+        <string notr="true">color: #eee; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Weeks</string>
@@ -925,7 +925,7 @@ font-size: 20px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>8</pointsize>
         </font>
        </property>
@@ -951,7 +951,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 13px;</string>
+        <string notr="true">color: #eee; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Interest</string>
@@ -973,7 +973,7 @@ font-size: 20px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; background-color: #222; font-size: 18px;</string>
+       <string notr="true">color: orange; background-color: #212529; font-size: 18px;</string>
       </property>
       <property name="text">
        <string>NEW DEPOSIT</string>
@@ -994,7 +994,7 @@ font-size: 20px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #777; background-color: #111; font-size: 18px;</string>
+       <string notr="true">color: #777; background-color: #212529; font-size: 18px;</string>
       </property>
       <property name="text">
        <string>NEW INVESTMENT</string>
@@ -1010,7 +1010,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>

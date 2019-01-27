@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #aaa;
+   <string notr="true">color: #eee;
 background:#111;</string>
   </property>
   <property name="frameShape">
@@ -49,14 +49,14 @@ background:#111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
       </property>
       <property name="text">
        <string>MINING</string>
@@ -73,12 +73,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;</string>
+       <string notr="true">color: #eee;</string>
       </property>
       <property name="text">
        <string>Select a mining pool</string>
@@ -98,12 +98,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -123,12 +123,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;</string>
+       <string notr="true">color: #eee;</string>
       </property>
       <property name="text">
        <string>Number of CPU cores</string>
@@ -148,12 +148,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -170,12 +170,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; 
+       <string notr="true">color: #eee; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -193,12 +193,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;</string>
+       <string notr="true">color: #eee;</string>
       </property>
       <property name="text">
        <string>Mining status :</string>
@@ -218,14 +218,14 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;</string>
+       <string notr="true">color: #eee;</string>
       </property>
       <property name="text">
        <string>Stopped</string>
@@ -245,7 +245,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -277,12 +277,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; 
+       <string notr="true">color: #eee; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -309,12 +309,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
       </property>
       <property name="text">
        <string>BACK</string>

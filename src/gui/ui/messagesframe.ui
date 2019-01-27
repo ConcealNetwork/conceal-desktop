@@ -18,7 +18,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; color: #aaa;</string>
+   <string notr="true">background-color: #212529; color: #eee;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -68,14 +68,14 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>MESSAGES</string>
@@ -98,16 +98,16 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
+        <string notr="true">color: #eee; 
 background-color: #333; 
 border-top: 2px solid orange; 
 font-size: 13px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>NEW MESSAGE</string>
@@ -136,16 +136,16 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
+        <string notr="true">color: #eee; 
 background-color: #333; 
 border-top: 2px solid orange; 
 font-size: 13px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -170,15 +170,15 @@ font-family: Poppins;</string>
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #222; 
-   color: #aaa;
-font-family: Poppins;
+background-color: #212529; 
+   color: #eee;
+font-family: Lato;
     font-size: 12px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
@@ -189,7 +189,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 10px;
-    color: #999;
+    color: #eee;
     height: 30px;
 }
 
@@ -199,8 +199,8 @@ QTreeView::branch:selected {
 }
 
 QWidget:item:selected {
-  background-color: #111;
-  color: #999;
+  background-color: #212529;
+  color: #eee;
 }
 
 </string>

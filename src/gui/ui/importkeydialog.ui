@@ -38,7 +38,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+      <string notr="true">background-color: #212529; border-right: 4px solid orange;</string>
      </property>
      <property name="title">
       <string/>
@@ -54,7 +54,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>15</pointsize>
        </font>
       </property>
@@ -80,12 +80,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #eee;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -109,12 +109,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -131,12 +131,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #eee;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -160,12 +160,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -181,9 +181,9 @@ padding: 5px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
-color: #999;
+color: #eee;
 padding: 5px;
 </string>
       </property>
@@ -208,7 +208,7 @@ padding: 5px;
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -237,12 +237,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; 
+       <string notr="true">color: #eee; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -260,12 +260,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #eee;
 border-right: 0px;</string>
       </property>
       <property name="text">

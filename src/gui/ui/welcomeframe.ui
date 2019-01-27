@@ -18,7 +18,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-border: 0px; background-color: #111;</string>
+border: 0px; background-color: #212529;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -61,7 +61,7 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>18</pointsize>
        </font>
       </property>
@@ -86,12 +86,12 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #222; border-top: 2px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #212529; border-top: 2px solid orange;</string>
       </property>
       <property name="text">
        <string>CREATE NEW WALLET</string>
@@ -108,12 +108,12 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #222; border-top: 2px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #212529; border-top: 2px solid orange;</string>
       </property>
       <property name="text">
        <string>OPEN EXISTING WALLET</string>
@@ -130,12 +130,12 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #222; border-top: 2px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #212529; border-top: 2px solid orange;</string>
       </property>
       <property name="text">
        <string>IMPORT SEED</string>
@@ -152,12 +152,12 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #222; border-top: 2px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #212529; border-top: 2px solid orange;</string>
       </property>
       <property name="text">
        <string>IMPORT GUI KEY</string>
@@ -174,12 +174,12 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #222; border-top: 2px solid orange;</string>
+       <string notr="true">color: #eee; background-color: #212529; border-top: 2px solid orange;</string>
       </property>
       <property name="text">
        <string>IMPORT SPEND/VIEW KEYS</string>
@@ -208,12 +208,12 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  Conceal is a decentralized blockchain bank</string>
@@ -230,12 +230,12 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  Conceal Wallet is a free, open-source interface.</string>
@@ -252,12 +252,12 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  The wallet allows access to all Conceal services</string>
@@ -274,12 +274,12 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  You control the private keys to your funds</string>
@@ -296,7 +296,7 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>13</pointsize>
         </font>
        </property>
@@ -321,7 +321,7 @@ border: 0px; background-color: #111;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -383,14 +383,14 @@ border: 0px; background-color: #111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
       </property>
       <property name="text">
        <string>WELCOME</string>
@@ -432,12 +432,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  Conceal is a decentralized blockchain bank</string>
@@ -454,12 +454,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  Conceal Wallet is a free, open-source interface.</string>
@@ -476,12 +476,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  The wallet allows access to all Conceal services</string>
@@ -498,12 +498,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>11</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #eee;</string>
        </property>
        <property name="text">
         <string>■  You control the private keys to your funds</string>
@@ -520,7 +520,7 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>13</pointsize>
         </font>
        </property>
@@ -545,7 +545,7 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>

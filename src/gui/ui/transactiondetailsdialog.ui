@@ -14,9 +14,9 @@
    <string>Transaction details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
+   <string notr="true">background-color: #212529;
 border: 0px;
-color: #aaa;</string>
+color: #eee;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -41,7 +41,7 @@ color: #aaa;</string>
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>15</pointsize>
       </font>
      </property>
@@ -60,12 +60,12 @@ color: #aaa;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #111;</string>
+      <string notr="true">background-color: #212529;</string>
      </property>
     </widget>
    </item>
@@ -94,12 +94,12 @@ color: #aaa;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

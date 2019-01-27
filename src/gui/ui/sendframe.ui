@@ -18,7 +18,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #111; color: #aaa;</string>
+   <string notr="true">border: 0px; background-color: #282d31; color: #eee;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -61,10 +61,10 @@
      <widget class="QLabel" name="sendLabel">
       <property name="geometry">
        <rect>
-        <x>35</x>
-        <y>30</y>
+        <x>100</x>
+        <y>25</y>
         <width>181</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -75,35 +75,35 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 20px;
-font-family: Poppins;</string>
+font-size: 25px;
+font-family: Lato;</string>
       </property>
       <property name="text">
        <string>SEND FUNDS</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="m_backButton">
       <property name="geometry">
        <rect>
-        <x>950</x>
-        <y>40</y>
-        <width>261</width>
-        <height>31</height>
+        <x>1000</x>
+        <y>30</y>
+        <width>210</width>
+        <height>40</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>171</width>
-        <height>31</height>
+        <width>210</width>
+        <height>40</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -114,12 +114,11 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+       <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -128,15 +127,15 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="pidLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>230</y>
-        <width>161</width>
+        <x>10</x>
+        <y>220</y>
+        <width>771</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -150,7 +149,7 @@ font-family: Poppins;</string>
      <widget class="QLineEdit" name="m_paymentIdEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>290</y>
         <width>831</width>
         <height>31</height>
@@ -164,12 +163,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; background-color: #222; border: 0px;</string>
+       <string notr="true">padding: 3px; background-color: #212529; border: 0px;</string>
       </property>
       <property name="text">
        <string/>
@@ -178,15 +177,15 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="adressLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>110</y>
-        <width>141</width>
+        <x>10</x>
+        <y>100</y>
+        <width>721</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -200,7 +199,7 @@ font-family: Poppins;</string>
      <widget class="QLineEdit" name="m_addressEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>170</y>
         <width>831</width>
         <height>31</height>
@@ -214,12 +213,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; background-color: #222; border: 0px;</string>
+       <string notr="true">padding: 3px; background-color: #212529; border: 0px;</string>
       </property>
       <property name="text">
        <string/>
@@ -228,7 +227,7 @@ font-family: Poppins;</string>
      <widget class="QLineEdit" name="m_labelEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>410</y>
         <width>831</width>
         <height>31</height>
@@ -242,12 +241,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; background-color: #222; border: 0px;</string>
+       <string notr="true">padding: 3px; background-color: #212529; border: 0px;</string>
       </property>
       <property name="text">
        <string/>
@@ -256,15 +255,15 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="labelLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>350</y>
-        <width>101</width>
+        <x>10</x>
+        <y>340</y>
+        <width>721</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -278,7 +277,7 @@ font-family: Poppins;</string>
      <widget class="QLineEdit" name="m_amountEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>510</y>
         <width>831</width>
         <height>31</height>
@@ -292,12 +291,12 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; background-color: #222; border: 0px;</string>
+       <string notr="true">padding: 3px; background-color: #212529; border: 0px;</string>
       </property>
       <property name="text">
        <string>0.000000</string>
@@ -306,15 +305,15 @@ font-family: Poppins;</string>
      <widget class="QLabel" name="amountLabel">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>470</y>
-        <width>101</width>
+        <x>10</x>
+        <y>460</y>
+        <width>721</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -335,7 +334,7 @@ font-family: Poppins;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #282d31;</string>
       </property>
       <property name="title">
        <string/>
@@ -344,8 +343,8 @@ font-family: Poppins;</string>
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>40</y>
-         <width>141</width>
+         <y>10</y>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
@@ -357,7 +356,7 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -369,20 +368,23 @@ font-family: Poppins;</string>
        <property name="text">
         <string>AVAILABLE BALANCE</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
       <widget class="QPushButton" name="m_sendButton">
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>390</y>
-         <width>171</width>
-         <height>31</height>
+         <y>400</y>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -393,14 +395,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>SEND FUNDS</string>
@@ -410,15 +409,15 @@ font-family: Poppins;</string>
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>440</y>
-         <width>171</width>
-         <height>31</height>
+         <y>460</y>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -429,14 +428,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CLEAR ALL</string>
@@ -445,8 +441,8 @@ font-family: Poppins;</string>
       <widget class="QLabel" name="m_balanceLabel">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>80</y>
+         <x>70</x>
+         <y>60</y>
          <width>181</width>
          <height>31</height>
         </rect>
@@ -459,7 +455,7 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -478,7 +474,7 @@ font-family: Poppins;</string>
         <rect>
          <x>60</x>
          <y>160</y>
-         <width>151</width>
+         <width>201</width>
          <height>31</height>
         </rect>
        </property>
@@ -490,12 +486,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; background: #222;</string>
+        <string notr="true">padding: 3px; border: 0px; background: #212529;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -519,15 +515,15 @@ font-family: Poppins;</string>
       <widget class="QLabel" name="feeLabel">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>120</y>
-         <width>31</width>
+         <x>60</x>
+         <y>110</y>
+         <width>201</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -539,42 +535,48 @@ font-family: Poppins;</string>
        <property name="text">
         <string>FEE</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
       <widget class="QTextBrowser" name="textBrowser">
        <property name="geometry">
         <rect>
-         <x>30</x>
+         <x>50</x>
          <y>230</y>
-         <width>201</width>
+         <width>221</width>
          <height>131</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:12px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato'; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="m_addressBookButton">
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>490</y>
-         <width>171</width>
-         <height>31</height>
+         <y>520</y>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -585,14 +587,11 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>
@@ -602,7 +601,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="m_messageEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>630</y>
         <width>831</width>
         <height>31</height>
@@ -616,12 +615,12 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; background-color: #222; border: 0px;</string>
+       <string notr="true">padding: 3px; background-color: #212529; border: 0px;</string>
       </property>
       <property name="text">
        <string/>
@@ -630,15 +629,15 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="amountLabel_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>570</y>
-        <width>201</width>
+        <x>10</x>
+        <y>560</y>
+        <width>781</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -652,20 +651,20 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="amountLabel_3">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>590</y>
-        <width>651</width>
+        <width>831</width>
         <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; color: #aaa;</string>
+       <string notr="true">padding: 3px; color: #ccc;</string>
       </property>
       <property name="text">
        <string>You can send an optional message along with your transfer. There is a 0.000010 CCX fee per character.</string>
@@ -674,7 +673,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="pidLabel_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>250</y>
         <width>691</width>
         <height>30</height>
@@ -682,12 +681,12 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; color: #aaa;</string>
+       <string notr="true">padding: 3px; color: #ccc;</string>
       </property>
       <property name="text">
        <string>Some exchanges and other services require that a Payment ID is included when sending funds.</string>
@@ -696,7 +695,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="pidLabel_3">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>370</y>
         <width>691</width>
         <height>30</height>
@@ -704,12 +703,12 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; color: #aaa;</string>
+       <string notr="true">padding: 3px; color: #ccc;</string>
       </property>
       <property name="text">
        <string>Include a label if you want to save the recepient in your Address Book</string>
@@ -718,7 +717,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="pidLabel_4">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>10</x>
         <y>130</y>
         <width>691</width>
         <height>30</height>
@@ -726,15 +725,60 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; color: #aaa;</string>
+       <string notr="true">padding: 3px; color: #ccc;</string>
       </property>
       <property name="text">
        <string>Please enter the receivers address</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>953</x>
+        <y>30</y>
+        <width>2</width>
+        <height>641</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #343a40;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="logoLine">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>1</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #343a40;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>61</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>

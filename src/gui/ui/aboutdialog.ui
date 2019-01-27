@@ -32,7 +32,7 @@
    <string>About %1</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+   <string notr="true">background-color: #282d31; border-right: 4px solid orange;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
    <item>
@@ -60,12 +60,12 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;
+       <string notr="true">color: #eee;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -98,13 +98,13 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;</string>
+       <string notr="true">color: white; background-color: orange; border-top: 3px solid orange;
+border-right: 0px;
+font-size: 16px;</string>
       </property>
       <property name="text">
        <string>CLOSE</string>
@@ -121,16 +121,16 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>16</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;</string>
+       <string notr="true">color: #eee;
+border-right: 0px;
+font-size: 20px;</string>
       </property>
       <property name="text">
-       <string>THE CONCEAL WALLET</string>
+       <string>The Conceal Wallet</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

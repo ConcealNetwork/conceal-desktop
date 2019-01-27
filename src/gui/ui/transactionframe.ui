@@ -128,7 +128,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; font-size: 13px;</string>
+       <string notr="true">color: #eee; font-size: 13px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -145,7 +145,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>8</pointsize>
        </font>
       </property>

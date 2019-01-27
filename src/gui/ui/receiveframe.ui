@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #111; color: #aaa;</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #eee;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -74,7 +74,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 20px;</string>
+font-size: 25px;</string>
       </property>
       <property name="text">
        <string>WALLET SEED AND KEYS</string>
@@ -90,7 +90,7 @@ font-size: 20px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #111;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -143,8 +143,8 @@ font-size: 16px;</string>
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato'; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="m_copySeedButton">
@@ -162,7 +162,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -199,7 +199,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -216,7 +216,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #111;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -236,7 +236,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -253,14 +253,14 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 19px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>SECRET SPEND KEY</string>
@@ -280,14 +280,14 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 19px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>PRIVATE VIEW KEY</string>
@@ -307,20 +307,20 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 16px;
-font-family: Poppins;color: #e5e5e5;</string>
+font-family: Lato;color: #e5e5e5;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;secret spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -335,20 +335,20 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 16px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;secret view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -367,7 +367,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -388,7 +388,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -542,7 +542,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -563,7 +563,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -642,7 +642,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 14px;</string>
+        <string notr="true">color: #eee; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>advanced uses can also backup thier</string>
@@ -663,7 +663,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 14px;</string>
+        <string notr="true">color: #eee; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>or the</string>
@@ -721,7 +721,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #111;</string>
+       <string notr="true">background-color: #212529;</string>
       </property>
       <property name="title">
        <string/>
@@ -741,7 +741,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -758,12 +758,12 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 19px;font-family: Poppins;</string>
+        <string notr="true">color: #ddd; font-size: 19px;font-family: Lato;</string>
        </property>
        <property name="text">
         <string>YOUR GUI KEY</string>
@@ -794,7 +794,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato'; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="m_backButton_3">
@@ -812,7 +812,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid #222; font-size: 16px;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -838,8 +838,8 @@ p, li { white-space: pre-wrap; }
      <zorder>label</zorder>
      <zorder>label_11</zorder>
      <zorder>logoLine</zorder>
-     <zorder>guiKeyBox</zorder>
      <zorder>introBox</zorder>
+     <zorder>guiKeyBox</zorder>
      <zorder>privateKeyBox</zorder>
      <zorder>seedBox</zorder>
     </widget>

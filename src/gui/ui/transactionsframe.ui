@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -38,7 +38,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
+   <string notr="true">background-color: #212529;
 border: 0px;
 color: #aaaaaa;</string>
   </property>
@@ -85,7 +85,7 @@ color: #aaaaaa;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>15</pointsize>
         </font>
        </property>
@@ -113,12 +113,12 @@ color: #aaaaaa;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>EXPORT TO CSV</string>
@@ -135,12 +135,12 @@ color: #aaaaaa;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -165,15 +165,15 @@ color: #aaaaaa;</string>
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #222; 
-   color: #aaa;
-font-family: Poppins;
+background-color: #212529; 
+   color: #eee;
+font-family: Lato;
     font-size: 12px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
@@ -184,7 +184,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 10px;
-    color: #999;
+    color: #eee;
     height: 30px;
 }
 
@@ -194,8 +194,8 @@ QTreeView::branch:selected {
 }
 
 QWidget:item:selected {
-  background-color: #111;
-  color: #999;
+  background-color: #212529;
+  color: #eee;
 }
 
 </string>
