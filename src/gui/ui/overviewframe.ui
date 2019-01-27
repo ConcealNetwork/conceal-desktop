@@ -252,9 +252,9 @@ font-size: 14px;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>600</y>
+         <y>590</y>
          <width>181</width>
-         <height>81</height>
+         <height>91</height>
         </rect>
        </property>
        <property name="font">
