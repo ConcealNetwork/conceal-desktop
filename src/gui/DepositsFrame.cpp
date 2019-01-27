@@ -298,8 +298,8 @@ void DepositsFrame::investmentsClicked() {
   /* switch to investment graph and box */
   m_ui->investmentsBox->show();
   m_ui->depositsBox->hide();
-  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #111;"); 
-  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #222;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #111;font-size: 18px;"); 
+  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #222;font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER QUARTER");
   m_ui->label_12->setText("Quarters");  
 
@@ -334,8 +334,8 @@ void DepositsFrame::depositsClicked() {
   /* switch to deposit graph and box */
   m_ui->investmentsBox->hide();
   m_ui->depositsBox->show();
-  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #222;");
-  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #111;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #222; font-size: 18px;");
+  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #111; font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER WEEK");
   m_ui->label_12->setText("Weeks");  
 
