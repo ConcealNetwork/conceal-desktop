@@ -155,7 +155,7 @@ void OverviewFrame::showCurrentWallet() {
 
   /* back to QString and display */
   walletFile = QString::fromStdString(wallet);
-  m_ui->m_currentWalletTitle->setText(walletFile);
+  m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile);
 }
 
 
