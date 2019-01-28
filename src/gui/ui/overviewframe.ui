@@ -566,6 +566,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -574,7 +575,8 @@ border: none;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background: transparent; font-size: 13px;
-border: none;</string>
+border: none;
+font-family: Lato;</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
