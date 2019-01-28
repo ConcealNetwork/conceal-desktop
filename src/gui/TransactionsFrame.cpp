@@ -7,7 +7,8 @@
 
 #include <QFileDialog>
 #include <QLabel>
-
+#include <QFont>
+#include <QFontDatabase>
 #include "MainWindow.h"
 #include "SortedTransactionsModel.h"
 #include "TransactionsFrame.h"
@@ -33,7 +34,7 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   QFont font2;
   font2.setFamily("Lato");
   font2.setPointSize(45);
-  m_ui.m_transactionsView->setFont(font2);
+  m_ui->m_transactionsView->setFont(font2);
 }
 
 TransactionsFrame::~TransactionsFrame() {
