@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>650</height>
+    <height>597</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,7 +49,7 @@
         <x>40</x>
         <y>70</y>
         <width>351</width>
-        <height>461</height>
+        <height>411</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -84,7 +84,7 @@ border-right: 0px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>570</y>
+        <y>510</y>
         <width>351</width>
         <height>40</height>
        </rect>
@@ -111,7 +111,7 @@ border-right: 0px; font-size: 16px;</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>50</x>
         <y>20</y>
         <width>321</width>
         <height>31</height>
