@@ -42,10 +42,13 @@ void ReceiveFrame::walletOpened(int _error) {
     return;
   }
 
+  
+
   CryptoNote::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
   std::string secretKeysData = std::string(reinterpret_cast<char*>(&keys.spendSecretKey), sizeof(keys.spendSecretKey)) + std::string(reinterpret_cast<char*>(&keys.viewSecretKey), sizeof(keys.viewSecretKey));
-  QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), secretKeysData));
+  QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), std::string(reinterpret_cast<char*>(&keys), sizeof(keys))));
+  //QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), secretKeysData));
 
   /* check if the wallet is deterministic
      generate a view key from the spend key and them compare it to the existing view key */
