@@ -509,23 +509,22 @@ font-size: 14px;</string>
       <widget class="QLabel" name="m_currentWalletTitle">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>570</y>
+         <x>25</x>
+         <y>580</y>
          <width>151</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #666;
 background: transparent;
-font-size: 16px;
-font-family: Lato;</string>
+font-size: 14px;
+</string>
        </property>
        <property name="text">
         <string>currentWallet</string>

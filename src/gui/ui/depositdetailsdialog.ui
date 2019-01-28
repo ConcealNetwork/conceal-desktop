@@ -71,18 +71,17 @@ border: 0px;</string>
       <widget class="QPushButton" name="m_closeButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; \nbackground-color: #333; \nborder-top: 3px solid orange; \nfont-size: 13px;\nfont-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

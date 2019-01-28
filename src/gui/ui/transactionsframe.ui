@@ -201,7 +201,7 @@ QWidget:item:selected {
   background-color: #212529;
   color: #eee;
 }
-
+font-size: 13px;
 </string>
      </property>
      <property name="frameShape">

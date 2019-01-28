@@ -377,7 +377,7 @@ border: 0px; background-color: #212529;</string>
        <rect>
         <x>110</x>
         <y>30</y>
-        <width>331</width>
+        <width>571</width>
         <height>21</height>
        </rect>
       </property>
@@ -389,11 +389,11 @@ border: 0px; background-color: #212529;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 20px;
+font-size: 25px;
 font-family: Lato;</string>
       </property>
       <property name="text">
-       <string>WELCOME</string>
+       <string>WELCOME TO THE CONCEAL WALLET</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_11">

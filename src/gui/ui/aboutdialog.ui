@@ -60,13 +60,13 @@
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
-border-right: 0px;</string>
+       <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -85,9 +85,9 @@ border-right: 0px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>370</y>
+        <y>360</y>
         <width>351</width>
-        <height>31</height>
+        <height>40</height>
        </rect>
       </property>
       <property name="minimumSize">

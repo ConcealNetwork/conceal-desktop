@@ -94,8 +94,8 @@ font-family: Lato;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -106,16 +106,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -129,8 +124,8 @@ font-family: Lato;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -141,16 +136,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>REMOVE ADDRESS</string>
@@ -161,8 +151,8 @@ font-family: Lato;</string>
       <widget class="QPushButton" name="m_addAddressButton">
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -173,16 +163,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>ADD NEW ADDRESS</string>
@@ -191,6 +176,12 @@ font-family: Lato;</string>
      </item>
      <item>
       <widget class="QPushButton" name="m_backButton">
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>171</width>
@@ -199,16 +190,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>

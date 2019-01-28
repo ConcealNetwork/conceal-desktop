@@ -65,22 +65,17 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
-         <width>125</width>
-         <height>31</height>
+         <width>200</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CHOOSE</string>
