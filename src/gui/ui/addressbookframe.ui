@@ -35,7 +35,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string>Address Book</string>
   </property>
   <property name="styleSheet">
    <string notr="true">color: #eee;
