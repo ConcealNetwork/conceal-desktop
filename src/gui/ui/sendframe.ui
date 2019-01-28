@@ -81,7 +81,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 25px;
+font-size: 22px;
 font-family: Lato;</string>
       </property>
       <property name="text">
@@ -742,7 +742,7 @@ p, li { white-space: pre-wrap; }
         <x>80</x>
         <y>20</y>
         <width>1</width>
-        <height>61</height>
+        <height>60</height>
        </rect>
       </property>
       <property name="styleSheet">
