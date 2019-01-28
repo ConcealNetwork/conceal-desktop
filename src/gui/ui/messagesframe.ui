@@ -65,6 +65,35 @@
       <number>10</number>
      </property>
      <item>
+      <widget class="QLabel" name="label_2">
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="maximumSize">
+        <size>
+         <width>1</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #555;</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
@@ -78,7 +107,7 @@ font-size: 20px;
 font-family: Lato;</string>
        </property>
        <property name="text">
-        <string>MESSAGES</string>
+        <string>   MESSAGES</string>
        </property>
       </widget>
      </item>
@@ -86,8 +115,8 @@ font-family: Lato;</string>
       <widget class="QPushButton" name="m_newMessageButton">
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -98,16 +127,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 2px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>NEW MESSAGE</string>
@@ -124,8 +148,8 @@ font-family: Lato;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -136,16 +160,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; 
-background-color: #333; 
-border-top: 2px solid orange; 
-font-size: 13px;
-font-family: Lato;</string>
+        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -179,16 +198,14 @@ font-family: Lato;</string>
 background-color: #212529; 
    color: #eee;
 font-family: Lato;
-    font-size: 12px;
+    font-size: 13px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
    height: 30px;
-
 }
 
-QTreeView::item
-{
-    font: 10px;
+QTreeView::item {
+    font: 13px;
     color: #eee;
     height: 30px;
 }
@@ -203,7 +220,7 @@ QWidget:item:selected {
   color: #eee;
 }
 
-</string>
+font-size: 13px;</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
