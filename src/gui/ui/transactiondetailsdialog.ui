@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: #212529;
 border: 0px;
-color: #eee;</string>
+color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -99,7 +99,7 @@ color: #eee;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

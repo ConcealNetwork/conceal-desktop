@@ -102,7 +102,7 @@ font-size: 13px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white; background-color: orange; border-top: 3px solid orange;
+       <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
 border-right: 0px;
 font-size: 16px;</string>
       </property>
@@ -125,7 +125,7 @@ font-size: 16px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 border-right: 0px;
 font-size: 20px;</string>
       </property>

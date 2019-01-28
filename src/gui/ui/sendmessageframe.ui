@@ -79,7 +79,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>SEND MESSAGE</string>
@@ -107,7 +107,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -188,7 +188,7 @@ font-family: Lato;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #333; color: #eee;</string>
+      <string notr="true">background-color: #333; color: #ddd;</string>
      </property>
      <property name="html">
       <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

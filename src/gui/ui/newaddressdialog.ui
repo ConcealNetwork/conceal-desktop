@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #212529;
-color: #eee;
+color: #ddd;
 border: 0px;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -93,7 +93,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -165,7 +165,7 @@ padding: 5px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -219,7 +219,7 @@ padding: 5px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -311,7 +311,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #333; 
+       <string notr="true">color: #ddd; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">

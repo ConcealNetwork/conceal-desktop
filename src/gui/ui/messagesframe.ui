@@ -26,7 +26,37 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529; color: #eee;</string>
+   <string notr="true">background-color: #212529;
+border: 0px;
+color: #aaaaaa;
+
+QHeaderView::section {
+background-color: #282d31; 
+   color: #ddd;
+	font-family: Lato;
+    border: 0px solid white;
+border-bottom: 1px solid orange;
+   height: 30px;
+
+}
+
+QTreeView::item {
+    color: #ddd;
+    height: 35px;
+}
+
+QTreeView::branch:selected {
+  background-color: orange;
+  color: black;
+}
+
+QWidget:item:selected {
+  font-family: Lato;
+  background-color: #282d31;
+  color: #ddd;
+}
+font-size: 15px;
+font-family: Lato;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -127,11 +157,12 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>NEW MESSAGE</string>
@@ -160,11 +191,12 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -194,33 +226,7 @@ font-family: Lato;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QHeaderView::section {
-background-color: #212529; 
-   color: #eee;
-font-family: Lato;
-    font-size: 13px;
-    border: 0px solid white;
-border-bottom: 1px solid orange;
-   height: 30px;
-}
-
-QTreeView::item {
-    font: 13px;
-    color: #eee;
-    height: 30px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-  color: black;
-}
-
-QWidget:item:selected {
-  background-color: #212529;
-  color: #eee;
-}
-
-font-size: 13px;</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>

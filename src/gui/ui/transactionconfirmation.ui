@@ -70,7 +70,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #fff; border-right: 0px; font-size: 15px;</string>
+     <string notr="true">color: #ddd; border-right: 0px; font-size: 15px;</string>
     </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -95,7 +95,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #eee; border-right: 0p; font-size: 13px;</string>
+     <string notr="true">color: #ddd; border-right: 0p; font-size: 13px;</string>
     </property>
     <property name="text">
      <string>Optimization recommended for this wallet</string>
@@ -125,7 +125,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white; border: 1px solid #333; font-size: 16px; background-color: orange;</string>
+     <string notr="true">color: #ddd; border: 1px solid #333; font-size: 16px; background-color: orange;</string>
     </property>
     <property name="text">
      <string>OPTIMIZE</string>
@@ -152,7 +152,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
+     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
     </property>
     <property name="text">
      <string>CLOSE</string>

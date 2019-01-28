@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #282d31; color: #fff;</string>
+   <string notr="true">background-color: #282d31; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -113,7 +113,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -143,7 +143,7 @@ font-size: 14px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -173,7 +173,7 @@ font-size: 14px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -203,7 +203,7 @@ font-size: 14px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -233,7 +233,7 @@ font-size: 14px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -298,7 +298,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">text-align: left; color: #eee; margin-left: 20px;
+        <string notr="true">text-align: left; color: #ddd; margin-left: 20px;
 font-family: Lato;
 font-size: 14px;</string>
        </property>
@@ -546,7 +546,7 @@ font-size: 13px;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-size: 13px;
 </string>
@@ -581,7 +581,7 @@ font-size: 13px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
 font-family: Lato;
@@ -687,7 +687,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -713,7 +713,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -739,7 +739,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -768,7 +768,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -797,7 +797,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -823,7 +823,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -849,7 +849,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
 font-family: Lato;
@@ -881,10 +881,10 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 25px;
+font-size: 22px;
 border: none;</string>
        </property>
        <property name="text">
@@ -952,7 +952,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
 font-family: Lato;
@@ -978,7 +978,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1004,7 +1004,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1030,7 +1030,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1059,7 +1059,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1085,7 +1085,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1114,7 +1114,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1146,10 +1146,10 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 25px;
+font-size: 22px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1202,9 +1202,9 @@ border: none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 background: transparent;
-font-size: 25px;
+font-size: 22px;
 font-family: Lato;</string>
       </property>
       <property name="text">
@@ -1303,7 +1303,7 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">color: #ddd; background-color: #212529; border: 0px solid #343a40;
 font-family: Lato;
 font-size: 13px;</string>
       </property>
@@ -1339,7 +1339,7 @@ font-size: 13px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">color: #ddd; background-color: #212529; border: 0px solid #343a40;
 font-family: Lato;
 font-size: 13px;</string>
       </property>
@@ -1375,7 +1375,7 @@ font-size: 13px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">color: #ddd; background-color: #212529; border: 0px solid #343a40;
 font-family: Lato;
 font-size: 13px;</string>
       </property>
@@ -1414,7 +1414,7 @@ font-size: 13px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1440,7 +1440,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1466,7 +1466,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1495,7 +1495,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1524,7 +1524,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1550,7 +1550,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 13px;
@@ -1576,7 +1576,7 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
 font-family: Lato;
@@ -1634,10 +1634,10 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 25px;
+font-size: 22px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1776,7 +1776,7 @@ font-size: 12px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 12px;</string>
@@ -1854,7 +1854,7 @@ font-size: 12px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 12px;</string>
@@ -1879,7 +1879,7 @@ font-size: 12px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 12px;</string>
@@ -1954,7 +1954,7 @@ font-size: 12px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee;
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
 font-size: 12px;</string>

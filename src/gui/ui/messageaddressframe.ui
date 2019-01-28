@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #212529; color: #eee;</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -66,7 +66,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #333; border: 0px; color: #eee;</string>
+      <string notr="true">background-color: #333; border: 0px; color: #ddd;</string>
      </property>
     </widget>
    </item>

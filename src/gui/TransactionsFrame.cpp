@@ -28,6 +28,12 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
   m_ui->m_transactionsView->header()->moveSection( 3, 5 );
+
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+  QFont font2;
+  font2.setFamily("Lato");
+  font2.setPointSize(45);
+  m_ui.m_transactionsView->setFont(font2);
 }
 
 TransactionsFrame::~TransactionsFrame() {

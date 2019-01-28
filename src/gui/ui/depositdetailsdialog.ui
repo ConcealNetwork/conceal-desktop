@@ -46,7 +46,7 @@ border: 0px;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #212529;
-color: #eee;
+color: #ddd;
 border: 0px;
 font-size: 13px;</string>
      </property>
@@ -81,7 +81,7 @@ font-size: 13px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

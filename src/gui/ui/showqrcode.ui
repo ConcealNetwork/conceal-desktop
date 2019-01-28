@@ -14,7 +14,7 @@
    <string>Walllet Address :: QR Code</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529; color: #eee; border: 0px;</string>
+   <string notr="true">background-color: #212529; color: #ddd; border: 0px;</string>
   </property>
   <widget class="WalletGui::QRLabel" name="m_qrLabel">
    <property name="geometry">

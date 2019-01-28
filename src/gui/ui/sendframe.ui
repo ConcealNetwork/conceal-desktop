@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #282d31; color: #eee;</string>
+   <string notr="true">border: 0px; background-color: #282d31; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -118,7 +118,7 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+       <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -425,7 +425,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CLEAR ALL</string>
@@ -580,7 +580,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>

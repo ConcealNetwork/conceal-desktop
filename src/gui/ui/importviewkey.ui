@@ -201,7 +201,7 @@ color: #e5e5e5;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: white;</string>
+    <string notr="true">color: #ddd;</string>
    </property>
    <property name="text">
     <string>IMPORT VIEW ONLY WALLET</string>

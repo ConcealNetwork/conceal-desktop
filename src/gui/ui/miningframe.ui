@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #eee;
+   <string notr="true">color: #ddd;
 background:#111;</string>
   </property>
   <property name="frameShape">
@@ -78,7 +78,7 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;</string>
+       <string notr="true">color: #ddd;</string>
       </property>
       <property name="text">
        <string>Select a mining pool</string>
@@ -128,7 +128,7 @@ padding: 5px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;</string>
+       <string notr="true">color: #ddd;</string>
       </property>
       <property name="text">
        <string>Number of CPU cores</string>
@@ -175,7 +175,7 @@ padding: 5px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #333; 
+       <string notr="true">color: #ddd; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -198,7 +198,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;</string>
+       <string notr="true">color: #ddd;</string>
       </property>
       <property name="text">
        <string>Mining status :</string>
@@ -225,7 +225,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;</string>
+       <string notr="true">color: #ddd;</string>
       </property>
       <property name="text">
        <string>Stopped</string>
@@ -282,7 +282,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #333; 
+       <string notr="true">color: #ddd; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -314,7 +314,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; background-color: #333; border-top: 3px solid orange;</string>
+       <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
       </property>
       <property name="text">
        <string>BACK</string>

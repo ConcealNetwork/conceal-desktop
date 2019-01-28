@@ -83,7 +83,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;border-right: 0px;font-size: 13px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
       </property>
       <property name="text">
        <string>GUI Key</string>
@@ -132,7 +132,7 @@ padding: 5px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;border-right: 0px;font-size: 13px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
       </property>
       <property name="text">
        <string>Wallet Path</string>
@@ -178,7 +178,7 @@ padding: 5px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: #212529;
 border-right: 0px;
-color: #eee;
+color: #ddd;
 padding: 5px;
 </string>
       </property>
@@ -208,7 +208,7 @@ padding: 5px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white; background-color: orange; border-top: 3px solid orange;
+       <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -236,7 +236,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
+       <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
@@ -257,7 +257,7 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;border-right: 0px;font-size: 13px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
       </property>
       <property name="text">
        <string>Recreate your wallet with the GUI key</string>

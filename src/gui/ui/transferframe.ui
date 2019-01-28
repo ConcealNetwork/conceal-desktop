@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529; color: #eee; border: 0px;
+   <string notr="true">background-color: #212529; color: #ddd; border: 0px;
 </string>
   </property>
   <property name="frameShape">
@@ -61,7 +61,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #ddd;</string>
      </property>
      <property name="placeholderText">
       <string>Enter a label for this address to add it to your address book</string>
@@ -118,7 +118,7 @@
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #ddd;</string>
      </property>
      <property name="suffix">
       <string notr="true"/>
@@ -153,7 +153,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #ddd;</string>
      </property>
     </widget>
    </item>
@@ -209,7 +209,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #eee;</string>
+      <string notr="true">padding: 3px; border: 0px; background-color: #333; color: #ddd;</string>
      </property>
     </widget>
    </item>

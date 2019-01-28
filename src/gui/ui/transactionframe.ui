@@ -128,7 +128,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; font-size: 13px;</string>
+       <string notr="true">color: #ddd; font-size: 13px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>

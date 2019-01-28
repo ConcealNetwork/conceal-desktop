@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; color: #eee;</string>
+   <string notr="true">border: 0px; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -101,7 +101,7 @@
 
 QHeaderView::section {
 background-color: #282d31; 
-   color: #eee;
+   color: #ddd;
 font-family: Lato;
     font-size: 13px;
     border: 0px solid white;
@@ -113,7 +113,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 13px;
-    color: #eee;
+    color: #ddd;
     height: 30px;
 }
 
@@ -124,7 +124,7 @@ QTreeView::branch:selected {
 
 QWidget:item:selected {
   background-color: #282d31;
-  color: #eee;
+  color: #ddd;
 }</string>
       </property>
       <property name="frameShape">
@@ -164,7 +164,7 @@ QWidget:item:selected {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+       <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -185,7 +185,7 @@ QWidget:item:selected {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee; 
+       <string notr="true">color: #ddd; 
 font-size: 22px;</string>
       </property>
       <property name="text">
@@ -251,7 +251,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Select the length of your deposit</string>
@@ -277,7 +277,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>The fee for this deposit:</string>
@@ -298,7 +298,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333;  font-size: 13px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -327,7 +327,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>How much would you like to deposit?</string>
@@ -351,7 +351,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>5040 blocks</string>
@@ -377,7 +377,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Interest earned at the end of your deposit:</string>
@@ -401,7 +401,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333;  font-size: 13px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -437,7 +437,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>0.001000</string>
@@ -461,7 +461,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>interestLabel</string>
@@ -485,7 +485,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>(minimum of 1 CCX)</string>
@@ -509,7 +509,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>(minimum term of 1 week, maximum 52 weeks)</string>
@@ -535,7 +535,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Length in blocks:</string>
@@ -556,7 +556,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333;  font-size: 13px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="text">
         <string>ADD ALL</string>
@@ -593,7 +593,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Unlocked Investments</string>
@@ -614,7 +614,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -638,7 +638,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -659,7 +659,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -680,7 +680,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -752,7 +752,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Unlocked Deposits</string>
@@ -773,7 +773,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Total Unlocked</string>
@@ -794,7 +794,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -818,7 +818,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -900,7 +900,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 16px;</string>
+        <string notr="true">color: #ddd; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>INTEREST % PER WEEK</string>
@@ -921,7 +921,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 13px;</string>
+        <string notr="true">color: #ddd; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Weeks</string>
@@ -964,7 +964,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 13px;</string>
+        <string notr="true">color: #ddd; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Interest</string>
@@ -1072,7 +1072,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Select the length of your investment</string>
@@ -1098,7 +1098,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Fee</string>
@@ -1119,7 +1119,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333;  font-size: 13px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1151,7 +1151,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>How much would you like to invest?</string>
@@ -1175,7 +1175,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px; </string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>68400 blocks</string>
@@ -1201,7 +1201,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Interest earned at the end of your deposit:</string>
@@ -1225,7 +1225,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; background-color: #333;  font-size: 13px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1267,7 +1267,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px; </string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>0.001000</string>
@@ -1291,7 +1291,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px; </string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>investmentInterest</string>
@@ -1315,7 +1315,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px; </string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>(minimum of 50,000 CCX)</string>
@@ -1339,7 +1339,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 14px; </string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>(minimum term of 1 quarter, maximum 20 quarters)</string>
@@ -1365,7 +1365,7 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #eee; font-size: 15px; font-weight: bold;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Length in blocks:</string>

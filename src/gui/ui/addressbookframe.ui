@@ -38,7 +38,7 @@
    <string>Address Book</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #eee;
+   <string notr="true">color: #ddd;
 border: 0px;
 background-color: #212529;</string>
   </property>
@@ -110,7 +110,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -140,7 +140,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>REMOVE ADDRESS</string>
@@ -167,7 +167,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>ADD NEW ADDRESS</string>
@@ -194,7 +194,7 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -220,7 +220,7 @@ font-family: Lato;</string>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
 background-color: #212529; 
-   color: #eee;
+   color: #ddd;
 font-family: Lato;
     font-size: 12px;
     border: 0px solid white;
@@ -232,7 +232,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 10px;
-    color: #eee;
+    color: #ddd;
     height: 30px;
 }
 
@@ -243,7 +243,7 @@ QTreeView::branch:selected {
 
 QWidget:item:selected {
   background-color: #212529;
-  color: #eee;
+  color: #ddd;
 }
 
 </string>
