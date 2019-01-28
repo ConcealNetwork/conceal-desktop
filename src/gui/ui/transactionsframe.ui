@@ -178,7 +178,7 @@ color: #aaaaaa;</string>
 background-color: #212529; 
    color: #eee;
 font-family: Lato;
-    font-size: 12px;
+    font-size: 14px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
    height: 30px;
@@ -187,7 +187,7 @@ border-bottom: 1px solid orange;
 
 QTreeView::item
 {
-    font: 10px;
+    font: 14px;
     color: #eee;
     height: 30px;
 }
@@ -201,7 +201,7 @@ QWidget:item:selected {
   background-color: #212529;
   color: #eee;
 }
-font-size: 13px;
+font-size: 14px;
 </string>
      </property>
      <property name="frameShape">
