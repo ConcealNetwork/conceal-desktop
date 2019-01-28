@@ -23,7 +23,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string>Welcome</string>
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
