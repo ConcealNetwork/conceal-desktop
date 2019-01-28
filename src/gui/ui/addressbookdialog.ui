@@ -19,7 +19,7 @@
    <string>Select address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529; color: #eee;</string>
+   <string notr="true">background-color: #282d31; color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -38,11 +38,12 @@
     <widget class="QTreeView" name="m_addressBookView">
      <property name="font">
       <font>
-       <family>Lato</family>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #212529; color: #eee; border: 0px;</string>
+      <string notr="true">background-color: #282d31; color: #eee; border: 0px;
+font-size: 13px;</string>
      </property>
     </widget>
    </item>
@@ -65,7 +66,7 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
-         <width>200</width>
+         <width>210</width>
          <height>40</height>
         </size>
        </property>
