@@ -5,6 +5,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <QFont>
+#include <QFontDatabase>
+
 #include "MessagesFrame.h"
 #include "MainWindow.h"
 #include "MessageDetailsDialog.h"
@@ -21,6 +24,12 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
   m_ui->setupUi(this);
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
+
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+  QFont font2;
+  font2.setFamily("Lato");
+  font2.setPixelSize(15);
+  m_ui->m_messagesView->setFont(font2);
 
 }
 
