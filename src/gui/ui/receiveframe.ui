@@ -572,7 +572,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="m_showPrivate">
        <property name="geometry">
         <rect>
-         <x>480</x>
+         <x>470</x>
          <y>530</y>
          <width>100</width>
          <height>25</height>
@@ -584,7 +584,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">color: #aaa; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
        </property>
        <property name="text">
         <string>private keys</string>
@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">color: #aaa; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
        </property>
        <property name="text">
         <string>gui key</string>
@@ -642,10 +642,10 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 14px;</string>
+        <string notr="true">color: #aaa; font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>advanced uses:</string>
+        <string>advanced users:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -821,8 +821,8 @@ p, li { white-space: pre-wrap; }
      <zorder>logoLine</zorder>
      <zorder>guiKeyBox</zorder>
      <zorder>privateKeyBox</zorder>
-     <zorder>introBox</zorder>
      <zorder>seedBox</zorder>
+     <zorder>introBox</zorder>
     </widget>
    </item>
   </layout>

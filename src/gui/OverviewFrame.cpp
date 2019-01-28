@@ -128,7 +128,8 @@ void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString& _address) {
 
-  m_ui->m_myAddress->setText(_address);
+  m_ui->m_copyAddressButton->setText(_address);
+  m_ui->m_copyAddressButton->setStyleSheet("Text-align:right");
   showCurrentWallet();
 }
 
@@ -272,7 +273,8 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   float ccxusd = _ccxusd.toFloat();
   float total = ccxusd * (float)totalBalance;
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); 
+//  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); 
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX"); 
   m_ui->m_ccxusd->setText(_ccxusd);  
   m_ui->m_btcusd->setText(_btc);
 
@@ -550,7 +552,7 @@ void OverviewFrame::subButton5Clicked()
 }
 
 void OverviewFrame::qrCodeClicked() {
-  Q_EMIT qrSignal(m_ui->m_myAddress->text());
+  Q_EMIT qrSignal(m_ui->m_copyAddressButton->text());
 }
 
 void OverviewFrame::miningClicked() {
@@ -596,8 +598,7 @@ void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount)
 }
 
 void OverviewFrame::copyClicked() {
-
-    QApplication::clipboard()->setText(m_ui->m_myAddress->text());
+    QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
     QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
 

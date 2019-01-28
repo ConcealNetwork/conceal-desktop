@@ -510,8 +510,8 @@ font-size: 14px;</string>
       <widget class="QLabel" name="m_currentWalletTitle">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>520</y>
+         <x>28</x>
+         <y>560</y>
          <width>151</width>
          <height>21</height>
         </rect>
@@ -529,30 +529,6 @@ font-size: 13px;
        </property>
        <property name="text">
         <string>currentWallet</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_currentWalletTitle_2">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>500</y>
-         <width>151</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-size: 13px;
-</string>
-       </property>
-       <property name="text">
-        <string>Current Wallet</string>
        </property>
       </widget>
      </widget>
@@ -1226,49 +1202,29 @@ font-family: Lato;</string>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_myAddress">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>0</y>
-         <width>871</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none; font-size: 14px;</string>
-       </property>
-       <property name="text">
-        <string>Address</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>131</width>
-         <height>31</height>
+         <width>471</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: none; color: #ddd; font-size: 14px;</string>
+        <string notr="true">color: #aaa;
+background: transparent;
+font-size: 18px;
+font-family: Lato;</string>
        </property>
        <property name="text">
-        <string>WALLET ADDRESS</string>
+        <string notr="true">000000.00 USD</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1695,7 +1651,7 @@ border: none;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1723,7 +1679,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1751,7 +1707,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1779,7 +1735,7 @@ font-size: 12px;</string>
         <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string>CCX/USD</string>
@@ -1804,7 +1760,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -1832,7 +1788,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -1857,7 +1813,7 @@ font-size: 12px;</string>
         <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string>POOLS</string>
@@ -1882,7 +1838,7 @@ font-size: 12px;</string>
         <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string>POOLS/24HR</string>
@@ -1907,7 +1863,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -1932,7 +1888,7 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">USD</string>
@@ -1957,7 +1913,7 @@ font-size: 12px;</string>
         <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string>BTC/USD</string>
@@ -1982,40 +1938,20 @@ font-size: 12px;</string>
         <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
-font-size: 12px;</string>
+font-size: 11px;</string>
        </property>
        <property name="text">
         <string notr="true">USD</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="m_copyAddressButton">
-      <property name="geometry">
-       <rect>
-        <x>1230</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: none;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../../resources.qrc">
-        <normaloff>:/icons/editcopy-old.png</normaloff>:/icons/editcopy-old.png</iconset>
-      </property>
-     </widget>
      <widget class="QPushButton" name="m_qrcodebutton">
       <property name="geometry">
        <rect>
-        <x>1200</x>
-        <y>60</y>
-        <width>21</width>
-        <height>31</height>
+        <x>1210</x>
+        <y>30</y>
+        <width>51</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2026,35 +1962,59 @@ font-size: 12px;</string>
       </property>
       <property name="icon">
        <iconset resource="../../resources.qrc">
-        <normaloff>:/icons/qrcode-scan.png</normaloff>:/icons/qrcode-scan.png</iconset>
+        <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
       </property>
      </widget>
-     <widget class="QLabel" name="m_totalPortfolioLabelUSD">
+     <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>20</y>
-        <width>471</width>
-        <height>21</height>
+        <x>1070</x>
+        <y>30</y>
+        <width>131</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;
-background: transparent;
-font-size: 20px;
-font-family: Lato;</string>
+       <string notr="true">border: none; color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
-       <string notr="true">000000.00 USD</string>
+       <string>WALLET ADDRESS</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="m_copyAddressButton">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>60</y>
+        <width>621</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none; font-size: 11px;</string>
+      </property>
+      <property name="text">
+       <string>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
       </property>
      </widget>
      <zorder>leftMenu</zorder>
@@ -2068,9 +2028,9 @@ font-family: Lato;</string>
      <zorder>statsBox_2</zorder>
      <zorder>priceBox</zorder>
      <zorder>groupBox_2</zorder>
-     <zorder>m_copyAddressButton</zorder>
      <zorder>m_qrcodebutton</zorder>
-     <zorder>m_totalPortfolioLabelUSD</zorder>
+     <zorder>label_3</zorder>
+     <zorder>m_copyAddressButton</zorder>
     </widget>
    </item>
   </layout>
