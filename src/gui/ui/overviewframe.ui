@@ -574,7 +574,7 @@ border: none;</string>
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: transparent; font-size: 13px;
+        <string notr="true">background: transparent; font-size: 12px;
 border: none;
 font-family: Lato;</string>
        </property>
@@ -1976,9 +1976,9 @@ font-size: 11px;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>580</x>
+        <x>510</x>
         <y>90</y>
-        <width>621</width>
+        <width>691</width>
         <height>16</height>
        </rect>
       </property>
@@ -1986,7 +1986,8 @@ font-size: 11px;</string>
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: none; font-size: 11px;</string>
+       <string notr="true">border: none; font-size: 12px;
+font-family: Lato;</string>
       </property>
       <property name="text">
        <string>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</string>

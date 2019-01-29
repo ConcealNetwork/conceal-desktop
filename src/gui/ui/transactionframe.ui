@@ -82,7 +82,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; font-size: 13px;</string>
+       <string notr="true">color: orange; font-size: 12px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -116,9 +116,9 @@
      <widget class="QLabel" name="m_timeLabel">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>50</x>
         <y>20</y>
-        <width>141</width>
+        <width>131</width>
         <height>21</height>
        </rect>
       </property>
@@ -128,7 +128,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; font-size: 13px;</string>
+       <string notr="true">color: #ddd; font-size: 12px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
