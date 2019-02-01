@@ -1952,9 +1952,9 @@ font-size: 11px;</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>1070</x>
+        <x>1010</x>
         <y>60</y>
-        <width>131</width>
+        <width>191</width>
         <height>31</height>
        </rect>
       </property>
@@ -1976,9 +1976,9 @@ font-size: 11px;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>510</x>
+        <x>310</x>
         <y>90</y>
-        <width>691</width>
+        <width>891</width>
         <height>16</height>
        </rect>
       </property>
