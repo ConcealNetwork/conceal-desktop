@@ -19,7 +19,7 @@
   <property name="font">
    <font>
     <family>Lato</family>
-    <pointsize>9</pointsize>
+    <pointsize>-1</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -30,31 +30,7 @@
 border: 0px;
 color: #aaaaaa;
 
-QHeaderView::section {
-background-color: #282d31; 
-   color: #ddd;
-	font-family: Lato;
-    border: 0px solid white;
-border-bottom: 1px solid orange;
-   height: 30px;
 
-}
-
-QTreeView::item {
-    color: #ddd;
-    height: 35px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-  color: black;
-}
-
-QWidget:item:selected {
-  font-family: Lato;
-  background-color: #282d31;
-  color: #ddd;
-}
 font-size: 15px;
 font-family: Lato;</string>
   </property>
@@ -222,11 +198,35 @@ font-family: Lato;</string>
      <property name="font">
       <font>
        <family>Lato</family>
-       <pointsize>9</pointsize>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">QHeaderView::section {
+background-color: #282d31; 
+   color: #ddd;
+	font-family: Lato;
+    border: 0px solid white;
+border-bottom: 1px solid orange;
+   height: 30px;
+
+}
+
+QTreeView::item {
+    color: #ddd;
+    height: 35px;
+}
+
+QTreeView::branch:selected {
+  background-color: orange;
+  color: black;
+}
+
+QWidget:item:selected {
+  font-family: Lato;
+  background-color: #282d31;
+  color: #ddd;
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
