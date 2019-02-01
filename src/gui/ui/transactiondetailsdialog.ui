@@ -41,15 +41,16 @@ color: #ddd;</string>
      </property>
      <property name="font">
       <font>
-       <family>Lato</family>
-       <pointsize>15</pointsize>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd;</string>
+      <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 20px;</string>
      </property>
      <property name="text">
-      <string>TRANSACTION DETAILS</string>
+      <string>Transaction Details</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -60,12 +61,13 @@ color: #ddd;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Lato</family>
-       <pointsize>9</pointsize>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #212529;</string>
+      <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 14px;</string>
      </property>
     </widget>
    </item>
@@ -94,12 +96,11 @@ color: #ddd;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
