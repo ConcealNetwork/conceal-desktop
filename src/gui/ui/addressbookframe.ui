@@ -261,10 +261,10 @@ QWidget:item:selected {
       <number>5</number>
      </property>
      <property name="sortingEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <attribute name="headerShowSortIndicator" stdset="0">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
     </widget>
    </item>
