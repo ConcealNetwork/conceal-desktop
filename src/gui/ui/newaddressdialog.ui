@@ -14,8 +14,8 @@
    <string>New address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
-color: #aaa;
+   <string notr="true">background-color: #212529;
+color: #ddd;
 border: 0px;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -34,7 +34,7 @@ border: 0px;</string>
    <item row="0" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="styleSheet">
-      <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+      <string notr="true">background-color: #212529; border-right: 4px solid orange;</string>
      </property>
      <property name="title">
       <string/>
@@ -50,7 +50,7 @@ border: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>15</pointsize>
        </font>
       </property>
@@ -88,12 +88,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -123,12 +123,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -160,12 +160,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -189,12 +189,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -214,12 +214,12 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #999;
+       <string notr="true">color: #ddd;
 border-right: 0px;</string>
       </property>
       <property name="text">
@@ -243,12 +243,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -274,7 +274,7 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -306,12 +306,12 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; 
+       <string notr="true">color: #ddd; background-color: #333; 
 border-right: 0px;</string>
       </property>
       <property name="text">

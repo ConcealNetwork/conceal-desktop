@@ -10,7 +10,7 @@ WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
 
 set(CRYPTONOTE_LIB cryptonote)
-set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.2\\msvc2017_64\\lib\\cmake\\")
+set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\")
 
 include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -63,10 +63,10 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/Util.cpp
   cryptonote/src/Common/StringTools.cpp
   cryptonote/src/Common/JsonValue.cpp
-  cryptonote/src/Common/DnsTools.cpp
   cryptonote/src/Common/ConsoleTools.cpp
   cryptonote/src/Common/MemoryInputStream.cpp
   cryptonote/src/Common/PathTools.cpp
+  cryptonote/src/Common/DnsTools.cpp
   cryptonote/src/Common/StdInputStream.cpp
   cryptonote/src/Common/StdOutputStream.cpp
   cryptonote/src/Common/StreamTools.cpp
@@ -87,6 +87,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/hash.c
   cryptonote/src/crypto/jh.c
   cryptonote/src/crypto/keccak.c
+  cryptonote/src/crypto/aesb.c
   cryptonote/src/crypto/oaes_lib.c
   cryptonote/src/crypto/random.c
   cryptonote/src/crypto/skein.c
@@ -242,13 +243,8 @@ file(GLOB PLATFORM_SOURCES cryptonote/src/Platform/${PLATFORM_DIR}/System/*)
 set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
-
-if (APPLE OR ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES} -lresolv)
-else ()
-target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
-endif ()
 set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
+target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
 
 add_executable(${PROJECT_NAME} ${BUILD_PLATFORM} ${BUILD_RESOURCES} ${SOURCES} ${HEADERS} ${UIS} ${RCC})
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)

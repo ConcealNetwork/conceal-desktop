@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>650</width>
-    <height>850</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,7 +32,7 @@
    <string>Legal Disclaimer</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+   <string notr="true">background-color: #212529; border-right: 4px solid orange;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
    <item>
@@ -49,7 +49,7 @@
         <x>40</x>
         <y>80</y>
         <width>550</width>
-        <height>650</height>
+        <height>461</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -60,13 +60,13 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;
-border-right: 0px;</string>
+       <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -85,7 +85,7 @@ border-right: 0px;</string>
       <property name="geometry">
        <rect>
         <x>130</x>
-        <y>760</y>
+        <y>600</y>
         <width>351</width>
         <height>40</height>
        </rect>
@@ -98,13 +98,13 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #222; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;</string>
+       <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
+border-right: 0px;
+font-size: 16px;</string>
       </property>
       <property name="text">
        <string>CLOSE</string>
@@ -121,13 +121,13 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>16</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd;
-border-right: 0px;</string>
+border-right: 0px;
+font-size: 20px;</string>
       </property>
       <property name="text">
        <string>Legal Disclaimer</string>

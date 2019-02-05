@@ -14,7 +14,7 @@
    <string>Import :: Mnemonic Seed</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; color: #aaa; border: 0px;</string>
+   <string notr="true">background-color: #212529; color: #ddd; border: 0px;</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #111; border-right: 4px solid orange;</string>
+    <string notr="true">background-color: #282d31; border-right: 4px solid orange;</string>
    </property>
    <property name="title">
     <string/>
@@ -34,21 +34,19 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>50</x>
       <y>70</y>
-      <width>331</width>
+      <width>351</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>9</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #999;
-border-right: 0px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
     </property>
     <property name="text">
      <string>Recreate your wallet with the 25 word mnemonic seed</string>
@@ -65,16 +63,16 @@ border-right: 0px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>16</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color: #ddd;
-border-right: 0px;</string>
+border-right: 0px;
+font-size: 20px;</string>
     </property>
     <property name="text">
-     <string>IMPORT MNEMONIC SEED</string>
+     <string>Import Mnemonic Seed</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -85,22 +83,20 @@ border-right: 0px;</string>
      <rect>
       <x>50</x>
       <y>110</y>
-      <width>101</width>
+      <width>351</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>9</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #999;
-border-right: 0px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
     </property>
     <property name="text">
-     <string>MNEMONIC SEED</string>
+     <string>Mnemonic Seed</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="m_seed">
@@ -120,12 +116,12 @@ border-right: 0px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
+      <family>Lato</family>
       <pointsize>9</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #222;
+     <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;</string>
@@ -136,22 +132,20 @@ padding: 5px;</string>
      <rect>
       <x>50</x>
       <y>190</y>
-      <width>91</width>
+      <width>351</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>9</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #999;
-border-right: 0px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;font-size: 13px;</string>
     </property>
     <property name="text">
-     <string>WALLET PATH</string>
+     <string>Wallet Path</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="m_pathEdit">
@@ -171,12 +165,12 @@ border-right: 0px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
+      <family>Lato</family>
       <pointsize>9</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #222;
+     <string notr="true">background-color: #212529;
 border-right: 0px;
 color: #e5e5e5;
 padding: 5px;
@@ -200,13 +194,13 @@ padding: 5px;
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>10</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #222; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;</string>
+     <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
+border-right: 0px;
+font-size: 16px;</string>
     </property>
     <property name="text">
      <string>IMPORT</string>
@@ -229,13 +223,11 @@ border-right: 0px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
-      <pointsize>10</pointsize>
+      <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #aaa; background-color: #333; 
-border-right: 0px;</string>
+     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
     </property>
     <property name="text">
      <string>CANCEL</string>
@@ -252,14 +244,14 @@ border-right: 0px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Poppins</family>
+      <family>Lato</family>
       <pointsize>15</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #222;
+     <string notr="true">background-color: #212529;
 border-right: 0px;
-color: #999;
+color: #ddd;
 padding: 5px;
 </string>
     </property>

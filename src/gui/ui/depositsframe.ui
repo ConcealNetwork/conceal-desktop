@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; color: #aaa;</string>
+   <string notr="true">border: 0px; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -65,7 +65,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; background-color: #111;</string>
+      <string notr="true">border: 0px; background-color: #282d31;</string>
      </property>
      <property name="title">
       <string/>
@@ -93,16 +93,17 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>9</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QHeaderView::section {
-background-color: #222; 
-   color: #aaa;
-font-family: Poppins;
-    font-size: 12px;
+       <string notr="true">font-size: 15px;
+
+QHeaderView::section {
+background-color: #282d31; 
+   color: #ddd;
+font-family: Lato;
+    font-size: 13px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
    height: 30px;
@@ -111,8 +112,8 @@ border-bottom: 1px solid orange;
 
 QTreeView::item
 {
-    font: 10px;
-    color: #999;
+    font: 13px;
+    color: #ddd;
     height: 30px;
 }
 
@@ -122,8 +123,8 @@ QTreeView::branch:selected {
 }
 
 QWidget:item:selected {
-  background-color: #111;
-  color: #999;
+  background-color: #282d31;
+  color: #ddd;
 }</string>
       </property>
       <property name="frameShape">
@@ -151,20 +152,19 @@ QWidget:item:selected {
      <widget class="QPushButton" name="m_backButton">
       <property name="geometry">
        <rect>
-        <x>1080</x>
-        <y>20</y>
-        <width>171</width>
-        <height>31</height>
+        <x>1010</x>
+        <y>30</y>
+        <width>210</width>
+        <height>40</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+       <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -173,22 +173,20 @@ QWidget:item:selected {
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>25</y>
+        <x>110</x>
+        <y>30</y>
         <width>131</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
-font-size: 20px;
-font-family: Poppins;</string>
+font-size: 22px;</string>
       </property>
       <property name="text">
        <string>BANKING</string>
@@ -204,7 +202,7 @@ font-family: Poppins;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #282d31;</string>
       </property>
       <property name="title">
        <string/>
@@ -214,8 +212,8 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>210</y>
-         <width>191</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -226,15 +224,14 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; </string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
-        <string>CREATE NEW DEPOSIT</string>
+        <string>CREATE</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
@@ -248,14 +245,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Select the length of your deposit</string>
@@ -275,14 +271,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>The fee for this deposit:</string>
@@ -299,12 +294,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #333;; padding: 5px</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -327,14 +321,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>How much would you like to deposit?</string>
@@ -354,12 +347,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>5040 blocks</string>
@@ -373,20 +365,19 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>20</y>
-         <width>371</width>
+         <width>341</width>
          <height>23</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Interest earned at the end of your deposit:</string>
@@ -406,12 +397,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #333; padding: 5px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -443,12 +433,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>0.001000</string>
@@ -468,12 +457,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>interestLabel</string>
@@ -493,14 +481,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>(minimum of 1 CCX)</string>
@@ -520,14 +505,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>(minimum term of 1 week, maximum 52 weeks)</string>
@@ -547,14 +529,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Length in blocks:</string>
@@ -571,12 +552,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; </string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="text">
         <string>ADD ALL</string>
@@ -593,7 +573,7 @@ font-family: Poppins;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #282d31;</string>
       </property>
       <property name="title">
        <string/>
@@ -609,9 +589,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Unlocked Investments</string>
@@ -628,11 +610,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -652,9 +634,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -671,9 +655,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
@@ -690,11 +676,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -706,26 +692,25 @@ font-family: Poppins;</string>
       <widget class="QPushButton" name="m_withdrawButton">
        <property name="geometry">
         <rect>
-         <x>70</x>
+         <x>80</x>
          <y>160</y>
-         <width>250</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>250</width>
+         <width>210</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; </string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>WITHDRAW</string>
@@ -742,17 +727,14 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>16</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange;</string>
+        <string notr="true">color: orange; font-size: 20px;</string>
        </property>
        <property name="text">
-        <string>WITHDRAW</string>
+        <string>Withdraw</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
@@ -766,9 +748,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Unlocked Deposits</string>
@@ -785,9 +769,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Total Unlocked</string>
@@ -804,11 +790,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">0.00</string>
@@ -828,12 +814,27 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
         <string notr="true">CCX</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>-17</x>
+         <y>-50</y>
+         <width>1</width>
+         <height>651</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>
@@ -847,7 +848,7 @@ font-family: Poppins;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #282d31;</string>
       </property>
       <property name="title">
        <string/>
@@ -878,7 +879,7 @@ font-family: Poppins;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string>background-color: #222;</string>
+        <string notr="true">background-color: #282d31;</string>
        </property>
        <property name="text">
         <string/>
@@ -887,22 +888,19 @@ font-family: Poppins;</string>
       <widget class="QLabel" name="label_10">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>20</y>
+         <x>0</x>
+         <y>30</y>
          <width>211</width>
          <height>16</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd</string>
+        <string notr="true">color: #ddd; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>INTEREST % PER WEEK</string>
@@ -919,12 +917,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>8</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #555;</string>
+        <string notr="true">color: #ddd; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Weeks</string>
@@ -941,7 +938,7 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>8</pointsize>
         </font>
        </property>
@@ -955,7 +952,7 @@ font-family: Poppins;</string>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
          <y>60</y>
          <width>51</width>
          <height>16</height>
@@ -963,12 +960,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>8</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #555</string>
+        <string notr="true">color: #ddd; font-size: 13px;</string>
        </property>
        <property name="text">
         <string>Interest</string>
@@ -986,12 +982,11 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>16</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; background-color: #222;</string>
+       <string notr="true">color: orange; background-color: #282d31; font-size: 18px;</string>
       </property>
       <property name="text">
        <string>NEW DEPOSIT</string>
@@ -1008,12 +1003,11 @@ font-family: Poppins;</string>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>16</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #777; background-color: #111;</string>
+       <string notr="true">color: #777; background-color: #282d31; font-size: 18px;</string>
       </property>
       <property name="text">
        <string>NEW INVESTMENT</string>
@@ -1029,7 +1023,7 @@ font-family: Poppins;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #222;</string>
+       <string notr="true">background-color: #282d31;</string>
       </property>
       <property name="title">
        <string/>
@@ -1039,8 +1033,8 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>210</y>
-         <width>191</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -1051,15 +1045,14 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; </string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
-        <string>CREATE NEW INVESTMENT</string>
+        <string>CREATE</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_21">
@@ -1073,14 +1066,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Select the length of your investment</string>
@@ -1100,14 +1092,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Fee</string>
@@ -1124,12 +1115,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #333; padding: 5px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1155,14 +1145,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>How much would you like to invest?</string>
@@ -1182,12 +1171,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>68400 blocks</string>
@@ -1201,20 +1189,19 @@ font-family: Poppins;</string>
         <rect>
          <x>470</x>
          <y>20</y>
-         <width>371</width>
+         <width>341</width>
          <height>23</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Interest earned at the end of your deposit:</string>
@@ -1234,12 +1221,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: #333; padding: 5px;</string>
+        <string notr="true">color: #ddd; background-color: #333;  font-size: 13px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1277,12 +1263,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>0.001000</string>
@@ -1302,12 +1287,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>investmentInterest</string>
@@ -1327,14 +1311,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>(minimum of 50,000 CCX)</string>
@@ -1354,14 +1335,11 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>9</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 14px; </string>
        </property>
        <property name="text">
         <string>(minimum term of 1 quarter, maximum 20 quarters)</string>
@@ -1381,19 +1359,47 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;</string>
+        <string notr="true">color: #ddd; font-size: 15px; font-weight: bold;</string>
        </property>
        <property name="text">
         <string>Length in blocks:</string>
        </property>
       </widget>
+     </widget>
+     <widget class="Line" name="logoLine">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>10</y>
+        <width>1</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #343a40;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>61</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
      </widget>
      <zorder>m_depositView</zorder>
      <zorder>m_backButton</zorder>
@@ -1402,8 +1408,10 @@ font-family: Poppins;</string>
      <zorder>m_graph</zorder>
      <zorder>m_depositSelectButton</zorder>
      <zorder>m_investmentSelectButton</zorder>
-     <zorder>depositsBox</zorder>
+     <zorder>logoLine</zorder>
+     <zorder>label_11</zorder>
      <zorder>investmentsBox</zorder>
+     <zorder>depositsBox</zorder>
     </widget>
    </item>
   </layout>

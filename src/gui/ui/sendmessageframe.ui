@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #111; color: #aaa</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #aaa</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -44,14 +44,14 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>SEND MESSAGE</string>
@@ -74,12 +74,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>SEND MESSAGE</string>
@@ -102,12 +102,12 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -170,7 +170,7 @@ font-family: Poppins;</string>
     <widget class="QLabel" name="label_3">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -183,18 +183,18 @@ font-family: Poppins;</string>
     <widget class="QTextEdit" name="m_messageTextEdit">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #333; color: #aaa;</string>
+      <string notr="true">background-color: #333; color: #ddd;</string>
      </property>
      <property name="html">
       <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
@@ -224,7 +224,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QCheckBox" name="m_addReplyToCheck">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -247,7 +247,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QCheckBox" name="m_ttlCheck">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -279,7 +279,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="m_ttlLabel">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -315,7 +315,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_4">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -353,7 +353,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>9</pointsize>
         </font>
        </property>

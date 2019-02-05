@@ -1093,5 +1093,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
 RESOURCES += src/resources.qrc
 
 DISTFILES += \
-    src/images/logo-proper.png
+    src/images/logo-proper.png \
+    src/images/qr.png
 RC_FILE = conceal.rc

@@ -29,6 +29,9 @@ namespace WalletGui {
     Q_SLOT void importSeed();  
     Q_SLOT void importsecretkeys();  
     Q_SLOT void importKey();
+    Q_SLOT void nextOne();    
+    Q_SLOT void nextTwo();    
+    Q_SLOT void nextThree();        
 
   private:
     QScopedPointer<Ui::WelcomeFrame> m_ui;
