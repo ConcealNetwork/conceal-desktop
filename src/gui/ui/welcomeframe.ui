@@ -215,9 +215,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;
-font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -440,9 +438,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;
-font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -693,9 +689,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;
-font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -1074,13 +1068,13 @@ font-size: 15px;</string>
        </property>
       </widget>
      </widget>
-     <zorder>box3</zorder>
-     <zorder>box2</zorder>
      <zorder>label_4</zorder>
      <zorder>logoLine</zorder>
      <zorder>label</zorder>
      <zorder>label_11</zorder>
      <zorder>box1</zorder>
+     <zorder>box2</zorder>
+     <zorder>box3</zorder>
      <zorder>box4</zorder>
     </widget>
    </item>
