@@ -73,6 +73,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
+  cryptonote/src/crypto/aesb.c  
   cryptonote/src/crypto/blake256.c
   cryptonote/src/crypto/chacha.c
   cryptonote/src/crypto/crypto-ops-data.c
