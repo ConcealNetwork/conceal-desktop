@@ -102,9 +102,7 @@ font-size: 13px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; background-color: orange; border-top: 3px solid orange;
-border-right: 0px;
-font-size: 16px;</string>
+       <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
       </property>
       <property name="text">
        <string>CLOSE</string>

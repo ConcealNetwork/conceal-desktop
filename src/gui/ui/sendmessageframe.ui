@@ -74,12 +74,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>SEND MESSAGE</string>
@@ -102,12 +101,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -130,7 +128,7 @@ font-family: Lato;</string>
         <x>0</x>
         <y>0</y>
         <width>1240</width>
-        <height>225</height>
+        <height>234</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_addressesLayout">
