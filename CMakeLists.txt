@@ -242,13 +242,15 @@ include_directories(cryptonote/src/Platform/${PLATFORM_DIR})
 file(GLOB PLATFORM_SOURCES cryptonote/src/Platform/${PLATFORM_DIR}/System/*)
 set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
+
+
+add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
 if (APPLE OR ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES} -lresolv)
 else ()
 target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
 endif ()
 
-add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
 set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
 
 
