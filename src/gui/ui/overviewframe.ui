@@ -870,7 +870,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx-output</normaloff>:/icons/tx-output</iconset>
        </property>
       </widget>
@@ -1135,7 +1135,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx-deposit</normaloff>:/icons/tx-deposit</iconset>
        </property>
       </widget>
@@ -1542,7 +1542,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
        </property>
       </widget>
@@ -1939,7 +1939,7 @@ font-size: 11px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="../../resources.qrc">
         <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
       </property>
       <property name="iconSize">
@@ -1976,9 +1976,9 @@ font-size: 11px;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>170</x>
         <y>90</y>
-        <width>891</width>
+        <width>1031</width>
         <height>16</height>
        </rect>
       </property>
@@ -2045,7 +2045,9 @@ font-size: 14px;
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_sendButton</sender>

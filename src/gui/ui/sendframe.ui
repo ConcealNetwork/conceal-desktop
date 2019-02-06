@@ -641,7 +641,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>590</y>
-        <width>831</width>
+        <width>901</width>
         <height>30</height>
        </rect>
       </property>
@@ -651,7 +651,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; font-size: 16px; color: #aaa;</string>
+       <string notr="true">padding: 3px; font-size: 15px; color: #aaa;</string>
       </property>
       <property name="text">
        <string>You can send an optional message along with your transfer. There is a 0.000010 CCX fee per character.</string>
@@ -662,7 +662,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>250</y>
-        <width>691</width>
+        <width>901</width>
         <height>30</height>
        </rect>
       </property>
@@ -672,7 +672,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; font-size: 16px; color: #aaa;</string>
+       <string notr="true">padding: 3px; font-size: 15px; color: #aaa;</string>
       </property>
       <property name="text">
        <string>Some exchanges and other services require that a Payment ID is included when sending funds.</string>
@@ -683,7 +683,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>370</y>
-        <width>691</width>
+        <width>901</width>
         <height>30</height>
        </rect>
       </property>
@@ -693,7 +693,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; font-size: 16px; color: #aaa;</string>
+       <string notr="true">padding: 3px; font-size: 15px; color: #aaa;</string>
       </property>
       <property name="text">
        <string>Include a label if you want to save the recepient in your Address Book</string>
@@ -704,7 +704,7 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>130</y>
-        <width>691</width>
+        <width>901</width>
         <height>30</height>
        </rect>
       </property>
@@ -714,7 +714,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; font-size: 16px; color: #aaa;</string>
+       <string notr="true">padding: 3px; font-size: 15px; color: #aaa;</string>
       </property>
       <property name="text">
        <string>Please enter the receivers address</string>

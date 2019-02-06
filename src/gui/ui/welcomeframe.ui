@@ -106,7 +106,7 @@ border: 0px; background-color: #212529;</string>
 font-size: 15px;</string>
        </property>
        <property name="text">
-        <string>■  Conceal is a decentralized blockchain bank</string>
+        <string>■  Conceal is a decentralized blockchain bank.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
@@ -150,7 +150,7 @@ font-size: 15px;</string>
 font-size: 15px;</string>
        </property>
        <property name="text">
-        <string>■  The wallet allows access to all Conceal services</string>
+        <string>■  The wallet allows access to all Conceal services.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
@@ -172,7 +172,7 @@ font-size: 15px;</string>
 font-size: 15px;</string>
        </property>
        <property name="text">
-        <string>■  You control the private keys to your funds</string>
+        <string>■  You control the private keys to your funds.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_10">
@@ -315,6 +315,28 @@ font-family: Lato;</string>
         <rect>
          <x>320</x>
          <y>140</y>
+         <width>581</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+font-size: 14px;</string>
+       </property>
+       <property name="text">
+        <string>■  When creating a wallet, you are creating a set of cryptographic keys</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>160</y>
          <width>521</width>
          <height>20</height>
         </rect>
@@ -326,32 +348,10 @@ font-family: Lato;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>■  When creating a wallet, you are creating a set of cryptographic keys</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_7">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>160</y>
-         <width>401</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-font-size: 15px;</string>
-       </property>
-       <property name="text">
-        <string>a seed, and a wallet address</string>
+        <string>a seed, and a wallet address.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_12">
@@ -359,7 +359,7 @@ font-size: 15px;</string>
         <rect>
          <x>320</x>
          <y>200</y>
-         <width>511</width>
+         <width>591</width>
          <height>20</height>
         </rect>
        </property>
@@ -370,10 +370,10 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>■  If you send your public address to someone then they can send you CCX</string>
+        <string>■  If you send your public address to someone then they can send you CCX.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_13">
@@ -381,7 +381,7 @@ font-size: 15px;</string>
         <rect>
          <x>320</x>
          <y>300</y>
-         <width>511</width>
+         <width>581</width>
          <height>20</height>
         </rect>
        </property>
@@ -392,10 +392,10 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>■  The developers of Conceal have no access to your password</string>
+        <string>■  The developers of Conceal have no access to your password, your keys, </string>
        </property>
       </widget>
       <widget class="QLabel" name="label_14">
@@ -465,7 +465,7 @@ font-size: 20px;</string>
         <rect>
          <x>320</x>
          <y>240</y>
-         <width>401</width>
+         <width>591</width>
          <height>20</height>
         </rect>
        </property>
@@ -476,10 +476,10 @@ font-size: 20px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>■  NEVER share your seed, keys, or wallet file with anyone</string>
+        <string>■  NEVER share your seed, keys, or wallet file with anyone.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_16">
@@ -487,7 +487,7 @@ font-size: 15px;</string>
         <rect>
          <x>340</x>
          <y>260</y>
-         <width>401</width>
+         <width>551</width>
          <height>20</height>
         </rect>
        </property>
@@ -498,10 +498,10 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>doing so means they have complete control over your funds</string>
+        <string>Doing so means they have complete control over your funds.</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_17">
@@ -509,7 +509,7 @@ font-size: 15px;</string>
         <rect>
          <x>340</x>
          <y>320</y>
-         <width>511</width>
+         <width>591</width>
          <height>20</height>
         </rect>
        </property>
@@ -520,10 +520,10 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>your keys, or your seed. If you forget your password, or lose your seed, </string>
+        <string>or your seed. If you forget your password, or lose your seed, </string>
        </property>
       </widget>
       <widget class="QLabel" name="label_18">
@@ -531,7 +531,7 @@ font-size: 15px;</string>
         <rect>
          <x>340</x>
          <y>340</y>
-         <width>521</width>
+         <width>621</width>
          <height>20</height>
         </rect>
        </property>
@@ -542,7 +542,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>there is nothing we can do. Always keep a copy of your seed in a secure place.</string>
@@ -566,7 +566,7 @@ font-size: 15px;</string>
         <rect>
          <x>410</x>
          <y>140</y>
-         <width>401</width>
+         <width>551</width>
          <height>20</height>
         </rect>
        </property>
@@ -577,7 +577,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>■  You are responsible for your own security.</string>
@@ -588,7 +588,7 @@ font-size: 15px;</string>
         <rect>
          <x>410</x>
          <y>190</y>
-         <width>401</width>
+         <width>551</width>
          <height>20</height>
         </rect>
        </property>
@@ -599,7 +599,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>■  No one can recover or change your private keys or seed.</string>
@@ -610,7 +610,7 @@ font-size: 15px;</string>
         <rect>
          <x>410</x>
          <y>240</y>
-         <width>401</width>
+         <width>541</width>
          <height>20</height>
         </rect>
        </property>
@@ -621,7 +621,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>■  No one can recover your password.</string>
@@ -632,7 +632,7 @@ font-size: 15px;</string>
         <rect>
          <x>410</x>
          <y>290</y>
-         <width>401</width>
+         <width>561</width>
          <height>20</height>
         </rect>
        </property>
@@ -643,7 +643,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>■  No one can refund your transactions.</string>
@@ -716,7 +716,7 @@ font-size: 20px;</string>
         <rect>
          <x>410</x>
          <y>340</y>
-         <width>401</width>
+         <width>601</width>
          <height>20</height>
         </rect>
        </property>
@@ -727,7 +727,7 @@ font-size: 20px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>■  No one can freeze your funds.</string>
@@ -833,7 +833,7 @@ font-size: 20px;</string>
        <property name="geometry">
         <rect>
          <x>400</x>
-         <y>350</y>
+         <y>380</y>
          <width>180</width>
          <height>30</height>
         </rect>
@@ -854,7 +854,7 @@ font-size: 20px;</string>
        <property name="geometry">
         <rect>
          <x>600</x>
-         <y>350</y>
+         <y>380</y>
          <width>180</width>
          <height>30</height>
         </rect>
@@ -895,9 +895,9 @@ font-size: 20px;</string>
       <widget class="QLabel" name="label_25">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>40</x>
          <y>140</y>
-         <width>271</width>
+         <width>321</width>
          <height>31</height>
         </rect>
        </property>
@@ -908,7 +908,7 @@ font-size: 20px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Create a new wallet address along wth</string>
@@ -920,9 +920,9 @@ font-size: 15px;</string>
       <widget class="QLabel" name="label_26">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>430</x>
          <y>140</y>
-         <width>271</width>
+         <width>321</width>
          <height>31</height>
         </rect>
        </property>
@@ -933,7 +933,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Already have a wallet? open the wallet</string>
@@ -945,9 +945,9 @@ font-size: 15px;</string>
       <widget class="QLabel" name="label_27">
        <property name="geometry">
         <rect>
-         <x>800</x>
+         <x>780</x>
          <y>140</y>
-         <width>271</width>
+         <width>321</width>
          <height>31</height>
         </rect>
        </property>
@@ -958,7 +958,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>Import an existing wallet with the secret</string>
@@ -983,7 +983,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>a secret seed phrase</string>
@@ -995,9 +995,9 @@ font-size: 15px;</string>
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>800</x>
+         <x>790</x>
          <y>170</y>
-         <width>271</width>
+         <width>301</width>
          <height>21</height>
         </rect>
        </property>
@@ -1008,7 +1008,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>seed phrase and access your CCX</string>
@@ -1033,7 +1033,7 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>and access your assets</string>
@@ -1045,9 +1045,9 @@ font-size: 15px;</string>
       <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>440</x>
+         <x>390</x>
          <y>310</y>
-         <width>311</width>
+         <width>391</width>
          <height>31</height>
         </rect>
        </property>
@@ -1058,13 +1058,29 @@ font-size: 15px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 15px;</string>
+font-size: 14px;</string>
        </property>
        <property name="text">
         <string>advanced users can import using other keys</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="Line" name="line_6">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>360</y>
+         <width>500</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #333;</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>
