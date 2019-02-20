@@ -80,7 +80,6 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/hash.c
   cryptonote/src/crypto/keccak.c
   cryptonote/src/crypto/random.c
-  cryptonote/src/crypto/skein.c
   cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
