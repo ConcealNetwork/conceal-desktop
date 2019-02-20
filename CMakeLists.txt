@@ -77,7 +77,6 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/crypto-ops-data.c
   cryptonote/src/crypto/crypto-ops.c
   cryptonote/src/crypto/crypto.cpp
-  cryptonote/src/crypto/groestl.c
   cryptonote/src/crypto/hash.c
   cryptonote/src/crypto/keccak.c
   cryptonote/src/crypto/random.c
