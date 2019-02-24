@@ -252,8 +252,12 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/Varint.h \
            cryptonote/src/Common/VectorOutputStream.h \
            cryptonote/src/crypto/aux_hash.h \
-           cryptonote/src/crypto/blake256.h \
            cryptonote/src/crypto/chacha.h \
+           cryptonote/src/crypto/chacha8.h \    
+           cryptonote/src/crypto/cn_aux.hpp \
+           cryptonote/src/crypto/coin_algos.hpp \
+           cryptonote/src/crypto/soft_aes.hpp \           
+           cryptonote/src/crypto/cryptonight.hpp \
            cryptonote/src/crypto/crypto-ops.h \
            cryptonote/src/crypto/crypto.h \
            cryptonote/src/crypto/generic-ops.h \
@@ -694,18 +698,15 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/ConnectivityTool/ConnectivityTool.cpp \
            cryptonote/src/crypto/aux_hash.c \
            cryptonote/src/crypto/chacha.c \
+           cryptonote/src/crypto/chacha8.c \
            cryptonote/src/crypto/crypto-ops-data.c \
            cryptonote/src/crypto/crypto-ops.c \
            cryptonote/src/crypto/crypto.cpp \
            cryptonote/src/crypto/hash.c \
-           cryptonote/src/crypto/cryptonight.cpp \           
-           cryptonote/src/crypto/cryptonight.hpp \                      
+           cryptonote/src/crypto/cryptonight.cpp \                                
            cryptonote/src/crypto/keccak.c \
            cryptonote/src/crypto/random.c \
-           cryptonote/src/crypto/tree-hash.c \
-           cryptonote/src/crypto/coin_algos.hpp \           
-           cryptonote/src/crypto/cn_aux.hpp \           
-           cryptonote/src/crypto/soft-aes.hpp \
+           cryptonote/src/crypto/tree-hash.c \                  
            cryptonote/src/CryptoNoteCore/Account.cpp \
            cryptonote/src/CryptoNoteCore/Blockchain.cpp \
            cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp \

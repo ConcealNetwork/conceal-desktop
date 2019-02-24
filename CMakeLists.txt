@@ -73,16 +73,17 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
-  cryptonote/src/crypto/chacha.c
-  cryptonote/src/crypto/crypto-ops-data.c
-  cryptonote/src/crypto/crypto-ops.c
-  cryptonote/src/crypto/crypto.cpp
-  cryptonote/src/crypto/hash.c
-  cryptonote/src/crypto/keccak.c
-  cryptonote/src/crypto/random.c
-  cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
-  cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/chacha.c 
+  cryptonote/src/crypto/chacha8.c 
+  cryptonote/src/crypto/crypto-ops-data.c 
+  cryptonote/src/crypto/crypto-ops.c 
+  cryptonote/src/crypto/crypto.cpp 
+  cryptonote/src/crypto/hash.c 
+  cryptonote/src/crypto/cryptonight.cpp                          
+  cryptonote/src/crypto/keccak.c 
+  cryptonote/src/crypto/random.c 
+  cryptonote/src/crypto/tree-hash.c 
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
