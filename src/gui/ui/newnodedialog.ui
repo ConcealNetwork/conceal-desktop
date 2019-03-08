@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>474</width>
-    <height>300</height>
+    <height>260</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,8 +28,8 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>75</y>
+        <x>20</x>
+        <y>80</y>
         <width>224</width>
         <height>20</height>
        </rect>
@@ -43,69 +43,27 @@ font-size: 13px;</string>
        <string>Host</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>160</y>
-        <width>81</width>
-        <height>35</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;
-font-size: 13px;</string>
-      </property>
-      <property name="text">
-       <string>Port:</string>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="m_hostEdit">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>100</y>
-        <width>391</width>
+        <x>20</x>
+        <y>110</y>
+        <width>411</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;
+       <string notr="true">background-color: #212529;
 border-right: 0px;
-font-size: 13px;
-background-color: #444;</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="m_portSpin">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>160</y>
-        <width>171</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;
-font-size: 13px;</string>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>65535</number>
-      </property>
-      <property name="value">
-       <number>16000</number>
+color: #e5e5e5;
+padding: 5px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="m_okButton">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>220</y>
+        <y>180</y>
         <width>201</width>
         <height>41</height>
        </rect>
@@ -121,7 +79,7 @@ font-size: 13px;</string>
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>220</y>
+        <y>180</y>
         <width>181</width>
         <height>41</height>
        </rect>
