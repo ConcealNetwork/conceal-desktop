@@ -7,53 +7,38 @@
 #include <QFileDialog>
 
 #include "Settings.h"
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "ui_nodesettings.h"
 
 namespace WalletGui {
 
-  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::NodeSettings) 
-  {
-
+  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::NodeSettings) {
     m_ui->setupUi(this);
   }
 
   NodeSettings::~NodeSettings() {
   }
 
-  void NodeSettings::initConnectionSettings() 
-  {
-
+  void NodeSettings::initConnectionSettings() {
     QString connection = Settings::instance().getConnection();
 
-    if(connection.compare("remote") == 0) 
-    {
+    if(connection.compare("remote") == 0) {
         m_ui->radioButton->setChecked(true);
     }
-    else if(connection.compare("embedded") == 0) 
-    {
-
+    else if(connection.compare("embedded") == 0) {
         m_ui->radioButton_2->setChecked(true);
     }
   }
 
-  QString NodeSettings::setConnectionMode() const 
-  {
-
+  QString NodeSettings::setConnectionMode() const {
     QString connectionMode;
     
-    if(m_ui->radioButton->isChecked())
-    {
-
+    if(m_ui->radioButton->isChecked()){
         connectionMode = "remote";
     }
-
-    else if(m_ui->radioButton_2->isChecked())
-    {
-        
+    else if(m_ui->radioButton_2->isChecked()) {        
         connectionMode = "embedded";
     }  
-
     return connectionMode;
   }
 }
