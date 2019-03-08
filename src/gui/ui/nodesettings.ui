@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>571</height>
+    <height>539</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,7 +28,7 @@
      <x>0</x>
      <y>0</y>
      <width>450</width>
-     <height>571</height>
+     <height>541</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -91,7 +91,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>250</y>
+      <y>240</y>
       <width>351</width>
       <height>21</height>
      </rect>
@@ -143,7 +143,7 @@ font-size: 13px;</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>490</y>
+      <y>470</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -170,7 +170,7 @@ font-size: 13px;</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>430</y>
+      <y>410</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -197,9 +197,9 @@ font-size: 13px;</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>300</y>
+      <y>290</y>
       <width>351</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="minimumSize">
@@ -209,10 +209,10 @@ font-size: 13px;</string>
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd;
+     <string notr="true">background-color: #212529;
 border-right: 0px;
-font-size: 13px;
-background-color:#444;</string>
+color: #e5e5e5;
+padding: 5px;</string>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -231,7 +231,7 @@ background-color:#444;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;</string>
+     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 13px; background-color: #21259;</string>
     </property>
     <property name="text">
      <string>Remove node</string>
@@ -247,7 +247,7 @@ background-color:#444;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;</string>
+     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 13px; background-color: #21259;</string>
     </property>
     <property name="text">
      <string>Add node</string>
