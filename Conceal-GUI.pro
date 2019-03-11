@@ -180,6 +180,8 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
            src/gui/NewPoolDialog.h \
+           src/gui/NewNodeDialog.h \ 
+           src/gui/NodeModel.h \                 
            src/gui/OverviewFrame.h \
            src/gui/PasswordDialog.h \
            src/gui/PoolModel.h \
@@ -560,7 +562,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
-           src/gui/nodesettings.h \
+           src/gui/NodeSettings.h \
            src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
@@ -630,6 +632,8 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
            src/gui/NewPoolDialog.cpp \
+           src/gui/NewNodeDialog.cpp \ 
+           src/gui/NodeModel.cpp \                        
            src/gui/OverviewFrame.cpp \
            src/gui/PasswordDialog.cpp \
            src/gui/PoolModel.cpp \
@@ -1032,7 +1036,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
-           src/gui/nodesettings.cpp \
+           src/gui/NodeSettings.cpp \
            src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 

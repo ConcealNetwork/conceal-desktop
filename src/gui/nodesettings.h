@@ -13,11 +13,8 @@ namespace Ui
   class NodeSettings;
 }
 
-namespace WalletGui 
-{
-
-  class NodeSettings : public QDialog 
-  {
+namespace WalletGui {
+  class NodeSettings : public QDialog {
 
     Q_OBJECT
 

@@ -6,13 +6,18 @@
 #include <QApplication>
 #include <QFileDialog>
 
-#include "Settings.h"
 #include "NodeSettings.h"
+#include "CurrencyAdapter.h"
+#include "NewNodeDialog.h"
+#include "MainWindow.h"
+#include "NodeModel.h"
+#include "Settings.h"
 #include "ui_nodesettings.h"
 
 namespace WalletGui {
 
-  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::NodeSettings) {
+  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), 
+    m_ui(new Ui::NodeSettings) {
     m_ui->setupUi(this);
   }
 
@@ -41,6 +46,8 @@ namespace WalletGui {
     }  
     return connectionMode;
   }
+
+
 }
 
 
