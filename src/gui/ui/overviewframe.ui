@@ -2399,6 +2399,22 @@ font-size: 14px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_subButton6</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>subButton6Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -2409,6 +2425,7 @@ font-size: 14px;
   <slot>subButton3Clicked()</slot>
   <slot>subButton4Clicked()</slot>
   <slot>subButton5Clicked()</slot>
+  <slot>subButton6Clicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
   <slot>importClicked()</slot>
