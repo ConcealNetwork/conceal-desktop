@@ -44,6 +44,7 @@ private:
   void layoutChanged();
   void setStatusBarText(const QString& _text);
   void updateWalletAddress(const QString& _address);
+  void walletSynchronized(int _error, const QString& _error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
   void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);

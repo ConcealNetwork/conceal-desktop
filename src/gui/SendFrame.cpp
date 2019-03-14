@@ -63,8 +63,8 @@ void SendFrame::setPaymentId(const QString& _paymentId) {
   m_ui->m_paymentIdEdit->setText(_paymentId);
 }
 
-void SendFrame::clearAllClicked() {
-  /* clear all fields */
+/* clear all fields */
+void SendFrame::clearAllClicked() {  
   m_ui->m_paymentIdEdit->clear();
   m_ui->m_addressEdit->clear();
   m_ui->m_labelEdit->clear();  
@@ -187,8 +187,8 @@ void SendFrame::walletActualBalanceUpdated(quint64 _balance) {
   m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
+/* calculate fee based on number of characters in the message */
 void SendFrame::updateFee() {
-  /* calculate fee based on number of characters in the message */
   quint64 commentsFee = 0;
   std::string words = (m_ui->m_messageEdit->text()).toStdString();
   commentsFee = words.length() * COMMENT_CHAR_PRICE;
@@ -209,13 +209,13 @@ bool SendFrame::isValidPaymentId(const QByteArray& _paymentIdString) {
   return (paymentId.size() == sizeof(Crypto::Hash)) && (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
 }
 
+/* back to overview frame */
 void SendFrame::backClicked() {
-  /* back to overview frame */
   Q_EMIT backSignal();
 }
 
-void SendFrame::addressBookClicked() {
-  /* show address book */
+/* show address book */
+void SendFrame::addressBookClicked() { 
   Q_EMIT addressBookSignal();
 }
 
