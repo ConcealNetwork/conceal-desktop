@@ -84,6 +84,7 @@ Q_SIGNALS:
   void rescanSignal();
   void openWalletSignal();  
   void newWalletSignal();
+  void closeWalletSignal();
   void qrSignal(const QString& _address);
   void newMessageSignal();
   void newTransferSignal();
