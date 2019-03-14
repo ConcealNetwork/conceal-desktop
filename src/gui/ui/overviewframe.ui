@@ -2440,7 +2440,6 @@ font-size: 14px;
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
-  <slot>miningClicked()</slot>
   <slot>openWallet()</slot>
   <slot>addressBookClicked()</slot>
  </slots>

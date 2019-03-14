@@ -121,7 +121,6 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);        
   connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);     
   
-  connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
@@ -131,7 +130,6 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
-  connect(m_ui->m_miningFrame, &MiningFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);  
   connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);  
@@ -161,7 +159,6 @@ void MainWindow::initUi() {
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
-  m_ui->m_miningFrame->hide();
   m_ui->m_depositsFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
@@ -171,7 +168,6 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_addressBookAction);
   m_tabActionGroup->addAction(m_ui->m_messagesAction);
   m_tabActionGroup->addAction(m_ui->m_sendMessageAction);
-  m_tabActionGroup->addAction(m_ui->m_miningAction);
   m_tabActionGroup->addAction(m_ui->m_depositsAction);
 
   m_ui->m_overviewAction->toggle();
@@ -599,7 +595,6 @@ void MainWindow::walletClosed()
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
-  m_ui->m_miningFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
 
@@ -660,10 +655,6 @@ void MainWindow::addressBookTo() {
 
 void MainWindow::messageTo() {
   m_ui->m_messagesAction->trigger();
-}
-
-void MainWindow::miningTo() {
-  m_ui->m_miningAction->trigger();
 }
 
 void MainWindow::sendMessageTo() 

@@ -75,19 +75,6 @@
      </widget>
     </item>
     <item>
-     <widget class="WalletGui::MiningFrame" name="m_miningFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -415,24 +402,6 @@
     <string>Import GUI key</string>
    </property>
   </action>
-  <action name="m_miningAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>:/icons/icon-mining.png</normaloff>:/icons/icon-mining.png</iconset>
-   </property>
-   <property name="text">
-    <string>MINING</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
   <action name="m_depositsAction">
    <property name="checkable">
     <bool>true</bool>
@@ -486,12 +455,6 @@
   </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>WalletGui::MiningFrame</class>
-   <extends>QFrame</extends>
-   <header>gui/MiningFrame.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>WalletGui::OverviewFrame</class>
    <extends>QFrame</extends>
@@ -834,22 +797,6 @@
     <hint type="destinationlabel">
      <x>459</x>
      <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_miningAction</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>m_miningFrame</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>710</x>
-     <y>394</y>
     </hint>
    </hints>
   </connection>

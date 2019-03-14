@@ -61,7 +61,6 @@ private:
   Q_SLOT void transactionClicked();      
   Q_SLOT void messageClicked();      
   Q_SLOT void addressBookClicked();      
-  Q_SLOT void miningClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
   Q_SLOT void newTransferClicked();
@@ -94,7 +93,6 @@ Q_SIGNALS:
   void optimizeSignal();
   void resetWalletSignal();
   void importSignal();
-  void miningSignal();
   void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
