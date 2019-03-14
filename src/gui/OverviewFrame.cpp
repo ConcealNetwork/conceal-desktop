@@ -95,11 +95,14 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_subButton3->setText("");
   m_ui->m_subButton4->setText("");
   m_ui->m_subButton5->setText("");     
+  m_ui->m_subButton6->setText("");     
   m_ui->m_subButton1->setEnabled(false);
   m_ui->m_subButton2->setEnabled(false);
   m_ui->m_subButton3->setEnabled(false);
   m_ui->m_subButton4->setEnabled(false);
   m_ui->m_subButton5->setEnabled(false);
+  m_ui->m_subButton6->setEnabled(false);
+
   int subMenu = 0;
 
   /* pull the chart from the website */
@@ -308,6 +311,7 @@ void OverviewFrame::aboutClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");        
+    m_ui->m_subButton6->setText("");  
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
     m_ui->m_subButton3->setEnabled(true);
@@ -329,6 +333,7 @@ void OverviewFrame::aboutClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     subMenu = 0;
   }
 }
@@ -341,6 +346,7 @@ void OverviewFrame::importClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");        
+    m_ui->m_subButton6->setText("");  
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
     m_ui->m_subButton3->setEnabled(true);
@@ -361,6 +367,7 @@ void OverviewFrame::importClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     subMenu = 0;
   }
 }
@@ -373,6 +380,7 @@ void OverviewFrame::settingsClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
     m_ui->m_subButton3->setEnabled(true);
@@ -410,6 +418,7 @@ void OverviewFrame::settingsClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     subMenu = 0;
   }
 }
@@ -422,15 +431,18 @@ void OverviewFrame::walletClicked() {
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
     m_ui->m_subButton3->setEnabled(true);
     m_ui->m_subButton4->setEnabled(true);    
     m_ui->m_subButton5->setEnabled(true);
+    m_ui->m_subButton6->setEnabled(true);    
     m_ui->m_subButton1->setText("Open Wallet");
     m_ui->m_subButton2->setText("Create Wallet");
     m_ui->m_subButton3->setText("Backup Wallet");    
     m_ui->m_subButton5->setText("Import Wallet");    
+    m_ui->m_subButton6->setText("Close Wallet");  
 
     if (!Settings::instance().isEncrypted()) {
       m_ui->m_subButton4->setText("Encrypt Wallet");
@@ -447,11 +459,13 @@ void OverviewFrame::walletClicked() {
     m_ui->m_subButton3->setEnabled(false);
     m_ui->m_subButton4->setEnabled(false);
     m_ui->m_subButton5->setEnabled(false);        
+    m_ui->m_subButton6->setEnabled(false);        
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
     m_ui->m_subButton4->setText("");
     m_ui->m_subButton5->setText("");  
+    m_ui->m_subButton6->setText("");  
     subMenu = 0;
   }
 }
@@ -551,6 +565,14 @@ void OverviewFrame::subButton5Clicked()
   }
 }
 
+void OverviewFrame::subButton6Clicked() 
+{
+  if (subMenu == 3) {
+    OverviewFrame::closeWalletClicked();
+  }
+}
+
+
 void OverviewFrame::qrCodeClicked() {
   Q_EMIT qrSignal(m_ui->m_copyAddressButton->text());
 }
@@ -565,6 +587,10 @@ void OverviewFrame::messageClicked() {
 
 void OverviewFrame::newWalletClicked() {
   Q_EMIT newWalletSignal();
+}
+
+void OverviewFrame::closeWalletClicked() {
+  Q_EMIT closeWalletSignal();
 }
 
 void OverviewFrame::newTransferClicked() {

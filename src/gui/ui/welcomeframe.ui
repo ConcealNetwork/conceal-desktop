@@ -911,7 +911,7 @@ font-size: 20px;</string>
 font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>Create a new wallet address along wth</string>
+        <string>Create a new wallet address along with</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

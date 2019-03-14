@@ -507,6 +507,36 @@ font-size: 14px;</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="m_subButton6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>470</y>
+         <width>151</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">text-align: left; color: #777; margin-left: 20px;
+font-family: Lato;
+font-size: 14px;</string>
+       </property>
+       <property name="text">
+        <string>Sixth</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="priceBox">
       <property name="geometry">
@@ -2369,6 +2399,22 @@ font-size: 14px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_subButton6</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>subButton6Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -2379,6 +2425,7 @@ font-size: 14px;
   <slot>subButton3Clicked()</slot>
   <slot>subButton4Clicked()</slot>
   <slot>subButton5Clicked()</slot>
+  <slot>subButton6Clicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
   <slot>importClicked()</slot>
