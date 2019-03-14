@@ -129,6 +129,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);    
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);      
+  connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
   connect(m_ui->m_miningFrame, &MiningFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
@@ -339,7 +340,6 @@ void MainWindow::createWallet() {
 }
 
 void MainWindow::openWallet() {  
-
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
 
   #ifdef Q_OS_WIN
@@ -358,8 +358,12 @@ void MainWindow::openWallet() {
   }
 }
 
-void MainWindow::importKey() {
+void MainWindow::closeWallet() {  
+  WalletAdapter::instance().close();
+  walletClosed();
+}
 
+void MainWindow::importKey() {
   ImportKeyDialog dlg(this);
 
   if (dlg.exec() == QDialog::Accepted) {
@@ -557,7 +561,7 @@ void MainWindow::askForWalletPassword(bool _error)
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     m_ui->m_welcomeFrame->hide();
-  if (!_error) {
+    if (!_error) {
 
     m_ui->m_backupWalletAction->setEnabled(true);
     m_ui->m_resetAction->setEnabled(true);
