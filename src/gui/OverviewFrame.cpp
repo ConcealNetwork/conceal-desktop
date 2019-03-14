@@ -575,10 +575,6 @@ void OverviewFrame::qrCodeClicked() {
   Q_EMIT qrSignal(m_ui->m_copyAddressButton->text());
 }
 
-void OverviewFrame::miningClicked() {
-  Q_EMIT miningSignal();
-}
-
 void OverviewFrame::messageClicked() {
   Q_EMIT messageSignal();
 }
