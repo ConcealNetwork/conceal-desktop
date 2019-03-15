@@ -210,7 +210,7 @@ padding: 5px;
 font-size: 13px;</string>
     </property>
     <property name="text">
-     <string>node.conceal.network</string>
+     <string/>
     </property>
    </widget>
   </widget>
