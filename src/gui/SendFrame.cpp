@@ -7,8 +7,10 @@
 #include <QMessageBox>
 
 #include "AddressBookModel.h"
+#include "AddressProvider.h"
 #include "CurrencyAdapter.h"
 #include "MainWindow.h"
+#include "Settings.h"
 #include "NodeAdapter.h"
 #include "SendFrame.h"
 #include "transactionconfirmation.h"
@@ -42,12 +44,23 @@ namespace WalletGui {
 /* cost per message character */
 Q_DECL_CONSTEXPR quint64 COMMENT_CHAR_PRICE = 10;
 
-SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame) {
+SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame), m_addressProvider(new AddressProvider(this)) {
   m_ui->setupUi(this);
   clearAllClicked();
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &SendFrame::sendTransactionCompleted, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &SendFrame::walletActualBalanceUpdated, Qt::QueuedConnection);
   m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeV1()).toDouble());
+  m_ui->nodeFeeLabel->hide();
+  m_ui->m_nodeFee->hide();
+
+  QString connection = Settings::instance().getConnection();
+  if(connection.compare("remote") == 0) {
+    m_ui->nodeFeeLabel->show();
+    m_ui->m_nodeFee->show();
+    QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
+    m_addressProvider->getAddress(remoteNodeUrl);
+    connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &SendFrame::onAddressFound, Qt::QueuedConnection);
+  }
 }
 
 SendFrame::~SendFrame() {
@@ -185,6 +198,10 @@ void SendFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _er
 
 void SendFrame::walletActualBalanceUpdated(quint64 _balance) {
   m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+}
+
+void SendFrame::onAddressFound(const QString& _address) {
+    SendFrame::remote_node_fee_address = _address;
 }
 
 /* calculate fee based on number of characters in the message */
