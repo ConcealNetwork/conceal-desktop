@@ -69,6 +69,7 @@ private:
   
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
+  Q_SLOT void closeWallet();
   Q_SLOT void importKey();
   Q_SLOT void importsecretkeys();
   Q_SLOT void importSeed();

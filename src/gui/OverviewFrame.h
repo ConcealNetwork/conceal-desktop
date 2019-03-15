@@ -44,6 +44,7 @@ private:
   void layoutChanged();
   void setStatusBarText(const QString& _text);
   void updateWalletAddress(const QString& _address);
+  void walletSynchronized(int _error, const QString& _error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
   void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
@@ -60,8 +61,8 @@ private:
   Q_SLOT void transactionClicked();      
   Q_SLOT void messageClicked();      
   Q_SLOT void addressBookClicked();      
-  Q_SLOT void miningClicked();      
   Q_SLOT void newWalletClicked();
+  Q_SLOT void closeWalletClicked();
   Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
@@ -74,6 +75,7 @@ private:
   Q_SLOT void subButton3Clicked();
   Q_SLOT void subButton4Clicked();
   Q_SLOT void subButton5Clicked();  
+  Q_SLOT void subButton6Clicked();  
 
 Q_SIGNALS:
   void sendSignal();
@@ -82,6 +84,7 @@ Q_SIGNALS:
   void rescanSignal();
   void openWalletSignal();  
   void newWalletSignal();
+  void closeWalletSignal();
   void qrSignal(const QString& _address);
   void newMessageSignal();
   void newTransferSignal();
@@ -90,7 +93,6 @@ Q_SIGNALS:
   void optimizeSignal();
   void resetWalletSignal();
   void importSignal();
-  void miningSignal();
   void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
