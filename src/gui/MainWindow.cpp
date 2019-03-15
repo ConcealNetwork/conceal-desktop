@@ -888,20 +888,20 @@ void MainWindow::importTracking() {
 
 /* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
-void MainWindow::nodeSettings() 
-{
-
+void MainWindow::nodeSettings() {
   NodeSettings dlg(this);
 
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
+  dlg.setRemoteHost();
 
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-
+    if (connection == "remote") {
+      QString remoteHost = dlg.setRemoteHost();
+      Settings::instance().setCurrentRemoteNode(remoteHost);
+    }
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 
                              tr("Please restart the wallet for the new settings to take effect."), 
