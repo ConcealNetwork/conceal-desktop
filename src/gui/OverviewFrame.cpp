@@ -142,7 +142,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) {
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX"); 
 }
-
+\
 void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first, int _last) {
   for (quint32 i = _first; i <= _last; ++i) {
     QModelIndex recentModelIndex = m_transactionModel->index(i, 0);
@@ -157,7 +157,6 @@ void OverviewFrame::updateWalletAddress(const QString& _address) {
   showCurrentWallet();
 }
 
-
 void OverviewFrame::showCurrentWallet() {
   /* show the name of the open wallet */
   QString walletFile = Settings::instance().getWalletFile();
@@ -169,18 +168,15 @@ void OverviewFrame::showCurrentWallet() {
   if (std::string::npos != last_slash_idx) {
       wallet.erase(0, last_slash_idx + 1);
   }
-
   /*  remove extension if present */
   const size_t period_idx = wallet.rfind('.');
   if (std::string::npos != period_idx) {
       wallet.erase(period_idx);
   }
-
   /* back to QString and display */
   walletFile = QString::fromStdString(wallet);
   m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile);
 }
-
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
     /* download is done
@@ -288,10 +284,6 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   float ccxusd = _ccxusd.toFloat();
   float total = ccxusd * (float)totalBalance;
   /* m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); 
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX"); 
-  m_ui->m_ccxusd->setText(_ccxusd);  
-  m_ui->m_btcusd->setText(_btc); */
-
 }
 
 void OverviewFrame::sendClicked() {  
@@ -454,9 +446,7 @@ void OverviewFrame::walletClicked() {
     }
 
     subMenu = 3;
-    } 
-    
-    else {
+  } else {
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -477,19 +467,15 @@ void OverviewFrame::subButton1Clicked() {
   if (subMenu == 2) {
     Q_EMIT optimizeSignal();
   }
-
   if (subMenu == 1) {
     Q_EMIT importSeedSignal();  
   }
-  
   if (subMenu == 3) {
     Q_EMIT openWalletSignal();
   }
-
   if (subMenu == 4) {
     Q_EMIT aboutSignal();
   }  
-
 }
 
 void OverviewFrame::subButton2Clicked() {
@@ -505,7 +491,6 @@ void OverviewFrame::subButton2Clicked() {
   if (subMenu == 4) {
     Q_EMIT aboutQTSignal();
   }
-
 }
 
 void OverviewFrame::subButton3Clicked() {
@@ -521,7 +506,6 @@ void OverviewFrame::subButton3Clicked() {
   if (subMenu == 4) {
     Q_EMIT disclaimerSignal();
   }  
-
 }
 
 void OverviewFrame::subButton4Clicked() {
