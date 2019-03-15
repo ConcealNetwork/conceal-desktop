@@ -127,6 +127,7 @@ HEADERS += libqrencode/bitstream.h \
            libqrencode/rscode.h \
            libqrencode/split.h \
            src/AliasProvider.h \
+           src/AddressProvider.h \
            src/CommandLineParser.h \
            src/CryptoNoteWrapper.h \
            src/CurrencyAdapter.h \
@@ -573,6 +574,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/rscode.c \
            libqrencode/split.c \
            src/AliasProvider.cpp \
+           src/AddressProvider.cpp \
            src/CommandLineParser.cpp \
            src/CryptoNoteWrapper.cpp \
            src/CurrencyAdapter.cpp \
