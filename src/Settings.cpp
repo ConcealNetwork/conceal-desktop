@@ -44,24 +44,17 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
   m_cmdLineParser = _cmdLineParser;
 }
 
-void Settings::load() 
-{
+void Settings::load() {
 
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
 
-  if (cfgFile.open(QIODevice::ReadOnly)) 
-  {
-
+  if (cfgFile.open(QIODevice::ReadOnly)) {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
 
-    if (!m_settings.contains(OPTION_WALLET_FILE)) 
-    {
-
+    if (!m_settings.contains(OPTION_WALLET_FILE)) {
       m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
-
     } else {
-
       m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
@@ -70,33 +63,23 @@ void Settings::load()
       m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
     }
 
-  } else 
-  {
-
+  } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
   }
 
-  if (!m_settings.contains(OPTION_CONNECTION)) 
-  {
-
+  if (!m_settings.contains(OPTION_CONNECTION)) {
     m_settings.insert(OPTION_CONNECTION, "embedded");
   }
 
-  if (!m_settings.contains(OPTION_REMOTE_NODE)) 
-  {
-
+  if (!m_settings.contains(OPTION_REMOTE_NODE)) {
     m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
   }
 
-  if (m_settings.contains(OPTION_CONNECTION)) 
-  {
-
+  if (m_settings.contains(OPTION_CONNECTION)) {
     m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
   }
 
-  if (m_settings.contains(OPTION_REMOTE_NODE)) 
-  {
-
+  if (m_settings.contains(OPTION_REMOTE_NODE)) {
     m_connectionMode = m_settings.value(OPTION_REMOTE_NODE).toString();
   }
 
@@ -188,9 +171,6 @@ QStringList Settings::getPeers() const {
   return m_cmdLineParser->getPeers();
 }
 
-
-
-
 QStringList Settings::getPriorityNodes() const {
   Q_ASSERT(m_cmdLineParser != nullptr);
   return m_cmdLineParser->getPiorityNodes();
@@ -218,11 +198,10 @@ QStringList Settings::getRpcNodesList() const {
 QString Settings::getCurrentRemoteNode() const {
     QString remotenode;
     if (m_settings.contains(OPTION_REMOTE_NODE)) {
-        remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
+      remotenode = m_settings.value(OPTION_REMOTE_NODE).toString();
     }
     return remotenode;
 }
-
 
 QString Settings::getConnection() const {
     QString connection;
@@ -230,11 +209,10 @@ QString Settings::getConnection() const {
         connection = m_settings.value(OPTION_CONNECTION).toString();
     }
     else {
-    connection = "remote"; 
+      connection = "remote"; 
     }
     return connection;
 }
-
 void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
     if (!_remoteNode.isEmpty()) {
     m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
@@ -246,7 +224,6 @@ void Settings::setConnection(const QString& _connection) {
     m_settings.insert(OPTION_CONNECTION, _connection);
     saveSettings();
 }
-
 
 void Settings::setRpcNodesList(const QStringList &_RpcNodesList) {
   if (getRpcNodesList() != _RpcNodesList) {
