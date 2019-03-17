@@ -22,6 +22,7 @@ namespace WalletGui {
 
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
 Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
+Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "Language";
 Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
@@ -44,11 +45,12 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
   m_cmdLineParser = _cmdLineParser;
 }
 
-void Settings::load() {
-
+void Settings::load() 
+{
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
 
-  if (cfgFile.open(QIODevice::ReadOnly)) {
+  if (cfgFile.open(QIODevice::ReadOnly)) 
+  {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
 
@@ -59,11 +61,16 @@ void Settings::load() {
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
+    if (!m_settings.contains(OPTION_LANGUAGE)) {
+         m_currentLang = "uk";
+    }
+
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
       m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
     }
 
-  } else {
+  } else 
+  {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
   }
 
@@ -135,6 +142,21 @@ QString Settings::getVersion() const {
   return VERSION;
 }
 
+QString Settings::getLanguage() const 
+{
+    QString currentLang;
+    if (m_settings.contains(OPTION_LANGUAGE)) 
+    {
+        currentLang = m_settings.value(OPTION_LANGUAGE).toString();
+    }
+    return currentLang;
+}
+
+void Settings::setLanguage(const QString& _language) 
+{
+    m_settings.insert(OPTION_LANGUAGE, _language);
+    saveSettings();
+}
 
 bool Settings::isTestnet() const {
   Q_ASSERT(m_cmdLineParser != nullptr);
