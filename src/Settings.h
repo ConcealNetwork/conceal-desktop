@@ -46,6 +46,7 @@ public:
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
   QString getVersion() const;
+  QString getLanguage() const;  
   bool isStartOnLoginEnabled() const;
 #ifdef Q_OS_WIN
   bool isMinimizeToTrayEnabled() const;
@@ -56,6 +57,7 @@ public:
   void setEncrypted(bool _encrypted);
   void setCurrentTheme(const QString& _theme);
   void setStartOnLoginEnabled(bool _enable);
+  void setLanguage(const QString& _language);  
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
@@ -71,6 +73,7 @@ private:
   QString m_addressBookFile;
   CommandLineParser* m_cmdLineParser;
   QString m_connectionMode;
+  QString m_currentLang;  
   QString m_remoteNode;  
   quint16 m_daemonPort;  
 
