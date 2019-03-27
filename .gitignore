@@ -9,3 +9,5 @@ cryptonote/
 CMakeLists.txt
 
 
+*.bin
+*.ipch
