@@ -22,7 +22,7 @@ namespace WalletGui {
 
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
 Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
-Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "Language";
+Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "language";
 Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
@@ -45,12 +45,11 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
   m_cmdLineParser = _cmdLineParser;
 }
 
-void Settings::load() 
-{
+void Settings::load() {
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
 
-  if (cfgFile.open(QIODevice::ReadOnly)) 
-  {
+  if (cfgFile.open(QIODevice::ReadOnly)) {
+
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
 
@@ -62,24 +61,24 @@ void Settings::load()
     }
 
     if (!m_settings.contains(OPTION_LANGUAGE)) {
-         m_currentLang = "uk";
+         m_currentLang = "tr";
+         m_settings.insert(OPTION_LANGUAGE, "tr");
     }
 
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
       m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
     }
 
-  } else 
-  {
+    if (!m_settings.contains(OPTION_CONNECTION)) {
+      m_settings.insert(OPTION_CONNECTION, "embedded");
+    }
+
+    if (!m_settings.contains(OPTION_REMOTE_NODE)) {
+      m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
+    }
+
+  } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
-  }
-
-  if (!m_settings.contains(OPTION_CONNECTION)) {
-    m_settings.insert(OPTION_CONNECTION, "embedded");
-  }
-
-  if (!m_settings.contains(OPTION_REMOTE_NODE)) {
-    m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
   }
 
   if (m_settings.contains(OPTION_CONNECTION)) {
@@ -90,53 +89,42 @@ void Settings::load()
     m_connectionMode = m_settings.value(OPTION_REMOTE_NODE).toString();
   }
 
+  if (m_settings.contains(OPTION_LANGUAGE)) {
+    m_currentLang = m_settings.value(OPTION_LANGUAGE).toString();
+  }
+
   QStringList defaultPoolList;
 
   defaultPoolList << "pool.conceal.network:3333" << "ccx.go-mine.it:3333" << "conceal.herominers.com:10361" << "ccx.scecf.org:20000" << "ccx.bluerockpools.net:5009 " << "ccx.heigh-ho.funkypenguin.co.nz:3344";
   if (!m_settings.contains(OPTION_MINING_POOLS)) {
 
     setMiningPoolList(QStringList() << defaultPoolList);
-  } else 
-  {
-
+  } else {
     QStringList poolList = getMiningPoolList();
 
-    Q_FOREACH (const QString& pool, defaultPoolList) 
-    {
-
-      if (!poolList.contains(pool)) 
-      {
-
+    Q_FOREACH (const QString& pool, defaultPoolList) {
+      if (!poolList.contains(pool)) {
         poolList << pool;
       }
     }
-
     setMiningPoolList(poolList);
   }
 
   QStringList defaultNodesList;
   defaultNodesList << "node.conceal.network:16000";
   
-  if (!m_settings.contains(OPTION_RPCNODES)) 
-  {
-
+  if (!m_settings.contains(OPTION_RPCNODES)) {
     setRpcNodesList(QStringList() << defaultNodesList);
   } else {
-
     QStringList nodesList = getRpcNodesList();
-    Q_FOREACH (const QString& node, defaultNodesList) 
-    {
-
-      if (!nodesList.contains(node)) 
-      {
-
+    Q_FOREACH (const QString& node, defaultNodesList) {
+      if (!nodesList.contains(node)) {
         nodesList << node;
       }
     }
     setRpcNodesList(nodesList);
   }
 }
-
 
 QString Settings::getVersion() const {
   return VERSION;
@@ -152,8 +140,7 @@ QString Settings::getLanguage() const
     return currentLang;
 }
 
-void Settings::setLanguage(const QString& _language) 
-{
+void Settings::setLanguage(const QString& _language) {
     m_settings.insert(OPTION_LANGUAGE, _language);
     saveSettings();
 }

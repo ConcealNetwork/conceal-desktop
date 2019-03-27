@@ -1069,6 +1069,9 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/nodesettings.ui \
             src/gui/ui/showqrcode.ui \            
 
+TRANSLATIONS = 	languages/uk.ts \
+				languages/tr.ts \
+                languages/us.ts \
 
 RESOURCES += src/resources.qrc
 
