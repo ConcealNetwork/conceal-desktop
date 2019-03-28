@@ -180,7 +180,7 @@ void SendFrame::sendClicked() {
       if (!SendFrame::remote_node_fee_address.isEmpty()) {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = SendFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 100;
+        walletTransfer.amount = 1000;
         walletTransfers.push_back(walletTransfer);
       }
   }
