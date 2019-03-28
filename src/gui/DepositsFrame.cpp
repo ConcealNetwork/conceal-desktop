@@ -5,6 +5,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "AddressProvider.h"
 #include "DepositsFrame.h"
 #include "DepositDetailsDialog.h"
 #include "DepositListModel.h"
@@ -15,6 +16,7 @@
 #include "WalletEvents.h"
 #include "NodeAdapter.h"
 #include "ui_depositsframe.h"
+#include "Settings.h"
 
 #include <QMessageBox>
 #include <QPainter>
@@ -22,30 +24,35 @@
 
 namespace WalletGui {
 
-namespace {
-
-  QString weeksToBlocks(int _weeks) {
+namespace 
+{
+  /* Convert weeks to the number of blocks */
+  QString weeksToBlocks(int _weeks) 
+  {
     QString resTempate("%1 %2");
-    if (_weeks < 53) {
+    /* A maxmimum of 52 weeks */
+    if (_weeks < 53) 
+    {
       return resTempate.arg(_weeks * 5040).arg(QObject::tr("blocks"));
     }
     return QString();
   }
 
-  QString quartersToBlocks(int _quarters) {
+  /* Convert quarters to the number of blocks */
+  QString quartersToBlocks(int _quarters) 
+  {
     QString resTempate("%1 %2");
-    if (_quarters < 21) {
+    /* A maximum of 20 quarters */
+    if (_quarters < 21) 
+    {
       return resTempate.arg(_quarters * 64800).arg(QObject::tr("blocks"));
     }
     return QString();
   }
-
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::DepositsFrame), m_depositModel(new DepositListModel) {
-
+DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::DepositsFrame), m_depositModel(new DepositListModel) 
+{
   m_ui->setupUi(this);
   m_ui->m_timeSpin->setMinimum(1);
   m_ui->m_timeSpin->setMaximum(52);
@@ -66,10 +73,23 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_feeLabel->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
   m_ui->m_feeLabel2->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
-  
   m_ui->investmentsBox->hide();  
-  
-  /* pixmap for deposits */
+
+  /* If it is a remote node check if there
+     is a fee address */
+  QString connection = Settings::instance().getConnection();
+  if(connection.compare("remote") == 0) 
+  {
+    //m_ui->nodeFeeLabel->show();
+    //m_ui->m_nodeFee->show();
+    QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
+    m_addressProvider->getAddress(remoteNodeUrl);
+    connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &DepositsFrame::onAddressFound, Qt::QueuedConnection);
+  }
+
+
+
+  /* Draw the pixmap for deposits */
   QPixmap pixmap(860,290);
   pixmap.fill(QColor("transparent"));
 
@@ -83,14 +103,15 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   int w = 0;
   int h = 0;
 
-  do {
+  do 
+  {
     x = 11 + (a * 15);
     y = 166 - (a * 2);
     w = 10;
     h = 80 + (a * 2);    
     painter.drawRect(x, y, w, h);
     a = a + 1;
-  } while( a < 53 );  
+  } while ( a < 53 );  
   
   m_ui->m_chartBack->setPixmap(pixmap);    
   m_ui->m_bar->setGeometry(47,164,10,82);
@@ -103,80 +124,100 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   reset();
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
 DepositsFrame::~DepositsFrame() {
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) {
-
+/* Update the label when the deposit balance changes */
+void DepositsFrame::actualDepositBalanceUpdated(quint64 _balance) 
+{
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
-/* ------------------------------------------------------------------------------------------- */
+/* Set the variable to the fee address when found */
+void DepositsFrame::onAddressFound(const QString& _address) {
+    DepositsFrame::remote_node_fee_address = _address;
+}
 
-void DepositsFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
-
+/* Update the label when the investment balance changes */
+void DepositsFrame::actualInvestmentBalanceUpdated(quint64 _balance) 
+{
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   m_ui->m_unlockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::reset() {
-
+/* Reset totals */
+void DepositsFrame::reset() 
+{
   actualDepositBalanceUpdated(0);
   actualInvestmentBalanceUpdated(0);
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::allButtonClicked() {
-
+/* Select all funds button */
+void DepositsFrame::allButtonClicked() 
+{
   double amount = (double)WalletAdapter::instance().getActualBalance() - (double)CurrencyAdapter::instance().getMinimumFeeBanking();
   int wholeAmount = (int)(amount/1000000);
   m_ui->m_amountSpin->setValue(wholeAmount);
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::depositClicked() {
-
+/* New deposit */
+void DepositsFrame::depositClicked() 
+{
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
 
-  /* deposits 2.0 launch */
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) {
+  /* Deposits 2.0 launch */
+  if (NodeAdapter::instance().getLastKnownBlockHeight() < 108000) 
+  {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("New deposits only work after height 108,000"), QtCriticalMsg));
     return;
   }
 
-  /* insufficient funds */
-  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance()) {
+  /* Insufficient funds */
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance()) 
+  {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
   }
 
-  /* a week is set as 5040 blocks */
+  /* One week is set as 5040 blocks */
   quint32 term = m_ui->m_timeSpin->value() * 5040;
 
-  /* warn the user */
+  /* Warn the user */
   if (QMessageBox::warning(&MainWindow::instance(), tr("Deposit Confirmation"),
     tr("Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?"), 
     QMessageBox::Cancel, 
-    QMessageBox::Ok) != QMessageBox::Ok) {
+    QMessageBox::Ok) != QMessageBox::Ok) 
+  {
     return;
   }
 
-  /* initiate the desposit */
+  /* Initiate the desposit */
   WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
+
+  /* Remote node fee */
+  QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
+  QString connection = Settings::instance().getConnection();
+  if(connection.compare("remote") == 0) 
+  {
+    if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
+    {
+      QVector<CryptoNote::TransactionMessage> walletMessages;
+      CryptoNote::WalletLegacyTransfer walletTransfer;
+      walletTransfer.address = DepositsFrame::remote_node_fee_address.toStdString();
+      walletTransfer.amount = 1000;
+      walletTransfers.push_back(walletTransfer);
+      /* If the wallet is open we proceed */
+      if (WalletAdapter::instance().isOpen()) 
+      {    
+        /* Send the transaction */
+        WalletAdapter::instance().sendTransaction(walletTransfers, 100, "", 4, walletMessages);
+      }
+    }
+  }
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
+/* New investment */
 void DepositsFrame::investmentClicked() {
-
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin2->cleanText());
 
   /* investments 1.0 launch */
@@ -204,6 +245,27 @@ void DepositsFrame::investmentClicked() {
  
   /* initiate the investment */
   WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
+  
+  /* Remote node fee */
+  QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
+  QString connection = Settings::instance().getConnection();
+  if(connection.compare("remote") == 0) 
+  {
+    if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
+    {
+      QVector<CryptoNote::TransactionMessage> walletMessages;
+      CryptoNote::WalletLegacyTransfer walletTransfer;
+      walletTransfer.address = DepositsFrame::remote_node_fee_address.toStdString();
+      walletTransfer.amount = 1000;
+      walletTransfers.push_back(walletTransfer);
+      /* If the wallet is open we proceed */
+      if (WalletAdapter::instance().isOpen()) 
+      {    
+        /* Send the transaction */
+        WalletAdapter::instance().sendTransaction(walletTransfers, 100, "", 4, walletMessages);
+      }
+    }
+  }
 }
 
 /* ------------------------------------------------------------------------------------------- */
