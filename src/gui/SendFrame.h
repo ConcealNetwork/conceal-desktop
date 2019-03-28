@@ -53,6 +53,7 @@ private:
 
 Q_SIGNALS:
   void backSignal();
+  void addressFoundSignal();  
   void addressBookSignal();  
 
 };
