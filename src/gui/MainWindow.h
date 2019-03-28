@@ -56,6 +56,7 @@ private:
   void payTo(const QModelIndex& _index);
   void sendTo();
   void delay();
+  void setRemoteWindowTitle();  
   void depositTo();
   void showQRCode(const QString& _address);
   void backupTo();
