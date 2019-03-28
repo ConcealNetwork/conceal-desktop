@@ -16,7 +16,6 @@ class DepositsFrame;
 namespace WalletGui {
 
 class DepositListModel;
-class AddressProvider;
 
 class DepositsFrame : public QFrame {
   Q_OBJECT
@@ -29,11 +28,9 @@ private:
   QScopedPointer<Ui::DepositsFrame> m_ui;
   QScopedArrayPointer<DepositListModel> m_depositModel;
   QString remote_node_fee_address;
-  AddressProvider* m_addressProvider;
 
   void actualDepositBalanceUpdated(quint64 _balance);
   void actualInvestmentBalanceUpdated(quint64 _balance);
-  void onAddressFound(const QString& _address);  
   void reset();
 
   Q_SLOT void depositClicked(); /* new deposits */
