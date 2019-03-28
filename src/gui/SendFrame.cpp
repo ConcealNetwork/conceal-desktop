@@ -55,8 +55,6 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
 
   QString connection = Settings::instance().getConnection();
   if(connection.compare("remote") == 0) {
-    m_ui->nodeFeeLabel->show();
-    m_ui->m_nodeFee->show();
     QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
     m_addressProvider->getAddress(remoteNodeUrl);
     connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &SendFrame::onAddressFound, Qt::QueuedConnection);
@@ -213,9 +211,15 @@ void SendFrame::walletActualBalanceUpdated(quint64 _balance) {
   m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
 }
 
-/* Set the variable to the fee address when found */
-void SendFrame::onAddressFound(const QString& _address) {
-    SendFrame::remote_node_fee_address = _address;
+/* Set the variable to the fee address, save the address in settings so
+   other functions can use, and show the fee if a fee address is found */
+void SendFrame::onAddressFound(const QString& _address) 
+{
+  SendFrame::remote_node_fee_address = _address;
+  Settings::instance().setCurrentFeeAddress(_address);
+  m_ui->nodeFeeLabel->show();
+  m_ui->m_nodeFee->show();
+  Q_EMIT addressFoundSignal();
 }
 
 /* Calculate fee based on number of characters in the message */
