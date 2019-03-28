@@ -27,6 +27,7 @@ Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
 Q_DECL_CONSTEXPR char OPTION_REMOTE_NODE[] = "remoteNode";
+Q_DECL_CONSTEXPR char OPTION_FEE_ADDRESS[] = "feeAddress";
 
 Settings& Settings::instance() {
   static Settings inst;
@@ -48,7 +49,8 @@ void Settings::load() {
 
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
 
-  if (cfgFile.open(QIODevice::ReadOnly)) {
+  if (cfgFile.open(QIODevice::ReadOnly)) 
+  {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
 
@@ -59,9 +61,13 @@ void Settings::load() {
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
+    if (!m_settings.contains(OPTION_FEE_ADDRESS)) {
+      m_settings.insert(OPTION_FEE_ADDRESS, ""); 
+    }
+
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
       m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
-    }
+    }    
 
   } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
@@ -195,6 +201,14 @@ QStringList Settings::getRpcNodesList() const {
   return res;
 }
 
+QString Settings::getCurrentFeeAddress() const {
+    QString feeAddress;
+    if (m_settings.contains(OPTION_FEE_ADDRESS)) {
+      feeAddress = m_settings.value(OPTION_FEE_ADDRESS).toString();
+    }
+    return feeAddress;
+}
+
 QString Settings::getCurrentRemoteNode() const {
     QString remotenode;
     if (m_settings.contains(OPTION_REMOTE_NODE)) {
@@ -216,6 +230,13 @@ QString Settings::getConnection() const {
 void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
     if (!_remoteNode.isEmpty()) {
     m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
+    }
+    saveSettings();
+}
+
+void Settings::setCurrentFeeAddress(const QString& _feeAddress) {
+    if (!_feeAddress.isEmpty()) {
+    m_settings.insert(OPTION_FEE_ADDRESS, _feeAddress);
     }
     saveSettings();
 }
