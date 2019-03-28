@@ -131,6 +131,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
   connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_sendFrame, &SendFrame::addressFoundSignal, this, &MainWindow::setRemoteWindowTitle);  
   connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);  
   connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);    
@@ -144,6 +145,7 @@ void MainWindow::connectToSignals() {
 
 void MainWindow::initUi() {
   setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
@@ -183,6 +185,8 @@ void MainWindow::initUi() {
 #endif
 }
 
+
+
 #ifdef Q_OS_WIN
 void MainWindow::minimizeToTray(bool _on) {
   if (_on) {
@@ -202,6 +206,7 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
 }
 
 void MainWindow::quit() {
+  Settings::instance().setCurrentFeeAddress("");    
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
     exitWidget->show();
@@ -272,6 +277,10 @@ bool MainWindow::event(QEvent* _event) {
   }
 
   return QMainWindow::event(_event);
+}
+
+void MainWindow::setRemoteWindowTitle() {
+  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
 }
 
 void MainWindow::delay()
