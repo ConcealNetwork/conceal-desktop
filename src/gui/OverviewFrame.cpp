@@ -90,10 +90,17 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
   /* disable action buttons until wallet synchronization is complete */  
+  m_ui->m_sendButton->setEnabled(false);
+  m_ui->m_depositButton->setEnabled(false);  
+  m_ui->m_investmentsButton->setEnabled(false);  
   m_ui->m_newTransferButton->setEnabled(false);
   m_ui->m_newMessageButton->setEnabled(false);
   m_ui->m_newDepositButton->setEnabled(false);    
+  m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
+  m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
+  m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_bankingButton->setEnabled(false);
+  m_ui->m_messagesButton->setEnabled(false);
   m_ui->m_totalPortfolioLabelUSD->setText("SYNCHRONIZATION IN PROGRESS"); 
 
   /* disable the submenu */
@@ -130,8 +137,15 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) {
   /* lets enable buttons now that the wallet synchronization is complete */  
   m_ui->m_newTransferButton->setEnabled(true);
   m_ui->m_newMessageButton->setEnabled(true);
-  m_ui->m_newDepositButton->setEnabled(true);    
+  m_ui->m_newDepositButton->setEnabled(true);  
+  m_ui->m_sendButton->setEnabled(true);
+  m_ui->m_depositButton->setEnabled(true);  
+  m_ui->m_investmentsButton->setEnabled(true);      
+  m_ui->m_messagesButton->setEnabled(true);
   m_ui->m_bankingButton->setEnabled(true);
+  m_ui->m_newTransferButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
+  m_ui->m_newMessageButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
+  m_ui->m_newDepositButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   /* show total portfolio */
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
