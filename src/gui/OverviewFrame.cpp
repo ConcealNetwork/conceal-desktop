@@ -37,27 +37,26 @@ namespace WalletGui {
   public:
     RecentTransactionsDelegate(QObject* _parent) : QStyledItemDelegate(_parent) {
     }
-
     ~RecentTransactionsDelegate() {
     }
 
-  QWidget* createEditor(QWidget* _parent, const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE {
-
+  QWidget* createEditor(QWidget* _parent, const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE 
+  {
     if (!_index.isValid()) {
       return nullptr;
     }
     return new TransactionFrame(_index, _parent);
   }
 
-  QSize sizeHint(const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE {
+  QSize sizeHint(const QStyleOptionViewItem& _option, const QModelIndex& _index) const Q_DECL_OVERRIDE 
+  {
     return QSize(346, 64);
   }
 };
 
-OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) {
-
+OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) 
+{
   m_ui->setupUi(this);
-
   /* load the new app-wide font */
   int id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
   QFont font;
@@ -116,10 +115,9 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_subButton4->setEnabled(false);
   m_ui->m_subButton5->setEnabled(false);
   m_ui->m_subButton6->setEnabled(false);
-
   int subMenu = 0;
 
-  /* pull the chart from the website */
+  /* Pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
   const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/maple/chart.php");
@@ -133,7 +131,8 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
 OverviewFrame::~OverviewFrame() {
 }
 
-void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) {
+void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) 
+{
   /* lets enable buttons now that the wallet synchronization is complete */  
   m_ui->m_newTransferButton->setEnabled(true);
   m_ui->m_newMessageButton->setEnabled(true);
@@ -146,6 +145,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) {
   m_ui->m_newTransferButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newMessageButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newDepositButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
+
   /* show total portfolio */
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -156,44 +156,49 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) {
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX"); 
 }
-\
-void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first, int _last) {
-  for (quint32 i = _first; i <= _last; ++i) {
+
+
+void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first, int _last) 
+{
+  for (quint32 i = _first; i <= _last; ++i) 
+  {
     QModelIndex recentModelIndex = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recentModelIndex);
     m_priceProvider->getPrice(); 
   }
 }
 
-void OverviewFrame::updateWalletAddress(const QString& _address) {
+void OverviewFrame::updateWalletAddress(const QString& _address) 
+{
   m_ui->m_copyAddressButton->setText(_address);
   m_ui->m_copyAddressButton->setStyleSheet("Text-align:right");
   showCurrentWallet();
 }
 
-void OverviewFrame::showCurrentWallet() {
-  /* show the name of the open wallet */
+void OverviewFrame::showCurrentWallet() 
+{
+  /* Show the name of the open wallet */
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
 
-  /* remove directory if present.
+  /* Remove directory if present.
      do this before extension removal incase directory has a period character. */
   const size_t last_slash_idx = wallet.find_last_of("\\/");
   if (std::string::npos != last_slash_idx) {
       wallet.erase(0, last_slash_idx + 1);
   }
-  /*  remove extension if present */
+  /*  Remove extension if present */
   const size_t period_idx = wallet.rfind('.');
   if (std::string::npos != period_idx) {
       wallet.erase(period_idx);
   }
-  /* back to QString and display */
+  /* Back to QString and display */
   walletFile = QString::fromStdString(wallet);
   m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile);
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
-    /* download is done
+    /* Download is done
        set the chart as the pixmap */
     QPixmap pm;
     pm.loadFromData(reply->readAll());
@@ -297,7 +302,9 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   float ccxusd = _ccxusd.toFloat();
   float total = ccxusd * (float)totalBalance;
-  /* m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); */
+  m_ui->m_ccxusd->setText(_ccxusd);  
+  m_ui->m_btcusd->setText(_btc);
+  // m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); 
 }
 
 void OverviewFrame::sendClicked() {  
