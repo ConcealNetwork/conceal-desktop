@@ -60,7 +60,7 @@ If the build is successful the binaries will be in the bin folder.
 ##### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
-- Edit the CMakeLists.txt file and set the path to QT cmake folder. For exampple: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
+- Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
 - `git clone https://github.com/ConcealNetwork/conceal-core`
 - `git clone https://github.com/ConcealNetwork/conceal-wallet`
 - Copy the contents of the conceal-core folder into conceal-wallet\cryptonote
