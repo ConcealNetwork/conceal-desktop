@@ -1210,29 +1210,31 @@ font-family: Lato;</string>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
+      <widget class="QLabel" name="m_currentWalletTitle">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>471</width>
+         <width>561</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #aaa;
 background: transparent;
-font-size: 18px;
-font-family: Lato;</string>
+font-size: 14px;
+</string>
        </property>
        <property name="text">
-        <string notr="true">000000.00 USD</string>
+        <string>currentWallet</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2026,31 +2028,29 @@ font-family: Lato;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="m_currentWalletTitle">
+     <widget class="QLabel" name="m_totalPortfolioLabelUSD">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>30</y>
-        <width>561</width>
+        <x>780</x>
+        <y>20</y>
+        <width>471</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::CustomContextMenu</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #aaa;
 background: transparent;
-font-size: 14px;
-</string>
+font-size: 18px;
+font-family: Lato;</string>
       </property>
       <property name="text">
-       <string>currentWallet</string>
+       <string notr="true">000000.00 USD</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2070,7 +2070,7 @@ font-size: 14px;
      <zorder>m_qrcodebutton</zorder>
      <zorder>label_3</zorder>
      <zorder>m_copyAddressButton</zorder>
-     <zorder>m_currentWalletTitle</zorder>
+     <zorder>m_totalPortfolioLabelUSD</zorder>
     </widget>
    </item>
   </layout>
