@@ -100,7 +100,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_bankingButton->setEnabled(false);
   m_ui->m_messagesButton->setEnabled(false);
-  m_ui->m_totalPortfolioLabelUSD->setText("SYNCHRONIZATION IN PROGRESS"); 
+  m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
 
   /* disable the submenu */
   m_ui->m_subButton1->setText("");
@@ -120,11 +120,11 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/maple/chart.php");
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network:3025/charts/7daysPrice.png?width=681&height=281");
   QNetworkRequest request(url);
   nam->get(request);
 
-  showCurrentWallet();
+  
   reset();
 }
 
@@ -145,7 +145,8 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text)
   m_ui->m_newTransferButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newMessageButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newDepositButton->setStyleSheet("color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
-
+  showCurrentWallet();
+  
   /* show total portfolio */
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -154,7 +155,6 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();  
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX"); 
 }
 
 
@@ -214,7 +214,8 @@ void OverviewFrame::layoutChanged() {
   showCurrentWallet();
 }
 
-void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
+void OverviewFrame::actualBalanceUpdated(quint64 _balance) 
+{
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -227,7 +228,8 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice();   
 }
 
-void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
+void OverviewFrame::pendingBalanceUpdated(quint64 _balance) 
+{
   m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -240,7 +242,8 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) {
+void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) 
+{
   m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -253,7 +256,8 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
+void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) 
+{
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -266,7 +270,8 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
+void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) 
+{
   m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -279,7 +284,8 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance) {
+void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance) 
+{
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -292,7 +298,8 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance) {
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) {
+void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) 
+{
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -304,26 +311,31 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   float total = ccxusd * (float)totalBalance;
   m_ui->m_ccxusd->setText(_ccxusd);  
   m_ui->m_btcusd->setText(_btc);
-  // m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX " + QString::number(total / 1000000, 'f', 2) + " USD"); 
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD"); 
 }
 
-void OverviewFrame::sendClicked() {  
+void OverviewFrame::sendClicked() 
+{  
   Q_EMIT sendSignal();
 }
 
-void OverviewFrame::depositClicked() {
+void OverviewFrame::depositClicked() 
+{
   Q_EMIT depositSignal();
 }
 
-void OverviewFrame::transactionClicked() {
+void OverviewFrame::transactionClicked() 
+{
   Q_EMIT transactionSignal();
 }
 
-void OverviewFrame::addressBookClicked() {
+void OverviewFrame::addressBookClicked() 
+{
   Q_EMIT addressBookSignal();
 }
 
-void OverviewFrame::aboutClicked() {
+void OverviewFrame::aboutClicked() 
+{
   if (subMenu != 4) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
@@ -357,7 +369,8 @@ void OverviewFrame::aboutClicked() {
   }
 }
 
-void OverviewFrame::importClicked() {
+void OverviewFrame::importClicked() 
+{
   if (subMenu != 1) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
@@ -390,7 +403,8 @@ void OverviewFrame::importClicked() {
   }
 }
 
-void OverviewFrame::settingsClicked() {
+void OverviewFrame::settingsClicked() 
+{
   if (subMenu != 2) {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
@@ -484,7 +498,8 @@ void OverviewFrame::walletClicked() {
   }
 }
 
-void OverviewFrame::subButton1Clicked() {
+void OverviewFrame::subButton1Clicked() 
+{
   if (subMenu == 2) {
     Q_EMIT optimizeSignal();
   }
@@ -499,7 +514,8 @@ void OverviewFrame::subButton1Clicked() {
   }  
 }
 
-void OverviewFrame::subButton2Clicked() {
+void OverviewFrame::subButton2Clicked() 
+{
   if (subMenu == 2) {
     Q_EMIT connectionSettingsSignal();
   }
@@ -514,7 +530,8 @@ void OverviewFrame::subButton2Clicked() {
   }
 }
 
-void OverviewFrame::subButton3Clicked() {
+void OverviewFrame::subButton3Clicked() 
+{
   if (subMenu == 2) {
     Q_EMIT rescanSignal();
   }
@@ -529,7 +546,8 @@ void OverviewFrame::subButton3Clicked() {
   }  
 }
 
-void OverviewFrame::subButton4Clicked() {
+void OverviewFrame::subButton4Clicked() 
+{
   if (subMenu == 3) {
     Q_EMIT encryptWalletSignal();
   }
