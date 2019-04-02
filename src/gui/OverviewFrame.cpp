@@ -120,7 +120,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/7daysPrice.png?width=701&height=281");
+  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/7daysPrice.png?width=711&height=291");
   QNetworkRequest request(url);
   nam->get(request);
 
@@ -172,7 +172,6 @@ void OverviewFrame::updateWalletAddress(const QString& _address)
 {
   m_ui->m_copyAddressButton->setText(_address);
   m_ui->m_copyAddressButton->setStyleSheet("Text-align:right");
-  showCurrentWallet();
 }
 
 void OverviewFrame::showCurrentWallet() 
@@ -194,7 +193,7 @@ void OverviewFrame::showCurrentWallet()
   }
   /* Back to QString and display */
   walletFile = QString::fromStdString(wallet);
-  m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile);
+  m_ui->m_currentWalletTitle->setText("CURRENT WALLET: " + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
