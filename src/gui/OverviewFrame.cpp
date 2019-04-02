@@ -298,7 +298,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc, const QString& _btc, const QString& _diff, const QString& _hashrate, const QString& _reward, const QString& _deposits, const QString& _supply) 
+void OverviewFrame::onPriceFound(const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume) 
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -307,10 +307,12 @@ void OverviewFrame::onPriceFound(const QString& _ccxusd, const QString& _ccxbtc,
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();  
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  float ccxusd = _ccxusd.toFloat();
+  float ccxusd = _usdccx.toFloat();
   float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText(_ccxusd);  
-  m_ui->m_btcusd->setText(_btc);
+  m_ui->m_ccxusd->setText("$" + _usdccx);  
+  m_ui->m_btcusd->setText("$" + _usdbtc);
+  m_ui->m_marketCap->setText("$" + _usdmarketcap);
+  m_ui->m_volume->setText("$" + _usdvolume);
   m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD"); 
 }
 
@@ -625,7 +627,6 @@ void OverviewFrame::reset() {
   pendingDepositBalanceUpdated(0);
   actualInvestmentBalanceUpdated(0);
   pendingInvestmentBalanceUpdated(0);
-  m_ui->m_actualBalanceLabel_3->setText(CurrencyAdapter::instance().formatAmount(0));
   m_priceProvider->getPrice(); 
   Q_EMIT resetWalletSignal();
 }
@@ -635,8 +636,6 @@ void OverviewFrame::setStatusBarText(const QString& _text) {
 } 
 
 void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount) {
-  m_ui->m_actualBalanceLabel_3->setText(CurrencyAdapter::instance().formatAmount(_dayPoolAmount));
-  m_ui->m_pendingBalanceLabel_3->setText(CurrencyAdapter::instance().formatAmount(_totalPoolAmount));
 }
 
 void OverviewFrame::copyClicked() {
