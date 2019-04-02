@@ -1635,7 +1635,7 @@ border: none;</string>
          <x>0</x>
          <y>10</y>
          <width>681</width>
-         <height>231</height>
+         <height>241</height>
         </rect>
        </property>
        <property name="text">
@@ -1646,7 +1646,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>600</x>
-         <y>260</y>
+         <y>270</y>
          <width>81</width>
          <height>25</height>
         </rect>
@@ -1673,8 +1673,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_marketCap">
        <property name="geometry">
         <rect>
-         <x>360</x>
-         <y>260</y>
+         <x>430</x>
+         <y>270</y>
          <width>101</width>
          <height>25</height>
         </rect>
@@ -1701,8 +1701,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>260</y>
+         <x>200</x>
+         <y>270</y>
          <width>51</width>
          <height>25</height>
         </rect>
@@ -1729,8 +1729,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>260</y>
+         <x>180</x>
+         <y>270</y>
          <width>41</width>
          <height>25</height>
         </rect>
@@ -1742,7 +1742,7 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
@@ -1754,8 +1754,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_btcusd">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>260</y>
+         <x>290</x>
+         <y>270</y>
          <width>71</width>
          <height>25</height>
         </rect>
@@ -1779,36 +1779,11 @@ font-size: 11px;</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_tickerLabel1_3">
-       <property name="geometry">
-        <rect>
-         <x>480</x>
-         <y>260</y>
-         <width>31</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #777;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>260</y>
+         <x>560</x>
+         <y>270</y>
          <width>51</width>
          <height>25</height>
         </rect>
@@ -1820,7 +1795,7 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
@@ -1832,8 +1807,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>260</y>
+         <x>390</x>
+         <y>270</y>
          <width>71</width>
          <height>25</height>
         </rect>
@@ -1845,7 +1820,7 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
@@ -1857,8 +1832,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>130</x>
-         <y>260</y>
+         <x>280</x>
+         <y>270</y>
          <width>31</width>
          <height>25</height>
         </rect>
@@ -1870,7 +1845,7 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
@@ -1969,7 +1944,7 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;
+       <string notr="true">color: orange;
 background: transparent;
 font-size: 18px;
 font-family: Lato;</string>
@@ -1979,6 +1954,34 @@ font-family: Lato;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>660</y>
+        <width>131</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #ddd;
+background: transparent;
+font-family: Lato;
+font-size: 11px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>MARKET INFORMATION</string>
       </property>
      </widget>
      <zorder>leftMenu</zorder>
@@ -1996,6 +1999,7 @@ font-family: Lato;</string>
      <zorder>label_3</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
+     <zorder>label_14</zorder>
     </widget>
    </item>
   </layout>
