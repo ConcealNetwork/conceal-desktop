@@ -37,7 +37,7 @@ private:
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
 
-  void onPriceFound(const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);

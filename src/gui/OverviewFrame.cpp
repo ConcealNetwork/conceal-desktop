@@ -297,7 +297,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice(); 
 }
 
-void OverviewFrame::onPriceFound(const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume) 
+void OverviewFrame::onPriceFound(const QString& _btcccx,const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume) 
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -308,7 +308,7 @@ void OverviewFrame::onPriceFound(const QString& _usdccx, const QString& _usdbtc,
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   float ccxusd = _usdccx.toFloat();
   float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText("$" + _usdccx);  
+  m_ui->m_ccxusd->setText("$" + _usdccx + " | " + _btcccx + " sats");  
   m_ui->m_btcusd->setText("$" + _usdbtc);
   m_ui->m_marketCap->setText("$" + _usdmarketcap);
   m_ui->m_volume->setText("$" + _usdvolume);

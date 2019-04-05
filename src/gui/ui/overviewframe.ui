@@ -1645,7 +1645,7 @@ border: none;</string>
       <widget class="QLabel" name="m_volume">
        <property name="geometry">
         <rect>
-         <x>600</x>
+         <x>590</x>
          <y>270</y>
          <width>81</width>
          <height>25</height>
@@ -1673,7 +1673,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_marketCap">
        <property name="geometry">
         <rect>
-         <x>430</x>
+         <x>440</x>
          <y>270</y>
          <width>101</width>
          <height>25</height>
@@ -1701,9 +1701,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>200</x>
+         <x>210</x>
          <y>270</y>
-         <width>51</width>
+         <width>81</width>
          <height>25</height>
         </rect>
        </property>
@@ -1729,9 +1729,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>180</x>
+         <x>170</x>
          <y>270</y>
-         <width>41</width>
+         <width>31</width>
          <height>25</height>
         </rect>
        </property>
@@ -1754,7 +1754,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_btcusd">
        <property name="geometry">
         <rect>
-         <x>290</x>
+         <x>320</x>
          <y>270</y>
          <width>71</width>
          <height>25</height>
@@ -1807,7 +1807,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>390</x>
+         <x>410</x>
          <y>270</y>
          <width>71</width>
          <height>25</height>
@@ -1832,7 +1832,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>280</x>
+         <x>310</x>
          <y>270</y>
          <width>31</width>
          <height>25</height>
@@ -1961,7 +1961,7 @@ font-family: Lato;</string>
        <rect>
         <x>230</x>
         <y>660</y>
-        <width>131</width>
+        <width>141</width>
         <height>25</height>
        </rect>
       </property>

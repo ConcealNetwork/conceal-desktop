@@ -35,12 +35,13 @@ void PriceProvider::readyRead() {
   QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
   QString data = (QString)reply->readAll();
   QStringList pairs = data.split(" ");
+  QString btcccx = pairs[0];
   QString usdccx = pairs[1];
   QString usdbtc = pairs[2];
   QString usdmarketcap = pairs[3];
   QString usdvolume = pairs[4];
 
-  Q_EMIT priceFoundSignal(usdccx,usdbtc,usdmarketcap,usdvolume);
+  Q_EMIT priceFoundSignal(btcccx,usdccx,usdbtc,usdmarketcap,usdvolume);
 
 }
 
