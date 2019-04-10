@@ -634,7 +634,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
        </property>
        <property name="text">
-        <string notr="true">0.000100</string>
+        <string notr="true">0.001000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

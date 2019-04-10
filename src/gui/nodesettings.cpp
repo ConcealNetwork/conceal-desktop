@@ -27,13 +27,13 @@ namespace WalletGui {
   /* Initialize the existing connection values */
   void NodeSettings::initConnectionSettings() {
     QString connection = Settings::instance().getConnection();
-
+    QString remoteHost = Settings::instance().getCurrentRemoteNode();
+    m_ui->m_hostEdit->setText(remoteHost);
+    
     /* If the connection is a remote node, then load the current (or default)
        remote node into the text field. */
     if(connection.compare("remote") == 0) {
         m_ui->radioButton->setChecked(true);
-        QString remoteHost = Settings::instance().getCurrentRemoteNode();
-        m_ui->m_hostEdit->setText(remoteHost);
     }
 
     /* It is an embedded node, so let only check that */
