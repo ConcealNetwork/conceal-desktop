@@ -7,7 +7,5 @@ uncrustify.cfg
 CMakeFiles
 cryptonote/
 CMakeLists.txt
-
-
 *.bin
 *.ipch
