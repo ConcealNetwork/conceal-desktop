@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/q/maple/ccx-usd.php");
+  QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/q/wallet/data.php");
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
@@ -35,16 +35,13 @@ void PriceProvider::readyRead() {
   QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
   QString data = (QString)reply->readAll();
   QStringList pairs = data.split(" ");
-  QString ccxusd = pairs[0];
-  QString ccxbtc = pairs[1];
-  QString btc = pairs[2];
-  QString diff = pairs[3];
-  QString hashrate = pairs[4];
-  QString reward = pairs[5];
-  QString deposits = pairs[6];
-  QString supply = pairs[7];
+  QString btcccx = pairs[0];
+  QString usdccx = pairs[1];
+  QString usdbtc = pairs[2];
+  QString usdmarketcap = pairs[3];
+  QString usdvolume = pairs[4];
 
-  Q_EMIT priceFoundSignal(ccxusd, ccxbtc, btc, diff, hashrate, reward, deposits, supply);
+  Q_EMIT priceFoundSignal(btcccx,usdccx,usdbtc,usdmarketcap,usdvolume);
 
 }
 

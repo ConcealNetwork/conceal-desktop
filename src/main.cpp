@@ -31,7 +31,7 @@ using namespace WalletGui;
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
-  app.setApplicationName("Conceal-GUI");
+  app.setApplicationName("Conceal Desktop");
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
@@ -39,9 +39,6 @@ int main(int argc, char* argv[]) {
     QApplication::setStyle(QStyleFactory::create("Fusion"));
   #endif
   
-  QGuiApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
-
-
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());

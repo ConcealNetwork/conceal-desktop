@@ -121,7 +121,6 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);        
   connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);     
   
-  connect(m_ui->m_overviewFrame, &OverviewFrame::miningSignal, this, &MainWindow::miningTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
@@ -129,9 +128,10 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);    
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);      
+  connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
-  connect(m_ui->m_miningFrame, &MiningFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_sendFrame, &SendFrame::addressFoundSignal, this, &MainWindow::setRemoteWindowTitle);  
   connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);  
   connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);    
@@ -145,6 +145,7 @@ void MainWindow::connectToSignals() {
 
 void MainWindow::initUi() {
   setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
@@ -160,7 +161,6 @@ void MainWindow::initUi() {
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
-  m_ui->m_miningFrame->hide();
   m_ui->m_depositsFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
@@ -170,7 +170,6 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_addressBookAction);
   m_tabActionGroup->addAction(m_ui->m_messagesAction);
   m_tabActionGroup->addAction(m_ui->m_sendMessageAction);
-  m_tabActionGroup->addAction(m_ui->m_miningAction);
   m_tabActionGroup->addAction(m_ui->m_depositsAction);
 
   m_ui->m_overviewAction->toggle();
@@ -185,6 +184,8 @@ void MainWindow::initUi() {
   m_ui->m_closeToTrayAction->deleteLater();
 #endif
 }
+
+
 
 #ifdef Q_OS_WIN
 void MainWindow::minimizeToTray(bool _on) {
@@ -205,6 +206,7 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
 }
 
 void MainWindow::quit() {
+  Settings::instance().setCurrentFeeAddress("");    
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
     exitWidget->show();
@@ -277,6 +279,10 @@ bool MainWindow::event(QEvent* _event) {
   return QMainWindow::event(_event);
 }
 
+void MainWindow::setRemoteWindowTitle() {
+  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+}
+
 void MainWindow::delay()
 {
     QTime dieTime= QTime::currentTime().addSecs(2);
@@ -339,7 +345,6 @@ void MainWindow::createWallet() {
 }
 
 void MainWindow::openWallet() {  
-
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
 
   #ifdef Q_OS_WIN
@@ -358,8 +363,12 @@ void MainWindow::openWallet() {
   }
 }
 
-void MainWindow::importKey() {
+void MainWindow::closeWallet() {  
+  WalletAdapter::instance().close();
+  walletClosed();
+}
 
+void MainWindow::importKey() {
   ImportKeyDialog dlg(this);
 
   if (dlg.exec() == QDialog::Accepted) {
@@ -557,7 +566,7 @@ void MainWindow::askForWalletPassword(bool _error)
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     m_ui->m_welcomeFrame->hide();
-  if (!_error) {
+    if (!_error) {
 
     m_ui->m_backupWalletAction->setEnabled(true);
     m_ui->m_resetAction->setEnabled(true);
@@ -595,7 +604,6 @@ void MainWindow::walletClosed()
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
-  m_ui->m_miningFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
 
@@ -656,10 +664,6 @@ void MainWindow::addressBookTo() {
 
 void MainWindow::messageTo() {
   m_ui->m_messagesAction->trigger();
-}
-
-void MainWindow::miningTo() {
-  m_ui->m_miningAction->trigger();
 }
 
 void MainWindow::sendMessageTo() 
@@ -888,20 +892,20 @@ void MainWindow::importTracking() {
 
 /* --------------------------- CONNECTION SETTINGS --------------------------------------- */
 
-void MainWindow::nodeSettings() 
-{
-
+void MainWindow::nodeSettings() {
   NodeSettings dlg(this);
 
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
+  dlg.setRemoteHost();
 
-  if (dlg.exec() == QDialog::Accepted) 
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-
+    if (connection == "remote") {
+      QString remoteHost = dlg.setRemoteHost();
+      Settings::instance().setCurrentRemoteNode(remoteHost);
+    }
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 
                              tr("Please restart the wallet for the new settings to take effect."), 

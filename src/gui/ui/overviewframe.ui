@@ -507,6 +507,36 @@ font-size: 14px;</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="m_subButton6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>470</y>
+         <width>151</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">text-align: left; color: #777; margin-left: 20px;
+font-family: Lato;
+font-size: 14px;</string>
+       </property>
+       <property name="text">
+        <string>Sixth</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="priceBox">
       <property name="geometry">
@@ -1180,29 +1210,31 @@ font-family: Lato;</string>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
+      <widget class="QLabel" name="m_currentWalletTitle">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>471</width>
+         <width>561</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #aaa;
 background: transparent;
-font-size: 18px;
-font-family: Lato;</string>
+font-size: 14px;
+</string>
        </property>
        <property name="text">
-        <string notr="true">000000.00 USD</string>
+        <string>currentWallet</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1603,19 +1635,19 @@ border: none;</string>
          <x>0</x>
          <y>10</y>
          <width>681</width>
-         <height>231</height>
+         <height>241</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel_3">
+      <widget class="QLabel" name="m_volume">
        <property name="geometry">
         <rect>
-         <x>570</x>
-         <y>260</y>
-         <width>61</width>
+         <x>590</x>
+         <y>270</y>
+         <width>81</width>
          <height>25</height>
         </rect>
        </property>
@@ -1632,18 +1664,18 @@ font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">0.00</string>
+        <string notr="true">000000.00</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel_3">
+      <widget class="QLabel" name="m_marketCap">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>260</y>
-         <width>61</width>
+         <x>440</x>
+         <y>270</y>
+         <width>101</width>
          <height>25</height>
         </rect>
        </property>
@@ -1660,7 +1692,7 @@ font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">0.00</string>
+        <string notr="true">0000000.00</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1669,9 +1701,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>260</y>
-         <width>51</width>
+         <x>210</x>
+         <y>270</y>
+         <width>81</width>
          <height>25</height>
         </rect>
        </property>
@@ -1688,7 +1720,7 @@ font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">0.00</string>
+        <string notr="true">00.00</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1697,61 +1729,8 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>260</y>
-         <width>60</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
-       </property>
-       <property name="text">
-        <string>CCX/USD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_btcusd">
-       <property name="geometry">
-        <rect>
-         <x>240</x>
-         <y>260</y>
-         <width>51</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #777;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1_3">
-       <property name="geometry">
-        <rect>
-         <x>480</x>
-         <y>260</y>
+         <x>170</x>
+         <y>270</y>
          <width>31</width>
          <height>25</height>
         </rect>
@@ -1763,45 +1742,20 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #777;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">CCX</string>
+        <string>CCX</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLabel" name="m_btcusd">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>260</y>
-         <width>51</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
-       </property>
-       <property name="text">
-        <string>POOLS</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>350</x>
-         <y>260</y>
+         <x>320</x>
+         <y>270</y>
          <width>71</width>
          <height>25</height>
         </rect>
@@ -1813,21 +1767,24 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #777;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string>POOLS/24HR</string>
+        <string notr="true">00000.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="m_tickerLabel2_3">
+      <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
-         <x>640</x>
-         <y>260</y>
-         <width>31</width>
+         <x>560</x>
+         <y>270</y>
+         <width>51</width>
          <height>25</height>
         </rect>
        </property>
@@ -1838,21 +1795,21 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #777;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">CCX</string>
+        <string>VOLUME</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_tickerLabel1_4">
+      <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>300</x>
-         <y>260</y>
-         <width>31</width>
+         <x>410</x>
+         <y>270</y>
+         <width>71</width>
          <height>25</height>
         </rect>
        </property>
@@ -1863,45 +1820,20 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #777;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">USD</string>
+        <string>MARKETCAP</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>260</y>
-         <width>60</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
-       </property>
-       <property name="text">
-        <string>BTC/USD</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1_5">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>260</y>
+         <x>310</x>
+         <y>270</y>
          <width>31</width>
          <height>25</height>
         </rect>
@@ -1913,13 +1845,13 @@ font-size: 11px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #777;
+        <string notr="true">color: #bbb;
 background: transparent;
 font-family: Lato;
 font-size: 11px;</string>
        </property>
        <property name="text">
-        <string notr="true">USD</string>
+        <string>BTC</string>
        </property>
       </widget>
      </widget>
@@ -1996,34 +1928,60 @@ font-family: Lato;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="m_currentWalletTitle">
+     <widget class="QLabel" name="m_totalPortfolioLabelUSD">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>30</y>
-        <width>561</width>
+        <x>780</x>
+        <y>20</y>
+        <width>471</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <family>Lato</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::CustomContextMenu</enum>
-      </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;
+       <string notr="true">color: orange;
 background: transparent;
-font-size: 14px;
-</string>
+font-size: 18px;
+font-family: Lato;</string>
       </property>
       <property name="text">
-       <string>currentWallet</string>
+       <string notr="true">000000.00 USD</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>660</y>
+        <width>141</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #ddd;
+background: transparent;
+font-family: Lato;
+font-size: 11px;
+font-weight: bold;</string>
+      </property>
+      <property name="text">
+       <string>MARKET INFORMATION</string>
       </property>
      </widget>
      <zorder>leftMenu</zorder>
@@ -2040,7 +1998,8 @@ font-size: 14px;
      <zorder>m_qrcodebutton</zorder>
      <zorder>label_3</zorder>
      <zorder>m_copyAddressButton</zorder>
-     <zorder>m_currentWalletTitle</zorder>
+     <zorder>m_totalPortfolioLabelUSD</zorder>
+     <zorder>label_14</zorder>
     </widget>
    </item>
   </layout>
@@ -2369,6 +2328,22 @@ font-size: 14px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_subButton6</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>subButton6Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -2379,6 +2354,7 @@ font-size: 14px;
   <slot>subButton3Clicked()</slot>
   <slot>subButton4Clicked()</slot>
   <slot>subButton5Clicked()</slot>
+  <slot>subButton6Clicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
   <slot>importClicked()</slot>
@@ -2393,7 +2369,6 @@ font-size: 14px;
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
-  <slot>miningClicked()</slot>
   <slot>openWallet()</slot>
   <slot>addressBookClicked()</slot>
  </slots>

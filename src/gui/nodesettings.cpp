@@ -6,56 +6,68 @@
 #include <QApplication>
 #include <QFileDialog>
 
+#include "NodeSettings.h"
+#include "CurrencyAdapter.h"
+#include "NewNodeDialog.h"
+#include "MainWindow.h"
+#include "NodeModel.h"
 #include "Settings.h"
-#include "nodesettings.h"
 #include "ui_nodesettings.h"
 
 namespace WalletGui {
 
-  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::NodeSettings) 
-  {
-
+  NodeSettings::NodeSettings(QWidget* _parent) : QDialog(_parent), 
+    m_ui(new Ui::NodeSettings) {
     m_ui->setupUi(this);
   }
 
   NodeSettings::~NodeSettings() {
   }
 
-  void NodeSettings::initConnectionSettings() 
-  {
-
+  /* Initialize the existing connection values */
+  void NodeSettings::initConnectionSettings() {
     QString connection = Settings::instance().getConnection();
-
-    if(connection.compare("remote") == 0) 
-    {
+    QString remoteHost = Settings::instance().getCurrentRemoteNode();
+    m_ui->m_hostEdit->setText(remoteHost);
+    
+    /* If the connection is a remote node, then load the current (or default)
+       remote node into the text field. */
+    if(connection.compare("remote") == 0) {
         m_ui->radioButton->setChecked(true);
     }
-    else if(connection.compare("embedded") == 0) 
-    {
 
+    /* It is an embedded node, so let only check that */
+    else if(connection.compare("embedded") == 0) {
         m_ui->radioButton_2->setChecked(true);
     }
   }
 
-  QString NodeSettings::setConnectionMode() const 
-  {
-
+  /* Save the connection settings */
+  QString NodeSettings::setConnectionMode() const {
     QString connectionMode;
-    
-    if(m_ui->radioButton->isChecked())
-    {
-
+   
+    if(m_ui->radioButton->isChecked()){
         connectionMode = "remote";
     }
-
-    else if(m_ui->radioButton_2->isChecked())
-    {
-        
+    else if(m_ui->radioButton_2->isChecked()) {        
         connectionMode = "embedded";
     }  
-
     return connectionMode;
   }
+
+  /* Save remote node host */
+  QString NodeSettings::setRemoteHost() const {
+    QString remoteHost;
+
+    /* If it is a remote connection, commit the entered remote node. There is no validation of the 
+       remote node. If the connection is embedded then take no action */    
+    if(m_ui->radioButton->isChecked()){
+        remoteHost = m_ui->m_hostEdit->text();
+    }
+    return remoteHost;
+  
+  }
+
 }
 
 
