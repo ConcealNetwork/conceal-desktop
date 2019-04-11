@@ -43,6 +43,7 @@ public:
   QString getCurrentFeeAddress() const;   
   QString getConnection() const;    
   QString getWalletFile() const;
+  QString getWalletName() const;
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;

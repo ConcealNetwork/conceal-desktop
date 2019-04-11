@@ -271,6 +271,26 @@ QString Settings::getWalletFile() const {
     getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
 }
 
+QString Settings::getWalletName() const {
+  /* Get the wallet file name */
+  QString walletFile = getWalletFile();
+  std::string wallet = walletFile.toStdString();
+
+  /* Remove directory if present.
+     do this before extension removal in case directory has a period character. */
+  const size_t last_slash_idx = wallet.find_last_of("\\/");
+  if (std::string::npos != last_slash_idx) {
+    wallet.erase(0, last_slash_idx + 1);
+  }
+  /*  Remove extension if present */
+  const size_t period_idx = wallet.rfind('.');
+  if (std::string::npos != period_idx) {
+    wallet.erase(period_idx);
+  }
+  /* Return QString */
+  return QString::fromStdString(wallet);
+}
+
 QString Settings::getAddressBookFile() const {
   return m_addressBookFile;
 }
