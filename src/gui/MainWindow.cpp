@@ -345,13 +345,27 @@ void MainWindow::createWallet() {
 }
 
 void MainWindow::openWallet() {  
-  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+  QString walletFile = Settings::instance().getWalletFile();
+  std::string wallet = walletFile.toStdString();
 
-  #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
-  #else
-      QDir::homePath(),
-  #endif
+  QString walletDirectory = "";
+  if (!wallet.empty()) {
+    /* Get current wallet path and use it as a default opening location */
+    const size_t last_slash_idx = wallet.find_last_of("\\/");
+    if (std::string::npos != last_slash_idx) {
+      wallet.erase(last_slash_idx + 1, wallet.length());
+    }
+    walletDirectory = QString::fromStdString(wallet);
+  } else {
+    #ifdef Q_OS_WIN
+      walletDirectory = QApplication::applicationDirPath();
+    #else
+      walletDirectory = QDir::homePath();
+    #endif
+  }
+
+  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+    walletDirectory,
     tr("Wallet (*.wallet *.keys)"));
 
   if (!filePath.isEmpty()) {
