@@ -176,23 +176,8 @@ void OverviewFrame::updateWalletAddress(const QString& _address)
 
 void OverviewFrame::showCurrentWallet() 
 {
-  /* Show the name of the open wallet */
-  QString walletFile = Settings::instance().getWalletFile();
-  std::string wallet = walletFile.toStdString();
-
-  /* Remove directory if present.
-     do this before extension removal incase directory has a period character. */
-  const size_t last_slash_idx = wallet.find_last_of("\\/");
-  if (std::string::npos != last_slash_idx) {
-      wallet.erase(0, last_slash_idx + 1);
-  }
-  /*  Remove extension if present */
-  const size_t period_idx = wallet.rfind('.');
-  if (std::string::npos != period_idx) {
-      wallet.erase(period_idx);
-  }
-  /* Back to QString and display */
-  walletFile = QString::fromStdString(wallet);
+  /* Show the name of the opened wallet */
+  QString walletFile = Settings::instance().getWalletName();
   m_ui->m_currentWalletTitle->setText("CURRENT WALLET: " + walletFile.toUpper());
 }
 
