@@ -44,7 +44,7 @@
 #include "importseed.h"
 #include "importtracking.h"
 #include "transactionconfirmation.h"
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
