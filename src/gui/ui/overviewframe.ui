@@ -1729,7 +1729,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>160</x>
          <y>270</y>
          <width>31</width>
          <height>25</height>
