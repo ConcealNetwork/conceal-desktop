@@ -76,7 +76,7 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->investmentsBox->hide();  
 
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
   {
     DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();    
     m_ui->m_feeLabel->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
@@ -186,7 +186,7 @@ void DepositsFrame::depositClicked()
   /* Remote node fee */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
   {
     DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
     if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
@@ -239,7 +239,7 @@ void DepositsFrame::investmentClicked() {
   /* Remote node fee */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
   {
     DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();    
     if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
