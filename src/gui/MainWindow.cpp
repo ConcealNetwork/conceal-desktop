@@ -916,7 +916,7 @@ void MainWindow::nodeSettings() {
   if (dlg.exec() == QDialog::Accepted) {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-    if (connection == "remote") {
+    if ((connection == "remote") || (connection == "autoremote")) {
       QString remoteHost = dlg.setRemoteHost();
       Settings::instance().setCurrentRemoteNode(remoteHost);
     }
