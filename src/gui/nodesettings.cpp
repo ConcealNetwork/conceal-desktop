@@ -36,6 +36,10 @@ namespace WalletGui {
         m_ui->radioButton->setChecked(true);
     }
 
+    if(connection.compare("autoremote") == 0) {
+        m_ui->radioButton_3->setChecked(true);
+    }
+
     /* It is an embedded node, so let only check that */
     else if(connection.compare("embedded") == 0) {
         m_ui->radioButton_2->setChecked(true);
@@ -45,29 +49,31 @@ namespace WalletGui {
   /* Save the connection settings */
   QString NodeSettings::setConnectionMode() const {
     QString connectionMode;
-   
     if(m_ui->radioButton->isChecked()){
         connectionMode = "remote";
     }
     else if(m_ui->radioButton_2->isChecked()) {        
         connectionMode = "embedded";
-    }  
+    } 
+    else if(m_ui->radioButton_3->isChecked()) {        
+        connectionMode = "autoremote";
+    } 
     return connectionMode;
   }
 
   /* Save remote node host */
   QString NodeSettings::setRemoteHost() const {
     QString remoteHost;
-
     /* If it is a remote connection, commit the entered remote node. There is no validation of the 
        remote node. If the connection is embedded then take no action */    
     if(m_ui->radioButton->isChecked()){
         remoteHost = m_ui->m_hostEdit->text();
     }
+    if(m_ui->radioButton_3->isChecked()){
+        remoteHost = m_ui->m_hostEdit->text();
+    }
     return remoteHost;
-  
   }
-
 }
 
 
