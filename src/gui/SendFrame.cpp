@@ -54,7 +54,7 @@ SendFrame::SendFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::SendFrame
   m_ui->m_nodeFee->hide();
 
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) {
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
     QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
     m_addressProvider->getAddress(remoteNodeUrl);
     connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &SendFrame::onAddressFound, Qt::QueuedConnection);
@@ -174,7 +174,7 @@ void SendFrame::sendClicked() {
 
   /* Remote node fee */
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) {
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
       if (!SendFrame::remote_node_fee_address.isEmpty()) {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = SendFrame::remote_node_fee_address.toStdString();
