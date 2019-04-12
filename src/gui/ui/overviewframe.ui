@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>16777215</width>
-    <height>16777215</height>
+    <width>1270</width>
+    <height>700</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -1673,7 +1673,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_marketCap">
        <property name="geometry">
         <rect>
-         <x>440</x>
+         <x>450</x>
          <y>270</y>
          <width>101</width>
          <height>25</height>
@@ -1701,9 +1701,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>210</x>
+         <x>190</x>
          <y>270</y>
-         <width>81</width>
+         <width>111</width>
          <height>25</height>
         </rect>
        </property>
@@ -1754,7 +1754,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_btcusd">
        <property name="geometry">
         <rect>
-         <x>320</x>
+         <x>330</x>
          <y>270</y>
          <width>71</width>
          <height>25</height>
