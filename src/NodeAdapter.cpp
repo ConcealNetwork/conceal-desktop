@@ -134,7 +134,6 @@ bool NodeAdapter::init() {
 
   if(connection.compare("embedded") == 0) 
   {
-
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
@@ -169,7 +168,6 @@ bool NodeAdapter::init() {
     waitLoop.exec();
     if (initTimer.isActive() && !initCompleted) 
     {
-
       return false;
     }
 
@@ -186,10 +184,15 @@ bool NodeAdapter::init() {
     return initInProcessNode();    
 
   } else 
-  {
-    
-    Q_ASSERT(m_node == nullptr);
+  {   
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    Q_ASSERT(m_node == nullptr);
+    if(connection.compare("remote") == 0) {
+      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    } else {
+      //TODO get random node url here and replace the line below
+      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
                           *this, 
                           remoteNodeUrl.host().toStdString(), 
@@ -201,7 +204,6 @@ bool NodeAdapter::init() {
 
         m_node->init([this](std::error_code _err) 
         {
-
             Q_UNUSED(_err);
         });
 
@@ -238,7 +240,6 @@ QDateTime NodeAdapter::getLastLocalBlockTimestamp() const {
 
 void NodeAdapter::peerCountUpdated(Node& _node, size_t _count) {
   Q_UNUSED(_node);
-  //Q_EMIT peerCountUpdatedSignal(_count); //! this causes a crash needs debugging. disabling for now
 }
 
 void NodeAdapter::localBlockchainUpdated(Node& _node, uint64_t _height) {
