@@ -120,7 +120,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/7daysPrice.png?width=711&height=241");
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/7daysPrice.png?width=711&height=241");
   QNetworkRequest request(url);
   nam->get(request);
 
