@@ -13,6 +13,7 @@
 #include "Message.h"
 #include "MessageAddressFrame.h"
 #include "MessagesModel.h"
+#include "Settings.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 
@@ -173,6 +174,19 @@ void SendMessageFrame::sendClicked() {
   if (m_ui->m_ttlCheck->checkState() == Qt::Checked) {
     ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
     fee = 0;
+  }
+
+  /* Remote node fee */
+  QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
+  if (!remote_node_fee_address.isEmpty()) 
+  {
+    QString connection = Settings::instance().getConnection();
+    if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
+      CryptoNote::WalletLegacyTransfer walletTransfer;
+      walletTransfer.address = remote_node_fee_address.toStdString();
+      walletTransfer.amount = 1000;
+      transfers.push_back(walletTransfer);
+    }
   }
 
   if (WalletAdapter::instance().isOpen()) {
