@@ -174,6 +174,10 @@ void MainWindow::initUi() {
 
   m_ui->m_overviewAction->toggle();
 
+  QString connection = Settings::instance().getConnection();
+    if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
+      setRemoteWindowTitle();
+    }
 
 #ifdef Q_OS_MAC
   installDockHandler();
