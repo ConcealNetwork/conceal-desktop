@@ -10,6 +10,12 @@
 #include <QDir>
 #include <QTimer>
 #include <QUrl>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkReply>
+#include <QStringList>
+
 
 #include <CryptoNoteCore/CoreConfig.h>
 #include <P2p/NetNodeConfig.h>
@@ -127,10 +133,23 @@ CryptoNote::IWalletLegacy* NodeAdapter::createWallet() const {
 
 bool NodeAdapter::init() {
   Q_ASSERT(m_node == nullptr);
+  bool isAutoRemote = false;
+
+  QString connection = Settings::instance().getConnection();
+
+  if(connection.compare("autoremote") == 0) 
+  {
+    isAutoRemote = true;
+    /* Pull a random node from the node pool list */
+    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+    connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
+    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random");
+    QNetworkRequest request(url);
+    nam->get(request);
+  }
 
   /* get the connection type remote, or embedded
   the default is remote */
-  QString connection = Settings::instance().getConnection();
 
   if(connection.compare("embedded") == 0) 
   {
@@ -250,6 +269,17 @@ void NodeAdapter::localBlockchainUpdated(Node& _node, uint64_t _height) {
 void NodeAdapter::lastKnownBlockHeightUpdated(Node& _node, uint64_t _height) {
   Q_UNUSED(_node);
   Q_EMIT lastKnownBlockHeightUpdatedSignal(_height);
+}
+
+void NodeAdapter::downloadFinished(QNetworkReply *reply) {
+  QByteArray data = reply->readAll();
+  QJsonDocument doc = QJsonDocument::fromJson(data);
+  if (doc.isNull()) {
+    return;
+  }
+  QJsonObject obj = doc.object();
+  QString address = obj.value("url").toString();
+  Settings::instance().setCurrentRemoteNode(address);
 }
 
 bool NodeAdapter::initInProcessNode() {
