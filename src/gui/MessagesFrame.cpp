@@ -36,28 +36,32 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
 MessagesFrame::~MessagesFrame() {
 }
 
-void MessagesFrame::messageDoubleClicked(const QModelIndex& _index) {
-  if (!_index.isValid()) {
+void MessagesFrame::messageDoubleClicked(const QModelIndex& _index) 
+{
+  if (!_index.isValid()) 
+  {
     return;
   }
 
   MessageDetailsDialog dlg(_index, &MainWindow::instance());
-  if (dlg.exec() == QDialog::Accepted) {
+  if (dlg.exec() == QDialog::Accepted) 
+  {
     Q_EMIT replyToSignal(dlg.getCurrentMessageIndex());
   }
 }
 
-void MessagesFrame::replyClicked() {
+void MessagesFrame::replyClicked() 
+{
   Q_EMIT replyToSignal(m_ui->m_messagesView->selectionModel()->currentIndex());
 }
 
-void MessagesFrame::backClicked() {
+void MessagesFrame::backClicked() 
+{
   Q_EMIT backSignal();
 }
 
 void MessagesFrame::newMessageClicked() 
 {
-
   Q_EMIT newMessageSignal();
 }
 
