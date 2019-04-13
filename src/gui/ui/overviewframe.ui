@@ -1701,9 +1701,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>210</x>
+         <x>190</x>
          <y>270</y>
-         <width>81</width>
+         <width>111</width>
          <height>25</height>
         </rect>
        </property>
