@@ -2,7 +2,7 @@
 
 # Conceal Desktop (GUI Wallet)
 Latest Release: v5.2.9
-Maintained by The Circle Team.
+Maintained by Conceal Devs.
 
 ## Information
 Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code.
