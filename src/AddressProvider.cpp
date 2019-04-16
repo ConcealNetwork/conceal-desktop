@@ -2,7 +2,7 @@
 // Copyright (c) 2015-2016 XDN developers
 // Copyright (c) 2016 Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
