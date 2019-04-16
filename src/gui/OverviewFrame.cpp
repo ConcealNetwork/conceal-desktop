@@ -14,7 +14,6 @@
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "QRLabel.h"
-
 #include <QFont>
 #include <QFontDatabase>
 #include <QMessageBox>
@@ -57,13 +56,13 @@ namespace WalletGui {
 OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), m_priceProvider(new PriceProvider(this)), m_transactionModel(new RecentTransactionsModel) 
 {
   m_ui->setupUi(this);
-  /* load the new app-wide font */
+  /* Load the new app-wide font */
   int id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
   QFont font;
   font.setFamily("Lato");
   font.setPointSize(13);
 
-  /* connect signals */
+  /* Connect signals */
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingBalanceUpdatedSignal, this, &OverviewFrame::pendingBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualDepositBalanceUpdatedSignal, this, &OverviewFrame::actualDepositBalanceUpdated, Qt::QueuedConnection);
@@ -80,7 +79,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   connect(&MessagesModel::instance(), &MessagesModel::poolEarningsSignal, this, &OverviewFrame::poolUpdate);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
 
-  /* initialize basic ui elements */
+  /* Initialize basic ui elements */
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
@@ -88,7 +87,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
-  /* disable action buttons until wallet synchronization is complete */  
+  /* Disable action buttons until wallet synchronization is complete */  
   m_ui->m_sendButton->setEnabled(false);
   m_ui->m_depositButton->setEnabled(false);  
   m_ui->m_investmentsButton->setEnabled(false);  
@@ -102,7 +101,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_messagesButton->setEnabled(false);
   m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
 
-  /* disable the submenu */
+  /* Disable the submenu */
   m_ui->m_subButton1->setText("");
   m_ui->m_subButton2->setText("");
   m_ui->m_subButton3->setText("");
@@ -123,8 +122,6 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/7daysPrice.png?width=711&height=241");
   QNetworkRequest request(url);
   nam->get(request);
-
-  
   reset();
 }
 
@@ -339,7 +336,9 @@ void OverviewFrame::aboutClicked()
     m_ui->m_subButton3->setText("Disclaimer");
     m_ui->m_subButton4->setText("Links");    
     subMenu = 4;
-  } else {
+  } 
+  else 
+  {
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -357,7 +356,8 @@ void OverviewFrame::aboutClicked()
 
 void OverviewFrame::importClicked() 
 {
-  if (subMenu != 1) {
+  if (subMenu != 1) 
+  {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -373,7 +373,9 @@ void OverviewFrame::importClicked()
     m_ui->m_subButton3->setText("Import Secret Keys");
     m_ui->m_subButton2->setText("Import GUI Key");
     subMenu = 1;
-  } else {
+  }
+  else 
+  {
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -391,7 +393,8 @@ void OverviewFrame::importClicked()
 
 void OverviewFrame::settingsClicked() 
 {
-  if (subMenu != 2) {
+  if (subMenu != 2) 
+  {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -411,20 +414,28 @@ void OverviewFrame::settingsClicked()
       m_ui->m_subButton4->setText("Minimize to Tray");    
       m_ui->m_subButton5->setText("Close to Tray");       
 
-      if (!Settings::instance().isMinimizeToTrayEnabled()) {
+      if (!Settings::instance().isMinimizeToTrayEnabled()) 
+      {
         m_ui->m_subButton4->setText("Minimize to Tray Off");    
-      } else {
+      } 
+      else 
+      {
         m_ui->m_subButton4->setText("Minimize to Tray On");    
       } 
 
-      if (!Settings::instance().isCloseToTrayEnabled()) {
+      if (!Settings::instance().isCloseToTrayEnabled()) 
+      {
         m_ui->m_subButton5->setText("Close to Tray Off");       
-      } else {
+      } 
+      else 
+      {
         m_ui->m_subButton5->setText("Close to Tray On");       
       }
     #endif
     subMenu = 2;
-  } else  {
+  } 
+  else  
+  {
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -441,7 +452,8 @@ void OverviewFrame::settingsClicked()
 }
 
 void OverviewFrame::walletClicked() {
-  if (subMenu != 3) {
+  if (subMenu != 3) 
+  {
     m_ui->m_subButton1->setText("");
     m_ui->m_subButton2->setText("");
     m_ui->m_subButton3->setText("");
@@ -460,14 +472,19 @@ void OverviewFrame::walletClicked() {
     m_ui->m_subButton5->setText("Import Wallet");    
     m_ui->m_subButton6->setText("Close Wallet");  
 
-    if (!Settings::instance().isEncrypted()) {
+    if (!Settings::instance().isEncrypted()) 
+    {
       m_ui->m_subButton4->setText("Encrypt Wallet");
-    } else {
+    } 
+    else 
+    {
       m_ui->m_subButton4->setText("Change Password");
     }
 
     subMenu = 3;
-  } else {
+  } 
+  else 
+  {
     m_ui->m_subButton1->setEnabled(false);
     m_ui->m_subButton2->setEnabled(false);
     m_ui->m_subButton3->setEnabled(false);
@@ -486,68 +503,85 @@ void OverviewFrame::walletClicked() {
 
 void OverviewFrame::subButton1Clicked() 
 {
-  if (subMenu == 2) {
+  if (subMenu == 2) 
+  {
     Q_EMIT optimizeSignal();
   }
-  if (subMenu == 1) {
+  if (subMenu == 1) 
+  {
     Q_EMIT importSeedSignal();  
   }
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     Q_EMIT openWalletSignal();
   }
-  if (subMenu == 4) {
+  if (subMenu == 4) 
+  {
     Q_EMIT aboutSignal();
   }  
 }
 
 void OverviewFrame::subButton2Clicked() 
 {
-  if (subMenu == 2) {
+  if (subMenu == 2) 
+  {
     Q_EMIT connectionSettingsSignal();
   }
-  if (subMenu == 1) {
+  if (subMenu == 1) 
+  {
     Q_EMIT importGUIKeySignal();  
   }  
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     Q_EMIT newWalletSignal();
   }
-  if (subMenu == 4) {
+  if (subMenu == 4) 
+  {
     Q_EMIT aboutQTSignal();
   }
 }
 
 void OverviewFrame::subButton3Clicked() 
 {
-  if (subMenu == 2) {
+  if (subMenu == 2) 
+  {
     Q_EMIT rescanSignal();
   }
-  if (subMenu == 1) {
+  if (subMenu == 1) 
+  {
     Q_EMIT importSecretKeysSignal();  
   }  
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     Q_EMIT backupSignal();
   }
-  if (subMenu == 4) {
+  if (subMenu == 4) 
+  {
     Q_EMIT disclaimerSignal();
   }  
 }
 
 void OverviewFrame::subButton4Clicked() 
 {
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     Q_EMIT encryptWalletSignal();
   }
-
-  if (subMenu == 4) {
+  if (subMenu == 4) 
+  {
     Q_EMIT linksSignal();
   } 
 
 #ifdef Q_OS_WIN
-  if (subMenu == 2) {
-    if (!Settings::instance().isMinimizeToTrayEnabled()) {
+  if (subMenu == 2) 
+  {
+    if (!Settings::instance().isMinimizeToTrayEnabled()) 
+    {
       Settings::instance().setMinimizeToTrayEnabled(true);
       m_ui->m_subButton4->setText("Minimize to Tray On");    
-    } else {
+    } 
+    else 
+    {
       Settings::instance().setMinimizeToTrayEnabled(false);    
       m_ui->m_subButton4->setText("Minimize to Tray Off");    
     }
@@ -555,56 +589,69 @@ void OverviewFrame::subButton4Clicked()
 #endif  
 }
 
-void OverviewFrame::subButton5Clicked() {
+void OverviewFrame::subButton5Clicked() 
+{
 #ifdef Q_OS_WIN
-  if (subMenu == 2) {
-    if (!Settings::instance().isCloseToTrayEnabled()) {
+  if (subMenu == 2) 
+  {
+    if (!Settings::instance().isCloseToTrayEnabled()) 
+    {
       Settings::instance().setCloseToTrayEnabled(true);
       m_ui->m_subButton5->setText("Close to Tray On");       
-    } else {
+    } 
+    else 
+    {
       Settings::instance().setCloseToTrayEnabled(false);   
       m_ui->m_subButton5->setText("Close to Tray Off");       
     }
   }
 #endif
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     OverviewFrame::importClicked();
   }
 }
 
 void OverviewFrame::subButton6Clicked() 
 {
-  if (subMenu == 3) {
+  if (subMenu == 3) 
+  {
     OverviewFrame::closeWalletClicked();
   }
 }
 
-
-void OverviewFrame::qrCodeClicked() {
+void OverviewFrame::qrCodeClicked() 
+{
   Q_EMIT qrSignal(m_ui->m_copyAddressButton->text());
 }
 
-void OverviewFrame::messageClicked() {
+void OverviewFrame::messageClicked() 
+{
   Q_EMIT messageSignal();
 }
 
-void OverviewFrame::newWalletClicked() {
+void OverviewFrame::newWalletClicked() 
+{
   Q_EMIT newWalletSignal();
 }
 
-void OverviewFrame::closeWalletClicked() {
+void OverviewFrame::closeWalletClicked() 
+{
   Q_EMIT closeWalletSignal();
 }
 
-void OverviewFrame::newTransferClicked() {
+void OverviewFrame::newTransferClicked() 
+{
   Q_EMIT newTransferSignal();
 }
 
-void OverviewFrame::newMessageClicked() {
+void OverviewFrame::newMessageClicked() 
+{
   Q_EMIT newMessageSignal();
 }
 
-void OverviewFrame::reset() {
+void OverviewFrame::reset() 
+{
   actualBalanceUpdated(0);
   pendingBalanceUpdated(0);
   actualDepositBalanceUpdated(0);
@@ -615,14 +662,17 @@ void OverviewFrame::reset() {
   Q_EMIT resetWalletSignal();
 }
 
-void OverviewFrame::setStatusBarText(const QString& _text) {
+void OverviewFrame::setStatusBarText(const QString& _text) 
+{
   m_ui->m_statusBox->setText(_text);
 } 
 
-void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount) {
+void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount) 
+{
 }
 
-void OverviewFrame::copyClicked() {
+void OverviewFrame::copyClicked() 
+{
     QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
     QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
