@@ -1,7 +1,7 @@
 ![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Desktop (GUI Wallet)
-Latest Release: v5.2.9
+Latest Release: v5.2.9b
 Maintained by Conceal Devs.
 
 ## Information
@@ -22,6 +22,8 @@ No one owns Conceal, everyone can take part.
 - GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
 - Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
 - Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
+- Telegram Official (News Feed): [https://t.me/concealnetwork](https://t.me/concealnetwork)
+- Telegram User Group (Chat Group): [https://t.me/concealnetworkusers](https://t.me/concealnetworkusers)
 - Medium: [https://medium.com/@ConcealNetwork](https://medium.com/@ConcealNetwork)
 - Reddit: [https://www.reddit.com/r/ConcealNetwork/](https://www.reddit.com/r/ConcealNetwork/)
 - Bitcoin Talk: [https://bitcointalk.org/index.php?topic=4515873](https://bitcointalk.org/index.php?topic=4515873)
@@ -48,7 +50,7 @@ Alternatively, it may be possible to install them using a package manager.
 To acquire the source via git and build the release version, run the following commands:
 
 - `cd ~`
-- `git clone https://github.com/ConcealNetwork/conceal-wallet`
+- `git clone https://github.com/ConcealNetwork/conceal-desktop`
 - `cd conceal-wallet`
 - `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
 - `make build-release`
