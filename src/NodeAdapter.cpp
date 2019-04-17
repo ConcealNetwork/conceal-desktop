@@ -15,12 +15,9 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <QStringList>
-
-
 #include <CryptoNoteCore/CoreConfig.h>
 #include <P2p/NetNodeConfig.h>
 #include <Wallet/WalletErrors.h>
-
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
 #include "NodeAdapter.h"
@@ -135,8 +132,11 @@ bool NodeAdapter::init() {
   Q_ASSERT(m_node == nullptr);
   bool isAutoRemote = false;
 
+  /* First get the connection type */
   QString connection = Settings::instance().getConnection();
 
+  /* Autoremote is a the remote node conection which retrieves a random for-fee remoten node
+     from the node pool on the explorer. */    
   if(connection.compare("autoremote") == 0) 
   {
     isAutoRemote = true;
@@ -148,9 +148,8 @@ bool NodeAdapter::init() {
     nam->get(request);
   }
 
-  /* get the connection type remote, or embedded
-  the default is remote */
-
+  /* If it is not an autoremote its either a local node, or a remote note. By default
+     the wallet creates a local node and starts the sync process. */
   if(connection.compare("embedded") == 0) 
   {
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
@@ -197,19 +196,19 @@ bool NodeAdapter::init() {
       Q_EMIT nodeInitCompletedSignal();
       return true;
     }
-
     delete m_node;
     m_node = nullptr;
     return initInProcessNode();    
 
-  } else 
+  } 
+  else 
   {   
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     Q_ASSERT(m_node == nullptr);
     if(connection.compare("remote") == 0) {
       remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     } else {
-      //TODO get random node url here and replace the line below
+      
       remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
@@ -271,6 +270,9 @@ void NodeAdapter::lastKnownBlockHeightUpdated(Node& _node, uint64_t _height) {
   Q_EMIT lastKnownBlockHeightUpdatedSignal(_height);
 }
 
+/* Get a random for-fee remote node from the explorer
+   remote node pool list and then save as the current remote
+   node in the configuration */
 void NodeAdapter::downloadFinished(QNetworkReply *reply) {
   QByteArray data = reply->readAll();
   QJsonDocument doc = QJsonDocument::fromJson(data);
