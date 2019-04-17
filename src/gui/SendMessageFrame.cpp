@@ -170,15 +170,17 @@ void SendMessageFrame::sendClicked() {
     return;
   }
 
+  bool selfDestructiveMessage = false;
   quint64 ttl = 0;
   if (m_ui->m_ttlCheck->checkState() == Qt::Checked) {
     ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
     fee = 0;
+    selfDestructiveMessage = true;
   }
 
   /* Remote node fee */
   QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
-  if (!remote_node_fee_address.isEmpty()) 
+  if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage = false))
   {
     QString connection = Settings::instance().getConnection();
     if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
