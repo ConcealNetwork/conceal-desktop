@@ -215,7 +215,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#next1 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#next1:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -438,7 +440,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#next2 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#next2:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -689,7 +693,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#next3 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#next3:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -802,7 +808,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;</string>
+        <string notr="true">QPushButton#pushButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
+
+QPushButton#pushButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
        </property>
        <property name="text">
         <string>CREATE NEW WALLET</string>
@@ -823,7 +831,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;</string>
+        <string notr="true">QPushButton#pushButton_2 {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
+
+QPushButton#pushButton_2:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
        </property>
        <property name="text">
         <string>OPEN EXISTING WALLET</string>
@@ -844,7 +854,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">QPushButton#spendkeyButton {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
+
+QPushButton#spendkeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>IMPORT SPEND/VIEW KEYS</string>
@@ -865,7 +877,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">QPushButton#guikeyButton {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
+
+QPushButton#guikeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>IMPORT GUI KEY</string>
@@ -886,7 +900,9 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;</string>
+        <string notr="true">QPushButton#seedButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
+
+QPushButton#seedButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
        </property>
        <property name="text">
         <string>IMPORT SEED</string>
