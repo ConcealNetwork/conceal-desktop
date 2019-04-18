@@ -68,7 +68,7 @@ font-size: 13px;</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_closeButton">
+      <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
          <width>210</width>
@@ -76,12 +76,12 @@ font-size: 13px;</string>
         </size>
        </property>
        <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
+        <font/>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
@@ -95,7 +95,7 @@ font-size: 13px;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_okButton</sender>
    <signal>clicked()</signal>
    <receiver>DepositDetailsDialog</receiver>
    <slot>accept()</slot>
