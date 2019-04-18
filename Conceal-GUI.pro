@@ -136,7 +136,6 @@ HEADERS += libqrencode/bitstream.h \
            src/NodeAdapter.h \
            src/Settings.h \
            src/SignalHandler.h \
-           src/StratumClient.h \
            src/WalletAdapter.h \
            src/Worker.h \
            cryptonote/include/BlockchainExplorerData.h \
@@ -583,7 +582,6 @@ SOURCES += libqrencode/bitstream.c \
            src/NodeAdapter.cpp \
            src/Settings.cpp \
            src/SignalHandler.cpp \
-           src/StratumClient.cpp \
            src/WalletAdapter.cpp \
            src/Worker.cpp \
            cryptonote/tests/HashTarget.cpp \
