@@ -170,7 +170,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ImportKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
-           src/gui/MessageAddressFrame.h \
            src/gui/MessageDetailsDialog.h \
            src/gui/MessagesFrame.h \
            src/gui/MessagesModel.h \           
@@ -196,7 +195,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/TransactionsFrame.h \
            src/gui/TransactionsListModel.h \
            src/gui/TransactionsModel.h \
-           src/gui/TransferFrame.h \
            src/gui/VisibleMessagesModel.h \
            src/gui/WalletEvents.h \
            cryptonote/external/google/type_traits.h \
@@ -618,7 +616,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ImportKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
-           src/gui/MessageAddressFrame.cpp \
            src/gui/MessageDetailsDialog.cpp \
            src/gui/MessagesFrame.cpp \
            src/gui/MessagesModel.cpp \
@@ -644,7 +641,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/TransactionsFrame.cpp \
            src/gui/TransactionsListModel.cpp \
            src/gui/TransactionsModel.cpp \
-           src/gui/TransferFrame.cpp \
            src/gui/VisibleMessagesModel.cpp \
            cryptonote/external/miniupnpc/connecthostport.c \
            cryptonote/external/miniupnpc/igd_desc_parse.c \
@@ -1043,7 +1039,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/exitwidget.ui \
             src/gui/ui/importkeydialog.ui \
             src/gui/ui/mainwindow.ui \
-            src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
             src/gui/ui/welcomeframe.ui \            
@@ -1058,7 +1053,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactiondetailsdialog.ui \
             src/gui/ui/transactionframe.ui \
             src/gui/ui/transactionsframe.ui \
-            src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
