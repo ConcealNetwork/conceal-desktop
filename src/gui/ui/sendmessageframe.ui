@@ -78,7 +78,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_sendButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_sendButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>SEND MESSAGE</string>
@@ -105,7 +107,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -128,7 +132,7 @@ font-family: Lato;</string>
         <x>0</x>
         <y>0</y>
         <width>1240</width>
-        <height>234</height>
+        <height>233</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="m_addressesLayout">
