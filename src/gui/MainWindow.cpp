@@ -17,12 +17,10 @@
 #include <boost/algorithm/string.hpp>
 #include <Common/Base58.h>
 #include <Common/Util.h>
-
 #include "Common/CommandLine.h"
 #include "Common/SignalHandler.h"
 #include "Common/StringTools.h"
 #include "Common/PathTools.h"
-
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/CryptoNoteTools.h"
 #include "CryptoNoteCore/Account.cpp"
@@ -30,7 +28,6 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
-
 #include "AboutDialog.h"
 #include "DisclaimerDialog.h"
 #include "LinksDialog.h"
@@ -44,7 +41,7 @@
 #include "importseed.h"
 #include "importtracking.h"
 #include "transactionconfirmation.h"
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"

@@ -259,7 +259,7 @@ void DepositsFrame::investmentClicked() {
   }
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::depositParamsChanged() {
 
@@ -278,7 +278,7 @@ void DepositsFrame::depositParamsChanged() {
   m_ui->m_bar->raise();
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::showDepositDetails(const QModelIndex& _index) {
   if (!_index.isValid()) {
@@ -288,7 +288,7 @@ void DepositsFrame::showDepositDetails(const QModelIndex& _index) {
   dlg.exec();
 } 
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::investmentParamsChanged() {
 
@@ -307,24 +307,20 @@ void DepositsFrame::investmentParamsChanged() {
   m_ui->m_bar->raise();
 }
 
-/* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::timeChanged(int _value) {
 
+void DepositsFrame::timeChanged(int _value) 
+{
   m_ui->m_nativeTimeLabel->setText(weeksToBlocks(m_ui->m_timeSpin->value()));
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::timeChanged2(int _value) {
-
+void DepositsFrame::timeChanged2(int _value) 
+{
   m_ui->m_nativeTimeLabel2->setText(quartersToBlocks(m_ui->m_timeSpin2->value()));
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::withdrawClicked() {
-
+void DepositsFrame::withdrawClicked() 
+{
   QModelIndexList unlockedDepositIndexList = DepositModel::instance().match(DepositModel::instance().index(0, 0), DepositModel::ROLE_STATE, DepositModel::STATE_UNLOCKED, -1);
   if (unlockedDepositIndexList.isEmpty()) {
     return;
@@ -338,21 +334,21 @@ void DepositsFrame::withdrawClicked() {
   WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::backClicked() {
   /* back to overview frame */
   Q_EMIT backSignal();
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::investmentsClicked() {
   /* switch to investment graph and box */
   m_ui->investmentsBox->show();
   m_ui->depositsBox->hide();
-  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #212529;font-size: 18px;"); 
-  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #212529;font-size: 18px;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #282d31;font-size: 18px;"); 
+  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #282d31;font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER QUARTER");
   m_ui->label_12->setText("Quarters");  
 
@@ -381,14 +377,12 @@ void DepositsFrame::investmentsClicked() {
   DepositsFrame::investmentParamsChanged();
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
 void DepositsFrame::depositsClicked() {
   /* switch to deposit graph and box */
   m_ui->investmentsBox->hide();
   m_ui->depositsBox->show();
-  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #212529; font-size: 18px;");
-  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #212529; font-size: 18px;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #282d31; font-size: 18px;");
+  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #282d31; font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER WEEK");
   m_ui->label_12->setText("Weeks");  
 

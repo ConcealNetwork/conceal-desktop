@@ -12,6 +12,7 @@
 #include "MessagesModel.h"
 #include "Settings.h"
 #include "WalletAdapter.h"
+#include "AddressBookDialog.h"
 #include "WalletEvents.h"
 #include "ui_sendmessageframe.h"
 
@@ -44,6 +45,8 @@ SendMessageFrame::SendMessageFrame(QWidget* _parent) : QFrame(_parent), m_ui(new
 SendMessageFrame::~SendMessageFrame() {
 }
 
+/* Add your wallet address to the message so the reciever 
+   can reply */
 void SendMessageFrame::setAddress(const QString& _address) 
 {
   m_ui->m_addReplyToCheck->setChecked(true);
@@ -68,16 +71,9 @@ void SendMessageFrame::reset()
 {
   m_ui->m_feeSpin->setValue(MESSAGE_AMOUNT + MINIMAL_MESSAGE_FEE);
   m_ui->m_messageTextEdit->clear();
-
-  for (MessageAddressFrame* addressFrame : m_addressFrames) 
-  {
-    addressFrame->deleteLater();
-  }
-
-  addRecipientClicked();
 }
 
-
+/* Extract wallet address from the provided string */
 QString SendMessageFrame::extractAddress(const QString& _addressString) const 
 {
   QString address = _addressString;
@@ -111,41 +107,9 @@ void SendMessageFrame::recalculateFeeValue()
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
 }
 
-void SendMessageFrame::addRecipientClicked() 
-{
-  MessageAddressFrame* newAddress = new MessageAddressFrame(m_ui->m_messageAddressScrollArea);
-  m_ui->m_addressesLayout->insertWidget(m_addressFrames.size(), newAddress);
-  m_addressFrames.append(newAddress);
-
-  if (m_addressFrames.size() == 1) 
-  {
-    newAddress->disableRemoveButton(true);
-  } 
-  else 
-  {
-    m_addressFrames[0]->disableRemoveButton(false);
-  }
-
-  connect(newAddress, &MessageAddressFrame::destroyed, [this](QObject* _obj) 
-  {
-    m_addressFrames.removeOne(static_cast<MessageAddressFrame*>(_obj));
-    if (m_addressFrames.size() == 1) 
-    {
-      m_addressFrames[0]->disableRemoveButton(true);
-    }
-    recalculateFeeValue();
-  });
-
-  recalculateFeeValue();
-  m_ui->m_messageAddressScrollArea->setFixedHeight(3 * newAddress->height());
-}
-
 void SendMessageFrame::messageTextChanged() 
 {
   recalculateFeeValue();
-}
-
-void SendMessageFrame::mixinValueChanged(int _value) {
 }
 
 void SendMessageFrame::sendClicked() 
@@ -158,8 +122,10 @@ void SendMessageFrame::sendClicked()
 
   QVector<CryptoNote::WalletLegacyTransfer> transfers;
   QVector<CryptoNote::WalletLegacyTransfer> feeTransfer;
+  CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> messages;
   QVector<CryptoNote::TransactionMessage> feeMessage;
+  QString address = m_ui->m_addressEdit->text().toUtf8();
 
   QString messageString = m_ui->m_messageTextEdit->toPlainText();
   if (m_ui->m_addReplyToCheck->isChecked()) 
@@ -169,20 +135,14 @@ void SendMessageFrame::sendClicked()
     messageString = Message::makeTextMessage(messageString, header);
   }
 
-  transfers.reserve(m_addressFrames.size());
-  for (MessageAddressFrame* addressFrame : m_addressFrames) 
-  {
-    QString address = extractAddress(addressFrame->getAddress());
-    if (!CurrencyAdapter::instance().validateAddress(address)) 
-    {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
-      return;
-    }
+  /* Start building the transaction */
+  walletTransfer.address = address.toStdString();
+  uint64_t amount = MESSAGE_AMOUNT;
+  walletTransfer.amount = amount;
+  transfers.push_back(walletTransfer);
+  messages.append({messageString.toStdString(), address.toStdString()});
 
-    transfers.append({address.toStdString(), MESSAGE_AMOUNT});
-    messages.append({messageString.toStdString(), address.toStdString()});
-  }
-
+  /* Calculate fees */
   quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
   fee -= MESSAGE_AMOUNT * transfers.size();
   if (fee < MINIMAL_MESSAGE_FEE) 
@@ -201,7 +161,7 @@ void SendMessageFrame::sendClicked()
     selfDestructiveMessage = true;
   }
 
-  /* Add the remote node fee transfer to the transactio if the connection
+  /* Add the remote node fee transfer to the transaction if the connection
      is a remote node with an address and this is not a self-destructive message */
   QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
   if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage = false))
@@ -217,7 +177,7 @@ void SendMessageFrame::sendClicked()
 
   /* If this is a self destructive message, send a second transaction with the fee
      and discourage spam in the transaction pool. We do this regardless of the 
-     connection type. The amount is set to 10X and the fee to 90X so the total cost is 110X */
+     connection type. The amount is set to 10X and the fee to 100X so the total cost is 110X */
   QString sdm_fee_address = "ccx7TijjcuNXpumtJS6iH9TQL5YiZVggYBUSUGcEWKDeXUjEwaF1JMXQhkrL3amjY6i5miaHaUw4oYeD6W2Kvj9b2nMEQKU7Mt";
   if (selfDestructiveMessage = true)
   {
@@ -257,6 +217,14 @@ void SendMessageFrame::ttlValueChanged(int _ttlValue)
 void SendMessageFrame::backClicked() 
 {
   Q_EMIT backSignal();
+}
+
+void SendMessageFrame::addressBookClicked() 
+{
+  AddressBookDialog dlg(&MainWindow::instance());
+  if(dlg.exec() == QDialog::Accepted) {
+    m_ui->m_addressEdit->setText(dlg.getAddress());
+  }
 }
 
 }

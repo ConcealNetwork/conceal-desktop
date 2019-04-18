@@ -5,8 +5,7 @@
 
 #include <QApplication>
 #include <QFileDialog>
-
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "CurrencyAdapter.h"
 #include "NewNodeDialog.h"
 #include "MainWindow.h"
