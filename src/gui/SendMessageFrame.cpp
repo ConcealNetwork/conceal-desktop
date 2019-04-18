@@ -94,7 +94,8 @@ void SendMessageFrame::recalculateFeeValue()
 {
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length() ;
-  if (messageSize > 0) {
+  if (messageSize > 0) 
+  {
     --messageSize;
   }
 
@@ -150,7 +151,8 @@ void SendMessageFrame::mixinValueChanged(int _value) {
 void SendMessageFrame::sendClicked() 
 {
   /* Exit if the wallet is not open */
-  if (!WalletAdapter::instance().isOpen()) {
+  if (!WalletAdapter::instance().isOpen()) 
+  {
     return;
   }
 
@@ -158,17 +160,21 @@ void SendMessageFrame::sendClicked()
   QVector<CryptoNote::WalletLegacyTransfer> feeTransfer;
   QVector<CryptoNote::TransactionMessage> messages;
   QVector<CryptoNote::TransactionMessage> feeMessage;
+
   QString messageString = m_ui->m_messageTextEdit->toPlainText();
-  if (m_ui->m_addReplyToCheck->isChecked()) {
+  if (m_ui->m_addReplyToCheck->isChecked()) 
+  {
     MessageHeader header;
     header.append(qMakePair(QString(MessagesModel::HEADER_REPLY_TO_KEY), WalletAdapter::instance().getAddress()));
     messageString = Message::makeTextMessage(messageString, header);
   }
 
   transfers.reserve(m_addressFrames.size());
-  for (MessageAddressFrame* addressFrame : m_addressFrames) {
+  for (MessageAddressFrame* addressFrame : m_addressFrames) 
+  {
     QString address = extractAddress(addressFrame->getAddress());
-    if (!CurrencyAdapter::instance().validateAddress(address)) {
+    if (!CurrencyAdapter::instance().validateAddress(address)) 
+    {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
       return;
     }
@@ -179,15 +185,17 @@ void SendMessageFrame::sendClicked()
 
   quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
   fee -= MESSAGE_AMOUNT * transfers.size();
-  if (fee < MINIMAL_MESSAGE_FEE) {
-    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Incorrect fee value"), QtCriticalMsg));
+  if (fee < MINIMAL_MESSAGE_FEE) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Incorrect fee"), QtCriticalMsg));
     return;
   }
 
   /* Check if this is a self destructive message */
   bool selfDestructiveMessage = false;
   quint64 ttl = 0;
-  if (m_ui->m_ttlCheck->checkState() == Qt::Checked) {
+  if (m_ui->m_ttlCheck->checkState() == Qt::Checked) 
+  {
     ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
     fee = 0;
     selfDestructiveMessage = true;
