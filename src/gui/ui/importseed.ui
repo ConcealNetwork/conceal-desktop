@@ -227,7 +227,9 @@ QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px s
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
+     <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
     </property>
     <property name="text">
      <string>CANCEL</string>
