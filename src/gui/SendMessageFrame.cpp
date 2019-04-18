@@ -8,7 +8,6 @@
 #include "CurrencyAdapter.h"
 #include "MainWindow.h"
 #include "Message.h"
-#include "MessageAddressFrame.h"
 #include "MessagesModel.h"
 #include "Settings.h"
 #include "WalletAdapter.h"
@@ -103,7 +102,7 @@ void SendMessageFrame::recalculateFeeValue()
     fee2 = 100;
   }
 
-  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(fee2 * m_addressFrames.size() + fee + messageSize * MESSAGE_CHAR_PRICE).toDouble());
+  m_ui->m_feeSpin->setMinimum(CurrencyAdapter::instance().formatAmount(fee2 + fee + messageSize * MESSAGE_CHAR_PRICE).toDouble());
   m_ui->m_feeSpin->setValue(m_ui->m_feeSpin->minimum());
 }
 

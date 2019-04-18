@@ -17,8 +17,6 @@ class SendMessageFrame;
 
 namespace WalletGui {
 
-class MessageAddressFrame;
-
 class SendMessageFrame : public QFrame {
   Q_OBJECT
   Q_DISABLE_COPY(SendMessageFrame)
@@ -31,7 +29,6 @@ public:
 
 private:
   QScopedPointer<Ui::SendMessageFrame> m_ui;
-  QList<MessageAddressFrame*> m_addressFrames;
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString& _errorText);
   void reset();
 
