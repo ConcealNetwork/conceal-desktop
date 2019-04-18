@@ -14,7 +14,6 @@
 #include "NodeAdapter.h"
 #include "SendFrame.h"
 #include "transactionconfirmation.h"
-#include "TransferFrame.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include <Common/Base58.h>
