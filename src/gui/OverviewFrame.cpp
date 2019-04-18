@@ -116,12 +116,25 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_subButton6->setEnabled(false);
   int subMenu = 0;
 
+  /* Hide the second chart */
+  int currentChart = 2;
+  m_ui->m_chart->show();
+  m_ui->m_chart_2->hide();
+
   /* Pull the chart from the website */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/7daysPrice.png?width=711&height=241");
+  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
   QNetworkRequest request(url);
   nam->get(request);
+
+  /* Pull the chart from the website */
+  QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
+  connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
+  const QUrl url2 = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
+  QNetworkRequest request2(url2);
+  nam2->get(request2);
+
   reset();
 }
 
@@ -184,6 +197,14 @@ void OverviewFrame::downloadFinished(QNetworkReply *reply) {
     QPixmap pm;
     pm.loadFromData(reply->readAll());
     m_ui->m_chart->setPixmap(pm);
+}
+
+void OverviewFrame::downloadFinished2(QNetworkReply *reply2) {
+    /* Download is done
+       set the chart as the pixmap */
+    QPixmap pm2;
+    pm2.loadFromData(reply2->readAll());
+    m_ui->m_chart_2->setPixmap(pm2);    
 }
 
 void OverviewFrame::layoutChanged() {
@@ -675,6 +696,22 @@ void OverviewFrame::copyClicked()
 {
     QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
     QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
+}
+
+void OverviewFrame::chartButtonClicked() 
+{
+    if (currentChart == 1)
+    {
+      m_ui->m_chart->hide();
+      m_ui->m_chart_2->show();
+      currentChart = 2;
+    }
+    else
+    {
+      m_ui->m_chart->show();
+      m_ui->m_chart_2->hide();
+      currentChart = 1;
+    }
 }
 
 }

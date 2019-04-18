@@ -1759,7 +1759,7 @@ border: none;</string>
       <widget class="QLabel" name="m_volume">
        <property name="geometry">
         <rect>
-         <x>590</x>
+         <x>560</x>
          <y>270</y>
          <width>81</width>
          <height>25</height>
@@ -1787,9 +1787,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_marketCap">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>430</x>
          <y>270</y>
-         <width>101</width>
+         <width>81</width>
          <height>25</height>
         </rect>
        </property>
@@ -1815,7 +1815,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_ccxusd">
        <property name="geometry">
         <rect>
-         <x>190</x>
+         <x>170</x>
          <y>270</y>
          <width>111</width>
          <height>25</height>
@@ -1843,7 +1843,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>160</x>
+         <x>140</x>
          <y>270</y>
          <width>31</width>
          <height>25</height>
@@ -1868,9 +1868,9 @@ font-size: 11px;</string>
       <widget class="QLabel" name="m_btcusd">
        <property name="geometry">
         <rect>
-         <x>330</x>
+         <x>310</x>
          <y>270</y>
-         <width>71</width>
+         <width>61</width>
          <height>25</height>
         </rect>
        </property>
@@ -1896,7 +1896,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
-         <x>560</x>
+         <x>530</x>
          <y>270</y>
          <width>51</width>
          <height>25</height>
@@ -1921,7 +1921,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>410</x>
+         <x>380</x>
          <y>270</y>
          <width>71</width>
          <height>25</height>
@@ -1946,7 +1946,7 @@ font-size: 11px;</string>
       <widget class="QLabel" name="label_11">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>290</x>
          <y>270</y>
          <width>31</width>
          <height>25</height>
@@ -1968,6 +1968,47 @@ font-size: 11px;</string>
         <string>BTC</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="chartButton">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>270</y>
+         <width>21</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../resources.qrc">
+         <normaloff>:/icons/tx-mined</normaloff>:/icons/tx-mined</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_chart_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>10</y>
+         <width>681</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>m_volume</zorder>
+      <zorder>m_marketCap</zorder>
+      <zorder>m_ccxusd</zorder>
+      <zorder>label_12</zorder>
+      <zorder>m_btcusd</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_9</zorder>
+      <zorder>label_11</zorder>
+      <zorder>chartButton</zorder>
+      <zorder>m_chart_2</zorder>
+      <zorder>m_chart</zorder>
      </widget>
      <widget class="QPushButton" name="m_qrcodebutton">
       <property name="geometry">
@@ -2073,7 +2114,7 @@ font-family: Lato;</string>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>220</x>
         <y>660</y>
         <width>141</width>
         <height>25</height>
@@ -2458,6 +2499,22 @@ font-weight: bold;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>chartButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>chartButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>671</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -2478,6 +2535,7 @@ font-weight: bold;</string>
   <slot>walletClicked()</slot>
   <slot>minimize()</slot>
   <slot>maximize()</slot>
+  <slot>chartButtonClicked()</slot>
   <slot>newMessageClicked()</slot>
   <slot>rescanClicked()</slot>
   <slot>transactionClicked()</slot>

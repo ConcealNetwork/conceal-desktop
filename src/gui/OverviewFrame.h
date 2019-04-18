@@ -36,11 +36,13 @@ private:
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
+  int currentChart = 1;
 
   void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
+  void downloadFinished2(QNetworkReply *reply2);  
   void layoutChanged();
   void setStatusBarText(const QString& _text);
   void updateWalletAddress(const QString& _address);
@@ -69,6 +71,7 @@ private:
   Q_SLOT void importClicked();
   Q_SLOT void aboutClicked();
   Q_SLOT void walletClicked();    
+  Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
   Q_SLOT void subButton1Clicked();
   Q_SLOT void subButton2Clicked();
