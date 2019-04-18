@@ -143,7 +143,7 @@ bool NodeAdapter::init() {
     /* Pull a random node from the node pool list */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
-    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random");
+    const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
     QNetworkRequest request(url);
     nam->get(request);
   }
