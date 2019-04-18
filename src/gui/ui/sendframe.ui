@@ -61,7 +61,7 @@
      <widget class="QLabel" name="sendLabel">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>100</x>
         <y>25</y>
         <width>181</width>
         <height>41</height>
@@ -801,7 +801,7 @@ QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font
      <widget class="Line" name="logoLine">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>70</x>
         <y>20</y>
         <width>1</width>
         <height>60</height>
@@ -817,7 +817,7 @@ QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
         <width>61</width>
         <height>71</height>
