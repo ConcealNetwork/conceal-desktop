@@ -75,14 +75,23 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_feeLabel2->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
   m_ui->investmentsBox->hide();  
 
+  QString fee_address = Settings::instance().getCurrentFeeAddress();
   QString connection = Settings::instance().getConnection();
-  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
+  if (connection.compare("autoremote") == 0)
   {
-    DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();    
     m_ui->m_feeLabel->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
-    m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));      
+    m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));     
+  }
+  else if (connection.compare("remote") == 0) 
+  {
+    if  (!fee_address.isEmpty())
+    {
+      m_ui->m_feeLabel->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
+      m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));     
+    }
   }
 
+  
   /* Draw the pixmap for deposits */
   QPixmap pixmap(860,290);
   pixmap.fill(QColor("transparent"));
