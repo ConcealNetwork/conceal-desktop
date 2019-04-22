@@ -35,9 +35,27 @@ SendMessageFrame::SendMessageFrame(QWidget* _parent) : QFrame(_parent), m_ui(new
   m_ui->m_ttlSlider->setVisible(false);
   m_ui->m_ttlLabel->setVisible(false);
   m_ui->m_ttlSlider->setMinimum(1);
-  m_ui->m_ttlSlider->setMaximum(MAX_TTL / MIN_TTL);
+  m_ui->m_ttlSlider->setMaximum(MAX_TTL / MIN_TTL);  
+  m_ui->nodeFeeLabel->hide();
+  m_ui->m_nodeFee->hide();
   ttlValueChanged(m_ui->m_ttlSlider->value());
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendMessageCompletedSignal, this, &SendMessageFrame::sendMessageCompleted, Qt::QueuedConnection);
+
+  QString fee_address = Settings::instance().getCurrentFeeAddress();
+  QString connection = Settings::instance().getConnection();
+  if (connection.compare("autoremote") == 0)
+  {
+    m_ui->nodeFeeLabel->show();
+    m_ui->m_nodeFee->show();
+  }
+  else if (connection.compare("remote") == 0) 
+  {
+    if  (!fee_address.isEmpty())
+    {
+      m_ui->nodeFeeLabel->show();
+      m_ui->m_nodeFee->show();
+    }
+  }
   reset();
 }
 
