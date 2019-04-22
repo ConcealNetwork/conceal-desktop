@@ -235,9 +235,7 @@ void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
 }
 
 void Settings::setCurrentFeeAddress(const QString& _feeAddress) {
-    if (!_feeAddress.isEmpty()) {
     m_settings.insert(OPTION_FEE_ADDRESS, _feeAddress);
-    }
     saveSettings();
 }
 
