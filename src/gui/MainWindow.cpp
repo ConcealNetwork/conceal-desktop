@@ -207,7 +207,6 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
 }
 
 void MainWindow::quit() {
-  Settings::instance().setCurrentFeeAddress("");    
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
     exitWidget->show();
@@ -880,7 +879,8 @@ void MainWindow::importTracking() {
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
       return;
     }
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) 
+    {
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
       return;
     }
@@ -895,31 +895,31 @@ void MainWindow::importTracking() {
     keys.spendSecretKey = private_spend_key;
     keys.viewSecretKey = private_view_key;
 
-      if (WalletAdapter::instance().isOpen()) {
+      if (WalletAdapter::instance().isOpen()) 
+      {
         WalletAdapter::instance().close();
       }
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
-   // }
   }
 }
 
-
-/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
-
-void MainWindow::nodeSettings() {
+void MainWindow::nodeSettings() 
+{
   NodeSettings dlg(this);
-
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
   dlg.setRemoteHost();
 
-  if (dlg.exec() == QDialog::Accepted) {
+  if (dlg.exec() == QDialog::Accepted) 
+  {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-    if ((connection == "remote") || (connection == "autoremote")) {
+    if (connection == "remote")
+    {
       QString remoteHost = dlg.setRemoteHost();
       Settings::instance().setCurrentRemoteNode(remoteHost);
+      Settings::instance().setCurrentFeeAddress("");
     }
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 
