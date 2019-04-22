@@ -235,9 +235,7 @@ void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
 }
 
 void Settings::setCurrentFeeAddress(const QString& _feeAddress) {
-    if (!_feeAddress.isEmpty()) {
     m_settings.insert(OPTION_FEE_ADDRESS, _feeAddress);
-    }
     saveSettings();
 }
 
@@ -269,6 +267,26 @@ QDir Settings::getDataDir() const {
 QString Settings::getWalletFile() const {
   return m_settings.contains(OPTION_WALLET_FILE) ? m_settings.value(OPTION_WALLET_FILE).toString() :
     getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
+}
+
+QString Settings::getWalletName() const {
+  /* Get the wallet file name */
+  QString walletFile = getWalletFile();
+  std::string wallet = walletFile.toStdString();
+
+  /* Remove directory if present.
+     do this before extension removal in case directory has a period character. */
+  const size_t last_slash_idx = wallet.find_last_of("\\/");
+  if (std::string::npos != last_slash_idx) {
+    wallet.erase(0, last_slash_idx + 1);
+  }
+  /*  Remove extension if present */
+  const size_t period_idx = wallet.rfind('.');
+  if (std::string::npos != period_idx) {
+    wallet.erase(period_idx);
+  }
+  /* Return QString */
+  return QString::fromStdString(wallet);
 }
 
 QString Settings::getAddressBookFile() const {

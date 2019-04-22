@@ -81,7 +81,7 @@ font-size: 13px;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="m_closeButton">
+     <widget class="QPushButton" name="m_okButton">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -97,12 +97,12 @@ font-size: 13px;</string>
        </size>
       </property>
       <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
+       <font/>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+       <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
       </property>
       <property name="text">
        <string>CLOSE</string>
@@ -141,7 +141,7 @@ font-size: 20px;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_okButton</sender>
    <signal>clicked()</signal>
    <receiver>AboutDialog</receiver>
    <slot>accept()</slot>

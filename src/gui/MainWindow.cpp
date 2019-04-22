@@ -17,12 +17,10 @@
 #include <boost/algorithm/string.hpp>
 #include <Common/Base58.h>
 #include <Common/Util.h>
-
 #include "Common/CommandLine.h"
 #include "Common/SignalHandler.h"
 #include "Common/StringTools.h"
 #include "Common/PathTools.h"
-
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/CryptoNoteTools.h"
 #include "CryptoNoteCore/Account.cpp"
@@ -30,7 +28,6 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
-
 #include "AboutDialog.h"
 #include "DisclaimerDialog.h"
 #include "LinksDialog.h"
@@ -44,7 +41,7 @@
 #include "importseed.h"
 #include "importtracking.h"
 #include "transactionconfirmation.h"
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -174,6 +171,10 @@ void MainWindow::initUi() {
 
   m_ui->m_overviewAction->toggle();
 
+  QString connection = Settings::instance().getConnection();
+    if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
+      setRemoteWindowTitle();
+    }
 
 #ifdef Q_OS_MAC
   installDockHandler();
@@ -206,7 +207,6 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
 }
 
 void MainWindow::quit() {
-  Settings::instance().setCurrentFeeAddress("");    
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
     exitWidget->show();
@@ -345,13 +345,27 @@ void MainWindow::createWallet() {
 }
 
 void MainWindow::openWallet() {  
-  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+  QString walletFile = Settings::instance().getWalletFile();
+  std::string wallet = walletFile.toStdString();
 
-  #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
-  #else
-      QDir::homePath(),
-  #endif
+  QString walletDirectory = "";
+  if (!wallet.empty()) {
+    /* Get current wallet path and use it as a default opening location */
+    const size_t last_slash_idx = wallet.find_last_of("\\/");
+    if (std::string::npos != last_slash_idx) {
+      wallet.erase(last_slash_idx + 1, wallet.length());
+    }
+    walletDirectory = QString::fromStdString(wallet);
+  } else {
+    #ifdef Q_OS_WIN
+      walletDirectory = QApplication::applicationDirPath();
+    #else
+      walletDirectory = QDir::homePath();
+    #endif
+  }
+
+  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+    walletDirectory,
     tr("Wallet (*.wallet *.keys)"));
 
   if (!filePath.isEmpty()) {
@@ -865,7 +879,8 @@ void MainWindow::importTracking() {
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
       return;
     }
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) {
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash)) 
+    {
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
       return;
     }
@@ -880,31 +895,31 @@ void MainWindow::importTracking() {
     keys.spendSecretKey = private_spend_key;
     keys.viewSecretKey = private_view_key;
 
-      if (WalletAdapter::instance().isOpen()) {
+      if (WalletAdapter::instance().isOpen()) 
+      {
         WalletAdapter::instance().close();
       }
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
-   // }
   }
 }
 
-
-/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
-
-void MainWindow::nodeSettings() {
+void MainWindow::nodeSettings() 
+{
   NodeSettings dlg(this);
-
   dlg.initConnectionSettings();
   dlg.setConnectionMode();
   dlg.setRemoteHost();
 
-  if (dlg.exec() == QDialog::Accepted) {
+  if (dlg.exec() == QDialog::Accepted) 
+  {
     QString connection = dlg.setConnectionMode();
     Settings::instance().setConnection(connection);
-    if (connection == "remote") {
+    if (connection == "remote")
+    {
       QString remoteHost = dlg.setRemoteHost();
       Settings::instance().setCurrentRemoteNode(remoteHost);
+      Settings::instance().setCurrentFeeAddress("");
     }
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 

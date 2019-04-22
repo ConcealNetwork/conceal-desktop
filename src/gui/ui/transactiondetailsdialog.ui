@@ -96,7 +96,7 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_closeButton">
+      <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
          <width>171</width>
@@ -104,12 +104,12 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
+        <font/>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
@@ -136,7 +136,7 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_okButton</sender>
    <signal>clicked()</signal>
    <receiver>TransactionDetailsDialog</receiver>
    <slot>accept()</slot>

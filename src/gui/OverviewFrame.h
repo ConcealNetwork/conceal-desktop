@@ -1,7 +1,5 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
-//  
-// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,7 +17,6 @@ namespace Ui {
 namespace WalletGui {
 
 class PriceProvider;
-
 class RecentTransactionsModel;
 
 class OverviewFrame : public QFrame {
@@ -36,11 +33,14 @@ private:
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
+  int currentChart = 1;
+  bool walletSynced = false;
 
   void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
+  void downloadFinished2(QNetworkReply *reply2);  
   void layoutChanged();
   void setStatusBarText(const QString& _text);
   void updateWalletAddress(const QString& _address);
@@ -53,6 +53,7 @@ private:
   void actualInvestmentBalanceUpdated(quint64 _balance);
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
+  void syncMessage();
   void reset();
   
   Q_SLOT void sendClicked();  
@@ -69,6 +70,7 @@ private:
   Q_SLOT void importClicked();
   Q_SLOT void aboutClicked();
   Q_SLOT void walletClicked();    
+  Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
   Q_SLOT void subButton1Clicked();
   Q_SLOT void subButton2Clicked();

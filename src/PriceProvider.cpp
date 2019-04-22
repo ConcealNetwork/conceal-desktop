@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/q/wallet/data.php");
+  QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/wallet/data.php");
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);

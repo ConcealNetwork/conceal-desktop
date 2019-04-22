@@ -12,7 +12,8 @@
 
 namespace WalletGui {
 
-AboutDialog::AboutDialog(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::AboutDialog) {
+AboutDialog::AboutDialog(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::AboutDialog) 
+{
   m_ui->setupUi(this);
   setWindowTitle(QString(tr("The Conceal Wallet")).arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
   QString aboutText = m_ui->m_aboutLabel->text();

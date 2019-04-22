@@ -73,17 +73,16 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
+  cryptonote/src/crypto/chacha.c
+  cryptonote/src/crypto/crypto-ops-data.c
+  cryptonote/src/crypto/crypto-ops.c
+  cryptonote/src/crypto/crypto.cpp
+  cryptonote/src/crypto/hash.c
+  cryptonote/src/crypto/keccak.c
+  cryptonote/src/crypto/random.c
+  cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
-  cryptonote/src/crypto/chacha.c 
-  cryptonote/src/crypto/chacha8.c 
-  cryptonote/src/crypto/crypto-ops-data.c 
-  cryptonote/src/crypto/crypto-ops.c 
-  cryptonote/src/crypto/crypto.cpp 
-  cryptonote/src/crypto/hash.c 
-  cryptonote/src/crypto/cryptonight.cpp                          
-  cryptonote/src/crypto/keccak.c 
-  cryptonote/src/crypto/random.c 
-  cryptonote/src/crypto/tree-hash.c 
+  cryptonote/src/crypto/cryptonight.cpp 
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -200,7 +199,7 @@ elseif (UNIX)
     set(PLATFORM_DIR OSX)
     set(MACOSX_BUNDLE_INFO_STRING "Cryptonote GUI wallet")
     set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_NAME Conceal)
+    set(MACOSX_BUNDLE_BUNDLE_NAME CryptonoteWallet)
     set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
     set(MACOSX_BUNDLE_BUNDLE_VERSION "$${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
 
