@@ -101,7 +101,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_messagesButton->setEnabled(false);
   m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
 
-  /* Disable the submenu */
+  /* Disable and hide the submenu */
   m_ui->m_subButton1->setText("");
   m_ui->m_subButton2->setText("");
   m_ui->m_subButton3->setText("");
@@ -121,17 +121,17 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_chart->show();
   m_ui->m_chart_2->hide();
 
-  /* Pull the chart from the website */
+  /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
   QNetworkRequest request(url);
   nam->get(request);
 
-  /* Pull the chart from the website */
+  /* Pull the alternate chart */
   QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
   connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
-  const QUrl url2 = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
+  const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
   QNetworkRequest request2(url2);
   nam2->get(request2);
 
@@ -143,7 +143,7 @@ OverviewFrame::~OverviewFrame() {
 
 void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) 
 {
-  /* lets enable buttons now that the wallet synchronization is complete */  
+  /* Lets enable buttons now that wallet synchronization is complete */  
   m_ui->m_newTransferButton->setEnabled(true);
   m_ui->m_newMessageButton->setEnabled(true);
   m_ui->m_newDepositButton->setEnabled(true);  
@@ -157,7 +157,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString& _error_text)
   m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
   showCurrentWallet();
   
-  /* show total portfolio */
+  /* Show total portfolio */
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
