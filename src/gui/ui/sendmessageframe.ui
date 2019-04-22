@@ -170,8 +170,8 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>1000</x>
-        <y>140</y>
-        <width>211</width>
+        <y>150</y>
+        <width>201</width>
         <height>31</height>
        </rect>
       </property>
@@ -183,12 +183,14 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
-        <pointsize>10</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; border: 0px; background: #212529;</string>
+       <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <property name="decimals">
        <number>6</number>
@@ -520,6 +522,60 @@ QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font
       </property>
       <property name="text">
        <string>ADDRESS BOOK</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="m_nodeFee">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>250</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>31</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string notr="true">0.001000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="nodeFeeLabel">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>200</y>
+        <width>201</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">padding: 3px; color: #ddd; font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>NODE FEE</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
