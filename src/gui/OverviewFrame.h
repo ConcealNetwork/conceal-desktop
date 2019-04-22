@@ -34,6 +34,7 @@ private:
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
   int currentChart = 1;
+  bool walletSynced = false;
 
   void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
@@ -52,6 +53,7 @@ private:
   void actualInvestmentBalanceUpdated(quint64 _balance);
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
+  void syncMessage();
   void reset();
   
   Q_SLOT void sendClicked();  

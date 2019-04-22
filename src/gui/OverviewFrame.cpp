@@ -87,18 +87,9 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
-  /* Disable action buttons until wallet synchronization is complete */  
-  m_ui->m_sendButton->setEnabled(false);
-  m_ui->m_depositButton->setEnabled(false);  
-  m_ui->m_investmentsButton->setEnabled(false);  
-  m_ui->m_newTransferButton->setEnabled(false);
-  m_ui->m_newMessageButton->setEnabled(false);
-  m_ui->m_newDepositButton->setEnabled(false);    
   m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
-  m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
-  m_ui->m_bankingButton->setEnabled(false);
-  m_ui->m_messagesButton->setEnabled(false);
+  m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");   
   m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
 
   /* Disable and hide the submenu */
@@ -115,6 +106,8 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_subButton5->setEnabled(false);
   m_ui->m_subButton6->setEnabled(false);
   int subMenu = 0;
+
+  walletSynced = false;
 
   /* Hide the second chart */
   int currentChart = 2;
@@ -144,19 +137,12 @@ OverviewFrame::~OverviewFrame() {
 void OverviewFrame::walletSynchronized(int _error, const QString& _error_text) 
 {
   /* Lets enable buttons now that wallet synchronization is complete */  
-  m_ui->m_newTransferButton->setEnabled(true);
-  m_ui->m_newMessageButton->setEnabled(true);
-  m_ui->m_newDepositButton->setEnabled(true);  
-  m_ui->m_sendButton->setEnabled(true);
-  m_ui->m_depositButton->setEnabled(true);  
-  m_ui->m_investmentsButton->setEnabled(true);      
-  m_ui->m_messagesButton->setEnabled(true);
-  m_ui->m_bankingButton->setEnabled(true);
   m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
   m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
   m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
   showCurrentWallet();
-  
+  walletSynced = true;
+
   /* Show total portfolio */
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -319,13 +305,27 @@ void OverviewFrame::onPriceFound(const QString& _btcccx,const QString& _usdccx, 
 }
 
 void OverviewFrame::sendClicked() 
-{  
-  Q_EMIT sendSignal();
+{ 
+  if (walletSynced == true) 
+  {
+    Q_EMIT sendSignal();
+  } 
+  else 
+  {
+    syncMessage();
+  }
 }
 
 void OverviewFrame::depositClicked() 
 {
-  Q_EMIT depositSignal();
+  if (walletSynced == true) 
+  {
+    Q_EMIT depositSignal();
+  } 
+  else 
+  {
+    syncMessage();
+  }
 }
 
 void OverviewFrame::transactionClicked() 
@@ -526,7 +526,14 @@ void OverviewFrame::subButton1Clicked()
 {
   if (subMenu == 2) 
   {
-    Q_EMIT optimizeSignal();
+    if (walletSynced == true) 
+    {
+      Q_EMIT optimizeSignal();
+    } 
+    else 
+    {
+      syncMessage();
+    }      
   }
   if (subMenu == 1) 
   {
@@ -663,12 +670,26 @@ void OverviewFrame::closeWalletClicked()
 
 void OverviewFrame::newTransferClicked() 
 {
-  Q_EMIT newTransferSignal();
+  if (walletSynced == true) 
+  {
+    Q_EMIT newTransferSignal();
+  } 
+  else 
+  {
+    syncMessage();
+  }  
 }
 
 void OverviewFrame::newMessageClicked() 
 {
-  Q_EMIT newMessageSignal();
+  if (walletSynced == true) 
+  {
+    Q_EMIT newMessageSignal();
+  } 
+  else 
+  {
+    syncMessage();
+  }    
 }
 
 void OverviewFrame::reset() 
@@ -694,8 +715,13 @@ void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount)
 
 void OverviewFrame::copyClicked() 
 {
-    QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
-    QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
+  QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
+  QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
+}
+
+void OverviewFrame::syncMessage() 
+{
+  QMessageBox::information(this, tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
 }
 
 void OverviewFrame::chartButtonClicked() 
