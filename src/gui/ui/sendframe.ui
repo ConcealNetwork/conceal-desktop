@@ -484,12 +484,11 @@ QPushButton#m_clearAllButton:hover {color: #ddd; border: 2px solid #444; font-si
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; background: #212529;</string>
+        <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
