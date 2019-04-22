@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Conceal Desktop
-Comment=Conceal Desktop
+Name=Conceal-GUI
+Comment=Conceal-GUI
 Exec=ConcealGUI
 Terminal=false
 Type=Application
