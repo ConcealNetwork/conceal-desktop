@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,7 +9,7 @@
 
 #include <QObject>
 #include <QThread>
-
+#include <QNetworkAccessManager>
 #include <INode.h>
 #include <IWalletLegacy.h>
 
@@ -55,6 +54,7 @@ private:
   Node* m_node;
   QThread m_nodeInitializerThread;
   InProcessNodeInitializer* m_nodeInitializer;
+  void downloadFinished(QNetworkReply *reply);
 
   NodeAdapter();
   ~NodeAdapter();

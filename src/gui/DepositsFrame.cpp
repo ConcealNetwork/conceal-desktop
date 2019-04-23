@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -76,14 +75,23 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
   m_ui->m_feeLabel2->setText(tr("%1 %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
   m_ui->investmentsBox->hide();  
 
+  QString fee_address = Settings::instance().getCurrentFeeAddress();
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if (connection.compare("autoremote") == 0)
   {
-    DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();    
     m_ui->m_feeLabel->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
-    m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));      
+    m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));     
+  }
+  else if (connection.compare("remote") == 0) 
+  {
+    if  (!fee_address.isEmpty())
+    {
+      m_ui->m_feeLabel->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
+      m_ui->m_feeLabel2->setText(tr("%1 + 0.001 (Node Fee) %2").arg(CurrencyAdapter::instance().formatAmount(CurrencyAdapter::instance().getMinimumFeeBanking())).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));     
+    }
   }
 
+  
   /* Draw the pixmap for deposits */
   QPixmap pixmap(860,290);
   pixmap.fill(QColor("transparent"));
@@ -187,7 +195,7 @@ void DepositsFrame::depositClicked()
   /* Remote node fee */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
   {
     DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
     if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
@@ -240,7 +248,7 @@ void DepositsFrame::investmentClicked() {
   /* Remote node fee */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;  
   QString connection = Settings::instance().getConnection();
-  if(connection.compare("remote") == 0) 
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
   {
     DepositsFrame::remote_node_fee_address = Settings::instance().getCurrentFeeAddress();    
     if (!DepositsFrame::remote_node_fee_address.isEmpty()) 
@@ -260,7 +268,7 @@ void DepositsFrame::investmentClicked() {
   }
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::depositParamsChanged() {
 
@@ -279,7 +287,7 @@ void DepositsFrame::depositParamsChanged() {
   m_ui->m_bar->raise();
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::showDepositDetails(const QModelIndex& _index) {
   if (!_index.isValid()) {
@@ -289,7 +297,7 @@ void DepositsFrame::showDepositDetails(const QModelIndex& _index) {
   dlg.exec();
 } 
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::investmentParamsChanged() {
 
@@ -308,24 +316,20 @@ void DepositsFrame::investmentParamsChanged() {
   m_ui->m_bar->raise();
 }
 
-/* ------------------------------------------------------------------------------------------- */
 
-void DepositsFrame::timeChanged(int _value) {
 
+void DepositsFrame::timeChanged(int _value) 
+{
   m_ui->m_nativeTimeLabel->setText(weeksToBlocks(m_ui->m_timeSpin->value()));
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::timeChanged2(int _value) {
-
+void DepositsFrame::timeChanged2(int _value) 
+{
   m_ui->m_nativeTimeLabel2->setText(quartersToBlocks(m_ui->m_timeSpin2->value()));
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
-void DepositsFrame::withdrawClicked() {
-
+void DepositsFrame::withdrawClicked() 
+{
   QModelIndexList unlockedDepositIndexList = DepositModel::instance().match(DepositModel::instance().index(0, 0), DepositModel::ROLE_STATE, DepositModel::STATE_UNLOCKED, -1);
   if (unlockedDepositIndexList.isEmpty()) {
     return;
@@ -339,21 +343,21 @@ void DepositsFrame::withdrawClicked() {
   WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::backClicked() {
   /* back to overview frame */
   Q_EMIT backSignal();
 }
 
-/* ------------------------------------------------------------------------------------------- */
+
 
 void DepositsFrame::investmentsClicked() {
   /* switch to investment graph and box */
   m_ui->investmentsBox->show();
   m_ui->depositsBox->hide();
-  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #212529;font-size: 18px;"); 
-  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #212529;font-size: 18px;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: #777; background-color: #282d31;font-size: 18px;"); 
+  m_ui->m_investmentSelectButton->setStyleSheet("color: orange; background-color: #282d31;font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER QUARTER");
   m_ui->label_12->setText("Quarters");  
 
@@ -382,14 +386,12 @@ void DepositsFrame::investmentsClicked() {
   DepositsFrame::investmentParamsChanged();
 }
 
-/* ------------------------------------------------------------------------------------------- */
-
 void DepositsFrame::depositsClicked() {
   /* switch to deposit graph and box */
   m_ui->investmentsBox->hide();
   m_ui->depositsBox->show();
-  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #212529; font-size: 18px;");
-  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #212529; font-size: 18px;"); 
+  m_ui->m_depositSelectButton->setStyleSheet("color: orange; background-color: #282d31; font-size: 18px;");
+  m_ui->m_investmentSelectButton->setStyleSheet("color: #777; background-color: #282d31; font-size: 18px;"); 
   m_ui->label_10->setText("INTEREST % PER WEEK");
   m_ui->label_12->setText("Weeks");  
 

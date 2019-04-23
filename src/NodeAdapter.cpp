@@ -1,8 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,11 +10,14 @@
 #include <QDir>
 #include <QTimer>
 #include <QUrl>
-
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QNetworkReply>
+#include <QStringList>
 #include <CryptoNoteCore/CoreConfig.h>
 #include <P2p/NetNodeConfig.h>
 #include <Wallet/WalletErrors.h>
-
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
 #include "NodeAdapter.h"
@@ -128,14 +130,28 @@ CryptoNote::IWalletLegacy* NodeAdapter::createWallet() const {
 
 bool NodeAdapter::init() {
   Q_ASSERT(m_node == nullptr);
+  bool isAutoRemote = false;
 
-  /* get the connection type remote, or embedded
-  the default is remote */
+  /* First get the connection type */
   QString connection = Settings::instance().getConnection();
 
+  /* Autoremote is a the remote node conection which retrieves a random for-fee remoten node
+     from the node pool on the explorer. */    
+  if(connection.compare("autoremote") == 0) 
+  {
+    isAutoRemote = true;
+    /* Pull a random node from the node pool list */
+    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+    connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
+    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
+    QNetworkRequest request(url);
+    nam->get(request);
+  }
+
+  /* If it is not an autoremote its either a local node, or a remote note. By default
+     the wallet creates a local node and starts the sync process. */
   if(connection.compare("embedded") == 0) 
   {
-
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
@@ -170,7 +186,6 @@ bool NodeAdapter::init() {
     waitLoop.exec();
     if (initTimer.isActive() && !initCompleted) 
     {
-
       return false;
     }
 
@@ -181,16 +196,21 @@ bool NodeAdapter::init() {
       Q_EMIT nodeInitCompletedSignal();
       return true;
     }
-
     delete m_node;
     m_node = nullptr;
     return initInProcessNode();    
 
-  } else 
-  {
-    
-    Q_ASSERT(m_node == nullptr);
+  } 
+  else 
+  {   
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    Q_ASSERT(m_node == nullptr);
+    if(connection.compare("remote") == 0) {
+      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    } else {
+      
+      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
+    }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
                           *this, 
                           remoteNodeUrl.host().toStdString(), 
@@ -202,7 +222,6 @@ bool NodeAdapter::init() {
 
         m_node->init([this](std::error_code _err) 
         {
-
             Q_UNUSED(_err);
         });
 
@@ -239,7 +258,6 @@ QDateTime NodeAdapter::getLastLocalBlockTimestamp() const {
 
 void NodeAdapter::peerCountUpdated(Node& _node, size_t _count) {
   Q_UNUSED(_node);
-  //Q_EMIT peerCountUpdatedSignal(_count); //! this causes a crash needs debugging. disabling for now
 }
 
 void NodeAdapter::localBlockchainUpdated(Node& _node, uint64_t _height) {
@@ -250,6 +268,20 @@ void NodeAdapter::localBlockchainUpdated(Node& _node, uint64_t _height) {
 void NodeAdapter::lastKnownBlockHeightUpdated(Node& _node, uint64_t _height) {
   Q_UNUSED(_node);
   Q_EMIT lastKnownBlockHeightUpdatedSignal(_height);
+}
+
+/* Get a random for-fee remote node from the explorer
+   remote node pool list and then save as the current remote
+   node in the configuration */
+void NodeAdapter::downloadFinished(QNetworkReply *reply) {
+  QByteArray data = reply->readAll();
+  QJsonDocument doc = QJsonDocument::fromJson(data);
+  if (doc.isNull()) {
+    return;
+  }
+  QJsonObject obj = doc.object();
+  QString address = obj.value("url").toString();
+  Settings::instance().setCurrentRemoteNode(address);
 }
 
 bool NodeAdapter::initInProcessNode() {

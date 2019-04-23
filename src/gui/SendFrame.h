@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,9 +17,7 @@ namespace Ui {
 
 namespace WalletGui {
 
-class TransferFrame;
 class AddressProvider;
-
 
 class SendFrame : public QFrame {
   Q_OBJECT
@@ -36,7 +32,6 @@ public:
 
 private:
   QScopedPointer<Ui::SendFrame> m_ui;
-  QList<TransferFrame*> m_transfers;
   AddressProvider* m_addressProvider;
 
   QString remote_node_fee_address;

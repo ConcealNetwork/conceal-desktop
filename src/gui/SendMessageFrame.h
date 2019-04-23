@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,8 +17,6 @@ class SendMessageFrame;
 
 namespace WalletGui {
 
-class MessageAddressFrame;
-
 class SendMessageFrame : public QFrame {
   Q_OBJECT
   Q_DISABLE_COPY(SendMessageFrame)
@@ -33,17 +29,15 @@ public:
 
 private:
   QScopedPointer<Ui::SendMessageFrame> m_ui;
-  QList<MessageAddressFrame*> m_addressFrames;
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString& _errorText);
   void reset();
 
   QString extractAddress(const QString& _addressString) const;
   void recalculateFeeValue();
 
-  Q_SLOT void addRecipientClicked();
   Q_SLOT void messageTextChanged();
-  Q_SLOT void mixinValueChanged(int _value);
   Q_SLOT void sendClicked();
+  Q_SLOT void addressBookClicked();  
   Q_SLOT void backClicked();  
   Q_SLOT void ttlCheckStateChanged(int _state);
   Q_SLOT void ttlValueChanged(int _ttlValue);
