@@ -162,7 +162,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_copySeedButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_copySeedButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -199,7 +201,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_backButton_2 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton_2:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -236,7 +240,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_copySpendKeyButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_copySpendKeyButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -367,7 +373,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_copyViewKeyButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_copyViewKeyButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -388,7 +396,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_backButton_4 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -542,7 +552,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_showSeed {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_showSeed:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -563,7 +575,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -584,7 +598,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">QPushButton#m_showPrivate {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
+
+QPushButton#m_showPrivate:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>private keys</string>
@@ -621,7 +637,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; border: 1px solid #343a40; font-size: 13px; background-color: #21259;</string>
+        <string notr="true">QPushButton#m_showGUI {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
+
+QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>gui key</string>
@@ -658,10 +676,10 @@ p, li { white-space: pre-wrap; }
       <zorder>label_9</zorder>
       <zorder>label_10</zorder>
       <zorder>m_showSeed</zorder>
-      <zorder>m_showPrivate</zorder>
       <zorder>line_2</zorder>
       <zorder>m_showGUI</zorder>
       <zorder>label_12</zorder>
+      <zorder>m_showPrivate</zorder>
      </widget>
      <widget class="QLabel" name="label_11">
       <property name="geometry">
@@ -722,7 +740,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_copyGUIKeyButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -793,7 +813,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_backButton_3 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton_3:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -820,8 +842,8 @@ p, li { white-space: pre-wrap; }
      <zorder>label_11</zorder>
      <zorder>logoLine</zorder>
      <zorder>guiKeyBox</zorder>
-     <zorder>privateKeyBox</zorder>
      <zorder>seedBox</zorder>
+     <zorder>privateKeyBox</zorder>
      <zorder>introBox</zorder>
     </widget>
    </item>

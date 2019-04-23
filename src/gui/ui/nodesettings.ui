@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>488</height>
+    <height>548</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,7 +28,7 @@
      <x>0</x>
      <y>0</y>
      <width>450</width>
-     <height>491</height>
+     <height>548</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -91,7 +91,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>240</y>
+      <y>290</y>
       <width>351</width>
       <height>21</height>
      </rect>
@@ -107,7 +107,7 @@ border-right: 0px;
 font-size: 13px;</string>
     </property>
     <property name="text">
-     <string>Remote Node</string>
+     <string>Custom Remote Node</string>
     </property>
     <property name="checked">
      <bool>false</bool>
@@ -143,6 +143,35 @@ font-size: 13px;</string>
     <property name="geometry">
      <rect>
       <x>50</x>
+      <y>480</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>171</width>
+      <height>31</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+    </property>
+    <property name="text">
+     <string>CLOSE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_okButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
       <y>410</y>
       <width>351</width>
       <height>41</height>
@@ -160,34 +189,9 @@ font-size: 13px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px; background-color: #21259;</string>
-    </property>
-    <property name="text">
-     <string>CLOSE</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="m_okButton">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>350</y>
-      <width>351</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>171</width>
-      <height>31</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+     <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
     </property>
     <property name="text">
      <string>SAVE</string>
@@ -197,7 +201,7 @@ font-size: 13px;</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>280</y>
+      <y>340</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -211,6 +215,32 @@ font-size: 13px;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>240</y>
+      <width>351</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Automatic Remote Node</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
