@@ -559,7 +559,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
-           src/gui/nodesettings.h \
+           src/gui/NodeSettings.h \
            src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
@@ -1030,7 +1030,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
-           src/gui/nodesettings.cpp \
+           src/gui/NodeSettings.cpp \
            src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
