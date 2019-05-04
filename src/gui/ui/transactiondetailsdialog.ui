@@ -14,9 +14,9 @@
    <string>Transaction details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
+   <string notr="true">background-color: #212529;
 border: 0px;
-color: #aaa;</string>
+color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -41,15 +41,16 @@ color: #aaa;</string>
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
-       <pointsize>15</pointsize>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd;</string>
+      <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 20px;</string>
      </property>
      <property name="text">
-      <string>TRANSACTION DETAILS</string>
+      <string>Transaction Details</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -60,12 +61,22 @@ color: #aaa;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Poppins</family>
-       <pointsize>9</pointsize>
+       <family>Lato</family>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #111;</string>
+      <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 14px;
+font-family: Lato;</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -85,7 +96,7 @@ color: #aaa;</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_closeButton">
+      <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
          <width>171</width>
@@ -93,13 +104,12 @@ color: #aaa;</string>
         </size>
        </property>
        <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-        </font>
+        <font/>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; background-color: #333; border-top: 3px solid orange;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
@@ -126,7 +136,7 @@ color: #aaa;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_okButton</sender>
    <signal>clicked()</signal>
    <receiver>TransactionDetailsDialog</receiver>
    <slot>accept()</slot>

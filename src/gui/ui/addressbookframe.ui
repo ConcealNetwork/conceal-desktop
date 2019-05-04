@@ -30,17 +30,17 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string>Address Book</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #aaa;
+   <string notr="true">color: #ddd;
 border: 0px;
-background-color: #111;</string>
+background-color: #212529;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -73,14 +73,14 @@ background-color: #111;</string>
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Poppins;</string>
+font-family: Lato;</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>
@@ -94,8 +94,8 @@ font-family: Poppins;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -106,16 +106,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Poppins;</string>
+        <string notr="true">QPushButton#m_copyAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_copyAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -129,8 +126,8 @@ font-family: Poppins;</string>
        </property>
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -141,16 +138,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Poppins;</string>
+        <string notr="true">QPushButton#m_deleteAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_deleteAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>REMOVE ADDRESS</string>
@@ -161,8 +155,8 @@ font-family: Poppins;</string>
       <widget class="QPushButton" name="m_addAddressButton">
        <property name="minimumSize">
         <size>
-         <width>171</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -173,16 +167,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Poppins;</string>
+        <string notr="true">QPushButton#m_addAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_addAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>ADD NEW ADDRESS</string>
@@ -191,6 +182,12 @@ font-family: Poppins;</string>
      </item>
      <item>
       <widget class="QPushButton" name="m_backButton">
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>40</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>171</width>
@@ -199,16 +196,13 @@ font-family: Poppins;</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Poppins;</string>
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -227,15 +221,15 @@ font-family: Poppins;</string>
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>10</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QHeaderView::section {
-background-color: #222; 
-   color: #aaa;
-font-family: Poppins;
+background-color: #212529; 
+   color: #ddd;
+font-family: Lato;
     font-size: 12px;
     border: 0px solid white;
 border-bottom: 1px solid orange;
@@ -246,7 +240,7 @@ border-bottom: 1px solid orange;
 QTreeView::item
 {
     font: 10px;
-    color: #999;
+    color: #ddd;
     height: 30px;
 }
 
@@ -256,8 +250,8 @@ QTreeView::branch:selected {
 }
 
 QWidget:item:selected {
-  background-color: #111;
-  color: #999;
+  background-color: #212529;
+  color: #ddd;
 }
 
 </string>
@@ -275,10 +269,10 @@ QWidget:item:selected {
       <number>5</number>
      </property>
      <property name="sortingEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <attribute name="headerShowSortIndicator" stdset="0">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
     </widget>
    </item>

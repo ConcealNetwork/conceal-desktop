@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #111; color: #aaa;</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -39,7 +39,7 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -61,12 +61,12 @@
      </property>
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <family>Lato</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #333; border: 0px; color: #aaa;</string>
+      <string notr="true">background-color: #333; border: 0px; color: #ddd;</string>
      </property>
     </widget>
    </item>

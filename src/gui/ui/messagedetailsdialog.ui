@@ -30,7 +30,7 @@
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -43,7 +43,7 @@
        <widget class="QLabel" name="m_heightLabel">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -56,7 +56,7 @@
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -69,7 +69,7 @@
        <widget class="QLabel" name="m_hashLabel">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -82,7 +82,7 @@
        <widget class="QLabel" name="m_amountLabel">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -95,7 +95,7 @@
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -108,7 +108,7 @@
        <widget class="QLabel" name="label_7">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -121,7 +121,7 @@
        <widget class="QLabel" name="m_sizeLabel">
         <property name="font">
          <font>
-          <family>Poppins</family>
+          <family>Lato</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -155,7 +155,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -177,7 +177,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>
@@ -203,7 +203,7 @@
       <widget class="QPushButton" name="m_prevButton">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
         </font>
        </property>
        <property name="text">
@@ -215,7 +215,7 @@
       <widget class="QPushButton" name="m_nextButton">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
         </font>
        </property>
        <property name="text">
@@ -227,7 +227,7 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Lato</family>
          <pointsize>10</pointsize>
         </font>
        </property>

@@ -1,7 +1,8 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers  
 // Copyright (c) 2016 The Karbowanec developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -31,7 +32,7 @@ using namespace WalletGui;
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
-  app.setApplicationName("Conceal-GUI");
+  app.setApplicationName("Conceal Desktop");
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
@@ -39,9 +40,6 @@ int main(int argc, char* argv[]) {
     QApplication::setStyle(QStyleFactory::create("Fusion"));
   #endif
   
-  QGuiApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
-
-
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());

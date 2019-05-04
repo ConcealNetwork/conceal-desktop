@@ -17,11 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Deposit</string>
+   <string>Deposit Details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
-color: #aaa;
+   <string notr="true">background-color: #282d31;
+color: #ddd;
 border: 0px;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -41,14 +41,14 @@ border: 0px;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Poppins</family>
-       <pointsize>9</pointsize>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #111;
-color: #aaa;
-border: 0px;</string>
+      <string notr="true">background-color: #212529;
+color: #ddd;
+border: 0px;
+font-size: 13px;</string>
      </property>
     </widget>
    </item>
@@ -68,21 +68,20 @@ border: 0px;</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_closeButton">
+      <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
-         <width>100</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>10</pointsize>
-        </font>
+        <font/>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; \nbackground-color: #333; \nborder-top: 3px solid orange; \nfont-size: 13px;\nfont-family: Poppins;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
@@ -96,7 +95,7 @@ border: 0px;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_closeButton</sender>
+   <sender>m_okButton</sender>
    <signal>clicked()</signal>
    <receiver>DepositDetailsDialog</receiver>
    <slot>accept()</slot>

@@ -9,7 +9,7 @@
 
 #include <QObject>
 #include <QThread>
-
+#include <QNetworkAccessManager>
 #include <INode.h>
 #include <IWalletLegacy.h>
 
@@ -54,6 +54,7 @@ private:
   Node* m_node;
   QThread m_nodeInitializerThread;
   InProcessNodeInitializer* m_nodeInitializer;
+  void downloadFinished(QNetworkReply *reply);
 
   NodeAdapter();
   ~NodeAdapter();

@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -49,6 +50,14 @@ quint64 CurrencyAdapter::calculateInterest(quint64 _amount, quint32 _term, uint3
 
 quint64 CurrencyAdapter::getMinimumFee() const {
   return m_currency.minimumFee();
+}
+
+quint64 CurrencyAdapter::getMinimumFeeV1() const {
+  return m_currency.minimumFeeV1();
+}
+
+quint64 CurrencyAdapter::getMinimumFeeBanking() const {
+  return m_currency.minimumFeeBanking();
 }
 
 quint64 CurrencyAdapter::getAddressPrefix() const {

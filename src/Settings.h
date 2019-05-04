@@ -40,8 +40,10 @@ public:
   QStringList getSeedNodes() const;
   QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
+  QString getCurrentFeeAddress() const;   
   QString getConnection() const;    
   QString getWalletFile() const;
+  QString getWalletName() const;
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
@@ -59,6 +61,7 @@ public:
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
+  void setCurrentFeeAddress(const QString& _feeAddress);  
   void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
 #ifdef Q_OS_WIN

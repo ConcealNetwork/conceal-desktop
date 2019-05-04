@@ -13,11 +13,8 @@ namespace Ui
   class NodeSettings;
 }
 
-namespace WalletGui 
-{
-
-  class NodeSettings : public QDialog 
-  {
+namespace WalletGui {
+  class NodeSettings : public QDialog {
 
     Q_OBJECT
 
@@ -26,6 +23,7 @@ namespace WalletGui
       ~NodeSettings();
 
       QString setConnectionMode() const;
+      QString setRemoteHost() const;
       void initConnectionSettings();
     
     private:

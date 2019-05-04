@@ -78,14 +78,11 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>9</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange;</string>
+       <string notr="true">color: orange; font-size: 12px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -119,20 +116,19 @@
      <widget class="QLabel" name="m_timeLabel">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>50</x>
         <y>20</y>
-        <width>141</width>
+        <width>131</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
-        <pointsize>9</pointsize>
+        <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #aaa;</string>
+       <string notr="true">color: #ddd; font-size: 12px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -149,7 +145,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Poppins</family>
+        <family>Lato</family>
         <pointsize>8</pointsize>
        </font>
       </property>

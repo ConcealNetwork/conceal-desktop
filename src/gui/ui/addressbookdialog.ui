@@ -12,14 +12,14 @@
   </property>
   <property name="font">
    <font>
-    <family>Poppins</family>
+    <family>Lato</family>
    </font>
   </property>
   <property name="windowTitle">
    <string>Select address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111; color: #aaa;</string>
+   <string notr="true">background-color: #282d31; color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -38,11 +38,12 @@
     <widget class="QTreeView" name="m_addressBookView">
      <property name="font">
       <font>
-       <family>Poppins</family>
+       <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #222; color: #aaa; border: 0px;</string>
+      <string notr="true">background-color: #282d31; color: #ddd; border: 0px;
+font-size: 13px;</string>
      </property>
     </widget>
    </item>
@@ -65,22 +66,19 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
-         <width>125</width>
-         <height>31</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; 
-background-color: #333; 
-border-top: 3px solid orange; 
-font-size: 13px;
-font-family: Poppins;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CHOOSE</string>
