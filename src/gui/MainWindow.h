@@ -10,6 +10,7 @@
 #pragma once
 
 #include <QLabel>
+#include <QPushButton>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 #include <QTimer>
@@ -40,7 +41,12 @@ private:
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
   bool m_isAboutToQuit;
-
+  QPushButton* m_button1;  
+  QPushButton* m_button2;  
+  QPushButton* m_button3;  
+  QPushButton* m_button4;        
+  QPushButton* m_button5;  
+  QPushButton* m_button6; 
   static MainWindow* m_instance;
 
   MainWindow();

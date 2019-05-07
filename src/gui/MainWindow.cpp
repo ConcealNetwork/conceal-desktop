@@ -162,6 +162,14 @@ void MainWindow::initUi() {
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_depositsFrame->hide();
 
+  QString buttonStyleSheet = "color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;";
+  m_button1 = new QPushButton("OVERVIEW", this);
+  m_button1->setGeometry(QRect(QPoint(10, 10),QSize(200, 40)));
+  m_button2 = new QPushButton("BANKING", this);
+  m_button2->setGeometry(QRect(QPoint(210, 10),QSize(200, 40)));
+  m_button1->setStyleSheet(buttonStyleSheet);
+  m_button2->setStyleSheet(buttonStyleSheet);
+
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
   m_tabActionGroup->addAction(m_ui->m_receiveAction);
