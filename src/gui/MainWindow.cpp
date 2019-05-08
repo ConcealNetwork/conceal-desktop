@@ -162,13 +162,27 @@ void MainWindow::initUi() {
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_depositsFrame->hide();
 
-  QString buttonStyleSheet = "color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;";
+  QString buttonStyleSheet = "color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;";
   m_button1 = new QPushButton("OVERVIEW", this);
-  m_button1->setGeometry(QRect(QPoint(10, 10),QSize(200, 40)));
+  m_button1->setGeometry(QRect(QPoint(0, 0),QSize(212, 40)));
   m_button2 = new QPushButton("BANKING", this);
-  m_button2->setGeometry(QRect(QPoint(210, 10),QSize(200, 40)));
-  m_button1->setStyleSheet(buttonStyleSheet);
-  m_button2->setStyleSheet(buttonStyleSheet);
+  m_button2->setGeometry(QRect(QPoint(212, 0),QSize(212, 40)));
+  m_button3 = new QPushButton("TRANSACTIONS", this);
+  m_button3->setGeometry(QRect(QPoint(424, 0),QSize(212, 40)));  
+  m_button4 = new QPushButton("MESSAGES", this);
+  m_button4->setGeometry(QRect(QPoint(636, 0),QSize(212, 40)));    
+  m_button5 = new QPushButton("SETTINGS", this);
+  m_button5->setGeometry(QRect(QPoint(848, 0),QSize(212, 40)));      
+  m_button6 = new QPushButton("WALLET", this);
+  m_button6->setGeometry(QRect(QPoint(1060, 0),QSize(212, 40)));      
+  m_button1->setStyleSheet("QPushButton#m_button1 {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button1:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
+  m_button2->setStyleSheet("QPushButton#m_button2 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button2:hover {color: orange;}");
+  m_button3->setStyleSheet("QPushButton#m_button3 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button3:hover {color: orange;}");
+  m_button4->setStyleSheet("QPushButton#m_button4 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button4:hover {color: orange;}");
+  m_button5->setStyleSheet("QPushButton#m_button5 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button5:hover {color: orange;}");
+  m_button6->setStyleSheet("QPushButton#m_button6 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button6:hover {color: orange;}");
+
+  connect(m_button2, SIGNAL (released()), this, SLOT (depositTo()));
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
