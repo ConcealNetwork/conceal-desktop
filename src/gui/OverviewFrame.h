@@ -105,5 +105,6 @@ Q_SIGNALS:
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();
+  void languageSettingsSignal();  
 };
 }
