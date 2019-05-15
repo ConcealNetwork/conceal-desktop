@@ -10,6 +10,7 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QLocale>
+#include <QTranslator>
 #include <QLockFile>
 #include <QMessageBox>
 #include <QSplashScreen>
@@ -23,7 +24,7 @@
 #include "Settings.h"
 #include "SignalHandler.h"
 #include "WalletAdapter.h"
-
+#include "TranslatorManager.h"
 #include "gui/MainWindow.h"
 
 #define DEBUG 1
@@ -44,6 +45,12 @@ int main(int argc, char* argv[]) {
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());
   Settings::instance().load();
+
+  //Translator must be created before the application's widgets.
+  TranslatorManager* tmanager = TranslatorManager::instance();
+  Q_UNUSED(tmanager)
+
+  setlocale(LC_ALL, "");
 
   #ifdef Q_OS_WIN
     if(!cmdLineParseResult) {

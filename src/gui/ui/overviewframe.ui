@@ -996,7 +996,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../resources.qrc">
+        <iconset>
          <normaloff>:/icons/tx-output</normaloff>:/icons/tx-output</iconset>
        </property>
       </widget>
@@ -1261,7 +1261,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../resources.qrc">
+        <iconset>
          <normaloff>:/icons/tx-deposit</normaloff>:/icons/tx-deposit</iconset>
        </property>
       </widget>
@@ -1688,7 +1688,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../resources.qrc">
+        <iconset>
          <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
        </property>
       </widget>
@@ -2026,7 +2026,7 @@ font-size: 11px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../../resources.qrc">
+       <iconset>
         <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
       </property>
       <property name="iconSize">
@@ -2159,9 +2159,7 @@ font-weight: bold;</string>
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>m_sendButton</sender>

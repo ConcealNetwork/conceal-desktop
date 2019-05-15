@@ -129,6 +129,7 @@ HEADERS += libqrencode/bitstream.h \
            src/AliasProvider.h \
            src/AddressProvider.h \
            src/CommandLineParser.h \
+           src/TranslatorManager.h \           
            src/CryptoNoteWrapper.h \
            src/CurrencyAdapter.h \
            src/LoggerAdapter.h \
@@ -575,6 +576,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/split.c \
            src/AliasProvider.cpp \
            src/AddressProvider.cpp \
+           src/TranslatorManager.cpp \
            src/CommandLineParser.cpp \
            src/CryptoNoteWrapper.cpp \
            src/CurrencyAdapter.cpp \
@@ -1067,6 +1069,9 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/nodesettings.ui \
             src/gui/ui/showqrcode.ui \            
 
+TRANSLATIONS = 	languages/uk.ts \
+				languages/tr.ts \
+                languages/us.ts \
 
 RESOURCES += src/resources.qrc
 
