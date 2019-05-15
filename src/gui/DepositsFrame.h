@@ -27,6 +27,7 @@ public:
 private:
   QScopedPointer<Ui::DepositsFrame> m_ui;
   QScopedArrayPointer<DepositListModel> m_depositModel;
+  QString remote_node_fee_address;
 
   void actualDepositBalanceUpdated(quint64 _balance);
   void actualInvestmentBalanceUpdated(quint64 _balance);

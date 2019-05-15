@@ -61,7 +61,7 @@
      <widget class="QLabel" name="sendLabel">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>100</x>
         <y>25</y>
         <width>181</width>
         <height>41</height>
@@ -118,7 +118,9 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+       <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -392,7 +394,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_sendButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_sendButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>SEND FUNDS</string>
@@ -425,7 +429,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_clearAllButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>CLEAR ALL</string>
@@ -478,12 +484,11 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 0px; background: #212529;</string>
+        <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -580,7 +585,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>
@@ -634,7 +641,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">padding: 3px; border: 0px; background: #212529; font-size: 16px;</string>
        </property>
        <property name="text">
-        <string notr="true">0.000100</string>
+        <string notr="true">0.001000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -793,7 +800,7 @@ p, li { white-space: pre-wrap; }
      <widget class="Line" name="logoLine">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>70</x>
         <y>20</y>
         <width>1</width>
         <height>60</height>
@@ -809,7 +816,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>10</y>
         <width>61</width>
         <height>71</height>

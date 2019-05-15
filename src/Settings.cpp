@@ -28,6 +28,7 @@ Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
 Q_DECL_CONSTEXPR char OPTION_REMOTE_NODE[] = "remoteNode";
+Q_DECL_CONSTEXPR char OPTION_FEE_ADDRESS[] = "feeAddress";
 
 Settings& Settings::instance() {
   static Settings inst;
@@ -48,8 +49,8 @@ void Settings::setCommandLineParser(CommandLineParser* _cmdLineParser) {
 void Settings::load() {
   QFile cfgFile(getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".cfg"));
 
-  if (cfgFile.open(QIODevice::ReadOnly)) {
-
+  if (cfgFile.open(QIODevice::ReadOnly)) 
+  {
     m_settings = QJsonDocument::fromJson(cfgFile.readAll()).object();
     cfgFile.close();
 
@@ -60,6 +61,10 @@ void Settings::load() {
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
+
+    if (!m_settings.contains(OPTION_FEE_ADDRESS)) {
+      m_settings.insert(OPTION_FEE_ADDRESS, ""); 
+    }
     if (!m_settings.contains(OPTION_LANGUAGE)) {
          m_currentLang = "tr";
          m_settings.insert(OPTION_LANGUAGE, "tr");
@@ -67,7 +72,7 @@ void Settings::load() {
 
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
       m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
-    }
+    }    
 
     if (!m_settings.contains(OPTION_CONNECTION)) {
       m_settings.insert(OPTION_CONNECTION, "embedded");
@@ -204,6 +209,14 @@ QStringList Settings::getRpcNodesList() const {
   return res;
 }
 
+QString Settings::getCurrentFeeAddress() const {
+    QString feeAddress;
+    if (m_settings.contains(OPTION_FEE_ADDRESS)) {
+      feeAddress = m_settings.value(OPTION_FEE_ADDRESS).toString();
+    }
+    return feeAddress;
+}
+
 QString Settings::getCurrentRemoteNode() const {
     QString remotenode;
     if (m_settings.contains(OPTION_REMOTE_NODE)) {
@@ -226,6 +239,11 @@ void Settings::setCurrentRemoteNode(const QString& _remoteNode) {
     if (!_remoteNode.isEmpty()) {
     m_settings.insert(OPTION_REMOTE_NODE, _remoteNode);
     }
+    saveSettings();
+}
+
+void Settings::setCurrentFeeAddress(const QString& _feeAddress) {
+    m_settings.insert(OPTION_FEE_ADDRESS, _feeAddress);
     saveSettings();
 }
 
@@ -257,6 +275,26 @@ QDir Settings::getDataDir() const {
 QString Settings::getWalletFile() const {
   return m_settings.contains(OPTION_WALLET_FILE) ? m_settings.value(OPTION_WALLET_FILE).toString() :
     getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".wallet");
+}
+
+QString Settings::getWalletName() const {
+  /* Get the wallet file name */
+  QString walletFile = getWalletFile();
+  std::string wallet = walletFile.toStdString();
+
+  /* Remove directory if present.
+     do this before extension removal in case directory has a period character. */
+  const size_t last_slash_idx = wallet.find_last_of("\\/");
+  if (std::string::npos != last_slash_idx) {
+    wallet.erase(0, last_slash_idx + 1);
+  }
+  /*  Remove extension if present */
+  const size_t period_idx = wallet.rfind('.');
+  if (std::string::npos != period_idx) {
+    wallet.erase(period_idx);
+  }
+  /* Return QString */
+  return QString::fromStdString(wallet);
 }
 
 QString Settings::getAddressBookFile() const {

@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,12 +21,10 @@
 #include <boost/algorithm/string.hpp>
 #include <Common/Base58.h>
 #include <Common/Util.h>
-
 #include "Common/CommandLine.h"
 #include "Common/SignalHandler.h"
 #include "Common/StringTools.h"
 #include "Common/PathTools.h"
-
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/CryptoNoteTools.h"
 #include "CryptoNoteCore/Account.cpp"
@@ -32,7 +32,6 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
-
 #include "AboutDialog.h"
 #include "DisclaimerDialog.h"
 #include "LinksDialog.h"
@@ -46,7 +45,7 @@
 #include "importseed.h"
 #include "importtracking.h"
 #include "transactionconfirmation.h"
-#include "nodesettings.h"
+#include "NodeSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -134,6 +133,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
   connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);  
+  connect(m_ui->m_sendFrame, &SendFrame::addressFoundSignal, this, &MainWindow::setRemoteWindowTitle);  
   connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);  
   connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);    
@@ -147,6 +147,7 @@ void MainWindow::connectToSignals() {
 
 void MainWindow::initUi() {
   setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
@@ -186,6 +187,8 @@ void MainWindow::initUi() {
 #endif
 }
 
+
+
 #ifdef Q_OS_WIN
 void MainWindow::minimizeToTray(bool _on) {
   if (_on) {
@@ -205,6 +208,7 @@ void MainWindow::scrollToTransaction(const QModelIndex& _index) {
 }
 
 void MainWindow::quit() {
+  Settings::instance().setCurrentFeeAddress("");    
   if (!m_isAboutToQuit) {
     ExitWidget* exitWidget = new ExitWidget(nullptr);
     exitWidget->show();
@@ -284,6 +288,10 @@ bool MainWindow::event(QEvent* _event) {
   }
 
   return QMainWindow::event(_event);
+}
+
+void MainWindow::setRemoteWindowTitle() {
+  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
 }
 
 void MainWindow::delay()
@@ -374,13 +382,27 @@ void MainWindow::createWallet() {
 }
 
 void MainWindow::openWallet() {  
-  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+  QString walletFile = Settings::instance().getWalletFile();
+  std::string wallet = walletFile.toStdString();
 
-  #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
-  #else
-      QDir::homePath(),
-  #endif
+  QString walletDirectory = "";
+  if (!wallet.empty()) {
+    /* Get current wallet path and use it as a default opening location */
+    const size_t last_slash_idx = wallet.find_last_of("\\/");
+    if (std::string::npos != last_slash_idx) {
+      wallet.erase(last_slash_idx + 1, wallet.length());
+    }
+    walletDirectory = QString::fromStdString(wallet);
+  } else {
+    #ifdef Q_OS_WIN
+      walletDirectory = QApplication::applicationDirPath();
+    #else
+      walletDirectory = QDir::homePath();
+    #endif
+  }
+
+  QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
+    walletDirectory,
     tr("Wallet (*.wallet *.keys)"));
 
   if (!filePath.isEmpty()) {

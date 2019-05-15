@@ -23,7 +23,7 @@ namespace WalletGui {
       ~NodeSettings();
 
       QString setConnectionMode() const;
-      QString NodeSettings::setRemoteHost() const;
+      QString setRemoteHost() const;
       void initConnectionSettings();
     
     private:

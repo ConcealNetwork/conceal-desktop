@@ -110,7 +110,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_copyAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_copyAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -140,7 +142,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_deleteAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_deleteAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>REMOVE ADDRESS</string>
@@ -167,7 +171,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_addAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_addAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>ADD NEW ADDRESS</string>
@@ -194,7 +200,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 2px solid #343a40; font-size: 16px;</string>
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
        </property>
        <property name="text">
         <string>BACK</string>
