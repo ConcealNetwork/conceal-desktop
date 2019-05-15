@@ -561,6 +561,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
            src/gui/NodeSettings.h \
+           src/gui/LanguageSettings.h \           
            src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
@@ -1033,6 +1034,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
            src/gui/NodeSettings.cpp \
+           src/gui/LanguageSettings.cpp \           
            src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
@@ -1067,6 +1069,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
             src/gui/ui/nodesettings.ui \
+            src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
 TRANSLATIONS = 	languages/uk.ts \
