@@ -1072,9 +1072,8 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
-TRANSLATIONS = 	languages/uk.ts \
-				languages/tr.ts \
-                languages/us.ts \
+TRANSLATIONS = 	languages/tr.ts \
+                languages/en.ts \
 
 RESOURCES += src/resources.qrc
 
