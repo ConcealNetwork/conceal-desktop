@@ -46,6 +46,7 @@
 #include "importtracking.h"
 #include "transactionconfirmation.h"
 #include "NodeSettings.h"
+#include "LanguageSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -129,6 +130,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);    
+  connect(m_ui->m_overviewFrame, &OverviewFrame::languageSettingsSignal, this, &MainWindow::languageSettings);    
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);      
 
@@ -941,8 +943,6 @@ void MainWindow::importTracking() {
 }
 
 
-/* --------------------------- CONNECTION SETTINGS --------------------------------------- */
-
 void MainWindow::nodeSettings() {
   NodeSettings dlg(this);
 
@@ -959,6 +959,21 @@ void MainWindow::nodeSettings() {
     }
     QMessageBox::information(this, 
                              tr("Conection settings saved"), 
+                             tr("Please restart the wallet for the new settings to take effect."), 
+                             QMessageBox::Ok);
+  }
+}
+
+void MainWindow::languageSettings() {
+  LanguageSettings dlg(this);
+
+  dlg.initLanguageSettings();
+
+  if (dlg.exec() == QDialog::Accepted) {
+    QString language = dlg.setLanguage();
+    Settings::instance().setLanguage(language);
+    QMessageBox::information(this, 
+                             tr("Language settings saved"), 
                              tr("Please restart the wallet for the new settings to take effect."), 
                              QMessageBox::Ok);
   }

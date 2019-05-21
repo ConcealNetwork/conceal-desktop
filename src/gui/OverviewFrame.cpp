@@ -430,18 +430,19 @@ void OverviewFrame::settingsClicked()
     m_ui->m_subButton1->setText("Optimize Wallet");
     m_ui->m_subButton2->setText("Connection Settings");
     m_ui->m_subButton3->setText("Rescan Wallet");    
+    m_ui->m_subButton4->setText("Language Settings");        
 
     #ifdef Q_OS_WIN        
-      m_ui->m_subButton4->setText("Minimize to Tray");    
+      m_ui->m_subButton6->setText("Minimize to Tray");    
       m_ui->m_subButton5->setText("Close to Tray");       
 
       if (!Settings::instance().isMinimizeToTrayEnabled()) 
       {
-        m_ui->m_subButton4->setText("Minimize to Tray Off");    
+        m_ui->m_subButton6->setText("Minimize to Tray Off");    
       } 
       else 
       {
-        m_ui->m_subButton4->setText("Minimize to Tray On");    
+        m_ui->m_subButton6->setText("Minimize to Tray On");    
       } 
 
       if (!Settings::instance().isCloseToTrayEnabled()) 
@@ -599,22 +600,11 @@ void OverviewFrame::subButton4Clicked()
   {
     Q_EMIT linksSignal();
   } 
-
-#ifdef Q_OS_WIN
   if (subMenu == 2) 
   {
-    if (!Settings::instance().isMinimizeToTrayEnabled()) 
-    {
-      Settings::instance().setMinimizeToTrayEnabled(true);
-      m_ui->m_subButton4->setText("Minimize to Tray On");    
-    } 
-    else 
-    {
-      Settings::instance().setMinimizeToTrayEnabled(false);    
-      m_ui->m_subButton4->setText("Minimize to Tray Off");    
-    }
-  }  
-#endif  
+    Q_EMIT languageSettingsSignal();
+  } 
+
 }
 
 void OverviewFrame::subButton5Clicked() 
@@ -646,6 +636,22 @@ void OverviewFrame::subButton6Clicked()
   {
     OverviewFrame::closeWalletClicked();
   }
+
+#ifdef Q_OS_WIN
+  if (subMenu == 2) 
+  {
+    if (!Settings::instance().isMinimizeToTrayEnabled()) 
+    {
+      Settings::instance().setMinimizeToTrayEnabled(true);
+      m_ui->m_subButton6->setText("Minimize to Tray On");    
+    } 
+    else 
+    {
+      Settings::instance().setMinimizeToTrayEnabled(false);    
+      m_ui->m_subButton6->setText("Minimize to Tray Off");    
+    }
+  }  
+#endif  
 }
 
 void OverviewFrame::qrCodeClicked() 
