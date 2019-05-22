@@ -251,16 +251,13 @@ void MainWindow::closeEvent(QCloseEvent* _event) {
 
 }
 
-
-void MainWindow::changeEvent(QEvent* _event) {
 #ifdef Q_OS_WIN
+void MainWindow::changeEvent(QEvent* _event) {
   QMainWindow::changeEvent(_event);
   if (!QSystemTrayIcon::isSystemTrayAvailable()) {
     QMainWindow::changeEvent(_event);
     return;
   }
-#endif
-
   switch (_event->type()) {
   case QEvent::LocaleChange: {
     QString locale = QLocale::system().name();
@@ -268,19 +265,17 @@ void MainWindow::changeEvent(QEvent* _event) {
     loadLanguage(locale);
   }
   case QEvent::WindowStateChange: {
-#ifdef Q_OS_WIN    
     if(Settings::instance().isMinimizeToTrayEnabled()) {
       minimizeToTray(isMinimized());
     }
     break;
-#endif    
   }
   default:
     break;
   }
   QMainWindow::changeEvent(_event);
 }
-
+#endif  
 
 bool MainWindow::event(QEvent* _event) {
   switch (static_cast<WalletEventType>(_event->type())) {
