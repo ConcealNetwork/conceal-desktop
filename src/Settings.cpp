@@ -61,13 +61,12 @@ void Settings::load() {
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
-
     if (!m_settings.contains(OPTION_FEE_ADDRESS)) {
       m_settings.insert(OPTION_FEE_ADDRESS, ""); 
     }
     if (!m_settings.contains(OPTION_LANGUAGE)) {
-         m_currentLang = "tr";
-         m_settings.insert(OPTION_LANGUAGE, "tr");
+         m_currentLang = "en";
+         m_settings.insert(OPTION_LANGUAGE, "en");
     }
 
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
