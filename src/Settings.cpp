@@ -9,6 +9,7 @@
 #include <QCoreApplication>
 #include <QFile>
 #include <QJsonArray>
+#include <QLocale>
 #include <QJsonDocument>
 #include <QSettings>
 #include <QStandardPaths>
@@ -64,9 +65,12 @@ void Settings::load() {
     if (!m_settings.contains(OPTION_FEE_ADDRESS)) {
       m_settings.insert(OPTION_FEE_ADDRESS, ""); 
     }
-    if (!m_settings.contains(OPTION_LANGUAGE)) {
-         m_currentLang = "en";
-         m_settings.insert(OPTION_LANGUAGE, "en");
+    if (!m_settings.contains(OPTION_LANGUAGE)) 
+    {
+      QString lang = QLocale::system().name();
+      lang.truncate(lang.lastIndexOf('_'));
+      m_currentLang = lang;
+      m_settings.insert(OPTION_LANGUAGE, lang);
     }
 
     if (!m_settings.contains(OPTION_DAEMON_PORT)) {
