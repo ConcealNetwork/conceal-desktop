@@ -1257,7 +1257,7 @@ Would you like to go to the download page?</source>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="80"/>
         <source>WALLET SEED AND KEYS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="118"/>
@@ -1328,22 +1328,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="438"/>
         <source>■  Keep your seed and password safe</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Tohumunuzu ve şifrenizi güvende tutun</translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="459"/>
         <source>■  Make a backup of your wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation>■  M-cüzdan dosyanızı yedekleyin</translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="480"/>
         <source>■  Be aware of phishing websites and programs</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Kimlik avı web sitelerinin ve programlarının farkında olun</translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="501"/>
         <source>■  Store a copy of your seed in a safe place</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Tohumunuzun bir kopyasını güvenli bir yerde saklayın</translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="522"/>
@@ -1368,7 +1368,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="666"/>
         <source>advanced users:</source>
-        <translation type="unfinished"></translation>
+        <translation>ileri:</translation>
     </message>
     <message>
         <location filename="src/gui/ui/receiveframe.ui" line="694"/>
@@ -2060,12 +2060,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="src/gui/MainWindow.cpp" line="355"/>
         <source>Language was changed</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil değişti
+</translation>
     </message>
     <message>
         <location filename="src/gui/MainWindow.cpp" line="356"/>
         <source>Language changed to %1. The change will take effect after restarting the wallet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni ayarların geçerli olması için lütfen cüzdanı yeniden başlatın.</translation>
     </message>
     <message>
         <location filename="src/gui/MainWindow.cpp" line="365"/>
@@ -2166,7 +2167,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/MainWindow.cpp" line="976"/>
         <source>Language settings saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Dil ayarları kaydedildi</translation>
     </message>
 </context>
 <context>
@@ -2374,7 +2375,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/TransactionsModel.cpp" line="111"/>
         <source>HEIGHT</source>
-        <translation></translation>
+        <translation>YÜKSEKLIK</translation>
     </message>
     <message>
         <location filename="src/gui/TransactionsModel.cpp" line="113"/>
@@ -2394,7 +2395,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/TransactionsModel.cpp" line="196"/>
         <source>unconfirmed</source>
-        <translation type="unfinished"></translation>
+        <translation>doğrulanmamış</translation>
     </message>
     <message>
         <location filename="src/gui/TransactionsModel.cpp" line="196"/>
@@ -2491,33 +2492,33 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="26"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoş Geldin</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="72"/>
         <location filename="src/gui/ui/welcomeframe.ui" line="287"/>
         <source>WELCOME TO THE CONCEAL WALLET</source>
-        <translation type="unfinished"></translation>
+        <translation>CONCEAL CÜZDANINA HOŞ GELDİN</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="109"/>
         <source>■  Conceal is a decentralized blockchain bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Conceal, merkeziyetsiz bir blockchain bankasıdır.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="131"/>
         <source>■  The Conceal Wallet is a free, open-source interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Conceal Wallet, ücretsiz, açık kaynak kodlu bir arayüzdür.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="153"/>
         <source>■  The wallet allows access to all Conceal services.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Cüzdan, tüm Conceal hizmetlerine erişim sağlar.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="175"/>
         <source>■  You control the private keys to your funds.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Fonlarınızın özel anahtarlarını siz kontrol edersiniz.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="197"/>
@@ -2529,92 +2530,92 @@ Are you sure?</source>
         <location filename="src/gui/ui/welcomeframe.ui" line="448"/>
         <location filename="src/gui/ui/welcomeframe.ui" line="701"/>
         <source>NEXT</source>
-        <translation type="unfinished"></translation>
+        <translation>İLERİ</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="300"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="334"/>
         <source>■  When creating a wallet, you are creating a set of cryptographic keys</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Bir cüzdan oluştururken, bir şifreleme anahtarı seti, </translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="356"/>
         <source>a seed, and a wallet address.</source>
-        <translation type="unfinished"></translation>
+        <translation>bir seed ve bir cüzdan adresi oluşturuyorsunuz.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="378"/>
         <source>■  If you send your public address to someone then they can send you CCX.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Genel adresinizi birisine gönderirseniz, size CCX gönderebilirler.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="400"/>
         <source>■  The developers of Conceal have no access to your password, your keys, </source>
-        <translation type="unfinished"></translation>
+        <translation>■  Conceal geliştiricileri parolanıza, anahtarlarınıza veya seed&apos;lerinize erişemez.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="422"/>
         <source>How does the Conceal Wallet work?</source>
-        <translation type="unfinished"></translation>
+        <translation>Conceal Cüzdanı nasıl çalışır?</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="486"/>
         <source>■  NEVER share your seed, keys, or wallet file with anyone.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Seedlerinizi, anahtarlarınızı veya cüzdan dosyanızı ASLA paylaşmayın.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="508"/>
         <source>Doing so means they have complete control over your funds.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bunu yapmak, fonlarınız üzerinde tam kontrol sahibi olmaları anlamına gelir.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="530"/>
         <source>or your seed. If you forget your password, or lose your seed, </source>
-        <translation type="unfinished"></translation>
+        <translation> Parolanızı unutursanız veya seed&apos;lerinizi kaybederseniz, yapabileceğimiz </translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="552"/>
         <source>there is nothing we can do. Always keep a copy of your seed in a secure place.</source>
-        <translation type="unfinished"></translation>
+        <translation>hiçbir şey yoktur. Seed&apos;lerinizin kopyasını daima güvenli bir yerde saklayın.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="587"/>
         <source>■  You are responsible for your own security.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Kendi güvenliğinizden siz sorumlusunuz.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="609"/>
         <source>■  No one can recover or change your private keys or seed.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Özel anahtarlarınızı veya seed&apos;lerinizi kimse kurtaramaz veya değiştiremez.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="631"/>
         <source>■  No one can recover your password.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Kimse parolanızı kurtaramaz.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="653"/>
         <source>■  No one can refund your transactions.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Kimse işlemlerinizi iade edemez.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="675"/>
         <source>only YOU are in control</source>
-        <translation type="unfinished"></translation>
+        <translation>kontrol sadece SİZDE</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="739"/>
         <source>■  No one can freeze your funds.</source>
-        <translation type="unfinished"></translation>
+        <translation>■  Kimse fonlarınızı donduramaz.</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="774"/>
         <source>Getting Started</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlarken</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="816"/>
@@ -2629,7 +2630,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="862"/>
         <source>IMPORT SPEND/VIEW KEYS</source>
-        <translation type="unfinished"></translation>
+        <translation>SPEND/VIRW KEY&apos;LERİ İÇE AKTAR</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="885"/>
@@ -2644,37 +2645,37 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="930"/>
         <source>Create a new wallet address along with</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli seedler ile birlikte yeni </translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="955"/>
         <source>Already have a wallet? open the wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaten cüzdanınız var mı? </translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="980"/>
         <source>Import an existing wallet with the secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli bir seed ile mevcut bir </translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="1005"/>
         <source>a secret seed phrase</source>
-        <translation type="unfinished"></translation>
+        <translation>bir cüzdan adresi oluşturun</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="1030"/>
         <source>seed phrase and access your CCX</source>
-        <translation type="unfinished"></translation>
+        <translation>cüzdanı içe aktarın ve CCX&apos;lerinize erişin</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="1055"/>
         <source>and access your assets</source>
-        <translation type="unfinished"></translation>
+        <translation>Cüzdanı açın ve varlıklarınıza erişin</translation>
     </message>
     <message>
         <location filename="src/gui/ui/welcomeframe.ui" line="1080"/>
         <source>advanced users can import using other keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ileri düzey kullanıcılar, diğer anahtarları kullanarak içe aktarabilir</translation>
     </message>
 </context>
 <context>
@@ -2702,7 +2703,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ui/importsecretkeys.ui" line="201"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="src/gui/ui/importsecretkeys.ui" line="230"/>
@@ -2722,7 +2723,7 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ui/importsecretkeys.ui" line="305"/>
         <source>Recreate your wallet with the secret spend and view keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli bir seed ile mevcut bir cüzdanı içe aktarın ve CCX&apos;lerinize erişin</translation>
     </message>
 </context>
 <context>
