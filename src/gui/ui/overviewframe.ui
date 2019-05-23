@@ -996,7 +996,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx-output</normaloff>:/icons/tx-output</iconset>
        </property>
       </widget>
@@ -1261,7 +1261,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx-deposit</normaloff>:/icons/tx-deposit</iconset>
        </property>
       </widget>
@@ -1688,7 +1688,7 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../../resources.qrc">
          <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
        </property>
       </widget>
@@ -2026,7 +2026,7 @@ font-size: 11px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="../../resources.qrc">
         <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
       </property>
       <property name="iconSize">
@@ -2159,7 +2159,9 @@ font-weight: bold;</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_sendButton</sender>
@@ -2250,22 +2252,6 @@ font-weight: bold;</string>
     <hint type="sourcelabel">
      <x>100</x>
      <y>445</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_walletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>openWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>480</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -2539,7 +2525,6 @@ font-weight: bold;</string>
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
-  <slot>openWallet()</slot>
   <slot>addressBookClicked()</slot>
  </slots>
 </ui>

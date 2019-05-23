@@ -151,9 +151,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_csvButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+        <string notr="true">QPushButton#m_csvButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
 
-QPushButton#m_csvButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+QPushButton#m_csvButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
        </property>
        <property name="text">
         <string>EXPORT TO CSV</string>
@@ -181,9 +181,9 @@ QPushButton#m_csvButton:hover {color: #ddd; border: 2px solid #444; font-size: 1
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
 
-QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
        </property>
        <property name="text">
         <string>BACK</string>

@@ -23,7 +23,7 @@ TranslatorManager::TranslatorManager()
   m_langPath = QApplication::applicationDirPath();
   m_langPath = m_langPath + "/../Resources/languages/";
 #else
-  m_langPath = "/opt/conceal/languages";
+  m_langPath = "languages";
 #endif
 
     QDir dir(m_langPath);
