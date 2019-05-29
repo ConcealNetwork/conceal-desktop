@@ -41,12 +41,6 @@ private:
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
   bool m_isAboutToQuit;
-  QPushButton* m_button1;  
-  QPushButton* m_button2;  
-  QPushButton* m_button3;  
-  QPushButton* m_button4;        
-  QPushButton* m_button5;  
-  QPushButton* m_button6; 
   static MainWindow* m_instance;
 
   MainWindow();
@@ -65,17 +59,19 @@ private:
   void sendTo();
   void delay();
   void setRemoteWindowTitle();  
-  void depositTo();
   void showQRCode(const QString& _address);
   void backupTo();
-  void rescanTo();
-  void dashboardTo();
-  void transactionTo();
+  void rescanTo();    
   void addressBookTo();
-  void sendMessageTo();
-  void messageTo();
+  void sendMessageTo();    
   void miningTo();
-  
+
+  Q_SLOT void dashboardTo();
+  Q_SLOT void transactionTo();
+  Q_SLOT void messageTo();
+  Q_SLOT void depositTo();
+  Q_SLOT void welcomeTo();  
+
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
   Q_SLOT void closeWallet();

@@ -162,28 +162,6 @@ void MainWindow::initUi() {
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_depositsFrame->hide();
 
-  QString buttonStyleSheet = "color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;";
-  m_button1 = new QPushButton("OVERVIEW", this);
-  m_button1->setGeometry(QRect(QPoint(0, 0),QSize(212, 40)));
-  m_button2 = new QPushButton("BANKING", this);
-  m_button2->setGeometry(QRect(QPoint(212, 0),QSize(212, 40)));
-  m_button3 = new QPushButton("TRANSACTIONS", this);
-  m_button3->setGeometry(QRect(QPoint(424, 0),QSize(212, 40)));  
-  m_button4 = new QPushButton("MESSAGES", this);
-  m_button4->setGeometry(QRect(QPoint(636, 0),QSize(212, 40)));    
-  m_button5 = new QPushButton("SETTINGS", this);
-  m_button5->setGeometry(QRect(QPoint(848, 0),QSize(212, 40)));      
-  m_button6 = new QPushButton("WALLET", this);
-  m_button6->setGeometry(QRect(QPoint(1060, 0),QSize(212, 40)));      
-  m_button1->setStyleSheet("QPushButton#m_button1 {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button1:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}"); 
-  m_button2->setStyleSheet("QPushButton#m_button2 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button2:hover {color: orange;}");
-  m_button3->setStyleSheet("QPushButton#m_button3 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button3:hover {color: orange;}");
-  m_button4->setStyleSheet("QPushButton#m_button4 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button4:hover {color: orange;}");
-  m_button5->setStyleSheet("QPushButton#m_button5 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button5:hover {color: orange;}");
-  m_button6->setStyleSheet("QPushButton#m_button6 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button6:hover {color: orange;}");
-
-  connect(m_button2, SIGNAL (released()), this, SLOT (depositTo()));
-
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
   m_tabActionGroup->addAction(m_ui->m_receiveAction);
@@ -573,31 +551,21 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   }
 }
 
-/* ----------------------------- PASSWORD PROMPT ------------------------------------ */
-
 void MainWindow::askForWalletPassword(bool _error) 
 {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide(); 
-
   PasswordDialog dlg(_error, this);
-
   if (dlg.exec() == QDialog::Accepted) 
   {
-
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
-  } else {
-
+  } else 
+  {
     m_ui->m_welcomeFrame->raise();
     m_ui->m_welcomeFrame->show();
-
-
-
   }
-  
-  
-  }
+}
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     m_ui->m_welcomeFrame->hide();
@@ -619,19 +587,15 @@ void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   }
 }
 
-/* ----------------------------- WALLET CLOSED ------------------------------------ */
 /* this is what happens when the wallet goes into a closed state which includes the 
    period between closing the current wallet and opening/creating a new one */
-
 void MainWindow::walletClosed() 
 {
-
   /* actions */
   m_ui->m_backupWalletAction->setEnabled(false);
   m_ui->m_encryptWalletAction->setEnabled(false);
   m_ui->m_changePasswordAction->setEnabled(false);
   m_ui->m_resetAction->setEnabled(false);
-
   /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
@@ -641,25 +605,22 @@ void MainWindow::walletClosed()
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
-
   /* labels */
   QList<QAction*> tabActions = m_tabActionGroup->actions();
-
   Q_FOREACH(auto action, tabActions) 
   {
-
     action->setEnabled(false);
   }
 }
 
-/* ------------------------------------------------------------------------------------- */
-
-void MainWindow::replyTo(const QModelIndex& _index) {
+void MainWindow::replyTo(const QModelIndex& _index) 
+{
   m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
   m_ui->m_sendMessageAction->trigger();
 }
 
-void MainWindow::payTo(const QModelIndex& _index) {
+void MainWindow::payTo(const QModelIndex& _index) 
+{
   m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "") 
   {
@@ -678,15 +639,21 @@ void MainWindow::dashboardTo() {
   m_ui->m_overviewFrame->raise();
 }
 
+void MainWindow::welcomeTo() {
+  m_ui->m_welcomeFrame->raise();
+  m_ui->m_welcomeFrame->show();
+}
+
+
+
+
 void MainWindow::depositTo() {
   m_ui->m_depositsAction->trigger();
 }
 
 void MainWindow::backupTo() 
 {
-
   m_ui->m_receiveAction->trigger();
-
 }
 
 void MainWindow::transactionTo() {
