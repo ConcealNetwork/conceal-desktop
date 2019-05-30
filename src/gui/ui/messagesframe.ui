@@ -61,6 +61,7 @@ font-family: Lato;</string>
    </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
+
      <property name="maximumSize">
       <size>
        <width>1270</width>

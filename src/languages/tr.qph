@@ -1,0 +1,1218 @@
+<!DOCTYPE QPH>
+<QPH sourcelanguage="en" language="tr">
+<phrase>
+    <source>About %1</source>
+    <target>Hakkında</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Conceal.Network, %100 açık kaynak koduyla çalışan, finansal kurumların bir müdahalesi olmadan faiz ödeyen, mevduat ve yatırım programlarına sahip olan, merkezi olmayan bir blok zinciri bankasıdır. Conceal.Network, izlenemeyen ve anonim mesajlaşmalar ve para transferi için güvenli bir yol sağlar. Dağıtık bir muhasebe defteri kullanılarak, gönderen ve alıcı gizli tutulur.</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal Cüzdanım</target>
+</phrase>
+<phrase>
+    <source>Select address</source>
+    <target>Adres seç</target>
+</phrase>
+<phrase>
+    <source>CHOOSE</source>
+    <target>SEÇ</target>
+</phrase>
+<phrase>
+    <source>Address Book</source>
+    <target>Adres Defteri</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>ADRES DEFTERİ</target>
+</phrase>
+<phrase>
+    <source>COPY ADDRESS</source>
+    <target>ADRESİ KOPYALA</target>
+</phrase>
+<phrase>
+    <source>REMOVE ADDRESS</source>
+    <target>ADRESİ KALDIR</target>
+</phrase>
+<phrase>
+    <source>ADD NEW ADDRESS</source>
+    <target>YENİ ADRES EKLE</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>Change Password</source>
+    <target>Parolayı değiştir</target>
+</phrase>
+<phrase>
+    <source>Current Password</source>
+    <target>Parola</target>
+</phrase>
+<phrase>
+    <source>New Password</source>
+    <target>Yeni Parola</target>
+</phrase>
+<phrase>
+    <source>Confirm New Password</source>
+    <target>Yeni Parolayi Onayla</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>Parola onaylanmadı</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>KAYDET</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>Deposit Details</source>
+    <target>Mevduat Detayları</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>BANKACILIK</target>
+</phrase>
+<phrase>
+    <source>CREATE</source>
+    <target>OLUŞTUR</target>
+</phrase>
+<phrase>
+    <source>Select the length of your deposit</source>
+    <target>Mevduat süresini seç</target>
+</phrase>
+<phrase>
+    <source>The fee for this deposit:</source>
+    <target>Bu mevduat için ücret:</target>
+</phrase>
+<phrase>
+    <source>How much would you like to deposit?</source>
+    <target>Ne kadar yatırmak istiyorsunuz?</target>
+</phrase>
+<phrase>
+    <source>Interest earned at the end of your deposit:</source>
+    <target>Mevduatın sonunda kazanılacak faiz:</target>
+</phrase>
+<phrase>
+    <source>(minimum of 1 CCX)</source>
+    <target>(en az 1 CCX)</target>
+</phrase>
+<phrase>
+    <source>(minimum term of 1 week, maximum 52 weeks)</source>
+    <target>(minimum term of 1 week, maximum 52 weeks)</target>
+</phrase>
+<phrase>
+    <source>ADD ALL</source>
+    <target>HEPSİNİ EKLE</target>
+</phrase>
+<phrase>
+    <source>Unlocked Investments</source>
+    <target>Kilidi Açılmış Yatırımlar</target>
+</phrase>
+<phrase>
+    <source>WITHDRAW</source>
+    <target>PARA ÇEK</target>
+</phrase>
+<phrase>
+    <source>Withdraw</source>
+    <target>Para Çek</target>
+</phrase>
+<phrase>
+    <source>Unlocked Deposits</source>
+    <target>Kilidi Açılmış Mevduatlar</target>
+</phrase>
+<phrase>
+    <source>Total Unlocked</source>
+    <target>Toplam Kilidi Açılan:</target>
+</phrase>
+<phrase>
+    <source>Weeks</source>
+    <target>Hafta</target>
+</phrase>
+<phrase>
+    <source>Interest</source>
+    <target>Faiz</target>
+</phrase>
+<phrase>
+    <source>NEW DEPOSIT</source>
+    <target>YENİ MEVDUAT</target>
+</phrase>
+<phrase>
+    <source>NEW INVESTMENT</source>
+    <target>YENİ YATIRIM</target>
+</phrase>
+<phrase>
+    <source>Select the length of your investment</source>
+    <target>Yatırımınızın uzunluğunu seçin</target>
+</phrase>
+<phrase>
+    <source>Fee</source>
+    <target>Ücret</target>
+</phrase>
+<phrase>
+    <source> Quarters</source>
+    <target>Çeyrek</target>
+</phrase>
+<phrase>
+    <source>How much would you like to invest?</source>
+    <target>Ne kadar yatırım yapmak istersiniz?</target>
+</phrase>
+<phrase>
+    <source>(minimum of 50,000 CCX)</source>
+    <target>(en az 50.000 CCX)</target>
+</phrase>
+<phrase>
+    <source>(minimum term of 1 quarter, maximum 20 quarters)</source>
+    <target>(en az 1 çeyrek, en fazla 20 çeyrek)</target>
+</phrase>
+<phrase>
+    <source>Legal Disclaimer</source>
+    <target>Yasal Uyarı</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal, açık kaynaklı bir deneysel projedir, yani arkasında herhangi bir şirket yoktur. Bu proje topluluk tarafından desteklenmektedir, yani kendini projeye adamış bir ekibe sahiptir, projeye herkes katkıda bulunabilir ve bu çalışmalar gönüllülük esasına dayanır ve belirli bir merkezi bulunmamaktadır. &lt;/p&gt;&lt;p&gt;Conceal, insanlığın yararına olacağı umuduyla geliştirilmiştir, ancak belirli bir amaca yönelik uygun olacağının garantisi veya ticari bir garantisi bulunmamaktadır.&lt;/p&gt;&lt;p&gt;Telif Hakkı Uyarısı &lt;/p&gt;&lt;p&gt;Bu yazılımın ve ilgili dokümantasyon dosyalarının (&amp;quot;Yazılım&amp;quot;) bir kopyasını alan herhangi bir kişinin, ücretsiz olarak, kısıtlama olmaksızın, aşağıda yer alan şartlara bağlı olarak, Yazılımın kopyalarını kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya satma haklarını sınırlandırmaksızın Yazılımı dağıtmasına ve Yazılımın sunulacağı insanların da bu haklara sahip olmalarına izin verilir: &lt;/p&gt;&lt;p&gt;Yukarıdaki telif hakkı bildirimi ve bu izin bildirimi, Yazılımın tüm kopyalarına veya önemli bölümlerine dâhil edilecektir. &lt;/p&gt;&lt;p&gt;YAZILIM, SATILABİLİRLİK, BELİRLİ BİR AMACA UYGUNLUK VE İHLAL EDİLMEME GARANTİLERİ DÂHİL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE, AÇIK VEYA ZIMNİ HERHANGİ BİR GARANTİ OLMAKSIZIN, &amp;quot;OLDUĞU GİBİ&amp;quot; SAĞLANIR. YAZARLAR VEYA TELİF HAKKI SAHİPLERİ, HİÇBİR KOŞULDA, HERHANGİ BİR SÖZLEŞMEDEN, HAKSIZ FİİLDEN VEYA YAZILIMIN KULLANIMINDAN KAYNAKLANAN VEYA KAYNAKLANMAYAN YA DA YAZILIM İLE İLİŞKİLİ OLAN HERHANGİ BİR DURUMDAN KAYNAKLANAN HİÇBİR İDDİA, ZARAR VEYA DİĞER YÜKÜMLÜLÜKLERDEN SORUMLU TUTULAMAZ.&lt;/p&gt;&lt;p&gt;Telif hakkı saklıdır 2018-2019 - Conceal.Networkk&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>Saving data</source>
+    <target>Veriler kaydediliyor</target>
+</phrase>
+<phrase>
+    <source>%1 wallet is saving data.
+Please wait...</source>
+    <target>cüzdan veri kaydediyor. Lütfen bekleyin..</target>
+</phrase>
+<phrase>
+    <source>Import GUI key</source>
+    <target>GUI anahtarını içe aktar</target>
+</phrase>
+<phrase>
+    <source>Import GUI Key</source>
+    <target>GUI anahtarını içe aktar</target>
+</phrase>
+<phrase>
+    <source>GUI Key</source>
+    <target>GUI anahtarını içe aktar</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Cüzdan Yolu</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>İÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the GUI key</source>
+    <target>GUI key ile cüzdanınızı yeniden oluşturun</target>
+</phrase>
+<phrase>
+    <source>Import :: Mnemonic Seed</source>
+    <target>Mnemonic Seed&apos;I Içe Aktar</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the 25 word mnemonic seed</source>
+    <target>25 kelimelik mnemonic seed ile cüzdanınızı yeniden oluşturun</target>
+</phrase>
+<phrase>
+    <source>Import Mnemonic Seed</source>
+    <target>Mnemonic Seed&apos;I Içe Aktar</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Cüzdan Yolu</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>Wallet path:</source>
+    <target>Cüzdan Yolu</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>İÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>EXIT</source>
+    <target>ÇIKIŞ</target>
+</phrase>
+<phrase>
+    <source>IMPORT VIEW ONLY WALLET</source>
+    <target>SALT GÖRÜNTÜLENEBİLİR CÜZDANI İÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>Connection Settings</source>
+    <target>Bağlantı ayarları</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>KAYDET</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>OVERVIEW</source>
+    <target>GENEL BAKIŞ</target>
+</phrase>
+<phrase>
+    <source>SEND</source>
+    <target>GÖNDER</target>
+</phrase>
+<phrase>
+    <source>KEYS</source>
+    <target>ANAHTARLAR</target>
+</phrase>
+<phrase>
+    <source>TRANSACTIONS</source>
+    <target>İŞLEMLER</target>
+</phrase>
+<phrase>
+    <source>Exit</source>
+    <target>Çikiş</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>ADRES DEFTERİ</target>
+</phrase>
+<phrase>
+    <source>Create wallet</source>
+    <target>Cüzdan Oluştur</target>
+</phrase>
+<phrase>
+    <source>Open wallet</source>
+    <target>Cüzdani Aç</target>
+</phrase>
+<phrase>
+    <source>Encrypt wallet</source>
+    <target>Cüzdanı Şifrele</target>
+</phrase>
+<phrase>
+    <source>Change password</source>
+    <target>Parolayı değiştir</target>
+</phrase>
+<phrase>
+    <source>About</source>
+    <target>Hakkında</target>
+</phrase>
+<phrase>
+    <source>About Qt</source>
+    <target>Qt Hakkında</target>
+</phrase>
+<phrase>
+    <source>Backup wallet</source>
+    <target>Cüzdanı yedekle</target>
+</phrase>
+<phrase>
+    <source>Start on system login</source>
+    <target>Sistem açıldığında başlat</target>
+</phrase>
+<phrase>
+    <source>Minimize to tray</source>
+    <target>Simge durumuna küçült</target>
+</phrase>
+<phrase>
+    <source>Close to tray</source>
+    <target>Simge durumuna kapat</target>
+</phrase>
+<phrase>
+    <source>MESSAGES</source>
+    <target>MESAJLAR</target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>MESAJ GÖNDER</target>
+</phrase>
+<phrase>
+    <source>Import GUI key</source>
+    <target>GUI anahtarını içe aktar</target>
+</phrase>
+<phrase>
+    <source>DEPOSITS</source>
+    <target>MEVDUATLAR</target>
+</phrase>
+<phrase>
+    <source>Reset wallet</source>
+    <target>Cüzdanı sıfırla</target>
+</phrase>
+<phrase>
+    <source>Import spend/view key</source>
+    <target>Anahtarları içe aktar</target>
+</phrase>
+<phrase>
+    <source>Import mnemonic seed</source>
+    <target>Mnemonic Seed&apos;I Içe Aktar</target>
+</phrase>
+<phrase>
+    <source>Connection settings</source>
+    <target>Bağlantı ayarları</target>
+</phrase>
+<phrase>
+    <source>Optimize wallet</source>
+    <target>Cüzdanı optimize et</target>
+</phrase>
+<phrase>
+    <source>Import view wallet</source>
+    <target>Salt Görüntülenebilir Cüzdani Içe Aktar</target>
+</phrase>
+<phrase>
+    <source>Send To:</source>
+    <target>Gönder</target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>Mesaj</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Miktar</target>
+</phrase>
+<phrase>
+    <source>Transaction hash</source>
+    <target>İşlem hash&apos;i</target>
+</phrase>
+<phrase>
+    <source>Message size (bytes)</source>
+    <target>Mesaj boyutu</target>
+</phrase>
+<phrase>
+    <source>Reply</source>
+    <target>Yanıtla</target>
+</phrase>
+<phrase>
+    <source>Save to file</source>
+    <target>Dosyaya kaydet</target>
+</phrase>
+<phrase>
+    <source>Ok</source>
+    <target>Tamam</target>
+</phrase>
+<phrase>
+    <source>   MESSAGES</source>
+    <target>MESAJLAR</target>
+</phrase>
+<phrase>
+    <source>NEW MESSAGE</source>
+    <target>YENI MESAJ</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>New address</source>
+    <target>Yeni adres</target>
+</phrase>
+<phrase>
+    <source>NEW ADDRESS BOOK ENTRY</source>
+    <target>YENİ ADRES DEFTERİ GİRİŞİ</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>ADRES</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID</source>
+    <target>Payment ID</target>
+</phrase>
+<phrase>
+    <source>ADD</source>
+    <target>EKLE</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>New remote node</source>
+    <target>Yeni Uzak Düğüm</target>
+</phrase>
+<phrase>
+    <source>OK</source>
+    <target>TAMAM</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>Add Remote Node</source>
+    <target>Ekle Uzak Düğüm</target>
+</phrase>
+<phrase>
+    <source>Enter password</source>
+    <target>Parolayı gir</target>
+</phrase>
+<phrase>
+    <source>New Password</source>
+    <target>Yeni Parola</target>
+</phrase>
+<phrase>
+    <source>Confirm Password</source>
+    <target>Parolayi Onayla</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>Parola onaylanmadı</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>KAYDET</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>Connection Settings</source>
+    <target>Bağlantı ayarları</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;Varsayılan olarak, cüzdanınız merkezsizleştirmeye yardımcı olmak için yerleşik düğümü kullanarak bağlanacaktır. Blok zincirinin tamamını indirmek istemiyorsanız uzak düğümü de kullanabilirsiniz.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>Yerleşik Düğüm</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>KAYDET</target>
+</phrase>
+<phrase>
+    <source>Banking</source>
+    <target>Bankacilik</target>
+</phrase>
+<phrase>
+    <source>Messages</source>
+    <target>Mesajlar</target>
+</phrase>
+<phrase>
+    <source>About</source>
+    <target>Hakkında</target>
+</phrase>
+<phrase>
+    <source>Transactions</source>
+    <target>Işlemler</target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>Ayarlar</target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>Cüzdan</target>
+</phrase>
+<phrase>
+    <source>RECENT TRANSACTIONS</source>
+    <target>SON İŞLEMLER</target>
+</phrase>
+<phrase>
+    <source>Pending</source>
+    <target>Beklemede</target>
+</phrase>
+<phrase>
+    <source>Available</source>
+    <target>Mevcut</target>
+</phrase>
+<phrase>
+    <source>FUNDS</source>
+    <target>FONLAR</target>
+</phrase>
+<phrase>
+    <source>DEPOSITS</source>
+    <target>MEVDUATLAR</target>
+</phrase>
+<phrase>
+    <source>Locked</source>
+    <target>Kilitli</target>
+</phrase>
+<phrase>
+    <source>Withdrawable</source>
+    <target>Çekilebilir</target>
+</phrase>
+<phrase>
+    <source>MY CONCEAL WALLET</source>
+    <target>CONCEAL CÜZDANI</target>
+</phrase>
+<phrase>
+    <source>SEND</source>
+    <target>GÖNDER</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>BANKACILIK</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>YENI MESAJ</target>
+</phrase>
+<phrase>
+    <source>INVESTMENTS</source>
+    <target>YATIRIMLAR</target>
+</phrase>
+<phrase>
+    <source>CCX</source>
+    <target>CCX</target>
+</phrase>
+<phrase>
+    <source>VOLUME</source>
+    <target>HACIM</target>
+</phrase>
+<phrase>
+    <source>MARKETCAP</source>
+    <target>PIYASA DEĞERI</target>
+</phrase>
+<phrase>
+    <source>WALLET ADDRESS</source>
+    <target>CÜZDAN ADRESI</target>
+</phrase>
+<phrase>
+    <source>MARKET INFORMATION</source>
+    <target>PAZAR BILGISI</target>
+</phrase>
+<phrase>
+    <source>Enter password</source>
+    <target>Parolayı gir</target>
+</phrase>
+<phrase>
+    <source>CONTINUE</source>
+    <target>DEVAM</target>
+</phrase>
+<phrase>
+    <source>Incorrect Password</source>
+    <target>Yanlış Parola</target>
+</phrase>
+<phrase>
+    <source>Please Enter Your Password For Wallet</source>
+    <target>Parolayı gir</target>
+</phrase>
+<phrase>
+    <source>YOUR 25 WORD MNEMONIC SEED</source>
+    <target>25 KELIMELIK MNEMONIC SEED</target>
+</phrase>
+<phrase>
+    <source>COPY</source>
+    <target>KOPYALA</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>COPY SPEND KEY</source>
+    <target>KOPYALA SPEND KEY</target>
+</phrase>
+<phrase>
+    <source>COPY VIEW KEY</source>
+    <target>KOPYALA VIEW KEY</target>
+</phrase>
+<phrase>
+    <source>We care about your safety: Please read the following</source>
+    <target>Güvenliğinize önem veriyoruz: Lütfen aşağıdakileri okuyun</target>
+</phrase>
+<phrase>
+    <source>SHOW SEED</source>
+    <target>Seed Göster</target>
+</phrase>
+<phrase>
+    <source>YOUR GUI KEY</source>
+    <target>GUI KEY</target>
+</phrase>
+<phrase>
+    <source>SEND FUNDS</source>
+    <target>FONLARI GÖNDER</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID (OPTIONAL)</source>
+    <target>PAYMENT ID (İSTEĞE BAĞLI)</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>ADRES</target>
+</phrase>
+<phrase>
+    <source>LABEL</source>
+    <target>ETİKET</target>
+</phrase>
+<phrase>
+    <source>AMOUNT</source>
+    <target>MIKTAR</target>
+</phrase>
+<phrase>
+    <source>AVAILABLE BALANCE</source>
+    <target>MEVCUT BAKİYE</target>
+</phrase>
+<phrase>
+    <source>CLEAR ALL</source>
+    <target>HEPSİNİ TEMİZLE</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>ÜCRET</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Lütfen, göndermeden önce Adres ve (varsa) doğru olduğundan emin olun. Yanlış adrese gönderilen fonlar kaybedilecek.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>ADRES DEFTERİ</target>
+</phrase>
+<phrase>
+    <source>NODE FEE</source>
+    <target>NODE ÜCRET</target>
+</phrase>
+<phrase>
+    <source>CRYPTO MESSAGE (OPTIONAL)</source>
+    <target>KRİPTO MESAJ (İSTEĞE BAĞLI)</target>
+</phrase>
+<phrase>
+    <source>You can send an optional message along with your transfer. There is a 0.000010 CCX fee per character.</source>
+    <target>Transferinizle birlikte isteğe bağlı bir mesaj gönderebilirsiniz. Karakter başına 0.000010 CCX ücret kesilir.</target>
+</phrase>
+<phrase>
+    <source>Some exchanges and other services require that a Payment ID is included when sending funds.</source>
+    <target>Bazı borsalar ve diğer hizmetler, para gönderirken bir Payment ID eklemenizi gerektirir.</target>
+</phrase>
+<phrase>
+    <source>Include a label if you want to save the recepient in your Address Book</source>
+    <target>Alıcıyı Adres Defterinize kaydetmek istiyorsanız bir etiket ekleyin.</target>
+</phrase>
+<phrase>
+    <source>Please enter the receivers address</source>
+    <target>Lütfen alıcıların adreslerini girin</target>
+</phrase>
+<phrase>
+    <source>Add &quot;Reply To&quot;</source>
+    <target>&quot;Cevap&quot; ekle</target>
+</phrase>
+<phrase>
+    <source>Do not include message in blockchain</source>
+    <target>Blok zinciri içine mesaj yerleştirme</target>
+</phrase>
+<phrase>
+    <source>Set self destruct time</source>
+    <target>Kendini yok etme zamanı ayarla</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>ÜCRET</target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>MESAJ GÖNDER</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>Please enter the receivers address</source>
+    <target>Lütfen alıcıların adreslerini girin</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>ADRES</target>
+</phrase>
+<phrase>
+    <source>Enter your encrypted message</source>
+    <target>Şifreli mesaj</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>YENI MESAJ</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>ADRES DEFTERİ</target>
+</phrase>
+<phrase>
+    <source>NODE FEE</source>
+    <target>NODE ÜCRET</target>
+</phrase>
+<phrase>
+    <source>Walllet Address :: QR Code</source>
+    <target>QR Code</target>
+</phrase>
+<phrase>
+    <source>Transaction details</source>
+    <target>İşlem detayları</target>
+</phrase>
+<phrase>
+    <source>Transaction Details</source>
+    <target>İşlem detayları</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+<phrase>
+    <source>Transaction History</source>
+    <target>Işlem Geçmişi</target>
+</phrase>
+<phrase>
+    <source>   TRANSACTION HISTORY</source>
+    <target>İŞLEM GEÇMİŞİ</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Miktar</target>
+</phrase>
+<phrase>
+    <source>Enter a label for this address to add it to your address book</source>
+    <target>Bu adres için adres defterinize eklemek üzere bir etiket girin</target>
+</phrase>
+<phrase>
+    <source>Label</source>
+    <target>Etiket</target>
+</phrase>
+<phrase>
+    <source>Pay to</source>
+    <target>Ödemek</target>
+</phrase>
+<phrase>
+    <source>Crypto comment</source>
+    <target>Şifreli mesaj</target>
+</phrase>
+<phrase>
+    <source>Unable to check for update</source>
+    <target>Güncelleme kontrol edilemiyor</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal Cüzdanım</target>
+</phrase>
+<phrase>
+    <source>Invalid address</source>
+    <target>Geçersiz adres</target>
+</phrase>
+<phrase>
+    <source>  Label</source>
+    <target>Etiket</target>
+</phrase>
+<phrase>
+    <source>Address</source>
+    <target>Adres</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>Parola onaylanmadı</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Miktar</target>
+</phrase>
+<phrase>
+    <source>Interest</source>
+    <target>Faiz</target>
+</phrase>
+<phrase>
+    <source>Locked</source>
+    <target>Kilitli</target>
+</phrase>
+<phrase>
+    <source>Weeks</source>
+    <target>Hafta</target>
+</phrase>
+<phrase>
+    <source>Quarters</source>
+    <target>Çeyrek</target>
+</phrase>
+<phrase>
+    <source>You don&apos;t have enough balance in your account!</source>
+    <target>Hesabınızda yeterli bakiye yok!</target>
+</phrase>
+<phrase>
+    <source>Deposit Confirmation</source>
+    <target>Mevduat Onayı</target>
+</phrase>
+<phrase>
+    <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
+    <target>Fonlar bir mevduat için kilitlendiğinde, vadesi bitene kadar bu fonlara erişemeyeceğinizi lütfen unutmayın. Devam etmek istediğinize emin misiniz?</target>
+</phrase>
+<phrase>
+    <source>New investments only work after height 108,000</source>
+    <target>Yeni yatırımlar yalnızca 108.000&apos;inci blok yüksekliğinden sonra çalışır</target>
+</phrase>
+<phrase>
+    <source>Investment Confirmation</source>
+    <target>Yatırım Onayı</target>
+</phrase>
+<phrase>
+    <source>Please note that once funds are locked in an investment, you will not have access to those funds until maturity. Are you sure you want to proceed?</source>
+    <target>Fonlar bir yatırım için kilitlendiğinde, vadesi bitene kadar bu fonlara erişemeyeceğinizi lütfen unutmayın. Devam etmek istediğinize emin misiniz?</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Cüzdan dosyası</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>cüzdan (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Cüzdan dosyası</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>cüzdan (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Cüzdan dosyası</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>cüzdan (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>About %1 Wallet</source>
+    <target>Hakkında %1 Cüzdan</target>
+</phrase>
+<phrase>
+    <source>New wallet file</source>
+    <target>Cüzdan dosyası</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>cüzdan (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet (*.wallet *.keys)</source>
+    <target>Cüzdan (*.wallet *.keys)</target>
+</phrase>
+<phrase>
+    <source>Backup wallet to...</source>
+    <target>Cüzdanı yedekle…</target>
+</phrase>
+<phrase>
+    <source>Warning</source>
+    <target>Uyarı</target>
+</phrase>
+<phrase>
+    <source>Your wallet will be reset and restored from blockchain.
+Are you sure?</source>
+    <target>Cüzdanınız sıfırlanacak ve blok zincirinden geri yüklenecek. Emin misiniz?</target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>Cüzdan</target>
+</phrase>
+<phrase>
+    <source>Tracking key is not valid</source>
+    <target>Girdiğiniz izleme anahtarı geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>The tracking key you entered is not valid.</source>
+    <target>Girdiğiniz izleme anahtarı geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>Key is not valid</source>
+    <target>Anahtar geçerli değil</target>
+</phrase>
+<phrase>
+    <source>The public spend key you entered is not valid.</source>
+    <target>Girdiğiniz public spend key geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>The public view key you entered is not valid.</source>
+    <target>Girdiğiniz public view key geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>The private spend key you entered is not valid.</source>
+    <target>Girdiğiniz private spend key geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>The private view key you entered is not valid.</source>
+    <target>Girdiğiniz private view key geçerli değil.</target>
+</phrase>
+<phrase>
+    <source>Conection settings saved</source>
+    <target>Bağlantı ayarları kaydedildi</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>Yeni ayarların geçerli olması için lütfen cüzdanı yeniden başlatın.</target>
+</phrase>
+<phrase>
+    <source>Save message</source>
+    <target>Mesajı kaydet</target>
+</phrase>
+<phrase>
+    <source>File already exists</source>
+    <target>Dosya zaten var</target>
+</phrase>
+<phrase>
+    <source>Warning! File already exists and will be overwritten, are you sure?</source>
+    <target>Uyarı! Dosya zaten var ve üzerine yazılacak, emin misiniz?</target>
+</phrase>
+<phrase>
+    <source>File error</source>
+    <target>Dosya hatası</target>
+</phrase>
+<phrase>
+    <source>   Date</source>
+    <target>Tarih</target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>Mesaj</target>
+</phrase>
+<phrase>
+    <source>Transaction hash</source>
+    <target>İşlem hash&apos;i</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Miktar</target>
+</phrase>
+<phrase>
+    <source>Message size</source>
+    <target>Mesaj boyutu</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>Parola onaylanmadı</target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>Cüzdan</target>
+</phrase>
+<phrase>
+    <source>Synchronization</source>
+    <target>Senkronizasyon</target>
+</phrase>
+<phrase>
+    <source>GUI Key</source>
+    <target>GUI anahtarını içe aktar</target>
+</phrase>
+<phrase>
+    <source>Invalid recipient address</source>
+    <target>Geçersiz alıcı adresi</target>
+</phrase>
+<phrase>
+    <source>Invalid payment ID</source>
+    <target>Geçersiz ödeme kimliği</target>
+</phrase>
+<phrase>
+    <source>Transaction Confirmation</source>
+    <target>İşlem Onayı</target>
+</phrase>
+<phrase>
+    <source>Please note that there is no payment ID, are you sure you want to proceed?</source>
+    <target>Lütfen ödeme kimliği girmediğinizi unutmayın, devam etmek istediğinizden emin misiniz?</target>
+</phrase>
+<phrase>
+    <source>Incorrect fee value</source>
+    <target>Yanlış ücret değeri</target>
+</phrase>
+<phrase>
+    <source>Incorrect fee</source>
+    <target>Yanlış ücret değeri</target>
+</phrase>
+<phrase>
+    <source>DATE</source>
+    <target>TARIH</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>ADRES</target>
+</phrase>
+<phrase>
+    <source>AMOUNT</source>
+    <target>MIKTAR</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>ÜCRET</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID</source>
+    <target>Payment ID</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>YENI MESAJ</target>
+</phrase>
+<phrase>
+    <source>confirmations</source>
+    <target>Onayı</target>
+</phrase>
+<phrase>
+    <source>Importing keys</source>
+    <target>Anahtarlar içe aktarılıyor</target>
+</phrase>
+<phrase>
+    <source>Saving data</source>
+    <target>Veriler kaydediliyor</target>
+</phrase>
+<phrase>
+    <source>Sending</source>
+    <target>Gönderiliyor</target>
+</phrase>
+<phrase>
+    <source>Optimizing</source>
+    <target>Optimize ediliyor</target>
+</phrase>
+<phrase>
+    <source>Sending messages</source>
+    <target>Mesajlar gönderiliyor</target>
+</phrase>
+<phrase>
+    <source>Creating</source>
+    <target>Oluşturuluyor</target>
+</phrase>
+<phrase>
+    <source>Withdrawing</source>
+    <target>Para çekiliyor</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Hazır</target>
+</phrase>
+<phrase>
+    <source>SYNCHRONIZING</source>
+    <target>SENKRONIZE EDILIYOR</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Cüzdan dosyası</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>cüzdan (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal Cüzdanım</target>
+</phrase>
+<phrase>
+    <source>CREATE NEW WALLET</source>
+    <target>YENİ CÜZDAN OLUŞTUR</target>
+</phrase>
+<phrase>
+    <source>OPEN EXISTING WALLET</source>
+    <target>MEVCUT CÜZDANI AÇ</target>
+</phrase>
+<phrase>
+    <source>IMPORT GUI KEY</source>
+    <target>GUI ANAHTARINI IÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>IMPORT SEED</source>
+    <target>SEED İÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Cüzdan Yolu</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>İPTAL</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>İÇE AKTAR</target>
+</phrase>
+<phrase>
+    <source>Import Secret Keys</source>
+    <target>Anahtarlar içe aktarılıyor</target>
+</phrase>
+<phrase>
+    <source>Optimize Wallet</source>
+    <target>Cüzdanı optimize et</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;Bu işlem, cüzdanınızı büyük işlemler için optimize eder. Optimizasyon yaklaşık 22 dakika sürer. Lütfen optimizasyon işlemi tamamlanana kadar hiçbir fonunuzu harcayamayacağınızı unutmayın. Bazı durumlarda, cüzdanın bir defadan fazla optimizasyona ihtiyacı olabilir&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+</phrase>
+<phrase>
+    <source>Optimization recommended for this wallet</source>
+    <target>Bu cüzdan için optimizasyon önerilir</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE</source>
+    <target>OPTİMİZE ET</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>KAPAT</target>
+</phrase>
+</QPH>

@@ -129,6 +129,7 @@ HEADERS += libqrencode/bitstream.h \
            src/AliasProvider.h \
            src/AddressProvider.h \
            src/CommandLineParser.h \
+           src/TranslatorManager.h \           
            src/CryptoNoteWrapper.h \
            src/CurrencyAdapter.h \
            src/LoggerAdapter.h \
@@ -560,6 +561,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
            src/gui/NodeSettings.h \
+           src/gui/LanguageSettings.h \           
            src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
@@ -575,6 +577,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/split.c \
            src/AliasProvider.cpp \
            src/AddressProvider.cpp \
+           src/TranslatorManager.cpp \
            src/CommandLineParser.cpp \
            src/CryptoNoteWrapper.cpp \
            src/CurrencyAdapter.cpp \
@@ -1031,6 +1034,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
            src/gui/NodeSettings.cpp \
+           src/gui/LanguageSettings.cpp \           
            src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
@@ -1065,8 +1069,11 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
             src/gui/ui/nodesettings.ui \
+            src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
+TRANSLATIONS = 	languages/tr.ts \
+                languages/en.ts \
 
 RESOURCES += src/resources.qrc
 
