@@ -167,14 +167,14 @@ void OverviewFrame::transactionsInserted(const QModelIndex& _parent, int _first,
 void OverviewFrame::updateWalletAddress(const QString& _address) 
 {
   m_ui->m_copyAddressButton->setText(_address);
-  m_ui->m_copyAddressButton->setStyleSheet("Text-align:right");
+  //m_ui->m_copyAddressButton->setStyleSheet("Text-align:right");
 }
 
 void OverviewFrame::showCurrentWallet() 
 {
   /* Show the name of the opened wallet */
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText("CURRENT WALLET: " + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText("Wallet: " + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
