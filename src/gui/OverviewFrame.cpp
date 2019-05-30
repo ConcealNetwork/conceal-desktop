@@ -301,7 +301,11 @@ void OverviewFrame::onPriceFound(const QString& _btcccx,const QString& _usdccx, 
   m_ui->m_btcusd->setText("BTC $" + _usdbtc);
   //m_ui->m_marketCap->setText("$" + _usdmarketcap);
   //m_ui->m_volume->setText("$" + _usdvolume);
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD"); 
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX (" + QString::number(total / 1000000, 'f', 2) + " USD)"); 
+  m_ui->m_totalBalanceLabelUSD->setText("(" + QString::number((actualBalance + pendingBalance) / 1000000, 'f', 2) + " USD)");
+  m_ui->m_totalDepositLabelUSD->setText("(" + QString::number((actualDepositBalance + pendingDepositBalance + actualInvestmentBalance + pendingInvestmentBalance) / 1000000, 'f', 2) + " USD)");
+
+
 }
 
 void OverviewFrame::sendClicked() 

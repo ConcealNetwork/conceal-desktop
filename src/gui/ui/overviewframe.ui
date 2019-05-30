@@ -638,9 +638,9 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>60</y>
-         <width>371</width>
-         <height>151</height>
+         <y>50</y>
+         <width>391</width>
+         <height>181</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -1895,7 +1895,7 @@ font-size: 13px;
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>10</y>
+         <y>15</y>
          <width>991</width>
          <height>21</height>
         </rect>
