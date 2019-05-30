@@ -365,9 +365,9 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_sendButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_sendButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_sendButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_sendButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>SEND FUNDS</string>
@@ -400,9 +400,9 @@ QPushButton#m_sendButton:hover {color: orange; background-color: #1; border: 2px
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
 
-QPushButton#m_clearAllButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+QPushButton#m_clearAllButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
        </property>
        <property name="text">
         <string>CLEAR ALL</string>
@@ -556,9 +556,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+        <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
 
-QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>

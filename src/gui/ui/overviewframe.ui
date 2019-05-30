@@ -2138,22 +2138,6 @@ font-size: 13px;</string>
    </hints>
   </connection>
   <connection>
-   <sender>m_walletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>openWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>480</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_copyAddressButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
@@ -2419,7 +2403,6 @@ font-size: 13px;</string>
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
-  <slot>openWallet()</slot>
   <slot>addressBookClicked()</slot>
  </slots>
 </ui>

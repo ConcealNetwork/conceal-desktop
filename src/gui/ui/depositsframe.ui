@@ -164,9 +164,9 @@ QWidget:item:selected {
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #21259;}
+       <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
 
-QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #21259;}</string>
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -230,9 +230,9 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_depositButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_depositButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_depositButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_depositButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CREATE</string>
@@ -714,9 +714,9 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #1; border: 
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_withdrawButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_withdrawButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_withdrawButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_withdrawButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>WITHDRAW</string>
@@ -1055,7 +1055,7 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #1; border:
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;</string>
+        <string notr="true">color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;</string>
        </property>
        <property name="text">
         <string>CREATE</string>
