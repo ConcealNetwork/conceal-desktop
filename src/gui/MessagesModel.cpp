@@ -73,19 +73,19 @@ QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, i
   case Qt::DisplayRole:
     switch(_section) {
     case COLUMN_DATE:
-      return tr("   Date");
+      return tr("DATE");
     case COLUMN_TYPE:
-      return tr("Type");
+      return tr("TYPE");
     case COLUMN_HEIGHT:
-      return tr("Height");
+      return tr("HEIGHT");
     case COLUMN_MESSAGE:
-      return tr("Message");
+      return tr("MESSAGE");
     case COLUMN_HASH:
-      return tr("Transaction hash");
+      return tr("HASH");
     case COLUMN_AMOUNT:
-      return tr("Amount");
+      return tr("AMOUNT");
     case COLUMN_MESSAGE_SIZE:
-      return tr("Message size");
+      return tr("SIZE");
     default:
       break;
     }

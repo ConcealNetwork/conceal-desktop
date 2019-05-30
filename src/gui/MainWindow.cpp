@@ -586,31 +586,21 @@ void MainWindow::showMessage(const QString& _text, QtMsgType _type) {
   }
 }
 
-/* ----------------------------- PASSWORD PROMPT ------------------------------------ */
-
 void MainWindow::askForWalletPassword(bool _error) 
 {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide(); 
-
   PasswordDialog dlg(_error, this);
-
   if (dlg.exec() == QDialog::Accepted) 
   {
-
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
-  } else {
-
+  } else 
+  {
     m_ui->m_welcomeFrame->raise();
     m_ui->m_welcomeFrame->show();
-
-
-
   }
-  
-  
-  }
+}
 
 void MainWindow::walletOpened(bool _error, const QString& _error_text) {
     m_ui->m_welcomeFrame->hide();
@@ -632,19 +622,15 @@ void MainWindow::walletOpened(bool _error, const QString& _error_text) {
   }
 }
 
-/* ----------------------------- WALLET CLOSED ------------------------------------ */
 /* this is what happens when the wallet goes into a closed state which includes the 
    period between closing the current wallet and opening/creating a new one */
-
 void MainWindow::walletClosed() 
 {
-
   /* actions */
   m_ui->m_backupWalletAction->setEnabled(false);
   m_ui->m_encryptWalletAction->setEnabled(false);
   m_ui->m_changePasswordAction->setEnabled(false);
   m_ui->m_resetAction->setEnabled(false);
-
   /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
@@ -654,25 +640,22 @@ void MainWindow::walletClosed()
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
-
   /* labels */
   QList<QAction*> tabActions = m_tabActionGroup->actions();
-
   Q_FOREACH(auto action, tabActions) 
   {
-
     action->setEnabled(false);
   }
 }
 
-/* ------------------------------------------------------------------------------------- */
-
-void MainWindow::replyTo(const QModelIndex& _index) {
+void MainWindow::replyTo(const QModelIndex& _index) 
+{
   m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
   m_ui->m_sendMessageAction->trigger();
 }
 
-void MainWindow::payTo(const QModelIndex& _index) {
+void MainWindow::payTo(const QModelIndex& _index) 
+{
   m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "") 
   {
@@ -691,15 +674,21 @@ void MainWindow::dashboardTo() {
   m_ui->m_overviewFrame->raise();
 }
 
+void MainWindow::welcomeTo() {
+  m_ui->m_welcomeFrame->raise();
+  m_ui->m_welcomeFrame->show();
+}
+
+
+
+
 void MainWindow::depositTo() {
   m_ui->m_depositsAction->trigger();
 }
 
 void MainWindow::backupTo() 
 {
-
   m_ui->m_receiveAction->trigger();
-
 }
 
 void MainWindow::transactionTo() {

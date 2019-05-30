@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1270</width>
-    <height>700</height>
+    <height>740</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,123 +38,256 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../../resources.qrc">
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #282d31; color: #ddd;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="spacing">
+   <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
      <number>0</number>
     </property>
-    <property name="leftMargin">
-     <number>0</number>
+   </widget>
+   <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>1270</width>
+      <height>700</height>
+     </rect>
     </property>
-    <property name="topMargin">
-     <number>0</number>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
     </property>
-    <property name="rightMargin">
-     <number>0</number>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
-    <property name="bottomMargin">
-     <number>0</number>
+   </widget>
+   <widget class="WalletGui::SendFrame" name="m_sendFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
     </property>
-    <item>
-     <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::SendFrame" name="m_sendFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::TransactionsFrame" name="m_transactionsFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::AddressBookFrame" name="m_addressBookFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::MessagesFrame" name="m_messagesFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::SendMessageFrame" name="m_sendMessageFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-   </layout>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::TransactionsFrame" name="m_transactionsFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>142</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::AddressBookFrame" name="m_addressBookFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::MessagesFrame" name="m_messagesFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::SendMessageFrame" name="m_sendMessageFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>141</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>220</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button1 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button1:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>OVERVIEW</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>0</y>
+      <width>213</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button2 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button2:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>BANKING</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button3">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>0</y>
+      <width>213</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button3 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button3:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>MESSAGES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button4">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>0</y>
+      <width>213</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button4 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button4:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>TRANSACTIONS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button5">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>0</y>
+      <width>213</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button5 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button5:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>WALLET</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_button6">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>0</y>
+      <width>213</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#m_button6 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button6:hover {color: orange;}</string>
+    </property>
+    <property name="text">
+     <string>SETTINGS</string>
+    </property>
+   </widget>
   </widget>
   <action name="m_overviewAction">
    <property name="checkable">
@@ -164,7 +297,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
    </property>
    <property name="text">
@@ -188,7 +321,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
    </property>
    <property name="text">
@@ -212,7 +345,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
    </property>
    <property name="text">
@@ -233,7 +366,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
    </property>
    <property name="text">
@@ -265,7 +398,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
    </property>
    <property name="text">
@@ -366,7 +499,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
    </property>
    <property name="text">
@@ -384,7 +517,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
    </property>
    <property name="text">
@@ -407,7 +540,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
@@ -510,7 +643,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_overviewAction</sender>
@@ -912,8 +1047,75 @@
     </hint>
    </hints>
   </connection>
+ <connection>
+   <sender>m_button1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dashboardTo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+<connection>
+   <sender>m_button2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>depositTo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>  
+<connection>
+   <sender>m_button3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>messageTo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>    
+<connection>
+   <sender>m_button4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>transactionTo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>599</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>       
  </connections>
  <slots>
+  <slot>dashboardTo()</slot>
+  <slot>depositTo()</slot>  
+  <slot>transactionTo</slot>
   <slot>createWallet()</slot>
   <slot>openWallet()</slot>
   <slot>encryptWallet()</slot>

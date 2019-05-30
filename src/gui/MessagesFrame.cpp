@@ -30,7 +30,7 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
   int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
   QFont font2;
   font2.setFamily("Lato");
-  font2.setPixelSize(15);
+  font2.setPixelSize(13);
   m_ui->m_messagesView->setFont(font2);
 
 }
