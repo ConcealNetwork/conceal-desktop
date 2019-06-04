@@ -109,13 +109,10 @@ quintptr NodeAdapter::getPeerCount() const {
   return m_node->getPeerCount();
 }
 
-std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const {
+std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const 
+{
   Q_CHECK_PTR(m_node);
-  try {
-    return m_node->convertPaymentId(_paymentIdString.toStdString());
-  } catch (std::runtime_error& err) {
-  }
-  return std::string();
+  return m_node->convertPaymentId(_paymentIdString.toStdString());
 }
 
 QString NodeAdapter::extractPaymentId(const std::string& _extra) const {
@@ -143,7 +140,7 @@ bool NodeAdapter::init() {
     /* Pull a random node from the node pool list */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
-    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
+    const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
     QNetworkRequest request(url);
     nam->get(request);
   }

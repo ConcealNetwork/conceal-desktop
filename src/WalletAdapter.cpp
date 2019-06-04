@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -260,75 +259,95 @@ void WalletAdapter::reset() {
   unlock();
 }
 
-quint64 WalletAdapter::getTransactionCount() const {
+quint64 WalletAdapter::getTransactionCount() const 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getTransactionCount();
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return 0;
   }
-
-  return 0;
 }
 
-quint64 WalletAdapter::getTransferCount() const {
+quint64 WalletAdapter::getTransferCount() const 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getTransferCount();
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return 0;
   }
-
-  return 0;
 }
 
-quint64 WalletAdapter::getDepositCount() const {
+quint64 WalletAdapter::getDepositCount() const 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getDepositCount();
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return 0;
   }
-
-  return 0;
 }
 
-bool WalletAdapter::getTransaction(CryptoNote::TransactionId _id, CryptoNote::WalletLegacyTransaction& _transaction) {
+bool WalletAdapter::getTransaction(CryptoNote::TransactionId _id, CryptoNote::WalletLegacyTransaction& _transaction) 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getTransaction(_id, _transaction);
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return false;
   }
-
-  return false;
 }
 
-bool WalletAdapter::getTransfer(CryptoNote::TransferId _id, CryptoNote::WalletLegacyTransfer& _transfer) {
+bool WalletAdapter::getTransfer(CryptoNote::TransferId _id, CryptoNote::WalletLegacyTransfer& _transfer) 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getTransfer(_id, _transfer);
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return false;
   }
-
-  return false;
 }
 
 bool WalletAdapter::getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit) {
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     return m_wallet->getDeposit(_id, _deposit);
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return false;
   }
-
-  return false;
 }
 
-bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) {
+bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys) 
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try 
+  {
     m_wallet->getAccountKeys(_keys);
     return true;
-  } catch (std::system_error&) {
+  } 
+  catch (std::system_error&) 
+  {
+    return false;    
   }
-
-  return false;
 }
 
 void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers,
