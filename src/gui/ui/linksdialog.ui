@@ -101,9 +101,9 @@ border-right: 0px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_okButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+       <string notr="true">QPushButton#m_okButton {color: orange;  border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_okButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_okButton:hover {color: orange;  border: 2px solid orange; font-size: 16px;}</string>
       </property>
       <property name="text">
        <string>CLOSE</string>

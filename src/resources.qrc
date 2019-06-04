@@ -15,6 +15,7 @@
         <file alias="tx-inout">icons/tx_inout.png</file>
         <file alias="unconfirmed">icons/unconfirmed.png</file>
         <file alias="tx-deposit">icons/tx_deposit.png</file>
+        <file>icons/icon-rcv.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="splash">images/splash.png</file>

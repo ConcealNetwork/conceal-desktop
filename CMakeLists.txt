@@ -273,7 +273,6 @@ elseif (UNIX)
     install(FILES src/concealwallet.desktop DESTINATION share/applications)
     install(FILES src/images/cryptonote.png DESTINATION share/pixmaps RENAME conceal.png)
     install(FILES copyright DESTINATION share/doc/concealwallet)
-    install(DIRECTORY src/languages DESTINATION /opt/conceal/ FILES_MATCHING PATTERN "*.qm")
 
 	SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 	SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")

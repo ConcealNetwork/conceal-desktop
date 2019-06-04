@@ -125,9 +125,9 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#m_optimizeButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+     <string notr="true">QPushButton#m_optimizeButton {color: orange;  border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_optimizeButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_optimizeButton:hover {color: orange;  border: 2px solid orange; font-size: 16px;}</string>
     </property>
     <property name="text">
      <string>OPTIMIZE</string>

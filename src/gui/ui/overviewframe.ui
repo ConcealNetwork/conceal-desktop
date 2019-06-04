@@ -26,7 +26,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #282d31; color: #ddd;</string>
+   <string notr="true">background: qlineargradient( x1:0 y1:1, x2:1 y2:0, stop:0 #333333, stop:1 #282d31); color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -83,16 +83,19 @@
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
      <widget class="QGroupBox" name="leftMenu">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>1</y>
-        <width>221</width>
-        <height>701</height>
+        <width>1</width>
+        <height>1</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #282d31;</string>
+       <string notr="true">background:transparent;</string>
       </property>
       <property name="title">
        <string/>
@@ -531,35 +534,6 @@ font-size: 14px;
         </size>
        </property>
       </widget>
-      <widget class="Line" name="logoLine">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>30</y>
-         <width>1</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: #343a40;</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_13">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>61</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="m_subButton6">
        <property name="geometry">
         <rect>
@@ -589,7 +563,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string>Sixth</string>
+        <string/>
        </property>
        <property name="iconSize">
         <size>
@@ -609,7 +583,7 @@ font-size: 14px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40;</string>
+       <string notr="true">background:transparent; border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
@@ -711,7 +685,7 @@ font-family: Lato;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #333;</string>
+       <string notr="true">background:transparent; border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #444;</string>
       </property>
       <property name="title">
        <string/>
@@ -1011,7 +985,7 @@ border: none;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #333;</string>
+       <string notr="true">background:transparent; border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #444;</string>
       </property>
       <property name="title">
        <string/>
@@ -1336,7 +1310,7 @@ font-family: Lato;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background:transparent;</string>
       </property>
       <property name="title">
        <string/>
@@ -1398,18 +1372,19 @@ font-family: Lato;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">QPushButton#m_newTransferButton {color: #ddd; background: transparent; border: 1px solid #444; border-radius: 5px;
 font-family: Lato;
 font-size: 13px;
 }
 
-QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Lato;
-font-size: 13px;
-}</string>
+QPushButton#m_newTransferButton:hover {color: orange;}</string>
       </property>
       <property name="text">
        <string>SEND</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../resources.qrc">
+        <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="m_newMessageButton">
@@ -1440,18 +1415,26 @@ font-size: 13px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">QPushButton#m_newMessageButton {color: #ddd; background: transparent; border: 1px solid #444; border-radius: 5px;
 font-family: Lato;
 font-size: 13px;
 }
 
-QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Lato;
-font-size: 13px;
+QPushButton#m_newMessageButton:hover {color: orange; background:transparent;
 }</string>
       </property>
       <property name="text">
        <string>MESSAGE</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../resources.qrc">
+        <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>12</width>
+        <height>12</height>
+       </size>
       </property>
      </widget>
      <widget class="QGroupBox" name="statsBox_2">
@@ -1459,12 +1442,12 @@ font-size: 13px;
        <rect>
         <x>920</x>
         <y>160</y>
-        <width>331</width>
-        <height>161</height>
+        <width>1</width>
+        <height>1</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
+       <string notr="true">background: transparent;border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
@@ -1729,7 +1712,7 @@ border: none;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background:transparent;</string>
       </property>
       <property name="title">
        <string/>
@@ -1773,23 +1756,25 @@ border: none;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_qrcodebutton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">QPushButton#m_qrcodebutton {color: #ddd; background-color: transparent; border: 1px solid #444; border-radius: 5px;
 font-family: Lato;
 font-size: 13px;
 }
 
-QPushButton#m_qrcodebutton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Lato;
-font-size: 13px;
+QPushButton#m_qrcodebutton:hover {color: orange;
 }</string>
       </property>
       <property name="text">
        <string>RECEIVE</string>
       </property>
+      <property name="icon">
+       <iconset resource="../../resources.qrc">
+        <normaloff>:/icons/icons/icon-rcv.png</normaloff>:/icons/icons/icon-rcv.png</iconset>
+      </property>
       <property name="iconSize">
        <size>
-        <width>32</width>
-        <height>32</height>
+        <width>16</width>
+        <height>16</height>
        </size>
       </property>
      </widget>
@@ -1808,7 +1793,8 @@ font-size: 13px;
       <property name="styleSheet">
        <string notr="true">border: none; font-size: 14px;
 font-family: Lato;
-border-top: 1px solid #333;</string>
+border-top: 1px solid #444;
+background:transparent;</string>
       </property>
       <property name="text">
        <string>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</string>
@@ -1822,8 +1808,8 @@ border-top: 1px solid #333;</string>
        <rect>
         <x>1200</x>
         <y>360</y>
-        <width>21</width>
-        <height>23</height>
+        <width>1</width>
+        <height>1</height>
        </rect>
       </property>
       <property name="text">
@@ -1862,18 +1848,26 @@ border-top: 1px solid #333;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
+       <string notr="true">QPushButton#m_newDepositButton {color: #ddd; background: transparent; border: 1px solid #444; border-radius: 5px;
 font-family: Lato;
 font-size: 13px;
 }
 
-QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Lato;
-font-size: 13px;
+QPushButton#m_newDepositButton:hover {color: orange; background-color:transparent;
 }</string>
       </property>
       <property name="text">
        <string>DEPOSIT</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../resources.qrc">
+        <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>12</width>
+        <height>12</height>
+       </size>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBox_3">
@@ -2018,9 +2012,41 @@ font-size: 13px;</string>
        </property>
       </widget>
      </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>61</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="Line" name="logoLine">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>25</y>
+        <width>1</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #343a40;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <zorder>leftMenu</zorder>
      <zorder>chartButton</zorder>
      <zorder>statsBox_2</zorder>
-     <zorder>leftMenu</zorder>
      <zorder>depositsBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>addressBox</zorder>
@@ -2033,6 +2059,8 @@ font-size: 13px;</string>
      <zorder>priceBox</zorder>
      <zorder>m_newDepositButton</zorder>
      <zorder>groupBox_3</zorder>
+     <zorder>label_13</zorder>
+     <zorder>logoLine</zorder>
     </widget>
    </item>
   </layout>
