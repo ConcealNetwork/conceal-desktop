@@ -48,7 +48,7 @@ Q_SIGNALS:
   void nodeDeinitCompletedSignal();
 
 public:
-  InProcessNodeInitializer(QObject* _parent = nullptr) {
+  explicit InProcessNodeInitializer(QObject* _parent = nullptr) {
   }
 
   ~InProcessNodeInitializer() {

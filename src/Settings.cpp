@@ -62,28 +62,7 @@ void Settings::load() {
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
-    if (!m_settings.contains(OPTION_FEE_ADDRESS)) {
-      m_settings.insert(OPTION_FEE_ADDRESS, ""); 
-    }
-    if (!m_settings.contains(OPTION_LANGUAGE)) 
-    {
-      QString lang = QLocale::system().name();
-      lang.truncate(lang.lastIndexOf('_'));
-      m_currentLang = lang;
-      m_settings.insert(OPTION_LANGUAGE, lang);
-    }
-
-    if (!m_settings.contains(OPTION_DAEMON_PORT)) {
-      m_settings.insert(OPTION_DAEMON_PORT, CryptoNote::RPC_DEFAULT_PORT); // default daemon port
-    }    
-
-    if (!m_settings.contains(OPTION_CONNECTION)) {
-      m_settings.insert(OPTION_CONNECTION, "embedded");
-    }
-
-    if (!m_settings.contains(OPTION_REMOTE_NODE)) {
-      m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
-    }
+    setOptions();
 
   } else {
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
@@ -99,23 +78,6 @@ void Settings::load() {
 
   if (m_settings.contains(OPTION_LANGUAGE)) {
     m_currentLang = m_settings.value(OPTION_LANGUAGE).toString();
-  }
-
-  QStringList defaultPoolList;
-
-  defaultPoolList << "pool.conceal.network:3333" << "ccx.go-mine.it:3333" << "conceal.herominers.com:10361" << "ccx.scecf.org:20000" << "ccx.bluerockpools.net:5009 " << "ccx.heigh-ho.funkypenguin.co.nz:3344";
-  if (!m_settings.contains(OPTION_MINING_POOLS)) {
-
-    setMiningPoolList(QStringList() << defaultPoolList);
-  } else {
-    QStringList poolList = getMiningPoolList();
-
-    Q_FOREACH (const QString& pool, defaultPoolList) {
-      if (!poolList.contains(pool)) {
-        poolList << pool;
-      }
-    }
-    setMiningPoolList(poolList);
   }
 
   QStringList defaultNodesList;
@@ -151,6 +113,40 @@ QString Settings::getLanguage() const
 void Settings::setLanguage(const QString& _language) {
     m_settings.insert(OPTION_LANGUAGE, _language);
     saveSettings();
+}
+
+void Settings::setOptions() 
+{
+  if (!m_settings.contains(OPTION_WALLET_FILE)) 
+  {
+    m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
+  } else {
+    m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
+    m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
+  }
+
+  if (!m_settings.contains(OPTION_FEE_ADDRESS)) 
+  {
+    m_settings.insert(OPTION_FEE_ADDRESS, ""); 
+  }
+
+  if (!m_settings.contains(OPTION_LANGUAGE)) 
+  {
+    QString lang = QLocale::system().name();
+    lang.truncate(lang.lastIndexOf('_'));
+    m_currentLang = lang;
+    m_settings.insert(OPTION_LANGUAGE, lang);
+  }
+
+  if (!m_settings.contains(OPTION_CONNECTION)) 
+  {
+    m_settings.insert(OPTION_CONNECTION, "embedded");
+  }
+
+  if (!m_settings.contains(OPTION_REMOTE_NODE)) 
+  {
+    m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
+  }
 }
 
 bool Settings::isTestnet() const {

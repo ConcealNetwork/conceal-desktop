@@ -24,6 +24,7 @@ public:
 
   void setCommandLineParser(CommandLineParser* _cmd_line_parser);
   void load();
+  void setOptions();
 
   bool hasAllowLocalIpOption() const;
   bool hasHideMyPortOption() const;
