@@ -84,9 +84,13 @@ QString Message::getHeaderValue(const QString& _key) const {
   return QString();
 }
 
-Message& Message::operator=(const Message& _message) {
-  m_message = _message.m_message;
-  m_header = _message.m_header;
+Message& Message::operator=(const Message& _message) 
+{
+  if (this != &_message)
+  {
+    m_message = _message.m_message;
+    m_header = _message.m_header;
+  }  
   return *this;
 }
 

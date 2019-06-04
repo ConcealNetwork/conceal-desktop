@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -387,7 +385,7 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
       return static_cast<qint64>(-_transfer.amount);
     } else if (transactionType == TransactionType::DEPOSIT) {
-      return static_cast<qint64>(-(_transaction.fee + _deposit.amount));
+      return static_cast<qint64>(_transaction.fee + _deposit.amount);
     }
 
     return QVariant();
