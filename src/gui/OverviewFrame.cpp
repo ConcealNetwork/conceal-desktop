@@ -117,14 +117,14 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=1241&height=281");
+  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
   QNetworkRequest request(url);
   nam->get(request);
 
   /* Pull the alternate chart */
   QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
   connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
-  const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=1241&height=281");
+  const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
   QNetworkRequest request2(url2);
   nam2->get(request2);
 
@@ -297,10 +297,10 @@ void OverviewFrame::onPriceFound(const QString& _btcccx,const QString& _usdccx, 
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   float ccxusd = _usdccx.toFloat();
   float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText("CCX $" + _usdccx);  
-  m_ui->m_btcusd->setText("BTC $" + _usdbtc);
-  //m_ui->m_marketCap->setText("$" + _usdmarketcap);
-  //m_ui->m_volume->setText("$" + _usdvolume);
+  m_ui->m_ccxusd->setText("$" + _usdccx + " | " + _btcccx + " sats");  
+  m_ui->m_btcusd->setText("$" + _usdbtc);
+  m_ui->m_marketCap->setText("$" + _usdmarketcap);
+  m_ui->m_volume->setText("$" + _usdvolume);
   m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD"); 
 }
 

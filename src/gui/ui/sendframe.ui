@@ -16,12 +16,6 @@
     <height>700</height>
    </size>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>1270</width>
-    <height>700</height>
-   </size>
-  </property>
   <property name="font">
    <font>
     <family>Lato</family>
@@ -95,6 +89,41 @@ font-family: Lato;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="m_backButton">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>30</y>
+        <width>210</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>600</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+      </property>
+      <property name="text">
+       <string>BACK</string>
       </property>
      </widget>
      <widget class="QLabel" name="pidLabel">
@@ -297,9 +326,9 @@ font-family: Lato;</string>
       <property name="geometry">
        <rect>
         <x>950</x>
-        <y>30</y>
+        <y>100</y>
         <width>261</width>
-        <height>631</height>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -342,7 +371,7 @@ font-family: Lato;</string>
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>470</y>
+         <y>400</y>
          <width>210</width>
          <height>40</height>
         </rect>
@@ -377,7 +406,7 @@ QPushButton#m_sendButton:hover {color: orange; background-color: #111111; border
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>530</y>
+         <y>460</y>
          <width>210</width>
          <height>40</height>
         </rect>
@@ -533,7 +562,7 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>590</y>
+         <y>520</y>
          <width>210</width>
          <height>40</height>
         </rect>
@@ -832,6 +861,22 @@ QPushButton#m_addressBookButton:hover {color: #ddd; border: 2px solid #444; font
     <hint type="destinationlabel">
      <x>432</x>
      <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SendFrame</receiver>
+   <slot>backClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1198</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
     </hint>
    </hints>
   </connection>

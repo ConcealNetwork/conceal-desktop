@@ -12,7 +12,6 @@
 #include <QLabel>
 #include <QLocale>
 #include <QTranslator>
-#include <QPushButton>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 #include <QTimer>
@@ -46,6 +45,7 @@ private:
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
   bool m_isAboutToQuit;
+
   QTranslator m_translator; // contains the translations for this application
   QTranslator m_translatorQt; // contains the translations for qt
   QString m_currLang; // contains the currently loaded language
@@ -70,19 +70,17 @@ private:
   void sendTo();
   void delay();
   void setRemoteWindowTitle();  
+  void depositTo();
   void showQRCode(const QString& _address);
   void backupTo();
-  void rescanTo();    
+  void rescanTo();
+  void dashboardTo();
+  void transactionTo();
   void addressBookTo();
-  void sendMessageTo();    
+  void sendMessageTo();
+  void messageTo();
   void miningTo();
-
-  Q_SLOT void dashboardTo();
-  Q_SLOT void transactionTo();
-  Q_SLOT void messageTo();
-  Q_SLOT void depositTo();
-  Q_SLOT void welcomeTo();  
-
+  
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
   Q_SLOT void closeWallet();

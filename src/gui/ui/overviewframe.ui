@@ -287,6 +287,41 @@ font-size: 14px;
         </size>
        </property>
       </widget>
+      <widget class="QTextBrowser" name="m_statusBox">
+       <property name="geometry">
+        <rect>
+         <x>25</x>
+         <y>580</y>
+         <width>181</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #777;
+font-family: Lato;
+font-size: 12px;
+line-height: 200%;</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
       <widget class="QPushButton" name="m_walletButton">
        <property name="geometry">
         <rect>
@@ -446,7 +481,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string/>
+        <string>Third</string>
        </property>
        <property name="iconSize">
         <size>
@@ -484,7 +519,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string/>
+        <string>Fourth</string>
        </property>
        <property name="iconSize">
         <size>
@@ -522,7 +557,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string/>
+        <string>Fifth</string>
        </property>
        <property name="iconSize">
         <size>
@@ -602,14 +637,14 @@ font-size: 14px;
      <widget class="QGroupBox" name="priceBox">
       <property name="geometry">
        <rect>
-        <x>850</x>
-        <y>430</y>
-        <width>390</width>
-        <height>211</height>
+        <x>920</x>
+        <y>341</y>
+        <width>331</width>
+        <height>341</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40;</string>
+       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
@@ -704,14 +739,14 @@ font-family: Lato;</string>
      <widget class="QGroupBox" name="fundsBox">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>430</y>
-        <width>390</width>
-        <height>211</height>
+        <x>220</x>
+        <y>131</y>
+        <width>331</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #333;</string>
+       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
@@ -720,7 +755,7 @@ font-family: Lato;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>170</y>
+         <y>150</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -746,7 +781,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>140</y>
+         <y>120</y>
          <width>111</width>
          <height>24</height>
         </rect>
@@ -771,8 +806,8 @@ border: none;</string>
       <widget class="QLabel" name="m_actualBalanceLabel">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>140</y>
+         <x>123</x>
+         <y>120</y>
          <width>161</width>
          <height>24</height>
         </rect>
@@ -800,8 +835,8 @@ border: none;</string>
       <widget class="QLabel" name="m_pendingBalanceLabel">
        <property name="geometry">
         <rect>
-         <x>160</x>
-         <y>170</y>
+         <x>123</x>
+         <y>150</y>
          <width>161</width>
          <height>25</height>
         </rect>
@@ -829,8 +864,8 @@ border: none;</string>
       <widget class="QLabel" name="m_tickerLabel2">
        <property name="geometry">
         <rect>
-         <x>327</x>
-         <y>170</y>
+         <x>290</x>
+         <y>150</y>
          <width>31</width>
          <height>25</height>
         </rect>
@@ -855,8 +890,8 @@ border: none;</string>
       <widget class="QLabel" name="m_tickerLabel1">
        <property name="geometry">
         <rect>
-         <x>327</x>
-         <y>140</y>
+         <x>290</x>
+         <y>120</y>
          <width>31</width>
          <height>24</height>
         </rect>
@@ -942,7 +977,7 @@ border: none;</string>
       <widget class="QPushButton" name="m_sendButton">
        <property name="geometry">
         <rect>
-         <x>337</x>
+         <x>290</x>
          <y>20</y>
          <width>24</width>
          <height>24</height>
@@ -969,14 +1004,14 @@ border: none;</string>
      <widget class="QGroupBox" name="depositsBox">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>430</y>
-        <width>390</width>
-        <height>211</height>
+        <x>570</x>
+        <y>131</y>
+        <width>331</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #282d31;border-radius: 2px; border: 0px solid #343a40; border-right: 1px solid #333;</string>
+       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
@@ -1011,7 +1046,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>170</y>
+         <y>150</y>
          <width>101</width>
          <height>25</height>
         </rect>
@@ -1036,8 +1071,8 @@ border: none;</string>
       <widget class="QLabel" name="m_tickerLabel4">
        <property name="geometry">
         <rect>
-         <x>330</x>
-         <y>140</y>
+         <x>290</x>
+         <y>120</y>
          <width>31</width>
          <height>24</height>
         </rect>
@@ -1062,8 +1097,8 @@ border: none;</string>
       <widget class="QLabel" name="m_unlockedDepositLabel">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>140</y>
+         <x>130</x>
+         <y>120</y>
          <width>151</width>
          <height>25</height>
         </rect>
@@ -1092,7 +1127,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>140</y>
+         <y>120</y>
          <width>91</width>
          <height>25</height>
         </rect>
@@ -1117,8 +1152,8 @@ border: none;</string>
       <widget class="QLabel" name="m_lockedDepositLabel">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>170</y>
+         <x>130</x>
+         <y>150</y>
          <width>151</width>
          <height>25</height>
         </rect>
@@ -1146,8 +1181,8 @@ border: none;</string>
       <widget class="QLabel" name="m_tickerLabel5">
        <property name="geometry">
         <rect>
-         <x>330</x>
-         <y>170</y>
+         <x>290</x>
+         <y>150</y>
          <width>31</width>
          <height>24</height>
         </rect>
@@ -1207,7 +1242,7 @@ border: none;</string>
       <widget class="QPushButton" name="m_depositButton">
        <property name="geometry">
         <rect>
-         <x>330</x>
+         <x>290</x>
          <y>20</y>
          <width>24</width>
          <height>24</height>
@@ -1696,10 +1731,10 @@ border: none;</string>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>130</y>
-        <width>1221</width>
-        <height>280</height>
+        <x>220</x>
+        <y>390</y>
+        <width>681</width>
+        <height>291</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1712,28 +1747,266 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>1211</width>
-         <height>280</height>
+         <y>10</y>
+         <width>681</width>
+         <height>241</height>
         </rect>
        </property>
        <property name="text">
         <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_volume">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>270</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #777;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">000000.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_marketCap">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>270</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #777;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0000000.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_ccxusd">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>270</y>
+         <width>111</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #777;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">00.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>270</y>
+         <width>31</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #bbb;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string>CCX</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_btcusd">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>270</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #777;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string notr="true">00000.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>270</y>
+         <width>51</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #bbb;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string>VOLUME</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>270</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #bbb;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string>MARKETCAP</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>270</y>
+         <width>31</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #bbb;
+background: transparent;
+font-family: Lato;
+font-size: 11px;</string>
+       </property>
+       <property name="text">
+        <string>BTC</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="chartButton">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>270</y>
+         <width>21</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../resources.qrc">
+         <normaloff>:/icons/tx-mined</normaloff>:/icons/tx-mined</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="m_chart_2">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>1211</width>
-         <height>280</height>
+         <y>10</y>
+         <width>681</width>
+         <height>241</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
       </widget>
+      <zorder>m_volume</zorder>
+      <zorder>m_marketCap</zorder>
+      <zorder>m_ccxusd</zorder>
+      <zorder>label_12</zorder>
+      <zorder>m_btcusd</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_9</zorder>
+      <zorder>label_11</zorder>
+      <zorder>chartButton</zorder>
       <zorder>m_chart_2</zorder>
       <zorder>m_chart</zorder>
      </widget>
@@ -1838,29 +2111,12 @@ font-family: Lato;</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="chartButton">
+     <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>1200</x>
-        <y>380</y>
-        <width>21</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="../../resources.qrc">
-        <normaloff>:/icons/tx-mined</normaloff>:/icons/tx-mined</iconset>
-      </property>
-     </widget>
-     <widget class="QLabel" name="m_ccxusd">
-      <property name="geometry">
-       <rect>
-        <x>1000</x>
+        <x>220</x>
         <y>660</y>
-        <width>121</width>
+        <width>141</width>
         <height>25</height>
        </rect>
       </property>
@@ -1868,108 +2124,37 @@ font-family: Lato;</string>
        <font>
         <family>Lato</family>
         <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #eee;
+       <string notr="true">color: #ddd;
 background: transparent;
 font-family: Lato;
-font-size: 14px;</string>
+font-size: 11px;
+font-weight: bold;</string>
       </property>
       <property name="text">
-       <string notr="true">00.00</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <string>MARKET INFORMATION</string>
       </property>
      </widget>
-     <widget class="QLabel" name="m_btcusd">
-      <property name="geometry">
-       <rect>
-        <x>1140</x>
-        <y>660</y>
-        <width>111</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #eee;
-background: transparent;
-font-family: Lato;
-font-size: 14px;</string>
-      </property>
-      <property name="text">
-       <string notr="true">00000.00</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="m_statusBox">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>660</y>
-        <width>991</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>991</width>
-        <height>21</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #777;
-font-family: Lato;
-font-size: 14px;</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <zorder>statsBox_2</zorder>
      <zorder>leftMenu</zorder>
+     <zorder>fundsBox</zorder>
      <zorder>depositsBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>addressBox</zorder>
      <zorder>m_newTransferButton</zorder>
      <zorder>m_newDepositButton</zorder>
      <zorder>m_newMessageButton</zorder>
+     <zorder>statsBox_2</zorder>
+     <zorder>priceBox</zorder>
      <zorder>groupBox_2</zorder>
      <zorder>m_qrcodebutton</zorder>
      <zorder>label_3</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
-     <zorder>fundsBox</zorder>
-     <zorder>priceBox</zorder>
-     <zorder>chartButton</zorder>
-     <zorder>m_ccxusd</zorder>
-     <zorder>m_btcusd</zorder>
-     <zorder>m_statusBox</zorder>
+     <zorder>label_14</zorder>
     </widget>
    </item>
   </layout>
