@@ -379,9 +379,6 @@ void Settings::setEncrypted(bool _encrypted) {
   }
 }
 
-void Settings::setCurrentTheme(const QString& _theme) {
-}
-
 void Settings::setStartOnLoginEnabled(bool _enable) {
 #ifdef Q_OS_MAC
   QDir autorunDir = QDir::home();

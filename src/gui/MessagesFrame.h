@@ -23,7 +23,7 @@ class MessagesFrame : public QFrame {
   Q_OBJECT
 
 public:
-  MessagesFrame(QWidget* _parent);
+  explicit MessagesFrame(QWidget* _parent);
   ~MessagesFrame();
   int test;
 

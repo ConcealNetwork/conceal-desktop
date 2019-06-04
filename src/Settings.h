@@ -58,7 +58,6 @@ public:
 
   void setWalletFile(const QString& _file);
   void setEncrypted(bool _encrypted);
-  void setCurrentTheme(const QString& _theme);
   void setStartOnLoginEnabled(bool _enable);
   void setLanguage(const QString& _language);  
   void setConnection(const QString& _connection);

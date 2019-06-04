@@ -19,7 +19,7 @@ class AnimatedLabel : public QLabel {
   Q_DISABLE_COPY(AnimatedLabel)
 
 public:
-  AnimatedLabel(QWidget* _parent);
+  explicit AnimatedLabel(QWidget* _parent);
   ~AnimatedLabel();
 
   void setSprite(const QPixmap& _sprite_pixmap, const QSize& _frame_size, quint32 _vertical_space, quint32 _frequency);

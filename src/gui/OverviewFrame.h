@@ -24,7 +24,7 @@ class OverviewFrame : public QFrame {
   Q_DISABLE_COPY(OverviewFrame)
 
 public:
-  OverviewFrame(QWidget* _parent);
+  explicit OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
 
 private:
