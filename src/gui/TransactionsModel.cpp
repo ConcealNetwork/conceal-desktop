@@ -385,7 +385,7 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
       return static_cast<qint64>(-_transfer.amount);
     } else if (transactionType == TransactionType::DEPOSIT) {
-      return static_cast<qint64>(-(_transaction.fee + _deposit.amount));
+      return static_cast<qint64>(_transaction.fee + _deposit.amount);
     }
 
     return QVariant();

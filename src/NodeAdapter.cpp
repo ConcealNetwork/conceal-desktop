@@ -109,13 +109,10 @@ quintptr NodeAdapter::getPeerCount() const {
   return m_node->getPeerCount();
 }
 
-std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const {
+std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const 
+{
   Q_CHECK_PTR(m_node);
-  try {
-    return m_node->convertPaymentId(_paymentIdString.toStdString());
-  } catch (std::runtime_error& err) {
-  }
-  return std::string();
+  return m_node->convertPaymentId(_paymentIdString.toStdString());
 }
 
 QString NodeAdapter::extractPaymentId(const std::string& _extra) const {
