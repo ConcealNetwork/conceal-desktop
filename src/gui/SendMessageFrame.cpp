@@ -181,7 +181,7 @@ void SendMessageFrame::sendClicked()
   /* Add the remote node fee transfer to the transaction if the connection
      is a remote node with an address and this is not a self-destructive message */
   QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
-  if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage = false))
+  if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage == false))
   {
     QString connection = Settings::instance().getConnection();
     if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) {
