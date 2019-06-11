@@ -162,9 +162,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copySeedButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_copySeedButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_copySeedButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_copySeedButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -240,9 +240,9 @@ QPushButton#m_backButton_2:hover {color: #ddd; border: 2px solid #444; font-size
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copySpendKeyButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_copySpendKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_copySpendKeyButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_copySpendKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -373,9 +373,9 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copyViewKeyButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_copyViewKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_copyViewKeyButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_copyViewKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -552,9 +552,9 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_showSeed {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_showSeed {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_showSeed:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_showSeed:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -740,9 +740,9 @@ QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 13p
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copyGUIKeyButton {color: orange; background-color: #111111; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_copyGUIKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #111111; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>COPY</string>
