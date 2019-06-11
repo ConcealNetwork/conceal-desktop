@@ -859,7 +859,7 @@ QPushButton#pushButton_2:hover {color: orange; background-color: #111111; border
 QPushButton#spendkeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #212529;}</string>
        </property>
        <property name="text">
-        <string>IMPORT SPEND/VIEW KEYS</string>
+        <string>IMPORT PRIVATE KEYS</string>
        </property>
       </widget>
       <widget class="QPushButton" name="guikeyButton">
