@@ -150,7 +150,7 @@ bool NodeAdapter::init() {
   if(connection.compare("embedded") == 0) 
   {
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
-    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
+    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
     QTimer initTimer;
     initTimer.setInterval(3000);
@@ -209,6 +209,7 @@ bool NodeAdapter::init() {
       remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
+                          LoggerAdapter::instance().getLoggerManager(),
                           *this, 
                           remoteNodeUrl.host().toStdString(), 
                           remoteNodeUrl.port());
