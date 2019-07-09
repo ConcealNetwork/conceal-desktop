@@ -18,7 +18,7 @@ class NewNodeDialog : public QDialog {
   Q_OBJECT
 
 public:
-  NewNodeDialog(QWidget* _parent);
+  explicit NewNodeDialog(QWidget* _parent);
   ~NewNodeDialog();
 
   QString getHost() const;

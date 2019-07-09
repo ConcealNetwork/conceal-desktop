@@ -22,7 +22,7 @@ class DisclaimerDialog : public QDialog {
   Q_DISABLE_COPY(DisclaimerDialog)
 
 public:
-  DisclaimerDialog(QWidget* _parent);
+  explicit DisclaimerDialog(QWidget* _parent);
   ~DisclaimerDialog();
 
 private:

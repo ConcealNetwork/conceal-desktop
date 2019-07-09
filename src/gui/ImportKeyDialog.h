@@ -18,7 +18,7 @@ namespace WalletGui {
     Q_OBJECT
 
     public:
-      ImportKeyDialog(QWidget* _parent);
+      explicit ImportKeyDialog(QWidget* _parent);
       ~ImportKeyDialog();
       QString getKeyString() const;
       QString getFilePath() const;
