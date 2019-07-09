@@ -8,6 +8,7 @@
 
 #include <Common/Util.h>
 #include <CryptoNoteConfig.h>
+#include <CheckpointsConfig.h>
 
 #include "CommandLineParser.h"
 
