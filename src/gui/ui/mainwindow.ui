@@ -38,7 +38,7 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../resources.qrc">
+   <iconset>
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
@@ -271,23 +271,109 @@
     <property name="text">
      <string>WALLET</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="m_button6">
-    <property name="geometry">
-     <rect>
-      <x>1060</x>
-      <y>0</y>
-      <width>213</width>
-      <height>40</height>
-     </rect>
+    <property name="topMargin">
+     <number>0</number>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#m_button6 {color: #aaa; background-color: #112529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_button6:hover {color: orange;}</string>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
-    <property name="text">
-     <string>SETTINGS</string>
+    <property name="bottomMargin">
+     <number>0</number>
     </property>
-   </widget>
+    <item>
+     <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::SendFrame" name="m_sendFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::TransactionsFrame" name="m_transactionsFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::AddressBookFrame" name="m_addressBookFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::MessagesFrame" name="m_messagesFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::SendMessageFrame" name="m_sendMessageFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <action name="m_overviewAction">
    <property name="checkable">
@@ -297,7 +383,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
    </property>
    <property name="text">
@@ -321,7 +407,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
    </property>
    <property name="text">
@@ -345,7 +431,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
    </property>
    <property name="text">
@@ -366,7 +452,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
    </property>
    <property name="text">
@@ -398,7 +484,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
    </property>
    <property name="text">
@@ -499,7 +585,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
    </property>
    <property name="text">
@@ -517,7 +603,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
    </property>
    <property name="text">
@@ -540,7 +626,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../resources.qrc">
+    <iconset>
      <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
@@ -643,9 +729,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>m_overviewAction</sender>

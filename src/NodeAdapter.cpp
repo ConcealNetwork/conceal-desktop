@@ -48,7 +48,7 @@ Q_SIGNALS:
   void nodeDeinitCompletedSignal();
 
 public:
-  InProcessNodeInitializer(QObject* _parent = nullptr) {
+  explicit InProcessNodeInitializer(QObject* _parent = nullptr) {
   }
 
   ~InProcessNodeInitializer() {
@@ -109,13 +109,10 @@ quintptr NodeAdapter::getPeerCount() const {
   return m_node->getPeerCount();
 }
 
-std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const {
+std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const 
+{
   Q_CHECK_PTR(m_node);
-  try {
-    return m_node->convertPaymentId(_paymentIdString.toStdString());
-  } catch (std::runtime_error& err) {
-  }
-  return std::string();
+  return m_node->convertPaymentId(_paymentIdString.toStdString());
 }
 
 QString NodeAdapter::extractPaymentId(const std::string& _extra) const {
@@ -143,7 +140,7 @@ bool NodeAdapter::init() {
     /* Pull a random node from the node pool list */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
-    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
+    const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
     QNetworkRequest request(url);
     nam->get(request);
   }
@@ -153,7 +150,7 @@ bool NodeAdapter::init() {
   if(connection.compare("embedded") == 0) 
   {
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
-    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
+    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
     QTimer initTimer;
     initTimer.setInterval(3000);
@@ -212,6 +209,7 @@ bool NodeAdapter::init() {
       remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
+                          LoggerAdapter::instance().getLoggerManager(),
                           *this, 
                           remoteNodeUrl.host().toStdString(), 
                           remoteNodeUrl.port());

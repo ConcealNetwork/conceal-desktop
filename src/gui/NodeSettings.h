@@ -19,7 +19,7 @@ namespace WalletGui {
     Q_OBJECT
 
     public:
-      NodeSettings(QWidget* _parent);
+      explicit NodeSettings(QWidget* _parent);
       ~NodeSettings();
 
       QString setConnectionMode() const;

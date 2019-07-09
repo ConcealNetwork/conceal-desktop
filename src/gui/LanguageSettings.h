@@ -18,7 +18,7 @@ namespace WalletGui {
     Q_OBJECT
 
     public:
-      LanguageSettings(QWidget* _parent);
+      explicit LanguageSettings(QWidget* _parent);
       ~LanguageSettings();
 
       QString setLanguage() const;
