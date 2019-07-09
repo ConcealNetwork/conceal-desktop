@@ -153,6 +153,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/include/IWallet.h \
            cryptonote/include/IWalletLegacy.h \
            cryptonote/src/CryptoNoteConfig.h \
+           cryptonote/src/CheckpointsConfig.h \           
            cryptonote/tests/Io.h \
            libqrencode/tests/common.h \
            libqrencode/tests/decoder.h \
