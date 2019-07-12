@@ -33,6 +33,7 @@
 #include "Common/Util.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include "Common/DnsTools.h"
 
 
 #include <boost/algorithm/string.hpp>
@@ -129,7 +130,23 @@ void SendFrame::sendClicked()
     std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, addr);   
     address = QString::fromStdString(address_string);
   }
-
+  if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
+  {
+	  /*Parse the record and set address to the actual CCX address*/
+	  std::vector<std::string>records;
+	  if (!Common::fetch_dns_txt(address.toStdString(), records))
+	  {
+		  QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+	  }
+	  std::string realAddress;
+	  for (const auto& record : records) {
+		  if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress)) {
+			  address = QString::fromStdString(realAddress);
+			  m_ui->m_addressEdit->setText(address);
+		  }
+	  }
+	  
+  }
   if (!CurrencyAdapter::instance().validateAddress(address)) 
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
