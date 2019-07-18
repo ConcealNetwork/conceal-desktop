@@ -7,7 +7,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "CryptoNoteWrapper.h"
-#include "CheckpointsConfig.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/Currency.h"
@@ -87,10 +86,9 @@ Node::~Node() {
 
 class RpcNode : CryptoNote::INodeObserver, public Node {
 public:
-  RpcNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
+  RpcNode(const CryptoNote::Currency& currency, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
     m_callback(callback),
     m_currency(currency),
-    m_logger(logManager),
     m_node(nodeHost, nodePort) {
     m_node.addObserver(this);
   }
@@ -131,14 +129,13 @@ public:
   }
 
   CryptoNote::IWalletLegacy* createWallet() override {
-    return new CryptoNote::WalletLegacy(m_currency, m_node, m_logger);
+    return new CryptoNote::WalletLegacy(m_currency, m_node);
   }
 
 private:
   INodeCallback& m_callback;
   const CryptoNote::Currency& m_currency;
   CryptoNote::NodeRpcProxy m_node;
-  Logging::LoggerManager& m_logger;
 
   void peerCountUpdated(size_t count) {
     m_callback.peerCountUpdated(*this, count);
@@ -157,9 +154,7 @@ class InprocessNode : CryptoNote::INodeObserver, public Node {
 public:
   InprocessNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager, const CryptoNote::CoreConfig& coreConfig,
     const CryptoNote::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
-    m_currency(currency), 
-    m_dispatcher(),
-    m_loggerManager(logManager),
+    m_currency(currency), m_dispatcher(),
     m_callback(callback),
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
@@ -236,14 +231,13 @@ public:
   }
 
   CryptoNote::IWalletLegacy* createWallet() override {
-    return new CryptoNote::WalletLegacy(m_currency, m_node, m_loggerManager);
+    return new CryptoNote::WalletLegacy(m_currency, m_node);
   }
 
 private:
   INodeCallback& m_callback;
   const CryptoNote::Currency& m_currency;
   System::Dispatcher m_dispatcher;
-  Logging::LoggerManager& m_loggerManager;
   CryptoNote::CoreConfig m_coreConfig;
   CryptoNote::NetNodeConfig m_netNodeConfig;
   CryptoNote::core m_core;
@@ -265,8 +259,8 @@ private:
   }
 };
 
-Node* createRpcNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) {
-  return new RpcNode(currency, logManager, callback, nodeHost, nodePort);
+Node* createRpcNode(const CryptoNote::Currency& currency, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) {
+  return new RpcNode(currency, callback, nodeHost, nodePort);
 }
 
 Node* createInprocessNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager,
