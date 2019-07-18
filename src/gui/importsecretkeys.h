@@ -18,7 +18,7 @@ namespace WalletGui {
         Q_OBJECT
 
     public:
-        explicit importSecretKeys(QWidget* _parent);
+        importSecretKeys(QWidget* _parent);
         ~importSecretKeys();
         QString getSpendKeyString() const;
         QString getViewKeyString() const;    

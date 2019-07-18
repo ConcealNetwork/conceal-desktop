@@ -24,7 +24,7 @@ class ExitWidget : public QWidget {
   Q_DISABLE_COPY(ExitWidget)
 
 public:
-  explicit ExitWidget(QWidget* _parent);
+  ExitWidget(QWidget* _parent);
   ~ExitWidget();
 
 private:

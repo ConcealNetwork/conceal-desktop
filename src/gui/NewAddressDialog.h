@@ -22,7 +22,7 @@ class NewAddressDialog : public QDialog {
   Q_DISABLE_COPY(NewAddressDialog)
 
 public:
-  explicit NewAddressDialog(QWidget* _parent);
+  NewAddressDialog(QWidget* _parent);
   ~NewAddressDialog();
 
   QString getAddress() const;

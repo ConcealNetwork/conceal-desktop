@@ -16,7 +16,7 @@ class PriceProvider : public QObject {
   Q_OBJECT
 
 public:
-  explicit PriceProvider(QObject *parent);
+  PriceProvider(QObject *parent);
   ~PriceProvider();
 
   void getPrice();

@@ -22,7 +22,7 @@ class AddressBookDialog : public QDialog {
   Q_DISABLE_COPY(AddressBookDialog)
 
 public:
-  explicit AddressBookDialog(QWidget* _parent);
+  AddressBookDialog(QWidget* _parent);
   ~AddressBookDialog();
 
   QString getAddress() const;

@@ -21,7 +21,7 @@ class NewPoolDialog : public QDialog {
   Q_OBJECT
 
 public:
-  explicit NewPoolDialog(QWidget* _parent);
+  NewPoolDialog(QWidget* _parent);
   ~NewPoolDialog();
 
   QString getHost() const;

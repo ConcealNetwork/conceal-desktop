@@ -24,7 +24,7 @@ class AddressBookFrame : public QFrame {
   Q_DISABLE_COPY(AddressBookFrame)
 
 public:
-  explicit AddressBookFrame(QWidget* _parent);
+  AddressBookFrame(QWidget* _parent);
   ~AddressBookFrame();
 
 private:

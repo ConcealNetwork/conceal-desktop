@@ -15,7 +15,7 @@ class AddressProvider : public QObject {
   Q_OBJECT
 
 public:
-  explicit AddressProvider(QObject *parent);
+  AddressProvider(QObject *parent);
   ~AddressProvider();
 
   void getAddress(const QString& _urlString);

@@ -17,7 +17,7 @@ class AliasProvider : public QObject {
   Q_OBJECT
 
 public:
-  explicit AliasProvider(QObject *parent);
+  AliasProvider(QObject *parent);
   ~AliasProvider();
 
   void getAddresses(const QString& _urlString);

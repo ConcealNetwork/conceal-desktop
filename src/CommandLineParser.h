@@ -17,7 +17,7 @@ class CommandLineParser : public QObject {
   Q_OBJECT
 
 public:
-  explicit CommandLineParser(QObject* _parent);
+  CommandLineParser(QObject* _parent);
   ~CommandLineParser();
 
   bool process(const QStringList& _argv);

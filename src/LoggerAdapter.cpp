@@ -19,11 +19,11 @@ LoggerAdapter& LoggerAdapter::instance() {
 void LoggerAdapter::init() {
   Common::JsonValue loggerConfiguration(Common::JsonValue::OBJECT);
   int64_t logLevel =
-#ifdef DEBUG
+    #ifdef DEBUG
 	  Logging::TRACE
-#else
+	#else
 		Logging::INFO
-#endif
+	#endif
   ;
   loggerConfiguration.insert("globalLevel", logLevel);
   Common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", Common::JsonValue::ARRAY);

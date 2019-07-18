@@ -22,7 +22,7 @@ class AboutDialog : public QDialog {
   Q_DISABLE_COPY(AboutDialog)
 
 public:
-  explicit AboutDialog(QWidget* _parent);
+  AboutDialog(QWidget* _parent);
   ~AboutDialog();
 
 private:

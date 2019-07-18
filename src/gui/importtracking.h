@@ -26,7 +26,7 @@ namespace WalletGui
       Q_OBJECT
 
     public:
-      explicit ImportTracking(QWidget* _parent);
+      ImportTracking(QWidget* _parent);
       ~ImportTracking();
 
       QString getKeyString() const;

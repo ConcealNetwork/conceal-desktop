@@ -101,7 +101,6 @@ public:
   }
 
   void deinit() override {
-    /* nothing to be done here */
   }
 
   std::string convertPaymentId(const std::string& paymentIdString) override {
