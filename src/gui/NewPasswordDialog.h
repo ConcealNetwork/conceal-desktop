@@ -22,7 +22,7 @@ class NewPasswordDialog : public QDialog {
   Q_DISABLE_COPY(NewPasswordDialog)
 
 public:
-  NewPasswordDialog(QWidget* _parent);
+  explicit NewPasswordDialog(QWidget* _parent);
   ~NewPasswordDialog();
 
   QString getPassword() const;

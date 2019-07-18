@@ -18,7 +18,7 @@ namespace WalletGui {
     Q_OBJECT
 
     public:
-      ImportSeed(QWidget* _parent);
+      explicit ImportSeed(QWidget* _parent);
       ~ImportSeed();
       QString getKeyString() const;
       QString getFilePath() const;
