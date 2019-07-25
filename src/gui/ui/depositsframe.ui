@@ -177,7 +177,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 
        <rect>
         <x>110</x>
         <y>30</y>
-        <width>131</width>
+        <width>281</width>
         <height>21</height>
        </rect>
       </property>
@@ -369,7 +369,7 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
         <rect>
          <x>470</x>
          <y>20</y>
-         <width>341</width>
+         <width>381</width>
          <height>23</height>
         </rect>
        </property>
@@ -503,7 +503,7 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
         <rect>
          <x>20</x>
          <y>160</y>
-         <width>371</width>
+         <width>401</width>
          <height>21</height>
         </rect>
        </property>
@@ -587,7 +587,7 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
         <rect>
          <x>20</x>
          <y>60</y>
-         <width>151</width>
+         <width>251</width>
          <height>23</height>
         </rect>
        </property>
@@ -748,7 +748,7 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
         <rect>
          <x>20</x>
          <y>90</y>
-         <width>141</width>
+         <width>261</width>
          <height>23</height>
         </rect>
        </property>
@@ -769,7 +769,7 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
         <rect>
          <x>20</x>
          <y>120</y>
-         <width>101</width>
+         <width>251</width>
          <height>23</height>
         </rect>
        </property>
