@@ -177,7 +177,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 
        <rect>
         <x>110</x>
         <y>30</y>
-        <width>281</width>
+        <width>461</width>
         <height>21</height>
        </rect>
       </property>
@@ -1407,17 +1407,17 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
+     <zorder>widthraw</zorder>
+     <zorder>m_graph</zorder>
+     <zorder>investmentsBox</zorder>
+     <zorder>depositsBox</zorder>
      <zorder>m_depositView</zorder>
      <zorder>m_backButton</zorder>
      <zorder>label_4</zorder>
-     <zorder>widthraw</zorder>
-     <zorder>m_graph</zorder>
      <zorder>m_depositSelectButton</zorder>
      <zorder>m_investmentSelectButton</zorder>
      <zorder>logoLine</zorder>
      <zorder>label_11</zorder>
-     <zorder>investmentsBox</zorder>
-     <zorder>depositsBox</zorder>
     </widget>
    </item>
   </layout>
