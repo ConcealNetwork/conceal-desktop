@@ -1009,7 +1009,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="gui/ui/overviewframe.ui" line="129"/>
         <source>Banking</source>
-        <translation>Банковские Операции</translation>
+        <translation>Банк</translation>
     </message>
     <message>
         <location filename="gui/ui/overviewframe.ui" line="167"/>
@@ -1125,7 +1125,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="gui/ui/overviewframe.ui" line="1333"/>
         <source>currentWallet</source>
-        <translation>Текущий кошелек</translation>
+        <translation>СИНХРОНИЗАЦИЯ В ПРОГРЕССЕ</translation>
     </message>
     <message>
         <location filename="gui/ui/overviewframe.ui" line="1379"/>
@@ -1460,7 +1460,11 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Пожалуйста, перед отправкой убедитесь в том, что адрес и идентификатор транзакции верны. В противном случае, средства будут утеряны.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="gui/ui/sendframe.ui" line="593"/>
@@ -2198,7 +2202,7 @@ Are you sure?</source>
     <message>
         <location filename="gui/MessagesModel.cpp" line="76"/>
         <source>   Date</source>
-        <translation></translation>
+        <translation>  Дата</translation>
     </message>
     <message>
         <location filename="gui/MessagesModel.cpp" line="78"/>
@@ -2350,7 +2354,7 @@ Are you sure?</source>
     <message>
         <location filename="gui/TransactionsModel.cpp" line="99"/>
         <source>DATE</source>
-        <translation></translation>
+        <translation>ДАТА</translation>
     </message>
     <message>
         <location filename="gui/TransactionsModel.cpp" line="101"/>
