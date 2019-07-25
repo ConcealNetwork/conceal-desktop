@@ -174,7 +174,7 @@ void OverviewFrame::showCurrentWallet()
 {
   /* Show the name of the opened wallet */
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText("CURRENT WALLET: " + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText("" + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
