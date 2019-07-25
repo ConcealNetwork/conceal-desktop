@@ -1331,7 +1331,7 @@ font-size: 14px;
 </string>
        </property>
        <property name="text">
-        <string>SYNCHRONIZATION IN PROGRESS</string>
+        <string>currentWallet</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
