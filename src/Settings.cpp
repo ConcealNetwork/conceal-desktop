@@ -73,7 +73,7 @@ void Settings::load() {
   }
 
   if (m_settings.contains(OPTION_REMOTE_NODE)) {
-    m_connectionMode = m_settings.value(OPTION_REMOTE_NODE).toString();
+    m_remoteNode = m_settings.value(OPTION_REMOTE_NODE).toString();
   }
 
   if (m_settings.contains(OPTION_LANGUAGE)) {
