@@ -2255,6 +2255,11 @@ Are you sure?</source>
 <context>
     <name>WalletGui::OverviewFrame</name>
     <message>
+        <location filename="gui/OverviewFrame.cpp" line="93"/>
+        <source>SYNCHRONIZING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="gui/OverviewFrame.cpp" line="355"/>
         <source>About Conceal</source>
         <translation type="unfinished"></translation>
