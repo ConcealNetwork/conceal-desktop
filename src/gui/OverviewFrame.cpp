@@ -90,7 +90,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");   
-  m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
+  m_ui->m_currentWalletTitle->setText(tr("SYNCHRONIZING"));
 
   /* Disable and hide the submenu */
   m_ui->m_subButton1->setText("");
