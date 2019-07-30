@@ -636,7 +636,7 @@ void WalletAdapter::updateBlockStatusText() {
     return;
   }
 
-  std::string walletSecurity = "";
+  QString walletSecurity = "";
 
   bool encrypted = Settings::instance().isEncrypted();
   if (!encrypted) {
@@ -655,7 +655,7 @@ void WalletAdapter::updateBlockStatusText() {
     arg(statusString).
     arg(NodeAdapter::instance().getLastLocalBlockHeight()).
     arg(warningString).
-    arg(QString::fromStdString(walletSecurity)));
+    arg(walletSecurity));
 
   QTimer::singleShot(LAST_BLOCK_INFO_UPDATING_INTERVAL, this, SLOT(updateBlockStatusText()));
 }
