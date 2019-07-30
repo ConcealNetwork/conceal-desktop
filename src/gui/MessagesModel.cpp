@@ -73,7 +73,7 @@ QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, i
   case Qt::DisplayRole:
     switch(_section) {
     case COLUMN_DATE:
-      return tr("   Date");
+      return tr("Date");
     case COLUMN_TYPE:
       return tr("Type");
     case COLUMN_HEIGHT:
