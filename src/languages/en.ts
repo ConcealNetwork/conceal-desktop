@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1077,104 +1077,104 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="669"/>
+        <location filename="gui/ui/overviewframe.ui" line="670"/>
         <source>RECENT TRANSACTIONS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="777"/>
+        <location filename="gui/ui/overviewframe.ui" line="778"/>
         <source>Pending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="803"/>
+        <location filename="gui/ui/overviewframe.ui" line="804"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="939"/>
+        <location filename="gui/ui/overviewframe.ui" line="940"/>
         <source>FUNDS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1042"/>
+        <location filename="gui/ui/overviewframe.ui" line="1043"/>
         <source>DEPOSITS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1068"/>
-        <location filename="gui/ui/overviewframe.ui" line="1504"/>
+        <location filename="gui/ui/overviewframe.ui" line="1069"/>
+        <location filename="gui/ui/overviewframe.ui" line="1505"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1149"/>
-        <location filename="gui/ui/overviewframe.ui" line="1530"/>
+        <location filename="gui/ui/overviewframe.ui" line="1150"/>
+        <location filename="gui/ui/overviewframe.ui" line="1531"/>
         <source>Withdrawable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1291"/>
+        <location filename="gui/ui/overviewframe.ui" line="1292"/>
         <source>MY CONCEAL WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1333"/>
+        <location filename="gui/ui/overviewframe.ui" line="1334"/>
         <source>currentWallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1379"/>
+        <location filename="gui/ui/overviewframe.ui" line="1380"/>
         <source>SEND</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1421"/>
+        <location filename="gui/ui/overviewframe.ui" line="1422"/>
         <source>BANKING</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1463"/>
+        <location filename="gui/ui/overviewframe.ui" line="1464"/>
         <source>MESSAGE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1666"/>
+        <location filename="gui/ui/overviewframe.ui" line="1667"/>
         <source>INVESTMENTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1865"/>
+        <location filename="gui/ui/overviewframe.ui" line="1866"/>
         <source>CCX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1918"/>
+        <location filename="gui/ui/overviewframe.ui" line="1919"/>
         <source>VOLUME</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1943"/>
+        <location filename="gui/ui/overviewframe.ui" line="1944"/>
         <source>MARKETCAP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="1968"/>
+        <location filename="gui/ui/overviewframe.ui" line="1969"/>
         <source>BTC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="2057"/>
+        <location filename="gui/ui/overviewframe.ui" line="2058"/>
         <source>WALLET ADDRESS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="2080"/>
+        <location filename="gui/ui/overviewframe.ui" line="2081"/>
         <source>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/overviewframe.ui" line="2139"/>
+        <location filename="gui/ui/overviewframe.ui" line="2140"/>
         <source>MARKET INFORMATION</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1733,7 +1733,7 @@ p, li { white-space: pre-wrap; }
     <name>WalletGui::AddressBookModel</name>
     <message>
         <location filename="gui/AddressBookModel.cpp" line="81"/>
-        <source>  Label</source>
+        <source>Label</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1855,7 +1855,7 @@ p, li { white-space: pre-wrap; }
     <name>WalletGui::DepositModel</name>
     <message>
         <location filename="gui/DepositModel.cpp" line="81"/>
-        <source>  Status</source>
+        <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2192,7 +2192,7 @@ Are you sure?</source>
     <name>WalletGui::MessagesModel</name>
     <message>
         <location filename="gui/MessagesModel.cpp" line="76"/>
-        <source>   Date</source>
+        <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2254,6 +2254,130 @@ Are you sure?</source>
 </context>
 <context>
     <name>WalletGui::OverviewFrame</name>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="355"/>
+        <source>About Conceal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="356"/>
+        <source>About QT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="357"/>
+        <source>Disclaimer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="358"/>
+        <source>Links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="393"/>
+        <source>Import Seed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="394"/>
+        <source>Import Secret Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="395"/>
+        <source>Import GUI Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="430"/>
+        <source>Optimize Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="431"/>
+        <source>Connection Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="432"/>
+        <source>Rescan Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="433"/>
+        <source>Language Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="436"/>
+        <source>Minimize to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="437"/>
+        <source>Close to Tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="441"/>
+        <location filename="gui/OverviewFrame.cpp" line="651"/>
+        <source>Minimize to Tray Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="445"/>
+        <location filename="gui/OverviewFrame.cpp" line="646"/>
+        <source>Minimize to Tray On</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="450"/>
+        <location filename="gui/OverviewFrame.cpp" line="623"/>
+        <source>Close to Tray Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="454"/>
+        <location filename="gui/OverviewFrame.cpp" line="618"/>
+        <source>Close to Tray On</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="491"/>
+        <source>Open Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="492"/>
+        <source>Create Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="493"/>
+        <source>Backup Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="494"/>
+        <source>Import Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="495"/>
+        <source>Close Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="499"/>
+        <source>Encrypt Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="gui/OverviewFrame.cpp" line="503"/>
+        <source>Change Password</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="gui/OverviewFrame.cpp" line="725"/>
         <source>Wallet</source>
@@ -2459,6 +2583,31 @@ Are you sure?</source>
     <message>
         <location filename="WalletAdapter.cpp" line="513"/>
         <source>SYNCHRONIZING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="WalletAdapter.cpp" line="643"/>
+        <source>Unencrypted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="WalletAdapter.cpp" line="646"/>
+        <source>Encrypted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="WalletAdapter.cpp" line="652"/>
+        <source>SYNCHRONIZED</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="WalletAdapter.cpp" line="652"/>
+        <source>WARNING</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="WalletAdapter.cpp" line="653"/>
+        <source>There was a problem, please restart your wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
