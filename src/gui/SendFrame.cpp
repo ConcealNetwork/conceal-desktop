@@ -33,6 +33,7 @@
 #include "Common/Util.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include "Common/DnsTools.h"
 
 
 #include <boost/algorithm/string.hpp>
@@ -130,8 +131,6 @@ void SendFrame::sendClicked()
     address = QString::fromStdString(address_string);
   }
 
-<<<<<<< Updated upstream
-=======
   if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
   {
 	  /*Parse the record and set address to the actual CCX address*/
@@ -146,10 +145,11 @@ void SendFrame::sendClicked()
 			  address = QString::fromStdString(realAddress);
 			  m_ui->m_addressEdit->setText(address);
 		  }
-	  }	  
+	  }
+	  
   }
 
->>>>>>> Stashed changes
+
   if (!CurrencyAdapter::instance().validateAddress(address)) 
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));

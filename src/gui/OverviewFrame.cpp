@@ -90,7 +90,7 @@ OverviewFrame::OverviewFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;"); 
   m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");   
-  m_ui->m_currentWalletTitle->setText("SYNCHRONIZATION IS IN PROGRESS");
+  m_ui->m_currentWalletTitle->setText(tr("SYNCHRONIZING"));
 
   /* Disable and hide the submenu */
   m_ui->m_subButton1->setText("");
@@ -174,7 +174,7 @@ void OverviewFrame::showCurrentWallet()
 {
   /* Show the name of the opened wallet */
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText("CURRENT WALLET: " + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText("" + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply) {
@@ -352,10 +352,10 @@ void OverviewFrame::aboutClicked()
     m_ui->m_subButton3->setEnabled(true);
     m_ui->m_subButton4->setEnabled(true);
     m_ui->m_subButton5->setEnabled(false);    
-    m_ui->m_subButton1->setText("About Conceal");
-    m_ui->m_subButton2->setText("About QT");
-    m_ui->m_subButton3->setText("Disclaimer");
-    m_ui->m_subButton4->setText("Links");    
+    m_ui->m_subButton1->setText(tr("About Conceal"));
+    m_ui->m_subButton2->setText(tr("About QT"));
+    m_ui->m_subButton3->setText(tr("Disclaimer"));
+    m_ui->m_subButton4->setText(tr("Links"));    
     subMenu = 4;
   } 
   else 
@@ -390,9 +390,9 @@ void OverviewFrame::importClicked()
     m_ui->m_subButton3->setEnabled(true);
     m_ui->m_subButton4->setEnabled(false);
     m_ui->m_subButton5->setEnabled(false);    
-    m_ui->m_subButton1->setText("Import Seed");
-    m_ui->m_subButton3->setText("Import Secret Keys");
-    m_ui->m_subButton2->setText("Import GUI Key");
+    m_ui->m_subButton1->setText(tr("Import Seed"));
+    m_ui->m_subButton3->setText(tr("Import Secret Keys"));
+    m_ui->m_subButton2->setText(tr("Import GUI Key"));
     subMenu = 1;
   }
   else 
@@ -427,31 +427,31 @@ void OverviewFrame::settingsClicked()
     m_ui->m_subButton3->setEnabled(true);
     m_ui->m_subButton4->setEnabled(true);    
     m_ui->m_subButton5->setEnabled(true);    
-    m_ui->m_subButton1->setText("Optimize Wallet");
-    m_ui->m_subButton2->setText("Connection Settings");
-    m_ui->m_subButton3->setText("Rescan Wallet");    
-    m_ui->m_subButton4->setText("Language Settings");        
+    m_ui->m_subButton1->setText(tr("Optimize Wallet"));
+    m_ui->m_subButton2->setText(tr("Connection Settings"));
+    m_ui->m_subButton3->setText(tr("Rescan Wallet"));    
+    m_ui->m_subButton4->setText(tr("Language Settings"));        
 
     #ifdef Q_OS_WIN        
-      m_ui->m_subButton6->setText("Minimize to Tray");    
-      m_ui->m_subButton5->setText("Close to Tray");       
+      m_ui->m_subButton6->setText(tr("Minimize to Tray"));    
+      m_ui->m_subButton5->setText(tr("Close to Tray"));       
 
       if (!Settings::instance().isMinimizeToTrayEnabled()) 
       {
-        m_ui->m_subButton6->setText("Minimize to Tray Off");    
+        m_ui->m_subButton6->setText(tr("Minimize to Tray Off"));    
       } 
       else 
       {
-        m_ui->m_subButton6->setText("Minimize to Tray On");    
+        m_ui->m_subButton6->setText(tr("Minimize to Tray On"));    
       } 
 
       if (!Settings::instance().isCloseToTrayEnabled()) 
       {
-        m_ui->m_subButton5->setText("Close to Tray Off");       
+        m_ui->m_subButton5->setText(tr("Close to Tray Off"));       
       } 
       else 
       {
-        m_ui->m_subButton5->setText("Close to Tray On");       
+        m_ui->m_subButton5->setText(tr("Close to Tray On"));       
       }
     #endif
     subMenu = 2;
@@ -488,19 +488,19 @@ void OverviewFrame::walletClicked() {
     m_ui->m_subButton4->setEnabled(true);    
     m_ui->m_subButton5->setEnabled(true);
     m_ui->m_subButton6->setEnabled(true);    
-    m_ui->m_subButton1->setText("Open Wallet");
-    m_ui->m_subButton2->setText("Create Wallet");
-    m_ui->m_subButton3->setText("Backup Wallet");    
-    m_ui->m_subButton5->setText("Import Wallet");    
-    m_ui->m_subButton6->setText("Close Wallet");  
+    m_ui->m_subButton1->setText(tr("Open Wallet"));
+    m_ui->m_subButton2->setText(tr("Create Wallet"));
+    m_ui->m_subButton3->setText(tr("Backup Wallet"));    
+    m_ui->m_subButton5->setText(tr("Import Wallet"));    
+    m_ui->m_subButton6->setText(tr("Close Wallet"));  
 
     if (!Settings::instance().isEncrypted()) 
     {
-      m_ui->m_subButton4->setText("Encrypt Wallet");
+      m_ui->m_subButton4->setText(tr("Encrypt Wallet"));
     } 
     else 
     {
-      m_ui->m_subButton4->setText("Change Password");
+      m_ui->m_subButton4->setText(tr("Change Password"));
     }
 
     subMenu = 3;
@@ -615,12 +615,12 @@ void OverviewFrame::subButton5Clicked()
     if (!Settings::instance().isCloseToTrayEnabled()) 
     {
       Settings::instance().setCloseToTrayEnabled(true);
-      m_ui->m_subButton5->setText("Close to Tray On");       
+      m_ui->m_subButton5->setText(tr("Close to Tray On"));       
     } 
     else 
     {
       Settings::instance().setCloseToTrayEnabled(false);   
-      m_ui->m_subButton5->setText("Close to Tray Off");       
+      m_ui->m_subButton5->setText(tr("Close to Tray Off"));       
     }
   }
 #endif
@@ -643,12 +643,12 @@ void OverviewFrame::subButton6Clicked()
     if (!Settings::instance().isMinimizeToTrayEnabled()) 
     {
       Settings::instance().setMinimizeToTrayEnabled(true);
-      m_ui->m_subButton6->setText("Minimize to Tray On");    
+      m_ui->m_subButton6->setText(tr("Minimize to Tray On"));    
     } 
     else 
     {
       Settings::instance().setMinimizeToTrayEnabled(false);    
-      m_ui->m_subButton6->setText("Minimize to Tray Off");    
+      m_ui->m_subButton6->setText(tr("Minimize to Tray Off"));    
     }
   }  
 #endif  
