@@ -154,6 +154,16 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="WalletGui::BankingFrame" name="m_bankingFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>    
    </layout>
   </widget>
   <action name="m_overviewAction">
@@ -420,6 +430,24 @@
     </font>
    </property>
   </action>
+    <action name="m_bankingAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
+   </property>
+   <property name="text">
+    <string>BANKING</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Source Sans Pro</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
   <action name="m_resetAction">
    <property name="text">
     <string>Reset wallet</string>
@@ -509,6 +537,12 @@
    <header>gui/DepositsFrame.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>WalletGui::BankingFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/BankingFrame.h</header>
+   <container>1</container>
+  </customwidget>  
  </customwidgets>
  <resources/>
  <connections>
@@ -816,6 +850,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_bankingAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_bankingFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>  
   <connection>
    <sender>m_resetAction</sender>
    <signal>triggered()</signal>
