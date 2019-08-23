@@ -78,11 +78,7 @@ QVariant DepositModel::headerData(int _section, Qt::Orientation _orientation, in
   case Qt::DisplayRole:
     switch(_section) {
     case COLUMN_STATE:
-<<<<<<< Updated upstream
-      return tr("  Status");
-=======
       return tr("STATUS");
->>>>>>> Stashed changes
     case COLUMN_AMOUNT:
       return tr("AMOUNT");
     case COLUMN_INTEREST:
