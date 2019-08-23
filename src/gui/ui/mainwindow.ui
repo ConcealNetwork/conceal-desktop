@@ -38,11 +38,11 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../../resources.qrc">
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #282d31; color: #ddd;</string>
+   <string notr="true">background-color: #111; color: #ddd;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -163,7 +163,7 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-    </item>    
+    </item>
    </layout>
   </widget>
   <action name="m_overviewAction">
@@ -174,7 +174,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
    </property>
    <property name="text">
@@ -198,7 +198,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
    </property>
    <property name="text">
@@ -222,7 +222,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
    </property>
    <property name="text">
@@ -243,7 +243,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
    </property>
    <property name="text">
@@ -275,7 +275,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
    </property>
    <property name="text">
@@ -376,7 +376,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
    </property>
    <property name="text">
@@ -394,7 +394,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
    </property>
    <property name="text">
@@ -417,7 +417,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
@@ -430,12 +430,12 @@
     </font>
    </property>
   </action>
-    <action name="m_bankingAction">
+  <action name="m_bankingAction">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="../../resources.qrc">
      <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
    </property>
    <property name="text">
@@ -542,9 +542,11 @@
    <extends>QFrame</extends>
    <header>gui/BankingFrame.h</header>
    <container>1</container>
-  </customwidget>  
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_overviewAction</sender>
@@ -865,7 +867,7 @@
      <y>394</y>
     </hint>
    </hints>
-  </connection>  
+  </connection>
   <connection>
    <sender>m_resetAction</sender>
    <signal>triggered()</signal>
