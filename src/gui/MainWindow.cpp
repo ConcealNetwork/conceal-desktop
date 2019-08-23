@@ -166,6 +166,7 @@ void MainWindow::initUi() {
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_depositsFrame->hide();
+  m_ui->m_bankingFrame->hide();  
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_sendAction);
@@ -175,6 +176,7 @@ void MainWindow::initUi() {
   m_tabActionGroup->addAction(m_ui->m_messagesAction);
   m_tabActionGroup->addAction(m_ui->m_sendMessageAction);
   m_tabActionGroup->addAction(m_ui->m_depositsAction);
+  m_tabActionGroup->addAction(m_ui->m_bankingAction);  
 
   m_ui->m_overviewAction->toggle();
 
@@ -692,7 +694,7 @@ void MainWindow::dashboardTo() {
 }
 
 void MainWindow::depositTo() {
-  m_ui->m_depositsAction->trigger();
+  m_ui->m_bankingAction->trigger();
 }
 
 void MainWindow::backupTo() 

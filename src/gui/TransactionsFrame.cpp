@@ -35,7 +35,7 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
   QFont font2;
   font2.setFamily("Lato");
-  font2.setPixelSize(15);
+  font2.setPixelSize(14);
   m_ui->m_transactionsView->setFont(font2);
 
 }

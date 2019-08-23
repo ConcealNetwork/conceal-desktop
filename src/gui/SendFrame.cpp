@@ -130,6 +130,7 @@ void SendFrame::sendClicked()
     std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, addr);   
     address = QString::fromStdString(address_string);
   }
+
   if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
   {
 	  /*Parse the record and set address to the actual CCX address*/
@@ -147,6 +148,8 @@ void SendFrame::sendClicked()
 	  }
 	  
   }
+
+
   if (!CurrencyAdapter::instance().validateAddress(address)) 
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
@@ -167,7 +170,6 @@ void SendFrame::sendClicked()
   }
 
   paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-  m_ui->m_paymentIdEdit->setText("");
 
   /* Check payment id validity, or about */
   if (!isValidPaymentId(paymentIdString)) 
