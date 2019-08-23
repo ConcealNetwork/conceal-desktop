@@ -78,35 +78,39 @@ QVariant DepositModel::headerData(int _section, Qt::Orientation _orientation, in
   case Qt::DisplayRole:
     switch(_section) {
     case COLUMN_STATE:
+<<<<<<< Updated upstream
       return tr("  Status");
+=======
+      return tr("STATUS");
+>>>>>>> Stashed changes
     case COLUMN_AMOUNT:
-      return tr("Amount");
+      return tr("AMOUNT");
     case COLUMN_INTEREST:
-      return tr("Interest");
+      return tr("INTEREST");
     case COLUMN_SUM:
-      return tr("Sum");
+      return tr("SUM");
     case COLUMN_TERM_RATE:
-      return tr("Rate");
+      return tr("RATE");
     case COLUMN_TERM:
-      return tr("Term");
+      return tr("TERM");
     case COLUMN_UNLOCK_HEIGHT:
-      return tr("Unlock height");
+      return tr("UNLOCK HEIGHT");
     case COLUMN_UNLOCK_TIME:
-      return tr("Unlock time");
+      return tr("UNLOCK DATE");
     case COLUMN_CREATRING_TRANSACTION_HASH:
       return tr("Creating transaction");
     case COLUMN_CREATING_HEIGHT:
-      return tr("Creating height");
+      return tr("   CREATED HEIGHT");
     case COLUMN_CREATING_TIME:
-      return tr("Creating time");
+      return tr("CREATED");
     case COLUMN_SPENDING_TRANSACTION_HASH:
-      return tr("Spending transaction");
+      return tr("SPENDING TANSACTION");
     case COLUMN_SPENDING_HEIGHT:
-      return tr("Spending height");
+      return tr("SPENDING HEIGHT");
     case COLUMN_SPENDING_TIME:
-      return tr("Spending time");
+      return tr("SPENDING TIME");
     case COLUMN_TYPE:
-      return tr("Type");      
+      return tr("TYPE");      
     default:
       break;
     }
