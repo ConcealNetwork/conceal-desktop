@@ -1419,7 +1419,7 @@ font-size: 13px;
 }</string>
       </property>
       <property name="text">
-       <string>BANKING</string>
+       <string>DEPOSIT</string>
       </property>
      </widget>
      <widget class="QPushButton" name="m_newMessageButton">
