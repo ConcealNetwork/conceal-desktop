@@ -636,26 +636,26 @@ void WalletAdapter::updateBlockStatusText() {
     return;
   }
 
-  std::string walletSecurity = "";
+  QString walletSecurity = "";
 
   bool encrypted = Settings::instance().isEncrypted();
   if (!encrypted) {
-    walletSecurity = "Wallet: Unencrypted";
+    walletSecurity = tr("Unencrypted");
   } else
   {
-    walletSecurity = "Wallet: Encrypted";
+    walletSecurity = tr("Encrypted");
   }
 
   const QDateTime currentTime = QDateTime::currentDateTimeUtc();
   const QDateTime blockTime = NodeAdapter::instance().getLastLocalBlockTimestamp();
   quint64 blockAge = blockTime.msecsTo(currentTime);
-  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "SYNCHRONIZED" : "WARNING";
-  const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("Last block received %1 hours %2 minutes ago").arg(blockAge / MSECS_IN_HOUR).arg(blockAge % MSECS_IN_HOUR / MSECS_IN_MINUTE);
+  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("SYNCHRONIZED") : tr("WARNING");
+  const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("%1").arg(tr("There was a problem, please restart your wallet."));
   Q_EMIT walletStateChangedSignal(QString(tr("<span style='color: orange;'>%1</span><br />Height: %2<br />%4<br />%3")).
     arg(statusString).
     arg(NodeAdapter::instance().getLastLocalBlockHeight()).
     arg(warningString).
-    arg(QString::fromStdString(walletSecurity)));
+    arg(walletSecurity));
 
   QTimer::singleShot(LAST_BLOCK_INFO_UPDATING_INTERVAL, this, SLOT(updateBlockStatusText()));
 }

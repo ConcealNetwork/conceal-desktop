@@ -68,7 +68,7 @@
       <x>50</x>
       <y>80</y>
       <width>351</width>
-      <height>30</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -146,11 +146,37 @@ QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 
      <string>SAVE</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="m_russian">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>120</y>
+      <width>351</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Russian</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
    <widget class="QRadioButton" name="m_turkish">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>130</y>
+      <y>160</y>
       <width>351</width>
       <height>21</height>
      </rect>
