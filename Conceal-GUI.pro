@@ -1074,6 +1074,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
 
 TRANSLATIONS = 	languages/tr.ts \
                 languages/en.ts \
+                languages/ru.ts \                
 
 RESOURCES += src/resources.qrc
 

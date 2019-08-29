@@ -796,9 +796,9 @@ font-size: 20px;</string>
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>80</x>
          <y>200</y>
-         <width>180</width>
+         <width>250</width>
          <height>30</height>
         </rect>
        </property>
@@ -819,9 +819,9 @@ QPushButton#pushButton:hover {color: orange; background-color: #212529; border: 
       <widget class="QPushButton" name="pushButton_2">
        <property name="geometry">
         <rect>
-         <x>500</x>
+         <x>470</x>
          <y>200</y>
-         <width>180</width>
+         <width>250</width>
          <height>30</height>
         </rect>
        </property>
@@ -842,9 +842,9 @@ QPushButton#pushButton_2:hover {color: orange; background-color: #212529; border
       <widget class="QPushButton" name="spendkeyButton">
        <property name="geometry">
         <rect>
-         <x>400</x>
+         <x>340</x>
          <y>380</y>
-         <width>180</width>
+         <width>250</width>
          <height>30</height>
         </rect>
        </property>
@@ -867,7 +867,7 @@ QPushButton#spendkeyButton:hover {color: #ddd; border: 2px solid #444; font-size
         <rect>
          <x>600</x>
          <y>380</y>
-         <width>180</width>
+         <width>250</width>
          <height>30</height>
         </rect>
        </property>
@@ -888,9 +888,9 @@ QPushButton#guikeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 
       <widget class="QPushButton" name="seedButton">
        <property name="geometry">
         <rect>
-         <x>850</x>
+         <x>820</x>
          <y>200</y>
-         <width>180</width>
+         <width>250</width>
          <height>30</height>
         </rect>
        </property>
@@ -911,9 +911,9 @@ QPushButton#seedButton:hover {color: orange; background-color: #212529; border: 
       <widget class="QLabel" name="label_25">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>30</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -936,9 +936,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_26">
        <property name="geometry">
         <rect>
-         <x>430</x>
+         <x>420</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -961,9 +961,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_27">
        <property name="geometry">
         <rect>
-         <x>780</x>
+         <x>770</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
@@ -986,9 +986,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>30</x>
          <y>170</y>
-         <width>271</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
@@ -1011,9 +1011,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>790</x>
+         <x>770</x>
          <y>170</y>
-         <width>301</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
@@ -1036,9 +1036,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_31">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>420</x>
          <y>170</y>
-         <width>271</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
@@ -1061,9 +1061,9 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>390</x>
+         <x>340</x>
          <y>310</y>
-         <width>391</width>
+         <width>511</width>
          <height>31</height>
         </rect>
        </property>
