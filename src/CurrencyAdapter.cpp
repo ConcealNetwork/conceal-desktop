@@ -140,7 +140,54 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
 
 bool CurrencyAdapter::validateAddress(const QString& _address) const {
   CryptoNote::AccountPublicAddress internalAddress;
+  std::string address;
+  
   return m_currency.parseAccountAddressString(_address.toStdString(), internalAddress);
 }
+
+bool CurrencyAdapter::isValidOpenAliasAddress(const QString& _address) const {
+	_address == _address.trimmed();
+	int dot = _address.indexOf('.');
+	if (dot > 0) {
+		return true;
+	}
+	return false;
+}
+
+bool CurrencyAdapter::processServerAliasResponse(const std::string& s, std::string& address) const {
+	try {
+		//   
+		// Courtesy of Monero Project
+			  // make sure the txt record has "oa1:ccx" and find it
+		auto pos = s.find("oa1:ccx");
+		if (pos == std::string::npos)
+			return false;
+		// search from there to find "recipient_address="
+		pos = s.find("recipient_address=", pos);
+		if (pos == std::string::npos)
+			return false;
+		pos += 18; // move past "recipient_address="
+		// find the next semicolon
+		auto pos2 = s.find(";", pos);
+		if (pos2 != std::string::npos)
+		{
+			// length of address == 95, we can at least validate that much here
+			if (pos2 - pos == 98)
+			{
+				address = s.substr(pos, 98);
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	catch (std::exception&) {
+		return false;
+	}
+
+	return true;
+}
+
+
 
 }
