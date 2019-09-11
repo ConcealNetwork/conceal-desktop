@@ -32,6 +32,10 @@ void LanguageSettings::initLanguageSettings()
   {
       m_ui->m_russian->setChecked(true);
   }
+  if(language.compare("cn") == 0) 
+  {
+      m_ui->m_chinese->setChecked(true);
+  }  
   else 
   {
       m_ui->m_english->setChecked(true);
@@ -50,6 +54,10 @@ QString LanguageSettings::setLanguage() const
   {        
     language = "tr";
   } 
+  else if(m_ui->m_chinese->isChecked()) 
+  {        
+    language = "cn";
+  }   
   else 
   {        
     language = "en";
