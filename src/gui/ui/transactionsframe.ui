@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1270</width>
+    <width>1260</width>
     <height>700</height>
    </size>
   </property>
@@ -30,7 +30,6 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
     <pointsize>-1</pointsize>
    </font>
   </property>
@@ -38,13 +37,10 @@
    <string>Transaction History</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529;
-border: 0px;
-color: #aaaaaa;
-
-
-font-size: 15px;
-font-family: Lato;</string>
+   <string notr="true">border: 0px;
+color: #ccc;
+font-size: 14px;
+background-color: #282d31;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -57,37 +53,43 @@ font-family: Lato;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
     <number>0</number>
    </property>
    <property name="rightMargin">
-    <number>15</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
-    <number>25</number>
+    <number>0</number>
    </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <property name="spacing">
-      <number>10</number>
+      <number>6</number>
      </property>
      <property name="leftMargin">
-      <number>15</number>
+      <number>0</number>
      </property>
      <property name="topMargin">
-      <number>15</number>
+      <number>0</number>
      </property>
      <property name="bottomMargin">
-      <number>10</number>
+      <number>0</number>
      </property>
      <item>
       <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>55</height>
+        </size>
+       </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>31</height>
+         <height>16777215</height>
         </size>
        </property>
        <property name="font">
@@ -97,174 +99,275 @@ font-family: Lato;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 22px;</string>
+        <string notr="true">color: #ddd; 
+font-size: 20px; 
+font-family: 'Lato';
+border-bottom: 1px solid #444;
+padding: 15px;</string>
        </property>
        <property name="text">
-        <string>TRANSACTION HISTORY</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_csvButton">
-       <property name="minimumSize">
-        <size>
-         <width>180</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#m_csvButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_csvButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
-       </property>
-       <property name="text">
-        <string>EXPORT TO CSV</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_backButton">
-       <property name="minimumSize">
-        <size>
-         <width>180</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>210</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
-       </property>
-       <property name="text">
-        <string>BACK</string>
+        <string>Transaction History</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QTreeView" name="m_transactionsView">
-     <property name="minimumSize">
-      <size>
-       <width>1230</width>
-       <height>550</height>
-      </size>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="leftMargin">
+      <number>15</number>
      </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
+     <property name="topMargin">
+      <number>10</number>
      </property>
-     <property name="font">
-      <font>
-       <family>Lato</family>
-       <pointsize>-1</pointsize>
-      </font>
+     <property name="rightMargin">
+      <number>15</number>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QHeaderView::section {
-background-color: #282d31; 
-   color: #ddd;
-	font-family: Lato;
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>1230</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>GroupBox</string>
+       </property>
+       <widget class="QPushButton" name="m_csvButton">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>180</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_csvButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+QPushButton#m_csvButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
+        </property>
+        <property name="text">
+         <string>EXPORT TO CSV</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_backButton">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>0</y>
+          <width>180</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px;background-color: #282d31; border-radius: 5px; font-family: 'Lato';}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 0px solid #444; font-size: 14px; background-color: #343a40;  border-radius: 5px; font-family: 'Lato';}</string>
+        </property>
+        <property name="text">
+         <string>BACK</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="leftMargin">
+      <number>15</number>
+     </property>
+     <property name="topMargin">
+      <number>15</number>
+     </property>
+     <property name="rightMargin">
+      <number>15</number>
+     </property>
+     <item>
+      <widget class="QTreeView" name="m_transactionsView">
+       <property name="minimumSize">
+        <size>
+         <width>1230</width>
+         <height>550</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QHeaderView::section {
+background-color: #282d31;
+   color: orange;
+	font-family: 'Lucida Console';
     border: 0px solid white;
-border-bottom: 1px solid orange;
-   height: 30px;
+font-size: 13px;
+border-bottom: 1px solid #444;
+   height: 37px;
 
 }
 
+QTreeView {
+  font-family: 'Lucida Console';
+    color: #ccc;
+font-size: 13px;
+    height: 37px;
+background-color: #282d31;
+padding-left: 15px;
+padding-top: 5px;
+padding-right: 5px;
+}
+
 QTreeView::item {
-    color: #ddd;
-    height: 35px;
+  font-family: 'Lucida Console';
+    color: #ccc;
+font-size: 14px;
+    height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
+font-size: 13px;
   color: black;
 }
 
 QWidget:item:selected {
-  font-family: Lato;
-  background-color: #282d31;
-  color: #ddd;
-}</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="lineWidth">
-      <number>0</number>
-     </property>
-     <property name="midLineWidth">
-      <number>0</number>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::EditKeyPressed</set>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>false</bool>
-     </property>
-     <property name="indentation">
-      <number>5</number>
-     </property>
-     <property name="rootIsDecorated">
-      <bool>false</bool>
-     </property>
-     <property name="uniformRowHeights">
-      <bool>true</bool>
-     </property>
-     <property name="itemsExpandable">
-      <bool>true</bool>
-     </property>
-     <property name="sortingEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="expandsOnDoubleClick">
-      <bool>true</bool>
-     </property>
-     <attribute name="headerCascadingSectionResizes">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="headerShowSortIndicator" stdset="0">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="headerStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-    </widget>
+  font-family: 'Lucida Console';
+background-color: #282d31;
+font-size: 13px;
+  color: #ccc;
+}
+
+font-size: 14px;
+font-family: 'Lucida Console';
+
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="midLineWidth">
+        <number>0</number>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::EditKeyPressed</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>false</bool>
+       </property>
+       <property name="indentation">
+        <number>5</number>
+       </property>
+       <property name="rootIsDecorated">
+        <bool>false</bool>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <property name="itemsExpandable">
+        <bool>true</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="expandsOnDoubleClick">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <spacer name="verticalSpacer">
