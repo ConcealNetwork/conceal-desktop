@@ -117,6 +117,7 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);  
+  connect(m_ui->m_settingsFrame, &SettingsFrame::rescanSignal, this, &MainWindow::rescanTo);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);    
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);      
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutSignal, this, &MainWindow::about);  
