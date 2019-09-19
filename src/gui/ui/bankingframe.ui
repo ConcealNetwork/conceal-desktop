@@ -29,7 +29,7 @@
    <string notr="true">border: 0px;
 color: #ccc;
 font-size: 14px;
- background-color: #212529;</string>
+background-color: #282d31;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::NoFrame</enum>
@@ -84,12 +84,12 @@ font-size: 14px;
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px; 
-background-color: #282d31; 
 padding: 15px;
-font-family: 'Lato';</string>
+font-family: 'Lato';
+border-bottom: 1px solid #444;</string>
        </property>
        <property name="text">
-        <string>BANKING</string>
+        <string>Banking</string>
        </property>
       </widget>
      </item>
@@ -200,7 +200,7 @@ QPushButton#m_withdrawButton:hover {color:orange; border: 1px solid orange; font
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 0px solid #343a40; font-size: 14px;background-color: #282d31; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px;background-color: #282d31; border-radius: 5px; font-family: 'Lato';}
 
 QPushButton#m_backButton:hover {color: #ddd; border: 0px solid #444; font-size: 14px; background-color: #343a40;  border-radius: 5px; font-family: 'Lato';}</string>
         </property>
