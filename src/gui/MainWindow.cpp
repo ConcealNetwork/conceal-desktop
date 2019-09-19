@@ -144,11 +144,13 @@ void MainWindow::connectToSignals() {
   connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);    
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);      
+  connect(m_ui->m_bankingFrame, &BankingFrame::backSignal, this, &MainWindow::dashboardTo);  
   
 }
 
 void MainWindow::initUi() {
   setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+
 
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -303,6 +305,11 @@ void MainWindow::delay()
 void MainWindow::optimizeClicked() 
 {
   transactionconfirmation dlg(this);
+
+  dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+  dlg.move((this->width()-dlg.width())/2, (height()-dlg.height())/2);
+
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
 
@@ -596,6 +603,10 @@ void MainWindow::askForWalletPassword(bool _error)
   m_ui->m_welcomeFrame->hide(); 
 
   PasswordDialog dlg(_error, this);
+  
+  dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+  dlg.move((this->width()-dlg.width())/2, (height()-dlg.height())/2);
 
   if (dlg.exec() == QDialog::Accepted) 
   {
