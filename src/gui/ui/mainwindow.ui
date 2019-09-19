@@ -101,6 +101,16 @@ color: #ccc;</string>
       </property>
      </widget>
     </item>
+ <item>
+     <widget class="WalletGui::SettingsFrame" name="m_settingsFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>    
     <item>
      <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
       <property name="frameShape">
@@ -500,6 +510,12 @@ color: #ccc;</string>
    <class>WalletGui::SendFrame</class>
    <extends>QFrame</extends>
    <header>gui/SendFrame.h</header>
+   <container>1</container>
+  </customwidget>
+    <customwidget>
+   <class>WalletGui::SettingsFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/SettingsFrame.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
