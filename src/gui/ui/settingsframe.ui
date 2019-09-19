@@ -136,7 +136,7 @@ border-bottom: 1px solid #444;</string>
        <property name="title">
         <string>GroupBox</string>
        </property>
-       <widget class="QPushButton" name="m_withdrawButton">
+       <widget class="QPushButton" name="m_saveButton">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -164,9 +164,9 @@ border-bottom: 1px solid #444;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_withdrawButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+         <string notr="true">QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
 
-QPushButton#m_withdrawButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
+QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
         </property>
         <property name="text">
          <string>SAVE ALL</string>
@@ -259,7 +259,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 0px solid #444; font-size: 
           <x>10</x>
           <y>220</y>
           <width>180</width>
-          <height>40</height>
+          <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -563,7 +563,7 @@ p, li { white-space: pre-wrap; }
           <x>420</x>
           <y>110</y>
           <width>180</width>
-          <height>40</height>
+          <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -596,9 +596,9 @@ QPushButton#m_rescanButton:hover {color: orange; border: 1px solid orange; font-
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>220</y>
+          <y>290</y>
           <width>180</width>
-          <height>40</height>
+          <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -627,27 +627,11 @@ QPushButton#m_closeToTrayButton:hover {color: orange; border: 1px solid orange; 
          <string>ENABLE</string>
         </property>
        </widget>
-       <widget class="Line" name="line_4">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>210</y>
-          <width>365</width>
-          <height>1</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #555; border: none;</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>170</y>
+          <y>240</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -670,27 +654,11 @@ font-family: 'Lato'; border: 0px;</string>
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
-       <widget class="Line" name="line_5">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>320</y>
-          <width>365</width>
-          <height>1</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #555; border: none;</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>280</y>
+          <y>350</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -717,9 +685,9 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>330</y>
+          <y>400</y>
           <width>180</width>
-          <height>40</height>
+          <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
@@ -899,7 +867,7 @@ font-size: 18px;
 font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="text">
-         <string>Connection Type</string>
+         <string>Set Connection Type</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1020,43 +988,53 @@ font-size: 18px;
 font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="text">
-         <string>Language</string>
+         <string>Select Language</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_minToTrayButton_2">
+       <widget class="Line" name="line_4">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>500</y>
-          <width>180</width>
-          <height>35</height>
+          <x>420</x>
+          <y>220</y>
+          <width>365</width>
+          <height>1</height>
          </rect>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>180</width>
-          <height>35</height>
-         </size>
+        <property name="styleSheet">
+         <string notr="true">background-color: #555; border: none;</string>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>180</width>
-          <height>35</height>
-         </size>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>180</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
         </property>
         <property name="font">
          <font>
+          <family>Lato</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange;border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; 
+font-size: 18px;
+font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="text">
-         <string>SAVE ALL</string>
+         <string>Other</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </widget>
@@ -1084,7 +1062,7 @@ font-family: 'Lato'; border: 0px;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_withdrawButton</sender>
+   <sender>m_saveButton</sender>
    <signal>clicked()</signal>
    <receiver>SettingsFrame</receiver>
    <slot>withdrawClicked()</slot>
@@ -1115,19 +1093,27 @@ font-family: 'Lato'; border: 0px;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_optimizeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsFrame</receiver>
+   <slot>optimizeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>360</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>depositClicked()</slot>
-  <slot>investmentClicked()</slot>
-  <slot>withdrawClicked()</slot>
-  <slot>showDepositDetails(QModelIndex)</slot>
-  <slot>timeChanged(int)</slot>
-  <slot>timeChanged2(int)</slot>
-  <slot>investmentsClicked()</slot>
-  <slot>allButtonClicked()</slot>
-  <slot>depositsClicked()</slot>
-  <slot>depositParamsChanged()</slot>
-  <slot>investmentParamsChanged()</slot>
+  <slot>saveClicked()</slot>
   <slot>backClicked()</slot>
+  <slot>optimizeClicked()</slot>
+  <slot>rescanClicked()</slot>
  </slots>
 </ui>
