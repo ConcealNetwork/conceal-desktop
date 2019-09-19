@@ -96,7 +96,7 @@ QVariant DepositModel::headerData(int _section, Qt::Orientation _orientation, in
     case COLUMN_CREATRING_TRANSACTION_HASH:
       return tr("Creating transaction");
     case COLUMN_CREATING_HEIGHT:
-      return tr("   CREATED HEIGHT");
+      return tr("CREATED HEIGHT");
     case COLUMN_CREATING_TIME:
       return tr("CREATED");
     case COLUMN_SPENDING_TRANSACTION_HASH:
