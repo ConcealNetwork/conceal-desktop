@@ -262,7 +262,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 0px solid #444; font-size: 
        </property>
        <property name="font">
         <font>
-         <family>Lucida Console</family>
+         <family>Roboto</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -270,7 +270,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 0px solid #444; font-size: 
         <string notr="true">QHeaderView::section {
 background-color: #282d31;
    color: orange;
-	font-family: 'Lucida Console';
+	font-family: 'Roboto';
     border: 0px solid white;
 font-size: 13px;
 border-bottom: 1px solid #444;
@@ -279,7 +279,7 @@ border-bottom: 1px solid #444;
 }
 
 QTreeView {
-  font-family: 'Lucida Console';
+	font-family: 'Roboto';
     color: #ccc;
 font-size: 13px;
     height: 37px;
@@ -290,7 +290,7 @@ padding-right: 5px;
 }
 
 QTreeView::item {
-  font-family: 'Lucida Console';
+	font-family: 'Roboto';
     color: #ccc;
 font-size: 14px;
     height: 37px;
@@ -303,14 +303,14 @@ font-size: 13px;
 }
 
 QWidget:item:selected {
-  font-family: 'Lucida Console';
+	font-family: 'Roboto';
 background-color: #282d31;
 font-size: 13px;
   color: #ccc;
 }
 
 font-size: 14px;
-font-family: 'Lucida Console';
+	font-family: 'Roboto';
 
 </string>
        </property>
