@@ -70,12 +70,11 @@ BankingFrame::BankingFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::Ban
   m_ui->m_unlockedInvestmentLabel->setText("UNLOCKED INVESTMENTS " + CurrencyAdapter::instance().formatAmount(0) + " CCX");
   m_ui->m_unlockedDepositLabel->setText("UNLOCKED DEPOSITS " + CurrencyAdapter::instance().formatAmount(0) + " CCX");
  
-  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lucon.ttf");
   QFont font2;
-  font2.setFamily("Lato");
-  font2.setPixelSize(14);
+  font2.setFamily("Lucida Console");
+  font2.setPixelSize(12);
   m_ui->m_depositView->setFont(font2);
-
 
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualDepositBalanceUpdatedSignal, this, &BankingFrame::actualDepositBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &BankingFrame::actualInvestmentBalanceUpdated, Qt::QueuedConnection);
