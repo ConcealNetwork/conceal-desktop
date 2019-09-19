@@ -134,48 +134,12 @@ border-bottom: 1px solid #444;</string>
         </size>
        </property>
        <property name="title">
-        <string>GroupBox</string>
+        <string/>
        </property>
-       <widget class="QPushButton" name="m_saveButton">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>180</width>
-          <height>35</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>180</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>180</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Lato</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
-
-QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
-        </property>
-        <property name="text">
-         <string>SAVE ALL</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="m_backButton">
         <property name="geometry">
          <rect>
-          <x>190</x>
+          <x>0</x>
           <y>0</y>
           <width>180</width>
           <height>35</height>
@@ -720,7 +684,7 @@ QPushButton#m_minToTrayButton:hover {color: orange; border: 1px solid orange; fo
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>160</y>
+          <y>155</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -744,7 +708,7 @@ QPushButton#m_minToTrayButton:hover {color: orange; border: 1px solid orange; fo
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>220</y>
+          <y>215</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -768,7 +732,7 @@ QPushButton#m_minToTrayButton:hover {color: orange; border: 1px solid orange; fo
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>250</y>
+          <y>240</y>
           <width>351</width>
           <height>41</height>
          </rect>
@@ -784,7 +748,7 @@ QPushButton#m_minToTrayButton:hover {color: orange; border: 1px solid orange; fo
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>190</y>
+          <y>185</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -877,7 +841,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>420</y>
+          <y>450</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -903,7 +867,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>450</y>
+          <y>480</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -929,7 +893,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>390</y>
+          <y>420</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -955,7 +919,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>370</y>
+          <y>400</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -971,7 +935,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>320</y>
+          <y>350</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -1037,6 +1001,162 @@ font-family: 'Lato'; border: 0px;</string>
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
+       <widget class="QPushButton" name="m_saveConnectionButton">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>290</y>
+          <width>180</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_saveConnectionButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+
+QPushButton#m_saveConnectionButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ui version=&quot;4.0&quot;&gt;
+ &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
+  &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
+   &lt;property name=&quot;geometry&quot;&gt;
+    &lt;rect&gt;
+     &lt;x&gt;840&lt;/x&gt;
+     &lt;y&gt;300&lt;/y&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;minimumSize&quot;&gt;
+    &lt;size&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/size&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;maximumSize&quot;&gt;
+    &lt;size&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/size&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;font&quot;&gt;
+    &lt;font&gt;
+     &lt;family&gt;Lato&lt;/family&gt;
+     &lt;pointsize&gt;-1&lt;/pointsize&gt;
+    &lt;/font&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;styleSheet&quot;&gt;
+    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+
+QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;text&quot;&gt;
+    &lt;string&gt;SAVE&lt;/string&gt;
+   &lt;/property&gt;
+  &lt;/widget&gt;
+ &lt;/widget&gt;
+ &lt;resources/&gt;
+&lt;/ui&gt;
+</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_saveLanguageButton">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>510</y>
+          <width>180</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_saveLanguageButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+
+QPushButton#m_saveLanguageButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ui version=&quot;4.0&quot;&gt;
+ &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
+  &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
+   &lt;property name=&quot;geometry&quot;&gt;
+    &lt;rect&gt;
+     &lt;x&gt;840&lt;/x&gt;
+     &lt;y&gt;300&lt;/y&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;minimumSize&quot;&gt;
+    &lt;size&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/size&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;maximumSize&quot;&gt;
+    &lt;size&gt;
+     &lt;width&gt;180&lt;/width&gt;
+     &lt;height&gt;35&lt;/height&gt;
+    &lt;/size&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;font&quot;&gt;
+    &lt;font&gt;
+     &lt;family&gt;Lato&lt;/family&gt;
+     &lt;pointsize&gt;-1&lt;/pointsize&gt;
+    &lt;/font&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;styleSheet&quot;&gt;
+    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+
+QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;text&quot;&gt;
+    &lt;string&gt;SAVE&lt;/string&gt;
+   &lt;/property&gt;
+  &lt;/widget&gt;
+ &lt;/widget&gt;
+ &lt;resources/&gt;
+&lt;/ui&gt;
+</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
+        </property>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -1062,10 +1182,10 @@ font-family: 'Lato'; border: 0px;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>m_saveButton</sender>
+   <sender>m_saveConnectionButton</sender>
    <signal>clicked()</signal>
    <receiver>SettingsFrame</receiver>
-   <slot>withdrawClicked()</slot>
+   <slot>saveConnectionClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>196</x>
@@ -1109,11 +1229,78 @@ font-family: 'Lato'; border: 0px;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_closeToTrayButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsFrame</receiver>
+   <slot>closeToTrayClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>524</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_minToTrayButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsFrame</receiver>
+   <slot>minToTrayClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>524</x>
+     <y>540</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_rescanButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsFrame</receiver>
+   <slot>rescanClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>524</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_saveLanguageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SettingsFrame</receiver>
+   <slot>saveLanguageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>944</x>
+     <y>650</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>saveClicked()</slot>
+  <slot>saveLanguageClicked()</slot>
+  <slot>saveConnectionClicked()</slot>
   <slot>backClicked()</slot>
   <slot>optimizeClicked()</slot>
   <slot>rescanClicked()</slot>
+  <slot>closeToTrayClicked()</slot>
+  <slot>minToTrayClicked()</slot>
  </slots>
 </ui>
