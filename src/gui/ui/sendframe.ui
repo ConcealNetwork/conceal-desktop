@@ -150,13 +150,14 @@ border-bottom: 1px solid #444;</string>
         </property>
         <property name="font">
          <font>
+          <family>Lato</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_sendButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;}
+         <string notr="true">QPushButton#m_sendButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
 
-QPushButton#m_sendButton:hover {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;}</string>
+QPushButton#m_sendButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Lato';}</string>
         </property>
         <property name="text">
          <string>SEND FUNDS</string>
@@ -185,13 +186,14 @@ QPushButton#m_sendButton:hover {color: orange; ; border: 1px solid orange; font-
         </property>
         <property name="font">
          <font>
+          <family>Lato</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px;  border-radius: 5px;}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
 
-</string>
+QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -220,13 +222,14 @@ QPushButton#m_sendButton:hover {color: orange; ; border: 1px solid orange; font-
         </property>
         <property name="font">
          <font>
+          <family>Lato</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #444; font-size: 14px;  border-radius: 5px;}
+         <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #444; font-size: 14px;  border-radius: 5px;font-family: 'Lato';}
 
-QPushButton#m_addressBookButton:hover {color: #ddd; border: 1px solid #555; font-size: 14px; border-radius: 5px;}</string>
+QPushButton#m_addressBookButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
         </property>
         <property name="text">
          <string>ADDRESS BOOK</string>
@@ -255,13 +258,14 @@ QPushButton#m_addressBookButton:hover {color: #ddd; border: 1px solid #555; font
         </property>
         <property name="font">
          <font>
+          <family>Lato</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;}
+         <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Lato';}
 
-QPushButton#m_clearAllButton:hover {color: #ddd; border: 1px solid #555; font-size: 14px;border-radius: 5px;}</string>
+QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
         </property>
         <property name="text">
          <string>CLEAR ALL</string>

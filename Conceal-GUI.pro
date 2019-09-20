@@ -169,6 +169,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/BankingFrame.h \
+           src/gui/BankingFrame2.h \           
            src/gui/ExitWidget.h \
            src/gui/ImportKeyDialog.h \      
            src/gui/MainWindow.h \
@@ -190,7 +191,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ReceiveFrame.h \
            src/gui/RecentTransactionsModel.h \
            src/gui/SendFrame.h \
-           src/gui/SettingsFrame.h \
            src/gui/SendMessageFrame.h \
            src/gui/SortedDepositModel.h \
            src/gui/SortedMessagesModel.h \
@@ -622,6 +622,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DepositModel.cpp \
            src/gui/DepositsFrame.cpp \
            src/gui/BankingFrame.cpp \
+           src/gui/BankingFrame2.cpp \           
            src/gui/ExitWidget.cpp \
            src/gui/ImportKeyDialog.cpp \
            src/gui/MainWindow.cpp \
@@ -643,7 +644,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ReceiveFrame.cpp \
            src/gui/RecentTransactionsModel.cpp \
            src/gui/SendFrame.cpp \
-           src/gui/SettingsFrame.cpp \
            src/gui/SendMessageFrame.cpp \
            src/gui/SortedDepositModel.cpp \
            src/gui/SortedMessagesModel.cpp \
@@ -1051,6 +1051,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \
             src/gui/ui/bankingframe.ui \
+            src/gui/ui/bankingframe2.ui \            
             src/gui/ui/exitwidget.ui \
             src/gui/ui/importkeydialog.ui \
             src/gui/ui/mainwindow.ui \

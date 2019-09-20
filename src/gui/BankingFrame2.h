@@ -11,33 +11,33 @@
 
 namespace Ui
 {
-class SettingsFrame;
+class BankingFrame2;
 }
 
 namespace WalletGui
 {
 
-class SettingsFrame : public QFrame
+class BankingFrame2 : public QFrame
 {
     Q_OBJECT
 
   public:
-    SettingsFrame(QWidget *_parent);
-    ~SettingsFrame();
-
-    void setMessage(QString optimizationMessage);
-    void optimizeClicked();
-    void delay();
-    void saveLanguageClicked();
-    void saveConnectionClicked();
-    void closeToTrayClicked();
-    void minToTrayClicked();
-    
-    Q_SLOT void backClicked();
-    Q_SLOT void rescanClicked();
+    BankingFrame2(QWidget *_parent);
+    ~BankingFrame2();
 
   private:
-    QScopedPointer<Ui::SettingsFrame> m_ui;
+    QScopedPointer<Ui::BankingFrame2> m_ui;
+
+    void setMessage(QString optimizationMessage);
+    void delay();
+
+    Q_SLOT void optimizeClicked();
+    Q_SLOT void saveLanguageClicked();
+    Q_SLOT void saveConnectionClicked();
+    Q_SLOT void closeToTrayClicked();
+    Q_SLOT void minToTrayClicked();
+    Q_SLOT void backClicked();
+    Q_SLOT void rescanClicked();
 
   Q_SIGNALS:
     void backSignal();

@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
-    <height>0</height>
+    <width>1270</width>
+    <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -101,16 +101,6 @@ color: #ccc;</string>
       </property>
      </widget>
     </item>
- <item>
-     <widget class="WalletGui::SettingsFrame" name="m_settingsFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>    
     <item>
      <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
       <property name="frameShape">
@@ -173,6 +163,16 @@ color: #ccc;</string>
     </item>
     <item>
      <widget class="WalletGui::BankingFrame" name="m_bankingFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::BankingFrame2" name="m_bankingFrame2">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -512,12 +512,6 @@ color: #ccc;</string>
    <header>gui/SendFrame.h</header>
    <container>1</container>
   </customwidget>
-    <customwidget>
-   <class>WalletGui::SettingsFrame</class>
-   <extends>QFrame</extends>
-   <header>gui/SettingsFrame.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>WalletGui::TransactionsFrame</class>
    <extends>QFrame</extends>
@@ -564,6 +558,12 @@ color: #ccc;</string>
    <class>WalletGui::BankingFrame</class>
    <extends>QFrame</extends>
    <header>gui/BankingFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WalletGui::BankingFrame2</class>
+   <extends>QFrame</extends>
+   <header>gui/BankingFrame2.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
