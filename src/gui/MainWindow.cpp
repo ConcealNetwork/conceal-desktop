@@ -45,6 +45,7 @@
 #include "importseed.h"
 #include "importtracking.h"
 #include "transactionconfirmation.h"
+#include "OptimizationManager.h"
 #include "NodeSettings.h"
 #include "LanguageSettings.h"
 #include "MainWindow.h"
@@ -201,6 +202,9 @@ void MainWindow::initUi()
   m_ui->m_minimizeToTrayAction->deleteLater();
   m_ui->m_closeToTrayAction->deleteLater();
 #endif
+
+  OptimizationManager* optimizationManager = new OptimizationManager(this);
+
 }
 
 #ifdef Q_OS_WIN
