@@ -23,22 +23,21 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
 
   /* Get current language */
   QString language = Settings::instance().getLanguage();
-QString language = Settings::instance().getLanguage();
-  if(language.compare("tr") == 0) 
+  if (language.compare("tr") == 0)
   {
-      m_ui->m_turkish->setChecked(true);
+    m_ui->m_turkish->setChecked(true);
   }
-  if(language.compare("ru") == 0) 
+  if (language.compare("ru") == 0)
   {
-      m_ui->m_russian->setChecked(true);
+    m_ui->m_russian->setChecked(true);
   }
-  if(language.compare("cn") == 0) 
+  if (language.compare("cn") == 0)
   {
-      m_ui->m_chinese->setChecked(true);
-  }  
-  else 
+    m_ui->m_chinese->setChecked(true);
+  }
+  else
   {
-      m_ui->m_english->setChecked(true);
+    m_ui->m_english->setChecked(true);
   }
 
   m_ui->m_minToTrayButton->setText(tr("ENABLE"));
@@ -120,30 +119,29 @@ void BankingFrame2::delay()
 
 void BankingFrame2::saveLanguageClicked()
 {
- QString language;
-  if(m_ui->m_russian->isChecked())
+  QString language;
+  if (m_ui->m_russian->isChecked())
   {
     language = "ru";
   }
-  else if(m_ui->m_turkish->isChecked()) 
-  {        
+  else if (m_ui->m_turkish->isChecked())
+  {
     language = "tr";
-  } 
-  else if(m_ui->m_chinese->isChecked()) 
-  {        
+  }
+  else if (m_ui->m_chinese->isChecked())
+  {
     language = "cn";
-  }   
-  else 
-  {        
+  }
+  else
+  {
     language = "en";
-  } 
+  }
   Settings::instance().setLanguage(language);
 
   QMessageBox::information(this,
-                             tr("Language settings saved"),
-                             tr("Please restart the wallet for the new settings to take effect."),
-                             QMessageBox::Ok);
-
+                           tr("Language settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
 }
 
 void BankingFrame2::saveConnectionClicked()
@@ -175,12 +173,11 @@ void BankingFrame2::saveConnectionClicked()
     remoteHost = m_ui->m_hostEdit->text();
   }
   Settings::instance().setCurrentRemoteNode(remoteHost);
-  
- QMessageBox::information(this,
-                             tr("Connection settings saved"),
-                             tr("Please restart the wallet for the new settings to take effect."),
-                             QMessageBox::Ok);
 
+  QMessageBox::information(this,
+                           tr("Connection settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
 }
 
 void BankingFrame2::minToTrayClicked()
