@@ -1042,7 +1042,8 @@ SOURCES += libqrencode/bitstream.c \
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/disclaimerdialog.ui \
-            src/gui/ui/linksdialog.ui \            
+            src/gui/ui/linksdialog.ui \
+            src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \

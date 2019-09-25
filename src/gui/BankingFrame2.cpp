@@ -23,17 +23,22 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
 
   /* Get current language */
   QString language = Settings::instance().getLanguage();
-  if (language.compare("tr") == 0)
+QString language = Settings::instance().getLanguage();
+  if(language.compare("tr") == 0) 
   {
-    m_ui->m_turkish->setChecked(true);
+      m_ui->m_turkish->setChecked(true);
   }
-  if (language.compare("ru") == 0)
+  if(language.compare("ru") == 0) 
   {
-    m_ui->m_russian->setChecked(true);
+      m_ui->m_russian->setChecked(true);
   }
-  else
+  if(language.compare("cn") == 0) 
   {
-    m_ui->m_english->setChecked(true);
+      m_ui->m_chinese->setChecked(true);
+  }  
+  else 
+  {
+      m_ui->m_english->setChecked(true);
   }
 
   m_ui->m_minToTrayButton->setText(tr("ENABLE"));
@@ -115,19 +120,23 @@ void BankingFrame2::delay()
 
 void BankingFrame2::saveLanguageClicked()
 {
-  QString language;
-  if (m_ui->m_russian->isChecked())
+ QString language;
+  if(m_ui->m_russian->isChecked())
   {
     language = "ru";
   }
-  else if (m_ui->m_turkish->isChecked())
-  {
+  else if(m_ui->m_turkish->isChecked()) 
+  {        
     language = "tr";
-  }
-  else
-  {
+  } 
+  else if(m_ui->m_chinese->isChecked()) 
+  {        
+    language = "cn";
+  }   
+  else 
+  {        
     language = "en";
-  }
+  } 
   Settings::instance().setLanguage(language);
 
   QMessageBox::information(this,

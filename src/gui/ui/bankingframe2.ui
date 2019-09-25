@@ -358,7 +358,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>290</y>
+          <y>310</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -385,7 +385,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>330</y>
+          <y>350</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -401,7 +401,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>470</y>
+          <y>490</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -436,7 +436,7 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>340</y>
+          <y>360</y>
           <width>351</width>
           <height>111</height>
          </rect>
@@ -462,7 +462,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>400</y>
+          <y>420</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -478,7 +478,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>360</y>
+          <y>380</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -505,7 +505,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>410</y>
+          <y>430</y>
           <width>351</width>
           <height>61</height>
          </rect>
@@ -531,7 +531,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>470</y>
+          <y>490</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -566,7 +566,7 @@ QPushButton#m_rescanButton:hover {color: #FFD700; border: 1px solid orange; font
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>360</y>
+          <y>380</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -601,7 +601,7 @@ QPushButton#m_closeToTrayButton:hover {color: #FFD700; border: 1px solid orange;
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>310</y>
+          <y>330</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -628,7 +628,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>420</y>
+          <y>440</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -655,7 +655,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>470</y>
+          <y>490</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -690,7 +690,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>155</y>
+          <y>160</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -717,7 +717,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>215</y>
+          <y>220</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -744,7 +744,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>240</y>
+          <y>250</y>
           <width>351</width>
           <height>41</height>
          </rect>
@@ -760,7 +760,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>185</y>
+          <y>190</y>
           <width>351</width>
           <height>21</height>
          </rect>
@@ -915,7 +915,7 @@ font-size: 13px;</string>
          <rect>
           <x>420</x>
           <y>70</y>
-          <width>171</width>
+          <width>161</width>
           <height>21</height>
          </rect>
         </property>
@@ -986,7 +986,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>290</y>
+          <y>310</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -1002,7 +1002,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>250</y>
+          <y>270</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -1029,7 +1029,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>300</y>
+          <y>320</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -1180,6 +1180,37 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         <property name="text">
          <string>SAVE</string>
         </property>
+       </widget>
+       <widget class="QRadioButton" name="m_chinese">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>110</y>
+          <width>171</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;
+font-family: 'Lato';</string>
+        </property>
+        <property name="text">
+         <string>Chinese</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
        </widget>
       </widget>
      </item>

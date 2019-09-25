@@ -162,16 +162,6 @@ color: #ccc;</string>
      </widget>
     </item>
     <item>
-     <widget class="WalletGui::BankingFrame" name="m_bankingFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="WalletGui::BankingFrame2" name="m_bankingFrame2">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -554,13 +544,7 @@ color: #ccc;</string>
    <header>gui/DepositsFrame.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>WalletGui::BankingFrame</class>
-   <extends>QFrame</extends>
-   <header>gui/BankingFrame.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
+   <customwidget>
    <class>WalletGui::BankingFrame2</class>
    <extends>QFrame</extends>
    <header>gui/BankingFrame2.h</header>
@@ -863,22 +847,6 @@ color: #ccc;</string>
    <sender>m_depositsAction</sender>
    <signal>toggled(bool)</signal>
    <receiver>m_depositsFrame</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>799</x>
-     <y>394</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_bankingAction</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>m_bankingFrame</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">

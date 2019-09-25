@@ -154,7 +154,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_bankingFrame, &BankingFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);  
 }
@@ -180,7 +179,6 @@ void MainWindow::initUi()
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_depositsFrame->hide();
-  m_ui->m_bankingFrame->hide();
   m_ui->m_bankingFrame2->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
@@ -750,7 +748,6 @@ void MainWindow::walletClosed()
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
-  m_ui->m_bankingFrame->hide();  
   m_ui->m_bankingFrame2->hide();    
 
   /* labels */
