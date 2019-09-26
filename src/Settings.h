@@ -42,12 +42,14 @@ public:
   QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
   QString getCurrentFeeAddress() const;   
+  QString getAutoOptimizationStatus() const;     
   QString getConnection() const;    
   QString getWalletFile() const;
   QString getWalletName() const;
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
+  quint64 getOptimizationInterval() const;
   QString getVersion() const;
   QString getLanguage() const;  
   bool isStartOnLoginEnabled() const;
@@ -64,8 +66,11 @@ public:
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
   void setCurrentFeeAddress(const QString& _feeAddress);  
+  void setAutoOptimizationStatus(const QString& _status);    
+  void setOptimizationInterval(quint64 _interval);  
   void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
+
 #ifdef Q_OS_WIN
   void setMinimizeToTrayEnabled(bool _enable);
   void setCloseToTrayEnabled(bool _enable);
@@ -76,6 +81,7 @@ private:
   QString m_addressBookFile;
   CommandLineParser* m_cmdLineParser;
   QString m_connectionMode;
+  QString m_autoOptimizationStatus;
   QString m_currentLang;  
   QString m_remoteNode;  
   quint16 m_daemonPort;  

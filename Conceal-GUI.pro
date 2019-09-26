@@ -224,6 +224,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/ArrayRef.h \
            cryptonote/src/Common/ArrayView.h \
            cryptonote/src/Common/Base58.h \
+           cryptonote/src/Common/Base64.h \           
            cryptonote/src/Common/BlockingQueue.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
@@ -556,6 +557,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.h \
            cryptonote/tests/CoreTests/double_spend.inl \
            cryptonote/src/Common/Base58.cpp \
+           cryptonote/src/Common/Base64.cpp \           
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
@@ -1040,7 +1042,8 @@ SOURCES += libqrencode/bitstream.c \
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/disclaimerdialog.ui \
-            src/gui/ui/linksdialog.ui \            
+            src/gui/ui/linksdialog.ui \
+            src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \
