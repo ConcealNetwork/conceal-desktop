@@ -132,7 +132,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);
   connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);
 
-  
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
@@ -155,8 +154,8 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);  
-  connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);  
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);
 }
 
 void MainWindow::initUi()
@@ -203,8 +202,7 @@ void MainWindow::initUi()
   m_ui->m_closeToTrayAction->deleteLater();
 #endif
 
-  OptimizationManager* optimizationManager = new OptimizationManager(this);
-
+  OptimizationManager *optimizationManager = new OptimizationManager(this);
 }
 
 #ifdef Q_OS_WIN
@@ -752,7 +750,7 @@ void MainWindow::walletClosed()
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
-  m_ui->m_bankingFrame2->hide();    
+  m_ui->m_bankingFrame2->hide();
 
   /* labels */
   QList<QAction *> tabActions = m_tabActionGroup->actions();
@@ -790,15 +788,14 @@ void MainWindow::sendTo()
 void MainWindow::dashboardTo()
 {
   m_ui->m_bankingFrame2->hide();
-  m_ui->m_overviewFrame->show();    
+  m_ui->m_overviewFrame->show();
   m_ui->m_overviewAction->trigger();
   m_ui->m_overviewFrame->raise();
-  
 }
 
-void MainWindow::settingsTo() 
+void MainWindow::settingsTo()
 {
-  m_ui->m_overviewFrame->hide();  
+  m_ui->m_overviewFrame->hide();
   m_ui->m_bankingFrame2->raise();
   m_ui->m_bankingFrame2->show();
 }
