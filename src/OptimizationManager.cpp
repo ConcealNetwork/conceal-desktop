@@ -131,11 +131,6 @@ void OptimizationManager::ensureStarted()
   optimize();
 }
 
-void OptimizationManager::backClicked()
-{
-  Q_EMIT backSignal();
-}
-
 void OptimizationManager::ensureStopped()
 {
   if (m_optimizationTimerId == -1)

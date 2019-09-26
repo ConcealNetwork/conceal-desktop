@@ -40,12 +40,11 @@ private:
   quint64 m_currentOptimizationInterval;
   bool m_isSynchronized;
 
-  Q_SLOT void backClicked();
-
   void delay();
   void optimize();
   void ensureStarted();
   void ensureStopped();
+
 };
 
 } // namespace WalletGui
