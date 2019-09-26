@@ -19,29 +19,29 @@ namespace WalletGui
 
 class BankingFrame2 : public QFrame
 {
-    Q_OBJECT
+  Q_OBJECT
 
-  public:
-    BankingFrame2(QWidget *_parent);
-    ~BankingFrame2();
+public:
+  BankingFrame2(QWidget *_parent);
+  ~BankingFrame2();
 
-  private:
-    QScopedPointer<Ui::BankingFrame2> m_ui;
+private:
+  QScopedPointer<Ui::BankingFrame2> m_ui;
 
-    void setMessage(QString optimizationMessage);
-    void delay();
+  void setMessage(QString optimizationMessage);
+  void delay();
 
-    Q_SLOT void optimizeClicked();
-    Q_SLOT void saveLanguageClicked();
-    Q_SLOT void saveConnectionClicked();
-    Q_SLOT void closeToTrayClicked();
-    Q_SLOT void minToTrayClicked();
-    Q_SLOT void backClicked();
-    Q_SLOT void rescanClicked();
+  Q_SLOT void optimizeClicked();
+  Q_SLOT void saveLanguageClicked();
+  Q_SLOT void saveConnectionClicked();
+  Q_SLOT void closeToTrayClicked();
+  Q_SLOT void minToTrayClicked();
+  Q_SLOT void backClicked();
+  Q_SLOT void rescanClicked();
 
-  Q_SIGNALS:
-    void backSignal();
-    void rescanSignal();
+Q_SIGNALS:
+  void backSignal();
+  void rescanSignal();
 };
 
 } // namespace WalletGui
