@@ -32,6 +32,7 @@ private:
   void delay();
 
   Q_SLOT void optimizeClicked();
+  Q_SLOT void autoOptimizeClicked();  
   Q_SLOT void saveLanguageClicked();
   Q_SLOT void saveConnectionClicked();
   Q_SLOT void closeToTrayClicked();

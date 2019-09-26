@@ -86,6 +86,20 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
   {
     m_ui->radioButton_2->setChecked(true);
   }
+
+ if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
+   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));
+ }
+ else
+ {
+   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));   
+ }
+
+
+
+
+
+
 }
 
 BankingFrame2::~BankingFrame2()
@@ -96,7 +110,6 @@ void BankingFrame2::optimizeClicked()
 {
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-
   WalletAdapter::instance().optimizeWallet();
   while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
   {
@@ -106,8 +119,20 @@ void BankingFrame2::optimizeClicked()
     WalletAdapter::instance().optimizeWallet();
     delay();
   }
-
   backClicked();
+}
+
+void BankingFrame2::autoOptimizeClicked() 
+{
+ if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
+   Settings::instance().setAutoOptimizationStatus("disabled");
+   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));
+ }
+ else
+ {
+   Settings::instance().setAutoOptimizationStatus("enabled");
+   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));   
+ }  
 }
 
 void BankingFrame2::delay()
