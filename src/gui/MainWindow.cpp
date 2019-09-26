@@ -98,12 +98,20 @@ void MainWindow::connectToSignals()
     QApplication::alert(this);
   });
 
+  /* Transaction sent, bring the user to the overview */
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &MainWindow::dashboardTo);
+
+
+/* This is the previous method that sent the user to the transaction history screen everytime a transaction was sent
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, [this](CryptoNote::TransactionId _transactionId, int _error, const QString &_errorString) {
     if (_error == 0)
     {
       m_ui->m_transactionsAction->setChecked(true);
     }
   });
+
+*/
+
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
   connect(m_ui->m_messagesFrame, &MessagesFrame::replyToSignal, this, &MainWindow::replyTo);
   connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
@@ -157,6 +165,9 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);  
   connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);  
+
+
+
 }
 
 void MainWindow::initUi()
@@ -204,7 +215,6 @@ void MainWindow::initUi()
 #endif
 
   OptimizationManager* optimizationManager = new OptimizationManager(this);
-
 }
 
 #ifdef Q_OS_WIN
