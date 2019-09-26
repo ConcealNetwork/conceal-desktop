@@ -553,7 +553,6 @@ void Settings::setMiningPoolList(const QStringList &_miningPoolList)
   {
     m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
   }
-
   saveSettings();
 }
 
