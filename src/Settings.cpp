@@ -543,7 +543,7 @@ void Settings::setStartOnLoginEnabled(bool _enable)
 
 quint64 Settings::getOptimizationInterval() const
 {
-  const quint64 DEFAULT_OPTIMIZATION_PERIOD = 1000 * 60 * 2; // 30 minutes
+  const quint64 DEFAULT_OPTIMIZATION_PERIOD = 1000 * 60 * 15; /* 15 Minutes */
   return DEFAULT_OPTIMIZATION_PERIOD;
 }
 
