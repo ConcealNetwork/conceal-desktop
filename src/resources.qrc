@@ -45,5 +45,9 @@
         <file>images/conceal-small.png</file>
         <file>images/lock.png</file>
         <file>images/qr.png</file>
+        <file>images/en.png</file>        
+        <file>images/cn.png</file>        
+        <file>images/tr.png</file>        
+        <file>images/ru.png</file>        
     </qresource>
 </RCC>

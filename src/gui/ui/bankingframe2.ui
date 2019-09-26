@@ -874,6 +874,10 @@ font-size: 13px;</string>
         <property name="text">
          <string>Russian</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/ru.png</normaloff>:/images/ru.png</iconset>
+        </property>
         <property name="checked">
          <bool>false</bool>
         </property>
@@ -903,6 +907,10 @@ font-size: 13px;</string>
         <property name="text">
          <string>Turkish</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/tr.png</normaloff>:/images/tr.png</iconset>
+        </property>
         <property name="checked">
          <bool>false</bool>
         </property>
@@ -931,6 +939,10 @@ font-size: 13px;</string>
         </property>
         <property name="text">
          <string>English</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/en.png</normaloff>:/images/en.png</iconset>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -1205,6 +1217,10 @@ font-family: 'Lato';</string>
         <property name="text">
          <string>Chinese</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/cn.png</normaloff>:/images/cn.png</iconset>
+        </property>
         <property name="checked">
          <bool>false</bool>
         </property>
@@ -1234,7 +1250,9 @@ font-family: 'Lato';</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>m_saveConnectionButton</sender>

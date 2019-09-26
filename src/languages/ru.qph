@@ -49,6 +49,130 @@
     <target>НАЗАД</target>
 </phrase>
 <phrase>
+    <source>Frame</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>Настройки</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>НАЗАД</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE NOW</source>
+    <target>ОПТИМИЗИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Этот процесс оптимизирует ваш кошелек для крупных транзакций. Оптимизация займет около 22 минут. Обратите внимание, что вы не сможете тратить свои деньги, пока не завершите процесс оптимизации. В некоторых случаях кошелек может потребоваться оптимизировать более одного раза.</target>
+</phrase>
+<phrase>
+    <source>Optimization recommended for this wallet</source>
+    <target>Для данного кошелька рекомендуется оптимизация</target>
+</phrase>
+<phrase>
+    <source>Optimize Wallet</source>
+    <target>Оптимизировать кошелек</target>
+</phrase>
+<phrase>
+    <source>Auto Optimization</source>
+    <target>Авто Оптимизация</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>Включи</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disbaled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Включите автоматическую оптимизацию, и кошелек автоматически оптимизирует ваш кошелек в фоновом режиме, пока ваш кошелек открыт. Операция будет выполнена только в том случае, если кошелек требует оптимизации. Процесс будет проверять каждые 15 минут. Автоматическая оптимизация по умолчанию отключена.</target>
+</phrase>
+<phrase>
+    <source>Rescan Wallet</source>
+    <target>Сбросить кошелек</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>При повторном сканировании кошелек снова сканирует блокчейн, чтобы обновить ваш кошелек и детали транзакции.</target>
+</phrase>
+<phrase>
+    <source>RESCAN NOW</source>
+    <target>Сбросить кошелек</target>
+</phrase>
+<phrase>
+    <source>Close to Tray</source>
+    <target>Закрывать в трей</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray</source>
+    <target>Сворачивать в трей</target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>Локальная нода</target>
+</phrase>
+<phrase>
+    <source>Custom Remote Node</source>
+    <target>Пользовательская удаленная нода</target>
+</phrase>
+<phrase>
+    <source>Automatic Remote Node</source>
+    <target>Автоматическая удаленная нода</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>По умолчанию ваш кошелек будет подключаться с помощью встроенного узла, что поможет в децентрализации. Вы также можете использовать удаленный узел, если вы не хотите загружать весь блокчейн. Обратите внимание, что некоторые удаленные узлы будут платить за отправку транзакций.</target>
+</phrase>
+<phrase>
+    <source>Set Connection Type</source>
+    <target>Настройки подключения</target>
+</phrase>
+<phrase>
+    <source>Russian</source>
+    <target>Русский</target>
+</phrase>
+<phrase>
+    <source>Turkish</source>
+    <target>Турецкий</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>Английский</target>
+</phrase>
+<phrase>
+    <source>Select Language</source>
+    <target>Выбеите ваш язык</target>
+</phrase>
+<phrase>
+    <source>Other</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>СОХРАНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Chinese</source>
+    <target>китайский язык</target>
+</phrase>
+<phrase>
     <source>Change Password</source>
     <target>Сменить пароль</target>
 </phrase>
@@ -366,6 +490,10 @@ Please wait...</source>
     <target>Турецкий</target>
 </phrase>
 <phrase>
+    <source>Chinese</source>
+    <target>китайский язык</target>
+</phrase>
+<phrase>
     <source>Links</source>
     <target>Ссылки</target>
 </phrase>
@@ -464,6 +592,10 @@ Please wait...</source>
 <phrase>
     <source>DEPOSITS</source>
     <target>ДЕПОЗИТЫ</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>БАНКОВСКИЕ ОПЕРАЦИИ</target>
 </phrase>
 <phrase>
     <source>Reset wallet</source>
@@ -703,11 +835,7 @@ Please wait...</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;По умолчанию ваш кошелек будет использовать локальную ноду. Если вы не хотите скачивать весь блокчейн, вы также можете использовать удаленную &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>Custom Remote Node</source>
@@ -891,7 +1019,7 @@ p, li { white-space: pre-wrap; }
 </phrase>
 <phrase>
     <source>currentWallet</source>
-    <target>Текущий кошелек</target>
+    <target>СИНХРОНИЗАЦИЯ</target>
 </phrase>
 <phrase>
     <source>blocks</source>
@@ -941,11 +1069,7 @@ Would you like to go to the download page?</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;Формат вашего кошелька устарел и не поддерживает мнемонические фразы. Пожалуйста, сгенерируйте новый кошелек, чтобы получить уникальную.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>COPY</source>
@@ -1298,6 +1422,26 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>Payment ID</source>
     <target>Идентификатор транзакции</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>Включи</target>
+</phrase>
+<phrase>
+    <source>DISABLE</source>
+    <target>ВЫКЛЮЧИ</target>
+</phrase>
+<phrase>
+    <source>Language settings saved</source>
+    <target>Язык сохранен</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>Для вступления в силу изменений пожалуйста перезапустите кошелек.</target>
+</phrase>
+<phrase>
+    <source>Connection settings saved</source>
+    <target>Настойки подключения сохранены</target>
 </phrase>
 <phrase>
     <source>Password not confirmed</source>
@@ -1665,6 +1809,10 @@ Are you sure?</source>
     <target>URL-адрес ноды</target>
 </phrase>
 <phrase>
+    <source>SYNCHRONIZING</source>
+    <target>СИНХРОНИЗАЦИЯ</target>
+</phrase>
+<phrase>
     <source>About Conceal</source>
     <target></target>
 </phrase>
@@ -1691,46 +1839,6 @@ Are you sure?</source>
 <phrase>
     <source>Import GUI Key</source>
     <target>Импортировать ключ GUI</target>
-</phrase>
-<phrase>
-    <source>Optimize Wallet</source>
-    <target>Оптимизировать кошелек</target>
-</phrase>
-<phrase>
-    <source>Connection Settings</source>
-    <target>Настройки подключения</target>
-</phrase>
-<phrase>
-    <source>Rescan Wallet</source>
-    <target>Сбросить кошелек</target>
-</phrase>
-<phrase>
-    <source>Language Settings</source>
-    <target>Выбеите ваш язык</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray</source>
-    <target>Сворачивать в трей</target>
-</phrase>
-<phrase>
-    <source>Close to Tray</source>
-    <target>Закрывать в трей</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray Off</source>
-    <target>Сворачивать в трей - Off</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray On</source>
-    <target>Сворачивать в трей - On</target>
-</phrase>
-<phrase>
-    <source>Close to Tray Off</source>
-    <target>Закрывать в трей - Off</target>
-</phrase>
-<phrase>
-    <source>Close to Tray On</source>
-    <target>Закрывать в трей - On</target>
 </phrase>
 <phrase>
     <source>Open Wallet</source>
@@ -1761,6 +1869,22 @@ Are you sure?</source>
     <target>Сменить пароль</target>
 </phrase>
 <phrase>
+    <source>Close to Tray On</source>
+    <target>Закрывать в трей - On</target>
+</phrase>
+<phrase>
+    <source>Close to Tray Off</source>
+    <target>Закрывать в трей - Off</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray On</source>
+    <target>Сворачивать в трей - On</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray Off</source>
+    <target>Сворачивать в трей - Off</target>
+</phrase>
+<phrase>
     <source>Wallet</source>
     <target>Кошелек</target>
 </phrase>
@@ -1787,6 +1911,10 @@ Are you sure?</source>
 <phrase>
     <source>Seed</source>
     <target>Мнемоническая фраза</target>
+</phrase>
+<phrase>
+    <source>Failed to lookup Conceal ID</source>
+    <target>Поиск не удался</target>
 </phrase>
 <phrase>
     <source>Invalid recipient address</source>
@@ -2138,11 +2266,7 @@ Are you sure?</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;Этот процесс оптимизирует ваш кошелек для крупных переводов. Оптимизация займет приблизительно 20 минут. Пожалуйста, учтите, что вы не сможете пользоваться вашими средствами до тех пор, пока процесс оптимизации не завершится. В некоторых случаях, кошельку потребуется пройти через алгоритм оптимизации более чем один раз.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>Optimization recommended for this wallet</source>
