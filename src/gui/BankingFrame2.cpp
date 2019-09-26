@@ -27,11 +27,11 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
   {
     m_ui->m_turkish->setChecked(true);
   }
-  if (language.compare("ru") == 0)
+  else if (language.compare("ru") == 0)
   {
     m_ui->m_russian->setChecked(true);
   }
-  if (language.compare("cn") == 0)
+  else if (language.compare("cn") == 0)
   {
     m_ui->m_chinese->setChecked(true);
   }
