@@ -166,6 +166,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ChangePasswordDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
+           src/gui/BankingFrame2.h \           
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
@@ -616,6 +617,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
+           src/gui/BankingFrame2.cpp \               
            src/gui/ChangePasswordDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
