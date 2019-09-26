@@ -166,6 +166,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ChangePasswordDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
+           src/gui/BankingFrame2.h \           
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
@@ -224,6 +225,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/ArrayRef.h \
            cryptonote/src/Common/ArrayView.h \
            cryptonote/src/Common/Base58.h \
+           cryptonote/src/Common/Base64.h \           
            cryptonote/src/Common/BlockingQueue.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
@@ -556,6 +558,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.h \
            cryptonote/tests/CoreTests/double_spend.inl \
            cryptonote/src/Common/Base58.cpp \
+           cryptonote/src/Common/Base64.cpp \           
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
@@ -614,6 +617,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
+           src/gui/BankingFrame2.cpp \               
            src/gui/ChangePasswordDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
@@ -1040,7 +1044,8 @@ SOURCES += libqrencode/bitstream.c \
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/disclaimerdialog.ui \
-            src/gui/ui/linksdialog.ui \            
+            src/gui/ui/linksdialog.ui \
+            src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \

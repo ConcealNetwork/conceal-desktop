@@ -99,6 +99,7 @@ Q_SIGNALS:
   void aboutSignal();
   void aboutQTSignal();
   void disclaimerSignal();
+  void settingsSignal();
   void linksSignal();  
   void importSeedSignal();
   void importGUIKeySignal();

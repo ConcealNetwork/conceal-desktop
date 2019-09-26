@@ -75,6 +75,7 @@ private:
   void backupTo();
   void rescanTo();
   void dashboardTo();
+  void settingsTo();
   void transactionTo();
   void addressBookTo();
   void sendMessageTo();
