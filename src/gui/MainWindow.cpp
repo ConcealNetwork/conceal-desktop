@@ -288,7 +288,7 @@ bool MainWindow::event(QEvent* _event) {
 }
 
 void MainWindow::setRemoteWindowTitle() {
-  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
 }
 
 void MainWindow::delay()
