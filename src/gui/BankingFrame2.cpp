@@ -207,6 +207,7 @@ void BankingFrame2::saveConnectionClicked()
 
 void BankingFrame2::minToTrayClicked()
 {
+#ifdef Q_OS_WIN  
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
     Settings::instance().setMinimizeToTrayEnabled(true);
@@ -217,10 +218,12 @@ void BankingFrame2::minToTrayClicked()
     Settings::instance().setMinimizeToTrayEnabled(false);
     m_ui->m_minToTrayButton->setText(tr("ENABLE"));
   }
+#endif  
 }
 
 void BankingFrame2::closeToTrayClicked()
 {
+#ifdef Q_OS_WIN  
   if (!Settings::instance().isCloseToTrayEnabled())
   {
     Settings::instance().setCloseToTrayEnabled(true);
@@ -231,6 +234,7 @@ void BankingFrame2::closeToTrayClicked()
     Settings::instance().setCloseToTrayEnabled(false);
     m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
   }
+#endif  
 }
 
 void BankingFrame2::backClicked()
