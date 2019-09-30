@@ -49,6 +49,130 @@
     <target>GERİ</target>
 </phrase>
 <phrase>
+    <source>Frame</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>Ayarlar</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>GERİ</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE NOW</source>
+    <target>OPTİMİZE ET</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Bu işlem, cüzdanınızı büyük işlemler için optimize eder. Optimizasyon yaklaşık 22 dakika sürer. Lütfen optimizasyon işlemi tamamlanana kadar hiçbir fonunuzu harcayamayacağınızı unutmayın. Bazı durumlarda, cüzdanın bir defadan fazla optimizasyona ihtiyacı olabilir</target>
+</phrase>
+<phrase>
+    <source>Optimization recommended for this wallet</source>
+    <target>Bu cüzdan için optimizasyon önerilir</target>
+</phrase>
+<phrase>
+    <source>Optimize Wallet</source>
+    <target>Cüzdanı optimize et</target>
+</phrase>
+<phrase>
+    <source>Auto Optimization</source>
+    <target>Otomatik Optimizasyon</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>AÇIK</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disbaled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Rescan Wallet</source>
+    <target>Cüzdanı Sıfırla</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Yeniden taradığınızda, cüzdan, cüzdanınızı ve işlem ayrıntılarınızı yenilemek için blok zinciri tekrar tarar.</target>
+</phrase>
+<phrase>
+    <source>RESCAN NOW</source>
+    <target>SIFIRLA</target>
+</phrase>
+<phrase>
+    <source>Close to Tray</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>Yerleşik Düğüm</target>
+</phrase>
+<phrase>
+    <source>Custom Remote Node</source>
+    <target>Özel Uzak Node</target>
+</phrase>
+<phrase>
+    <source>Automatic Remote Node</source>
+    <target>Otomatik Uzak Node</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Varsayılan olarak, cüzdanınız merkezsizleştirmeye yardımcı olarak yerleşik düğümü kullanarak bağlanacaktır. Tüm blockchain&apos;i indirmek istemiyorsanız uzak bir düğüm de kullanabilirsiniz. Lütfen bazı uzak düğümlerin işlem gönderirken ücret alacağını unutmayın.</target>
+</phrase>
+<phrase>
+    <source>Set Connection Type</source>
+    <target>Bağlantı ayarları</target>
+</phrase>
+<phrase>
+    <source>Russian</source>
+    <target>Rusça</target>
+</phrase>
+<phrase>
+    <source>Turkish</source>
+    <target>Türk</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>Ingilizce</target>
+</phrase>
+<phrase>
+    <source>Select Language</source>
+    <target>Dilinizi Seçin</target>
+</phrase>
+<phrase>
+    <source>Other</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>KAYDET</target>
+</phrase>
+<phrase>
+    <source>Chinese</source>
+    <target>Çince</target>
+</phrase>
+<phrase>
     <source>Change Password</source>
     <target>Parolayı değiştir</target>
 </phrase>
@@ -367,6 +491,10 @@ Please wait...</source>
     <target></target>
 </phrase>
 <phrase>
+    <source>Chinese</source>
+    <target>Çince</target>
+</phrase>
+<phrase>
     <source>Links</source>
     <target></target>
 </phrase>
@@ -465,6 +593,10 @@ Please wait...</source>
 <phrase>
     <source>DEPOSITS</source>
     <target>MEVDUATLAR</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>BANKACILIK</target>
 </phrase>
 <phrase>
     <source>Reset wallet</source>
@@ -1081,7 +1213,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
+    <target>Lütfen, göndermeden önce Adres ve Ödeme Kimliğinin (varsa) doğru olduğundan emin olun. Yanlış adrese gönderilen fonlar kaybedilecek.</target>
 </phrase>
 <phrase>
     <source>ADDRESS BOOK</source>
@@ -1285,6 +1417,26 @@ p, li { white-space: pre-wrap; }
 </phrase>
 <phrase>
     <source>Payment ID</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>AÇIK</target>
+</phrase>
+<phrase>
+    <source>DISABLE</source>
+    <target>KAPALI</target>
+</phrase>
+<phrase>
+    <source>Language settings saved</source>
+    <target>Dil ayarları kaydedildi</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>Yeni ayarların geçerli olması için lütfen cüzdanı yeniden başlatın.</target>
+</phrase>
+<phrase>
+    <source>Connection settings saved</source>
     <target></target>
 </phrase>
 <phrase>
@@ -1542,7 +1694,7 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
-    <target>Cüzdanınız sıfırlanacak ve blok zincirinden geri yüklenecek. Emin misiniz?</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>Wallet error</source>
@@ -1614,7 +1766,7 @@ Are you sure?</source>
 </phrase>
 <phrase>
     <source>Type</source>
-    <target></target>
+    <target>Tür</target>
 </phrase>
 <phrase>
     <source>Height</source>
@@ -1685,46 +1837,6 @@ Are you sure?</source>
     <target>GUI anahtarını içe aktar</target>
 </phrase>
 <phrase>
-    <source>Optimize Wallet</source>
-    <target>Cüzdanı optimize et</target>
-</phrase>
-<phrase>
-    <source>Connection Settings</source>
-    <target>Bağlantı ayarları</target>
-</phrase>
-<phrase>
-    <source>Rescan Wallet</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Language Settings</source>
-    <target>Dil Ayarları</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Close to Tray</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray Off</source>
-    <target>Görev Çubuğuna Küçült Kapalı</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray On</source>
-    <target>Görev Çubuğuna Küçült Açık</target>
-</phrase>
-<phrase>
-    <source>Close to Tray Off</source>
-    <target>Görev Çubuğuna Kapat Kapalı</target>
-</phrase>
-<phrase>
-    <source>Close to Tray On</source>
-    <target>Görev Çubuğuna Aç Kapalı</target>
-</phrase>
-<phrase>
     <source>Open Wallet</source>
     <target>Cüzdani Aç</target>
 </phrase>
@@ -1753,6 +1865,22 @@ Are you sure?</source>
     <target>Parolayı değiştir</target>
 </phrase>
 <phrase>
+    <source>Close to Tray On</source>
+    <target>Görev Çubuğuna Aç Kapalı</target>
+</phrase>
+<phrase>
+    <source>Close to Tray Off</source>
+    <target>Görev Çubuğuna Kapat Kapalı</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray On</source>
+    <target>Görev Çubuğuna Küçült Açık</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray Off</source>
+    <target>Görev Çubuğuna Küçült Kapalı</target>
+</phrase>
+<phrase>
     <source>Wallet</source>
     <target>Cüzdan</target>
 </phrase>
@@ -1778,6 +1906,10 @@ Are you sure?</source>
 </phrase>
 <phrase>
     <source>Seed</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Failed to lookup Conceal ID</source>
     <target></target>
 </phrase>
 <phrase>
@@ -2082,7 +2214,7 @@ Are you sure?</source>
 </phrase>
 <phrase>
     <source>Dialog</source>
-    <target>Private Key&apos;leri İçe Aktar</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>Private Spend Key</source>
