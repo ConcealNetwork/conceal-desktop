@@ -287,7 +287,7 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
         set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Conceal GUI Wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.
@@ -312,7 +312,7 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
         set(CPACK_RPM_PACKAGE_SUMMARY "Conceal GUI Wallet")
         set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Conceal GUI wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.
