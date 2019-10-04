@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-//  
+//
 // Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -23,22 +23,27 @@
 #include "NodeAdapter.h"
 #include "Settings.h"
 
-namespace WalletGui {
+namespace WalletGui
+{
 
-namespace {
+namespace
+{
 
-std::vector<std::string> convertStringListToVector(const QStringList& list) {
+std::vector<std::string> convertStringListToVector(const QStringList &list)
+{
   std::vector<std::string> result;
-  Q_FOREACH (const QString& item, list) {
+  Q_FOREACH (const QString &item, list)
+  {
     result.push_back(item.toStdString());
   }
 
   return result;
 }
 
-}
+} // namespace
 
-class InProcessNodeInitializer : public QObject {
+class InProcessNodeInitializer : public QObject
+{
   Q_OBJECT
   Q_DISABLE_COPY(InProcessNodeInitializer)
 
@@ -48,27 +53,34 @@ Q_SIGNALS:
   void nodeDeinitCompletedSignal();
 
 public:
-  explicit InProcessNodeInitializer(QObject* _parent = nullptr) {
+  explicit InProcessNodeInitializer(QObject *_parent = nullptr)
+  {
   }
 
-  ~InProcessNodeInitializer() {
+  ~InProcessNodeInitializer()
+  {
   }
 
-  void start(Node** _node, const CryptoNote::Currency* currency,  INodeCallback* _callback, Logging::LoggerManager* _loggerManager,
-    const CryptoNote::CoreConfig& _coreConfig, const CryptoNote::NetNodeConfig& _netNodeConfig) {
+  void start(Node **_node, const CryptoNote::Currency *currency, INodeCallback *_callback, Logging::LoggerManager *_loggerManager,
+             const CryptoNote::CoreConfig &_coreConfig, const CryptoNote::NetNodeConfig &_netNodeConfig)
+  {
     (*_node) = createInprocessNode(*currency, *_loggerManager, _coreConfig, _netNodeConfig, *_callback);
-    try {
+    try
+    {
       (*_node)->init([this](std::error_code _err) {
-          if (_err) {
-            Q_EMIT nodeInitFailedSignal(_err.value());
-            QCoreApplication::processEvents();
-            return;
-          }
-
-          Q_EMIT nodeInitCompletedSignal();
+        if (_err)
+        {
+          Q_EMIT nodeInitFailedSignal(_err.value());
           QCoreApplication::processEvents();
-        });
-    } catch (std::exception& err) {
+          return;
+        }
+
+        Q_EMIT nodeInitCompletedSignal();
+        QCoreApplication::processEvents();
+      });
+    }
+    catch (std::exception &err)
+    {
       Q_EMIT nodeInitFailedSignal(CryptoNote::error::INTERNAL_WALLET_ERROR);
       QCoreApplication::processEvents();
       return;
@@ -79,18 +91,21 @@ public:
     Q_EMIT nodeDeinitCompletedSignal();
   }
 
-  void stop(Node** _node) {
+  void stop(Node **_node)
+  {
     Q_CHECK_PTR(*_node);
     (*_node)->deinit();
   }
 };
 
-NodeAdapter& NodeAdapter::instance() {
+NodeAdapter &NodeAdapter::instance()
+{
   static NodeAdapter inst;
   return inst;
 }
 
-NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread(), m_nodeInitializer(new InProcessNodeInitializer) {
+NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread(), m_nodeInitializer(new InProcessNodeInitializer)
+{
   m_nodeInitializer->moveToThread(&m_nodeInitializerThread);
 
   qRegisterMetaType<CryptoNote::CoreConfig>("CryptoNote::CoreConfig");
@@ -101,31 +116,36 @@ NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread
   connect(this, &NodeAdapter::deinitNodeSignal, m_nodeInitializer, &InProcessNodeInitializer::stop, Qt::QueuedConnection);
 }
 
-NodeAdapter::~NodeAdapter() {
+NodeAdapter::~NodeAdapter()
+{
 }
 
-quintptr NodeAdapter::getPeerCount() const {
+quintptr NodeAdapter::getPeerCount() const
+{
   Q_ASSERT(m_node != nullptr);
   return m_node->getPeerCount();
 }
 
-std::string NodeAdapter::convertPaymentId(const QString& _paymentIdString) const 
+std::string NodeAdapter::convertPaymentId(const QString &_paymentIdString) const
 {
   Q_CHECK_PTR(m_node);
   return m_node->convertPaymentId(_paymentIdString.toStdString());
 }
 
-QString NodeAdapter::extractPaymentId(const std::string& _extra) const {
+QString NodeAdapter::extractPaymentId(const std::string &_extra) const
+{
   Q_CHECK_PTR(m_node);
   return QString::fromStdString(m_node->extractPaymentId(_extra));
 }
 
-CryptoNote::IWalletLegacy* NodeAdapter::createWallet() const {
+CryptoNote::IWalletLegacy *NodeAdapter::createWallet() const
+{
   Q_CHECK_PTR(m_node);
   return m_node->createWallet();
 }
 
-bool NodeAdapter::init() {
+bool NodeAdapter::init()
+{
   Q_ASSERT(m_node == nullptr);
   bool isAutoRemote = false;
 
@@ -133,8 +153,8 @@ bool NodeAdapter::init() {
   QString connection = Settings::instance().getConnection();
 
   /* Autoremote is a the remote node conection which retrieves a random for-fee remoten node
-     from the node pool on the explorer. */    
-  if(connection.compare("autoremote") == 0) 
+     from the node pool on the explorer. */
+  if (connection.compare("autoremote") == 0)
   {
     isAutoRemote = true;
     /* Pull a random node from the node pool list */
@@ -147,7 +167,7 @@ bool NodeAdapter::init() {
 
   /* If it is not an autoremote its either a local node, or a remote note. By default
      the wallet creates a local node and starts the sync process. */
-  if(connection.compare("embedded") == 0) 
+  if (connection.compare("embedded") == 0)
   {
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
@@ -157,23 +177,17 @@ bool NodeAdapter::init() {
     initTimer.setSingleShot(true);
     initTimer.start();
     bool initCompleted = false;
-    m_node->init([this](std::error_code _err) 
-    {
-
+    m_node->init([this](std::error_code _err) {
       Q_UNUSED(_err);
     });
 
     QEventLoop waitLoop;
     connect(&initTimer, &QTimer::timeout, &waitLoop, &QEventLoop::quit);
-    connect(this, &NodeAdapter::peerCountUpdatedSignal, [&initCompleted]() 
-    {
-
+    connect(this, &NodeAdapter::peerCountUpdatedSignal, [&initCompleted]() {
       initCompleted = true;
     });
 
-    connect(this, &NodeAdapter::localBlockchainUpdatedSignal, [&initCompleted]() 
-    {
-
+    connect(this, &NodeAdapter::localBlockchainUpdatedSignal, [&initCompleted]() {
       initCompleted = true;
     });
 
@@ -181,12 +195,12 @@ bool NodeAdapter::init() {
     connect(this, &NodeAdapter::localBlockchainUpdatedSignal, &waitLoop, &QEventLoop::quit);
 
     waitLoop.exec();
-    if (initTimer.isActive() && !initCompleted) 
+    if (initTimer.isActive() && !initCompleted)
     {
       return false;
     }
 
-    if (initTimer.isActive()) 
+    if (initTimer.isActive())
     {
 
       initTimer.stop();
@@ -195,69 +209,72 @@ bool NodeAdapter::init() {
     }
     delete m_node;
     m_node = nullptr;
-    return initInProcessNode();    
-
-  } 
-  else 
-  {   
+    return initInProcessNode();
+  }
+  else
+  {
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     Q_ASSERT(m_node == nullptr);
-    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
-                          LoggerAdapter::instance().getLoggerManager(),
-                          *this, 
-                          remoteNodeUrl.host().toStdString(), 
-                          remoteNodeUrl.port());
+    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(),
+                           LoggerAdapter::instance().getLoggerManager(),
+                           *this,
+                           remoteNodeUrl.host().toStdString(),
+                           remoteNodeUrl.port());
     QTimer initTimer;
     initTimer.setInterval(3000);
     initTimer.setSingleShot(true);
     initTimer.start();
 
-        m_node->init([this](std::error_code _err) 
-        {
-            Q_UNUSED(_err);
-        });
+    m_node->init([this](std::error_code _err) {
+      Q_UNUSED(_err);
+    });
 
     QEventLoop waitLoop;
     connect(&initTimer, &QTimer::timeout, &waitLoop, &QEventLoop::quit);
     connect(this, &NodeAdapter::peerCountUpdatedSignal, &waitLoop, &QEventLoop::quit);
     connect(this, &NodeAdapter::localBlockchainUpdatedSignal, &waitLoop, &QEventLoop::quit);
     waitLoop.exec();
-    if (initTimer.isActive()) 
+    if (initTimer.isActive())
     {
 
       initTimer.stop();
       Q_EMIT nodeInitCompletedSignal();
-      
     }
     return true;
   }
 }
 
-quint64 NodeAdapter::getLastKnownBlockHeight() const {
+quint64 NodeAdapter::getLastKnownBlockHeight() const
+{
   Q_CHECK_PTR(m_node);
   return m_node->getLastKnownBlockHeight();
 }
 
-quint64 NodeAdapter::getLastLocalBlockHeight() const {
+quint64 NodeAdapter::getLastLocalBlockHeight() const
+{
   Q_CHECK_PTR(m_node);
   return m_node->getLastLocalBlockHeight();
 }
 
-QDateTime NodeAdapter::getLastLocalBlockTimestamp() const {
+QDateTime NodeAdapter::getLastLocalBlockTimestamp() const
+{
   Q_CHECK_PTR(m_node);
   return QDateTime::fromTime_t(m_node->getLastLocalBlockTimestamp(), Qt::UTC);
 }
 
-void NodeAdapter::peerCountUpdated(Node& _node, size_t _count) {
+void NodeAdapter::peerCountUpdated(Node &_node, size_t _count)
+{
   Q_UNUSED(_node);
 }
 
-void NodeAdapter::localBlockchainUpdated(Node& _node, uint64_t _height) {
+void NodeAdapter::localBlockchainUpdated(Node &_node, uint64_t _height)
+{
   Q_UNUSED(_node);
   Q_EMIT localBlockchainUpdatedSignal(_height);
 }
 
-void NodeAdapter::lastKnownBlockHeightUpdated(Node& _node, uint64_t _height) {
+void NodeAdapter::lastKnownBlockHeightUpdated(Node &_node, uint64_t _height)
+{
   Q_UNUSED(_node);
   Q_EMIT lastKnownBlockHeightUpdatedSignal(_height);
 }
@@ -265,10 +282,12 @@ void NodeAdapter::lastKnownBlockHeightUpdated(Node& _node, uint64_t _height) {
 /* Get a random for-fee remote node from the explorer
    remote node pool list and then save as the current remote
    node in the configuration */
-void NodeAdapter::downloadFinished(QNetworkReply *reply) {
+void NodeAdapter::downloadFinished(QNetworkReply *reply)
+{
   QByteArray data = reply->readAll();
   QJsonDocument doc = QJsonDocument::fromJson(data);
-  if (doc.isNull()) {
+  if (doc.isNull())
+  {
     return;
   }
   QJsonObject obj = doc.object();
@@ -276,7 +295,8 @@ void NodeAdapter::downloadFinished(QNetworkReply *reply) {
   Settings::instance().setCurrentRemoteNode(address);
 }
 
-bool NodeAdapter::initInProcessNode() {
+bool NodeAdapter::initInProcessNode()
+{
   Q_ASSERT(m_node == nullptr);
   m_nodeInitializerThread.start();
   CryptoNote::CoreConfig coreConfig = makeCoreConfig();
@@ -293,7 +313,8 @@ bool NodeAdapter::initInProcessNode() {
   connect(m_nodeInitializer, &InProcessNodeInitializer::nodeInitCompletedSignal, &waitLoop, &QEventLoop::quit);
   connect(m_nodeInitializer, &InProcessNodeInitializer::nodeInitFailedSignal, &waitLoop, &QEventLoop::exit);
 
-  if (waitLoop.exec() != 0 || !initCompleted) {
+  if (waitLoop.exec() != 0 || !initCompleted)
+  {
     return false;
   }
 
@@ -302,23 +323,29 @@ bool NodeAdapter::initInProcessNode() {
   return true;
 }
 
-void NodeAdapter::deinit() {
-  if (m_node != nullptr) {
-    if (m_nodeInitializerThread.isRunning()) {
+void NodeAdapter::deinit()
+{
+  if (m_node != nullptr)
+  {
+    if (m_nodeInitializerThread.isRunning())
+    {
       m_nodeInitializer->stop(&m_node);
       QEventLoop waitLoop;
       connect(m_nodeInitializer, &InProcessNodeInitializer::nodeDeinitCompletedSignal, &waitLoop, &QEventLoop::quit, Qt::QueuedConnection);
       waitLoop.exec();
       m_nodeInitializerThread.quit();
       m_nodeInitializerThread.wait();
-    } else {
+    }
+    else
+    {
       delete m_node;
       m_node = nullptr;
     }
   }
 }
 
-CryptoNote::CoreConfig NodeAdapter::makeCoreConfig() const {
+CryptoNote::CoreConfig NodeAdapter::makeCoreConfig() const
+{
   CryptoNote::CoreConfig config;
   boost::program_options::variables_map options;
   boost::any dataDir = Settings::instance().getDataDir().absolutePath().toStdString();
@@ -327,7 +354,8 @@ CryptoNote::CoreConfig NodeAdapter::makeCoreConfig() const {
   return config;
 }
 
-CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const {
+CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
+{
   CryptoNote::NetNodeConfig config;
   boost::program_options::variables_map options;
   boost::any p2pBindIp = Settings::instance().getP2pBindIp().toStdString();
@@ -341,22 +369,26 @@ CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const {
   options.insert(std::make_pair("p2p-external-port", boost::program_options::variable_value(p2pExternalPort, false)));
   options.insert(std::make_pair("allow-local-ip", boost::program_options::variable_value(p2pAllowLocalIp, false)));
   std::vector<std::string> peerList = convertStringListToVector(Settings::instance().getPeers());
-  if (!peerList.empty()) {
+  if (!peerList.empty())
+  {
     options.insert(std::make_pair("add-peer", boost::program_options::variable_value(peerList, false)));
   }
 
   std::vector<std::string> priorityNodeList = convertStringListToVector(Settings::instance().getPriorityNodes());
-  if (!priorityNodeList.empty()) {
+  if (!priorityNodeList.empty())
+  {
     options.insert(std::make_pair("add-priority-node", boost::program_options::variable_value(priorityNodeList, false)));
   }
 
   std::vector<std::string> exclusiveNodeList = convertStringListToVector(Settings::instance().getExclusiveNodes());
-  if (!exclusiveNodeList.empty()) {
+  if (!exclusiveNodeList.empty())
+  {
     options.insert(std::make_pair("add-exclusive-node", boost::program_options::variable_value(exclusiveNodeList, false)));
   }
 
   std::vector<std::string> seedNodeList = convertStringListToVector(Settings::instance().getSeedNodes());
-  if (!seedNodeList.empty()) {
+  if (!seedNodeList.empty())
+  {
     options.insert(std::make_pair("seed-node", boost::program_options::variable_value(seedNodeList, false)));
   }
 
@@ -368,6 +400,6 @@ CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const {
   return config;
 }
 
-}
+} // namespace WalletGui
 
 #include "NodeAdapter.moc"
