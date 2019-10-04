@@ -105,6 +105,32 @@ QString CurrencyAdapter::formatAmount(quint64 _amount) const {
   return result;
 }
 
+QString CurrencyAdapter::formatCurrencyAmount(quint64 _amount) const {
+  QString result = QString::number(_amount);
+  if (result.length() < 2 + 1) {
+    result = result.rightJustified(2 + 1, '0');
+  }
+
+  quint32 dot_pos = result.length() - 2;
+  for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
+    if (result[pos] == '0') {
+      result.remove(pos, 1);
+    } else {
+      break;
+    }
+  }
+
+  result.insert(dot_pos, ".");
+  for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
+    if (result[pos - 1].isDigit()) {
+      result.insert(pos, ',');
+    }
+  }
+
+  return result;
+}
+
+
 quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
   QString amountString = _amountString.trimmed();
   amountString.remove(',');
