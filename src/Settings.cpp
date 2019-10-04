@@ -94,25 +94,6 @@ void Settings::load()
     m_currentLang = m_settings.value(OPTION_LANGUAGE).toString();
   }
 
-  QStringList defaultNodesList;
-  defaultNodesList << "node.conceal.network:16000";
-
-  if (!m_settings.contains(OPTION_RPCNODES))
-  {
-    setRpcNodesList(QStringList() << defaultNodesList);
-  }
-  else
-  {
-    QStringList nodesList = getRpcNodesList();
-    Q_FOREACH (const QString &node, defaultNodesList)
-    {
-      if (!nodesList.contains(node))
-      {
-        nodesList << node;
-      }
-    }
-    setRpcNodesList(nodesList);
-  }
 }
 
 QString Settings::getVersion() const
@@ -169,11 +150,6 @@ void Settings::setOptions()
   if (!m_settings.contains(OPTION_CONNECTION))
   {
     m_settings.insert(OPTION_CONNECTION, "embedded");
-  }
-
-  if (!m_settings.contains(OPTION_REMOTE_NODE))
-  {
-    m_settings.insert(OPTION_REMOTE_NODE, "node.conceal.network:16000");
   }
 
   saveSettings();
