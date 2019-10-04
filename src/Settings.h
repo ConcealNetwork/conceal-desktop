@@ -42,6 +42,7 @@ public:
   QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
   QString getCurrentFeeAddress() const;   
+  QString getCurrentCurrency() const;   
   QString getAutoOptimizationStatus() const;     
   QString getConnection() const;    
   QString getWalletFile() const;
@@ -66,6 +67,7 @@ public:
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
   void setCurrentFeeAddress(const QString& _feeAddress);  
+  void setCurrentCurrency(const QString& _currency);    
   void setAutoOptimizationStatus(const QString& _status);    
   void setOptimizationInterval(quint64 _interval);  
   void setRpcNodesList(const QStringList& _RpcNodesList);
@@ -83,6 +85,7 @@ private:
   QString m_connectionMode;
   QString m_autoOptimizationStatus;
   QString m_currentLang;  
+  QString m_currentCurrency;    
   QString m_remoteNode;  
   quint16 m_daemonPort;  
 
