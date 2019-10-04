@@ -36,7 +36,7 @@ private:
   int currentChart = 1;
   bool walletSynced = false;
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);

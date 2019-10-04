@@ -23,7 +23,7 @@ PriceProvider::~PriceProvider() {
 }
 
 void PriceProvider::getPrice() {
-  QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/wallet/data.php");
+  QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/q/wallet/data2.php");
 
   QNetworkRequest request(url);
   QNetworkReply* reply = m_networkManager.get(request);
@@ -40,8 +40,12 @@ void PriceProvider::readyRead() {
   QString usdbtc = pairs[2];
   QString usdmarketcap = pairs[3];
   QString usdvolume = pairs[4];
+  QString eurccx = pairs[5];
+  QString eurbtc = pairs[6];
+  QString eurmarketcap = pairs[7];
+  QString eurvolume = pairs[8];  
 
-  Q_EMIT priceFoundSignal(btcccx,usdccx,usdbtc,usdmarketcap,usdvolume);
+  Q_EMIT priceFoundSignal(btcccx,usdccx,usdbtc,usdmarketcap,usdvolume,eurccx,eurbtc,eurmarketcap,eurvolume);
 
 }
 

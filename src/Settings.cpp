@@ -30,6 +30,7 @@ Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
 Q_DECL_CONSTEXPR char OPTION_REMOTE_NODE[] = "remoteNode";
+Q_DECL_CONSTEXPR char OPTION_CURRENCY[] = "currency";
 Q_DECL_CONSTEXPR char OPTION_FEE_ADDRESS[] = "feeAddress";
 Q_DECL_CONSTEXPR char OPTION_AUTOOPTIMIZATION[] = "autoOptimization";
 
@@ -94,6 +95,11 @@ void Settings::load()
     m_currentLang = m_settings.value(OPTION_LANGUAGE).toString();
   }
 
+  if (m_settings.contains(OPTION_CURRENCY))
+  {
+    m_currentCurrency = m_settings.value(OPTION_CURRENCY).toString();
+  }
+
 }
 
 QString Settings::getVersion() const
@@ -151,6 +157,11 @@ void Settings::setOptions()
   {
     m_settings.insert(OPTION_CONNECTION, "embedded");
   }
+
+  if (!m_settings.contains(OPTION_CURRENCY))
+  {
+    m_settings.insert(OPTION_CURRENCY, "USD");
+  }  
 
   saveSettings();
 }
@@ -236,6 +247,16 @@ QString Settings::getCurrentFeeAddress() const
   return feeAddress;
 }
 
+QString Settings::getCurrentCurrency() const
+{
+  QString currency;
+  if (m_settings.contains(OPTION_CURRENCY))
+  {
+    currency = m_settings.value(OPTION_CURRENCY).toString();
+  }
+  return currency;
+}
+
 QString Settings::getAutoOptimizationStatus() const
 {
   QString status;
@@ -281,6 +302,12 @@ void Settings::setCurrentRemoteNode(const QString &_remoteNode)
 void Settings::setCurrentFeeAddress(const QString &_feeAddress)
 {
   m_settings.insert(OPTION_FEE_ADDRESS, _feeAddress);
+  saveSettings();
+}
+
+void Settings::setCurrentCurrency(const QString &_currency)
+{
+  m_settings.insert(OPTION_CURRENCY, _currency);
   saveSettings();
 }
 

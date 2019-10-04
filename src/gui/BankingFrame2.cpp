@@ -44,6 +44,18 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
     m_ui->m_english->setChecked(true);
   }
 
+  /* Get current currency */
+  QString currency = Settings::instance().getCurrentCurrency();
+  if (currency.compare("EUR") == 0)
+  {
+    m_ui->m_eur->setChecked(true);
+  }
+  else 
+  {
+    m_ui->m_usd->setChecked(true);
+  }
+
+
   m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
 
@@ -193,6 +205,25 @@ void BankingFrame2::saveLanguageClicked()
 
   QMessageBox::information(this,
                            tr("Language settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
+}
+
+void BankingFrame2::saveCurrencyClicked()
+{
+  QString currency;
+  if (m_ui->m_eur->isChecked())
+  {
+    currency = "EUR";
+  }
+  else 
+  {
+    currency = "USD";
+  }
+  Settings::instance().setCurrentCurrency(currency);
+
+  QMessageBox::information(this,
+                           tr("Currecy settings saved"),
                            tr("Please restart the wallet for the new settings to take effect."),
                            QMessageBox::Ok);
 }
