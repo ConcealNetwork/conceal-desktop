@@ -40,28 +40,28 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
     m_ui->m_english->setChecked(true);
   }
 
-  m_ui->m_minToTrayButton->setText(tr("ENABLE"));
-  m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+  m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+  m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
 
 #ifdef Q_OS_WIN
   /* Set minimize to tray button status */
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
-    m_ui->m_minToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
   else
   {
-    m_ui->m_minToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
 
   /* Set close to tray button status */
   if (!Settings::instance().isCloseToTrayEnabled())
   {
-    m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
   else
   {
-    m_ui->m_closeToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
 #endif
 
@@ -88,11 +88,11 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
   }
 
  if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
-   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));
+   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
  }
  else
  {
-   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));   
+   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));   
  }
 
 
@@ -126,12 +126,20 @@ void BankingFrame2::autoOptimizeClicked()
 {
  if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
    Settings::instance().setAutoOptimizationStatus("disabled");
-   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));
+   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+  QMessageBox::information(this,
+                           tr("Auto Optimization"),
+                           tr("Auto Optimization Disabled."),
+                           QMessageBox::Ok);   
  }
  else
  {
    Settings::instance().setAutoOptimizationStatus("enabled");
-   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));   
+   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));   
+  QMessageBox::information(this,
+                           tr("Auto Optimization"),
+                           tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
+                           QMessageBox::Ok);      
  }  
 }
 
@@ -211,12 +219,12 @@ void BankingFrame2::minToTrayClicked()
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
     Settings::instance().setMinimizeToTrayEnabled(true);
-    m_ui->m_minToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
   else
   {
     Settings::instance().setMinimizeToTrayEnabled(false);
-    m_ui->m_minToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
 #endif  
 }
@@ -227,12 +235,12 @@ void BankingFrame2::closeToTrayClicked()
   if (!Settings::instance().isCloseToTrayEnabled())
   {
     Settings::instance().setCloseToTrayEnabled(true);
-    m_ui->m_closeToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
   else
   {
     Settings::instance().setCloseToTrayEnabled(false);
-    m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
 #endif  
 }
