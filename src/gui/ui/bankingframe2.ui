@@ -565,21 +565,21 @@ QPushButton#m_rescanButton:hover {color: #FFD700; border: 1px solid orange; font
        <widget class="QPushButton" name="m_closeToTrayButton">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>380</y>
-          <width>180</width>
+          <x>630</x>
+          <y>490</y>
+          <width>150</width>
           <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
+          <width>150</width>
           <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
+          <width>140</width>
           <height>35</height>
          </size>
         </property>
@@ -600,9 +600,9 @@ QPushButton#m_closeToTrayButton:hover {color: #FFD700; border: 1px solid orange;
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>330</y>
-          <width>311</width>
+          <x>630</x>
+          <y>440</y>
+          <width>141</width>
           <height>31</height>
          </rect>
         </property>
@@ -629,7 +629,7 @@ font-family: 'Lato'; border: 0px;</string>
          <rect>
           <x>420</x>
           <y>440</y>
-          <width>311</width>
+          <width>151</width>
           <height>31</height>
          </rect>
         </property>
@@ -656,19 +656,19 @@ font-family: 'Lato'; border: 0px;</string>
          <rect>
           <x>420</x>
           <y>490</y>
-          <width>180</width>
+          <width>150</width>
           <height>35</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
+          <width>150</width>
           <height>35</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
+          <width>140</width>
           <height>35</height>
          </size>
         </property>
@@ -998,7 +998,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>310</y>
+          <y>270</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -1014,7 +1014,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>270</y>
+          <y>230</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -1031,7 +1031,7 @@ font-size: 18px;
 font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="text">
-         <string>Other</string>
+         <string>Select Display Currency</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1228,6 +1228,91 @@ font-family: 'Lato';</string>
          <string notr="true">buttonGroup</string>
         </attribute>
        </widget>
+       <widget class="Line" name="line_5">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>420</y>
+          <width>365</width>
+          <height>1</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #555; border: none;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>380</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd; 
+font-size: 18px;
+font-family: 'Lato'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Other</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="m_usd">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>290</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
+        </property>
+        <property name="text">
+         <string>US Dollar ($)</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_eur">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>330</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+border-right: 0px;
+font-size: 13px;</string>
+        </property>
+        <property name="text">
+         <string>Euro (€)</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -1396,5 +1481,6 @@ font-family: 'Lato';</string>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
