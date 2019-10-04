@@ -140,7 +140,7 @@ bool NodeAdapter::init() {
     /* Pull a random node from the node pool list */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
-    const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
+    const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
     QNetworkRequest request(url);
     nam->get(request);
   }
@@ -202,12 +202,6 @@ bool NodeAdapter::init() {
   {   
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     Q_ASSERT(m_node == nullptr);
-    if(connection.compare("remote") == 0) {
-      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
-    } else {
-      
-      remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
-    }   
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), 
                           LoggerAdapter::instance().getLoggerManager(),
                           *this, 
