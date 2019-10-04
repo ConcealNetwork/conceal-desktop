@@ -122,7 +122,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
+  QString link = "http://explorer.conceal.network/services/charts/price.png?vsCurrency=" + Settings::instance().getCurrentCurrency() + "&days=7&priceDecimals=2&xPoints=12&width=711&height=241";
+  const QUrl url = QUrl::fromUserInput(link);
   QNetworkRequest request(url);
   nam->get(request);
 
@@ -295,8 +296,9 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice();
 }
 
-void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume)
+void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume)
 {
+  QString currentCurrency = Settings::instance().getCurrentCurrency();
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -304,13 +306,27 @@ void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx,
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  float ccxusd = _usdccx.toFloat();
-  float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText("$" + _usdccx + " | " + _btcccx + " sats");
-  m_ui->m_btcusd->setText("$" + _usdbtc);
-  m_ui->m_marketCap->setText("$" + _usdmarketcap);
-  m_ui->m_volume->setText("$" + _usdvolume);
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 1000000) + " USD");
+  
+  float total = 0;
+  if (currentCurrency == "EUR") {
+    float ccxeur = _eurccx.toFloat();
+    total = ccxeur * (float)totalBalance;
+    m_ui->m_ccxusd->setText("€" + _eurccx + " | " + _btcccx + " sats");
+    m_ui->m_btcusd->setText("€" + _eurbtc);
+    m_ui->m_marketCap->setText("€" + _eurmarketcap);    
+    m_ui->m_volume->setText("€" + _eurvolume);    
+  }
+  else 
+  {
+    float ccxusd = _usdccx.toFloat();
+    total = ccxusd * (float)totalBalance;
+    m_ui->m_ccxusd->setText("$" + _usdccx + " | " + _btcccx + " sats");
+    m_ui->m_btcusd->setText("$" + _usdbtc);
+    m_ui->m_marketCap->setText("$" + _usdmarketcap);  
+    m_ui->m_volume->setText("$" + _usdvolume);  
+  }
+  
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 1000000) + " " + Settings::instance().getCurrentCurrency());
 }
 
 void OverviewFrame::sendClicked()
