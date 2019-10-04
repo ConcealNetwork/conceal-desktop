@@ -19,6 +19,10 @@ namespace WalletGui
 
 BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::BankingFrame2)
 {
+
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &BankingFrame2::synchronizationCompleted, Qt::QueuedConnection);
+
+
   m_ui->setupUi(this);
 
   /* Get current language */
@@ -142,6 +146,22 @@ void BankingFrame2::autoOptimizeClicked()
                            QMessageBox::Ok);      
  }  
 }
+
+void BankingFrame2::synchronizationCompleted() {
+  quint64 numUnlockedOutputs;
+  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+  if (numUnlockedOutputs >= 100)
+  {
+    m_ui->m_optimizationMessage->setText("Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs]");
+  }
+  else
+  {
+    m_ui->m_optimizationMessage->setText("Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs]");
+  }  
+}
+
+
+
 
 void BankingFrame2::delay()
 {

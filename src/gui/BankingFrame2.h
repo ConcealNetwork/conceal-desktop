@@ -29,6 +29,7 @@ private:
   QScopedPointer<Ui::BankingFrame2> m_ui;
 
   void setMessage(QString optimizationMessage);
+  void synchronizationCompleted();
   void delay();
 
   Q_SLOT void optimizeClicked();
