@@ -425,65 +425,6 @@ void OverviewFrame::importClicked()
 void OverviewFrame::settingsClicked()
 {
     Q_EMIT settingsSignal();
-  /*
-  if (subMenu != 2)
-  {
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    m_ui->m_subButton1->setEnabled(true);
-    m_ui->m_subButton2->setEnabled(true);
-    m_ui->m_subButton3->setEnabled(true);
-    m_ui->m_subButton4->setEnabled(true);
-    m_ui->m_subButton5->setEnabled(true);
-    m_ui->m_subButton1->setText(tr("Optimize Wallet"));
-    m_ui->m_subButton2->setText(tr("Connection Settings"));
-    m_ui->m_subButton3->setText(tr("Rescan Wallet"));
-    m_ui->m_subButton4->setText(tr("Language Settings"));
-
-#ifdef Q_OS_WIN
-    m_ui->m_subButton6->setText(tr("Minimize to Tray"));
-    m_ui->m_subButton5->setText(tr("Close to Tray"));
-
-    if (!Settings::instance().isMinimizeToTrayEnabled())
-    {
-      m_ui->m_subButton6->setText(tr("Minimize to Tray Off"));
-    }
-    else
-    {
-      m_ui->m_subButton6->setText(tr("Minimize to Tray On"));
-    }
-
-    if (!Settings::instance().isCloseToTrayEnabled())
-    {
-      m_ui->m_subButton5->setText(tr("Close to Tray Off"));
-    }
-    else
-    {
-      m_ui->m_subButton5->setText(tr("Close to Tray On"));
-    }
-#endif
-    subMenu = 2;
-  }
-  else
-  {
-    m_ui->m_subButton1->setEnabled(false);
-    m_ui->m_subButton2->setEnabled(false);
-    m_ui->m_subButton3->setEnabled(false);
-    m_ui->m_subButton4->setEnabled(false);
-    m_ui->m_subButton5->setEnabled(false);
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    subMenu = 0;
-  }
-  */
 }
 
 void OverviewFrame::walletClicked()
