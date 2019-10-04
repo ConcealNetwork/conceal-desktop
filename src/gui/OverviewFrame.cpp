@@ -310,7 +310,7 @@ void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx,
   m_ui->m_btcusd->setText("$" + _usdbtc);
   m_ui->m_marketCap->setText("$" + _usdmarketcap);
   m_ui->m_volume->setText("$" + _usdvolume);
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD");
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 1000000) + " USD");
 }
 
 void OverviewFrame::sendClicked()
