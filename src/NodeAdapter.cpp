@@ -167,7 +167,7 @@ bool NodeAdapter::init()
 
   /* If it is not an autoremote its either a local node, or a remote note. By default
      the wallet creates a local node and starts the sync process. */
-  if (connection.compare("embedded") == 0)
+  if (connection.compare("embedded") == 0 || Settings::instance().getCurrentRemoteNode() == "")
   {
     QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
@@ -289,6 +289,7 @@ void NodeAdapter::downloadFinished(QNetworkReply *reply)
   if (doc.isNull())
   {
     return;
+    Settings::instance().setCurrentRemoteNode("");
   }
   QJsonObject obj = doc.object();
   QString address = obj.value("url").toString();
