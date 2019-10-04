@@ -998,7 +998,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>270</y>
+          <y>260</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -1014,7 +1014,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>230</y>
+          <y>210</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -1119,7 +1119,7 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>170</y>
+          <y>150</y>
           <width>180</width>
           <height>35</height>
          </rect>
@@ -1145,49 +1145,7 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         <property name="styleSheet">
          <string notr="true">QPushButton#m_saveLanguageButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
 
-QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;ui version=&quot;4.0&quot;&gt;
- &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
-  &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
-   &lt;property name=&quot;geometry&quot;&gt;
-    &lt;rect&gt;
-     &lt;x&gt;840&lt;/x&gt;
-     &lt;y&gt;300&lt;/y&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/rect&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;minimumSize&quot;&gt;
-    &lt;size&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/size&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;maximumSize&quot;&gt;
-    &lt;size&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/size&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;font&quot;&gt;
-    &lt;font&gt;
-     &lt;family&gt;Lato&lt;/family&gt;
-     &lt;pointsize&gt;-1&lt;/pointsize&gt;
-    &lt;/font&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
-
-QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;/string&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;text&quot;&gt;
-    &lt;string&gt;SAVE&lt;/string&gt;
-   &lt;/property&gt;
-  &lt;/widget&gt;
- &lt;/widget&gt;
- &lt;resources/&gt;
-&lt;/ui&gt;
-</string>
+QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
         </property>
         <property name="text">
          <string>SAVE</string>
@@ -1275,7 +1233,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>290</y>
+          <y>280</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -1295,8 +1253,8 @@ font-size: 13px;</string>
        <widget class="QRadioButton" name="m_eur">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>330</y>
+          <x>620</x>
+          <y>280</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -1312,6 +1270,42 @@ font-size: 13px;</string>
         <attribute name="buttonGroup">
          <string notr="true">buttonGroup_3</string>
         </attribute>
+       </widget>
+       <widget class="QPushButton" name="m_saveCurrencyButton">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>320</y>
+          <width>180</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>35</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_saveCurrencyButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+
+QPushButton#m_saveCurrencyButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -1467,10 +1461,27 @@ font-size: 13px;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_saveCurrencyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>BankingFrame2</receiver>
+   <slot>saveCurrencyClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>529</x>
+     <y>462</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>saveLanguageClicked()</slot>
   <slot>saveConnectionClicked()</slot>
+  <slot>saveCurrencyClicked()</slot>
   <slot>backClicked()</slot>
   <slot>optimizeClicked()</slot>
   <slot>rescanClicked()</slot>
