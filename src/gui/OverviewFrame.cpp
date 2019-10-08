@@ -95,7 +95,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
   m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
   m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
-  // m_ui->m_currentWalletTitle->setText(tr("SYNCHRONIZING"));
 
   /* Disable and hide the submenu */
   m_ui->m_subButton1->setText("");
@@ -143,10 +142,19 @@ OverviewFrame::~OverviewFrame()
 
 void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
 {
-  /* Lets enable buttons now that wallet synchronization is complete */
-  m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
-  m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
-  m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+
+  if (Settings::instance().isTrackingMode())
+  {
+    /* Do nothing. The buttons remain dark */
+  }
+  else
+  {
+    /* Lets enable buttons now that wallet synchronization is complete */
+    m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+    m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+    m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+  }
+
   showCurrentWallet();
   walletSynced = true;
 
@@ -406,8 +414,6 @@ void OverviewFrame::importClicked()
   }
 }
 
-
-
 void OverviewFrame::walletClicked()
 {
   if (subMenu != 3)
@@ -504,15 +510,20 @@ void OverviewFrame::depositClicked()
 
 void OverviewFrame::transactionClicked()
 {
-  Q_EMIT transactionSignal();
+  if (walletSynced == true)
+  {
+    Q_EMIT transactionSignal();
+  }
+  else
+  {
+    syncMessage();
+  }
 }
 
 void OverviewFrame::addressBookClicked()
 {
   Q_EMIT addressBookSignal();
 }
-
-
 
 void OverviewFrame::subButton1Clicked()
 {
@@ -655,7 +666,14 @@ void OverviewFrame::qrCodeClicked()
 
 void OverviewFrame::messageClicked()
 {
-  Q_EMIT messageSignal();
+  if (walletSynced == true)
+  {
+    Q_EMIT messageSignal();
+  }
+  else
+  {
+    syncMessage();
+  }
 }
 
 void OverviewFrame::newWalletClicked()
@@ -668,23 +686,18 @@ void OverviewFrame::closeWalletClicked()
   Q_EMIT closeWalletSignal();
 }
 
-void OverviewFrame::newTransferClicked()
-{
-  if (walletSynced == true)
-  {
-    Q_EMIT newTransferSignal();
-  }
-  else
-  {
-    syncMessage();
-  }
-}
-
 void OverviewFrame::newMessageClicked()
 {
   if (walletSynced == true)
   {
-    Q_EMIT newMessageSignal();
+    if (Settings::instance().isTrackingMode())
+    {
+      trackingMessage();
+    }
+    else
+    {
+      Q_EMIT newMessageSignal();
+    }
   }
   else
   {

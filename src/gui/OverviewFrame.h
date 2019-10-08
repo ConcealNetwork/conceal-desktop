@@ -65,7 +65,6 @@ private:
   Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
-  Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
   Q_SLOT void importClicked();

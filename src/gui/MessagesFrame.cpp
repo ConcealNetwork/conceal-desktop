@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-//  
+//
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
@@ -9,20 +9,22 @@
 
 #include <QFont>
 #include <QFontDatabase>
-
+#include <QMessageBox>
 #include "MessagesFrame.h"
 #include "MainWindow.h"
 #include "MessageDetailsDialog.h"
 #include "MessagesModel.h"
 #include "SortedMessagesModel.h"
 #include "VisibleMessagesModel.h"
-
+#include "Settings.h"
 #include "ui_messagesframe.h"
 
-namespace WalletGui {
+namespace WalletGui
+{
 
-MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::MessagesFrame),
-  m_visibleMessagesModel(new VisibleMessagesModel) {
+MessagesFrame::MessagesFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::MessagesFrame),
+                                                 m_visibleMessagesModel(new VisibleMessagesModel)
+{
   m_ui->setupUi(this);
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
@@ -32,35 +34,46 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
   font2.setFamily("Lato");
   font2.setPixelSize(15);
   m_ui->m_messagesView->setFont(font2);
-
 }
 
-MessagesFrame::~MessagesFrame() {
+MessagesFrame::~MessagesFrame()
+{
 }
 
-void MessagesFrame::messageDoubleClicked(const QModelIndex& _index) {
-  if (!_index.isValid()) {
+void MessagesFrame::messageDoubleClicked(const QModelIndex &_index)
+{
+  if (!_index.isValid())
+  {
     return;
   }
 
   MessageDetailsDialog dlg(_index, &MainWindow::instance());
-  if (dlg.exec() == QDialog::Accepted) {
+  if (dlg.exec() == QDialog::Accepted)
+  {
     Q_EMIT replyToSignal(dlg.getCurrentMessageIndex());
   }
 }
 
-void MessagesFrame::replyClicked() {
+void MessagesFrame::replyClicked()
+{
   Q_EMIT replyToSignal(m_ui->m_messagesView->selectionModel()->currentIndex());
 }
 
-void MessagesFrame::backClicked() {
+void MessagesFrame::backClicked()
+{
   Q_EMIT backSignal();
 }
 
-void MessagesFrame::newMessageClicked() 
+void MessagesFrame::newMessageClicked()
 {
-
-  Q_EMIT newMessageSignal();
+  if (Settings::instance().isTrackingMode())
+  {
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+  }
+  else
+  {
+    Q_EMIT newMessageSignal();
+  }
 }
 
-}
+} // namespace WalletGui
