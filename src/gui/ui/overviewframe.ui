@@ -2376,7 +2376,7 @@ font-weight: bold;</string>
    <sender>m_newTransferButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>newTransferClicked()</slot>
+   <slot>sendClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>300</x>

@@ -50,6 +50,7 @@ public:
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
+  bool isTrackingMode() const;  
   quint64 getOptimizationInterval() const;
   QString getVersion() const;
   QString getLanguage() const;  
@@ -61,6 +62,7 @@ public:
 
   void setWalletFile(const QString& _file);
   void setEncrypted(bool _encrypted);
+  void setTrackingMode(bool _tracking);  
   void setStartOnLoginEnabled(bool _enable);
   void setLanguage(const QString& _language);  
   void setConnection(const QString& _connection);

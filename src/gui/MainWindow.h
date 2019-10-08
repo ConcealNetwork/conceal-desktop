@@ -79,6 +79,7 @@ private:
   void transactionTo();
   void addressBookTo();
   void sendMessageTo();
+  void checkTrackingMode();
   void messageTo();
   void miningTo();
   

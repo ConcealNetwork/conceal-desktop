@@ -100,6 +100,9 @@ void Settings::load()
     m_currentCurrency = m_settings.value(OPTION_CURRENCY).toString();
   }
 
+  if (!m_settings.contains("tracking")) {
+       m_settings.insert("tracking", false);
+  }
 }
 
 QString Settings::getVersion() const
@@ -386,6 +389,10 @@ bool Settings::isEncrypted() const
   return m_settings.contains(OPTION_ENCRYPTED) ? m_settings.value(OPTION_ENCRYPTED).toBool() : false;
 }
 
+bool Settings::isTrackingMode() const {
+  return m_settings.contains("tracking") ? m_settings.value("tracking").toBool() : false;
+}
+
 QStringList Settings::getMiningPoolList() const
 {
   QStringList res;
@@ -472,6 +479,13 @@ void Settings::setEncrypted(bool _encrypted)
   if (isEncrypted() != _encrypted)
   {
     m_settings.insert(OPTION_ENCRYPTED, _encrypted);
+    saveSettings();
+  }
+}
+
+void Settings::setTrackingMode(bool _tracking) {
+  if (isTrackingMode() != _tracking) {
+    m_settings.insert("tracking", _tracking);
     saveSettings();
   }
 }
