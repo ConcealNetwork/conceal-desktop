@@ -44,8 +44,6 @@ void ReceiveFrame::walletOpened(int _error) {
     return;
   }
 
-  
-
   CryptoNote::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
   std::string secretKeysData = std::string(reinterpret_cast<char*>(&keys.spendSecretKey), sizeof(keys.spendSecretKey)) + std::string(reinterpret_cast<char*>(&keys.viewSecretKey), sizeof(keys.viewSecretKey));
@@ -66,7 +64,12 @@ void ReceiveFrame::walletOpened(int _error) {
     mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
   }
 
-  m_ui->m_guiKey->setText(privateKeys);
+  CryptoNote::AccountKeys trkeys;
+  WalletAdapter::instance().getAccountKeys(trkeys);
+  trkeys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
+  QString trackingWalletKeys = QString::fromStdString(Common::podToHex(trkeys));
+  m_ui->m_guiKey->setText(trackingWalletKeys);
+
   m_ui->m_spendKey->setText(QString::fromStdString(Common::podToHex(keys.spendSecretKey)));
   m_ui->m_viewKey->setText(QString::fromStdString(Common::podToHex(keys.viewSecretKey)));
   m_ui->m_seed->setText(QString::fromStdString(mnemonic_seed));  
@@ -88,7 +91,7 @@ void ReceiveFrame::backClicked() {
 
 void ReceiveFrame::copyGUIClicked() {
     QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
-    QMessageBox::information(this, tr("GUI Key"), "GUI key copied to clipboard"); 
+    QMessageBox::information(this, tr("Tracking Key"), "Tracking key copied to clipboard"); 
 }
 
 void ReceiveFrame::copySpendKeyClicked() {

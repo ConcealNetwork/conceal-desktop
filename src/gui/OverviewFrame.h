@@ -54,6 +54,7 @@ private:
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void syncMessage();
+  void trackingMessage();  
   void reset();
   
   Q_SLOT void sendClicked();  
@@ -103,6 +104,7 @@ Q_SIGNALS:
   void linksSignal();  
   void importSeedSignal();
   void importGUIKeySignal();
+  void importTrackingKeySignal();  
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();

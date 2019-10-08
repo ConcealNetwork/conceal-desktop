@@ -101,8 +101,7 @@ void MainWindow::connectToSignals()
   /* Transaction sent, bring the user to the overview */
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &MainWindow::dashboardTo);
 
-
-/* This is the previous method that sent the user to the transaction history screen everytime a transaction was sent
+  /* This is the previous method that sent the user to the transaction history screen everytime a transaction was sent
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, [this](CryptoNote::TransactionId _transactionId, int _error, const QString &_errorString) {
     if (_error == 0)
     {
@@ -140,11 +139,11 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);
   connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);
 
-  
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
   connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);
   connect(m_ui->m_overviewFrame, &OverviewFrame::languageSettingsSignal, this, &MainWindow::languageSettings);
@@ -163,16 +162,20 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);  
-  connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);  
-
-
-
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);
 }
 
 void MainWindow::initUi()
 {
-  setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+  if (Settings::instance().isTrackingMode())
+  {
+    setWindowTitle(QString("%1 Wallet %2 | Tracking Wallet").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+  }
+  else
+  {
+    setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+  }
 
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable())
@@ -213,7 +216,7 @@ void MainWindow::initUi()
   m_ui->m_closeToTrayAction->deleteLater();
 #endif
 
-  OptimizationManager* optimizationManager = new OptimizationManager(this);
+  OptimizationManager *optimizationManager = new OptimizationManager(this);
 }
 
 #ifdef Q_OS_WIN
@@ -335,9 +338,17 @@ bool MainWindow::event(QEvent *_event)
   return QMainWindow::event(_event);
 }
 
-void MainWindow::setRemoteWindowTitle() 
+void MainWindow::setRemoteWindowTitle()
 {
-  setWindowTitle(QString("%1 Wallet %2 Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+  checkTrackingMode();
+  if (Settings::instance().isTrackingMode())
+  {
+    setWindowTitle(QString("%1 Wallet %2 | Tracking Wallet | Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+  }
+  else
+  {
+    setWindowTitle(QString("%1 Wallet %2 | Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+  }
 }
 
 void MainWindow::delay()
@@ -732,6 +743,7 @@ void MainWindow::walletOpened(bool _error, const QString &_error_text)
 
     m_ui->m_overviewAction->trigger();
     m_ui->m_overviewFrame->show();
+    checkTrackingMode();
   }
   else
   {
@@ -761,7 +773,7 @@ void MainWindow::walletClosed()
   m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
   m_ui->m_depositsFrame->hide();
-  m_ui->m_bankingFrame2->hide();    
+  m_ui->m_bankingFrame2->hide();
 
   /* labels */
   QList<QAction *> tabActions = m_tabActionGroup->actions();
@@ -769,6 +781,20 @@ void MainWindow::walletClosed()
   Q_FOREACH (auto action, tabActions)
   {
     action->setEnabled(false);
+  }
+}
+
+void MainWindow::checkTrackingMode()
+{
+  CryptoNote::AccountKeys keys;
+  WalletAdapter::instance().getAccountKeys(keys);
+  if (keys.spendSecretKey == boost::value_initialized<Crypto::SecretKey>())
+  {
+    Settings::instance().setTrackingMode(true);
+  }
+  else
+  {
+    Settings::instance().setTrackingMode(false);
   }
 }
 
@@ -799,15 +825,14 @@ void MainWindow::sendTo()
 void MainWindow::dashboardTo()
 {
   m_ui->m_bankingFrame2->hide();
-  m_ui->m_overviewFrame->show();    
+  m_ui->m_overviewFrame->show();
   m_ui->m_overviewAction->trigger();
   m_ui->m_overviewFrame->raise();
-  
 }
 
-void MainWindow::settingsTo() 
+void MainWindow::settingsTo()
 {
-  m_ui->m_overviewFrame->hide();  
+  m_ui->m_overviewFrame->hide();
   m_ui->m_bankingFrame2->raise();
   m_ui->m_bankingFrame2->show();
 }
@@ -1006,7 +1031,7 @@ void MainWindow::importTracking()
     {
       return;
     }
-    if (keyString.size() != 192)
+    if (keyString.size() != 256)
     {
       QMessageBox::warning(this, tr("Tracking key is not valid"), tr("The tracking key you entered is not valid."), QMessageBox::Ok);
       return;
@@ -1021,7 +1046,7 @@ void MainWindow::importTracking()
 
     std::string public_spend_key_string = keyString.mid(0, 64).toStdString();
     std::string public_view_key_string = keyString.mid(64, 64).toStdString();
-    std::string private_spend_key_string = "0000000000000000000000000000000000000000000000000000000000000000";
+    std::string private_spend_key_string = keyString.mid(128, 64).toStdString();
     std::string private_view_key_string = keyString.mid(192, 64).toStdString();
 
     Crypto::Hash public_spend_key_hash;
@@ -1045,7 +1070,7 @@ void MainWindow::importTracking()
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
       return;
     }
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash))
+    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_view_key_hash))
     {
       QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
       return;
@@ -1065,6 +1090,7 @@ void MainWindow::importTracking()
     {
       WalletAdapter::instance().close();
     }
+    Settings::instance().setTrackingMode(true);
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
     // }
