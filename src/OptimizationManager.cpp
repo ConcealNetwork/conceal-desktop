@@ -98,7 +98,13 @@ void OptimizationManager::checkOptimization()
 
 void OptimizationManager::optimize()
 {
-  quint64 numUnlockedOutputs;
+  if (Settings::instance().isTrackingMode())
+  {
+    /* Tracking wallet. Do nothing */
+  }
+  else
+  {
+ quint64 numUnlockedOutputs;
   if (WalletAdapter::instance().isOpen() && m_isSynchronized)
   {
     while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
@@ -110,6 +116,8 @@ void OptimizationManager::optimize()
       delay();
     }
   }
+  }  
+ 
 }
 
 void OptimizationManager::delay()

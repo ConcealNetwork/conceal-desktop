@@ -22,7 +22,6 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
 
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &BankingFrame2::synchronizationCompleted, Qt::QueuedConnection);
 
-
   m_ui->setupUi(this);
 
   /* Get current language */
@@ -50,11 +49,10 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
   {
     m_ui->m_eur->setChecked(true);
   }
-  else 
+  else
   {
     m_ui->m_usd->setChecked(true);
   }
-
 
   m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
@@ -103,19 +101,14 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
     m_ui->radioButton_2->setChecked(true);
   }
 
- if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
-   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
- }
- else
- {
-   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));   
- }
-
-
-
-
-
-
+  if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+  }
+  else
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+  }
 }
 
 BankingFrame2::~BankingFrame2()
@@ -124,42 +117,58 @@ BankingFrame2::~BankingFrame2()
 
 void BankingFrame2::optimizeClicked()
 {
-  quint64 numUnlockedOutputs;
-  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-  WalletAdapter::instance().optimizeWallet();
-  while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+  if (Settings::instance().isTrackingMode())
   {
-    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-    if (numUnlockedOutputs == 0)
-      break;
-    WalletAdapter::instance().optimizeWallet();
-    delay();
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
   }
-  backClicked();
+  else
+  {
+    quint64 numUnlockedOutputs;
+    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+    WalletAdapter::instance().optimizeWallet();
+    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    {
+      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+      if (numUnlockedOutputs == 0)
+        break;
+      WalletAdapter::instance().optimizeWallet();
+      delay();
+    }
+    backClicked();
+  }
 }
 
-void BankingFrame2::autoOptimizeClicked() 
+void BankingFrame2::autoOptimizeClicked()
 {
- if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
-   Settings::instance().setAutoOptimizationStatus("disabled");
-   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
-  QMessageBox::information(this,
-                           tr("Auto Optimization"),
-                           tr("Auto Optimization Disabled."),
-                           QMessageBox::Ok);   
- }
- else
- {
-   Settings::instance().setAutoOptimizationStatus("enabled");
-   m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));   
-  QMessageBox::information(this,
-                           tr("Auto Optimization"),
-                           tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
-                           QMessageBox::Ok);      
- }  
+  if (Settings::instance().isTrackingMode())
+  {
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+  }
+  else
+  {
+    if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+    {
+      Settings::instance().setAutoOptimizationStatus("disabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Disabled."),
+                               QMessageBox::Ok);
+    }
+    else
+    {
+      Settings::instance().setAutoOptimizationStatus("enabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
+                               QMessageBox::Ok);
+    }
+  }
 }
 
-void BankingFrame2::synchronizationCompleted() {
+void BankingFrame2::synchronizationCompleted()
+{
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
   if (numUnlockedOutputs >= 100)
@@ -169,11 +178,8 @@ void BankingFrame2::synchronizationCompleted() {
   else
   {
     m_ui->m_optimizationMessage->setText("Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs]");
-  }  
+  }
 }
-
-
-
 
 void BankingFrame2::delay()
 {
@@ -216,7 +222,7 @@ void BankingFrame2::saveCurrencyClicked()
   {
     currency = "EUR";
   }
-  else 
+  else
   {
     currency = "USD";
   }
@@ -266,7 +272,7 @@ void BankingFrame2::saveConnectionClicked()
 
 void BankingFrame2::minToTrayClicked()
 {
-#ifdef Q_OS_WIN  
+#ifdef Q_OS_WIN
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
     Settings::instance().setMinimizeToTrayEnabled(true);
@@ -277,12 +283,12 @@ void BankingFrame2::minToTrayClicked()
     Settings::instance().setMinimizeToTrayEnabled(false);
     m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
-#endif  
+#endif
 }
 
 void BankingFrame2::closeToTrayClicked()
 {
-#ifdef Q_OS_WIN  
+#ifdef Q_OS_WIN
   if (!Settings::instance().isCloseToTrayEnabled())
   {
     Settings::instance().setCloseToTrayEnabled(true);
@@ -293,7 +299,7 @@ void BankingFrame2::closeToTrayClicked()
     Settings::instance().setCloseToTrayEnabled(false);
     m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
-#endif  
+#endif
 }
 
 void BankingFrame2::backClicked()
