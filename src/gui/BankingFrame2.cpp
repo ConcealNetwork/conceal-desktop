@@ -6,7 +6,9 @@
 
 #include <QTime>
 #include <QMessageBox>
-
+#include <QFileDialog>
+#include <QBuffer>
+#include <QTextStream>
 #include "MainWindow.h"
 #include "BankingFrame2.h"
 #include "WalletAdapter.h"
@@ -169,6 +171,16 @@ void BankingFrame2::autoOptimizeClicked()
 
 void BankingFrame2::synchronizationCompleted()
 {
+  quint64 balance = WalletAdapter::instance().getActualBalance();
+  if (balance > 0)
+  {
+    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+  }
+  else
+  {
+    m_proof = "";
+  }
+
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
   if (numUnlockedOutputs >= 100)
@@ -186,6 +198,33 @@ void BankingFrame2::delay()
   QTime dieTime = QTime::currentTime().addSecs(2);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void BankingFrame2::bpClicked()
+{
+  quint64 balance = WalletAdapter::instance().getActualBalance();
+  if (balance > 0)
+  {
+    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+    QString file = QFileDialog::getSaveFileName(&MainWindow::instance(), tr("Save as"), QDir::homePath(), "TXT (*.txt)");
+    if (!file.isEmpty())
+    {
+      QFile f(file);
+      if (f.open(QIODevice::WriteOnly | QIODevice::Truncate))
+      {
+        QTextStream outputStream(&f);
+        outputStream << m_proof;
+        f.close();
+      }
+    }
+  }
+  else
+  {
+    QMessageBox::information(this,
+                             tr("Balance Proof"),
+                             tr("The wallet does not contain sufficient funds to generate a proof of balance."),
+                             QMessageBox::Ok);
+  }
 }
 
 void BankingFrame2::saveLanguageClicked()

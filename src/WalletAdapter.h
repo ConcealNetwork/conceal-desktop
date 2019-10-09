@@ -50,6 +50,7 @@ public:
   bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
   bool getAccountKeys(CryptoNote::AccountKeys& _keys);
   bool isOpen() const;
+    QString getReserveProof(const quint64 &_reserve, const QString &_message);
   void sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages);
   void optimizeWallet();

@@ -26,6 +26,7 @@ public:
   ~BankingFrame2();
 
 private:
+  QString m_proof;
   QScopedPointer<Ui::BankingFrame2> m_ui;
 
   void setMessage(QString optimizationMessage);
@@ -34,6 +35,7 @@ private:
 
   Q_SLOT void optimizeClicked();
   Q_SLOT void autoOptimizeClicked();  
+  Q_SLOT void bpClicked();    
   Q_SLOT void saveLanguageClicked();
   Q_SLOT void saveCurrencyClicked();  
   Q_SLOT void saveConnectionClicked();

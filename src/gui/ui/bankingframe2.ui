@@ -227,20 +227,20 @@ QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>220</y>
-          <width>180</width>
-          <height>35</height>
+          <y>180</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
+          <width>150</width>
           <height>35</height>
          </size>
         </property>
@@ -262,9 +262,9 @@ QPushButton#m_optimizeButton:hover {color: #FFD700; border: 1px solid orange; fo
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>40</y>
           <width>351</width>
-          <height>111</height>
+          <height>91</height>
          </rect>
         </property>
         <property name="font">
@@ -281,14 +281,14 @@ QPushButton#m_optimizeButton:hover {color: #FFD700; border: 1px solid orange; fo
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QLabel" name="m_optimizationMessage">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>180</y>
+          <y>140</y>
           <width>250</width>
           <height>20</height>
          </rect>
@@ -305,26 +305,10 @@ p, li { white-space: pre-wrap; }
          <string notr="true">color: #aaa; border-right: 0p; font-size: 13px;</string>
         </property>
         <property name="text">
-         <string/>
+         <string>Optimization Recommendation</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="Line" name="line">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>40</y>
-          <width>365</width>
-          <height>1</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #555; border: none;</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
        <widget class="QLabel" name="label">
@@ -358,7 +342,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>310</y>
+          <y>250</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -385,8 +369,8 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>350</y>
-          <width>365</width>
+          <y>240</y>
+          <width>360</width>
           <height>1</height>
          </rect>
         </property>
@@ -401,21 +385,21 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>490</y>
-          <width>180</width>
-          <height>35</height>
+          <y>390</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -436,9 +420,9 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>360</y>
-          <width>351</width>
-          <height>111</height>
+          <y>280</y>
+          <width>371</width>
+          <height>91</height>
          </rect>
         </property>
         <property name="font">
@@ -448,21 +432,21 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato'; padding: 0px;</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disabled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disabled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="Line" name="line_3">
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>420</y>
+          <y>310</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -478,7 +462,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>380</y>
+          <y>330</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -505,7 +489,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>430</y>
+          <y>360</y>
           <width>351</width>
           <height>61</height>
          </rect>
@@ -524,28 +508,28 @@ font-family: 'Lato'; border: 0px;</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QPushButton" name="m_rescanButton">
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>490</y>
-          <width>180</width>
-          <height>35</height>
+          <y>420</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -565,22 +549,22 @@ QPushButton#m_rescanButton:hover {color: #FFD700; border: 1px solid orange; font
        <widget class="QPushButton" name="m_closeToTrayButton">
         <property name="geometry">
          <rect>
-          <x>630</x>
-          <y>490</y>
+          <x>220</x>
+          <y>510</y>
           <width>150</width>
-          <height>35</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>150</width>
-          <height>35</height>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>140</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -600,8 +584,8 @@ QPushButton#m_closeToTrayButton:hover {color: #FFD700; border: 1px solid orange;
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>630</x>
-          <y>440</y>
+          <x>220</x>
+          <y>470</y>
           <width>141</width>
           <height>31</height>
          </rect>
@@ -627,8 +611,8 @@ font-family: 'Lato'; border: 0px;</string>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>440</y>
+          <x>10</x>
+          <y>470</y>
           <width>151</width>
           <height>31</height>
          </rect>
@@ -654,22 +638,22 @@ font-family: 'Lato'; border: 0px;</string>
        <widget class="QPushButton" name="m_minToTrayButton">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>490</y>
+          <x>10</x>
+          <y>510</y>
           <width>150</width>
-          <height>35</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
           <width>150</width>
-          <height>35</height>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>140</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -690,8 +674,8 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>160</y>
-          <width>351</width>
+          <y>140</y>
+          <width>141</width>
           <height>21</height>
          </rect>
         </property>
@@ -717,8 +701,8 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>220</y>
-          <width>351</width>
+          <y>170</y>
+          <width>331</width>
           <height>21</height>
          </rect>
         </property>
@@ -744,9 +728,9 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>250</y>
+          <y>210</y>
           <width>351</width>
-          <height>41</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -759,9 +743,9 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
        <widget class="QRadioButton" name="radioButton_3">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>190</y>
-          <width>351</width>
+          <x>1020</x>
+          <y>140</y>
+          <width>181</width>
           <height>21</height>
          </rect>
         </property>
@@ -787,7 +771,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         <property name="geometry">
          <rect>
           <x>830</x>
-          <y>50</y>
+          <y>30</y>
           <width>371</width>
           <height>101</height>
          </rect>
@@ -806,23 +790,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_6">
-        <property name="geometry">
-         <rect>
-          <x>830</x>
-          <y>40</y>
-          <width>365</width>
-          <height>1</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #555; border: none;</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_7">
@@ -856,7 +824,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>600</x>
-          <y>70</y>
+          <y>40</y>
           <width>171</width>
           <height>21</height>
          </rect>
@@ -889,7 +857,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>110</y>
+          <y>80</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -922,7 +890,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>70</y>
+          <y>40</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -950,22 +918,6 @@ font-size: 13px;</string>
         <attribute name="buttonGroup">
          <string notr="true">buttonGroup</string>
         </attribute>
-       </widget>
-       <widget class="Line" name="line_7">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>50</y>
-          <width>365</width>
-          <height>1</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #555; border: none;</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
        </widget>
        <widget class="QLabel" name="label_8">
         <property name="geometry">
@@ -998,7 +950,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>260</y>
+          <y>170</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -1014,7 +966,7 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>210</y>
+          <y>190</y>
           <width>311</width>
           <height>31</height>
          </rect>
@@ -1041,21 +993,21 @@ font-family: 'Lato'; border: 0px;</string>
         <property name="geometry">
          <rect>
           <x>840</x>
-          <y>320</y>
-          <width>180</width>
-          <height>35</height>
+          <y>260</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -1119,21 +1071,21 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>150</y>
-          <width>180</width>
-          <height>35</height>
+          <y>120</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -1155,7 +1107,7 @@ QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange;
         <property name="geometry">
          <rect>
           <x>600</x>
-          <y>110</y>
+          <y>80</y>
           <width>171</width>
           <height>21</height>
          </rect>
@@ -1189,8 +1141,8 @@ font-family: 'Lato';</string>
        <widget class="Line" name="line_5">
         <property name="geometry">
          <rect>
-          <x>420</x>
-          <y>420</y>
+          <x>10</x>
+          <y>455</y>
           <width>365</width>
           <height>1</height>
          </rect>
@@ -1202,38 +1154,11 @@ font-family: 'Lato';</string>
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>380</y>
-          <width>311</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Lato</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; 
-font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
-        </property>
-        <property name="text">
-         <string>Other</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
        <widget class="QRadioButton" name="m_usd">
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>280</y>
+          <y>240</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -1254,7 +1179,7 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>620</x>
-          <y>280</y>
+          <y>240</y>
           <width>161</width>
           <height>21</height>
          </rect>
@@ -1275,21 +1200,21 @@ font-size: 13px;</string>
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>320</y>
-          <width>180</width>
-          <height>35</height>
+          <y>280</y>
+          <width>150</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>31</height>
          </size>
         </property>
         <property name="font">
@@ -1305,6 +1230,110 @@ QPushButton#m_saveCurrencyButton:hover {color:#FFD700; border: 1px solid orange;
         </property>
         <property name="text">
          <string>SAVE</string>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="textBrowser_5">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>390</y>
+          <width>351</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Generate a file that will prove the current balance of this wallet on the explorer.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_bpButton">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>450</y>
+          <width>150</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton#m_bpButton {color: orange;border: 1px solid orange; font-size: 14px; border-radius: 5px;}
+
+QPushButton#m_bpButton:hover {color: #FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px;}</string>
+        </property>
+        <property name="text">
+         <string>SAVE FILE</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>360</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Lato</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd; 
+font-size: 18px;
+font-family: 'Lato'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Balance Proof</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line_6">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>340</y>
+          <width>365</width>
+          <height>1</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #555; border: none;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </widget>
@@ -1477,9 +1506,26 @@ QPushButton#m_saveCurrencyButton:hover {color:#FFD700; border: 1px solid orange;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_bpButton</sender>
+   <signal>clicked()</signal>
+   <receiver>BankingFrame2</receiver>
+   <slot>bpClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>514</x>
+     <y>590</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>saveLanguageClicked()</slot>
+  <slot>bpClicked()</slot>
   <slot>saveConnectionClicked()</slot>
   <slot>saveCurrencyClicked()</slot>
   <slot>backClicked()</slot>
@@ -1491,7 +1537,7 @@ QPushButton#m_saveCurrencyButton:hover {color:#FFD700; border: 1px solid orange;
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
