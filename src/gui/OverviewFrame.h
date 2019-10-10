@@ -36,7 +36,7 @@ private:
   int currentChart = 1;
   bool walletSynced = false;
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
@@ -54,6 +54,7 @@ private:
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void syncMessage();
+  void trackingMessage();  
   void reset();
   
   Q_SLOT void sendClicked();  
@@ -64,7 +65,6 @@ private:
   Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
-  Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
   Q_SLOT void importClicked();
@@ -103,6 +103,7 @@ Q_SIGNALS:
   void linksSignal();  
   void importSeedSignal();
   void importGUIKeySignal();
+  void importTrackingKeySignal();  
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();

@@ -6,7 +6,9 @@
 
 #include <QTime>
 #include <QMessageBox>
-
+#include <QFileDialog>
+#include <QBuffer>
+#include <QTextStream>
 #include "MainWindow.h"
 #include "BankingFrame2.h"
 #include "WalletAdapter.h"
@@ -19,6 +21,9 @@ namespace WalletGui
 
 BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::BankingFrame2)
 {
+
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &BankingFrame2::synchronizationCompleted, Qt::QueuedConnection);
+
   m_ui->setupUi(this);
 
   /* Get current language */
@@ -40,28 +45,39 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
     m_ui->m_english->setChecked(true);
   }
 
-  m_ui->m_minToTrayButton->setText(tr("ENABLE"));
-  m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+  /* Get current currency */
+  QString currency = Settings::instance().getCurrentCurrency();
+  if (currency.compare("EUR") == 0)
+  {
+    m_ui->m_eur->setChecked(true);
+  }
+  else
+  {
+    m_ui->m_usd->setChecked(true);
+  }
+
+  m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+  m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
 
 #ifdef Q_OS_WIN
   /* Set minimize to tray button status */
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
-    m_ui->m_minToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
   else
   {
-    m_ui->m_minToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
 
   /* Set close to tray button status */
   if (!Settings::instance().isCloseToTrayEnabled())
   {
-    m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
   else
   {
-    m_ui->m_closeToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
 #endif
 
@@ -87,19 +103,14 @@ BankingFrame2::BankingFrame2(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::B
     m_ui->radioButton_2->setChecked(true);
   }
 
- if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
-   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));
- }
- else
- {
-   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));   
- }
-
-
-
-
-
-
+  if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+  }
+  else
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+  }
 }
 
 BankingFrame2::~BankingFrame2()
@@ -108,31 +119,78 @@ BankingFrame2::~BankingFrame2()
 
 void BankingFrame2::optimizeClicked()
 {
-  quint64 numUnlockedOutputs;
-  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-  WalletAdapter::instance().optimizeWallet();
-  while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+  if (Settings::instance().isTrackingMode())
   {
-    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-    if (numUnlockedOutputs == 0)
-      break;
-    WalletAdapter::instance().optimizeWallet();
-    delay();
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
   }
-  backClicked();
+  else
+  {
+    quint64 numUnlockedOutputs;
+    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+    WalletAdapter::instance().optimizeWallet();
+    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    {
+      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+      if (numUnlockedOutputs == 0)
+        break;
+      WalletAdapter::instance().optimizeWallet();
+      delay();
+    }
+    backClicked();
+  }
 }
 
-void BankingFrame2::autoOptimizeClicked() 
+void BankingFrame2::autoOptimizeClicked()
 {
- if (Settings::instance().getAutoOptimizationStatus() == "enabled") {
-   Settings::instance().setAutoOptimizationStatus("disabled");
-   m_ui->m_autoOptimizeButton->setText(tr("ENABLE"));
- }
- else
- {
-   Settings::instance().setAutoOptimizationStatus("enabled");
-   m_ui->m_autoOptimizeButton->setText(tr("DISABLE"));   
- }  
+  if (Settings::instance().isTrackingMode())
+  {
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+  }
+  else
+  {
+    if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+    {
+      Settings::instance().setAutoOptimizationStatus("disabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Disabled."),
+                               QMessageBox::Ok);
+    }
+    else
+    {
+      Settings::instance().setAutoOptimizationStatus("enabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
+                               QMessageBox::Ok);
+    }
+  }
+}
+
+void BankingFrame2::synchronizationCompleted()
+{
+  quint64 balance = WalletAdapter::instance().getActualBalance();
+  if (balance > 0)
+  {
+    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+  }
+  else
+  {
+    m_proof = "";
+  }
+
+  quint64 numUnlockedOutputs;
+  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+  if (numUnlockedOutputs >= 100)
+  {
+    m_ui->m_optimizationMessage->setText("Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs]");
+  }
+  else
+  {
+    m_ui->m_optimizationMessage->setText("Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs]");
+  }
 }
 
 void BankingFrame2::delay()
@@ -140,6 +198,33 @@ void BankingFrame2::delay()
   QTime dieTime = QTime::currentTime().addSecs(2);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void BankingFrame2::bpClicked()
+{
+  quint64 balance = WalletAdapter::instance().getActualBalance();
+  if (balance > 0)
+  {
+    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+    QString file = QFileDialog::getSaveFileName(&MainWindow::instance(), tr("Save as"), QDir::homePath(), "TXT (*.txt)");
+    if (!file.isEmpty())
+    {
+      QFile f(file);
+      if (f.open(QIODevice::WriteOnly | QIODevice::Truncate))
+      {
+        QTextStream outputStream(&f);
+        outputStream << m_proof;
+        f.close();
+      }
+    }
+  }
+  else
+  {
+    QMessageBox::information(this,
+                             tr("Balance Proof"),
+                             tr("The wallet does not contain sufficient funds to generate a proof of balance."),
+                             QMessageBox::Ok);
+  }
 }
 
 void BankingFrame2::saveLanguageClicked()
@@ -165,6 +250,25 @@ void BankingFrame2::saveLanguageClicked()
 
   QMessageBox::information(this,
                            tr("Language settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
+}
+
+void BankingFrame2::saveCurrencyClicked()
+{
+  QString currency;
+  if (m_ui->m_eur->isChecked())
+  {
+    currency = "EUR";
+  }
+  else
+  {
+    currency = "USD";
+  }
+  Settings::instance().setCurrentCurrency(currency);
+
+  QMessageBox::information(this,
+                           tr("Currecy settings saved"),
                            tr("Please restart the wallet for the new settings to take effect."),
                            QMessageBox::Ok);
 }
@@ -207,34 +311,34 @@ void BankingFrame2::saveConnectionClicked()
 
 void BankingFrame2::minToTrayClicked()
 {
-#ifdef Q_OS_WIN  
+#ifdef Q_OS_WIN
   if (!Settings::instance().isMinimizeToTrayEnabled())
   {
     Settings::instance().setMinimizeToTrayEnabled(true);
-    m_ui->m_minToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
   else
   {
     Settings::instance().setMinimizeToTrayEnabled(false);
-    m_ui->m_minToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
-#endif  
+#endif
 }
 
 void BankingFrame2::closeToTrayClicked()
 {
-#ifdef Q_OS_WIN  
+#ifdef Q_OS_WIN
   if (!Settings::instance().isCloseToTrayEnabled())
   {
     Settings::instance().setCloseToTrayEnabled(true);
-    m_ui->m_closeToTrayButton->setText(tr("DISABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
   }
   else
   {
     Settings::instance().setCloseToTrayEnabled(false);
-    m_ui->m_closeToTrayButton->setText(tr("ENABLE"));
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
   }
-#endif  
+#endif
 }
 
 void BankingFrame2::backClicked()

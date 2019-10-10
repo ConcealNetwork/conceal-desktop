@@ -42,6 +42,7 @@ public:
   QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
   QString getCurrentFeeAddress() const;   
+  QString getCurrentCurrency() const;   
   QString getAutoOptimizationStatus() const;     
   QString getConnection() const;    
   QString getWalletFile() const;
@@ -49,6 +50,7 @@ public:
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
+  bool isTrackingMode() const;  
   quint64 getOptimizationInterval() const;
   QString getVersion() const;
   QString getLanguage() const;  
@@ -60,12 +62,14 @@ public:
 
   void setWalletFile(const QString& _file);
   void setEncrypted(bool _encrypted);
+  void setTrackingMode(bool _tracking);  
   void setStartOnLoginEnabled(bool _enable);
   void setLanguage(const QString& _language);  
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
   void setCurrentFeeAddress(const QString& _feeAddress);  
+  void setCurrentCurrency(const QString& _currency);    
   void setAutoOptimizationStatus(const QString& _status);    
   void setOptimizationInterval(quint64 _interval);  
   void setRpcNodesList(const QStringList& _RpcNodesList);
@@ -83,6 +87,7 @@ private:
   QString m_connectionMode;
   QString m_autoOptimizationStatus;
   QString m_currentLang;  
+  QString m_currentCurrency;    
   QString m_remoteNode;  
   quint16 m_daemonPort;  
 

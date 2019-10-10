@@ -95,7 +95,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
   m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
   m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;");
-  m_ui->m_currentWalletTitle->setText(tr("SYNCHRONIZING"));
 
   /* Disable and hide the submenu */
   m_ui->m_subButton1->setText("");
@@ -122,7 +121,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=711&height=241");
+  QString link = "http://explorer.conceal.network/services/charts/price.png?vsCurrency=" + Settings::instance().getCurrentCurrency() + "&days=7&priceDecimals=2&xPoints=12&width=711&height=241";
+  const QUrl url = QUrl::fromUserInput(link);
   QNetworkRequest request(url);
   nam->get(request);
 
@@ -142,10 +142,19 @@ OverviewFrame::~OverviewFrame()
 
 void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
 {
-  /* Lets enable buttons now that wallet synchronization is complete */
-  m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
-  m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
-  m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+
+  if (Settings::instance().isTrackingMode())
+  {
+    /* Do nothing. The buttons remain dark */
+  }
+  else
+  {
+    /* Lets enable buttons now that wallet synchronization is complete */
+    m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+    m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+    m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Lato;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Lato;font-size: 13px;}");
+  }
+
   showCurrentWallet();
   walletSynced = true;
 
@@ -295,8 +304,9 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_priceProvider->getPrice();
 }
 
-void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume)
+void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume)
 {
+  QString currentCurrency = Settings::instance().getCurrentCurrency();
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -304,47 +314,28 @@ void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx,
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  float ccxusd = _usdccx.toFloat();
-  float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText("$" + _usdccx + " | " + _btcccx + " sats");
-  m_ui->m_btcusd->setText("$" + _usdbtc);
-  m_ui->m_marketCap->setText("$" + _usdmarketcap);
-  m_ui->m_volume->setText("$" + _usdvolume);
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD");
-}
 
-void OverviewFrame::sendClicked()
-{
-  if (walletSynced == true)
+  float total = 0;
+  if (currentCurrency == "EUR")
   {
-    Q_EMIT sendSignal();
+    float ccxeur = _eurccx.toFloat();
+    total = ccxeur * (float)totalBalance;
+    m_ui->m_ccxusd->setText("€" + _eurccx);
+    m_ui->m_btcusd->setText("€" + _eurbtc);
+    m_ui->m_marketCap->setText("€" + _eurmarketcap);
+    m_ui->m_volume->setText("€" + _eurvolume);
   }
   else
   {
-    syncMessage();
+    float ccxusd = _usdccx.toFloat();
+    total = ccxusd * (float)totalBalance;
+    m_ui->m_ccxusd->setText("$" + _usdccx);
+    m_ui->m_btcusd->setText("$" + _usdbtc);
+    m_ui->m_marketCap->setText("$" + _usdmarketcap);
+    m_ui->m_volume->setText("$" + _usdvolume);
   }
-}
 
-void OverviewFrame::depositClicked()
-{
-  if (walletSynced == true)
-  {
-    Q_EMIT depositSignal();
-  }
-  else
-  {
-    syncMessage();
-  }
-}
-
-void OverviewFrame::transactionClicked()
-{
-  Q_EMIT transactionSignal();
-}
-
-void OverviewFrame::addressBookClicked()
-{
-  Q_EMIT addressBookSignal();
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
 }
 
 void OverviewFrame::aboutClicked()
@@ -398,11 +389,12 @@ void OverviewFrame::importClicked()
     m_ui->m_subButton1->setEnabled(true);
     m_ui->m_subButton2->setEnabled(true);
     m_ui->m_subButton3->setEnabled(true);
-    m_ui->m_subButton4->setEnabled(false);
+    m_ui->m_subButton4->setEnabled(true);
     m_ui->m_subButton5->setEnabled(false);
     m_ui->m_subButton1->setText(tr("Import Seed"));
     m_ui->m_subButton3->setText(tr("Import Secret Keys"));
     m_ui->m_subButton2->setText(tr("Import GUI Key"));
+    m_ui->m_subButton4->setText(tr("Import Tracking Key"));
     subMenu = 1;
   }
   else
@@ -420,70 +412,6 @@ void OverviewFrame::importClicked()
     m_ui->m_subButton6->setText("");
     subMenu = 0;
   }
-}
-
-void OverviewFrame::settingsClicked()
-{
-    Q_EMIT settingsSignal();
-  /*
-  if (subMenu != 2)
-  {
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    m_ui->m_subButton1->setEnabled(true);
-    m_ui->m_subButton2->setEnabled(true);
-    m_ui->m_subButton3->setEnabled(true);
-    m_ui->m_subButton4->setEnabled(true);
-    m_ui->m_subButton5->setEnabled(true);
-    m_ui->m_subButton1->setText(tr("Optimize Wallet"));
-    m_ui->m_subButton2->setText(tr("Connection Settings"));
-    m_ui->m_subButton3->setText(tr("Rescan Wallet"));
-    m_ui->m_subButton4->setText(tr("Language Settings"));
-
-#ifdef Q_OS_WIN
-    m_ui->m_subButton6->setText(tr("Minimize to Tray"));
-    m_ui->m_subButton5->setText(tr("Close to Tray"));
-
-    if (!Settings::instance().isMinimizeToTrayEnabled())
-    {
-      m_ui->m_subButton6->setText(tr("Minimize to Tray Off"));
-    }
-    else
-    {
-      m_ui->m_subButton6->setText(tr("Minimize to Tray On"));
-    }
-
-    if (!Settings::instance().isCloseToTrayEnabled())
-    {
-      m_ui->m_subButton5->setText(tr("Close to Tray Off"));
-    }
-    else
-    {
-      m_ui->m_subButton5->setText(tr("Close to Tray On"));
-    }
-#endif
-    subMenu = 2;
-  }
-  else
-  {
-    m_ui->m_subButton1->setEnabled(false);
-    m_ui->m_subButton2->setEnabled(false);
-    m_ui->m_subButton3->setEnabled(false);
-    m_ui->m_subButton4->setEnabled(false);
-    m_ui->m_subButton5->setEnabled(false);
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    subMenu = 0;
-  }
-  */
 }
 
 void OverviewFrame::walletClicked()
@@ -535,8 +463,66 @@ void OverviewFrame::walletClicked()
     m_ui->m_subButton6->setText("");
     subMenu = 0;
   }
+}
 
+void OverviewFrame::settingsClicked()
+{
+  Q_EMIT settingsSignal();
+}
 
+void OverviewFrame::sendClicked()
+{
+  if (walletSynced == true)
+  {
+    if (Settings::instance().isTrackingMode())
+    {
+      trackingMessage();
+    }
+    else
+    {
+      Q_EMIT sendSignal();
+    }
+  }
+  else
+  {
+    syncMessage();
+  }
+}
+
+void OverviewFrame::depositClicked()
+{
+  if (walletSynced == true)
+  {
+    if (Settings::instance().isTrackingMode())
+    {
+      trackingMessage();
+    }
+    else
+    {
+      Q_EMIT depositSignal();
+    }
+  }
+  else
+  {
+    syncMessage();
+  }
+}
+
+void OverviewFrame::transactionClicked()
+{
+  if (walletSynced == true)
+  {
+    Q_EMIT transactionSignal();
+  }
+  else
+  {
+    syncMessage();
+  }
+}
+
+void OverviewFrame::addressBookClicked()
+{
+  Q_EMIT addressBookSignal();
 }
 
 void OverviewFrame::subButton1Clicked()
@@ -608,6 +594,10 @@ void OverviewFrame::subButton3Clicked()
 
 void OverviewFrame::subButton4Clicked()
 {
+  if (subMenu == 1)
+  {
+    Q_EMIT importTrackingKeySignal();
+  }
   if (subMenu == 3)
   {
     Q_EMIT encryptWalletSignal();
@@ -676,7 +666,14 @@ void OverviewFrame::qrCodeClicked()
 
 void OverviewFrame::messageClicked()
 {
-  Q_EMIT messageSignal();
+  if (walletSynced == true)
+  {
+    Q_EMIT messageSignal();
+  }
+  else
+  {
+    syncMessage();
+  }
 }
 
 void OverviewFrame::newWalletClicked()
@@ -689,23 +686,18 @@ void OverviewFrame::closeWalletClicked()
   Q_EMIT closeWalletSignal();
 }
 
-void OverviewFrame::newTransferClicked()
-{
-  if (walletSynced == true)
-  {
-    Q_EMIT newTransferSignal();
-  }
-  else
-  {
-    syncMessage();
-  }
-}
-
 void OverviewFrame::newMessageClicked()
 {
   if (walletSynced == true)
   {
-    Q_EMIT newMessageSignal();
+    if (Settings::instance().isTrackingMode())
+    {
+      trackingMessage();
+    }
+    else
+    {
+      Q_EMIT newMessageSignal();
+    }
   }
   else
   {
@@ -743,6 +735,11 @@ void OverviewFrame::copyClicked()
 void OverviewFrame::syncMessage()
 {
   QMessageBox::information(this, tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
+}
+
+void OverviewFrame::trackingMessage()
+{
+  QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
 }
 
 void OverviewFrame::chartButtonClicked()

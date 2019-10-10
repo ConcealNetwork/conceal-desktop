@@ -2376,7 +2376,7 @@ font-weight: bold;</string>
    <sender>m_newTransferButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>newTransferClicked()</slot>
+   <slot>sendClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>300</x>
@@ -2516,7 +2516,6 @@ font-weight: bold;</string>
   <slot>importClicked()</slot>
   <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
-  <slot>newTransferClicked()</slot>
   <slot>walletClicked()</slot>
   <slot>minimize()</slot>
   <slot>maximize()</slot>

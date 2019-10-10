@@ -230,9 +230,9 @@ font-size: 22px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_depositButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_depositButton {color: orange; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_depositButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_depositButton:hover {color: orange;border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CREATE</string>
@@ -587,7 +587,7 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
         <rect>
          <x>20</x>
          <y>60</y>
-         <width>251</width>
+         <width>151</width>
          <height>23</height>
         </rect>
        </property>
@@ -606,9 +606,9 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
       <widget class="QLabel" name="m_unlockedInvestmentLabel">
        <property name="geometry">
         <rect>
-         <x>210</x>
+         <x>180</x>
          <y>60</y>
-         <width>121</width>
+         <width>151</width>
          <height>23</height>
         </rect>
        </property>
@@ -672,9 +672,9 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
       <widget class="QLabel" name="m_unlockedDepositLabel">
        <property name="geometry">
         <rect>
-         <x>210</x>
+         <x>150</x>
          <y>90</y>
-         <width>121</width>
+         <width>181</width>
          <height>23</height>
         </rect>
        </property>
@@ -714,9 +714,9 @@ QPushButton#m_depositButton:hover {color: orange; background-color: #212529; bor
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_withdrawButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_withdrawButton {color: orange; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_withdrawButton:hover {color: orange; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>WITHDRAW</string>
@@ -748,7 +748,7 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
         <rect>
          <x>20</x>
          <y>90</y>
-         <width>261</width>
+         <width>131</width>
          <height>23</height>
         </rect>
        </property>
@@ -769,7 +769,7 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
         <rect>
          <x>20</x>
          <y>120</y>
-         <width>251</width>
+         <width>121</width>
          <height>23</height>
         </rect>
        </property>
@@ -788,9 +788,9 @@ QPushButton#m_withdrawButton:hover {color: orange; background-color: #212529; bo
       <widget class="QLabel" name="m_totalDepositLabel">
        <property name="geometry">
         <rect>
-         <x>210</x>
+         <x>170</x>
          <y>120</y>
-         <width>121</width>
+         <width>161</width>
          <height>23</height>
         </rect>
        </property>
