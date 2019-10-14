@@ -168,17 +168,10 @@ void MainWindow::connectToSignals()
 
 void MainWindow::initUi()
 {
-  if (Settings::instance().isTrackingMode())
-  {
-    setWindowTitle(QString("%1 Wallet %2 | Tracking Wallet").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
-  }
-  else
-  {
-    setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
-  }
+  setRemoteWindowTitle();
 
 #ifdef Q_OS_WIN32
-  if (QSystemTrayIcon::isSystemTrayAvailable())
+      if (QSystemTrayIcon::isSystemTrayAvailable())
   {
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
@@ -340,14 +333,28 @@ bool MainWindow::event(QEvent *_event)
 
 void MainWindow::setRemoteWindowTitle()
 {
-  checkTrackingMode();
-  if (Settings::instance().isTrackingMode())
+  QString connection = Settings::instance().getConnection();
+  if ((connection == "remote") || (connection == "autoremote"))
   {
-    setWindowTitle(QString("%1 Wallet %2 | Tracking Wallet | Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+    if (Settings::instance().isTrackingMode())
+    {
+      setWindowTitle(QString("%1 Wallet %2 connected to remote node %3 [Tracking Wallet]").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+    }
+    else
+    {
+      setWindowTitle(QString("%1 Wallet %2 connected to remote node %3").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+    }
   }
   else
   {
-    setWindowTitle(QString("%1 Wallet %2 | Connected to Remote Node (%3)").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
+    if (Settings::instance().isTrackingMode())
+    {
+      setWindowTitle(QString("%1 Wallet %2 [Tracking Wallet]").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+    }
+    else
+    {
+      setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
+    }
   }
 }
 
@@ -744,6 +751,7 @@ void MainWindow::walletOpened(bool _error, const QString &_error_text)
     m_ui->m_overviewAction->trigger();
     m_ui->m_overviewFrame->show();
     checkTrackingMode();
+    setRemoteWindowTitle();
   }
   else
   {
