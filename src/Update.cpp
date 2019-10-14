@@ -68,7 +68,7 @@ void Updater::checkForUpdate()
 {
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &Updater::replyFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/wallet/version.txt");
+  const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/version.txt");
   QNetworkRequest request(url);
   nam->get(request);
 }
@@ -91,7 +91,7 @@ void Updater::replyFinished (QNetworkReply *reply)
          if (ourVersion < remoteVersion) {
 
              if (QMessageBox::warning(nullptr, QObject::tr("Conceal Wallet Update"), QObject::tr("There is an update to the wallet available.\nWould you like to go to the download page?"), QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok) {
-                 QString link = "https://github.com/ConcealNetwork/conceal-wallet/releases";
+                 QString link = "https://github.com/ConcealNetwork/conceal-desktop/releases";
                  QDesktopServices::openUrl(QUrl(link));
              }
 

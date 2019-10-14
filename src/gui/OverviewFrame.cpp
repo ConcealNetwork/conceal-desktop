@@ -110,7 +110,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_subButton5->setEnabled(false);
   m_ui->m_subButton6->setEnabled(false);
   int subMenu = 0;
-
+  showCurrentWallet();
   walletSynced = false;
 
   /* Hide the second chart */
@@ -121,7 +121,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  QString link = "http://explorer.conceal.network/services/charts/price.png?vsCurrency=" + Settings::instance().getCurrentCurrency() + "&days=7&priceDecimals=2&xPoints=12&width=711&height=241";
+  QString link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + Settings::instance().getCurrentCurrency() + "&days=7&priceDecimals=2&xPoints=12&width=711&height=241";
   const QUrl url = QUrl::fromUserInput(link);
   QNetworkRequest request(url);
   nam->get(request);
@@ -129,7 +129,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the alternate chart */
   QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
   connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
-  const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
+  const QUrl url2 = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=711&height=241");
   QNetworkRequest request2(url2);
   nam2->get(request2);
 
