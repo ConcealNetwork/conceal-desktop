@@ -1,7 +1,7 @@
 ![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Desktop (GUI Wallet)
-Latest Release: v5.4.1
+Latest Release: v5.4.2
 Maintained by Conceal Devs.
 
 ## Information
