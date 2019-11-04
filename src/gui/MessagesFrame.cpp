@@ -27,9 +27,9 @@ MessagesFrame::MessagesFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::M
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
 
-  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/Raleway-Regular.ttf");
   QFont font2;
-  font2.setFamily("Lato");
+  font2.setFamily("Raleway");
   font2.setPixelSize(15);
   m_ui->m_messagesView->setFont(font2);
 

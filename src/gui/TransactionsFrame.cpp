@@ -32,9 +32,9 @@ TransactionsFrame::TransactionsFrame(QWidget* _parent) : QFrame(_parent), m_ui(n
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
   m_ui->m_transactionsView->header()->moveSection( 3, 5 );
 
-  int id2 = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+  int id2 = QFontDatabase::addApplicationFont(":/fonts/Raleway-Regular.ttf");
   QFont font2;
-  font2.setFamily("Lato");
+  font2.setFamily("Raleway");
   font2.setPixelSize(14);
   m_ui->m_transactionsView->setFont(font2);
 

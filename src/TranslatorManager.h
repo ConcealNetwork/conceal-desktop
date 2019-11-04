@@ -1,5 +1,5 @@
-#ifndef TRANSLATORMANAGER_H
-#define TRANSLATORMANAGER_H
+#ifndef TranslatorMANAGER_H
+#define TranslatorMANAGER_H
 
 #include <QObject>
 #include <QMap>
@@ -14,7 +14,7 @@ public:
     static TranslatorManager* instance();
     ~TranslatorManager();
 
-     void switchTranslator(QTranslator& translator, const QString& filename);
+     void switchTranslator(QTranslator& Translator, const QString& filename);
      inline QString getCurrentLang()  { return m_keyLang; }
 
 private:
@@ -27,9 +27,9 @@ private:
     // Class instance.
     static TranslatorManager* m_Instance;
 
-    TranslatorMap   m_translators;
+    TranslatorMap   m_Translators;
     QString         m_keyLang;
     QString         m_langPath;
 };
 
-#endif // TRANSLATORMANAGER_H
+#endif // TranslatorMANAGER_H

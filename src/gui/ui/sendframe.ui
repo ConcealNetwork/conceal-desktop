@@ -24,7 +24,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
+    <family>Raleway</family>
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -71,7 +71,7 @@
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -79,7 +79,7 @@
         <string notr="true">color: #ddd; 
 font-size: 20px; 
 padding: 15px;
-font-family: 'Lato';
+font-family: 'Raleway';
 border-bottom: 1px solid #444;</string>
        </property>
        <property name="text">
@@ -150,14 +150,14 @@ border-bottom: 1px solid #444;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_sendButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_sendButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_sendButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Lato';}</string>
+QPushButton#m_sendButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>SEND FUNDS</string>
@@ -186,14 +186,14 @@ QPushButton#m_sendButton:hover {color:#FFD700; ; border: 1px solid orange; font-
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -222,14 +222,14 @@ QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #444; font-size: 14px;  border-radius: 5px;font-family: 'Lato';}
+         <string notr="true">QPushButton#m_addressBookButton {color: #ccc; border: 1px solid #444; font-size: 14px;  border-radius: 5px;font-family: 'Raleway';}
 
-QPushButton#m_addressBookButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_addressBookButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>ADDRESS BOOK</string>
@@ -258,14 +258,14 @@ QPushButton#m_addressBookButton:hover {color: #fff; border: 1px solid #444; font
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Lato';}
+         <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
 
-QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>CLEAR ALL</string>
@@ -318,12 +318,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Payment ID (Optional) - Required at some Exchanges</string>
@@ -346,12 +346,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -368,12 +368,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Address</string>
@@ -396,12 +396,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -430,12 +430,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -452,12 +452,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Label </string>
@@ -486,12 +486,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string>0.000000</string>
@@ -508,12 +508,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Amount</string>
@@ -542,12 +542,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -564,12 +564,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Message (Optional)</string>
@@ -598,12 +598,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -635,12 +635,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Fee</string>
@@ -666,12 +666,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Available Balance</string>
@@ -703,12 +703,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string notr="true">0.000000</string>
@@ -740,12 +740,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string notr="true">0.001000</string>
@@ -765,12 +765,12 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #ddd; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>Node Fee</string>
@@ -801,7 +801,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Lato'; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Raleway'; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </widget>

@@ -94,14 +94,14 @@ background-color: #282d31;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px; 
-font-family: 'Lato';
+font-family: 'Raleway';
 border-bottom: 1px solid #444;
 padding: 15px;</string>
        </property>
@@ -170,13 +170,13 @@ padding: 15px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_csvButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
-QPushButton#m_csvButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
+         <string notr="true">QPushButton#m_csvButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
+QPushButton#m_csvButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }</string>
         </property>
         <property name="text">
          <string>EXPORT TO CSV</string>
@@ -205,14 +205,14 @@ QPushButton#m_csvButton:hover {color:#FFD700; border: 1px solid orange; font-siz
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>BACK</string>

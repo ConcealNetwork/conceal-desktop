@@ -39,7 +39,7 @@ TranslatorManager::TranslatorManager()
             {
                 qApp->installTranslator(pTranslator);
                 m_keyLang = locale;
-                m_translators.insert(locale, pTranslator);
+                m_Translators.insert(locale, pTranslator);
                 break;
             }
         }
@@ -58,7 +58,7 @@ TranslatorManager::TranslatorManager()
             {
                 qApp->installTranslator(qTranslator);
                 m_keyLang = locale;
-                m_translators.insert(locale, qTranslator);
+                m_Translators.insert(locale, qTranslator);
                 break;
             }
         }
@@ -67,15 +67,15 @@ TranslatorManager::TranslatorManager()
 
 TranslatorManager::~TranslatorManager()
 {
-    TranslatorMap::const_iterator i = m_translators.begin();
-    while (i != m_translators.end())
+    TranslatorMap::const_iterator i = m_Translators.begin();
+    while (i != m_Translators.end())
     {
         QTranslator* pTranslator = i.value();
         delete pTranslator;
         ++i;
     }
 
-    m_translators.clear();
+    m_Translators.clear();
 }
 
 TranslatorManager* TranslatorManager::instance()
@@ -94,12 +94,12 @@ TranslatorManager* TranslatorManager::instance()
     return m_Instance;
 }
 
-void TranslatorManager::switchTranslator(QTranslator& translator, const QString& filename)
+void TranslatorManager::switchTranslator(QTranslator& Translator, const QString& filename)
 {
-  // remove the old translator
-  qApp->removeTranslator(&translator);
+  // remove the old Translator
+  qApp->removeTranslator(&Translator);
 
-  // load the new translator
-  if(translator.load(filename))
-   qApp->installTranslator(&translator);
+  // load the new Translator
+  if(Translator.load(filename))
+   qApp->installTranslator(&Translator);
 }

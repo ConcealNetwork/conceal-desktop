@@ -77,7 +77,7 @@ background-color: #282d31;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -85,7 +85,7 @@ background-color: #282d31;</string>
         <string notr="true">color: #ddd; 
 font-size: 20px; 
 padding: 15px;
-font-family: 'Lato';
+font-family: 'Raleway';
 border-bottom: 1px solid #444;</string>
        </property>
        <property name="text">
@@ -159,14 +159,14 @@ border-bottom: 1px solid #444;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_withdrawButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+         <string notr="true">QPushButton#m_withdrawButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
 
-QPushButton#m_withdrawButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }</string>
+QPushButton#m_withdrawButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }</string>
         </property>
         <property name="text">
          <string>WITHDRAW</string>
@@ -195,14 +195,14 @@ QPushButton#m_withdrawButton:hover {color:#FFD700; border: 1px solid orange; fon
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>BACK</string>

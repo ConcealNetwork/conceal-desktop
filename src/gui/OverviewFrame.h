@@ -18,6 +18,9 @@ namespace WalletGui {
 
 class PriceProvider;
 class RecentTransactionsModel;
+class TransactionsListModel;
+class DepositListModel;
+class VisibleMessagesModel;
 
 class OverviewFrame : public QFrame {
   Q_OBJECT
@@ -26,11 +29,15 @@ class OverviewFrame : public QFrame {
 public:
   explicit OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
+  void scrollToTransaction(const QModelIndex& _index);
 
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
+  QScopedArrayPointer<DepositListModel> m_depositModel;  
+  QScopedPointer<VisibleMessagesModel> m_visibleMessagesModel;
+  QScopedPointer<TransactionsListModel> m_transactionsModel;
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
   int currentChart = 1;
@@ -60,6 +67,7 @@ private:
   Q_SLOT void copyClicked();
   Q_SLOT void depositClicked();    
   Q_SLOT void transactionClicked();      
+  Q_SLOT void dashboardClicked();
   Q_SLOT void messageClicked();      
   Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();

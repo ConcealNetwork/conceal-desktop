@@ -83,7 +83,7 @@ background-color: #282d31;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -91,7 +91,7 @@ background-color: #282d31;</string>
         <string notr="true">color: #ddd; 
 font-size: 20px; 
 padding: 15px;
-font-family: 'Lato';
+font-family: 'Raleway';
 border-bottom: 1px solid #444;</string>
        </property>
        <property name="text">
@@ -165,14 +165,14 @@ border-bottom: 1px solid #444;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}
+         <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Lato';}</string>
+QPushButton#m_backButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>BACK</string>
@@ -269,18 +269,18 @@ QPushButton#m_optimizeButton:hover {color: #FFD700; border: 1px solid orange; fo
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -338,14 +338,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Optimize Wallet</string>
@@ -365,14 +365,14 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Auto Optimization</string>
@@ -443,18 +443,18 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -485,14 +485,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Rescan Wallet</string>
@@ -512,18 +512,18 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -608,14 +608,14 @@ QPushButton#m_closeToTrayButton:hover {color: #FFD700; border: 1px solid orange;
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 16px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Close to Tray</string>
@@ -635,14 +635,14 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 16px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Minimize to Tray</string>
@@ -750,7 +750,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Lato'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -794,18 +794,18 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
+         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Raleway';</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -836,14 +836,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Set Connection Type</string>
@@ -966,14 +966,14 @@ font-size: 13px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Select Language</string>
@@ -1009,14 +1009,14 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd; 
 font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
+font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Other</string>
@@ -1048,14 +1048,14 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_saveConnectionButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+         <string notr="true">QPushButton#m_saveConnectionButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
 
-QPushButton#m_saveConnectionButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+QPushButton#m_saveConnectionButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;ui version=&quot;4.0&quot;&gt;
  &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
   &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
@@ -1081,14 +1081,14 @@ QPushButton#m_saveConnectionButton:hover {color:#FFD700; border: 1px solid orang
    &lt;/property&gt;
    &lt;property name=&quot;font&quot;&gt;
     &lt;font&gt;
-     &lt;family&gt;Lato&lt;/family&gt;
+     &lt;family&gt;Raleway&lt;/family&gt;
      &lt;pointsize&gt;-1&lt;/pointsize&gt;
     &lt;/font&gt;
    &lt;/property&gt;
    &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
 
-QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;/string&gt;
+QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;/string&gt;
    &lt;/property&gt;
    &lt;property name=&quot;text&quot;&gt;
     &lt;string&gt;SAVE&lt;/string&gt;
@@ -1126,14 +1126,14 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_saveLanguageButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+         <string notr="true">QPushButton#m_saveLanguageButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
 
-QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;ui version=&quot;4.0&quot;&gt;
  &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
   &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
@@ -1159,14 +1159,14 @@ QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange;
    &lt;/property&gt;
    &lt;property name=&quot;font&quot;&gt;
     &lt;font&gt;
-     &lt;family&gt;Lato&lt;/family&gt;
+     &lt;family&gt;Raleway&lt;/family&gt;
      &lt;pointsize&gt;-1&lt;/pointsize&gt;
     &lt;/font&gt;
    &lt;/property&gt;
    &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }
+    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
 
-QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Lato'; }&lt;/string&gt;
+QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;/string&gt;
    &lt;/property&gt;
    &lt;property name=&quot;text&quot;&gt;
     &lt;string&gt;SAVE&lt;/string&gt;

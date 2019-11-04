@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
+    <family>Raleway</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -49,14 +49,14 @@ background:#111;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
       </property>
       <property name="text">
        <string>MINING</string>
@@ -73,7 +73,7 @@ font-family: Lato;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -98,7 +98,7 @@ font-family: Lato;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -123,7 +123,7 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -148,7 +148,7 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -170,7 +170,7 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -193,7 +193,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -218,7 +218,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
@@ -245,7 +245,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -277,7 +277,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -309,7 +309,7 @@ border-right: 0px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>10</pointsize>
        </font>
       </property>
