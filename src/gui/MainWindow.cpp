@@ -168,8 +168,6 @@ void MainWindow::connectToSignals()
 
 void MainWindow::initUi()
 {
-  setRemoteWindowTitle();
-
 #ifdef Q_OS_WIN32
       if (QSystemTrayIcon::isSystemTrayAvailable())
   {
@@ -210,6 +208,7 @@ void MainWindow::initUi()
 #endif
 
   OptimizationManager *optimizationManager = new OptimizationManager(this);
+  setRemoteWindowTitle();
 }
 
 #ifdef Q_OS_WIN
