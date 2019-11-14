@@ -180,12 +180,9 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/WelcomeFrame.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
-           src/gui/NewPoolDialog.h \
            src/gui/NewNodeDialog.h \ 
-           src/gui/NodeModel.h \                 
            src/gui/OverviewFrame.h \
            src/gui/PasswordDialog.h \
-           src/gui/PoolModel.h \
            src/gui/QRLabel.h \
            src/gui/ReceiveFrame.h \
            src/gui/RecentTransactionsModel.h \
@@ -635,12 +632,9 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/WelcomeFrame.cpp \    
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
-           src/gui/NewPoolDialog.cpp \
-           src/gui/NewNodeDialog.cpp \ 
-           src/gui/NodeModel.cpp \                        
+           src/gui/NewNodeDialog.cpp \                   
            src/gui/OverviewFrame.cpp \
            src/gui/PasswordDialog.cpp \
-           src/gui/PoolModel.cpp \
            src/gui/QRLabel.cpp \
            src/gui/ReceiveFrame.cpp \
            src/gui/RecentTransactionsModel.cpp \
