@@ -196,12 +196,7 @@ void SendFrame::sendClicked()
   }  
 
   /* Incorrect fee */
-  quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
-  if (fee < CurrencyAdapter::instance().getMinimumFeeV1()) 
-  {
-    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Incorrect fee value"), QtCriticalMsg));
-    return;
-  }
+  quint64 fee = 1000;
 
   /* Remote node fee */
   QString connection = Settings::instance().getConnection();
@@ -211,7 +206,7 @@ void SendFrame::sendClicked()
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = SendFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 1000;
+        walletTransfer.amount = 10000;
         walletTransfers.push_back(walletTransfer);
       }
   }
