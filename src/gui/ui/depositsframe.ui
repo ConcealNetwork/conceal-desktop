@@ -311,7 +311,7 @@ QPushButton#m_depositButton:hover {color: orange;border: 2px solid orange; font-
         <number>1</number>
        </property>
        <property name="maximum">
-        <number>52</number>
+        <number>12</number>
        </property>
       </widget>
       <widget class="QLabel" name="label">
@@ -358,7 +358,7 @@ QPushButton#m_depositButton:hover {color: orange;border: 2px solid orange; font-
         <string notr="true">color: #ddd; font-size: 14px;</string>
        </property>
        <property name="text">
-        <string>5040 blocks</string>
+        <string>21900 blocks</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
