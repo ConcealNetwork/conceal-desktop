@@ -104,25 +104,25 @@ void OptimizationManager::optimize()
   }
   else
   {
- quint64 numUnlockedOutputs;
-  if (WalletAdapter::instance().isOpen() && m_isSynchronized)
-  {
-    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    quint64 numUnlockedOutputs;
+    if (WalletAdapter::instance().isOpen() && m_isSynchronized)
     {
-      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-      if (numUnlockedOutputs == 0)
-        break;
-      WalletAdapter::instance().optimizeWallet();
-      delay();
+      while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+      {
+        numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+        if (numUnlockedOutputs == 0)
+          break;
+        WalletAdapter::instance().optimizeWallet();
+        delay();
+      }
     }
-  }
   }  
  
 }
 
 void OptimizationManager::delay()
 {
-  QThread::sleep(2);
+  QThread::sleep(3);
 }
 
 void OptimizationManager::ensureStarted()
@@ -136,7 +136,6 @@ void OptimizationManager::ensureStarted()
   }
   m_currentOptimizationInterval = Settings::instance().getOptimizationInterval();
   m_optimizationTimerId = startTimer(m_currentOptimizationInterval);
-  optimize();
 }
 
 void OptimizationManager::ensureStopped()
