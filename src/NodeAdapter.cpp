@@ -397,7 +397,6 @@ CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
   options.insert(std::make_pair("data-dir", boost::program_options::variable_value(dataDir, false)));
   int size = options.size();
   config.init(options);
-  config.setTestnet(Settings::instance().isTestnet());
   return config;
 }
 
