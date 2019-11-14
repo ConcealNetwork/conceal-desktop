@@ -24,11 +24,8 @@ public:
 
   void setCommandLineParser(CommandLineParser* _cmd_line_parser);
   void load();
-  void setOptions();
-
   bool hasAllowLocalIpOption() const;
   bool hasHideMyPortOption() const;
-  bool isTestnet() const;
   QDir getDataDir() const;
   QString getP2pBindIp() const;
   quint16 getLocalRpcPort() const;
@@ -39,7 +36,6 @@ public:
   quint16 getCurrentLocalDaemonPort() const;  
   QStringList getPriorityNodes() const;
   QStringList getSeedNodes() const;
-  QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
   QString getCurrentFeeAddress() const;   
   QString getCurrentCurrency() const;   
@@ -48,7 +44,6 @@ public:
   QString getWalletFile() const;
   QString getWalletName() const;
   QString getAddressBookFile() const;
-  QStringList getMiningPoolList() const;
   bool isEncrypted() const;
   bool isTrackingMode() const;  
   quint64 getOptimizationInterval() const;
@@ -72,8 +67,7 @@ public:
   void setCurrentCurrency(const QString& _currency);    
   void setAutoOptimizationStatus(const QString& _status);    
   void setOptimizationInterval(quint64 _interval);  
-  void setRpcNodesList(const QStringList& _RpcNodesList);
-  void setMiningPoolList(const QStringList& _miningPoolList);
+
 
 #ifdef Q_OS_WIN
   void setMinimizeToTrayEnabled(bool _enable);
@@ -89,6 +83,7 @@ private:
   QString m_currentLang;  
   QString m_currentCurrency;    
   QString m_remoteNode;  
+  QString m_tracking;    
   quint16 m_daemonPort;  
 
   Settings();

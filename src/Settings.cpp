@@ -25,10 +25,9 @@ namespace WalletGui
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
 Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
 Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "language";
-Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
-Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
+Q_DECL_CONSTEXPR char OPTION_TRACKING[] = "tracking";
 Q_DECL_CONSTEXPR char OPTION_REMOTE_NODE[] = "remoteNode";
 Q_DECL_CONSTEXPR char OPTION_CURRENCY[] = "currency";
 Q_DECL_CONSTEXPR char OPTION_FEE_ADDRESS[] = "feeAddress";
@@ -73,7 +72,38 @@ void Settings::load()
       m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
     }
 
-    setOptions();
+    if (!m_settings.contains(OPTION_FEE_ADDRESS))
+    {
+      m_settings.insert(OPTION_FEE_ADDRESS, "");
+    }
+
+    if (!m_settings.contains(OPTION_TRACKING))
+    {
+      m_settings.insert(OPTION_TRACKING, "false");
+    }
+
+    if (!m_settings.contains(OPTION_AUTOOPTIMIZATION))
+    {
+      m_settings.insert(OPTION_AUTOOPTIMIZATION, "disabled");
+    }
+
+    if (!m_settings.contains(OPTION_LANGUAGE))
+    {
+      QString lang = QLocale::system().name();
+      lang.truncate(lang.lastIndexOf('_'));
+      m_currentLang = lang;
+      m_settings.insert(OPTION_LANGUAGE, lang);
+    }
+
+    if (!m_settings.contains(OPTION_CONNECTION))
+    {
+      m_settings.insert(OPTION_CONNECTION, "embedded");
+    }
+
+    if (!m_settings.contains(OPTION_CURRENCY))
+    {
+      m_settings.insert(OPTION_CURRENCY, "USD");
+    }  
   }
   else
   {
@@ -100,9 +130,11 @@ void Settings::load()
     m_currentCurrency = m_settings.value(OPTION_CURRENCY).toString();
   }
 
-  if (!m_settings.contains("tracking")) {
-       m_settings.insert("tracking", false);
+  if (m_settings.contains(OPTION_TRACKING)) 
+  {
+    m_tracking = m_settings.value(OPTION_TRACKING).toString();
   }
+
 }
 
 QString Settings::getVersion() const
@@ -124,55 +156,6 @@ void Settings::setLanguage(const QString &_language)
 {
   m_settings.insert(OPTION_LANGUAGE, _language);
   saveSettings();
-}
-
-void Settings::setOptions()
-{
-  if (!m_settings.contains(OPTION_WALLET_FILE))
-  {
-    m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
-  }
-  else
-  {
-    m_addressBookFile = m_settings.value(OPTION_WALLET_FILE).toString();
-    m_addressBookFile.replace(m_addressBookFile.lastIndexOf(".wallet"), 7, ".addressbook");
-  }
-
-  if (!m_settings.contains(OPTION_FEE_ADDRESS))
-  {
-    m_settings.insert(OPTION_FEE_ADDRESS, "");
-  }
-
-  if (!m_settings.contains(OPTION_AUTOOPTIMIZATION))
-  {
-    m_settings.insert(OPTION_AUTOOPTIMIZATION, "disabled");
-  }
-
-  if (!m_settings.contains(OPTION_LANGUAGE))
-  {
-    QString lang = QLocale::system().name();
-    lang.truncate(lang.lastIndexOf('_'));
-    m_currentLang = lang;
-    m_settings.insert(OPTION_LANGUAGE, lang);
-  }
-
-  if (!m_settings.contains(OPTION_CONNECTION))
-  {
-    m_settings.insert(OPTION_CONNECTION, "embedded");
-  }
-
-  if (!m_settings.contains(OPTION_CURRENCY))
-  {
-    m_settings.insert(OPTION_CURRENCY, "USD");
-  }  
-
-  saveSettings();
-}
-
-bool Settings::isTestnet() const
-{
-  Q_ASSERT(m_cmdLineParser != nullptr);
-  return m_cmdLineParser->hasTestnetOption();
 }
 
 bool Settings::hasAllowLocalIpOption() const
@@ -229,17 +212,6 @@ QStringList Settings::getSeedNodes() const
   return m_cmdLineParser->getSeedNodes();
 }
 
-QStringList Settings::getRpcNodesList() const
-{
-  QStringList res;
-  if (m_settings.contains(OPTION_RPCNODES))
-  {
-    res << m_settings.value(OPTION_RPCNODES).toVariant().toStringList();
-  }
-
-  return res;
-}
-
 QString Settings::getCurrentFeeAddress() const
 {
   QString feeAddress;
@@ -289,7 +261,7 @@ QString Settings::getConnection() const
   }
   else
   {
-    connection = "remote";
+    connection = "embedded";
   }
   return connection;
 }
@@ -323,15 +295,6 @@ void Settings::setAutoOptimizationStatus(const QString &_status)
 void Settings::setConnection(const QString &_connection)
 {
   m_settings.insert(OPTION_CONNECTION, _connection);
-  saveSettings();
-}
-
-void Settings::setRpcNodesList(const QStringList &_RpcNodesList)
-{
-  if (getRpcNodesList() != _RpcNodesList)
-  {
-    m_settings.insert(OPTION_RPCNODES, QJsonArray::fromStringList(_RpcNodesList));
-  }
   saveSettings();
 }
 
@@ -390,18 +353,7 @@ bool Settings::isEncrypted() const
 }
 
 bool Settings::isTrackingMode() const {
-  return m_settings.contains("tracking") ? m_settings.value("tracking").toBool() : false;
-}
-
-QStringList Settings::getMiningPoolList() const
-{
-  QStringList res;
-  if (m_settings.contains(OPTION_MINING_POOLS))
-  {
-    res << m_settings.value(OPTION_MINING_POOLS).toVariant().toStringList();
-  }
-
-  return res;
+  return m_settings.contains(OPTION_TRACKING) ? m_settings.value(OPTION_TRACKING).toBool() : false;
 }
 
 bool Settings::isStartOnLoginEnabled() const
@@ -483,9 +435,11 @@ void Settings::setEncrypted(bool _encrypted)
   }
 }
 
-void Settings::setTrackingMode(bool _tracking) {
-  if (isTrackingMode() != _tracking) {
-    m_settings.insert("tracking", _tracking);
+void Settings::setTrackingMode(bool _tracking) 
+{
+  if (isTrackingMode() != _tracking) 
+  {
+    m_settings.insert(OPTION_TRACKING, _tracking);
     saveSettings();
   }
 }
@@ -562,15 +516,6 @@ quint64 Settings::getOptimizationInterval() const
 {
   const quint64 DEFAULT_OPTIMIZATION_PERIOD = 1000 * 60 * 15; /* 15 Minutes */
   return DEFAULT_OPTIMIZATION_PERIOD;
-}
-
-void Settings::setMiningPoolList(const QStringList &_miningPoolList)
-{
-  if (getMiningPoolList() != _miningPoolList)
-  {
-    m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
-  }
-  saveSettings();
 }
 
 #ifdef Q_OS_WIN
