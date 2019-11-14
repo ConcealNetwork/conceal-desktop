@@ -31,9 +31,9 @@ namespace
   {
     QString resTempate("%1 %2");
     /* A maxmimum of 52 weeks */
-    if (_weeks < 53) 
+    if (_weeks < 13) 
     {
-      return resTempate.arg(_weeks * 5040).arg(QObject::tr("blocks"));
+      return resTempate.arg(_weeks * 21900).arg(QObject::tr("blocks"));
     }
     return QString();
   }
@@ -55,8 +55,8 @@ DepositsFrame::DepositsFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::D
 {
   m_ui->setupUi(this);
   m_ui->m_timeSpin->setMinimum(1);
-  m_ui->m_timeSpin->setMaximum(52);
-  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Weeks")));
+  m_ui->m_timeSpin->setMaximum(12);
+  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Months")));
   m_ui->m_timeSpin2->setMinimum(1);
   m_ui->m_timeSpin2->setMaximum(20);
   m_ui->m_timeSpin2->setSuffix(QString(" %1").arg(tr("Quarters")));
@@ -178,7 +178,7 @@ void DepositsFrame::depositClicked()
   }
 
   /* One week is set as 5040 blocks */
-  quint32 term = m_ui->m_timeSpin->value() * 5040;
+  quint32 term = m_ui->m_timeSpin->value() * 21900;
 
   /* Warn the user */
   if (QMessageBox::warning(&MainWindow::instance(), tr("Deposit Confirmation"),
@@ -203,13 +203,13 @@ void DepositsFrame::depositClicked()
       QVector<CryptoNote::TransactionMessage> walletMessages;
       CryptoNote::WalletLegacyTransfer walletTransfer;
       walletTransfer.address = DepositsFrame::remote_node_fee_address.toStdString();
-      walletTransfer.amount = 1000;
+      walletTransfer.amount = 10000;
       walletTransfers.push_back(walletTransfer);
       /* If the wallet is open we proceed */
       if (WalletAdapter::instance().isOpen()) 
       {    
         /* Send the transaction */
-        WalletAdapter::instance().sendTransaction(walletTransfers, 100, "", 4, walletMessages);
+        WalletAdapter::instance().sendTransaction(walletTransfers, 1000, "", 4, walletMessages);
       }
     }
   }
@@ -256,13 +256,13 @@ void DepositsFrame::investmentClicked() {
       QVector<CryptoNote::TransactionMessage> walletMessages;
       CryptoNote::WalletLegacyTransfer walletTransfer;
       walletTransfer.address = DepositsFrame::remote_node_fee_address.toStdString();
-      walletTransfer.amount = 1000;
+      walletTransfer.amount = 10000;
       walletTransfers.push_back(walletTransfer);
       /* If the wallet is open we proceed */
       if (WalletAdapter::instance().isOpen()) 
       {    
         /* Send the transaction */
-        WalletAdapter::instance().sendTransaction(walletTransfers, 100, "", 4, walletMessages);
+        WalletAdapter::instance().sendTransaction(walletTransfers, 1000, "", 4, walletMessages);
       }
     }
   }
@@ -273,7 +273,7 @@ void DepositsFrame::investmentClicked() {
 void DepositsFrame::depositParamsChanged() {
 
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
-  quint32 term = m_ui->m_timeSpin->value() * 5040;
+  quint32 term = m_ui->m_timeSpin->value() * 21900;
   quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
   qreal termRate = DepositModel::calculateRate(amount, interest);
   m_ui->m_interestLabel->setText(QString("+ %1 %2 (%3 %)").arg(CurrencyAdapter::instance().formatAmount(interest)).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()).arg(QString::number(termRate * 100, 'f', 4)));
