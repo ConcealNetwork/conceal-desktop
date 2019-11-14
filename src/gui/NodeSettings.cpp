@@ -10,7 +10,6 @@
 #include "CurrencyAdapter.h"
 #include "NewNodeDialog.h"
 #include "MainWindow.h"
-#include "NodeModel.h"
 #include "Settings.h"
 #include "ui_nodesettings.h"
 
