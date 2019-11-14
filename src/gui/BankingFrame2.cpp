@@ -171,25 +171,26 @@ void BankingFrame2::autoOptimizeClicked()
 
 void BankingFrame2::synchronizationCompleted()
 {
-  quint64 balance = WalletAdapter::instance().getActualBalance();
-  if (balance > 0)
+
+  if (WalletAdapter::instance().getActualBalance() > 0 && !(Settings::instance().isTrackingMode()))
   {
-    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+    m_proof = WalletAdapter::instance().getReserveProof(WalletAdapter::instance().getActualBalance(), "");
+    quint64 numUnlockedOutputs;
+    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+
+    if (numUnlockedOutputs >= 100)
+    {
+      m_ui->m_optimizationMessage->setText("Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs]");
+    }
+    else
+    {
+      m_ui->m_optimizationMessage->setText("Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs]");
+    }
   }
   else
   {
     m_proof = "";
-  }
-
-  quint64 numUnlockedOutputs;
-  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-  if (numUnlockedOutputs >= 100)
-  {
-    m_ui->m_optimizationMessage->setText("Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs]");
-  }
-  else
-  {
-    m_ui->m_optimizationMessage->setText("Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs]");
+    m_ui->m_optimizationMessage->setText("Tracking Wallet: Optimization not available.");
   }
 }
 
@@ -202,10 +203,9 @@ void BankingFrame2::delay()
 
 void BankingFrame2::bpClicked()
 {
-  quint64 balance = WalletAdapter::instance().getActualBalance();
-  if (balance > 0)
+  if (WalletAdapter::instance().getActualBalance() > 0 && !(Settings::instance().isTrackingMode()))
   {
-    m_proof = WalletAdapter::instance().getReserveProof(balance, "");
+    m_proof = WalletAdapter::instance().getReserveProof(WalletAdapter::instance().getActualBalance(), "");
     QString file = QFileDialog::getSaveFileName(&MainWindow::instance(), tr("Save as"), QDir::homePath(), "TXT (*.txt)");
     if (!file.isEmpty())
     {
@@ -222,7 +222,7 @@ void BankingFrame2::bpClicked()
   {
     QMessageBox::information(this,
                              tr("Balance Proof"),
-                             tr("The wallet does not contain sufficient funds to generate a proof of balance."),
+                             tr("The wallet does not contain sufficient funds or is a tracking wallet."),
                              QMessageBox::Ok);
   }
 }
