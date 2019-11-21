@@ -204,7 +204,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
       return QString("Investment");
     }
     if (term % 21900 == 0) {
-      return QString("Legacy Deposit");
+      return QString("Deposit");
     }
     if (term % 5040 == 0) {
       return QString("Deposit");
