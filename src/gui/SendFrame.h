@@ -36,6 +36,7 @@ private:
 
   QString remote_node_fee_address;
   quint64 remote_node_fee;
+  quint64 m_actualBalance = 0;
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString& _errorText);
   void walletActualBalanceUpdated(quint64 _balance);
   void onAddressFound(const QString& _address);

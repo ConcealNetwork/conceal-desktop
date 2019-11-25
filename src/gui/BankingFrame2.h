@@ -26,7 +26,6 @@ public:
   ~BankingFrame2();
 
 private:
-  QString m_proof;
   QScopedPointer<Ui::BankingFrame2> m_ui;
 
   void setMessage(QString optimizationMessage);

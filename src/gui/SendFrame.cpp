@@ -196,6 +196,7 @@ void SendFrame::sendClicked()
   }  
 
   /* Incorrect fee */
+  quint64 actualFee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
   quint64 fee = CurrencyAdapter::instance().parseAmount(m_ui->m_feeSpin->cleanText());
   if (fee < CurrencyAdapter::instance().getMinimumFeeV1()) 
   {
@@ -213,7 +214,15 @@ void SendFrame::sendClicked()
         walletTransfer.address = SendFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = 1000;
         walletTransfers.push_back(walletTransfer);
+        actualFee = actualFee + 1000;
       }
+  }
+
+  /* Check payment id validity, or about */
+  if (m_actualBalance < (amount + actualFee)) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
+    return;
   }
 
   /* If the wallet is open we proceed */
@@ -252,6 +261,7 @@ void SendFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _er
 void SendFrame::walletActualBalanceUpdated(quint64 _balance) 
 {
   m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  m_actualBalance = _balance;
 }
 
 /* Set the variable to the fee address, save the address in settings so
