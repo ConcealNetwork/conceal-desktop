@@ -392,27 +392,6 @@ void WalletAdapter::optimizeWallet() {
   }
 }
 
-QString WalletAdapter::getReserveProof(const quint64 &_reserve, const QString &_message) {
-  Q_CHECK_PTR(m_wallet);
-  if(Settings::instance().isTrackingMode()) {
-    QMessageBox::critical(nullptr, tr("Failed to get the balance proof"), tr("This is a tracking wallet. The balance proof can be generated only by a regular wallet."), QMessageBox::Ok);
-    return QString();
-  }
-  try {
-    uint64_t amount = 0;
-    if (_reserve == 0) {
-      amount = m_wallet->actualBalance();
-    } else {
-      amount = _reserve;
-    }
-    const std::string sig_str = m_wallet->getReserveProof(amount, (!_message.isEmpty() ? _message.toStdString() : ""));
-    return QString::fromStdString(sig_str);
-  } catch (std::system_error&) {
-    QMessageBox::critical(nullptr, tr("Failed to get the balance proof"), tr("Failed to get the balance proof."), QMessageBox::Ok);
-    return QString();
-  }
-}
-
 void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, 
                                 quint64 _fee, 
                                 quint64 _mixin,

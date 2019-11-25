@@ -1232,94 +1232,6 @@ QPushButton#m_saveCurrencyButton:hover {color:#FFD700; border: 1px solid orange;
          <string>SAVE</string>
         </property>
        </widget>
-       <widget class="QTextBrowser" name="textBrowser_5">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>390</y>
-          <width>351</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Lato</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #bbb; border-right: 0px; font-size: 14px; font-family: 'Lato';</string>
-        </property>
-        <property name="html">
-         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Generate a file that will prove the current balance of this wallet on the explorer.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_bpButton">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>450</y>
-          <width>150</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>150</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>150</width>
-          <height>31</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton#m_bpButton {color: orange;border: 1px solid orange; font-size: 14px; border-radius: 5px;}
-
-QPushButton#m_bpButton:hover {color: #FFD700; border: 1px solid orange; font-size: 14px; border-radius: 5px;}</string>
-        </property>
-        <property name="text">
-         <string>SAVE FILE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>360</y>
-          <width>311</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Lato</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; 
-font-size: 18px;
-font-family: 'Lato'; border: 0px;</string>
-        </property>
-        <property name="text">
-         <string>Balance Proof</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
        <widget class="Line" name="line_6">
         <property name="geometry">
          <rect>
@@ -1506,22 +1418,6 @@ font-family: 'Lato'; border: 0px;</string>
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>m_bpButton</sender>
-   <signal>clicked()</signal>
-   <receiver>BankingFrame2</receiver>
-   <slot>bpClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>514</x>
-     <y>590</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>saveLanguageClicked()</slot>
@@ -1537,7 +1433,7 @@ font-family: 'Lato'; border: 0px;</string>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
