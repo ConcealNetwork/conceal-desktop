@@ -18,6 +18,9 @@ namespace WalletGui {
 
 class PriceProvider;
 class RecentTransactionsModel;
+class TransactionsListModel;
+class DepositListModel;
+class VisibleMessagesModel;
 
 class OverviewFrame : public QFrame {
   Q_OBJECT
@@ -26,17 +29,21 @@ class OverviewFrame : public QFrame {
 public:
   explicit OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
+  void scrollToTransaction(const QModelIndex& _index);
 
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
+  QScopedArrayPointer<DepositListModel> m_depositModel;  
+  QScopedPointer<VisibleMessagesModel> m_visibleMessagesModel;
+  QScopedPointer<TransactionsListModel> m_transactionsModel;
   PriceProvider* m_priceProvider;  
   int subMenu = 0;
   int currentChart = 1;
   bool walletSynced = false;
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
   void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
@@ -54,17 +61,18 @@ private:
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void syncMessage();
-  void trackingMessage();  
   void reset();
   
   Q_SLOT void sendClicked();  
   Q_SLOT void copyClicked();
   Q_SLOT void depositClicked();    
   Q_SLOT void transactionClicked();      
+  Q_SLOT void dashboardClicked();
   Q_SLOT void messageClicked();      
   Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
+  Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
   Q_SLOT void importClicked();
@@ -103,7 +111,6 @@ Q_SIGNALS:
   void linksSignal();  
   void importSeedSignal();
   void importGUIKeySignal();
-  void importTrackingKeySignal();  
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();
