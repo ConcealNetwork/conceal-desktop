@@ -195,8 +195,9 @@ void SendFrame::sendClicked()
     walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
   }  
 
-  /* Incorrect fee */
-  quint64 fee = 1000;
+  quint64 actualFee = 1000;
+  quint64 totalFee = 1000;  
+
 
   /* Remote node fee */
   QString connection = Settings::instance().getConnection();
@@ -208,12 +209,12 @@ void SendFrame::sendClicked()
         walletTransfer.address = SendFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = 10000;
         walletTransfers.push_back(walletTransfer);
-        actualFee = actualFee + 1000;
+        totalFee = totalFee + 11000;
       }
   }
 
-  /* Check payment id validity, or about */
-  if (m_actualBalance < (amount + actualFee)) 
+  /* Check if there are enough funds for the amount plus total fees */
+  if (m_actualBalance < (amount + totalFee)) 
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
     return;
@@ -223,7 +224,7 @@ void SendFrame::sendClicked()
   if (WalletAdapter::instance().isOpen()) 
   {    
     /* Send the transaction */
-    WalletAdapter::instance().sendTransaction(walletTransfers, fee, paymentIdString, 4, walletMessages);
+    WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
     /* Add to the address book if a label is given */
     if (!label.isEmpty()) 
     {
