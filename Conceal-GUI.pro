@@ -3,8 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-QT += webkit webkitwidgets
-QT += charts
+
 TARGET = 
 DEPENDPATH += . \
               libqrencode \
