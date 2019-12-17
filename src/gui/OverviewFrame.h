@@ -54,7 +54,6 @@ private:
   void walletSynchronized(int _error, const QString& _error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
-  void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
   void actualDepositBalanceUpdated(quint64 _balance);
   void pendingDepositBalanceUpdated(quint64 _balance);  
   void actualInvestmentBalanceUpdated(quint64 _balance);
@@ -75,17 +74,10 @@ private:
   Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
-  Q_SLOT void importClicked();
   Q_SLOT void aboutClicked();
   Q_SLOT void walletClicked();    
   Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
-  Q_SLOT void subButton1Clicked();
-  Q_SLOT void subButton2Clicked();
-  Q_SLOT void subButton3Clicked();
-  Q_SLOT void subButton4Clicked();
-  Q_SLOT void subButton5Clicked();  
-  Q_SLOT void subButton6Clicked();  
 
 Q_SIGNALS:
   void sendSignal();
