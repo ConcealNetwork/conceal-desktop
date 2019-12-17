@@ -127,24 +127,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
-  //m_ui->m_newTransferButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;");
-  //m_ui->m_newMessageButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;");
-  //m_ui->m_newDepositButton->setStyleSheet("color: #444; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;");
-  //m_ui->m_currentWalletTitle->setText(tr("SYNCHRONIZING"));
-
-  /* Disable and hide the submenu 
-  m_ui->m_subButton1->setText("");
-  m_ui->m_subButton2->setText("");
-  m_ui->m_subButton3->setText("");
-  m_ui->m_subButton4->setText("");
-  m_ui->m_subButton5->setText("");
-  m_ui->m_subButton6->setText("");
-  m_ui->m_subButton1->setEnabled(false);
-  m_ui->m_subButton2->setEnabled(false);
-  m_ui->m_subButton3->setEnabled(false);
-  m_ui->m_subButton4->setEnabled(false);
-  m_ui->m_subButton5->setEnabled(false);
-  m_ui->m_subButton6->setEnabled(false);*/
   int subMenu = 0;
 
   walletSynced = false;
