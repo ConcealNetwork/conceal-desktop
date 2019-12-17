@@ -159,11 +159,7 @@ OverviewFrame::~OverviewFrame()
 }
 
 void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
-{
-  /* Lets enable buttons now that wallet synchronization is complete */
-  //m_ui->m_newTransferButton->setStyleSheet("QPushButton#m_newTransferButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;} QPushButton#m_newTransferButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Raleway;font-size: 13px;}");
-  //m_ui->m_newDepositButton->setStyleSheet("QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;} QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Raleway;font-size: 13px;}");
-  //m_ui->m_newMessageButton->setStyleSheet("QPushButton#m_newMessageButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;font-family: Raleway;font-size: 13px;} QPushButton#m_newMessageButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40; font-family: Raleway;font-size: 13px;}");
+{ 
   showCurrentWallet();
   walletSynced = true;
 
@@ -189,7 +185,6 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  //m_ui->m_copyAddressButton->setText(_address);
   m_ui->m_copyAddressButton->setStyleSheet("Text-align:left");
 }
 
@@ -361,7 +356,6 @@ void OverviewFrame::depositClicked()
 void OverviewFrame::transactionClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
-  //m_ui->m_transactionButton->setStyleSheet("QLabel { color: orange; }");
   m_ui->transactionsBox->raise();
   m_ui->m_newTransferButton->hide();
   m_ui->m_newMessageButton->hide();
