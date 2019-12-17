@@ -196,7 +196,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/SortedTransactionsModel.h \
            src/gui/TransactionDetailsDialog.h \
            src/gui/TransactionFrame.h \
-           src/gui/TransactionsFrame.h \
            src/gui/TransactionsListModel.h \
            src/gui/TransactionsModel.h \
            src/gui/TransferFrame.h \
@@ -651,7 +650,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/SortedTransactionsModel.cpp \
            src/gui/TransactionDetailsDialog.cpp \
            src/gui/TransactionFrame.cpp \
-           src/gui/TransactionsFrame.cpp \
            src/gui/TransactionsListModel.cpp \
            src/gui/TransactionsModel.cpp \
            src/gui/TransferFrame.cpp \
@@ -1070,7 +1068,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/sendmessageframe.ui \
             src/gui/ui/transactiondetailsdialog.ui \
             src/gui/ui/transactionframe.ui \
-            src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
             src/gui/ui/transactionconfirmation.ui \    

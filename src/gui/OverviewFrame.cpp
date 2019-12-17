@@ -24,7 +24,6 @@
 #include "Settings.h"
 #include "QRLabel.h"
 #include "SortedTransactionsModel.h"
-#include "TransactionsFrame.h"
 #include "TransactionDetailsDialog.h"
 #include "TransactionsListModel.h"
 #include "TransactionsModel.h"

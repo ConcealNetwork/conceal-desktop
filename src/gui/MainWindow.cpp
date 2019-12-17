@@ -159,7 +159,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_addressBookFrame, &AddressBookFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);
@@ -182,7 +181,6 @@ void MainWindow::initUi()
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
   m_ui->m_receiveFrame->hide();
-  m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
@@ -232,7 +230,6 @@ void MainWindow::minimizeToTray(bool _on)
 void MainWindow::scrollToTransaction(const QModelIndex &_index)
 {
   m_ui->m_transactionsAction->setChecked(true);
-  m_ui->m_transactionsFrame->scrollToTransaction(_index);
 }
 
 void MainWindow::quit()
@@ -775,7 +772,6 @@ void MainWindow::walletClosed()
   /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_sendFrame->hide();
-  m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();

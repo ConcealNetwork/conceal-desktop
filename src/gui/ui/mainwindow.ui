@@ -112,16 +112,6 @@ color: #ccc;</string>
      </widget>
     </item>
     <item>
-     <widget class="WalletGui::TransactionsFrame" name="m_transactionsFrame">
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="WalletGui::AddressBookFrame" name="m_addressBookFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -503,12 +493,6 @@ color: #ccc;</string>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>WalletGui::TransactionsFrame</class>
-   <extends>QFrame</extends>
-   <header>gui/TransactionsFrame.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>WalletGui::AddressBookFrame</class>
    <extends>QFrame</extends>
    <header>gui/AddressBookFrame.h</header>
@@ -599,22 +583,6 @@ color: #ccc;</string>
     </hint>
     <hint type="destinationlabel">
      <x>266</x>
-     <y>405</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_transactionsAction</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>m_transactionsFrame</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>355</x>
      <y>405</y>
     </hint>
    </hints>
