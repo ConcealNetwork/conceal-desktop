@@ -4853,11 +4853,11 @@ p, li { white-space: pre-wrap; }
      <zorder>walletBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>messageBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>overviewBox</zorder>
      <zorder>transactionsBox</zorder>
     </widget>
    </item>
@@ -5107,6 +5107,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_transactionsView</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>showTransactionDetails(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>725</x>
+     <y>445</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -5128,5 +5144,6 @@ p, li { white-space: pre-wrap; }
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
   <slot>addressBookClicked()</slot>
+  <slot>showTransactionDetails(QModelIndex)</slot>
  </slots>
 </ui>

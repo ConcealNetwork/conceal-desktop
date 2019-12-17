@@ -496,6 +496,16 @@ void OverviewFrame::chartButtonClicked()
   }
 }
 
+void OverviewFrame::showTransactionDetails(const QModelIndex& _index) {
+  if (!_index.isValid()) {
+    return;
+  }
+
+  TransactionDetailsDialog dlg(_index, this);
+  dlg.exec();
+}
+
+
 } // namespace WalletGui
 
 #include "OverviewFrame.moc"
