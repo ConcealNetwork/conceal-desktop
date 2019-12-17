@@ -72,12 +72,12 @@ public:
   }
 };
 
-OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame), 
-                                                                  m_priceProvider(new PriceProvider(this)), 
-                                                                  m_transactionModel(new RecentTransactionsModel), 
-                                                                  m_transactionsModel(new TransactionsListModel), 
-                                                                  m_depositModel(new DepositListModel),
-                                                                  m_visibleMessagesModel(new VisibleMessagesModel) 
+OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::OverviewFrame),
+                                                 m_priceProvider(new PriceProvider(this)),
+                                                 m_transactionModel(new RecentTransactionsModel),
+                                                 m_transactionsModel(new TransactionsListModel),
+                                                 m_depositModel(new DepositListModel),
+                                                 m_visibleMessagesModel(new VisibleMessagesModel)
 {
   m_ui->setupUi(this);
 
@@ -89,8 +89,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->moveSection( 3, 5 );
-  m_ui->m_transactionsView->header()->moveSection( 0, 1 );
+  m_ui->m_transactionsView->header()->moveSection(3, 5);
+  m_ui->m_transactionsView->header()->moveSection(0, 1);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
 
   /* Load the new app-wide font */
@@ -149,7 +149,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=511&height=191");
   QNetworkRequest request2(url2);
   nam2->get(request2);
-
 
   dashboardClicked();
 
@@ -350,7 +349,7 @@ void OverviewFrame::depositClicked()
   if (walletSynced == true)
   {
     m_ui->m_myConcealWalletTitle->setText("BANKING");
-    m_ui->bankingBox->raise();  
+    m_ui->bankingBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
   }
@@ -364,15 +363,15 @@ void OverviewFrame::transactionClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
   //m_ui->m_transactionButton->setStyleSheet("QLabel { color: orange; }");
-  m_ui->transactionsBox->raise();  
+  m_ui->transactionsBox->raise();
   m_ui->m_newTransferButton->hide();
   m_ui->m_newMessageButton->hide();
 }
 
-void OverviewFrame::dashboardClicked() 
+void OverviewFrame::dashboardClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("MY CONCEAL WALLET");
-  m_ui->overviewBox->raise();  
+  m_ui->overviewBox->raise();
   m_ui->m_newTransferButton->show();
   m_ui->m_newMessageButton->show();
 }
@@ -385,193 +384,27 @@ void OverviewFrame::addressBookClicked()
 void OverviewFrame::aboutClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("ABOUT");
-  m_ui->aboutBox->raise();  
+  m_ui->aboutBox->raise();
   m_ui->m_newTransferButton->show();
-  m_ui->m_newMessageButton->show();  
-}
-
-void OverviewFrame::importClicked()
-{
-  if (subMenu != 1)
-  {
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    m_ui->m_subButton1->setEnabled(true);
-    m_ui->m_subButton2->setEnabled(true);
-    m_ui->m_subButton3->setEnabled(true);
-    m_ui->m_subButton4->setEnabled(false);
-    m_ui->m_subButton5->setEnabled(false);
-    m_ui->m_subButton1->setText(tr("Import Seed"));
-    m_ui->m_subButton3->setText(tr("Import Secret Keys"));
-    m_ui->m_subButton2->setText(tr("Import GUI Key"));
-    subMenu = 1;
-  }
-  else
-  {
-    m_ui->m_subButton1->setEnabled(false);
-    m_ui->m_subButton2->setEnabled(false);
-    m_ui->m_subButton3->setEnabled(false);
-    m_ui->m_subButton4->setEnabled(false);
-    m_ui->m_subButton5->setEnabled(false);
-    m_ui->m_subButton1->setText("");
-    m_ui->m_subButton2->setText("");
-    m_ui->m_subButton3->setText("");
-    m_ui->m_subButton4->setText("");
-    m_ui->m_subButton5->setText("");
-    m_ui->m_subButton6->setText("");
-    subMenu = 0;
-  }
+  m_ui->m_newMessageButton->show();
 }
 
 void OverviewFrame::settingsClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
-  m_ui->settingsBox->raise();  
+  m_ui->settingsBox->raise();
   m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();  
+  m_ui->m_newMessageButton->hide();
 }
 
 void OverviewFrame::walletClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("WALLET OPTIONS");
-  m_ui->walletBox->raise();  
+  m_ui->walletBox->raise();
   m_ui->m_newTransferButton->hide();
   m_ui->m_newMessageButton->hide();
 }
 
-void OverviewFrame::subButton1Clicked()
-{
-  if (subMenu == 2)
-  {
-    if (walletSynced == true)
-    {
-      Q_EMIT optimizeSignal();
-    }
-    else
-    {
-      syncMessage();
-    }
-  }
-  if (subMenu == 1)
-  {
-    Q_EMIT importSeedSignal();
-  }
-  if (subMenu == 3)
-  {
-    Q_EMIT openWalletSignal();
-  }
-  if (subMenu == 4)
-  {
-    Q_EMIT aboutSignal();
-  }
-}
-
-void OverviewFrame::subButton2Clicked()
-{
-  if (subMenu == 2)
-  {
-    Q_EMIT connectionSettingsSignal();
-  }
-  if (subMenu == 1)
-  {
-    Q_EMIT importGUIKeySignal();
-  }
-  if (subMenu == 3)
-  {
-    Q_EMIT newWalletSignal();
-  }
-  if (subMenu == 4)
-  {
-    Q_EMIT aboutQTSignal();
-  }
-}
-
-void OverviewFrame::subButton3Clicked()
-{
-  if (subMenu == 2)
-  {
-    Q_EMIT rescanSignal();
-  }
-  if (subMenu == 1)
-  {
-    Q_EMIT importSecretKeysSignal();
-  }
-  if (subMenu == 3)
-  {
-    Q_EMIT backupSignal();
-  }
-  if (subMenu == 4)
-  {
-    Q_EMIT disclaimerSignal();
-  }
-}
-
-void OverviewFrame::subButton4Clicked()
-{
-  if (subMenu == 3)
-  {
-    Q_EMIT encryptWalletSignal();
-  }
-  if (subMenu == 4)
-  {
-    Q_EMIT linksSignal();
-  }
-  if (subMenu == 2)
-  {
-    Q_EMIT languageSettingsSignal();
-  }
-}
-
-void OverviewFrame::subButton5Clicked()
-{
-#ifdef Q_OS_WIN
-  if (subMenu == 2)
-  {
-    if (!Settings::instance().isCloseToTrayEnabled())
-    {
-      Settings::instance().setCloseToTrayEnabled(true);
-      m_ui->m_subButton5->setText(tr("Close to Tray On"));
-    }
-    else
-    {
-      Settings::instance().setCloseToTrayEnabled(false);
-      m_ui->m_subButton5->setText(tr("Close to Tray Off"));
-    }
-  }
-#endif
-  if (subMenu == 3)
-  {
-    OverviewFrame::importClicked();
-  }
-}
-
-void OverviewFrame::subButton6Clicked()
-{
-  if (subMenu == 3)
-  {
-    OverviewFrame::closeWalletClicked();
-  }
-
-#ifdef Q_OS_WIN
-  if (subMenu == 2)
-  {
-    if (!Settings::instance().isMinimizeToTrayEnabled())
-    {
-      Settings::instance().setMinimizeToTrayEnabled(true);
-      m_ui->m_subButton6->setText(tr("Minimize to Tray On"));
-    }
-    else
-    {
-      Settings::instance().setMinimizeToTrayEnabled(false);
-      m_ui->m_subButton6->setText(tr("Minimize to Tray Off"));
-    }
-  }
-#endif
-}
 
 void OverviewFrame::qrCodeClicked()
 {
@@ -581,7 +414,7 @@ void OverviewFrame::qrCodeClicked()
 void OverviewFrame::messageClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("INBOX");
-  m_ui->messageBox->raise();  
+  m_ui->messageBox->raise();
   m_ui->m_newTransferButton->hide();
   m_ui->m_newMessageButton->hide();
 }
@@ -601,7 +434,7 @@ void OverviewFrame::newTransferClicked()
   if (walletSynced == true)
   {
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
-    m_ui->sendBox->raise();  
+    m_ui->sendBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
   }
@@ -616,7 +449,7 @@ void OverviewFrame::newMessageClicked()
   if (walletSynced == true)
   {
     m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
-    m_ui->newMessageBox->raise();  
+    m_ui->newMessageBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
   }
@@ -641,10 +474,6 @@ void OverviewFrame::reset()
 void OverviewFrame::setStatusBarText(const QString &_text)
 {
   m_ui->m_statusBox->setText(_text);
-}
-
-void OverviewFrame::poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount)
-{
 }
 
 void OverviewFrame::copyClicked()

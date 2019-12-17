@@ -1585,7 +1585,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/discord.png</pixmap>
+         <pixmap>:/icons/discord.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_10">
@@ -1614,7 +1614,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/telegram.png</pixmap>
+         <pixmap>:/icons/telegram.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_11">
@@ -1643,7 +1643,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/twitter.png</pixmap>
+         <pixmap>:/icons/twitter.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_12">
@@ -1672,7 +1672,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/bitcoin.png</pixmap>
+         <pixmap>:/icons/bitcoin.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_13">
@@ -1701,7 +1701,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/github.png</pixmap>
+         <pixmap>:/icons/github.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_14">
@@ -1730,7 +1730,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/medium.png</pixmap>
+         <pixmap>:/icons/medium.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -2623,7 +2623,7 @@ font-size: 13px;
 
 QWidget:item:selected {
 	font-family: 'Raleway';
-background-color: #282d31;
+background-color: #555;
 font-size: 13px;
   color: #ccc;
 }
@@ -4854,11 +4854,11 @@ p, li { white-space: pre-wrap; }
      <zorder>sendBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>overviewBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>transactionsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -4996,54 +4996,6 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_subButton1</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton1Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>467</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_subButton2</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton2Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>507</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_subButton3</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton3Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>100</x>
-     <y>547</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_qrcodebutton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
@@ -5108,38 +5060,6 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_subButton4</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton4Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>528</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_subButton5</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton5Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>568</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_walletButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
@@ -5148,38 +5068,6 @@ p, li { white-space: pre-wrap; }
     <hint type="sourcelabel">
      <x>50</x>
      <y>298</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_subButton6</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>subButton6Clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>488</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chartButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>chartButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>890</x>
-     <y>671</y>
     </hint>
     <hint type="destinationlabel">
      <x>634</x>
@@ -5225,15 +5113,8 @@ p, li { white-space: pre-wrap; }
   <slot>copyClicked()</slot>
   <slot>depositClicked()</slot>
   <slot>dashboardClicked()</slot>
-  <slot>subButton1Clicked()</slot>
-  <slot>subButton2Clicked()</slot>
-  <slot>subButton3Clicked()</slot>
-  <slot>subButton4Clicked()</slot>
-  <slot>subButton5Clicked()</slot>
-  <slot>subButton6Clicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
-  <slot>importClicked()</slot>
   <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
   <slot>newTransferClicked()</slot>
