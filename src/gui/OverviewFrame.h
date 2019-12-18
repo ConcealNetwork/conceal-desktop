@@ -19,6 +19,7 @@ namespace WalletGui {
 class PriceProvider;
 class RecentTransactionsModel;
 class TransactionsListModel;
+class MessagesFrame;
 class DepositListModel;
 class VisibleMessagesModel;
 class AddressProvider;
@@ -86,6 +87,7 @@ private:
   Q_SLOT void qrCodeClicked();
   Q_SLOT void aboutClicked();
   Q_SLOT void showTransactionDetails(const QModelIndex& _index);  
+  Q_SLOT void showMessageDetails(const QModelIndex& _index);    
   Q_SLOT void walletClicked();    
   Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
