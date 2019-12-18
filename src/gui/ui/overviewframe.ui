@@ -3513,7 +3513,7 @@ font-family: Raleway;
 border-radius: 5px;</string>
         </property>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::RichText</enum>
@@ -3766,7 +3766,7 @@ border: none;</string>
         <string>Amount</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="m_labelEdit">
+      <widget class="QLineEdit" name="m_addressLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -4100,7 +4100,7 @@ border: none;</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="m_saveAddress">
        <property name="geometry">
         <rect>
          <x>180</x>
@@ -4161,7 +4161,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
       <zorder>amountLabel_2</zorder>
       <zorder>labelLabel</zorder>
       <zorder>amountLabel</zorder>
-      <zorder>m_labelEdit</zorder>
+      <zorder>m_addressLabel</zorder>
       <zorder>m_balanceLabel</zorder>
       <zorder>m_messageEdit</zorder>
       <zorder>adressLabel</zorder>
@@ -4171,7 +4171,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
       <zorder>m_cancelButton</zorder>
       <zorder>m_nodeFee</zorder>
       <zorder>m_addressBookButton</zorder>
-      <zorder>checkBox</zorder>
+      <zorder>m_saveAddress</zorder>
       <zorder>m_clearAllButton</zorder>
      </widget>
      <widget class="QGroupBox" name="newMessageBox">
@@ -4882,26 +4882,26 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <zorder>leftMenu</zorder>
-     <zorder>extra_depositsBox</zorder>
      <zorder>m_newDepositButton</zorder>
-     <zorder>extra_statsBox_2</zorder>
      <zorder>m_qrcodebutton</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_currentWalletTitle</zorder>
      <zorder>m_newTransferButton</zorder>
      <zorder>m_newMessageButton</zorder>
-     <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>walletBox</zorder>
      <zorder>messageBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>transactionsBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>extra_depositsBox</zorder>
+     <zorder>extra_statsBox_2</zorder>
+     <zorder>leftMenu</zorder>
      <zorder>sendBox</zorder>
+     <zorder>aboutBox</zorder>
     </widget>
    </item>
   </layout>
