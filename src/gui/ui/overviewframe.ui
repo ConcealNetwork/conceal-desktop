@@ -3990,7 +3990,7 @@ border: none;</string>
         <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_sendButton_2">
+      <widget class="QPushButton" name="m_sendFundsButton">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -4018,15 +4018,15 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_sendButton_2 {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_sendButton_2:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}</string>
+QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}</string>
        </property>
        <property name="text">
         <string>SEND</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_clearAllButton">
+      <widget class="QPushButton" name="m_cancelButton">
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -4054,9 +4054,9 @@ QPushButton#m_sendButton_2:hover {color:#FFD700; ; border: 1px solid orange; fon
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
 
-QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
        </property>
        <property name="text">
         <string>CANCEL</string>
@@ -4109,8 +4109,50 @@ border: none;</string>
          <height>17</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_clearAllButton">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>500</y>
+         <width>180</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Raleway</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+
+QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+       </property>
+       <property name="text">
+        <string>CLEAR</string>
        </property>
       </widget>
       <zorder>textBrowser_3</zorder>
@@ -4125,11 +4167,12 @@ border: none;</string>
       <zorder>adressLabel</zorder>
       <zorder>m_paymentIdEdit</zorder>
       <zorder>m_addressEdit</zorder>
-      <zorder>m_sendButton_2</zorder>
-      <zorder>m_clearAllButton</zorder>
+      <zorder>m_sendFundsButton</zorder>
+      <zorder>m_cancelButton</zorder>
       <zorder>m_nodeFee</zorder>
       <zorder>m_addressBookButton</zorder>
       <zorder>checkBox</zorder>
+      <zorder>m_clearAllButton</zorder>
      </widget>
      <widget class="QGroupBox" name="newMessageBox">
       <property name="geometry">
@@ -4851,7 +4894,6 @@ p, li { white-space: pre-wrap; }
      <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>walletBox</zorder>
-     <zorder>sendBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
@@ -4859,6 +4901,7 @@ p, li { white-space: pre-wrap; }
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>transactionsBox</zorder>
+     <zorder>sendBox</zorder>
     </widget>
    </item>
   </layout>
@@ -5123,9 +5166,74 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_sendFundsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>sendFundsClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>dashboardClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>509</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_clearAllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>clearAllClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>709</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_addressBookButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>addressBookClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>946</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
+  <slot>sendFundsClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>depositClicked()</slot>
   <slot>dashboardClicked()</slot>
@@ -5143,6 +5251,7 @@ p, li { white-space: pre-wrap; }
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
+  <slot>clearAllClicked()</slot>
   <slot>addressBookClicked()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
  </slots>
