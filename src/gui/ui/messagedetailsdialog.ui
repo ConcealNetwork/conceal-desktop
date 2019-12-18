@@ -146,28 +146,6 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="m_replyButton">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Reply</string>
-       </property>
-       <property name="autoDefault">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="m_saveButton">
        <property name="minimumSize">
         <size>
@@ -256,22 +234,6 @@
    <hints>
     <hint type="sourcelabel">
      <x>662</x>
-     <y>464</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>352</x>
-     <y>246</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_replyButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MessageDetailsDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>592</x>
      <y>464</y>
     </hint>
     <hint type="destinationlabel">
