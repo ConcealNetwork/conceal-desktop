@@ -8,7 +8,7 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-
+#include <IWalletLegacy.h>
 
 namespace Ui {
   class OverviewFrame;
@@ -21,6 +21,7 @@ class RecentTransactionsModel;
 class TransactionsListModel;
 class DepositListModel;
 class VisibleMessagesModel;
+class AddressProvider;
 
 class OverviewFrame : public QFrame {
   Q_OBJECT
@@ -30,6 +31,8 @@ public:
   explicit OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
   void scrollToTransaction(const QModelIndex& _index);
+  void setAddress(const QString& _address);
+  void setPaymentId(const QString& _paymendId);  
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -38,7 +41,11 @@ private:
   QScopedArrayPointer<DepositListModel> m_depositModel;  
   QScopedPointer<VisibleMessagesModel> m_visibleMessagesModel;
   QScopedPointer<TransactionsListModel> m_transactionsModel;
-  PriceProvider* m_priceProvider;  
+  PriceProvider* m_priceProvider; 
+  AddressProvider* m_addressProvider;   
+  QString remote_node_fee_address;
+  quint64 remote_node_fee;  
+  quint64 m_actualBalance = 0;  
   int subMenu = 0;
   int currentChart = 1;
   bool walletSynced = false;
@@ -60,15 +67,18 @@ private:
   void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void syncMessage();
+  void walletActualBalanceUpdated(quint64 _balance);  
+  static bool isValidPaymentId(const QByteArray& _paymentIdString);  
   void reset();
-  
+  void onAddressFound(const QString& _address);
+  void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString& _errorText);
+
   Q_SLOT void sendClicked();  
   Q_SLOT void copyClicked();
   Q_SLOT void depositClicked();    
   Q_SLOT void transactionClicked();      
   Q_SLOT void dashboardClicked();
   Q_SLOT void messageClicked();      
-  Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
   Q_SLOT void newTransferClicked();
@@ -79,6 +89,9 @@ private:
   Q_SLOT void walletClicked();    
   Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
+  Q_SLOT void addressBookClicked();    
+  Q_SLOT void sendFundsClicked();
+  Q_SLOT void clearAllClicked();  
 
 Q_SIGNALS:
   void sendSignal();
@@ -96,7 +109,6 @@ Q_SIGNALS:
   void optimizeSignal();
   void resetWalletSignal();
   void importSignal();
-  void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
   void disclaimerSignal();
@@ -108,5 +120,8 @@ Q_SIGNALS:
   void encryptWalletSignal();
   void connectionSettingsSignal();
   void languageSettingsSignal();  
+  void addressBookSignal();  
+
+
 };
 }

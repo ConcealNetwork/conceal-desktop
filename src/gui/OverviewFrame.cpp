@@ -18,6 +18,33 @@
 #include "MessagesModel.h"
 #include "SortedMessagesModel.h"
 #include "VisibleMessagesModel.h"
+#include "AddressBookModel.h"
+#include "AddressProvider.h"
+#include "CurrencyAdapter.h"
+#include "MainWindow.h"
+#include "Settings.h"
+#include "NodeAdapter.h"
+#include "transactionconfirmation.h"
+#include "WalletAdapter.h"
+#include "WalletEvents.h"
+#include <Common/Base58.h>
+#include <CryptoNoteCore/CryptoNoteTools.h>
+#include <Common/Util.h>
+#include <Common/Base58.h>
+#include "Common/StringTools.h"
+#include "Common/CommandLine.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteCore/Account.h"
+#include "crypto/hash.h"
+#include "CryptoNoteCore/CryptoNoteBasic.h"
+#include "CryptoNoteCore/CryptoNoteBasicImpl.h"
+#include "WalletLegacy/WalletHelper.h"
+#include "Common/SignalHandler.h"
+#include "Common/PathTools.h"
+#include "Common/Util.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include "Common/DnsTools.h"
 #include "DepositModel.h"
 #include "PriceProvider.h"
 #include "NodeAdapter.h"
@@ -38,6 +65,7 @@
 #include <QNetworkReply>
 #include <QStringList>
 #include <QUrl>
+
 
 #include "ui_overviewframe.h"
 
@@ -102,6 +130,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_transactionsView->setFont(font);
 
   /* Connect signals */
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);  
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingBalanceUpdatedSignal, this, &OverviewFrame::pendingBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualDepositBalanceUpdatedSignal, this, &OverviewFrame::actualDepositBalanceUpdated, Qt::QueuedConnection);
@@ -147,6 +176,16 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=511&height=191");
   QNetworkRequest request2(url2);
   nam2->get(request2);
+
+  QString connection = Settings::instance().getConnection();
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
+  {
+    QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
+    m_addressProvider->getAddress(remoteNodeUrl);
+    connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
+  }
+
+
 
   dashboardClicked();
 
@@ -226,6 +265,7 @@ void OverviewFrame::layoutChanged()
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  m_actualBalance = _balance;
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -368,11 +408,6 @@ void OverviewFrame::dashboardClicked()
   m_ui->m_newMessageButton->show();
 }
 
-void OverviewFrame::addressBookClicked()
-{
-  Q_EMIT addressBookSignal();
-}
-
 void OverviewFrame::aboutClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("ABOUT");
@@ -495,6 +530,8 @@ void OverviewFrame::chartButtonClicked()
   }
 }
 
+// Transaction History
+
 void OverviewFrame::showTransactionDetails(const QModelIndex& _index) {
   if (!_index.isValid()) {
     return;
@@ -504,6 +541,223 @@ void OverviewFrame::showTransactionDetails(const QModelIndex& _index) {
   dlg.exec();
 }
 
+// Send Funds
+
+/* incoming data from address book frame */
+void OverviewFrame::setAddress(const QString& _address) 
+{
+  m_ui->m_addressEdit->setText(_address);
+  m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+  m_ui->sendBox->raise();
+  m_ui->m_newTransferButton->hide();
+  m_ui->m_newMessageButton->hide();  
+}
+
+/* incoming data from address book frame */
+void OverviewFrame::setPaymentId(const QString& _paymentId) 
+{
+  m_ui->m_paymentIdEdit->setText(_paymentId);
+}
+
+/* Set the variable to the fee address, save the address in settings so
+   other functions can use, and show the fee if a fee address is found */
+void OverviewFrame::onAddressFound(const QString& _address) 
+{
+  OverviewFrame::remote_node_fee_address = _address;
+  Settings::instance().setCurrentFeeAddress(_address);
+  m_ui->m_addressEdit->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
+}
+
+/* clear all fields */
+void OverviewFrame::clearAllClicked() 
+{  
+  m_ui->m_paymentIdEdit->clear();
+  m_ui->m_addressEdit->clear();
+  m_ui->m_labelEdit->clear();  
+  m_ui->m_messageEdit->clear();  
+  m_ui->m_amountEdit->setText("0.000000");
+}
+
+void OverviewFrame::sendFundsClicked() 
+{
+  /* Get the most up-to-date fee based on characters in the message */
+  QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
+  CryptoNote::WalletLegacyTransfer walletTransfer;
+  QVector<CryptoNote::TransactionMessage> walletMessages;
+  bool isIntegrated = false;
+  std::string paymentID;
+  std::string spendPublicKey;
+  std::string viewPublicKey;
+  QByteArray paymentIdString;
+
+  QString address = m_ui->m_addressEdit->text().toUtf8();
+  QString int_address = m_ui->m_addressEdit->text().toUtf8();
+
+  /* Integrated address check */
+  if (address.toStdString().length() == 186) 
+  {
+    isIntegrated = true;
+    const uint64_t paymentIDLen = 64;
+
+    /* Extract and commit the payment id to extra */
+    std::string decoded;
+    uint64_t prefix;
+    if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded)) 
+    {      
+      paymentID = decoded.substr(0, paymentIDLen);
+    }
+
+    /* Create the address from the public keys */
+    std::string keys = decoded.substr(paymentIDLen, std::string::npos);
+    CryptoNote::AccountPublicAddress addr;
+    CryptoNote::BinaryArray ba = Common::asBinaryArray(keys);
+
+    CryptoNote::fromBinaryArray(addr, ba);
+
+    std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, addr);   
+    address = QString::fromStdString(address_string);
+  }
+
+  if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
+  {
+	  /*Parse the record and set address to the actual CCX address*/
+	  std::vector<std::string>records;
+	  if (!Common::fetch_dns_txt(address.toStdString(), records))
+	  {
+		  QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+	  }
+	  std::string realAddress;
+	  for (const auto& record : records) {
+		  if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress)) {
+			  address = QString::fromStdString(realAddress);
+			  m_ui->m_addressEdit->setText(address);
+		  }
+	  }
+	  
+  }
+  if (!CurrencyAdapter::instance().validateAddress(address)) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
+    return;
+  }
+
+  /* Start building the transaction */
+  walletTransfer.address = address.toStdString();
+  uint64_t amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountEdit->text());
+  walletTransfer.amount = amount;
+  walletTransfers.push_back(walletTransfer);
+  QString label = m_ui->m_labelEdit->text();
+
+  /* Payment id */
+  if (isIntegrated == true) 
+  {
+      m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
+  }
+
+  paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
+
+  /* Check payment id validity, or about */
+  if (!isValidPaymentId(paymentIdString)) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
+    return;
+  }
+
+  /* Warn the user if there is no payment id */
+  if (paymentIdString.toStdString().length() < 64) 
+  {
+    if (QMessageBox::warning(&MainWindow::instance(), tr("Transaction Confirmation"),
+      tr("Please note that there is no payment ID, are you sure you want to proceed?"), 
+      QMessageBox::Cancel, 
+      QMessageBox::Ok) != QMessageBox::Ok) 
+    {
+      return;
+    }
+  }
+
+  /* Add the comment to the transaction */
+  QString comment = m_ui->m_messageEdit->text();
+  if (!comment.isEmpty()) 
+  {
+    walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
+  }  
+
+  quint64 actualFee = 1000;
+  quint64 totalFee = 1000;  
+
+
+  /* Remote node fee */
+  QString connection = Settings::instance().getConnection();
+  if((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0)) 
+  {
+      if (!OverviewFrame::remote_node_fee_address.isEmpty()) 
+      {
+        CryptoNote::WalletLegacyTransfer walletTransfer;
+        walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
+        walletTransfer.amount = 10000;
+        walletTransfers.push_back(walletTransfer);
+        totalFee = totalFee + 11000;
+      }
+  }
+
+  /* Check if there are enough funds for the amount plus total fees */
+  if (m_actualBalance < (amount + totalFee)) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
+    return;
+  }
+
+  /* If the wallet is open we proceed */
+  if (WalletAdapter::instance().isOpen()) 
+  {    
+    /* Send the transaction */
+    WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
+    /* Add to the address book if a label is given */
+    if (!label.isEmpty()) 
+    {
+      if (isIntegrated == true) 
+      {
+        AddressBookModel::instance().addAddress(label, int_address, "");
+      } 
+      else 
+      {
+        AddressBookModel::instance().addAddress(label, address, paymentIdString);
+      }
+    }
+  }
+}
+
+
+void OverviewFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _error, const QString& _errorText) 
+{
+  Q_UNUSED(_id);
+  if (_error) 
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(_errorText, QtCriticalMsg));
+  } 
+  else 
+  {
+    clearAllClicked();
+    dashboardClicked();
+  }
+}
+
+/* Check if the entered payment ID is valid */
+bool OverviewFrame::isValidPaymentId(const QByteArray& _paymentIdString) 
+{
+  if (_paymentIdString.isEmpty()) 
+  {
+    return true;
+  }
+  QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
+  return (paymentId.size() == sizeof(Crypto::Hash)) && (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
+}
+
+/* Open address book */
+void OverviewFrame::addressBookClicked() 
+{ 
+  Q_EMIT addressBookSignal();
+}
 
 } // namespace WalletGui
 
