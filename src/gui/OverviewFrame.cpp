@@ -37,6 +37,7 @@
 #include <Common/Base58.h>
 #include "Common/StringTools.h"
 #include "Common/CommandLine.h"
+#include "AddressBookDialog.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/Account.h"
 #include "crypto/hash.h"
@@ -74,6 +75,16 @@
 
 namespace WalletGui
 {
+
+Q_DECL_CONSTEXPR quint64 MESSAGE_AMOUNT = 100;
+Q_DECL_CONSTEXPR quint64 MESSAGE_CHAR_PRICE = 10;
+Q_DECL_CONSTEXPR quint64 MINIMAL_MESSAGE_FEE = 10;
+Q_DECL_CONSTEXPR int DEFAULT_MESSAGE_MIXIN = 4;
+Q_DECL_CONSTEXPR quint32 MINUTE_SECONDS = 60;
+Q_DECL_CONSTEXPR quint32 HOUR_SECONDS = 60 * MINUTE_SECONDS;
+Q_DECL_CONSTEXPR int MIN_TTL = 5 * MINUTE_SECONDS;
+Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
+Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
 
 class RecentTransactionsDelegate : public QStyledItemDelegate
 {
@@ -115,6 +126,11 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
 
+  m_ui->m_ttlSlider->setVisible(false);
+  m_ui->m_ttlLabel->setVisible(false);
+  m_ui->m_ttlSlider->setMinimum(1);
+  m_ui->m_ttlSlider->setMaximum(MAX_TTL / MIN_TTL);
+
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
   m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
   m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
@@ -134,6 +150,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 
   /* Connect signals */
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSendMessageCompletedSignal, this, &OverviewFrame::sendMessageCompleted, Qt::QueuedConnection);
+
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingBalanceUpdatedSignal, this, &OverviewFrame::pendingBalanceUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletActualDepositBalanceUpdatedSignal, this, &OverviewFrame::actualDepositBalanceUpdated, Qt::QueuedConnection);
@@ -266,7 +284,7 @@ void OverviewFrame::layoutChanged()
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
-  m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX");
   m_actualBalance = _balance;
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -581,7 +599,8 @@ void OverviewFrame::onAddressFound(const QString &_address)
 {
   OverviewFrame::remote_node_fee_address = _address;
   Settings::instance().setCurrentFeeAddress(_address);
-  m_ui->m_addressEdit->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
+  m_ui->m_sendFee->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
+  m_ui->m_messageFee->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
 }
 
 /* clear all fields */
@@ -773,6 +792,109 @@ bool OverviewFrame::isValidPaymentId(const QByteArray &_paymentIdString)
 void OverviewFrame::addressBookClicked()
 {
   Q_EMIT addressBookSignal();
+}
+
+// SEND MESSAGE
+
+void OverviewFrame::sendMessageCompleted(CryptoNote::TransactionId _id, bool _error, const QString &_errorText)
+{
+  Q_UNUSED(_id);
+  if (_error)
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(_errorText, QtCriticalMsg));
+  }
+  else
+  {
+    clearMessageClicked();
+    dashboardClicked();
+  }
+}
+
+/* clear all fields */
+void OverviewFrame::clearMessageClicked()
+{
+  m_ui->m_messageTextEdit->clear();
+  m_ui->m_addressMessageEdit->clear();
+}
+
+/* Generate the time display for the TTL change */
+void OverviewFrame::ttlValueChanged(int _ttlValue)
+{
+  quint32 value = _ttlValue * MIN_TTL;
+  quint32 hours = value / HOUR_SECONDS;
+  quint32 minutes = value % HOUR_SECONDS / MINUTE_SECONDS;
+  m_ui->m_ttlLabel->setText(QString("%1h %2m").arg(hours).arg(minutes));
+}
+
+void OverviewFrame::sendMessageClicked()
+{
+  /* Exit if the wallet is not open */
+  if (!WalletAdapter::instance().isOpen())
+  {
+    return;
+  }
+
+  QVector<CryptoNote::WalletLegacyTransfer> transfers;
+  QVector<CryptoNote::WalletLegacyTransfer> feeTransfer;
+  CryptoNote::WalletLegacyTransfer walletTransfer;
+  QVector<CryptoNote::TransactionMessage> messages;
+  QVector<CryptoNote::TransactionMessage> feeMessage;
+  QString address = m_ui->m_addressEdit->text().toUtf8();
+
+  QString messageString = m_ui->m_messageTextEdit->toPlainText();
+
+  /* Start building the transaction */
+  walletTransfer.address = address.toStdString();
+  uint64_t amount = MESSAGE_AMOUNT;
+  walletTransfer.amount = amount;
+  transfers.push_back(walletTransfer);
+  messages.append({messageString.toStdString(), address.toStdString()});
+
+  /* Calculate fees */
+  quint64 fee = 1000;
+
+  /* Check if this is a self destructive message */
+  bool selfDestructiveMessage = false;
+  quint64 ttl = 0;
+  if (m_ui->m_ttlCheck->checkState() == Qt::Checked)
+  {
+    ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
+    fee = 0;
+    selfDestructiveMessage = true;
+  }
+
+  /* Add the remote node fee transfer to the transaction if the connection
+     is a remote node with an address and this is not a self-destructive message */
+  QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
+  if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage == false))
+  {
+    QString connection = Settings::instance().getConnection();
+    if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
+    {
+      CryptoNote::WalletLegacyTransfer walletTransfer;
+      walletTransfer.address = remote_node_fee_address.toStdString();
+      walletTransfer.amount = 10000;
+      transfers.push_back(walletTransfer);
+    }
+  }
+
+  /* Send the message. If it is a self-destructive message, send the fee transaction */
+  if (WalletAdapter::instance().isOpen())
+  {
+    WalletAdapter::instance().sendMessage(transfers, fee, 4, messages, ttl);
+    if (selfDestructiveMessage = true)
+    {
+      WalletAdapter::instance().sendMessage(feeTransfer, 100, 4, feeMessage, 0);
+    }
+  }
+}
+
+void OverviewFrame::addressBookMessageClicked() 
+{
+  AddressBookDialog dlg(this);
+  if(dlg.exec() == QDialog::Accepted) {
+    m_ui->m_addressMessageEdit->setText(dlg.getAddress());
+  }
 }
 
 } // namespace WalletGui
