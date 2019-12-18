@@ -265,6 +265,7 @@ void OverviewFrame::layoutChanged()
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  m_ui->m_balanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   m_actualBalance = _balance;
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
