@@ -5230,6 +5230,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_messagesView</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>showMessageDetails(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>720</x>
+     <y>435</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -5254,5 +5270,6 @@ p, li { white-space: pre-wrap; }
   <slot>clearAllClicked()</slot>
   <slot>addressBookClicked()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
+  <slot>showMessageDetails(QModelIndex)</slot>
  </slots>
 </ui>
