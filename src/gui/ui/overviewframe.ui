@@ -4464,7 +4464,7 @@ border: none;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border:none;</string>
+        <string notr="true">border:none; color: #777;</string>
        </property>
        <property name="singleStep">
         <number>300</number>
@@ -5593,10 +5593,75 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_sendMessageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>sendMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>309</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_clearMessageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>clearMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>709</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_cancelMessageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>dashboardClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>509</x>
+     <y>617</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_addressBookMessageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>addressBookMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>946</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
   <slot>sendFundsClicked()</slot>
+  <slot>sendMessageClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>depositClicked()</slot>
   <slot>dashboardClicked()</slot>
@@ -5615,8 +5680,10 @@ p, li { white-space: pre-wrap; }
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
   <slot>clearAllClicked()</slot>
+  <slot>clearMessageClicked()</slot>
   <slot>addressBookClicked()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
   <slot>showMessageDetails(QModelIndex)</slot>
+  <slot>addressBookMessageClicked()</slot>
  </slots>
 </ui>
