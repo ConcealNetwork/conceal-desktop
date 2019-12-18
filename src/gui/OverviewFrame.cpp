@@ -574,7 +574,7 @@ void OverviewFrame::clearAllClicked()
 {  
   m_ui->m_paymentIdEdit->clear();
   m_ui->m_addressEdit->clear();
-  m_ui->m_labelEdit->clear();  
+  m_ui->m_addressLabel->clear();  
   m_ui->m_messageEdit->clear();  
   m_ui->m_amountEdit->setText("0.000000");
 }
@@ -619,6 +619,7 @@ void OverviewFrame::sendFundsClicked()
     address = QString::fromStdString(address_string);
   }
 
+  /* Conceal ID check */
   if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
   {
 	  /*Parse the record and set address to the actual CCX address*/
@@ -647,7 +648,7 @@ void OverviewFrame::sendFundsClicked()
   uint64_t amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountEdit->text());
   walletTransfer.amount = amount;
   walletTransfers.push_back(walletTransfer);
-  QString label = m_ui->m_labelEdit->text();
+  QString label = m_ui->m_addressLabel->text();
 
   /* Payment id */
   if (isIntegrated == true) 
@@ -714,7 +715,7 @@ void OverviewFrame::sendFundsClicked()
     /* Send the transaction */
     WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
     /* Add to the address book if a label is given */
-    if (!label.isEmpty()) 
+    if ((!label.isEmpty()) && (m_ui->m_saveAddress->isChecked())) 
     {
       if (isIntegrated == true) 
       {
