@@ -2864,7 +2864,7 @@ font-size: 13px;
 
 QWidget:item:selected {
 	font-family: 'Raleway';
-background-color: #282d31;
+background-color: #555555;
 font-size: 13px;
   color: #ccc;
 }
@@ -4890,7 +4890,6 @@ p, li { white-space: pre-wrap; }
      <zorder>m_newMessageButton</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>walletBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>settingsBox</zorder>
@@ -4902,6 +4901,7 @@ p, li { white-space: pre-wrap; }
      <zorder>leftMenu</zorder>
      <zorder>sendBox</zorder>
      <zorder>aboutBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>
