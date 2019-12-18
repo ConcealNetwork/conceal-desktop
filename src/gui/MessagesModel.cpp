@@ -172,8 +172,13 @@ QVariant MessagesModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_MESSAGE: {
-    QString messageString = _index.data(ROLE_MESSAGE).toString();
-    QTextStream messageStream(&messageString);
+    QString str = _index.data(ROLE_MESSAGE).toString();
+    int idx = -1;
+    while ( ( idx = str.indexOf("\\u") ) != -1 ) {
+      int uc = str.mid(idx+2, 4).toInt(0,16);
+      str.replace(idx, 6, QChar(uc));
+    }
+    QTextStream messageStream(&str);
     return messageStream.readLine();
   }
 
