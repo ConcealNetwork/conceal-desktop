@@ -149,12 +149,10 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::languageSettingsSignal, this, &MainWindow::languageSettings);
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);
+
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::settingsSignal, this, &MainWindow::settingsTo);
-  connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_sendFrame, &SendFrame::addressFoundSignal, this, &MainWindow::setRemoteWindowTitle);
-  connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);
   connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);
   connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
@@ -179,7 +177,6 @@ void MainWindow::initUi()
   m_ui->m_aboutCryptonoteAction->setText(QString(tr("About %1 Wallet")).arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
 
   m_ui->m_overviewFrame->hide();
-  m_ui->m_sendFrame->hide();
   m_ui->m_receiveFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
@@ -771,7 +768,6 @@ void MainWindow::walletClosed()
 
   /* frames */
   m_ui->m_overviewFrame->hide();
-  m_ui->m_sendFrame->hide();
   m_ui->m_addressBookFrame->hide();
   m_ui->m_messagesFrame->hide();
   m_ui->m_sendMessageFrame->hide();
@@ -802,8 +798,6 @@ void MainWindow::checkTrackingMode()
   }
 }
 
-/* ------------------------------------------------------------------------------------- */
-
 void MainWindow::replyTo(const QModelIndex &_index)
 {
   m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
@@ -812,13 +806,18 @@ void MainWindow::replyTo(const QModelIndex &_index)
 
 void MainWindow::payTo(const QModelIndex &_index)
 {
-  m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "")
   {
-    m_ui->m_sendFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
+    m_ui->m_overviewFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
   }
-
-  m_ui->m_sendAction->trigger();
+  else
+  {
+    m_ui->m_overviewFrame->setPaymentId("");
+  }
+  m_ui->m_overviewFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
+  m_ui->m_overviewFrame->show();
+  m_ui->m_overviewAction->trigger();
+  m_ui->m_overviewFrame->raise();    
 }
 
 void MainWindow::sendTo()
