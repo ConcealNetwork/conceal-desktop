@@ -4464,7 +4464,7 @@ border: none;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">color: white;</string>
        </property>
        <property name="singleStep">
         <number>300</number>
@@ -4533,7 +4533,10 @@ border: none;</string>
 border: none;</string>
        </property>
        <property name="text">
-        <string>ttl</string>
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </widget>
@@ -5261,9 +5264,9 @@ p, li { white-space: pre-wrap; }
      <zorder>leftMenu</zorder>
      <zorder>aboutBox</zorder>
      <zorder>messageBox</zorder>
-     <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>newMessageBox</zorder>
     </widget>
    </item>
   </layout>
