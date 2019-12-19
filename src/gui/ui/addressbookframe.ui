@@ -80,7 +80,7 @@ background-color: #212529;</string>
        <property name="styleSheet">
         <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
        </property>
        <property name="text">
         <string>ADDRESS BOOK</string>
@@ -229,7 +229,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 
       <string notr="true">QHeaderView::section {
 background-color: #212529; 
    color: #ddd;
-font-family: Lato;
+font-family: Raleway;
     font-size: 12px;
     border: 0px solid white;
 border-bottom: 1px solid orange;

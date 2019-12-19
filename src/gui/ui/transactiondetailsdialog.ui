@@ -72,7 +72,7 @@ font-family: 'Raleway';</string>
       <string notr="true">color: #ddd;
 border-right: 0px;
 font-size: 14px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
      </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

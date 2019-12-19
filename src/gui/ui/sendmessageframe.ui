@@ -259,7 +259,7 @@ p, li { white-space: pre-wrap; }
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
       </property>
       <property name="text">
        <string>SEND MESSAGE</string>

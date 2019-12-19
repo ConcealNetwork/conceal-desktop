@@ -102,7 +102,7 @@
 QHeaderView::section {
 background-color: #282d31; 
    color: #ddd;
-font-family: Lato;
+font-family: Raleway;
     font-size: 13px;
     border: 0px solid white;
 border-bottom: 1px solid orange;

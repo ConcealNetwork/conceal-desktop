@@ -141,7 +141,7 @@ color: #fff;</string>
    <item>
     <widget class="QTextEdit" name="m_messageTextEdit">
      <property name="styleSheet">
-      <string notr="true">background: #111;</string>
+      <string notr="true"/>
      </property>
      <property name="readOnly">
       <bool>true</bool>

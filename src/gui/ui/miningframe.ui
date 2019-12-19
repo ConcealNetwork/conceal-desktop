@@ -56,7 +56,7 @@ background:#111;</string>
       <property name="styleSheet">
        <string notr="true">color: #ddd; 
 font-size: 20px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
       </property>
       <property name="text">
        <string>MINING</string>
