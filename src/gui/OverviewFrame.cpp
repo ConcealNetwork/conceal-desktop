@@ -613,7 +613,6 @@ void OverviewFrame::onAddressFound(const QString &_address)
   m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
   m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
   m_ui->m_depositFeeLabel->setText("0.011000 CCX");
-  
 }
 
 /* clear all fields */
@@ -933,7 +932,7 @@ void OverviewFrame::newDepositClicked()
   }
 
   /* Initiate the desposit */
-  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
+  WalletAdapter::instance().deposit(term, amount, 1000, 4);
 
   /* Remote node fee */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
@@ -982,15 +981,17 @@ void OverviewFrame::timeChanged(int _value)
   m_ui->m_timeLabel->setText(monthsToBlocks(m_ui->m_timeSpin->value()));
 }
 
-void OverviewFrame::withdrawClicked() 
+void OverviewFrame::withdrawClicked()
 {
   QModelIndexList unlockedDepositIndexList = DepositModel::instance().match(DepositModel::instance().index(0, 0), DepositModel::ROLE_STATE, DepositModel::STATE_UNLOCKED, -1);
-  if (unlockedDepositIndexList.isEmpty()) {
+  if (unlockedDepositIndexList.isEmpty())
+  {
     return;
   }
 
   QVector<CryptoNote::DepositId> depositIds;
-  Q_FOREACH (const QModelIndex& index, unlockedDepositIndexList) {
+  Q_FOREACH (const QModelIndex &index, unlockedDepositIndexList)
+  {
     depositIds.append(index.row());
   }
 
