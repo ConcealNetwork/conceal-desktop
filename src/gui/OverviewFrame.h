@@ -76,7 +76,8 @@ private:
   void onAddressFound(const QString &_address);
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
-
+  void delay();
+  
   Q_SLOT void sendClicked();
   Q_SLOT void copyClicked();
   Q_SLOT void depositClicked();
@@ -103,15 +104,27 @@ private:
   Q_SLOT void addressBookMessageClicked();
   Q_SLOT void newDepositClicked();
   Q_SLOT void depositParamsChanged();
-  Q_SLOT void showDepositDetails(const QModelIndex& _index);
+  Q_SLOT void showDepositDetails(const QModelIndex &_index);
   Q_SLOT void timeChanged(int _value);
   Q_SLOT void withdrawClicked();
-
+  Q_SLOT void importSeedButtonClicked();
+  Q_SLOT void openWalletButtonClicked();
+  Q_SLOT void importTrackingButtonClicked();
+  Q_SLOT void importPrivateKeysButtonClicked();
+  Q_SLOT void createNewWalletButtonClicked();
+  Q_SLOT void backupClicked();
+  Q_SLOT void backupFileClicked();  
+  Q_SLOT void optimizeClicked();
+  Q_SLOT void autoOptimizeClicked(); 
+  Q_SLOT void saveLanguageCurrencyClicked();
+  Q_SLOT void saveConnectionClicked();
+  Q_SLOT void rescanClicked();
 
 Q_SIGNALS:
   void sendSignal();
   void depositSignal();
   void backupSignal();
+  void backupFileSignal();  
   void rescanSignal();
   void openWalletSignal();
   void newWalletSignal();
@@ -131,6 +144,7 @@ Q_SIGNALS:
   void linksSignal();
   void importSeedSignal();
   void importGUIKeySignal();
+  void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();

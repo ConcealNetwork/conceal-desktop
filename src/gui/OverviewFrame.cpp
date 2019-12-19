@@ -225,6 +225,67 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
     connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
   }
 
+  /* Get current language */
+  QString language = Settings::instance().getLanguage();
+  if (language.compare("tr") == 0)
+  {
+    m_ui->m_turkish->setChecked(true);
+  }
+  else if (language.compare("ru") == 0)
+  {
+    m_ui->m_russian->setChecked(true);
+  }
+  else if (language.compare("cn") == 0)
+  {
+    m_ui->m_chinese->setChecked(true);
+  }
+  else
+  {
+    m_ui->m_english->setChecked(true);
+  }
+
+
+  /* Get current currency */
+  QString currency = Settings::instance().getCurrentCurrency();
+  if (currency.compare("EUR") == 0)
+  {
+    m_ui->m_eur->setChecked(true);
+  }
+  else
+  {
+    m_ui->m_usd->setChecked(true);
+  }
+
+  /* Set current connection options */
+  QString remoteHost = Settings::instance().getCurrentRemoteNode();
+  m_ui->m_hostEdit->setText(remoteHost);
+
+  /* If the connection is a remote node, then load the current (or default)
+      remote node into the text field. */
+  if (connection.compare("remote") == 0)
+  {
+    m_ui->radioButton->setChecked(true);
+  }
+
+  if (connection.compare("autoremote") == 0)
+  {
+    m_ui->radioButton_3->setChecked(true);
+  }
+  /* It is an embedded node, so let only check that */
+  else if (connection.compare("embedded") == 0)
+  {
+    m_ui->radioButton_2->setChecked(true);
+  }
+
+  if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+  }
+  else
+  {
+    m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+  }
+
   dashboardClicked();
   depositParamsChanged();
   reset();
@@ -260,7 +321,7 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("Text-align:left");
+  m_ui->m_copyAddressButton->setStyleSheet("Text-align:left; color: orange;");
 }
 
 void OverviewFrame::showCurrentWallet()
@@ -996,6 +1057,184 @@ void OverviewFrame::withdrawClicked()
   }
 
   WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
+}
+
+void OverviewFrame::importSeedButtonClicked()
+{
+  Q_EMIT importSeedSignal();
+  dashboardClicked();
+}
+
+void OverviewFrame::openWalletButtonClicked()
+{
+  Q_EMIT openWalletSignal();
+  dashboardClicked();
+}
+
+void OverviewFrame::importTrackingButtonClicked()
+{
+  Q_EMIT importTrackingKeySignal();
+  dashboardClicked();
+}
+
+void OverviewFrame::importPrivateKeysButtonClicked()
+{
+  Q_EMIT importSecretKeysSignal();
+  dashboardClicked();
+}
+
+void OverviewFrame::createNewWalletButtonClicked()
+{
+  Q_EMIT newWalletSignal();
+  dashboardClicked();
+}
+
+void OverviewFrame::backupClicked()
+{
+  Q_EMIT backupSignal();
+}
+
+void OverviewFrame::backupFileClicked()
+{
+  Q_EMIT backupFileSignal();
+}
+
+void OverviewFrame::optimizeClicked()
+{
+  if (Settings::instance().isTrackingMode())
+  {
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+  }
+  else
+  {
+    quint64 numUnlockedOutputs;
+    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+    WalletAdapter::instance().optimizeWallet();
+    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    {
+      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+      if (numUnlockedOutputs == 0)
+        break;
+      WalletAdapter::instance().optimizeWallet();
+      delay();
+    }
+    dashboardClicked();
+  }
+}
+
+void OverviewFrame::autoOptimizeClicked()
+{
+  if (Settings::instance().isTrackingMode())
+  {
+    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+  }
+  else
+  {
+    if (Settings::instance().getAutoOptimizationStatus() == "enabled")
+    {
+      Settings::instance().setAutoOptimizationStatus("disabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Disabled."),
+                               QMessageBox::Ok);
+    }
+    else
+    {
+      Settings::instance().setAutoOptimizationStatus("enabled");
+      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+      QMessageBox::information(this,
+                               tr("Auto Optimization"),
+                               tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
+                               QMessageBox::Ok);
+    }
+  }
+}
+
+void OverviewFrame::saveLanguageCurrencyClicked()
+{
+  QString language;
+  if (m_ui->m_russian->isChecked())
+  {
+    language = "ru";
+  }
+  else if (m_ui->m_turkish->isChecked())
+  {
+    language = "tr";
+  }
+  else if (m_ui->m_chinese->isChecked())
+  {
+    language = "cn";
+  }
+  else
+  {
+    language = "en";
+  }
+  Settings::instance().setLanguage(language);
+
+  QString currency;
+  if (m_ui->m_eur->isChecked())
+  {
+    currency = "EUR";
+  }
+  else
+  {
+    currency = "USD";
+  }
+  Settings::instance().setCurrentCurrency(currency);
+
+  QMessageBox::information(this,
+                           tr("Language and Currency settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
+}
+
+void OverviewFrame::saveConnectionClicked()
+{
+  QString connectionMode;
+  if (m_ui->radioButton->isChecked())
+  {
+    connectionMode = "remote";
+  }
+  else if (m_ui->radioButton_2->isChecked())
+  {
+    connectionMode = "embedded";
+  }
+  else if (m_ui->radioButton_3->isChecked())
+  {
+    connectionMode = "autoremote";
+  }
+  Settings::instance().setConnection(connectionMode);
+
+  QString remoteHost;
+  /* If it is a remote connection, commit the entered remote node. There is no validation of the 
+     remote node. If the connection is embedded then take no action */
+  if (m_ui->radioButton->isChecked())
+  {
+    remoteHost = m_ui->m_hostEdit->text();
+  }
+  if (m_ui->radioButton_3->isChecked())
+  {
+    remoteHost = m_ui->m_hostEdit->text();
+  }
+  Settings::instance().setCurrentRemoteNode(remoteHost);
+
+  QMessageBox::information(this,
+                           tr("Connection settings saved"),
+                           tr("Please restart the wallet for the new settings to take effect."),
+                           QMessageBox::Ok);
+}
+
+void OverviewFrame::rescanClicked()
+{
+  Q_EMIT rescanSignal();
+}
+
+void OverviewFrame::delay()
+{
+  QTime dieTime = QTime::currentTime().addSecs(2);
+  while (QTime::currentTime() < dieTime)
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
 } // namespace WalletGui
