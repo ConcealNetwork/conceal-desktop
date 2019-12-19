@@ -14,9 +14,10 @@
    <string>Transaction details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529;
+   <string notr="true">background-color: #444;
 border: 0px;
-color: #ddd;</string>
+color: #ddd;
+font-family: 'Raleway';</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -41,16 +42,18 @@ color: #ddd;</string>
      </property>
      <property name="font">
       <font>
+       <family>Raleway</family>
        <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: #ddd;
 border-right: 0px;
-font-size: 20px;</string>
+font-size: 20px;
+font-family: 'Raleway';</string>
      </property>
      <property name="text">
-      <string>Transaction Details</string>
+      <string>TRANSACTION DETAILS</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -104,12 +107,15 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="font">
-        <font/>
+        <font>
+         <family>Raleway</family>
+         <pointsize>-1</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#m_okButton {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;}
 
-QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_okButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
