@@ -35,7 +35,8 @@
         <file>icons/icon-sendmsg.png</file>
         <file>images/cryptonote2.png</file>
         <file>icons/tx_investment.png</file>
-        <file>fonts/Lato-Regular.ttf</file>
+        <file>fonts/Raleway-Regular.ttf</file>
+        <file>fonts/Roboto-Regular.ttf</file>
         <file>icons/editcopy-old.png</file>
         <file>icons/qrcode-scan.png</file>
         <file>icons/close.png</file>
@@ -44,9 +45,11 @@
         <file>images/conceal-small.png</file>
         <file>images/lock.png</file>
         <file>images/qr.png</file>
-        <file>images/en.png</file>        
-        <file>images/cn.png</file>        
-        <file>images/tr.png</file>        
-        <file>images/ru.png</file>        
+        <file>icons/discord.png</file>
+        <file>icons/telegram.png</file>
+        <file>icons/medium.png</file>
+        <file>icons/twitter.png</file>
+        <file>icons/github.png</file>
+        <file>icons/bitcoin.png</file>
     </qresource>
 </RCC>
