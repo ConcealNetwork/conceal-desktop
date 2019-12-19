@@ -2943,7 +2943,7 @@ color: #ccc;
        <widget class="QLabel" name="label_22">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>20</x>
           <y>10</y>
           <width>311</width>
           <height>31</height>
@@ -2961,7 +2961,7 @@ font-size: 18px;
 font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="text">
-         <string>Set Connection</string>
+         <string>Connection</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2991,6 +2991,9 @@ font-family: 'Raleway'; border: 0px;</string>
         <property name="checked">
          <bool>false</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_2">
         <property name="geometry">
@@ -3016,6 +3019,9 @@ font-family: 'Raleway'; border: 0px;</string>
         <property name="checked">
          <bool>false</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
        </widget>
        <widget class="QRadioButton" name="radioButton_3">
         <property name="geometry">
@@ -3041,6 +3047,9 @@ font-family: 'Raleway'; border: 0px;</string>
         <property name="checked">
          <bool>false</bool>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_3</string>
+        </attribute>
        </widget>
        <widget class="QLineEdit" name="m_hostEdit">
         <property name="geometry">
@@ -3088,16 +3097,16 @@ font-family: 'Raleway'; border: 0px;</string>
        <widget class="QPushButton" name="m_saveConnectionButton">
         <property name="geometry">
          <rect>
-          <x>820</x>
+          <x>850</x>
           <y>20</y>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="minimumSize">
          <size>
-          <width>180</width>
-          <height>35</height>
+          <width>150</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -3113,51 +3122,7 @@ font-family: 'Raleway'; border: 0px;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_saveConnectionButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
-
-QPushButton#m_saveConnectionButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;ui version=&quot;4.0&quot;&gt;
- &lt;widget name=&quot;__qt_fake_top_level&quot;&gt;
-  &lt;widget class=&quot;QPushButton&quot; name=&quot;m_saveButton&quot;&gt;
-   &lt;property name=&quot;geometry&quot;&gt;
-    &lt;rect&gt;
-     &lt;x&gt;840&lt;/x&gt;
-     &lt;y&gt;300&lt;/y&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/rect&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;minimumSize&quot;&gt;
-    &lt;size&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/size&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;maximumSize&quot;&gt;
-    &lt;size&gt;
-     &lt;width&gt;180&lt;/width&gt;
-     &lt;height&gt;35&lt;/height&gt;
-    &lt;/size&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;font&quot;&gt;
-    &lt;font&gt;
-     &lt;family&gt;Raleway&lt;/family&gt;
-     &lt;pointsize&gt;-1&lt;/pointsize&gt;
-    &lt;/font&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;styleSheet&quot;&gt;
-    &lt;string notr=&quot;true&quot;&gt;QPushButton#m_saveButton {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }
-
-QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway'; }&lt;/string&gt;
-   &lt;/property&gt;
-   &lt;property name=&quot;text&quot;&gt;
-    &lt;string&gt;SAVE&lt;/string&gt;
-   &lt;/property&gt;
-  &lt;/widget&gt;
- &lt;/widget&gt;
- &lt;resources/&gt;
-&lt;/ui&gt;
-</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>SAVE</string>
@@ -3182,7 +3147,7 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
        <widget class="QLabel" name="label_26">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>20</x>
           <y>10</y>
           <width>311</width>
           <height>31</height>
@@ -3326,7 +3291,7 @@ QPushButton#m_autoOptimizeButton:hover {color: orange; border: 1px solid orange;
         <property name="geometry">
          <rect>
           <x>190</x>
-          <y>110</y>
+          <y>80</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -3361,7 +3326,7 @@ QPushButton#m_optimizeButton:hover {color: orange; border: 1px solid orange; fon
         <property name="geometry">
          <rect>
           <x>190</x>
-          <y>80</y>
+          <y>110</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -3411,7 +3376,7 @@ QPushButton#m_rescanButton:hover {color: orange; border: 1px solid orange; font-
        <widget class="QLabel" name="label_30">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>20</x>
           <y>10</y>
           <width>311</width>
           <height>31</height>
@@ -3433,6 +3398,272 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>151</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Language</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_35">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>151</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Currency</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="m_usd">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>80</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>US Dollar ($)</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_eur">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>80</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Euro (€)</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup_2</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_chinese">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>50</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Chinese</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/cn.png</normaloff>:/images/cn.png</iconset>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_english">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>50</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>English</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/en.png</normaloff>:/images/en.png</iconset>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_russian">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>50</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Russian</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/ru.png</normaloff>:/images/ru.png</iconset>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+       <widget class="QRadioButton" name="m_turkish">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>50</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Turkish</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/tr.png</normaloff>:/images/tr.png</iconset>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+       <widget class="QPushButton" name="m_saveLanguageButton">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>20</y>
+          <width>150</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>31</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        </property>
+        <property name="text">
+         <string>SAVE</string>
         </property>
        </widget>
       </widget>
@@ -3499,17 +3730,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>30</x>
           <y>160</y>
-          <width>250</width>
+          <width>210</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>IMPORT TRACKING WALLET</string>
@@ -3520,17 +3752,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>30</x>
           <y>60</y>
-          <width>250</width>
+          <width>210</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>IMPORT PRIVATE KEYS</string>
@@ -3541,17 +3774,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>30</x>
           <y>110</y>
-          <width>250</width>
+          <width>210</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>IMPORT SEED</string>
@@ -3605,17 +3839,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>30</x>
           <y>60</y>
-          <width>250</width>
+          <width>210</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>CREATE NEW WALLET</string>
@@ -3626,20 +3861,108 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>30</x>
           <y>110</y>
-          <width>250</width>
+          <width>210</width>
           <height>30</height>
          </rect>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
         </property>
         <property name="text">
          <string>OPEN EXISTING WALLET</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>450</y>
+         <width>1021</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 18px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Backup</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_backupKeysButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>60</y>
+          <width>210</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        </property>
+        <property name="text">
+         <string>BACKUP KEYS</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_backupKeysButton_2">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>60</y>
+          <width>210</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        </property>
+        <property name="text">
+         <string>BACKUP WALLET FILE</string>
         </property>
        </widget>
       </widget>
@@ -5456,8 +5779,8 @@ p, li { white-space: pre-wrap; }
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>walletBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -5962,6 +6285,198 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_createNewWalletButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>createNewWalletButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_openExistingWalletButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>openWalletButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>244</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_importSpendKeyButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>importPrivateKeysButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_importSeedButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>importSeedButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_importTrackingWalletButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>importTrackingButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>484</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_backupKeysButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>backupClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_backupKeysButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>backupFileClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_saveConnectionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>saveConnectionClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1134</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_saveLanguageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>saveLanguageCurrencyClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1134</x>
+     <y>505</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_autoOptimizeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>autoOptimizeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>350</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_rescanButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>rescanClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>380</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_optimizeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>optimizeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>380</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -5973,6 +6488,7 @@ p, li { white-space: pre-wrap; }
   <slot>dashboardClicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
+  <slot>backupFileClicked()</slot>
   <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
   <slot>newTransferClicked()</slot>
@@ -5995,5 +6511,19 @@ p, li { white-space: pre-wrap; }
   <slot>withdrawClicked()</slot>
   <slot>timeChanged(int)</slot>
   <slot>depositParamsChanged()</slot>
+  <slot>importSeedButtonClicked()</slot>
+  <slot>openWalletButtonClicked()</slot>
+  <slot>importTrackingButtonClicked()</slot>
+  <slot>importPrivateKeysButtonClicked()</slot>
+  <slot>createNewWalletButtonClicked()</slot>
+  <slot>optimizeClicked()</slot>
+  <slot>autoOptimizeClicked()</slot>
+  <slot>saveConnectionClicked()</slot>
+  <slot>saveLanguageCurrencyClicked()</slot>
  </slots>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+ </buttongroups>
 </ui>
