@@ -83,7 +83,7 @@ background-color: #282d31;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -165,7 +165,7 @@ border-bottom: 1px solid #444;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -269,7 +269,7 @@ QPushButton#m_optimizeButton:hover {color: #FFD700; border: 1px solid orange; fo
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -280,7 +280,7 @@ QPushButton#m_optimizeButton:hover {color: #FFD700; border: 1px solid orange; fo
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -322,7 +322,7 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -349,7 +349,7 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -427,7 +427,7 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -438,7 +438,7 @@ QPushButton#m_autoOptimizeButton:hover {color: #FFD700; border: 1px solid orange
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disabled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -469,7 +469,7 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -496,7 +496,7 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -507,7 +507,7 @@ font-family: 'Lato'; border: 0px;</string>
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -592,7 +592,7 @@ QPushButton#m_closeToTrayButton:hover {color: #FFD700; border: 1px solid orange;
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -619,7 +619,7 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -778,7 +778,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -789,7 +789,7 @@ QPushButton#m_minToTrayButton:hover {color: #FFD700; border: 1px solid orange; f
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
@@ -804,7 +804,7 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -930,7 +930,7 @@ font-size: 13px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -973,7 +973,7 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1012,7 +1012,7 @@ font-family: 'Lato'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1090,7 +1090,7 @@ QPushButton#m_saveButton:hover {color:orange; border: 1px solid orange; font-siz
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1114,7 +1114,7 @@ QPushButton#m_saveLanguageButton:hover {color:#FFD700; border: 1px solid orange;
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1219,7 +1219,7 @@ font-size: 13px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>

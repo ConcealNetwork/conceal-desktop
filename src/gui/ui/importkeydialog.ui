@@ -54,7 +54,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>15</pointsize>
        </font>
       </property>
@@ -106,7 +106,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -155,7 +155,7 @@ padding: 5px;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>9</pointsize>
        </font>
       </property>

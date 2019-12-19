@@ -48,7 +48,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Lato</family>
+      <family>Raleway</family>
       <pointsize>15</pointsize>
      </font>
     </property>
@@ -73,7 +73,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Lato</family>
+      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -159,7 +159,7 @@ QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 
     </property>
     <property name="font">
      <font>
-      <family>Lato</family>
+      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -187,7 +187,7 @@ font-family: 'Lato';</string>
     </property>
     <property name="font">
      <font>
-      <family>Lato</family>
+      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -215,7 +215,7 @@ font-family: 'Lato';</string>
     </property>
     <property name="font">
      <font>
-      <family>Lato</family>
+      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>

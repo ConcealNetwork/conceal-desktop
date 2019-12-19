@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
+    <family>Raleway</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -73,7 +73,7 @@ background-color: #212529;</string>
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -221,7 +221,7 @@ QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 
      </property>
      <property name="font">
       <font>
-       <family>Lato</family>
+       <family>Raleway</family>
        <pointsize>10</pointsize>
       </font>
      </property>
