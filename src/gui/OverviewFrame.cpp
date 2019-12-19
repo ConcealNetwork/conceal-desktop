@@ -86,6 +86,18 @@ Q_DECL_CONSTEXPR int MIN_TTL = 5 * MINUTE_SECONDS;
 Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
 Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
 
+/* Convert months to the number of blocks */
+QString monthsToBlocks(int _months)
+{
+  QString resTempate("%1 %2");
+  /* A maxmimum of 12 months */
+  if (_months < 13)
+  {
+    return resTempate.arg(_months * 21900).arg(QObject::tr("blocks"));
+  }
+  return QString();
+}
+
 class RecentTransactionsDelegate : public QStyledItemDelegate
 {
   Q_OBJECT
@@ -126,10 +138,17 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
 
+  /* New message box */
   m_ui->m_ttlSlider->setVisible(false);
   m_ui->m_ttlLabel->setVisible(false);
   m_ui->m_ttlSlider->setMinimum(1);
   m_ui->m_ttlSlider->setMaximum(MAX_TTL / MIN_TTL);
+
+  /* Deposit box */
+  m_ui->m_timeSpin->setMinimum(1);
+  m_ui->m_timeSpin->setMaximum(12);
+  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Months")));
+  m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
   m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
@@ -207,7 +226,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   }
 
   dashboardClicked();
-
+  depositParamsChanged();
   reset();
 }
 
@@ -599,8 +618,10 @@ void OverviewFrame::onAddressFound(const QString &_address)
 {
   OverviewFrame::remote_node_fee_address = _address;
   Settings::instance().setCurrentFeeAddress(_address);
-  m_ui->m_sendFee->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
-  m_ui->m_messageFee->setText("Fee: 0.011000 CCX (Node fee 0.1 CCX + Transaction Fee 0.001 CCX)");
+  m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
+  m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
+  m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+  
 }
 
 /* clear all fields */
@@ -845,7 +866,7 @@ void OverviewFrame::sendMessageClicked()
 
   /* Start building the transaction */
   walletTransfer.address = address.toStdString();
-  uint64_t amount = MESSAGE_AMOUNT;
+  uint64_t amount = 100;
   walletTransfer.amount = amount;
   transfers.push_back(walletTransfer);
   messages.append({messageString.toStdString(), address.toStdString()});
@@ -865,7 +886,7 @@ void OverviewFrame::sendMessageClicked()
 
   /* Add the remote node fee transfer to the transaction if the connection
      is a remote node with an address and this is not a self-destructive message */
-  QString remote_node_fee_address = Settings::instance().getCurrentFeeAddress();
+  QString remote_node_fee_address = OverviewFrame::remote_node_fee_address;
   if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage == false))
   {
     QString connection = Settings::instance().getConnection();
@@ -889,12 +910,104 @@ void OverviewFrame::sendMessageClicked()
   }
 }
 
-void OverviewFrame::addressBookMessageClicked() 
+void OverviewFrame::addressBookMessageClicked()
 {
   AddressBookDialog dlg(this);
-  if(dlg.exec() == QDialog::Accepted) {
+  if (dlg.exec() == QDialog::Accepted)
+  {
     m_ui->m_addressMessageEdit->setText(dlg.getAddress());
   }
+}
+
+// DEPOSITS
+
+/* New deposit */
+void OverviewFrame::newDepositClicked()
+{
+  quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
+
+  /* Insufficient funds */
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance())
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
+    return;
+  }
+
+  /* One week is set as 5040 blocks */
+  quint32 term = m_ui->m_timeSpin->value() * 21900;
+
+  /* Warn the user */
+  if (QMessageBox::warning(&MainWindow::instance(), tr("Deposit Confirmation"),
+                           tr("Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?"),
+                           QMessageBox::Cancel,
+                           QMessageBox::Ok) != QMessageBox::Ok)
+  {
+    return;
+  }
+
+  /* Initiate the desposit */
+  WalletAdapter::instance().deposit(term, amount, CurrencyAdapter::instance().getMinimumFeeBanking(), 4);
+
+  /* Remote node fee */
+  QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
+  QString connection = Settings::instance().getConnection();
+  if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
+  {
+    if (!OverviewFrame::remote_node_fee_address.isEmpty())
+    {
+      QVector<CryptoNote::TransactionMessage> walletMessages;
+      CryptoNote::WalletLegacyTransfer walletTransfer;
+      walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
+      walletTransfer.amount = 10000;
+      walletTransfers.push_back(walletTransfer);
+      /* If the wallet is open we proceed */
+      if (WalletAdapter::instance().isOpen())
+      {
+        /* Send the transaction */
+        WalletAdapter::instance().sendTransaction(walletTransfers, 1000, "", 4, walletMessages);
+      }
+    }
+  }
+}
+
+void OverviewFrame::showDepositDetails(const QModelIndex &_index)
+{
+  if (!_index.isValid())
+  {
+    return;
+  }
+  DepositDetailsDialog dlg(_index, this);
+  dlg.exec();
+}
+
+void OverviewFrame::depositParamsChanged()
+{
+  quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
+  quint32 term = m_ui->m_timeSpin->value() * 21900;
+  quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
+  qreal termRate = DepositModel::calculateRate(amount, interest);
+  m_ui->m_interestEarnedLabel->setText(QString("%1 %2").arg(CurrencyAdapter::instance().formatAmount(interest)).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
+  m_ui->m_interestRateLabel->setText(QString("%3 %)").arg(QString::number(termRate * 100, 'f', 4)));
+}
+
+void OverviewFrame::timeChanged(int _value)
+{
+  m_ui->m_timeLabel->setText(monthsToBlocks(m_ui->m_timeSpin->value()));
+}
+
+void OverviewFrame::withdrawClicked() 
+{
+  QModelIndexList unlockedDepositIndexList = DepositModel::instance().match(DepositModel::instance().index(0, 0), DepositModel::ROLE_STATE, DepositModel::STATE_UNLOCKED, -1);
+  if (unlockedDepositIndexList.isEmpty()) {
+    return;
+  }
+
+  QVector<CryptoNote::DepositId> depositIds;
+  Q_FOREACH (const QModelIndex& index, unlockedDepositIndexList) {
+    depositIds.append(index.row());
+  }
+
+  WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
 }
 
 } // namespace WalletGui

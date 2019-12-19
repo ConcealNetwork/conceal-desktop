@@ -4464,7 +4464,7 @@ border: none;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border:none; color: #777;</string>
+        <string notr="true"/>
        </property>
        <property name="singleStep">
         <number>300</number>
@@ -4633,11 +4633,12 @@ text-align: left;
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;  font-family: 'Raleway';</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4660,11 +4661,12 @@ text-align: left;
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;</string>
+         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;  font-family: 'Raleway';</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4715,10 +4717,13 @@ text-align: left;
           <height>251</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; font-size: 13px; font-weight: normal; font-family: 'Raleway';</string>
+        </property>
         <property name="title">
          <string>Deposit Details</string>
         </property>
-        <widget class="QLabel" name="m_nativeTimeLabel">
+        <widget class="QLabel" name="m_timeLabel">
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -4729,21 +4734,23 @@ text-align: left;
          </property>
          <property name="font">
           <font>
+           <family>Raleway</family>
            <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px;
-border: none;</string>
+          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
          </property>
          <property name="text">
-          <string>5040 blocks</string>
+          <string>21900 blocks</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="m_interestLabel">
+        <widget class="QLabel" name="m_interestRateLabel">
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -4754,12 +4761,14 @@ border: none;</string>
          </property>
          <property name="font">
           <font>
+           <family>Raleway</family>
            <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px;
-border: none;</string>
+          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
          </property>
          <property name="text">
           <string>interestLabel</string>
@@ -4876,7 +4885,7 @@ border: none;</string>
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="m_nativeTimeLabel_2">
+        <widget class="QLabel" name="m_depositFeeLabel">
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -4887,12 +4896,14 @@ border: none;</string>
          </property>
          <property name="font">
           <font>
+           <family>Raleway</family>
            <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px;
-border: none;</string>
+          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
          </property>
          <property name="text">
           <string>0.001000 CCX</string>
@@ -4901,7 +4912,7 @@ border: none;</string>
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="m_interestLabel_2">
+        <widget class="QLabel" name="m_interestEarnedLabel">
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -4912,12 +4923,14 @@ border: none;</string>
          </property>
          <property name="font">
           <font>
+           <family>Raleway</family>
            <pointsize>-1</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px;
-border: none;</string>
+          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
          </property>
          <property name="text">
           <string>interestLabel</string>
@@ -4944,13 +4957,14 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_depositButton_2 {color: orange;border: 1px solid orange; font-size: 14px;}
+         <string notr="true">QPushButton#m_depositButton_2 {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; font-size: 14px;}</string>
+QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>MAKE DEPOSIT</string>
@@ -5113,13 +5127,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
+          <family>Raleway</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_withdrawButton {color: orange; border: 1px solid orange; font-size: 14px;}
+         <string notr="true">QPushButton#m_withdrawButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
 
-QPushButton#m_withdrawButton:hover {color: orange; border: 1px solid orange; font-size: 14px;}</string>
+QPushButton#m_withdrawButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
         </property>
         <property name="text">
          <string>WITHDRAW</string>
@@ -5190,7 +5205,7 @@ font-weight: bold;</string>
      <widget class="QTextBrowser" name="m_statusBox">
       <property name="geometry">
        <rect>
-        <x>560</x>
+        <x>590</x>
         <y>40</y>
         <width>245</width>
         <height>21</height>
@@ -5240,15 +5255,15 @@ p, li { white-space: pre-wrap; }
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>settingsBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
      <zorder>leftMenu</zorder>
      <zorder>aboutBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -5657,6 +5672,102 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_timeSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>depositParamsChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_timeSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>timeChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_amountSpin</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>depositParamsChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_depositButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>newDepositClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>589</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_withdrawButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>withdrawClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>995</x>
+     <y>589</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_depositView</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>showDepositDetails(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>995</x>
+     <y>390</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -5664,6 +5775,7 @@ p, li { white-space: pre-wrap; }
   <slot>sendMessageClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>depositClicked()</slot>
+  <slot>newDepositClicked()</slot>
   <slot>dashboardClicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
@@ -5684,6 +5796,10 @@ p, li { white-space: pre-wrap; }
   <slot>addressBookClicked()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
   <slot>showMessageDetails(QModelIndex)</slot>
+  <slot>showDepositDetails(QModelIndex)</slot>
   <slot>addressBookMessageClicked()</slot>
+  <slot>withdrawClicked()</slot>
+  <slot>timeChanged(int)</slot>
+  <slot>depositParamsChanged()</slot>
  </slots>
 </ui>

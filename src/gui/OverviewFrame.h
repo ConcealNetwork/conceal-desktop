@@ -102,6 +102,12 @@ private:
   Q_SLOT void clearMessageClicked();
   Q_SLOT void ttlValueChanged(int _ttlValue);
   Q_SLOT void addressBookMessageClicked();
+  Q_SLOT void newDepositClicked();
+  Q_SLOT void depositParamsChanged();
+  Q_SLOT void showDepositDetails(const QModelIndex& _index);
+  Q_SLOT void timeChanged(int _value);
+  Q_SLOT void withdrawClicked();
+
 
 Q_SIGNALS:
   void sendSignal();
