@@ -255,7 +255,6 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
   {
     QModelIndex recentModelIndex = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recentModelIndex);
-    m_priceProvider->getPrice();
   }
 }
 
@@ -295,7 +294,6 @@ void OverviewFrame::layoutChanged()
   {
     QModelIndex recent_index = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
-    m_priceProvider->getPrice();
   }
   showCurrentWallet();
 }
@@ -313,7 +311,6 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
@@ -327,7 +324,6 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
@@ -341,7 +337,6 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
@@ -355,7 +350,6 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_unlockedInvestmentsLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
@@ -369,7 +363,6 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
@@ -383,7 +376,6 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance));
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
-  m_priceProvider->getPrice();
 }
 
 void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume)
