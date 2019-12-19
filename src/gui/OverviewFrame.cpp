@@ -147,7 +147,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Deposit box */
   m_ui->m_timeSpin->setMinimum(1);
   m_ui->m_timeSpin->setMaximum(12);
-  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Months")));
+  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Month(s)")));
   m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
@@ -852,8 +852,7 @@ void OverviewFrame::sendMessageClicked()
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> messages;
   QVector<CryptoNote::TransactionMessage> feeMessage;
-  QString address = m_ui->m_addressEdit->text().toUtf8();
-
+  QString address = m_ui->m_addressMessageEdit->text().toUtf8();
   QString messageString = m_ui->m_messageTextEdit->toPlainText();
 
   /* Start building the transaction */
@@ -895,10 +894,6 @@ void OverviewFrame::sendMessageClicked()
   if (WalletAdapter::instance().isOpen())
   {
     WalletAdapter::instance().sendMessage(transfers, fee, 4, messages, ttl);
-    if (selfDestructiveMessage = true)
-    {
-      WalletAdapter::instance().sendMessage(feeTransfer, 100, 4, feeMessage, 0);
-    }
   }
 }
 
