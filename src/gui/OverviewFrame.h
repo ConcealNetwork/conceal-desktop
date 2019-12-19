@@ -34,7 +34,6 @@ class OverviewFrame : public QFrame
 public:
   explicit OverviewFrame(QWidget *_parent);
   ~OverviewFrame();
-  void scrollToTransaction(const QModelIndex &_index);
   void setAddress(const QString &_address);
   void setPaymentId(const QString &_paymendId);
 
