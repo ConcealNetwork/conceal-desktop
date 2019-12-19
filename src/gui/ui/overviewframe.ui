@@ -1585,7 +1585,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/discord.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/discord.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_10">
@@ -1614,7 +1614,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/telegram.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/telegram.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_11">
@@ -1643,7 +1643,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/twitter.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/twitter.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_12">
@@ -1672,7 +1672,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/bitcoin.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/bitcoin.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_13">
@@ -1701,7 +1701,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/github.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/github.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_14">
@@ -1730,7 +1730,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/icons/medium.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/medium.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -2913,9 +2913,9 @@ color: #ccc;
      <widget class="QGroupBox" name="settingsBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
-        <width>1021</width>
+        <width>1041</width>
         <height>571</height>
        </rect>
       </property>
@@ -3440,9 +3440,9 @@ font-family: 'Raleway'; border: 0px;</string>
      <widget class="QGroupBox" name="walletBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
-        <width>1021</width>
+        <width>1041</width>
         <height>571</height>
        </rect>
       </property>
@@ -3452,6 +3452,197 @@ font-family: 'Raleway'; border: 0px;</string>
       <property name="title">
        <string/>
       </property>
+      <widget class="QGroupBox" name="groupBox_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>210</y>
+         <width>1021</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 18px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Import Wallet</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importTrackingWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>160</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT TRACKING WALLET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importSpendKeyButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>60</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT PRIVATE KEYS</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importSeedButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT SEED</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>1021</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 18px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>New or Existing Wallet</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_createNewWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>60</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>CREATE NEW WALLET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_openExistingWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>OPEN EXISTING WALLET</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="aboutBox">
       <property name="geometry">
@@ -5254,10 +5445,8 @@ p, li { white-space: pre-wrap; }
      <zorder>m_currentWalletTitle</zorder>
      <zorder>m_newTransferButton</zorder>
      <zorder>m_newMessageButton</zorder>
-     <zorder>walletBox</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
@@ -5267,6 +5456,8 @@ p, li { white-space: pre-wrap; }
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>newMessageBox</zorder>
+     <zorder>settingsBox</zorder>
+     <zorder>walletBox</zorder>
     </widget>
    </item>
   </layout>
