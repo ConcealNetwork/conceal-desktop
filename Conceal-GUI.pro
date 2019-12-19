@@ -186,7 +186,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/QRLabel.h \
            src/gui/ReceiveFrame.h \
            src/gui/RecentTransactionsModel.h \
-           src/gui/SendFrame.h \
            src/gui/SendMessageFrame.h \
            src/gui/SortedDepositModel.h \
            src/gui/SortedMessagesModel.h \
@@ -638,7 +637,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/QRLabel.cpp \
            src/gui/ReceiveFrame.cpp \
            src/gui/RecentTransactionsModel.cpp \
-           src/gui/SendFrame.cpp \
            src/gui/SendMessageFrame.cpp \
            src/gui/SortedDepositModel.cpp \
            src/gui/SortedMessagesModel.cpp \
@@ -1059,7 +1057,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/overviewframe.ui \
             src/gui/ui/passworddialog.ui \
             src/gui/ui/receiveframe.ui \
-            src/gui/ui/sendframe.ui \
             src/gui/ui/sendmessageframe.ui \
             src/gui/ui/transactiondetailsdialog.ui \
             src/gui/ui/transactionframe.ui \
