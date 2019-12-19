@@ -131,6 +131,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::backupFileSignal, this, &MainWindow::backupWallet);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);
@@ -143,7 +144,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
-  //connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
   connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);
   connect(m_ui->m_overviewFrame, &OverviewFrame::languageSettingsSignal, this, &MainWindow::languageSettings);
@@ -1020,8 +1021,6 @@ void MainWindow::importSeed()
     WalletAdapter::instance().createWithKeys(keys);
   }
 }
-
-/* --------------------------------------------------------------------------------------- */
 
 void MainWindow::importTracking()
 {
