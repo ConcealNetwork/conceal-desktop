@@ -11,7 +11,6 @@
 #include "MessagesModel.h"
 #include "WalletAdapter.h"
 #include "AddressProvider.h"
-#include "DepositsFrame.h"
 #include "MessageDetailsDialog.h"
 #include "MessagesModel.h"
 #include "SortedMessagesModel.h"

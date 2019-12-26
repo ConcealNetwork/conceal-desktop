@@ -147,72 +147,14 @@ CryptoNote::IWalletLegacy *NodeAdapter::createWallet() const
 bool NodeAdapter::init()
 {
   Q_ASSERT(m_node == nullptr);
-  bool isAutoRemote = false;
 
-  /* First get the connection type */
-  QString connection = Settings::instance().getConnection();
-
-  /* Autoremote is a the remote node conection which retrieves a random for-fee remoten node
-     from the node pool on the explorer. */
-  if (connection.compare("autoremote") == 0)
-  {
-    isAutoRemote = true;
     /* Pull a random node from the node pool list */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
     const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/pool/random?hasFeeAddr=true&isReachable=true");
     QNetworkRequest request(url);
     nam->get(request);
-  }
-
-  /* If it is not an autoremote its either a local node, or a remote note. By default
-     the wallet creates a local node and starts the sync process. */
-  if (connection.compare("embedded") == 0 || Settings::instance().getCurrentRemoteNode() == "")
-  {
-    QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
-    m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
-
-    QTimer initTimer;
-    initTimer.setInterval(3000);
-    initTimer.setSingleShot(true);
-    initTimer.start();
-    bool initCompleted = false;
-    m_node->init([this](std::error_code _err) {
-      Q_UNUSED(_err);
-    });
-
-    QEventLoop waitLoop;
-    connect(&initTimer, &QTimer::timeout, &waitLoop, &QEventLoop::quit);
-    connect(this, &NodeAdapter::peerCountUpdatedSignal, [&initCompleted]() {
-      initCompleted = true;
-    });
-
-    connect(this, &NodeAdapter::localBlockchainUpdatedSignal, [&initCompleted]() {
-      initCompleted = true;
-    });
-
-    connect(this, &NodeAdapter::peerCountUpdatedSignal, &waitLoop, &QEventLoop::quit);
-    connect(this, &NodeAdapter::localBlockchainUpdatedSignal, &waitLoop, &QEventLoop::quit);
-
-    waitLoop.exec();
-    if (initTimer.isActive() && !initCompleted)
-    {
-      return false;
-    }
-
-    if (initTimer.isActive())
-    {
-
-      initTimer.stop();
-      Q_EMIT nodeInitCompletedSignal();
-      return true;
-    }
-    delete m_node;
-    m_node = nullptr;
-    return initInProcessNode();
-  }
-  else
-  {
+  
     QUrl remoteNodeUrl = QUrl::fromUserInput(Settings::instance().getCurrentRemoteNode());
     Q_ASSERT(m_node == nullptr);
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(),
@@ -241,7 +183,6 @@ bool NodeAdapter::init()
       Q_EMIT nodeInitCompletedSignal();
     }
     return true;
-  }
 }
 
 quint64 NodeAdapter::getLastKnownBlockHeight() const

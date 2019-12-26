@@ -153,9 +153,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/tests/Io.h \
            libqrencode/tests/common.h \
            libqrencode/tests/decoder.h \
-           src/gui/AboutDialog.h \
-           src/gui/DisclaimerDialog.h \
-           src/gui/LinksDialog.h \           
            src/gui/AddressBookDialog.h \
            src/gui/AddressBookFrame.h \
            src/gui/AddressBookModel.h \
@@ -163,30 +160,22 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ChangePasswordDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
-           src/gui/BankingFrame2.h \           
            src/gui/DepositModel.h \
-           src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
            src/gui/ImportKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageAddressFrame.h \
            src/gui/MessageDetailsDialog.h \
-           src/gui/MessagesFrame.h \
            src/gui/MessagesModel.h \           
            src/gui/WelcomeFrame.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
-           src/gui/NewPoolDialog.h \
-           src/gui/NewNodeDialog.h \ 
-           src/gui/NodeModel.h \                 
            src/gui/OverviewFrame.h \
            src/gui/PasswordDialog.h \
-           src/gui/PoolModel.h \
            src/gui/QRLabel.h \
            src/gui/ReceiveFrame.h \
            src/gui/RecentTransactionsModel.h \
-           src/gui/SendMessageFrame.h \
            src/gui/SortedDepositModel.h \
            src/gui/SortedMessagesModel.h \
            src/gui/SortedTransactionsModel.h \
@@ -559,8 +548,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/importsecretkeys.h \
            src/gui/importseed.h \
            src/gui/importtracking.h \           
-           src/gui/NodeSettings.h \
-           src/gui/LanguageSettings.h \           
            src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
@@ -604,45 +591,33 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/tests/test_rs.c \
            libqrencode/tests/test_split.c \
            libqrencode/tests/view_qrcode.c \
-           src/gui/AboutDialog.cpp \
-           src/gui/DisclaimerDialog.cpp \          
-           src/gui/LinksDialog.cpp \              
            src/gui/AddressBookDialog.cpp \
            src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
-           src/gui/BankingFrame2.cpp \               
            src/gui/ChangePasswordDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
            src/gui/DepositModel.cpp \
-           src/gui/DepositsFrame.cpp \
            src/gui/ExitWidget.cpp \
            src/gui/ImportKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageAddressFrame.cpp \
            src/gui/MessageDetailsDialog.cpp \
-           src/gui/MessagesFrame.cpp \
            src/gui/MessagesModel.cpp \
            src/gui/WelcomeFrame.cpp \    
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
-           src/gui/NewPoolDialog.cpp \
-           src/gui/NewNodeDialog.cpp \ 
-           src/gui/NodeModel.cpp \                        
            src/gui/OverviewFrame.cpp \
            src/gui/PasswordDialog.cpp \
-           src/gui/PoolModel.cpp \
            src/gui/QRLabel.cpp \
            src/gui/ReceiveFrame.cpp \
            src/gui/RecentTransactionsModel.cpp \
-           src/gui/SendMessageFrame.cpp \
            src/gui/SortedDepositModel.cpp \
            src/gui/SortedMessagesModel.cpp \
            src/gui/SortedTransactionsModel.cpp \
            src/gui/TransactionDetailsDialog.cpp \
-           src/gui/TransactionFrame.cpp \
            src/gui/TransactionsListModel.cpp \
            src/gui/TransactionsModel.cpp \
            src/gui/TransferFrame.cpp \
@@ -1030,43 +1005,31 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/importsecretkeys.cpp \
            src/gui/importseed.cpp \
            src/gui/importtracking.cpp \           
-           src/gui/NodeSettings.cpp \
-           src/gui/LanguageSettings.cpp \           
            src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
-FORMS +=    src/gui/ui/aboutdialog.ui \
-            src/gui/ui/disclaimerdialog.ui \
-            src/gui/ui/linksdialog.ui \
-            src/gui/ui/bankingframe2.ui \
+FORMS +=    
             src/gui/ui/addressbookdialog.ui \
             src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
-            src/gui/ui/depositsframe.ui \
             src/gui/ui/exitwidget.ui \
             src/gui/ui/importkeydialog.ui \
             src/gui/ui/mainwindow.ui \
             src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
-            src/gui/ui/messagesframe.ui \
             src/gui/ui/welcomeframe.ui \            
             src/gui/ui/newaddressdialog.ui \
             src/gui/ui/newpassworddialog.ui \
-            src/gui/ui/newpooldialog.ui \
             src/gui/ui/overviewframe.ui \
             src/gui/ui/passworddialog.ui \
             src/gui/ui/receiveframe.ui \
-            src/gui/ui/sendmessageframe.ui \
             src/gui/ui/transactiondetailsdialog.ui \
-            src/gui/ui/transactionframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
             src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
             src/gui/ui/importtracking.ui \            
-            src/gui/ui/nodesettings.ui \
-            src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
 TRANSLATIONS = 	languages/tr.ts \

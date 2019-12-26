@@ -90,8 +90,6 @@ private:
   Q_SLOT void importsecretkeys();
   Q_SLOT void importSeed();
   Q_SLOT void importTracking();
-  Q_SLOT void nodeSettings();  
-  Q_SLOT void languageSettings();    
   Q_SLOT void backupWallet();
   Q_SLOT void resetWallet();
   Q_SLOT void optimizeClicked();  
