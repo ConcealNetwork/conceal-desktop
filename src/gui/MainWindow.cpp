@@ -147,7 +147,6 @@ void MainWindow::connectToSignals()
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::settingsSignal, this, &MainWindow::settingsTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
-  connect(m_ui->m_addressBookFrame, &AddressBookFrame::backSignal, this, &MainWindow::dashboardTo);
 }
 
 void MainWindow::initUi()
