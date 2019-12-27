@@ -1172,22 +1172,22 @@ border: none;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>215</x>
         <y>70</y>
-        <width>251</width>
-        <height>16</height>
+        <width>165</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: none; font-size: 12px;
+       <string notr="true">border: none; font-size: 13px;
 font-family: 'Raleway';
 color: orange;</string>
       </property>
       <property name="text">
-       <string>COPY WALLET ADDRESS | SWITCH WALLET</string>
+       <string>COPY WALLET ADDRESS</string>
       </property>
       <property name="checkable">
        <bool>false</bool>
@@ -2586,9 +2586,9 @@ text-align: left;
      <widget class="QGroupBox" name="transactionsBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
-        <width>1021</width>
+        <width>1031</width>
         <height>571</height>
        </rect>
       </property>
@@ -2779,9 +2779,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QGroupBox" name="messageBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
-        <width>1021</width>
+        <width>1031</width>
         <height>571</height>
        </rect>
       </property>
@@ -5760,8 +5760,8 @@ font-weight: bold;</string>
      <widget class="QTextBrowser" name="m_statusBox">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>40</y>
+        <x>390</x>
+        <y>69</y>
         <width>245</width>
         <height>21</height>
        </rect>
@@ -5779,10 +5779,8 @@ font-weight: bold;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #777;
-font-family: Raleway;
+       <string notr="true">font-family: Raleway;
 font-size: 13px;
-line-height: 200%;
 border: none;</string>
       </property>
       <property name="verticalScrollBarPolicy">
@@ -5796,7 +5794,10 @@ border: none;</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;SYNCHRONIZING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="openLinks">
+       <bool>false</bool>
       </property>
      </widget>
      <zorder>sendBox</zorder>
@@ -5808,17 +5809,17 @@ p, li { white-space: pre-wrap; }
      <zorder>m_newMessageButton</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
      <zorder>leftMenu</zorder>
      <zorder>aboutBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>walletBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>
@@ -6561,7 +6562,7 @@ p, li { white-space: pre-wrap; }
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

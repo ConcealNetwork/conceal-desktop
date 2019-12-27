@@ -315,7 +315,7 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("Text-align:left; color: orange;");
+  m_ui->m_copyAddressButton->setStyleSheet("border: none; border-right: 1px solid orange; font-size: 13px;font-family: 'Raleway';color: orange;");
 }
 
 void OverviewFrame::showCurrentWallet()
