@@ -129,7 +129,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
                                                  m_transactionModel(new RecentTransactionsModel),
                                                  m_transactionsModel(new TransactionsListModel),
                                                  m_depositModel(new DepositListModel),
-                                                 m_visibleMessagesModel(new VisibleMessagesModel)
+                                                 m_visibleMessagesModel(new VisibleMessagesModel),
+                                                 m_addressProvider(new AddressProvider(this))
 {
   m_ui->setupUi(this);
 
@@ -182,6 +183,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 
   connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
   connect(m_priceProvider, &PriceProvider::priceFoundSignal, this, &OverviewFrame::onPriceFound);
+  connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &OverviewFrame::setStatusBarText);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
 
@@ -201,7 +203,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   int currentChart = 2;
   m_ui->m_chart->show();
   m_ui->m_chart_2->hide();
-
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
@@ -217,12 +218,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   nam2->get(request2);
 
   QString connection = Settings::instance().getConnection();
-  if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
-  {
-    QString remoteNodeUrl = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
-    m_addressProvider->getAddress(remoteNodeUrl);
-    connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
-  }
 
   /* Get current language */
   QString language = Settings::instance().getLanguage();
@@ -585,6 +580,7 @@ void OverviewFrame::reset()
   actualInvestmentBalanceUpdated(0);
   pendingInvestmentBalanceUpdated(0);
   m_priceProvider->getPrice();
+  m_addressProvider->getAddress();
   Q_EMIT resetWalletSignal();
 }
 
