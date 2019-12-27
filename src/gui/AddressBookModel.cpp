@@ -49,7 +49,7 @@ QVariant AddressBookModel::data(const QModelIndex& _index, int _role) const {
     case COLUMN_ADDRESS:
       return _index.data(ROLE_ADDRESS);
     case COLUMN_PAYMENTID:
-      return _index.data(ROLE_PAYMENTID);      
+      return _index.data(ROLE_PAYMENTID);
     default:
       return QVariant();
     }
@@ -59,7 +59,7 @@ QVariant AddressBookModel::data(const QModelIndex& _index, int _role) const {
   case ROLE_ADDRESS:
     return address.value("address");
   case ROLE_PAYMENTID:
-    return address.value("payment id");    
+    return address.value("payment id");
   default:
     return QVariant();
   }
@@ -109,7 +109,7 @@ void AddressBookModel::addAddress(const QString& _label, const QString& _address
   QJsonObject newAddress;
   newAddress.insert("label", _label);
   newAddress.insert("address", _address);
-  newAddress.insert("payment id", _paymentid);  
+  newAddress.insert("payment id", _paymentid);
   m_addressBook.append(newAddress);
   endInsertRows();
   saveAddressBook();
@@ -161,6 +161,15 @@ void AddressBookModel::walletInitCompleted(int _error, const QString& _error_tex
       }
     }
   }
+}
+
+const QModelIndex AddressBookModel::indexFromContact(const QString& searchstring, const int& column){
+    QModelIndex index = match(AddressBookModel::index(0,column,QModelIndex()),
+            Qt::DisplayRole, searchstring, 1,
+            Qt::MatchFlags(Qt::MatchExactly|Qt::MatchRecursive))
+            .value(0);
+
+    return index;
 }
 
 }
