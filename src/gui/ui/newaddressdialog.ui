@@ -6,27 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>125</height>
+    <width>800</width>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>New address</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color: #ddd; background-color: #111; font-family: 'Raleway';</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Label:</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="sizePolicy">
@@ -35,21 +25,27 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 13px;</string>
+     </property>
      <property name="text">
       <string>Address:</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_3">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 13px;</string>
+     </property>
      <property name="text">
-      <string>PaymentID:</string>
+      <string>Label:</string>
      </property>
     </widget>
    </item>
@@ -66,28 +62,71 @@
      </property>
     </spacer>
    </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Payment ID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="m_cancelButton">
+     <property name="minimumSize">
+      <size>
+       <width>121</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+     </property>
+     <property name="text">
+      <string>CANCEL</string>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="2">
     <widget class="QPushButton" name="m_okButton">
      <property name="enabled">
       <bool>true</bool>
      </property>
+     <property name="minimumSize">
+      <size>
+       <width>121</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+     </property>
      <property name="text">
-      <string>Ok</string>
+      <string>OK</string>
      </property>
      <property name="default">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="3" column="3">
-    <widget class="QPushButton" name="m_cancelButton">
-     <property name="text">
-      <string>Cancel</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="1" colspan="3">
     <widget class="QLineEdit" name="m_contactPaymentIdEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>
      </property>
@@ -95,6 +134,15 @@
    </item>
    <item row="1" column="1" colspan="3">
     <widget class="QLineEdit" name="m_addressEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>
      </property>
@@ -107,6 +155,15 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>

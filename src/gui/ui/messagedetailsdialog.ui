@@ -15,8 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">font-family: 'Raleway';
-background-color: #555;
-color: #fff;</string>
+background-color: #111;
+color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -154,18 +154,21 @@ color: #fff;</string>
       <widget class="QPushButton" name="m_saveButton">
        <property name="minimumSize">
         <size>
-         <width>0</width>
+         <width>121</width>
          <height>31</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Raleway</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+       </property>
        <property name="text">
-        <string>Save to file</string>
+        <string>SAVE TO FILE</string>
        </property>
       </widget>
      </item>
@@ -184,10 +187,20 @@ color: #fff;</string>
      </item>
      <item>
       <widget class="QPushButton" name="m_prevButton">
+       <property name="minimumSize">
+        <size>
+         <width>121</width>
+         <height>31</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Raleway</family>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>&lt;&lt;</string>
@@ -196,10 +209,20 @@ color: #fff;</string>
      </item>
      <item>
       <widget class="QPushButton" name="m_nextButton">
+       <property name="minimumSize">
+        <size>
+         <width>121</width>
+         <height>31</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Raleway</family>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>&gt;&gt;</string>
@@ -208,14 +231,23 @@ color: #fff;</string>
      </item>
      <item>
       <widget class="QPushButton" name="m_okButton">
+       <property name="minimumSize">
+        <size>
+         <width>121</width>
+         <height>31</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Raleway</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+       </property>
        <property name="text">
-        <string>Ok</string>
+        <string>OK</string>
        </property>
        <property name="autoDefault">
         <bool>true</bool>

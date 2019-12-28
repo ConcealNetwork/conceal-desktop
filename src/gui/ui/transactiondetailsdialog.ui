@@ -14,7 +14,7 @@
    <string>Transaction details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #444;
+   <string notr="true">background-color: #111;
 border: 0px;
 color: #ddd;
 font-family: 'Raleway';</string>

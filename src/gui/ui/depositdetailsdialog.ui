@@ -20,7 +20,7 @@
    <string>Deposit Details</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #444;
+   <string notr="true">background-color: #111;
 color: #ddd;
 border: 0px;
 font-family: 'Raleway';</string>
