@@ -51,7 +51,6 @@ void AddressProvider::readyRead()
   }
 
   QJsonObject obj = doc.object();
-
   QString address = obj.value("fee_address").toString();
 
   if (!address.isEmpty())

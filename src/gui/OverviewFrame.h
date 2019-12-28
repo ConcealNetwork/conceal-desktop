@@ -36,6 +36,19 @@ public:
   ~OverviewFrame();
   void setAddress(const QString &_address);
   void setPaymentId(const QString &_paymendId);
+  bool fromPay = true;
+  QModelIndex index;
+
+public slots:
+  void onCustomContextMenu(const QPoint &point);
+
+public Q_SLOTS:
+  void addABClicked();
+  void editABClicked();
+  void copyABClicked();
+  void copyABPaymentIdClicked();
+  void deleteABClicked();
+  void payToABClicked();
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -47,11 +60,13 @@ private:
   PriceProvider *m_priceProvider;
   AddressProvider *m_addressProvider;
   QString remote_node_fee_address;
+  QString wallet_address;
   quint64 remote_node_fee;
   quint64 m_actualBalance = 0;
   int subMenu = 0;
   int currentChart = 1;
   bool walletSynced = false;
+  QMenu* contextMenu;
 
   void onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
@@ -119,6 +134,9 @@ private:
   Q_SLOT void saveLanguageCurrencyClicked();
   Q_SLOT void saveConnectionClicked();
   Q_SLOT void rescanClicked();
+  Q_SLOT void currentAddressChanged(const QModelIndex& _index);
+  Q_SLOT void addressDoubleClicked(const QModelIndex& _index);
+
 
 Q_SIGNALS:
   void sendSignal();
@@ -150,5 +168,6 @@ Q_SIGNALS:
   void connectionSettingsSignal();
   void languageSettingsSignal();
   void addressBookSignal();
+  void payToSignal(const QModelIndex& _index);  
 };
 } // namespace WalletGui

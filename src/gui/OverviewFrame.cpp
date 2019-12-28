@@ -4,6 +4,15 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <QApplication>
+#include <QClipboard>
+
+#include "CurrencyAdapter.h"
+#include "AddressBookModel.h"
+#include "AddressBookFrame.h"
+#include "MainWindow.h"
+#include "NewAddressDialog.h"
+#include "WalletEvents.h"
 #include "CurrencyAdapter.h"
 #include "OverviewFrame.h"
 #include "TransactionFrame.h"
@@ -134,6 +143,25 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 {
   m_ui->setupUi(this);
 
+  m_ui->m_addressBookView->setModel(&AddressBookModel::instance());
+  m_ui->m_addressBookView->header()->setStretchLastSection(false);
+  m_ui->m_addressBookView->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+  m_ui->m_addressBookView->setSortingEnabled(true);
+  m_ui->m_addressBookView->sortByColumn(0, Qt::AscendingOrder);
+
+  //connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
+
+  m_ui->m_addressBookView->setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(m_ui->m_addressBookView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(onCustomContextMenu(const QPoint &)));
+
+  contextMenu = new QMenu();
+  contextMenu->addAction(QString(tr("&Pay to")), this, SLOT(payToClicked()));
+  contextMenu->addAction(QString(tr("Copy &label")), this, SLOT(copyLabelClicked()));
+  contextMenu->addAction(QString(tr("Copy &address")), this, SLOT(copyClicked()));
+  contextMenu->addAction(QString(tr("Copy Payment &ID")), this, SLOT(copyPaymentIdClicked()));
+  contextMenu->addAction(QString(tr("&Edit")), this, SLOT(editClicked()));
+  contextMenu->addAction(QString(tr("&Delete")), this, SLOT(deleteClicked()));
+
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -238,7 +266,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
     m_ui->m_english->setChecked(true);
   }
 
-
   /* Get current currency */
   QString currency = Settings::instance().getCurrentCurrency();
   if (currency.compare("EUR") == 0)
@@ -315,7 +342,8 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("border: none; border-right: 1px solid orange; font-size: 13px;font-family: 'Raleway';color: orange;");
+  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 13px;font-family: 'Raleway';color: orange;");
+  OverviewFrame::wallet_address = _address;
 }
 
 void OverviewFrame::showCurrentWallet()
@@ -520,7 +548,7 @@ void OverviewFrame::walletClicked()
 
 void OverviewFrame::qrCodeClicked()
 {
-  Q_EMIT qrSignal(m_ui->m_copyAddressButton->text());
+  Q_EMIT qrSignal(OverviewFrame::wallet_address);
 }
 
 void OverviewFrame::messageClicked()
@@ -549,6 +577,7 @@ void OverviewFrame::newTransferClicked()
     m_ui->sendBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
+    OverviewFrame::fromPay = true;
   }
   else
   {
@@ -564,6 +593,7 @@ void OverviewFrame::newMessageClicked()
     m_ui->newMessageBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
+    OverviewFrame::fromPay = false;
   }
   else
   {
@@ -591,7 +621,7 @@ void OverviewFrame::setStatusBarText(const QString &_text)
 
 void OverviewFrame::copyClicked()
 {
-  QApplication::clipboard()->setText(m_ui->m_copyAddressButton->text());
+  QApplication::clipboard()->setText(OverviewFrame::wallet_address);
   QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
 
@@ -647,11 +677,22 @@ void OverviewFrame::showMessageDetails(const QModelIndex &_index)
 /* incoming data from address book frame */
 void OverviewFrame::setAddress(const QString &_address)
 {
-  m_ui->m_addressEdit->setText(_address);
-  m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
-  m_ui->sendBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
+  if (OverviewFrame::fromPay == true)
+  {
+    m_ui->m_addressEdit->setText(_address);
+    m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+    m_ui->sendBox->raise();
+    m_ui->m_newTransferButton->hide();
+    m_ui->m_newMessageButton->hide();
+  }
+  else
+  {
+    m_ui->m_addressMessageEdit->setText(_address);
+    m_ui->m_myConcealWalletTitle->setText("SEND MESSAGE");
+    m_ui->newMessageBox->raise();
+    m_ui->m_newTransferButton->hide();
+    m_ui->m_newMessageButton->hide();
+  }
 }
 
 /* incoming data from address book frame */
@@ -662,13 +703,17 @@ void OverviewFrame::setPaymentId(const QString &_paymentId)
 
 /* Set the variable to the fee address, save the address in settings so
    other functions can use, and show the fee if a fee address is found */
-void OverviewFrame::onAddressFound(const QString &_address)
+void OverviewFrame::onAddressFound(const QString& _address)
 {
-  OverviewFrame::remote_node_fee_address = _address;
-  Settings::instance().setCurrentFeeAddress(_address);
-  m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
-  m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
-  m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+  QString connection = Settings::instance().getConnection();
+  if ((!_address.isEmpty()) && (connection != "embedded"))
+  {
+    OverviewFrame::remote_node_fee_address = _address;
+    Settings::instance().setCurrentFeeAddress(_address);
+    m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
+    m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
+    m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+  }
 }
 
 /* clear all fields */
@@ -859,7 +904,10 @@ bool OverviewFrame::isValidPaymentId(const QByteArray &_paymentIdString)
 /* Open address book */
 void OverviewFrame::addressBookClicked()
 {
-  Q_EMIT addressBookSignal();
+  m_ui->m_myConcealWalletTitle->setText("ADDRESS BOOK");
+  m_ui->addressBookBox->raise();
+  m_ui->m_newTransferButton->hide();
+  m_ui->m_newMessageButton->hide();
 }
 
 // SEND MESSAGE
@@ -932,14 +980,13 @@ void OverviewFrame::sendMessageClicked()
 
   /* Add the remote node fee transfer to the transaction if the connection
      is a remote node with an address and this is not a self-destructive message */
-  QString remote_node_fee_address = OverviewFrame::remote_node_fee_address;
-  if ((!remote_node_fee_address.isEmpty()) && (selfDestructiveMessage == false))
+  if ((!OverviewFrame::remote_node_fee_address.isEmpty()) && (selfDestructiveMessage == false))
   {
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
       CryptoNote::WalletLegacyTransfer walletTransfer;
-      walletTransfer.address = remote_node_fee_address.toStdString();
+      walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
       walletTransfer.amount = 10000;
       transfers.push_back(walletTransfer);
     }
@@ -1230,6 +1277,158 @@ void OverviewFrame::delay()
   QTime dieTime = QTime::currentTime().addSecs(2);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+void OverviewFrame::onCustomContextMenu(const QPoint &point)
+{
+  index = m_ui->m_addressBookView->indexAt(point);
+  if (!index.isValid())
+    return;
+  contextMenu->exec(m_ui->m_addressBookView->mapToGlobal(point));
+}
+
+void OverviewFrame::addABClicked()
+{
+  NewAddressDialog dlg(&MainWindow::instance());
+  if (dlg.exec() == QDialog::Accepted)
+  {
+    QString label = dlg.getLabel();
+    QString address = dlg.getAddress();
+    QByteArray paymentid = dlg.getPaymentID().toUtf8();
+    if (!CurrencyAdapter::instance().validateAddress(address))
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
+      return;
+    }
+
+    if (!isValidPaymentId(paymentid))
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
+      return;
+    }
+
+    QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
+    QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
+    if (label == contactLabel)
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
+      //label = QString(label + "%1").arg(label.toInt()+1);
+      NewAddressDialog dlg(&MainWindow::instance());
+      dlg.setEditLabel(label);
+      dlg.setEditAddress(address);
+      dlg.setEditPaymentId(paymentid);
+      if (dlg.exec() == QDialog::Accepted)
+      {
+        QString label = dlg.getLabel();
+        QString address = dlg.getAddress();
+        QByteArray paymentid = dlg.getPaymentID().toUtf8();
+        if (!CurrencyAdapter::instance().validateAddress(address))
+        {
+          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
+          return;
+        }
+
+        if (!isValidPaymentId(paymentid))
+        {
+          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
+          return;
+        }
+
+        QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
+        QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
+        if (label == contactLabel)
+        {
+          QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
+          return;
+        }
+        AddressBookModel::instance().addAddress(label, address, paymentid);
+      }
+      return;
+    }
+
+    AddressBookModel::instance().addAddress(label, address, paymentid);
+  }
+}
+
+void OverviewFrame::editABClicked()
+{
+  NewAddressDialog dlg(&MainWindow::instance());
+  dlg.setWindowTitle(QString(tr("Edit contact")));
+  dlg.setEditLabel(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_LABEL).toString());
+  dlg.setEditAddress(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
+  dlg.setEditPaymentId(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
+  if (dlg.exec() == QDialog::Accepted)
+  {
+    QString label = dlg.getLabel();
+    QString address = dlg.getAddress();
+    QByteArray paymentid = dlg.getPaymentID().toUtf8();
+    if (!CurrencyAdapter::instance().validateAddress(address))
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
+      return;
+    }
+
+    if (!isValidPaymentId(paymentid))
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
+      return;
+    }
+
+    QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
+    QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
+    if (label == contactLabel)
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
+      return;
+    }
+
+    AddressBookModel::instance().addAddress(label, address, paymentid);
+
+    deleteABClicked();
+  }
+}
+
+void OverviewFrame::copyABClicked()
+{
+  QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
+  QMessageBox::information(this, tr("Address Book"), "Address copied to clipboard");
+}
+
+void OverviewFrame::copyABPaymentIdClicked()
+{
+  QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
+  QMessageBox::information(this, tr("Address Book"), "Payment ID copied to clipboard");
+}
+
+void OverviewFrame::deleteABClicked()
+{
+  int row = m_ui->m_addressBookView->currentIndex().row();
+  AddressBookModel::instance().removeAddress(row);
+  m_ui->m_copyPaymentIdButton->setEnabled(false);
+  currentAddressChanged(m_ui->m_addressBookView->currentIndex());
+}
+
+void OverviewFrame::payToABClicked()
+{
+  Q_EMIT payToSignal(m_ui->m_addressBookView->currentIndex());
+}
+
+void OverviewFrame::addressDoubleClicked(const QModelIndex &_index)
+{
+  if (!_index.isValid())
+  {
+    return;
+  }
+
+  Q_EMIT payToSignal(_index);
+}
+
+void OverviewFrame::currentAddressChanged(const QModelIndex &_index)
+{
+  m_ui->m_copyAddressButton_2->setEnabled(_index.isValid());
+  m_ui->m_deleteAddressButton->setEnabled(_index.isValid());
+  m_ui->m_editAddressButton->setEnabled(_index.isValid());
+  m_ui->m_copyPaymentIdButton->setEnabled(!_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
 }
 
 } // namespace WalletGui

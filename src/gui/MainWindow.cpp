@@ -107,7 +107,7 @@ void MainWindow::connectToSignals()
 */
 
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
-  connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
