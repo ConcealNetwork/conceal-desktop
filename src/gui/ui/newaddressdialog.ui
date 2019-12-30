@@ -14,7 +14,7 @@
    <string>New address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #ddd; background-color: #111; font-family: 'Raleway';</string>
+   <string notr="true">color: #ddd; background-color: #282d31; font-family: 'Raleway';</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">

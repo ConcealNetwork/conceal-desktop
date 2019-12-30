@@ -14,7 +14,7 @@
    <string>Import :: Mnemonic Seed</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #444; color: #ddd; border: 0px; font-family: Raleway;</string>
+   <string notr="true">background-color: #282d31; color: #ddd; border: 0px; font-family: Raleway;</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">

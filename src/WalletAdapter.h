@@ -74,7 +74,8 @@ public:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, std::error_code _result) Q_DECL_OVERRIDE;
   void transactionUpdated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
   void depositsUpdated(const std::vector<CryptoNote::DepositId>& _depositIds) Q_DECL_OVERRIDE;
-
+  bool checkWalletPassword(const QString& _password);
+  
 private:
   std::fstream m_file;
   CryptoNote::IWalletLegacy* m_wallet;

@@ -433,6 +433,7 @@ void MainWindow::createWallet()
 
 void MainWindow::openWallet()
 {
+  m_ui->m_welcomeFrame->hide();  
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
 
@@ -473,6 +474,7 @@ void MainWindow::openWallet()
 
 void MainWindow::closeWallet()
 {
+  m_ui->m_welcomeFrame->show();
   WalletAdapter::instance().close();
   walletClosed();
 }
@@ -480,7 +482,9 @@ void MainWindow::closeWallet()
 void MainWindow::importKey()
 {
   ImportKeyDialog dlg(this);
-
+  dlg.setModal(true);  
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -590,6 +594,9 @@ void MainWindow::encryptWallet()
     do
     {
       ChangePasswordDialog dlg(this);
+        dlg.setModal(true);
+        dlg.setWindowFlags(Qt::FramelessWindowHint);
+          dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
       if (dlg.exec() == QDialog::Rejected)
       {
         return;
@@ -603,6 +610,9 @@ void MainWindow::encryptWallet()
   else
   {
     NewPasswordDialog dlg(this);
+      dlg.setModal(true);
+      dlg.setWindowFlags(Qt::FramelessWindowHint);
+        dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
     bool error = false;
     do
     {
@@ -848,7 +858,9 @@ void MainWindow::importsecretkeys()
 {
 
   importSecretKeys dlg(this);
-
+    dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -925,7 +937,9 @@ void MainWindow::importSeed()
 {
 
   ImportSeed dlg(this);
-
+  dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -988,6 +1002,9 @@ void MainWindow::importSeed()
 void MainWindow::importTracking()
 {
   ImportTracking dlg(this);
+  dlg.setModal(true);  
+  dlg.setWindowFlags(Qt::FramelessWindowHint);  
+    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -1072,6 +1089,7 @@ void MainWindow::showQRCode(const QString &_address)
   {
   }
 }
+
 
 #ifdef Q_OS_WIN
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)

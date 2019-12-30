@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1270</width>
-    <height>700</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -74,7 +74,8 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; color: #aaa; font-family: 'Raleway';</string>
+      <string notr="true">border: 0px; color: #aaa; font-family: 'Raleway';
+background-color: #282d31;</string>
      </property>
      <property name="title">
       <string/>
@@ -1199,7 +1200,7 @@ border: none;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../../resources.qrc">
+       <iconset>
         <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
       </property>
       <property name="iconSize">
@@ -1212,9 +1213,9 @@ border: none;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>215</x>
+        <x>245</x>
         <y>70</y>
-        <width>165</width>
+        <width>161</width>
         <height>21</height>
        </rect>
       </property>
@@ -1338,7 +1339,7 @@ QPushButton#m_newMessageButton:hover {color: orange; border: 1px solid orange; f
      <widget class="QGroupBox" name="overviewBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1041</width>
         <height>581</height>
@@ -1480,162 +1481,6 @@ font-family: Raleway;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_3">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>120</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Telegram</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_4">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>70</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Twitter</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_5">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>120</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Bitcoin Talk</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_6">
-        <property name="geometry">
-         <rect>
-          <x>810</x>
-          <y>120</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Telegram</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_7">
-        <property name="geometry">
-         <rect>
-          <x>810</x>
-          <y>70</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Github</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_8">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>70</y>
-          <width>171</width>
-          <height>25</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string>Discord</string>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_9">
@@ -1812,6 +1657,132 @@ border: none;</string>
          <pixmap resource="../../resources.qrc">:/icons/medium.png</pixmap>
         </property>
        </widget>
+       <widget class="QPushButton" name="m_discordButton">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>65</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Discord</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_telegramButton">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>115</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Telegram</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_twitterButton">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>65</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Twitter</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_bitcointalkButton">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>115</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Bitcoin Talk</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_githubButton">
+        <property name="geometry">
+         <rect>
+          <x>810</x>
+          <y>65</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Github</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_mediumButton">
+        <property name="geometry">
+         <rect>
+          <x>810</x>
+          <y>115</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Medium</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QGroupBox" name="ov_fundsBox">
        <property name="geometry">
@@ -1819,7 +1790,7 @@ border: none;</string>
          <x>10</x>
          <y>20</y>
          <width>480</width>
-         <height>150</height>
+         <height>161</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1832,7 +1803,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>80</y>
+          <y>100</y>
           <width>181</width>
           <height>25</height>
          </rect>
@@ -1851,14 +1822,14 @@ font-size: 13px;
 border: none;</string>
         </property>
         <property name="text">
-         <string>Locked</string>
+         <string>Locked Deposits</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>55</y>
+          <y>75</y>
           <width>191</width>
           <height>24</height>
          </rect>
@@ -1884,7 +1855,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>123</x>
-          <y>55</y>
+          <y>75</y>
           <width>161</width>
           <height>24</height>
          </rect>
@@ -1909,11 +1880,11 @@ border: none;</string>
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
-       <widget class="QLabel" name="m_pendingBalanceLabel">
+       <widget class="QLabel" name="m_lockedDeposits">
         <property name="geometry">
          <rect>
           <x>123</x>
-          <y>80</y>
+          <y>100</y>
           <width>161</width>
           <height>25</height>
          </rect>
@@ -1942,7 +1913,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>290</x>
-          <y>80</y>
+          <y>100</y>
           <width>31</width>
           <height>25</height>
          </rect>
@@ -1968,7 +1939,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>290</x>
-          <y>55</y>
+          <y>75</y>
           <width>31</width>
           <height>24</height>
          </rect>
@@ -1994,7 +1965,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>20</y>
+          <y>15</y>
           <width>241</width>
           <height>25</height>
          </rect>
@@ -2111,7 +2082,7 @@ font-family: Raleway;</string>
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>105</y>
+          <y>125</y>
           <width>171</width>
           <height>25</height>
          </rect>
@@ -2137,7 +2108,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>290</x>
-          <y>105</y>
+          <y>125</y>
           <width>31</width>
           <height>24</height>
          </rect>
@@ -2159,13 +2130,94 @@ border: none;</string>
          <string notr="true">CCX</string>
         </property>
        </widget>
-       <widget class="QLabel" name="m_unlockedDepositLabel">
+       <widget class="QLabel" name="m_unlockedDeposits">
         <property name="geometry">
          <rect>
           <x>123</x>
-          <y>105</y>
+          <y>125</y>
           <width>161</width>
           <height>25</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string notr="true">0.00</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_25">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>191</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string>Portfolio</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_tickerLabel1_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>50</y>
+          <width>31</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Raleway;
+font-size: 13px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string notr="true">CCX</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_portfolio">
+        <property name="geometry">
+         <rect>
+          <x>123</x>
+          <y>50</y>
+          <width>161</width>
+          <height>24</height>
          </rect>
         </property>
         <property name="font">
@@ -2193,9 +2245,9 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>190</y>
+         <y>200</y>
          <width>480</width>
-         <height>185</height>
+         <height>171</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -2208,7 +2260,7 @@ border: none;</string>
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>20</y>
+          <y>15</y>
           <width>291</width>
           <height>23</height>
          </rect>
@@ -2230,7 +2282,7 @@ text-align: left;
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>70</y>
+          <y>55</y>
           <width>441</width>
           <height>111</height>
          </rect>
@@ -2627,7 +2679,7 @@ text-align: left;
      <widget class="QGroupBox" name="transactionsBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1031</width>
         <height>571</height>
@@ -2820,7 +2872,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QGroupBox" name="messageBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1031</width>
         <height>571</height>
@@ -2992,7 +3044,7 @@ color: #ccc;
      <widget class="QGroupBox" name="settingsBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1041</width>
         <height>571</height>
@@ -3439,6 +3491,33 @@ QPushButton#m_rescanButton:hover {color: orange; border: 1px solid orange; font-
          <string>START RESCAN</string>
         </property>
        </widget>
+       <widget class="QLabel" name="m_optimizationMessage">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>80</y>
+          <width>271</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Raleway</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ccc; 
+font-size: 13px;
+font-family: 'Raleway'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>(Optimization not required)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
       </widget>
       <widget class="QGroupBox" name="groupBox_9">
        <property name="geometry">
@@ -3753,7 +3832,7 @@ font-family: 'Raleway'; border: 0px;</string>
      <widget class="QGroupBox" name="walletBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1041</width>
         <height>571</height>
@@ -3768,9 +3847,9 @@ font-family: 'Raleway'; border: 0px;</string>
       <widget class="QGroupBox" name="groupBox_10">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>210</y>
-         <width>1021</width>
+         <width>1041</width>
          <height>221</height>
         </rect>
        </property>
@@ -3877,9 +3956,9 @@ font-family: 'Raleway'; border: 0px;</string>
       <widget class="QGroupBox" name="groupBox_11">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>20</y>
-         <width>1021</width>
+         <width>1041</width>
          <height>171</height>
         </rect>
        </property>
@@ -3964,9 +4043,9 @@ font-family: 'Raleway'; border: 0px;</string>
       <widget class="QGroupBox" name="groupBox_12">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>450</y>
-         <width>1021</width>
+         <width>1041</width>
          <height>111</height>
         </rect>
        </property>
@@ -4774,14 +4853,14 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
      <widget class="QGroupBox" name="newMessageBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1041</width>
         <height>571</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-top: 1px solid #444;</string>
+       <string notr="true">border-top: 1px solid #444; font-family: 'Raleway';</string>
       </property>
       <property name="title">
        <string/>
@@ -4976,12 +5055,10 @@ QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; fon
         <font>
          <family>Raleway</family>
          <pointsize>-1</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
 border: none;</string>
        </property>
        <property name="text">
@@ -5036,15 +5113,13 @@ p, li { white-space: pre-wrap; }
         <font>
          <family>Raleway</family>
          <pointsize>-1</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
         </font>
        </property>
        <property name="toolTip">
         <string>Do not include message in blockchain</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
 border: none;</string>
        </property>
        <property name="text">
@@ -5134,6 +5209,55 @@ border: none;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_messageLength">
+       <property name="geometry">
+        <rect>
+         <x>660</x>
+         <y>370</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Raleway</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="adressLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>550</y>
+         <width>341</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Raleway</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Note: Maximum message size is 260 characters.</string>
        </property>
       </widget>
      </widget>
@@ -5589,9 +5713,9 @@ QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; fo
        <widget class="QTreeView" name="m_depositView">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>25</x>
           <y>131</y>
-          <width>411</width>
+          <width>431</width>
           <height>300</height>
          </rect>
         </property>
@@ -5614,24 +5738,22 @@ QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; fo
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QHeaderView::section {
+         <string notr="true">QTreeView {
+	border: none;
+    background: none;
+	background-color: #282d31;
+    font-size: 14px;
+}
+
+QHeaderView::section {
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
 	font-family: 'Raleway';
-    border-top: none;
 	font-size: 14px;
- 	border-bottom: 1px solid #444;
+    border-left: 0px solid #444;
+    border-right: 0px solid #444;
    	height: 37px;
-}
-
-QTreeView {
-	font-family: 'Raleway';
-border: none;
-    color: #ccc;
-font-size: 13px;
-    height: 37px;
-background-color: #282d31;
 }
 
 QTreeView::item {
@@ -5639,26 +5761,7 @@ QTreeView::item {
     color: #ccc;
 	font-size: 13px;
     height: 37px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-font-size: 13px;
-  color: black;
-}
-
-QWidget:item:selected {
-	font-family: 'Raleway';
-background-color: #282d31;
-font-size: 13px;
-  color: #ccc;
-}
-
-border: none;
-font-size: 13px;
-font-family: 'Raleway';
-color: #ccc;
-</string>
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -5805,7 +5908,7 @@ font-weight: bold;</string>
      <widget class="QTextBrowser" name="m_statusBox">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>420</x>
         <y>69</y>
         <width>245</width>
         <height>21</height>
@@ -5848,7 +5951,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QGroupBox" name="addressBookBox">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>210</x>
         <y>100</y>
         <width>1031</width>
         <height>571</height>
@@ -6077,7 +6180,74 @@ color: #ccc;
        </property>
       </widget>
      </widget>
-     <zorder>sendBox</zorder>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>411</x>
+        <y>75</y>
+        <width>1</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: orange;</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="darkness">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>1</y>
+        <width>1270</width>
+        <height>700</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>1270</width>
+        <height>700</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1270</width>
+        <height>700</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0,0,0,140);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="m_qrButton">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>70</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="icon">
+       <iconset resource="../../resources.qrc">
+        <normaloff>:/images/images/qr.png</normaloff>:/images/images/qr.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>16</width>
+        <height>16</height>
+       </size>
+      </property>
+     </widget>
+     <zorder>darkness</zorder>
      <zorder>m_newDepositButton</zorder>
      <zorder>m_qrcodebutton</zorder>
      <zorder>m_copyAddressButton</zorder>
@@ -6088,16 +6258,19 @@ color: #ccc;
      <zorder>m_statusBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
-     <zorder>leftMenu</zorder>
      <zorder>aboutBox</zorder>
+     <zorder>messageBox</zorder>
+     <zorder>newMessageBox</zorder>
+     <zorder>walletBox</zorder>
+     <zorder>sendBox</zorder>
+     <zorder>leftMenu</zorder>
+     <zorder>line</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>settingsBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>m_qrButton</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
-     <zorder>transactionsBox</zorder>
-     <zorder>messageBox</zorder>
-     <zorder>settingsBox</zorder>
-     <zorder>walletBox</zorder>
-     <zorder>newMessageBox</zorder>
-     <zorder>addressBookBox</zorder>
     </widget>
    </item>
   </layout>
@@ -6906,6 +7079,166 @@ color: #ccc;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_messageTextEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>messageTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ttlSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>ttlValueChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>560</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_aboutQT</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>aboutQTClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>618</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_discordButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>discordClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>583</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_telegramButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>telegramClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>326</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_twitterButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>twitterClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_bitcointalkButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>bitcointalkClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_mediumButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>mediumClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1076</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_githubButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>githubClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1076</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_qrButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>qrCodeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -6956,6 +7289,15 @@ color: #ccc;
   <slot>copyABPaymentIdClicked()</slot>
   <slot>deleteABClicked()</slot>
   <slot>payToABClicked()</slot>
+  <slot>messageTextChanged()</slot>
+  <slot>ttlValueChanged(int)</slot>
+  <slot>aboutQTClicked()</slot>
+  <slot>discordClicked()</slot>
+  <slot>githubClicked()</slot>
+  <slot>bitcointalkClicked()</slot>
+  <slot>telegramClicked()</slot>
+  <slot>twitterClicked()</slot>
+  <slot>mediumClicked()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>

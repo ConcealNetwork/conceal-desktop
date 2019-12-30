@@ -21,6 +21,7 @@
         <file alias="cryptonote">images/cryptonote.png</file>
         <file alias="clock">images/clock.gif</file>
         <file>images/conceal.png</file>
+        <file>images/qr.png</file>
     </qresource>
     <qresource prefix="/">
         <file>icons/tx_input.png</file>
@@ -44,7 +45,6 @@
         <file>icons/maximize.png</file>
         <file>images/conceal-small.png</file>
         <file>images/lock.png</file>
-        <file>images/qr.png</file>
         <file>icons/discord.png</file>
         <file>icons/telegram.png</file>
         <file>icons/medium.png</file>

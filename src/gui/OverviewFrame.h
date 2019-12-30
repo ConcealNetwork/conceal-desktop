@@ -68,6 +68,7 @@ private:
   bool walletSynced = false;
   QMenu* contextMenu;
 
+
   void onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
@@ -92,7 +93,8 @@ private:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
-  
+  bool checkWalletPassword();
+
   Q_SLOT void sendClicked();
   Q_SLOT void copyClicked();
   Q_SLOT void depositClicked();
@@ -116,8 +118,11 @@ private:
   Q_SLOT void clearAllClicked();
   Q_SLOT void clearMessageClicked();
   Q_SLOT void ttlValueChanged(int _ttlValue);
+  Q_SLOT void recalculateMessageLength();
+  Q_SLOT void messageTextChanged();
   Q_SLOT void addressBookMessageClicked();
   Q_SLOT void newDepositClicked();
+  Q_SLOT void aboutQTClicked();
   Q_SLOT void depositParamsChanged();
   Q_SLOT void showDepositDetails(const QModelIndex &_index);
   Q_SLOT void timeChanged(int _value);
@@ -136,7 +141,12 @@ private:
   Q_SLOT void rescanClicked();
   Q_SLOT void currentAddressChanged(const QModelIndex& _index);
   Q_SLOT void addressDoubleClicked(const QModelIndex& _index);
-
+  Q_SLOT void discordClicked();
+  Q_SLOT void telegramClicked();  
+  Q_SLOT void twitterClicked();
+  Q_SLOT void githubClicked();
+  Q_SLOT void bitcointalkClicked();
+  Q_SLOT void mediumClicked();
 
 Q_SIGNALS:
   void sendSignal();

@@ -179,32 +179,6 @@ font-size: 15px;</string>
         <string>■  You control the private keys to your funds.</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>59</y>
-         <width>481</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Raleway</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-font-size: 20px;</string>
-       </property>
-       <property name="text">
-        <string>The Conceal Wallet</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
       <widget class="QPushButton" name="next1">
        <property name="geometry">
         <rect>
@@ -245,40 +219,40 @@ QPushButton#next1:hover {color: orange; background-color: #212529; border: 2px s
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>50</y>
+         <width>1191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Raleway</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; 
+font-size: 22px;
+font-family: Raleway;</string>
+       </property>
+       <property name="text">
+        <string>WELCOME TO THE CONCEAL WALLET</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
       <zorder>label_5</zorder>
       <zorder>next1</zorder>
       <zorder>label_3</zorder>
       <zorder>label_8</zorder>
       <zorder>label_9</zorder>
-      <zorder>label_10</zorder>
       <zorder>line_2</zorder>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>25</y>
-        <width>1191</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Raleway</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd; 
-font-size: 22px;
-font-family: Raleway;</string>
-      </property>
-      <property name="text">
-       <string>WELCOME TO THE CONCEAL WALLET</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
+      <zorder>label</zorder>
      </widget>
      <widget class="QGroupBox" name="box2">
       <property name="geometry">
@@ -1101,11 +1075,10 @@ font-size: 14px;</string>
       </widget>
      </widget>
      <zorder>label_4</zorder>
-     <zorder>label</zorder>
-     <zorder>box1</zorder>
      <zorder>box2</zorder>
      <zorder>box3</zorder>
      <zorder>box4</zorder>
+     <zorder>box1</zorder>
     </widget>
    </item>
   </layout>

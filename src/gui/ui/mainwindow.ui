@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529;
+   <string notr="true">background-color: #111;
 color: #ccc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">

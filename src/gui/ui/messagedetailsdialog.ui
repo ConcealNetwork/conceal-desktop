@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">font-family: 'Raleway';
-background-color: #111;
+background-color: #282d31;
 color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
