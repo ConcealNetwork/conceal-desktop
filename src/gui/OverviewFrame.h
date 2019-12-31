@@ -147,6 +147,9 @@ private:
   Q_SLOT void githubClicked();
   Q_SLOT void bitcointalkClicked();
   Q_SLOT void mediumClicked();
+  Q_SLOT void lockWallet();
+  Q_SLOT void unlockWallet();
+  Q_SLOT void encryptWalletClicked();
 
 Q_SIGNALS:
   void sendSignal();

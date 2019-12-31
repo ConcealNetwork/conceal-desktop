@@ -6438,9 +6438,9 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <zorder>settingsBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>m_qrButton</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>walletBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>

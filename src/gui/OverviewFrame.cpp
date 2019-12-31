@@ -158,42 +158,26 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   contextMenu->addAction(QString(tr("&Edit")), this, SLOT(editClicked()));
   contextMenu->addAction(QString(tr("&Delete")), this, SLOT(deleteClicked()));
 
+  if (!Settings::instance().isEncrypted())
+    m_ui->m_lockWalletButton->hide();
+
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
 
-int maxPeriod = 13;
-  uint32_t blocksPerDeposit = 21900;
-
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-  {
-    maxPeriod = 53;
-  }
-
-  m_ui->m_timeSpin->setMaximum(maxPeriod);
+  m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Month(s)")));
+  m_ui->m_timeSpin->setMaximum(12);
+  timeChanged(1);
 
   m_ui->darkness->hide();
+  m_ui->lockBox->hide();
   m_ui->darkness->setStyleSheet("background-color: rgba(0,0,0,160);");
 
-  /* New message box */
   m_ui->m_ttlSlider->setVisible(true);
   m_ui->m_ttlLabel->setVisible(true);
   m_ui->m_ttlSlider->setMinimum(1);
   m_ui->m_ttlSlider->setMaximum(MAX_TTL / MIN_TTL);
   ttlValueChanged(m_ui->m_ttlSlider->value());
-
-  /* Deposit box */
-  m_ui->m_timeSpin->setMinimum(1);
-  m_ui->m_timeSpin->setMaximum(12);
-
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-  {
-    m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Week(s)")));
-  }
-  else
-  {
-    m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Month(s)")));
-  }
 
   m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
@@ -210,7 +194,6 @@ int maxPeriod = 13;
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_UNLOCK_TIME, 200);
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_TYPE, 50);
 
-  /* Load the new app-wide font */
   int id = QFontDatabase::addApplicationFont(":/fonts/Raleway-Regular.ttf");
   QFont font;
   font.setFamily("Raleway");
@@ -218,6 +201,7 @@ int maxPeriod = 13;
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
   m_ui->m_transactionsView->setFont(font);
+  m_ui->m_encryptWalletButton->setVisible(false);
 
   /* Connect signals */
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
@@ -472,7 +456,6 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
   m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance) + " CCX");
   m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
-
 }
 
 void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
@@ -488,7 +471,6 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
   m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
   m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
-
 }
 
 void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
@@ -504,7 +486,6 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
   m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
   m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
-
 }
 
 void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume)
@@ -560,6 +541,13 @@ void OverviewFrame::depositClicked()
     m_ui->bankingBox->raise();
     m_ui->m_newTransferButton->hide();
     m_ui->m_newMessageButton->hide();
+
+    if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
+    {
+      m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Week(s)")));
+      m_ui->m_timeSpin->setMaximum(52);
+      timeChanged(1);
+    }
   }
   else
   {
@@ -610,6 +598,8 @@ void OverviewFrame::walletClicked()
   m_ui->walletBox->raise();
   m_ui->m_newTransferButton->hide();
   m_ui->m_newMessageButton->hide();
+  if (!Settings::instance().isEncrypted())
+    m_ui->m_encryptWalletButton->setVisible(true);
 }
 
 void OverviewFrame::qrCodeClicked()
@@ -1269,6 +1259,8 @@ void OverviewFrame::withdrawClicked()
   }
 
   WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
+  actualInvestmentBalanceUpdated(0);
+  actualDepositBalanceUpdated(0);
 }
 
 void OverviewFrame::importSeedButtonClicked()
@@ -1549,6 +1541,8 @@ void OverviewFrame::addABClicked()
 
 void OverviewFrame::editABClicked()
 {
+  m_ui->darkness->show();
+  m_ui->darkness->raise();
   NewAddressDialog dlg(&MainWindow::instance());
   dlg.setWindowTitle(QString(tr("Edit contact")));
   dlg.setEditLabel(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_LABEL).toString());
@@ -1583,6 +1577,7 @@ void OverviewFrame::editABClicked()
 
     deleteABClicked();
   }
+  m_ui->darkness->hide();
 }
 
 void OverviewFrame::copyABClicked()
@@ -1616,8 +1611,7 @@ void OverviewFrame::addressDoubleClicked(const QModelIndex &_index)
   {
     return;
   }
-  m_ui->darkness->show();
-  m_ui->darkness->raise();
+
   Q_EMIT payToSignal(_index);
   m_ui->darkness->hide();
 }
@@ -1662,6 +1656,10 @@ void OverviewFrame::mediumClicked()
 
 bool OverviewFrame::checkWalletPassword()
 {
+
+  if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
+    return true;
+
   PasswordDialog dlg(false, this);
   if (dlg.exec() == QDialog::Accepted)
   {
@@ -1678,6 +1676,35 @@ bool OverviewFrame::checkWalletPassword()
   }
 
   return false;
+}
+
+void OverviewFrame::lockWallet()
+{
+  if (QMessageBox::warning(&MainWindow::instance(), tr("Lock Wallet"),
+                           tr("Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it."),
+                           QMessageBox::Cancel,
+                           QMessageBox::Ok) != QMessageBox::Ok)
+  {
+    return;
+  }
+  m_ui->lockBox->show();
+  m_ui->lockBox->raise();
+}
+
+void OverviewFrame::unlockWallet()
+{
+  if (!checkWalletPassword())
+  {
+    return;
+  }
+  m_ui->lockBox->hide();
+}
+
+void OverviewFrame::encryptWalletClicked()
+{
+  if (!Settings::instance().isEncrypted())
+    return;
+  Q_EMIT encryptWalletSignal();
 }
 
 } // namespace WalletGui
