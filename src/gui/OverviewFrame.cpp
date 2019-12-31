@@ -263,11 +263,11 @@ int maxPeriod = 13;
   nam->get(request);
 
   /* Pull the alternate chart */
-  QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
-  connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
-  const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=511&height=191");
-  QNetworkRequest request2(url2);
-  nam2->get(request2);
+  //QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
+  //connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
+  //const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=511&height=191");
+  //QNetworkRequest request2(url2);
+  //nam2->get(request2);
 
   QString connection = Settings::instance().getConnection();
 
@@ -441,7 +441,7 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
 }
 
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
@@ -456,7 +456,7 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance) + " CCX");
   m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
 }
 
 void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
@@ -471,7 +471,7 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   m_ui->m_unlockedInvestmentsLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
   m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
 
 }
 
@@ -487,7 +487,7 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
   m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
 
 }
 
@@ -503,7 +503,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance));
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
   m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
 
 }
 
