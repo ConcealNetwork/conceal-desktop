@@ -2374,6 +2374,12 @@ font-family: 'Raleway';
           <height>191</height>
          </rect>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>481</width>
+          <height>191</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">border: none;</string>
         </property>
@@ -2672,8 +2678,8 @@ text-align: left;
        <zorder>label_11</zorder>
        <zorder>chartButton</zorder>
        <zorder>m_chart_2</zorder>
-       <zorder>m_chart</zorder>
        <zorder>label_13</zorder>
+       <zorder>m_chart</zorder>
       </widget>
      </widget>
      <widget class="QGroupBox" name="transactionsBox">
@@ -7300,8 +7306,8 @@ color: #ccc;
   <slot>mediumClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
