@@ -11,6 +11,11 @@
 #include <QDebug>
 #include <QMetaEnum>
 #include <QSize>
+#include <QDateTime>
+#include <QFont>
+#include <QMetaEnum>
+#include <QPixmap>
+#include <QTextStream>
 
 #include "DepositModel.h"
 
@@ -124,6 +129,12 @@ QVariant DepositModel::data(const QModelIndex& _index, int _role) const {
   }
 
   switch(_role) {
+case Qt::BackgroundRole:
+  if (0 == _index.row() % 2)
+      return QColor(40, 45, 49);
+  else
+      return QColor(33, 37, 41);
+
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
@@ -204,7 +215,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
       return QString("Investment");
     }
     if (term % 21900 == 0) {
-      return QString("Legacy Deposit");
+      return QString("Deposit");
     }
     if (term % 5040 == 0) {
       return QString("Deposit");

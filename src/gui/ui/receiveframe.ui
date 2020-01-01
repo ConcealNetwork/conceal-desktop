@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #212529; color: #ddd; font-family: 'Lato';</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #ddd; font-family: 'Raleway';</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -61,24 +61,24 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>831</width>
+        <x>520</x>
+        <y>50</y>
+        <width>251</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Raleway</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; 
+       <string notr="true">color: #fff; 
 font-size: 22px;</string>
       </property>
       <property name="text">
-       <string>WALLET SEED AND KEYS</string>
+       <string>WALLET KEY BACKUP</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="seedBox">
@@ -107,7 +107,7 @@ font-size: 22px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -134,7 +134,7 @@ font-size: 19px;
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -146,7 +146,7 @@ font-size: 16px;</string>
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -156,19 +156,17 @@ p, li { white-space: pre-wrap; }
          <x>380</x>
          <y>440</y>
          <width>210</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copySeedButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_copySeedButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -196,19 +194,17 @@ QPushButton#m_copySeedButton:hover {color: orange; background-color: #212529; bo
          <x>610</x>
          <y>440</y>
          <width>210</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton_2 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_backButton_2:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -236,19 +232,17 @@ QPushButton#m_backButton_2:hover {color: #ddd; border: 2px solid #444; font-size
          <x>230</x>
          <y>440</y>
          <width>240</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copySpendKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_copySpendKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -265,14 +259,14 @@ QPushButton#m_copySpendKeyButton:hover {color: orange; background-color: #212529
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 19px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
        </property>
        <property name="text">
         <string>PRIVATE SPEND KEY</string>
@@ -292,14 +286,14 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 19px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
        </property>
        <property name="text">
         <string>PRIVATE VIEW KEY</string>
@@ -319,20 +313,20 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 16px;
-font-family: Lato;color: #e5e5e5;</string>
+font-family: Raleway;color: #e5e5e5;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;private spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -347,20 +341,20 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 font-size: 16px;
-font-family: Lato;</string>
+font-family: Raleway;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;private view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -370,19 +364,17 @@ p, li { white-space: pre-wrap; }
          <x>490</x>
          <y>440</y>
          <width>240</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copyViewKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_copyViewKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -394,19 +386,17 @@ QPushButton#m_copyViewKeyButton:hover {color: orange; background-color: #212529;
          <x>750</x>
          <y>440</y>
          <width>210</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton_4 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -436,7 +426,7 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -458,7 +448,7 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -480,7 +470,7 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -502,7 +492,7 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -524,7 +514,7 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -541,16 +531,16 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
       <widget class="QPushButton" name="m_showSeed">
        <property name="geometry">
         <rect>
-         <x>280</x>
+         <x>370</x>
          <y>400</y>
-         <width>301</width>
-         <height>40</height>
+         <width>210</width>
+         <height>30</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
          <width>171</width>
-         <height>40</height>
+         <height>30</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -561,14 +551,12 @@ QPushButton#m_backButton_4:hover {color: #ddd; border: 2px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_showSeed {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_showSeed:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -579,20 +567,18 @@ QPushButton#m_showSeed:hover {color: orange; background-color: #212529; border: 
         <rect>
          <x>590</x>
          <y>400</y>
-         <width>301</width>
-         <height>40</height>
+         <width>210</width>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -609,14 +595,12 @@ QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_showPrivate {color: #ccc; border: 1px solid #343a40; font-size: 12px; background-color: #212529;}
-
-QPushButton#m_showPrivate:hover {color: #ddd; border: 2px solid #444; font-size: 12px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>PRIVATE KEYS</string>
@@ -649,14 +633,12 @@ QPushButton#m_showPrivate:hover {color: #ddd; border: 2px solid #444; font-size:
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_showGUI {color: #ccc; border: 1px solid #343a40; font-size: 12px; background-color: #212529;}
-
-QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 12px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>TRACKING KEY</string>
@@ -673,7 +655,7 @@ QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 12p
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -699,35 +681,6 @@ QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 12p
       <zorder>label_12</zorder>
       <zorder>m_showPrivate</zorder>
      </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>61</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="Line" name="logoLine">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>20</y>
-        <width>1</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #333;</string>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
      <widget class="QGroupBox" name="guiKeyBox">
       <property name="geometry">
        <rect>
@@ -749,19 +702,17 @@ QPushButton#m_showGUI:hover {color: #ddd; border: 2px solid #444; font-size: 12p
          <x>380</x>
          <y>440</y>
          <width>210</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_copyGUIKeyButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -778,12 +729,12 @@ QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #212529; 
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 19px;font-family: Lato;</string>
+        <string notr="true">color: #ddd; font-size: 19px;font-family: Raleway;</string>
        </property>
        <property name="text">
         <string>YOUR TRACKING KEY</string>
@@ -803,7 +754,7 @@ QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #212529; 
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -814,7 +765,7 @@ QPushButton#m_copyGUIKeyButton:hover {color: orange; background-color: #212529; 
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Tracking key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -824,19 +775,17 @@ p, li { white-space: pre-wrap; }
          <x>610</x>
          <y>440</y>
          <width>210</width>
-         <height>40</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Raleway</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_backButton_3 {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_backButton_3:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -860,12 +809,10 @@ QPushButton#m_backButton_3:hover {color: #ddd; border: 2px solid #444; font-size
       </widget>
      </widget>
      <zorder>label</zorder>
-     <zorder>label_11</zorder>
-     <zorder>logoLine</zorder>
+     <zorder>guiKeyBox</zorder>
+     <zorder>introBox</zorder>
      <zorder>seedBox</zorder>
      <zorder>privateKeyBox</zorder>
-     <zorder>introBox</zorder>
-     <zorder>guiKeyBox</zorder>
     </widget>
    </item>
   </layout>

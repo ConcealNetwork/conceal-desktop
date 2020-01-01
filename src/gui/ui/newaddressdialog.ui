@@ -6,322 +6,179 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>500</height>
+    <width>800</width>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>New address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529;
-color: #ddd;
-border: 0px;</string>
+   <string notr="true">color: #ddd; background-color: #282d31; font-family: 'Raleway';</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
-   <item row="0" column="0" colspan="2">
-    <widget class="QGroupBox" name="groupBox">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #212529; border-right: 4px solid orange;</string>
+      <string notr="true">font-size: 13px;</string>
      </property>
-     <property name="title">
-      <string/>
+     <property name="text">
+      <string>Address:</string>
      </property>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>40</y>
-        <width>381</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;</string>
-      </property>
-      <property name="text">
-       <string>NEW ADDRESS BOOK ENTRY</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>80</y>
-        <width>71</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;</string>
-      </property>
-      <property name="text">
-       <string>LABEL</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="m_labelEdit">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>110</y>
-        <width>351</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #212529;
-border-right: 0px;
-color: #e5e5e5;
-padding: 5px;</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>160</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>25</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;</string>
-      </property>
-      <property name="text">
-       <string>ADDRESS</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="m_addressEdit">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>190</y>
-        <width>351</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #212529;
-border-right: 0px;
-color: #e5e5e5;
-padding: 5px;</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>240</y>
-        <width>211</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd;
-border-right: 0px;</string>
-      </property>
-      <property name="text">
-       <string>PAYMENT ID</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="m_paymentIdEdit">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>270</y>
-        <width>351</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #212529;
-border-right: 0px;
-color: #e5e5e5;
-padding: 5px;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="m_okButton">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>350</y>
-        <width>351</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>125</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
-      </property>
-      <property name="text">
-       <string>ADD</string>
-      </property>
-      <property name="default">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="m_cancelButton">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>410</y>
-        <width>351</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>125</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
-      </property>
-      <property name="text">
-       <string>CANCEL</string>
-      </property>
-     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Label:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>600</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Payment ID:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="m_cancelButton">
+     <property name="minimumSize">
+      <size>
+       <width>121</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+     </property>
+     <property name="text">
+      <string>CANCEL</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="m_okButton">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>121</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+     </property>
+     <property name="text">
+      <string>OK</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QLineEdit" name="m_contactPaymentIdEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="QLineEdit" name="m_addressEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="QLineEdit" name="m_labelEdit">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
     </widget>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>m_labelEdit</tabstop>
+  <tabstop>m_addressEdit</tabstop>
+  <tabstop>m_contactPaymentIdEdit</tabstop>
+  <tabstop>m_okButton</tabstop>
+  <tabstop>m_cancelButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
