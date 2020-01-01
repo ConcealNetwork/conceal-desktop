@@ -1259,8 +1259,12 @@ void OverviewFrame::withdrawClicked()
   }
 
   WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
-  actualInvestmentBalanceUpdated(0);
+  actualBalanceUpdated(0);
+  pendingBalanceUpdated(0);
   actualDepositBalanceUpdated(0);
+  pendingDepositBalanceUpdated(0);
+  actualInvestmentBalanceUpdated(0);
+  pendingInvestmentBalanceUpdated(0);
 }
 
 void OverviewFrame::importSeedButtonClicked()
