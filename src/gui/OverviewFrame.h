@@ -8,159 +8,86 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-#include <IWalletLegacy.h>
 
-namespace Ui
-{
-class OverviewFrame;
+
+namespace Ui {
+  class OverviewFrame;
 }
 
-namespace WalletGui
-{
+namespace WalletGui {
 
 class PriceProvider;
 class RecentTransactionsModel;
-class TransactionsListModel;
-class MessagesFrame;
-class DepositListModel;
-class VisibleMessagesModel;
-class AddressProvider;
 
-class OverviewFrame : public QFrame
-{
+class OverviewFrame : public QFrame {
   Q_OBJECT
   Q_DISABLE_COPY(OverviewFrame)
 
 public:
-  explicit OverviewFrame(QWidget *_parent);
+  explicit OverviewFrame(QWidget* _parent);
   ~OverviewFrame();
-  void setAddress(const QString &_address);
-  void setPaymentId(const QString &_paymendId);
-  bool fromPay = true;
-  QModelIndex index;
-
-public slots:
-  void onCustomContextMenu(const QPoint &point);
-
-public Q_SLOTS:
-  void addABClicked();
-  void editABClicked();
-  void copyABClicked();
-  void copyABPaymentIdClicked();
-  void deleteABClicked();
-  void payToABClicked();
 
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
   QSharedPointer<RecentTransactionsModel> m_transactionModel;
-  QScopedArrayPointer<DepositListModel> m_depositModel;
-  QScopedPointer<VisibleMessagesModel> m_visibleMessagesModel;
-  QScopedPointer<TransactionsListModel> m_transactionsModel;
-  PriceProvider *m_priceProvider;
-  AddressProvider *m_addressProvider;
-  QString remote_node_fee_address;
-  QString wallet_address;
-  quint64 remote_node_fee;
-  quint64 m_actualBalance = 0;
+  PriceProvider* m_priceProvider;  
   int subMenu = 0;
   int currentChart = 1;
   bool walletSynced = false;
-  QMenu* contextMenu;
 
-
-  void onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume);
-  void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
-  void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
+  void transactionsInserted(const QModelIndex& _parent, int _first, int _last);
+  void transactionsRemoved(const QModelIndex& _parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
-  void downloadFinished2(QNetworkReply *reply2);
+  void downloadFinished2(QNetworkReply *reply2);  
   void layoutChanged();
-  void setStatusBarText(const QString &_text);
-  void updateWalletAddress(const QString &_address);
-  void walletSynchronized(int _error, const QString &_error_text);
+  void setStatusBarText(const QString& _text);
+  void updateWalletAddress(const QString& _address);
+  void walletSynchronized(int _error, const QString& _error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
+  void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
   void actualDepositBalanceUpdated(quint64 _balance);
-  void pendingDepositBalanceUpdated(quint64 _balance);
+  void pendingDepositBalanceUpdated(quint64 _balance);  
   void actualInvestmentBalanceUpdated(quint64 _balance);
-  void pendingInvestmentBalanceUpdated(quint64 _balance);
+  void pendingInvestmentBalanceUpdated(quint64 _balance);    
   void showCurrentWallet();
   void syncMessage();
-  void walletActualBalanceUpdated(quint64 _balance);
-  static bool isValidPaymentId(const QByteArray &_paymentIdString);
+  void trackingMessage();  
   void reset();
-  void onAddressFound(const QString &_address);
-  void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
-  void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
-  void delay();
-  bool checkWalletPassword();
-
-  Q_SLOT void sendClicked();
+  
+  Q_SLOT void sendClicked();  
   Q_SLOT void copyClicked();
-  Q_SLOT void depositClicked();
-  Q_SLOT void transactionClicked();
-  Q_SLOT void dashboardClicked();
-  Q_SLOT void messageClicked();
+  Q_SLOT void depositClicked();    
+  Q_SLOT void transactionClicked();      
+  Q_SLOT void messageClicked();      
+  Q_SLOT void addressBookClicked();      
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
-  Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
+  Q_SLOT void importClicked();
   Q_SLOT void aboutClicked();
-  Q_SLOT void showTransactionDetails(const QModelIndex &_index);
-  Q_SLOT void showMessageDetails(const QModelIndex &_index);
-  Q_SLOT void walletClicked();
-  Q_SLOT void chartButtonClicked();
+  Q_SLOT void walletClicked();    
+  Q_SLOT void chartButtonClicked();      
   Q_SLOT void settingsClicked();
-  Q_SLOT void addressBookClicked();
-  Q_SLOT void sendFundsClicked();
-  Q_SLOT void sendMessageClicked();
-  Q_SLOT void clearAllClicked();
-  Q_SLOT void clearMessageClicked();
-  Q_SLOT void ttlValueChanged(int _ttlValue);
-  Q_SLOT void recalculateMessageLength();
-  Q_SLOT void messageTextChanged();
-  Q_SLOT void addressBookMessageClicked();
-  Q_SLOT void newDepositClicked();
-  Q_SLOT void aboutQTClicked();
-  Q_SLOT void depositParamsChanged();
-  Q_SLOT void showDepositDetails(const QModelIndex &_index);
-  Q_SLOT void timeChanged(int _value);
-  Q_SLOT void withdrawClicked();
-  Q_SLOT void importSeedButtonClicked();
-  Q_SLOT void openWalletButtonClicked();
-  Q_SLOT void importTrackingButtonClicked();
-  Q_SLOT void importPrivateKeysButtonClicked();
-  Q_SLOT void createNewWalletButtonClicked();
-  Q_SLOT void backupClicked();
-  Q_SLOT void backupFileClicked();  
-  Q_SLOT void optimizeClicked();
-  Q_SLOT void autoOptimizeClicked(); 
-  Q_SLOT void saveLanguageCurrencyClicked();
-  Q_SLOT void saveConnectionClicked();
-  Q_SLOT void rescanClicked();
-  Q_SLOT void currentAddressChanged(const QModelIndex& _index);
-  Q_SLOT void addressDoubleClicked(const QModelIndex& _index);
-  Q_SLOT void discordClicked();
-  Q_SLOT void telegramClicked();  
-  Q_SLOT void twitterClicked();
-  Q_SLOT void githubClicked();
-  Q_SLOT void bitcointalkClicked();
-  Q_SLOT void mediumClicked();
-  Q_SLOT void lockWallet();
-  Q_SLOT void unlockWallet();
-  Q_SLOT void encryptWalletClicked();
+  Q_SLOT void subButton1Clicked();
+  Q_SLOT void subButton2Clicked();
+  Q_SLOT void subButton3Clicked();
+  Q_SLOT void subButton4Clicked();
+  Q_SLOT void subButton5Clicked();  
+  Q_SLOT void subButton6Clicked();  
 
 Q_SIGNALS:
   void sendSignal();
-  void depositSignal();
-  void backupSignal();
-  void backupFileSignal();  
+  void depositSignal();  
+  void backupSignal();    
   void rescanSignal();
-  void openWalletSignal();
+  void openWalletSignal();  
   void newWalletSignal();
   void closeWalletSignal();
-  void qrSignal(const QString &_address);
+  void qrSignal(const QString& _address);
   void newMessageSignal();
   void newTransferSignal();
   void transactionSignal();
@@ -168,19 +95,18 @@ Q_SIGNALS:
   void optimizeSignal();
   void resetWalletSignal();
   void importSignal();
+  void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
   void disclaimerSignal();
   void settingsSignal();
-  void linksSignal();
+  void linksSignal();  
   void importSeedSignal();
   void importGUIKeySignal();
-  void importTrackingKeySignal();
+  void importTrackingKeySignal();  
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();
-  void languageSettingsSignal();
-  void addressBookSignal();
-  void payToSignal(const QModelIndex& _index);  
+  void languageSettingsSignal();  
 };
-} // namespace WalletGui
+}

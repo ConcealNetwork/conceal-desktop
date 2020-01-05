@@ -6,124 +6,84 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>874</width>
-    <height>585</height>
+    <width>1270</width>
+    <height>700</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1270</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Lato</family>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string>Address Book</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: #ddd;
+border: 0px;
+background-color: #212529;</string>
   </property>
   <property name="frameShape">
-   <enum>QFrame::StyledPanel</enum>
+   <enum>QFrame::NoFrame</enum>
   </property>
   <property name="frameShadow">
-   <enum>QFrame::Raised</enum>
+   <enum>QFrame::Plain</enum>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
    <item>
-    <widget class="QTreeView" name="m_addressBookView">
-     <property name="styleSheet">
-      <string notr="true">QHeaderView::section {
-	color: white;
-	font-weight: bold;
-	background-color: #282d31;
-	font-family: 'Raleway';
-    border-top: none;
-	font-size: 14px;
- 	border-bottom: 1px solid #444;
-   	height: 37px;
-}
-
-QTreeView {
-	font-family: 'Raleway';
-border: none;
-    color: #ccc;
-font-size: 13px;
-    height: 37px;
-background-color: #282d31;
-}
-
-QTreeView::item {
-	font-family: 'Raleway';
-    color: #ccc;
-	font-size: 13px;
-    height: 37px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-font-size: 13px;
-  color: black;
-}
-
-QWidget:item:selected {
-	font-family: 'Raleway';
-background-color: #555;
-font-size: 13px;
-  color: #ccc;
-}
-
-border: none;
-font-size: 13px;
-font-family: 'Raleway';
-color: #ccc;
-</string>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="topMargin">
+      <number>10</number>
      </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     <property name="bottomMargin">
+      <number>10</number>
      </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="sortingEnabled">
-      <bool>false</bool>
-     </property>
-     <attribute name="headerDefaultSectionSize">
-      <number>150</number>
-     </attribute>
-     <attribute name="headerStretchLastSection">
-      <bool>false</bool>
-     </attribute>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="m_addAddressButton">
-       <property name="text">
-        <string>New contact</string>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Lato</family>
+         <pointsize>-1</pointsize>
+        </font>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>:/icons/add_recepient</normaloff>:/icons/add_recepient</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_editAddressButton">
-       <property name="enabled">
-        <bool>false</bool>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; 
+font-size: 20px;
+font-family: Lato;</string>
        </property>
        <property name="text">
-        <string>Edit contact</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>:/icons/edit</normaloff>:/icons/edit</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_deleteAddressButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>Delete contact</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
+        <string>ADDRESS BOOK</string>
        </property>
       </widget>
      </item>
@@ -132,51 +92,206 @@ color: #ccc;
        <property name="enabled">
         <bool>false</bool>
        </property>
-       <property name="text">
-        <string>Copy address</string>
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>40</height>
+        </size>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>:/icons/copy_white</normaloff>
-         <selectedoff>:/icons/copy_white</selectedoff>:/icons/copy_white</iconset>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_copyAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_copyAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+       </property>
+       <property name="text">
+        <string>COPY ADDRESS</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="m_copyPaymentIdButton">
+      <widget class="QPushButton" name="m_deleteAddressButton">
        <property name="enabled">
         <bool>false</bool>
        </property>
-       <property name="text">
-        <string>Copy Payment ID</string>
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>40</height>
+        </size>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>:/icons/copy_white</normaloff>
-         <selectedoff>:/icons/copy_white</selectedoff>:/icons/copy_white</iconset>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_deleteAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_deleteAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+       </property>
+       <property name="text">
+        <string>REMOVE ADDRESS</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
+      <widget class="QPushButton" name="m_addAddressButton">
+       <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>20</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
-      </spacer>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_addAddressButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_addAddressButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+       </property>
+       <property name="text">
+        <string>ADD NEW ADDRESS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_backButton">
+       <property name="minimumSize">
+        <size>
+         <width>210</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>171</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_backButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_backButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="QTreeView" name="m_addressBookView">
+     <property name="minimumSize">
+      <size>
+       <width>1270</width>
+       <height>550</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Lato</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QHeaderView::section {
+background-color: #212529; 
+   color: #ddd;
+font-family: Lato;
+    font-size: 12px;
+    border: 0px solid white;
+border-bottom: 1px solid orange;
+   height: 30px;
+
+}
+
+QTreeView::item
+{
+    font: 10px;
+    color: #ddd;
+    height: 30px;
+}
+
+QTreeView::branch:selected {
+  background-color: orange;
+  color: black;
+}
+
+QWidget:item:selected {
+  background-color: #212529;
+  color: #ddd;
+}
+
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="indentation">
+      <number>5</number>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="headerShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>m_addAddressButton</sender>
@@ -227,38 +342,6 @@ color: #ccc;
    </hints>
   </connection>
   <connection>
-   <sender>m_editAddressButton</sender>
-   <signal>clicked()</signal>
-   <receiver>AddressBookFrame</receiver>
-   <slot>editClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>147</x>
-     <y>561</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>436</x>
-     <y>292</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_copyPaymentIdButton</sender>
-   <signal>clicked()</signal>
-   <receiver>AddressBookFrame</receiver>
-   <slot>copyPaymentIdClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>455</x>
-     <y>561</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>436</x>
-     <y>292</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_addressBookView</sender>
    <signal>doubleClicked(QModelIndex)</signal>
    <receiver>AddressBookFrame</receiver>
@@ -274,9 +357,26 @@ color: #ccc;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AddressBookFrame</receiver>
+   <slot>backClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1198</x>
+     <y>28</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addClicked()</slot>
+  <slot>backClicked()</slot>
   <slot>deleteClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>addressDoubleClicked(QModelIndex)</slot>

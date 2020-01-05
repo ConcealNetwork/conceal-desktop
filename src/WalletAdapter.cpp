@@ -18,7 +18,6 @@
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "WalletAdapter.h"
-#include <ITransfersContainer.h>
 
 namespace WalletGui {
 
@@ -471,7 +470,7 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
     Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(m_wallet->pendingInvestmentBalance());    
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress()));
     Q_EMIT reloadWalletTransactionsSignal();
-    Q_EMIT walletStateChangedSignal(tr("READY"));
+    Q_EMIT walletStateChangedSignal(tr("Ready"));
     QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
     if (!QFile::exists(Settings::instance().getWalletFile())) {
       save(true, true);
@@ -497,7 +496,7 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
   if (!_error && !m_isBackupInProgress) {
     closeFile();
     renameFile(Settings::instance().getWalletFile() + ".temp", Settings::instance().getWalletFile());
-    Q_EMIT walletStateChangedSignal(tr("READY"));
+    Q_EMIT walletStateChangedSignal(tr("Ready"));
     Q_EMIT updateBlockStatusTextWithDelaySignal();
   } else if (m_isBackupInProgress) {
     m_isBackupInProgress = false;
@@ -511,9 +510,7 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
 
 void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _total) {
   m_isSynchronized = false;
-
-  qreal syncedPercentage = (static_cast<qreal>(_current)) / _total;
-  Q_EMIT walletStateChangedSignal(QString("<span style='color: orange;'>%1 (%2%)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2)));
+  Q_EMIT walletStateChangedSignal(QString("<span style='color: orange;'>%1</span><br />Height: %2/%3").arg(tr("SYNCHRONIZING")).arg(_current).arg(_total));
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
 
@@ -654,10 +651,8 @@ void WalletAdapter::updateBlockStatusText() {
   quint64 blockAge = blockTime.msecsTo(currentTime);
   const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("SYNCHRONIZED") : tr("WARNING");
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("%1").arg(tr("There was a problem, please restart your wallet."));
-  const QString blockHeightString = " (" + QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0) + ")";
-
   Q_EMIT walletStateChangedSignal(QString(tr("<span style='color: orange;'>%1</span><br />Height: %2<br />%4<br />%3")).
-    arg(statusString + blockHeightString).
+    arg(statusString).
     arg(NodeAdapter::instance().getLastLocalBlockHeight()).
     arg(warningString).
     arg(walletSecurity));
@@ -667,29 +662,6 @@ void WalletAdapter::updateBlockStatusText() {
 
 void WalletAdapter::updateBlockStatusTextWithDelay() {
   QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
-}
-
-bool WalletAdapter::checkWalletPassword(const QString& _password) {
-  Q_ASSERT(m_wallet != nullptr);
-  if (Settings::instance().getWalletFile().endsWith(".wallet")) {
-    if (openFile(Settings::instance().getWalletFile(), true)) {
-      try {
-        if (m_wallet->checkWalletPassword(m_file, _password.toStdString())) {
-          closeFile();
-          return true;
-        }
-        else {
-          closeFile();
-          return false;
-        }
-      }
-      catch (std::system_error&) {
-        closeFile();
-        return false;
-      }
-    }
-  }
-  return false;
 }
 
 }

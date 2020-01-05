@@ -32,6 +32,9 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
+#include "AboutDialog.h"
+#include "DisclaimerDialog.h"
+#include "LinksDialog.h"
 #include "AddressBookModel.h"
 #include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
@@ -43,6 +46,8 @@
 #include "importtracking.h"
 #include "transactionconfirmation.h"
 #include "OptimizationManager.h"
+#include "NodeSettings.h"
+#include "LanguageSettings.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
 #include "NewPasswordDialog.h"
@@ -107,7 +112,8 @@ void MainWindow::connectToSignals()
 */
 
   connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
+  connect(m_ui->m_messagesFrame, &MessagesFrame::replyToSignal, this, &MainWindow::replyTo);
+  connect(m_ui->m_addressBookFrame, &AddressBookFrame::payToSignal, this, &MainWindow::payTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
@@ -125,7 +131,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::backupFileSignal, this, &MainWindow::backupWallet);  
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);
@@ -140,13 +145,25 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::connectionSettingsSignal, this, &MainWindow::nodeSettings);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::languageSettingsSignal, this, &MainWindow::languageSettings);
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);
-
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::settingsSignal, this, &MainWindow::settingsTo);
+  connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_sendFrame, &SendFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_sendFrame, &SendFrame::addressFoundSignal, this, &MainWindow::setRemoteWindowTitle);
+  connect(m_ui->m_sendFrame, &SendFrame::addressBookSignal, this, &MainWindow::addressBookTo);
+  connect(m_ui->m_depositsFrame, &DepositsFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_messagesFrame, &MessagesFrame::newMessageSignal, this, &MainWindow::sendMessageTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_addressBookFrame, &AddressBookFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_transactionsFrame, &TransactionsFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_messagesFrame, &MessagesFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_sendMessageFrame, &SendMessageFrame::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::backSignal, this, &MainWindow::dashboardTo);
+  connect(m_ui->m_bankingFrame2, &BankingFrame2::rescanSignal, this, &MainWindow::rescanTo);
 }
 
 void MainWindow::initUi()
@@ -163,12 +180,23 @@ void MainWindow::initUi()
   m_ui->m_aboutCryptonoteAction->setText(QString(tr("About %1 Wallet")).arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
 
   m_ui->m_overviewFrame->hide();
+  m_ui->m_sendFrame->hide();
   m_ui->m_receiveFrame->hide();
+  m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
+  m_ui->m_messagesFrame->hide();
+  m_ui->m_sendMessageFrame->hide();
+  m_ui->m_depositsFrame->hide();
+  m_ui->m_bankingFrame2->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
+  m_tabActionGroup->addAction(m_ui->m_sendAction);
   m_tabActionGroup->addAction(m_ui->m_receiveAction);
+  m_tabActionGroup->addAction(m_ui->m_transactionsAction);
   m_tabActionGroup->addAction(m_ui->m_addressBookAction);
+  m_tabActionGroup->addAction(m_ui->m_messagesAction);
+  m_tabActionGroup->addAction(m_ui->m_sendMessageAction);
+  m_tabActionGroup->addAction(m_ui->m_depositsAction);
 
   m_ui->m_overviewAction->toggle();
 
@@ -204,6 +232,7 @@ void MainWindow::minimizeToTray(bool _on)
 void MainWindow::scrollToTransaction(const QModelIndex &_index)
 {
   m_ui->m_transactionsAction->setChecked(true);
+  m_ui->m_transactionsFrame->scrollToTransaction(_index);
 }
 
 void MainWindow::quit()
@@ -433,7 +462,6 @@ void MainWindow::createWallet()
 
 void MainWindow::openWallet()
 {
-  m_ui->m_welcomeFrame->hide();  
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
 
@@ -474,7 +502,6 @@ void MainWindow::openWallet()
 
 void MainWindow::closeWallet()
 {
-  m_ui->m_welcomeFrame->show();
   WalletAdapter::instance().close();
   walletClosed();
 }
@@ -482,9 +509,7 @@ void MainWindow::closeWallet()
 void MainWindow::importKey()
 {
   ImportKeyDialog dlg(this);
-  dlg.setModal(true);  
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -594,9 +619,6 @@ void MainWindow::encryptWallet()
     do
     {
       ChangePasswordDialog dlg(this);
-        dlg.setModal(true);
-        dlg.setWindowFlags(Qt::FramelessWindowHint);
-          dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
       if (dlg.exec() == QDialog::Rejected)
       {
         return;
@@ -610,9 +632,6 @@ void MainWindow::encryptWallet()
   else
   {
     NewPasswordDialog dlg(this);
-      dlg.setModal(true);
-      dlg.setWindowFlags(Qt::FramelessWindowHint);
-        dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
     bool error = false;
     do
     {
@@ -656,17 +675,20 @@ void MainWindow::setCloseToTray(bool _on)
 
 void MainWindow::about()
 {
-
+  AboutDialog dlg(this);
+  dlg.exec();
 }
 
 void MainWindow::disclaimer()
 {
-
+  DisclaimerDialog dlg(this);
+  dlg.exec();
 }
 
 void MainWindow::links()
 {
-
+  LinksDialog dlg(this);
+  dlg.exec();
 }
 
 void MainWindow::showMessage(const QString &_text, QtMsgType _type)
@@ -752,8 +774,14 @@ void MainWindow::walletClosed()
 
   /* frames */
   m_ui->m_overviewFrame->hide();
+  m_ui->m_sendFrame->hide();
+  m_ui->m_transactionsFrame->hide();
   m_ui->m_addressBookFrame->hide();
+  m_ui->m_messagesFrame->hide();
+  m_ui->m_sendMessageFrame->hide();
   m_ui->m_welcomeFrame->show();
+  m_ui->m_depositsFrame->hide();
+  m_ui->m_bankingFrame2->hide();
 
   /* labels */
   QList<QAction *> tabActions = m_tabActionGroup->actions();
@@ -778,25 +806,23 @@ void MainWindow::checkTrackingMode()
   }
 }
 
+/* ------------------------------------------------------------------------------------- */
+
 void MainWindow::replyTo(const QModelIndex &_index)
 {
-
+  m_ui->m_sendMessageFrame->setAddress(_index.data(MessagesModel::ROLE_HEADER_REPLY_TO).toString());
+  m_ui->m_sendMessageAction->trigger();
 }
 
 void MainWindow::payTo(const QModelIndex &_index)
 {
+  m_ui->m_sendFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "")
   {
-    m_ui->m_overviewFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
+    m_ui->m_sendFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
   }
-  else
-  {
-    m_ui->m_overviewFrame->setPaymentId("");
-  }
-  m_ui->m_overviewFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
-  m_ui->m_overviewFrame->show();
-  m_ui->m_overviewAction->trigger();
-  m_ui->m_overviewFrame->raise();    
+
+  m_ui->m_sendAction->trigger();
 }
 
 void MainWindow::sendTo()
@@ -806,6 +832,7 @@ void MainWindow::sendTo()
 
 void MainWindow::dashboardTo()
 {
+  m_ui->m_bankingFrame2->hide();
   m_ui->m_overviewFrame->show();
   m_ui->m_overviewAction->trigger();
   m_ui->m_overviewFrame->raise();
@@ -814,6 +841,8 @@ void MainWindow::dashboardTo()
 void MainWindow::settingsTo()
 {
   m_ui->m_overviewFrame->hide();
+  m_ui->m_bankingFrame2->raise();
+  m_ui->m_bankingFrame2->show();
 }
 
 void MainWindow::depositTo()
@@ -858,9 +887,7 @@ void MainWindow::importsecretkeys()
 {
 
   importSecretKeys dlg(this);
-    dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -933,13 +960,13 @@ void MainWindow::importsecretkeys()
   }
 }
 
+/* --------------------------- IMPORT MNEMONIC SEED --------------------------------------- */
+
 void MainWindow::importSeed()
 {
 
   ImportSeed dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -999,12 +1026,11 @@ void MainWindow::importSeed()
   }
 }
 
+/* --------------------------------------------------------------------------------------- */
+
 void MainWindow::importTracking()
 {
   ImportTracking dlg(this);
-  dlg.setModal(true);  
-  dlg.setWindowFlags(Qt::FramelessWindowHint);  
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -1079,6 +1105,47 @@ void MainWindow::importTracking()
   }
 }
 
+void MainWindow::nodeSettings()
+{
+  NodeSettings dlg(this);
+
+  dlg.initConnectionSettings();
+  dlg.setConnectionMode();
+  dlg.setRemoteHost();
+
+  if (dlg.exec() == QDialog::Accepted)
+  {
+    QString connection = dlg.setConnectionMode();
+    Settings::instance().setConnection(connection);
+    if (connection == "remote")
+    {
+      QString remoteHost = dlg.setRemoteHost();
+      Settings::instance().setCurrentRemoteNode(remoteHost);
+    }
+    QMessageBox::information(this,
+                             tr("Conection settings saved"),
+                             tr("Please restart the wallet for the new settings to take effect."),
+                             QMessageBox::Ok);
+  }
+}
+
+void MainWindow::languageSettings()
+{
+  LanguageSettings dlg(this);
+
+  dlg.initLanguageSettings();
+
+  if (dlg.exec() == QDialog::Accepted)
+  {
+    QString language = dlg.setLanguage();
+    Settings::instance().setLanguage(language);
+    QMessageBox::information(this,
+                             tr("Language settings saved"),
+                             tr("Please restart the wallet for the new settings to take effect."),
+                             QMessageBox::Ok);
+  }
+}
+
 void MainWindow::showQRCode(const QString &_address)
 {
 
@@ -1089,7 +1156,6 @@ void MainWindow::showQRCode(const QString &_address)
   {
   }
 }
-
 
 #ifdef Q_OS_WIN
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)

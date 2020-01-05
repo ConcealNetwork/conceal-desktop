@@ -14,7 +14,7 @@
    <string>Import</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #282d31; color: #ddd; border: 0px; font-family: Raleway;</string>
+   <string notr="true">background-color: #212529; color: #ddd; border: 0px;</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color: #282d31; border-right: 4px solid orange;</string>
    </property>
    <property name="title">
     <string/>
@@ -42,7 +42,6 @@
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -67,12 +66,11 @@
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #fff;
+     <string notr="true">color: #ddd;
 border-right: 0px;
 font-size: 20px;</string>
     </property>
@@ -94,7 +92,6 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -122,12 +119,15 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
-      <pointsize>-1</pointsize>
+      <family>Lato</family>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa; padding: 5px;</string>
+     <string notr="true">background-color: #212529;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -141,7 +141,6 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -169,12 +168,16 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
-      <pointsize>-1</pointsize>
+      <family>Lato</family>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa; padding: 5px;</string>
+     <string notr="true">background-color: #212529;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;
+</string>
     </property>
    </widget>
    <widget class="QPushButton" name="m_okButton">
@@ -194,12 +197,13 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+     <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
     </property>
     <property name="text">
      <string>IMPORT</string>
@@ -222,12 +226,13 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+     <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+
+QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
     </property>
     <property name="text">
      <string>CANCEL</string>
@@ -244,12 +249,16 @@ font-size: 20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Raleway</family>
-      <pointsize>-1</pointsize>
+      <family>Lato</family>
+      <pointsize>15</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+     <string notr="true">background-color: #212529;
+border-right: 0px;
+color: #ddd;
+padding: 5px;
+</string>
     </property>
     <property name="text">
      <string>...</string>

@@ -32,6 +32,7 @@ public:
     switch(_index.column()) {
     case TransactionsModel::COLUMN_AMOUNT:
     case TransactionsModel::COLUMN_CONFIRMATIONS:
+    case TransactionsModel::COLUMN_HASH:
     case TransactionsModel::COLUMN_DATE:
       static_cast<QLabel*>(_editor)->setText(_index.data().toString());
       return;
@@ -42,28 +43,9 @@ public:
       return;
     }
 
-    case TransactionsModel::COLUMN_TYPE: {
-      QString txtype = _index.data(TransactionsModel::ROLE_TYPE).toString();
-      QString txtext = "Received CCX";
-      if (txtype == "0") 
-      {
-        txtext = "New Block";
-      } 
-      else if (txtype == "2")
-      {
-        txtext = "Send CCX";
-      }
-      else if (txtype == "3")
-      {
-        txtext = "Optimization";
-      }
-      else if (txtype == "4")
-      {
-        txtext = "New Deposit";
-      }    
-      static_cast<QLabel*>(_editor)->setText(txtext);
+    case TransactionsModel::COLUMN_TYPE:
+      static_cast<QLabel*>(_editor)->setPixmap(_index.data(TransactionsModel::ROLE_ICON).value<QPixmap>());
       return;
-    }  
     default:
       return;
     }
@@ -80,6 +62,7 @@ TransactionFrame::TransactionFrame(const QModelIndex& _index, QWidget* _parent) 
   m_dataMapper.addMapping(m_ui->m_iconLabel, TransactionsModel::COLUMN_TYPE);
   m_dataMapper.addMapping(m_ui->m_amountLabel, TransactionsModel::COLUMN_AMOUNT);
   m_dataMapper.addMapping(m_ui->m_timeLabel, TransactionsModel::COLUMN_DATE);
+  m_dataMapper.addMapping(m_ui->m_hashLabel, TransactionsModel::COLUMN_HASH);
   m_dataMapper.setCurrentModelIndex(m_index);
 }
 

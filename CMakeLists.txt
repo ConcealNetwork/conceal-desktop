@@ -10,7 +10,7 @@ WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
 
 set(CRYPTONOTE_LIB cryptonote)
-set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.2\\msvc2017_64\\lib\\cmake\\")
+set(CMAKE_PREFIX_PATH "C:\\Qt\\5.13.0\\msvc2017_64\\lib\\cmake\\")
 
 include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -59,7 +59,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/external/miniupnpc/upnpcommands.c
   cryptonote/external/miniupnpc/upnpreplyparse.c
   cryptonote/src/Common/Base58.cpp
-  cryptonote/src/Common/Base64.cpp
+  cryptonote/src/Common/Base64.cpp  
   cryptonote/src/Common/CommandLine.cpp
   cryptonote/src/Common/Util.cpp
   cryptonote/src/Common/StringTools.cpp
@@ -82,8 +82,8 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/keccak.c
   cryptonote/src/crypto/random.c
   cryptonote/src/crypto/tree-hash.c
-  cryptonote/src/crypto/aux_hash.c 
-  cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/aux_hash.c
+  cryptonote/src/crypto/cryptonight.cpp
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -198,11 +198,11 @@ elseif (UNIX)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
     set(SOURCES ${SOURCES} ${OBJC_SOURCES})
     set(PLATFORM_DIR OSX)
-    set(MACOSX_BUNDLE_INFO_STRING "Cryptonote GUI wallet")
-    set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_NAME CryptonoteWallet)
-    set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_VERSION "$${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
+    set(MACOSX_BUNDLE_BUNDLE_NAME ${CN_PROJECT_NAME})
+    set(MACOSX_BUNDLE_INFO_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_LONG_VERSION_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_BUNDLE_VERSION ${CN_VERSION})
 
     find_package(Qt5PrintSupport REQUIRED)
 
@@ -274,6 +274,7 @@ elseif (UNIX)
     install(FILES src/concealwallet.desktop DESTINATION share/applications)
     install(FILES src/images/cryptonote.png DESTINATION share/pixmaps RENAME conceal.png)
     install(FILES copyright DESTINATION share/doc/concealwallet)
+    install(DIRECTORY src/languages DESTINATION /opt/conceal/ FILES_MATCHING PATTERN "*.qm")
 
 	SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 	SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
@@ -287,7 +288,7 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
         set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Conceal GUI Wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.
@@ -312,7 +313,7 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
         set(CPACK_RPM_PACKAGE_SUMMARY "Conceal GUI Wallet")
         set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Conceal GUI wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.

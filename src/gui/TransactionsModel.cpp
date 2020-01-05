@@ -96,23 +96,23 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_STATE:
       return QVariant();
     case COLUMN_DATE:
-      return tr("Date");
+      return tr("DATE");
     case COLUMN_TYPE:
-      return tr("Type");        
+      return tr("TYPE");
     case COLUMN_ADDRESS:
-      return tr("Address");
+      return tr("ADDRESS");
     case COLUMN_AMOUNT:
-      return tr("Amount");
+      return tr("AMOUNT");
     case COLUMN_FEE:
-      return tr("Fee");
+      return tr("FEE");
     case COLUMN_HEIGHT:
-      return tr("Height");
+      return tr("HEIGHT");
     case COLUMN_PAYMENT_ID:
-      return tr("Payment ID");
+      return tr("PAYMENT ID");
     case COLUMN_MESSAGE:
-      return tr("Message");
+      return tr("MESSAGE");
     case COLUMN_HASH:
-      return tr("Transaction Hash");      
+      return tr("HASH");      
     default:
       break;
     }
@@ -155,15 +155,7 @@ QVariant TransactionsModel::data(const QModelIndex& _index, int _role) const {
     }
   }
 
-    
-
   switch(_role) {
-case Qt::BackgroundRole:
-  if (0 == _index.row() % 2)
-      return QColor(40, 45, 49);
-  else
-      return QColor(33, 37, 41);
-
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
@@ -371,21 +363,6 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
     }
 
     return static_cast<quint8>(TransactionType::INPUT);
-  }
-
-  case ROLE_TXTYPE: {
-    QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
-    if(_transaction.isCoinbase) {
-      return "New Block";
-    } else if (_transaction.firstDepositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
-      return "New Deposit";
-    } else if (!transactionAddress.compare(WalletAdapter::instance().getAddress())) {
-      return "Optimization";
-    } else if(_transaction.totalAmount < 0) {
-      return "Sent CCX";
-    }
-
-    return "Received CCX";
   }
 
   case ROLE_HASH:

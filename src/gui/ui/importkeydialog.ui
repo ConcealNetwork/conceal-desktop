@@ -54,7 +54,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Lato</family>
         <pointsize>15</pointsize>
        </font>
       </property>
@@ -106,12 +106,15 @@
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
-        <pointsize>-1</pointsize>
+        <family>Lato</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+       <string notr="true">background-color: #212529;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -152,12 +155,15 @@
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
-        <pointsize>-1</pointsize>
+        <family>Lato</family>
+        <pointsize>9</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+       <string notr="true">background-color: #212529;
+border-right: 0px;
+color: #e5e5e5;
+padding: 5px;</string>
       </property>
      </widget>
      <widget class="QToolButton" name="m_selectPathButton">

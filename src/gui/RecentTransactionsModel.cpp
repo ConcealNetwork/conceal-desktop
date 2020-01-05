@@ -9,7 +9,6 @@
 
 #include "RecentTransactionsModel.h"
 #include "SortedTransactionsModel.h"
-#include <QColor>
 
 namespace WalletGui {
 
@@ -30,14 +29,12 @@ QVariant RecentTransactionsModel::data(const QModelIndex& _index, int _role) con
   if(_role == Qt::DecorationRole) {
     return QVariant();
   }
-  if(_role == Qt::BackgroundRole) {
-    return QColor(40, 45, 49);
-  }
+
   return QSortFilterProxyModel::data(_index, _role);
 }
 
 bool RecentTransactionsModel::filterAcceptsRow(int _sourceRow, const QModelIndex& _sourceParent) const {
-  return _sourceRow < 3;
+  return _sourceRow < 5;
 }
 
 

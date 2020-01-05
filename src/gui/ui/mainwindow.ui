@@ -30,7 +30,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Raleway</family>
+    <family>Lato</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -42,7 +42,7 @@
     <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
+   <string notr="true">background-color: #212529;
 color: #ccc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -92,6 +92,16 @@ color: #ccc;</string>
      </widget>
     </item>
     <item>
+     <widget class="WalletGui::SendFrame" name="m_sendFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -102,7 +112,57 @@ color: #ccc;</string>
      </widget>
     </item>
     <item>
+     <widget class="WalletGui::TransactionsFrame" name="m_transactionsFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="WalletGui::AddressBookFrame" name="m_addressBookFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::MessagesFrame" name="m_messagesFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::SendMessageFrame" name="m_sendMessageFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::DepositsFrame" name="m_depositsFrame">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="WalletGui::BankingFrame2" name="m_bankingFrame2">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -437,6 +497,18 @@ color: #ccc;</string>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>WalletGui::SendFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/SendFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WalletGui::TransactionsFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/TransactionsFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>WalletGui::AddressBookFrame</class>
    <extends>QFrame</extends>
    <header>gui/AddressBookFrame.h</header>
@@ -449,9 +521,33 @@ color: #ccc;</string>
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>WalletGui::MessagesFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/MessagesFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WalletGui::SendMessageFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/SendMessageFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>WalletGui::WelcomeFrame</class>
    <extends>QFrame</extends>
    <header>gui/WelcomeFrame.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WalletGui::DepositsFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/DepositsFrame.h</header>
+   <container>1</container>
+  </customwidget>
+   <customwidget>
+   <class>WalletGui::BankingFrame2</class>
+   <extends>QFrame</extends>
+   <header>gui/BankingFrame2.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
@@ -476,6 +572,22 @@ color: #ccc;</string>
    </hints>
   </connection>
   <connection>
+   <sender>m_sendAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_sendFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>m_receiveAction</sender>
    <signal>toggled(bool)</signal>
    <receiver>m_receiveFrame</receiver>
@@ -487,6 +599,22 @@ color: #ccc;</string>
     </hint>
     <hint type="destinationlabel">
      <x>266</x>
+     <y>405</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_transactionsAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_transactionsFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
      <y>405</y>
     </hint>
    </hints>
@@ -668,6 +796,38 @@ color: #ccc;</string>
    </hints>
   </connection>
   <connection>
+   <sender>m_messagesAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_messagesFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_sendMessageAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_sendMessageFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>621</x>
+     <y>394</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>m_importKeyAction</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
@@ -680,6 +840,22 @@ color: #ccc;</string>
     <hint type="destinationlabel">
      <x>459</x>
      <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_depositsAction</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>m_depositsFrame</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>394</y>
     </hint>
    </hints>
   </connection>
@@ -720,6 +896,22 @@ color: #ccc;</string>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>importSeed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ConnectionAction</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>nodeSettings()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -778,6 +970,7 @@ color: #ccc;</string>
   <slot>importKey()</slot>
   <slot>importSeed()</slot>
   <slot>importTracking()</slot>
+  <slot>nodeSettings()</slot>
   <slot>importsecretkeys()</slot>
   <slot>resetWallet()</slot>
  </slots>

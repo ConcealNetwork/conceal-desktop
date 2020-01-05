@@ -15,13 +15,11 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QStyleFactory>
-#include <QRegularExpression>
-#include "LogFileWatcher.h"
 
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
 #include "LoggerAdapter.h"
-#include "UpdateManager.h"
+#include "Update.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "SignalHandler.h"
@@ -32,18 +30,6 @@
 #define DEBUG 1
 
 using namespace WalletGui;
-
-const QRegularExpression LOG_SPLASH_REG_EXP("(?<=\] ).*");
-
-QSplashScreen* splash(nullptr);
-
-inline void newLogString(const QString& _string) {
-  QRegularExpressionMatch match = LOG_SPLASH_REG_EXP.match(_string);
-  if (match.hasMatch()) {
-    QString message = match.captured(0).toUpper();
-    splash->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::white);
-  }
-}
 
 int main(int argc, char* argv[]) {
   QApplication app(argc, argv);
@@ -94,22 +80,12 @@ int main(int argc, char* argv[]) {
   SignalHandler::instance().init();
   QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
 
-  if (splash == nullptr) {
-    splash = new QSplashScreen(QPixmap(":images/splash"), Qt::X11BypassWindowManagerHint);
-  }
-
+  QSplashScreen* splash = new QSplashScreen(QPixmap(":images/splash"), Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
   if (!splash->isVisible()) {
     splash->show();
   }
 
   splash->showMessage(QObject::tr("LOADING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
-
-  LogFileWatcher* logWatcher(nullptr);
-  if (logWatcher == nullptr) {
-    logWatcher = new LogFileWatcher(Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
-    QObject::connect(logWatcher, &LogFileWatcher::newLogStringSignal, &app, &newLogString);
-  }
-
   app.processEvents();
   qRegisterMetaType<CryptoNote::TransactionId>("CryptoNote::TransactionId");
   qRegisterMetaType<quintptr>("quintptr");
@@ -118,15 +94,6 @@ int main(int argc, char* argv[]) {
   }
 
   splash->finish(&MainWindow::instance());
-
-  if (logWatcher != nullptr) {
-    logWatcher->deleteLater();
-    logWatcher = nullptr;
-  }
-
-  splash->deleteLater();
-  splash = nullptr;
-
   Updater *d = new Updater();
   d->checkForUpdate();  
   MainWindow::instance().show();

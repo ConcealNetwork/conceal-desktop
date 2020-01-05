@@ -18,7 +18,7 @@ public:
   explicit AddressProvider(QObject *parent);
   ~AddressProvider();
 
-  void getAddress();
+  void getAddress(const QString& _urlString);
 
 private:
   QNetworkAccessManager m_networkManager;
