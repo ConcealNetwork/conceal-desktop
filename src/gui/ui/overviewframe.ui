@@ -1894,7 +1894,7 @@ border: none;</string>
        <widget class="QLabel" name="m_actualBalanceLabel">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>123</x>
           <y>75</y>
           <width>161</width>
           <height>24</height>
@@ -1923,7 +1923,7 @@ border: none;</string>
        <widget class="QLabel" name="m_lockedDeposits">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>123</x>
           <y>100</y>
           <width>161</width>
           <height>25</height>
@@ -1952,7 +1952,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel2">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>290</x>
           <y>100</y>
           <width>31</width>
           <height>25</height>
@@ -1978,7 +1978,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel1">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>290</x>
           <y>75</y>
           <width>31</width>
           <height>24</height>
@@ -2147,7 +2147,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel4">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>290</x>
           <y>125</y>
           <width>31</width>
           <height>24</height>
@@ -2173,7 +2173,7 @@ border: none;</string>
        <widget class="QLabel" name="m_unlockedDeposits">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>123</x>
           <y>125</y>
           <width>161</width>
           <height>25</height>
@@ -2228,7 +2228,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel1_2">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>290</x>
           <y>50</y>
           <width>31</width>
           <height>24</height>
@@ -2254,7 +2254,7 @@ border: none;</string>
        <widget class="QLabel" name="m_portfolio">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>123</x>
           <y>50</y>
           <width>161</width>
           <height>24</height>
@@ -2278,35 +2278,6 @@ border: none;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_lockedBalance">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>75</y>
-          <width>141</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;
-background: transparent;
-font-family: Raleway;
-font-size: 13px;
-border: none;</string>
-        </property>
-        <property name="text">
-         <string notr="true">0.00</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
       </widget>
@@ -6467,9 +6438,9 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <zorder>settingsBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>m_qrButton</zorder>
+     <zorder>overviewBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>walletBox</zorder>
-     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7550,8 +7521,8 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
   <slot>encryptWallet()</slot>
  </slots>
  <buttongroups>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

@@ -417,7 +417,7 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
 {
-  m_ui->m_lockedBalance->setText("(Pending: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX)");
+  //m_ui->m_pendingBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
