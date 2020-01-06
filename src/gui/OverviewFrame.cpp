@@ -88,12 +88,6 @@ QString monthsToBlocks(int _months)
   int maxPeriod = 13;
   uint32_t blocksPerDeposit = 21900;
 
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-  {
-    maxPeriod = 53;
-    blocksPerDeposit = 5040;
-  }
-
   QString resTempate("%1 %2");
   if (_months < maxPeriod)
   {
@@ -194,14 +188,15 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_UNLOCK_TIME, 200);
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_TYPE, 50);
 
-  int id = QFontDatabase::addApplicationFont(":/fonts/Raleway-Regular.ttf");
+  int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
   QFont font;
-  font.setFamily("Raleway");
+  font.setFamily("Poppins");
   font.setPointSize(13);
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
   m_ui->m_transactionsView->setFont(font);
   m_ui->m_encryptWalletButton->setVisible(false);
+  m_ui->m_transactionsDescription->setFont(font);
 
   /* Connect signals */
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
@@ -361,7 +356,7 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 13px;font-family: 'Raleway';color: orange;");
+  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange;");
   OverviewFrame::wallet_address = _address;
 }
 
@@ -403,7 +398,7 @@ void OverviewFrame::layoutChanged()
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
-  m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX");
+  m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance));
   m_actualBalance = _balance;
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -417,7 +412,6 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
 {
-  m_ui->m_lockedBalance->setText("(Pending: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX)");
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -426,6 +420,7 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
+  m_ui->m_lockedBalance->setText("(Pending: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX)");
 }
 
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
@@ -539,15 +534,6 @@ void OverviewFrame::depositClicked()
   {
     m_ui->m_myConcealWalletTitle->setText("BANKING");
     m_ui->bankingBox->raise();
-    m_ui->m_newTransferButton->hide();
-    m_ui->m_newMessageButton->hide();
-
-    if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-    {
-      m_ui->m_timeSpin->setSuffix(QString(" %1").arg(tr("Week(s)")));
-      m_ui->m_timeSpin->setMaximum(52);
-      timeChanged(1);
-    }
   }
   else
   {
@@ -560,14 +546,12 @@ void OverviewFrame::transactionClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
   m_ui->transactionsBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
 }
 
 void OverviewFrame::dashboardClicked()
 {
   m_ui->darkness->hide();
-  m_ui->m_myConcealWalletTitle->setText("MY CONCEAL WALLET");
+  m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
   m_ui->overviewBox->raise();
   m_ui->m_newTransferButton->show();
   m_ui->m_newMessageButton->show();
@@ -587,8 +571,6 @@ void OverviewFrame::settingsClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
   m_ui->settingsBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
 }
 
 void OverviewFrame::walletClicked()
@@ -596,8 +578,7 @@ void OverviewFrame::walletClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("WALLET OPTIONS");
   m_ui->walletBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
+
   if (!Settings::instance().isEncrypted())
     m_ui->m_encryptWalletButton->setVisible(true);
 }
@@ -612,8 +593,6 @@ void OverviewFrame::messageClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("INBOX");
   m_ui->messageBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
 }
 
 void OverviewFrame::newWalletClicked()
@@ -638,8 +617,7 @@ void OverviewFrame::newTransferClicked()
   {
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
     m_ui->sendBox->raise();
-    m_ui->m_newTransferButton->hide();
-    m_ui->m_newMessageButton->hide();
+
     OverviewFrame::fromPay = true;
   }
   else
@@ -661,8 +639,7 @@ void OverviewFrame::newMessageClicked()
   {
     m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
     m_ui->newMessageBox->raise();
-    m_ui->m_newTransferButton->hide();
-    m_ui->m_newMessageButton->hide();
+
     OverviewFrame::fromPay = false;
   }
   else
@@ -757,16 +734,12 @@ void OverviewFrame::setAddress(const QString &_address)
     m_ui->m_addressEdit->setText(_address);
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
     m_ui->sendBox->raise();
-    m_ui->m_newTransferButton->hide();
-    m_ui->m_newMessageButton->hide();
   }
   else
   {
     m_ui->m_addressMessageEdit->setText(_address);
     m_ui->m_myConcealWalletTitle->setText("SEND MESSAGE");
     m_ui->newMessageBox->raise();
-    m_ui->m_newTransferButton->hide();
-    m_ui->m_newMessageButton->hide();
   }
 }
 
@@ -992,8 +965,6 @@ void OverviewFrame::addressBookClicked()
 {
   m_ui->m_myConcealWalletTitle->setText("ADDRESS BOOK");
   m_ui->addressBookBox->raise();
-  m_ui->m_newTransferButton->hide();
-  m_ui->m_newMessageButton->hide();
 }
 
 // SEND MESSAGE
@@ -1030,6 +1001,16 @@ void OverviewFrame::ttlValueChanged(int _ttlValue)
 
 void OverviewFrame::recalculateMessageLength()
 {
+
+  if (m_ui->m_messageTextEdit->toPlainText().length() > 260)
+  {
+    m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
+    m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);
+    QMessageBox::information(NULL, QString::fromUtf8("Warning"),
+                             QString::fromUtf8("Warning: you have reached the maximum message size of 260 characters."),
+                             QString::fromUtf8("Ok"));
+  }
+
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length();
   if (messageSize > 0)
