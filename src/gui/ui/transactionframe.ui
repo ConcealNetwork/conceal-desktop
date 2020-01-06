@@ -85,7 +85,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; font-size: 13px;</string>
+       <string notr="true">color: orange; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -110,7 +110,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; font-size: 13px;</string>
+       <string notr="true">color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
        <string/>
@@ -134,7 +134,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; font-size: 13px;</string>
+       <string notr="true">color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -151,7 +151,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Poppins</family>
         <pointsize>8</pointsize>
        </font>
       </property>

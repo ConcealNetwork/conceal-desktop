@@ -14,7 +14,7 @@
    <string>New address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #ddd; background-color: #282d31; font-family: 'Raleway';</string>
+   <string notr="true">color: #ddd; background-color: #282d31; font-family: 'Poppins';</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="0">
@@ -26,7 +26,7 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 13px;</string>
+      <string notr="true">font-size: 14px;</string>
      </property>
      <property name="text">
       <string>Address:</string>
@@ -42,7 +42,7 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 13px;</string>
+      <string notr="true">font-size: 14px;</string>
      </property>
      <property name="text">
       <string>Label:</string>
@@ -71,7 +71,7 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">font-size: 13px;</string>
+      <string notr="true">font-size: 14px;</string>
      </property>
      <property name="text">
       <string>Payment ID:</string>
@@ -87,7 +87,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
      </property>
      <property name="text">
       <string>CANCEL</string>
@@ -106,7 +106,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
      </property>
      <property name="text">
       <string>OK</string>
@@ -125,7 +125,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>
@@ -141,7 +141,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>
@@ -163,7 +163,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+      <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Normal</enum>

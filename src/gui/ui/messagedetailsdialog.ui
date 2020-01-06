@@ -14,7 +14,7 @@
    <string>Message</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font-family: 'Raleway';
+   <string notr="true">font-family: 'Poppins';
 background-color: #282d31;
 color: #ddd;</string>
   </property>
@@ -35,7 +35,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -48,7 +48,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="m_heightLabel">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -61,7 +61,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -74,7 +74,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="m_hashLabel">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -87,7 +87,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="m_amountLabel">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -100,7 +100,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -113,7 +113,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="label_7">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -126,7 +126,7 @@ color: #ddd;</string>
        <widget class="QLabel" name="m_sizeLabel">
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -160,12 +160,12 @@ color: #ddd;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>SAVE TO FILE</string>
@@ -195,12 +195,12 @@ color: #ddd;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>&lt;&lt;</string>
@@ -217,12 +217,12 @@ color: #ddd;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>&gt;&gt;</string>
@@ -239,12 +239,12 @@ color: #ddd;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>OK</string>

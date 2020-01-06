@@ -74,7 +74,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; color: #aaa; font-family: 'Raleway';
+      <string notr="true">border: 0px; color: #aaa; font-family: 'Poppins';
 background-color: #282d31;</string>
      </property>
      <property name="title">
@@ -102,28 +102,28 @@ background-color: #282d31;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>60</y>
+         <y>210</y>
          <width>131</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_bankingButton {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_bankingButton:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
   }</string>
@@ -142,28 +142,28 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>140</y>
+         <y>290</y>
          <width>131</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_messagesButton {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_messagesButton:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
   }</string>
@@ -182,28 +182,28 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>560</y>
+         <y>600</y>
          <width>121</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_about {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_about:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 font-size: 14px;
   }</string>
@@ -222,28 +222,28 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>100</y>
+         <y>250</y>
          <width>141</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_transactionButton {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_transactionButton:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
   }</string>
@@ -269,67 +269,27 @@ border: none;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_settingsButton {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 font-size: 14px;
 }
 
 QPushButton#m_settingsButton:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 font-size: 14px;
   }</string>
        </property>
        <property name="text">
         <string>SETTINGS</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="m_walletButton">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>180</y>
-         <width>131</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Raleway</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#m_walletButton {
-text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
-font-size: 14px;
-border: none;
-}
-
-QPushButton#m_walletButton:hover {
-text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
-font-size: 14px;
-border: none;
-  }</string>
-       </property>
-       <property name="text">
-        <string>WALLET</string>
        </property>
        <property name="iconSize">
         <size>
@@ -349,20 +309,20 @@ border: none;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton1 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton1:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -387,20 +347,20 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton2 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton2:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -425,20 +385,20 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton3 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton3:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -463,20 +423,20 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton4 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton4:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -501,20 +461,20 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton5 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton5:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -539,20 +499,20 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_subButton6 {
 text-align: left; color: #777; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 }
 
 QPushButton#m_subButton6:hover {
 text-align: left; color: #bbb; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
   }</string>
        </property>
@@ -570,14 +530,14 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>20</y>
+         <y>170</y>
          <width>131</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>50</weight>
          <bold>false</bold>
@@ -588,7 +548,7 @@ font-size: 14px;
 text-align: left; 
 color: #fff; 
 margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-weight: normal;
 font-size: 14px;
 border: none;
@@ -597,7 +557,7 @@ border: none;
 QPushButton#m_dashboardButton:hover {
 text-align: left; color: orange; 
 margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 font-size: 14px;
   }</string>
@@ -616,28 +576,28 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>220</y>
+         <y>330</y>
          <width>131</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_addressBookButton_2 {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_addressBookButton_2:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
   }</string>
@@ -652,72 +612,32 @@ border: none;
         </size>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_aboutQT">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>600</y>
-         <width>121</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Raleway</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#m_aboutQT {
-text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
-font-size: 14px;
-border: none;
-}
-
-QPushButton#m_aboutQT:hover {
-text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
-border: none;
-font-size: 14px;
-  }</string>
-       </property>
-       <property name="text">
-        <string>ABOUT QT</string>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-      </widget>
       <widget class="QPushButton" name="m_lockWalletButton">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>520</y>
+         <y>560</y>
          <width>121</width>
          <height>35</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_lockWalletButton {
 text-align: left; color: #ddd; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 14px;
 border: none;
 }
 
 QPushButton#m_lockWalletButton:hover {
 text-align: left; color: orange; margin-left: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 font-size: 14px;
   }</string>
@@ -730,6 +650,119 @@ font-size: 14px;
          <width>18</width>
          <height>18</height>
         </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_newTransferButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>370</y>
+         <width>180</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>600</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_newTransferButton {
+text-align: left; color: #ddd; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+}
+
+
+QPushButton#m_newTransferButton:hover {
+text-align: left; color: orange; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+  }</string>
+       </property>
+       <property name="text">
+        <string>SEND FUNDS</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_newMessageButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>410</y>
+         <width>131</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>131</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_newMessageButton {
+text-align: left; color: #ddd; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+}
+
+QPushButton#m_newMessageButton:hover {
+text-align: left; color: orange; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+  }
+</string>
+       </property>
+       <property name="text">
+        <string>NEW MESSAGE</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>141</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../resources.qrc">:/images/images/conceal.png</pixmap>
        </property>
       </widget>
      </widget>
@@ -759,7 +792,7 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -767,7 +800,7 @@ font-size: 14px;
         <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;</string>
        </property>
        <property name="text">
@@ -785,15 +818,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -811,15 +844,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -840,15 +873,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -872,14 +905,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 22px;
 border: none;</string>
        </property>
@@ -901,7 +934,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>8</pointsize>
         </font>
        </property>
@@ -940,19 +973,19 @@ border: none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 }
 
 QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 }</string>
       </property>
       <property name="text">
@@ -985,15 +1018,15 @@ font-size: 13px;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1011,15 +1044,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1037,15 +1070,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1066,15 +1099,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1095,15 +1128,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1121,15 +1154,15 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1147,7 +1180,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1155,7 +1188,7 @@ border: none;</string>
         <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;</string>
        </property>
        <property name="text">
@@ -1173,7 +1206,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>8</pointsize>
         </font>
        </property>
@@ -1205,14 +1238,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 22px;
 border: none;</string>
        </property>
@@ -1253,18 +1286,18 @@ border: none;</string>
      <widget class="QPushButton" name="m_copyAddressButton">
       <property name="geometry">
        <rect>
-        <x>245</x>
+        <x>234</x>
         <y>70</y>
         <width>161</width>
-        <height>21</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: none; font-size: 13px;
-font-family: 'Raleway';
+       <string notr="true">border: none; font-size: 14px;
+font-family: 'Poppins';
 color: orange;</string>
       </property>
       <property name="text">
@@ -1285,7 +1318,7 @@ color: orange;</string>
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
@@ -1305,84 +1338,13 @@ font-size: 14px;
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="m_newTransferButton">
-      <property name="geometry">
-       <rect>
-        <x>870</x>
-        <y>30</y>
-        <width>180</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>180</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>600</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Raleway</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#m_newTransferButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
-
-QPushButton#m_newTransferButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
-      </property>
-      <property name="text">
-       <string>SEND FUNDS</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="m_newMessageButton">
-      <property name="geometry">
-       <rect>
-        <x>1060</x>
-        <y>30</y>
-        <width>180</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>180</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>200</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Raleway</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#m_newMessageButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
-QPushButton#m_newMessageButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
-      </property>
-      <property name="text">
-       <string>NEW MESSAGE</string>
-      </property>
-     </widget>
      <widget class="QGroupBox" name="overviewBox">
       <property name="geometry">
        <rect>
         <x>210</x>
         <y>100</y>
         <width>1041</width>
-        <height>581</height>
+        <height>591</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1417,7 +1379,7 @@ QPushButton#m_newMessageButton:hover {color: orange; border: 1px solid orange; f
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1425,7 +1387,7 @@ QPushButton#m_newMessageButton:hover {color: orange; border: 1px solid orange; f
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -1451,14 +1413,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 22px;
 border: none;</string>
         </property>
@@ -1480,7 +1442,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>8</pointsize>
          </font>
         </property>
@@ -1506,7 +1468,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -1514,7 +1476,7 @@ border: none;</string>
          <string notr="true">color: orange;
 background: transparent;
 font-size: 18px;
-font-family: Raleway;</string>
+font-family: Poppins;</string>
         </property>
         <property name="text">
          <string notr="true">000000.00 USD</string>
@@ -1534,15 +1496,15 @@ font-family: Raleway;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1563,15 +1525,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1584,7 +1546,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_11">
         <property name="geometry">
          <rect>
-          <x>400</x>
+          <x>200</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1592,15 +1554,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1613,7 +1575,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_12">
         <property name="geometry">
          <rect>
-          <x>400</x>
+          <x>200</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1621,15 +1583,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1642,7 +1604,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_13">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>370</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1650,15 +1612,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1671,7 +1633,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_14">
         <property name="geometry">
          <rect>
-          <x>770</x>
+          <x>370</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1679,15 +1641,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1709,8 +1671,8 @@ border: none;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1730,8 +1692,8 @@ text-align: left;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1742,7 +1704,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_twitterButton">
         <property name="geometry">
          <rect>
-          <x>440</x>
+          <x>240</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1751,8 +1713,8 @@ text-align: left;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1763,7 +1725,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_bitcointalkButton">
         <property name="geometry">
          <rect>
-          <x>440</x>
+          <x>240</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1772,8 +1734,8 @@ text-align: left;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1784,7 +1746,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_githubButton">
         <property name="geometry">
          <rect>
-          <x>810</x>
+          <x>410</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1793,8 +1755,8 @@ text-align: left;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1805,7 +1767,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_mediumButton">
         <property name="geometry">
          <rect>
-          <x>810</x>
+          <x>410</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1814,8 +1776,8 @@ text-align: left;</string>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;
 text-align: left;</string>
         </property>
@@ -1850,15 +1812,15 @@ text-align: left;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1876,15 +1838,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1894,7 +1856,7 @@ border: none;</string>
        <widget class="QLabel" name="m_actualBalanceLabel">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>90</x>
           <y>75</y>
           <width>161</width>
           <height>24</height>
@@ -1902,15 +1864,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1923,7 +1885,7 @@ border: none;</string>
        <widget class="QLabel" name="m_lockedDeposits">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>90</x>
           <y>100</y>
           <width>161</width>
           <height>25</height>
@@ -1931,15 +1893,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1952,7 +1914,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel2">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>260</x>
           <y>100</y>
           <width>31</width>
           <height>25</height>
@@ -1960,15 +1922,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -1978,7 +1940,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel1">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>260</x>
           <y>75</y>
           <width>31</width>
           <height>24</height>
@@ -1986,15 +1948,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2012,7 +1974,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -2020,7 +1982,7 @@ border: none;</string>
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -2046,14 +2008,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
+font-family: Poppins;
 font-size: 22px;
 border: none;</string>
         </property>
@@ -2075,7 +2037,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>8</pointsize>
          </font>
         </property>
@@ -2101,7 +2063,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -2109,7 +2071,7 @@ border: none;</string>
          <string notr="true">color: orange;
 background: transparent;
 font-size: 18px;
-font-family: Raleway;</string>
+font-family: Poppins;</string>
         </property>
         <property name="text">
          <string notr="true">000000.00 USD</string>
@@ -2129,15 +2091,15 @@ font-family: Raleway;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2147,7 +2109,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel4">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>260</x>
           <y>125</y>
           <width>31</width>
           <height>24</height>
@@ -2155,15 +2117,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2173,7 +2135,7 @@ border: none;</string>
        <widget class="QLabel" name="m_unlockedDeposits">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>90</x>
           <y>125</y>
           <width>161</width>
           <height>25</height>
@@ -2181,15 +2143,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2210,15 +2172,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2228,7 +2190,7 @@ border: none;</string>
        <widget class="QLabel" name="m_tickerLabel1_2">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>260</x>
           <y>50</y>
           <width>31</width>
           <height>24</height>
@@ -2236,15 +2198,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2254,7 +2216,7 @@ border: none;</string>
        <widget class="QLabel" name="m_portfolio">
         <property name="geometry">
          <rect>
-          <x>103</x>
+          <x>90</x>
           <y>50</y>
           <width>161</width>
           <height>24</height>
@@ -2262,15 +2224,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2283,7 +2245,7 @@ border: none;</string>
        <widget class="QLabel" name="m_lockedBalance">
         <property name="geometry">
          <rect>
-          <x>310</x>
+          <x>300</x>
           <y>75</y>
           <width>141</width>
           <height>24</height>
@@ -2291,15 +2253,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2338,7 +2300,7 @@ border: none;</string>
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -2370,7 +2332,7 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
          </font>
         </property>
         <property name="focusPolicy">
@@ -2378,7 +2340,7 @@ text-align: left;
         </property>
         <property name="styleSheet">
          <string notr="true">border: none;
-font-family: 'Raleway';
+font-family: 'Poppins';
 </string>
         </property>
         <property name="frameShape">
@@ -2467,15 +2429,15 @@ font-family: 'Raleway';
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2496,15 +2458,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2525,15 +2487,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2554,15 +2516,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2580,15 +2542,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2609,15 +2571,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2635,15 +2597,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2661,15 +2623,15 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;
 background: transparent;
-font-family: Raleway;
-font-size: 13px;
+font-family: Poppins;
+font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
@@ -2720,7 +2682,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -2728,7 +2690,7 @@ border: none;</string>
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -2789,7 +2751,7 @@ text-align: left;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -2798,7 +2760,7 @@ text-align: left;
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     border-top: none;
 	font-size: 14px;
  	border-bottom: 1px solid #444;
@@ -2806,37 +2768,37 @@ text-align: left;
 }
 
 QTreeView {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 border: none;
     color: #ccc;
-font-size: 13px;
+font-size: 14px;
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     color: #ccc;
-	font-size: 13px;
+	font-size: 14px;
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 13px;
+font-size: 14px;
   color: black;
 }
 
 QWidget:item:selected {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 background-color: #555;
-font-size: 13px;
+font-size: 14px;
   color: #ccc;
 }
 
 border: none;
-font-size: 13px;
-font-family: 'Raleway';
+font-size: 14px;
+font-family: 'Poppins';
 color: #ccc;
 </string>
        </property>
@@ -2906,7 +2868,7 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -2914,7 +2876,7 @@ color: #ccc;
         <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -2923,7 +2885,7 @@ text-align: left;
         <string>HISTORICAL DATA</string>
        </property>
       </widget>
-      <widget class="QTextBrowser" name="textBrowser">
+      <widget class="QTextBrowser" name="m_transactionsDescription">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -2933,14 +2895,14 @@ text-align: left;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: none; color: #ccc;</string>
+        <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -2970,7 +2932,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -2978,7 +2940,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -3003,8 +2965,8 @@ text-align: left;
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QTreeView" name="m_messagesView">
@@ -3030,7 +2992,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -3039,7 +3001,7 @@ p, li { white-space: pre-wrap; }
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     border-top: none;
 	font-size: 14px;
  	border-bottom: 1px solid #444;
@@ -3047,37 +3009,37 @@ p, li { white-space: pre-wrap; }
 }
 
 QTreeView {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 border: none;
     color: #ccc;
-font-size: 13px;
+font-size: 14px;
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     color: #ccc;
-	font-size: 13px;
+	font-size: 14px;
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 13px;
+font-size: 14px;
   color: black;
 }
 
 QWidget:item:selected {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 background-color: #555555;
-font-size: 13px;
+font-size: 14px;
   color: #ccc;
 }
 
 border: none;
-font-size: 13px;
-font-family: 'Raleway';
+font-size: 14px;
+font-family: 'Poppins';
 color: #ccc;
 </string>
        </property>
@@ -3122,7 +3084,7 @@ color: #ccc;
         <x>210</x>
         <y>100</y>
         <width>1041</width>
-        <height>571</height>
+        <height>591</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -3137,7 +3099,7 @@ color: #ccc;
          <x>0</x>
          <y>10</y>
          <width>1021</width>
-         <height>161</height>
+         <height>131</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3157,14 +3119,14 @@ color: #ccc;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Connection</string>
@@ -3176,20 +3138,20 @@ font-family: 'Raleway'; border: 0px;</string>
        <widget class="QRadioButton" name="radioButton">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>110</y>
+          <x>420</x>
+          <y>50</y>
           <width>351</width>
           <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #aaa; border: none; font-size: 13px; font-family: 'Raleway';</string>
+         <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>Custom Remote Node</string>
@@ -3206,18 +3168,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>190</x>
           <y>50</y>
-          <width>351</width>
+          <width>201</width>
           <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #aaa; border: none; font-size: 13px; font-family: 'Raleway';</string>
+         <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>Built-in Node</string>
@@ -3234,18 +3196,18 @@ font-family: 'Raleway'; border: 0px;</string>
          <rect>
           <x>190</x>
           <y>80</y>
-          <width>351</width>
+          <width>211</width>
           <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #aaa; border: none; font-size: 13px; font-family: 'Raleway';</string>
+         <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>Automatic Remote Node</string>
@@ -3260,14 +3222,14 @@ font-family: 'Raleway'; border: 0px;</string>
        <widget class="QLineEdit" name="m_hostEdit">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>105</y>
+          <x>420</x>
+          <y>80</y>
           <width>411</width>
           <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
         </property>
         <property name="text">
          <string/>
@@ -3284,14 +3246,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Set connection type</string>
@@ -3323,12 +3285,12 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>SAVE</string>
@@ -3339,9 +3301,9 @@ font-family: 'Raleway'; border: 0px;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>190</y>
+         <y>150</y>
          <width>1021</width>
-         <height>161</height>
+         <height>131</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3361,14 +3323,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Optimization</string>
@@ -3388,14 +3350,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Auto optimization</string>
@@ -3415,14 +3377,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Large transactions</string>
@@ -3434,22 +3396,22 @@ font-family: 'Raleway'; border: 0px;</string>
        <widget class="QLabel" name="label_29">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>110</y>
+          <x>600</x>
+          <y>50</y>
           <width>151</width>
           <height>21</height>
          </rect>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Rescan wallet</string>
@@ -3481,7 +3443,7 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -3517,7 +3479,7 @@ QPushButton#m_autoOptimizeButton:hover {color: orange; border: 1px solid orange;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -3533,8 +3495,8 @@ QPushButton#m_optimizeButton:hover {color: orange; border: 1px solid orange; fon
        <widget class="QPushButton" name="m_rescanButton">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>110</y>
+          <x>760</x>
+          <y>50</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -3553,7 +3515,7 @@ QPushButton#m_optimizeButton:hover {color: orange; border: 1px solid orange; fon
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -3577,14 +3539,14 @@ QPushButton#m_rescanButton:hover {color: orange; border: 1px solid orange; font-
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ccc; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>(Optimization not required)</string>
@@ -3598,9 +3560,9 @@ font-family: 'Raleway'; border: 0px;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>370</y>
+         <y>290</y>
          <width>1021</width>
-         <height>161</height>
+         <height>121</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3620,14 +3582,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Preferences</string>
@@ -3647,14 +3609,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Language</string>
@@ -3674,14 +3636,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Currency</string>
@@ -3701,8 +3663,8 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>US Dollar ($)</string>
@@ -3722,8 +3684,8 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Euro (€)</string>
@@ -3743,14 +3705,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Chinese</string>
@@ -3777,14 +3739,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>English</string>
@@ -3811,14 +3773,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Russian</string>
@@ -3845,14 +3807,14 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
-font-size: 13px;
-font-family: 'Raleway'; border: 0px;</string>
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Turkish</string>
@@ -3891,15 +3853,315 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>SAVE</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_13">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>420</y>
+         <width>1021</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <widget class="QLabel" name="label_38">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 18px;
+font-family: 'Poppins'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Wallet Operations</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_openExistingWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>50</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>OPEN WALLET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_createNewWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>50</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>NEW WALLET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_encryptWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>50</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>ENCRYPT WALLET</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>New/Existing</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_40">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>80</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Import</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+        </property>
+        <property name="text">
+         <string>Backup</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importTrackingWalletButton">
+        <property name="geometry">
+         <rect>
+          <x>550</x>
+          <y>80</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT TRACKING WALLET</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_backupKeysButton">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>110</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>BACKUP KEYS</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importSpendKeyButton">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>80</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT PRIVATE KEYS</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_backupKeysButton_2">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>110</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>BACKUP WALLET FILE</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_importSeedButton">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>80</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange;border: 1px solid orange; font-size: 11px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>IMPORT SEED</string>
         </property>
        </widget>
       </widget>
@@ -3945,86 +4207,20 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Import Wallet</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_importTrackingWalletButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>160</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>IMPORT TRACKING WALLET</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_importSpendKeyButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>60</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>IMPORT PRIVATE KEYS</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_importSeedButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>110</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>IMPORT SEED</string>
         </property>
        </widget>
       </widget>
@@ -4054,86 +4250,20 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>New or Existing Wallet</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_createNewWalletButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>60</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>CREATE NEW WALLET</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_openExistingWalletButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>110</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>OPEN EXISTING WALLET</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_encryptWalletButton">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>60</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>ENCRYPT WALLET</string>
         </property>
        </widget>
       </widget>
@@ -4163,64 +4293,20 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Raleway'; border: 0px;</string>
+font-family: 'Poppins'; border: 0px;</string>
         </property>
         <property name="text">
          <string>Backup</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_backupKeysButton">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>60</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>BACKUP KEYS</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_backupKeysButton_2">
-        <property name="geometry">
-         <rect>
-          <x>250</x>
-          <y>60</y>
-          <width>210</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Raleway</family>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
-        </property>
-        <property name="text">
-         <string>BACKUP WALLET FILE</string>
         </property>
        </widget>
       </widget>
@@ -4272,7 +4358,7 @@ font-family: 'Raleway'; border: 0px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -4280,8 +4366,8 @@ font-family: 'Raleway'; border: 0px;</string>
          <string notr="true">border: 1px solid #444;
 color: #ccc;
 padding: 15px;
-font-size: 13px;
-font-family: Raleway;
+font-size: 14px;
+font-family: Poppins;
 border-radius: 5px;</string>
         </property>
         <property name="text">
@@ -4298,6 +4384,34 @@ border-radius: 5px;</string>
         </property>
         <property name="openExternalLinks">
          <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_aboutQT">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>270</y>
+          <width>141</width>
+          <height>35</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+        </property>
+        <property name="text">
+         <string>ABOUT QT</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
         </property>
        </widget>
       </widget>
@@ -4333,7 +4447,7 @@ border-radius: 5px;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -4341,8 +4455,8 @@ border-radius: 5px;</string>
          <string notr="true">border: none;
 color: #ccc;
 border-right: 0px;
-font-size: 13px;
-font-family: Raleway;</string>
+font-size: 14px;
+font-family: Poppins;</string>
         </property>
         <property name="text">
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -4390,7 +4504,7 @@ font-family: Raleway;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -4401,7 +4515,7 @@ font-family: Raleway;</string>
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -4428,12 +4542,12 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string>0.000000</string>
@@ -4450,14 +4564,14 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
 border: none;</string>
        </property>
        <property name="text">
@@ -4475,14 +4589,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
 border: none;</string>
        </property>
        <property name="text">
@@ -4500,14 +4614,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
 border: none;</string>
        </property>
        <property name="text">
@@ -4525,14 +4639,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
 border: none;</string>
        </property>
        <property name="text">
@@ -4562,12 +4676,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string/>
@@ -4596,12 +4710,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -4634,12 +4748,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string/>
@@ -4668,7 +4782,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
         </font>
        </property>
        <property name="styleSheet">
@@ -4693,14 +4807,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway'; font-weight: bold;
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
 border: none;</string>
        </property>
        <property name="text">
@@ -4724,12 +4838,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string/>
@@ -4752,12 +4866,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string/>
@@ -4786,14 +4900,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
 
-QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}</string>
+QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>SEND</string>
@@ -4822,14 +4936,14 @@ QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; 
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
 
-QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>CANCEL</string>
@@ -4858,12 +4972,12 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -4912,7 +5026,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -4920,9 +5034,9 @@ border: none;</string>
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
 
-QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>CLEAR</string>
@@ -4957,7 +5071,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-top: 1px solid #444; font-family: 'Raleway';</string>
+       <string notr="true">border-top: 1px solid #444; font-family: 'Poppins';</string>
       </property>
       <property name="title">
        <string/>
@@ -4985,14 +5099,14 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
 
-QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}</string>
+QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>SEND</string>
@@ -5021,12 +5135,12 @@ QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5059,14 +5173,14 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
 
-QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>CANCEL</string>
@@ -5095,7 +5209,7 @@ QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; fo
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -5103,9 +5217,9 @@ QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; fo
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
 
-QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>CLEAR</string>
@@ -5128,12 +5242,12 @@ QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; fon
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
         <string/>
@@ -5150,12 +5264,12 @@ QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; fon
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5179,18 +5293,18 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Raleway'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="html">
         <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="acceptRichText">
@@ -5208,7 +5322,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -5216,7 +5330,7 @@ p, li { white-space: pre-wrap; }
         <string>Do not include message in blockchain</string>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5268,7 +5382,7 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
         </font>
        </property>
        <property name="styleSheet">
@@ -5293,12 +5407,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5319,12 +5433,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5345,12 +5459,12 @@ border: none;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #fff; font-size: 13px; font-family: 'Raleway';
+        <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins';
 border: none;</string>
        </property>
        <property name="text">
@@ -5399,7 +5513,7 @@ border: none;</string>
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -5407,7 +5521,7 @@ border: none;</string>
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -5427,14 +5541,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
           <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+         <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>How long should your deposit last?</string>
@@ -5454,12 +5568,12 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;  font-family: 'Raleway';</string>
+         <string notr="true">color: #ddd; font-size: 14px; border: 1px solid #444; border-radius: 5px;  font-family: 'Poppins';</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -5482,12 +5596,12 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd; font-size: 13px; border: 1px solid #444; border-radius: 5px;  font-family: 'Raleway';</string>
+         <string notr="true">color: #ddd; font-size: 14px; border: 1px solid #444; border-radius: 5px;  font-family: 'Poppins';</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -5513,14 +5627,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
           <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+         <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
         </property>
         <property name="text">
          <string>How much do you want to deposit?</string>
@@ -5535,34 +5649,34 @@ text-align: left;
           <x>30</x>
           <y>190</y>
           <width>431</width>
-          <height>251</height>
+          <height>261</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #fff; font-size: 13px; font-weight: normal; font-family: 'Raleway';</string>
+         <string notr="true">color: #fff; font-size: 14px; font-weight: normal; font-family: 'Poppins';</string>
         </property>
         <property name="title">
-         <string>Deposit Details</string>
+         <string/>
         </property>
         <widget class="QLabel" name="m_timeLabel">
          <property name="geometry">
           <rect>
            <x>240</x>
-           <y>190</y>
+           <y>210</y>
            <width>141</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>21900 blocks</string>
@@ -5575,21 +5689,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>240</x>
-           <y>40</y>
+           <y>60</y>
            <width>141</width>
            <height>21</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>interestLabel</string>
@@ -5602,21 +5716,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>30</x>
-           <y>40</y>
+           <y>60</y>
            <width>171</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>Interest rate:</string>
@@ -5629,21 +5743,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>30</x>
-           <y>90</y>
+           <y>110</y>
            <width>171</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>Rewards you will earn:</string>
@@ -5656,21 +5770,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>30</x>
-           <y>140</y>
+           <y>160</y>
            <width>171</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>Fees for this deposit:</string>
@@ -5683,21 +5797,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>30</x>
-           <y>190</y>
+           <y>210</y>
            <width>171</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #fff; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>Length on the blockchain:</string>
@@ -5710,21 +5824,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>240</x>
-           <y>140</y>
+           <y>160</y>
            <width>141</width>
            <height>31</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>0.001000 CCX</string>
@@ -5737,21 +5851,21 @@ text-align: left;
          <property name="geometry">
           <rect>
            <x>240</x>
-           <y>90</y>
+           <y>110</y>
            <width>141</width>
            <height>21</height>
           </rect>
          </property>
          <property name="font">
           <font>
-           <family>Raleway</family>
+           <family>Poppins</family>
            <pointsize>-1</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #ccc; font-size: 13px; font-weight: normal; border: none; font-family: 'Raleway';</string>
+          <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
          </property>
          <property name="text">
           <string>interestLabel</string>
@@ -5760,12 +5874,42 @@ text-align: left;
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
+        <widget class="QLabel" name="label_43">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>20</y>
+           <width>241</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Poppins</family>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: #fff;
+background: transparent;
+font-size: 16px;
+font-family: Poppins;
+border: none;
+text-align: left;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Deposit Details</string>
+         </property>
+        </widget>
        </widget>
        <widget class="QPushButton" name="m_depositButton_2">
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>460</y>
+          <y>470</y>
           <width>431</width>
           <height>40</height>
          </rect>
@@ -5778,14 +5922,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_depositButton_2 {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+         <string notr="true">QPushButton#m_depositButton_2 {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
 
-QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
         </property>
         <property name="text">
          <string>MAKE DEPOSIT</string>
@@ -5830,7 +5974,7 @@ QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; fo
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -5846,7 +5990,7 @@ QHeaderView::section {
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 	font-size: 14px;
     border-left: 0px solid #444;
     border-right: 0px solid #444;
@@ -5854,9 +5998,9 @@ QHeaderView::section {
 }
 
 QTreeView::item {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     color: #ccc;
-	font-size: 13px;
+	font-size: 14px;
     height: 37px;
 }</string>
         </property>
@@ -5893,7 +6037,7 @@ QTreeView::item {
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
@@ -5901,7 +6045,7 @@ QTreeView::item {
          <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -5914,7 +6058,7 @@ text-align: left;
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>460</y>
+          <y>470</y>
           <width>431</width>
           <height>40</height>
          </rect>
@@ -5927,14 +6071,14 @@ text-align: left;
         </property>
         <property name="font">
          <font>
-          <family>Raleway</family>
+          <family>Poppins</family>
           <pointsize>-1</pointsize>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton#m_withdrawButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+         <string notr="true">QPushButton#m_withdrawButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
 
-QPushButton#m_withdrawButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_withdrawButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
         </property>
         <property name="text">
          <string>WITHDRAW</string>
@@ -5950,14 +6094,14 @@ QPushButton#m_withdrawButton:hover {color: orange; border: 1px solid orange; fon
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: none; color: #ddd; font-size: 13px; font-family: 'Raleway';</string>
+         <string notr="true">border: none; color: #ddd; font-size: 14px; font-family: 'Poppins';</string>
         </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </widget>
@@ -5965,7 +6109,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="m_myConcealWalletTitle">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>209</x>
         <y>30</y>
         <width>338</width>
         <height>40</height>
@@ -5985,30 +6129,30 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: #fff;
 background: transparent;
 font-size: 30px;
-font-family: Raleway;
-font-weight: bold;</string>
+font-family: Poppins;
+font-weight: normal;</string>
       </property>
       <property name="text">
-       <string>MY CONCEAL WALLET</string>
+       <string>CONCEAL.NETWORK</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="m_statusBox">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>69</y>
+        <x>409</x>
+        <y>70</y>
         <width>245</width>
-        <height>21</height>
+        <height>25</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -6019,14 +6163,14 @@ font-weight: bold;</string>
       </property>
       <property name="font">
        <font>
-        <family>Raleway</family>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: Raleway;
-font-size: 13px;
-border: none;</string>
+       <string notr="true">font-family: Poppins;
+font-size: 14px;
+border: none; color: orange;</string>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -6038,7 +6182,7 @@ border: none;</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;SYNCHRONIZING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="openLinks">
@@ -6071,7 +6215,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -6079,7 +6223,7 @@ p, li { white-space: pre-wrap; }
         <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
-font-family: Raleway;
+font-family: Poppins;
 border: none;
 text-align: left;
 </string>
@@ -6102,7 +6246,7 @@ text-align: left;
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     border-top: none;
 	font-size: 14px;
  	border-bottom: 1px solid #444;
@@ -6110,37 +6254,37 @@ text-align: left;
 }
 
 QTreeView {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 border: none;
     color: #ccc;
-font-size: 13px;
+font-size: 14px;
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     color: #ccc;
-	font-size: 13px;
+	font-size: 14px;
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 13px;
+font-size: 14px;
   color: black;
 }
 
 QWidget:item:selected {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 background-color: #555;
-font-size: 13px;
+font-size: 14px;
   color: #ccc;
 }
 
 border: none;
-font-size: 13px;
-font-family: 'Raleway';
+font-size: 14px;
+font-family: 'Poppins';
 color: #ccc;
 </string>
        </property>
@@ -6177,12 +6321,12 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -6199,12 +6343,12 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>COPY PAYMENTID</string>
@@ -6221,12 +6365,12 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>PAY TO</string>
@@ -6243,12 +6387,12 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>EDIT CONTACT</string>
@@ -6265,12 +6409,12 @@ color: #ccc;
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Raleway';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>DELETE CONTACT</string>
@@ -6280,7 +6424,7 @@ color: #ccc;
      <widget class="Line" name="line">
       <property name="geometry">
        <rect>
-        <x>411</x>
+        <x>400</x>
         <y>75</y>
         <width>1</width>
         <height>13</height>
@@ -6343,7 +6487,7 @@ color: #ccc;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 0px; color: #aaa; font-family: 'Raleway';
+       <string notr="true">border: 0px; color: #aaa; font-family: 'Poppins';
 background-color: #282d31;</string>
       </property>
       <property name="title">
@@ -6375,7 +6519,7 @@ background-color: #282d31;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; font-family: 'Raleway';
+        <string notr="true">color: #ddd; font-family: 'Poppins';
 font-size: 16px;</string>
        </property>
        <property name="text">
@@ -6408,14 +6552,14 @@ font-size: 16px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}
+        <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
 
-QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Raleway';}</string>
+QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
        </property>
        <property name="text">
         <string>UNLOCK WALLET</string>
@@ -6425,7 +6569,7 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <widget class="QPushButton" name="m_qrButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>209</x>
         <y>70</y>
         <width>20</width>
         <height>20</height>
@@ -6451,25 +6595,23 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <zorder>m_qrcodebutton</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_currentWalletTitle</zorder>
-     <zorder>m_newTransferButton</zorder>
-     <zorder>m_newMessageButton</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
-     <zorder>aboutBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>line</zorder>
-     <zorder>transactionsBox</zorder>
-     <zorder>settingsBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>m_qrButton</zorder>
-     <zorder>bankingBox</zorder>
+     <zorder>aboutBox</zorder>
      <zorder>walletBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>messageBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>bankingBox</zorder>
     </widget>
    </item>
   </layout>
@@ -6666,22 +6808,6 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_walletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>walletClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>50</x>
-     <y>298</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -6975,118 +7101,6 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
    </hints>
   </connection>
   <connection>
-   <sender>m_createNewWalletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>createNewWalletButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>374</x>
-     <y>194</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_openExistingWalletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>openWalletButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>374</x>
-     <y>244</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importSpendKeyButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>importPrivateKeysButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>374</x>
-     <y>384</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importSeedButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>importSeedButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>374</x>
-     <y>434</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importTrackingWalletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>importTrackingButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>374</x>
-     <y>484</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_backupKeysButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>backupClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>354</x>
-     <y>624</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_backupKeysButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>backupFileClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>574</x>
-     <y>624</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_saveConnectionButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
@@ -7311,22 +7325,6 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
    </hints>
   </connection>
   <connection>
-   <sender>m_aboutQT</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>aboutQTClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>70</x>
-     <y>618</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>m_discordButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
@@ -7470,22 +7468,6 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>m_encryptWalletButton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>encryptWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>574</x>
-     <y>194</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>634</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -7550,8 +7532,8 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
   <slot>encryptWallet()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

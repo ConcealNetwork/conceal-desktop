@@ -23,7 +23,7 @@
    <string notr="true">background-color: #282d31;
 color: #ddd;
 border: 0px;
-font-family: 'Raleway';</string>
+font-family: 'Poppins';</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -42,7 +42,7 @@ font-family: 'Raleway';</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Raleway</family>
+       <family>Poppins</family>
        <pointsize>-1</pointsize>
       </font>
      </property>
@@ -50,7 +50,7 @@ font-family: 'Raleway';</string>
       <string notr="true">
 color: #ddd;
 border: 0px;
-font-size: 13px;</string>
+font-size: 14px;</string>
      </property>
     </widget>
    </item>
@@ -79,7 +79,7 @@ font-size: 13px;</string>
        </property>
        <property name="font">
         <font>
-         <family>Raleway</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>

@@ -27,7 +27,7 @@
 	color: white;
 	font-weight: bold;
 	background-color: #282d31;
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     border-top: none;
 	font-size: 14px;
  	border-bottom: 1px solid #444;
@@ -35,37 +35,37 @@
 }
 
 QTreeView {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 border: none;
     color: #ccc;
-font-size: 13px;
+font-size: 14px;
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
     color: #ccc;
-	font-size: 13px;
+	font-size: 14px;
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 13px;
+font-size: 14px;
   color: black;
 }
 
 QWidget:item:selected {
-	font-family: 'Raleway';
+	font-family: 'Poppins';
 background-color: #555;
-font-size: 13px;
+font-size: 14px;
   color: #ccc;
 }
 
 border: none;
-font-size: 13px;
-font-family: 'Raleway';
+font-size: 14px;
+font-family: 'Poppins';
 color: #ccc;
 </string>
      </property>

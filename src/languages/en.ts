@@ -1282,7 +1282,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="gui/ui/overviewframe.ui" line="1292"/>
-        <source>MY CONCEAL WALLET</source>
+        <source>CONCEAL.NETWORK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
