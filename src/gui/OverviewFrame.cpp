@@ -331,7 +331,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
 
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
@@ -343,6 +343,8 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
   {
     m_ui->m_optimizationMessage->setText("(Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs])");
   }
+
+  updatePortfolio();
 }
 
 void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first, int _last)
@@ -364,7 +366,7 @@ void OverviewFrame::showCurrentWallet()
 {
   /* Show the name of the opened wallet */
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText("" + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply)
@@ -406,8 +408,8 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX");
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  updatePortfolio();
 }
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
@@ -418,24 +420,32 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
-  m_ui->m_lockedBalance->setText("(Pending: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX)");
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
+  updatePortfolio();
 }
 
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
 {
-  //m_ui->m_unlockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance) + " CCX");
-  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance));
+  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance));
+  updatePortfolio();
+  quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
+  if (unlockedFunds > 0)
+  {
+    m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+  }
+  else
+  {
+    m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+  }
 }
 
 void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
@@ -446,11 +456,20 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_unlockedInvestmentsLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
-  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
+  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance));
+  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance));
+  updatePortfolio();
+  quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
+  if (unlockedFunds > 0)
+  {
+    m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+  }
+  else
+  {
+    m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+  }
 }
 
 void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
@@ -462,10 +481,10 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance) + " CCX");
-  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance));
+  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance));
+  updatePortfolio();
 }
 
 void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
@@ -476,30 +495,53 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
+  OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance));
-  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance) + " CCX");
-  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance) + " CCX");
-  m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
+  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance));
+  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance));
+  updatePortfolio();
 }
 
-void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume)
+void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume)
 {
-  quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-  quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-  quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-  quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-  quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-  quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-  quint64 totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  float ccxusd = _usdccx.toFloat();
-  float total = ccxusd * (float)totalBalance;
-  m_ui->m_ccxusd->setText("$" + _usdccx);
-  m_ui->m_btcusd->setText("$" + _usdbtc);
-  m_ui->m_marketCap->setText("$" + _usdmarketcap);
-  m_ui->m_volume->setText(_btcccx + " sats");
-  //m_ui->m_portfolio->setText(CurrencyAdapter::instance().formatAmount(totalBalance));
-  //m_ui->m_portfolio->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX | " + QString::number(total / 1000000, 'f', 2) + " USD");
+  QString currentCurrency = Settings::instance().getCurrentCurrency();
+
+  float total = 0;
+  if (currentCurrency == "EUR")
+  {
+    ccxeur = _eurccx.toFloat();
+    m_ui->m_ccxusd->setText("€" + _eurccx);
+    m_ui->m_btcusd->setText("€" + _eurbtc);
+    m_ui->m_marketCap->setText("€" + _eurmarketcap);
+    m_ui->m_volume->setText("€" + _eurvolume);
+  }
+  else
+  {
+    ccxusd = _usdccx.toFloat();
+    m_ui->m_ccxusd->setText("$" + _usdccx);
+    m_ui->m_btcusd->setText("$" + _usdbtc);
+    m_ui->m_marketCap->setText("$" + _usdmarketcap);
+    m_ui->m_volume->setText("$" + _usdvolume);
+  }
+
+  updatePortfolio();
+}
+
+void OverviewFrame::updatePortfolio()
+{
+
+  QString currentCurrency = Settings::instance().getCurrentCurrency();
+
+  float total = 0;
+  if (currentCurrency == "EUR")
+  {
+    total = ccxeur * (float)OverviewFrame::totalBalance;
+  }
+  else
+  {
+    total = ccxusd * (float)OverviewFrame::totalBalance;
+  }
+  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
 }
 
 void OverviewFrame::sendClicked()
@@ -1002,7 +1044,7 @@ void OverviewFrame::ttlValueChanged(int _ttlValue)
 void OverviewFrame::recalculateMessageLength()
 {
 
-  if (m_ui->m_messageTextEdit->toPlainText().length() > 260)
+  if (m_ui->m_messageTextEdit->toPlainText().length() > 261)
   {
     m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
     m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);

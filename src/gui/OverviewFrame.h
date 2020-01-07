@@ -60,6 +60,9 @@ private:
   PriceProvider *m_priceProvider;
   AddressProvider *m_addressProvider;
   QString remote_node_fee_address;
+  quint64 totalBalance = 0;
+  float ccxusd = 0;
+  float ccxeur = 0;
   QString wallet_address;
   quint64 remote_node_fee;
   quint64 m_actualBalance = 0;
@@ -69,7 +72,7 @@ private:
   QMenu* contextMenu;
 
 
-  void onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume);
+  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
@@ -90,6 +93,7 @@ private:
   static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
   void onAddressFound(const QString &_address);
+  void updatePortfolio();
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
