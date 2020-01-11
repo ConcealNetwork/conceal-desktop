@@ -38,6 +38,7 @@ public:
   void setPaymentId(const QString &_paymendId);
   bool fromPay = true;
   QModelIndex index;
+  void scrollToTransaction(const QModelIndex& _index);
 
 public slots:
   void onCustomContextMenu(const QPoint &point);

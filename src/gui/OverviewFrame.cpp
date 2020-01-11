@@ -1734,6 +1734,17 @@ void OverviewFrame::encryptWalletClicked()
   Q_EMIT encryptWalletSignal();
 }
 
+void OverviewFrame::scrollToTransaction(const QModelIndex &_index)
+{
+  transactionClicked();
+  QModelIndex sortedModelIndex = SortedTransactionsModel::instance().mapFromSource(_index);
+  QModelIndex index = static_cast<QSortFilterProxyModel*>(m_ui->m_transactionsView->model())->mapFromSource(sortedModelIndex);
+  m_ui->m_transactionsView->scrollTo(index);
+  m_ui->m_transactionsView->setFocus();
+  m_ui->m_transactionsView->setCurrentIndex(index);  
+}
+
+
 } // namespace WalletGui
 
 #include "OverviewFrame.moc"

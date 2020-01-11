@@ -12,7 +12,7 @@
 #include "MainWindow.h"
 #include "TransactionFrame.h"
 #include "TransactionsModel.h"
-
+#include "OverviewFrame.h"
 #include "ui_transactionframe.h"
 
 namespace WalletGui {
