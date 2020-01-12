@@ -4814,7 +4814,8 @@ border: none;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;
+padding-right: 20px;</string>
        </property>
        <property name="text">
         <string/>
@@ -6574,7 +6575,6 @@ text-align: left;
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>sendBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>line</zorder>
      <zorder>m_qrButton</zorder>
@@ -6587,6 +6587,7 @@ text-align: left;
      <zorder>m_totalPortfolioLabelUSD</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>sendBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7587,6 +7588,22 @@ text-align: left;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_addressEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>addressChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -7650,6 +7667,7 @@ text-align: left;
   <slot>unlockWallet()</slot>
   <slot>encryptWallet()</slot>
   <slot>scrollToTransaction(QModelIndex)</slot>
+  <slot>addressChanged(QString)</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

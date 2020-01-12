@@ -20,6 +20,7 @@
 #include "VisibleMessagesModel.h"
 #include "AddressBookModel.h"
 #include "AddressProvider.h"
+#include "ExchangeProvider.h"
 #include "CurrencyAdapter.h"
 #include "MainWindow.h"
 #include "PasswordDialog.h"
@@ -129,6 +130,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
                                                  m_transactionsModel(new TransactionsListModel),
                                                  m_depositModel(new DepositListModel),
                                                  m_visibleMessagesModel(new VisibleMessagesModel),
+                                                 m_exchangeProvider(new ExchangeProvider(this)),
                                                  m_addressProvider(new AddressProvider(this))
 {
   m_ui->setupUi(this);
@@ -215,6 +217,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
   connect(m_priceProvider, &PriceProvider::priceFoundSignal, this, &OverviewFrame::onPriceFound);
   connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
+  connect(m_exchangeProvider, &ExchangeProvider::exchangeFoundSignal, this, &OverviewFrame::onExchangeFound);
+
   connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &OverviewFrame::setStatusBarText);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
 
@@ -527,6 +531,11 @@ void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx,
   updatePortfolio();
 }
 
+void OverviewFrame::onExchangeFound(QString &_exchange)
+{
+  exchangeName = _exchange;
+}
+
 void OverviewFrame::updatePortfolio()
 {
 
@@ -829,6 +838,16 @@ void OverviewFrame::sendFundsClicked()
     return;
   }
 
+  QString paymentIDText = m_ui->m_paymentIdEdit->text();
+
+  if (paymentIDText.isEmpty())
+  {
+    if (!exchangeName.isEmpty()) {
+    QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
+    return;
+    }
+  }
+
   /* Get the most up-to-date fee based on characters in the message */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
@@ -1039,6 +1058,11 @@ void OverviewFrame::ttlValueChanged(int _ttlValue)
   quint32 hours = value / HOUR_SECONDS;
   quint32 minutes = value % HOUR_SECONDS / MINUTE_SECONDS;
   m_ui->m_ttlLabel->setText(QString("%1h %2m").arg(hours).arg(minutes));
+}
+
+void OverviewFrame::addressChanged(QString _address)
+{
+  m_exchangeProvider->getExchange(_address);
 }
 
 void OverviewFrame::recalculateMessageLength()
