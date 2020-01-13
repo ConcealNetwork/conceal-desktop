@@ -243,7 +243,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191");
+  const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
   QNetworkRequest request(url);
   nam->get(request);
 
@@ -848,9 +848,10 @@ void OverviewFrame::sendFundsClicked()
 
   if (paymentIDText.isEmpty())
   {
-    if (!exchangeName.isEmpty()) {
-    QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
-    return;
+    if (!exchangeName.isEmpty())
+    {
+      QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
+      return;
     }
   }
 
@@ -1711,6 +1712,31 @@ void OverviewFrame::mediumClicked()
   QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
 }
 
+void OverviewFrame::hotbitClicked()
+{
+  QDesktopServices::openUrl(QUrl("https://www.hotbit.io/exchange?symbol=CCX_BTC", QUrl::TolerantMode));
+}
+
+void OverviewFrame::stexClicked()
+{
+  QDesktopServices::openUrl(QUrl("https://app.stex.com/en/basic-trade/pair/BTC/CCX", QUrl::TolerantMode));
+}
+
+void OverviewFrame::tradeogreClicked()
+{
+  QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-CCX", QUrl::TolerantMode));
+}
+
+void OverviewFrame::qtradeClicked()
+{
+  QDesktopServices::openUrl(QUrl("https://qtrade.io/market/CCX_BTC", QUrl::TolerantMode));
+}
+
+void OverviewFrame::helpClicked()
+{
+  QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
+}
+
 bool OverviewFrame::checkWalletPassword()
 {
 
@@ -1768,12 +1794,11 @@ void OverviewFrame::scrollToTransaction(const QModelIndex &_index)
 {
   transactionClicked();
   QModelIndex sortedModelIndex = SortedTransactionsModel::instance().mapFromSource(_index);
-  QModelIndex index = static_cast<QSortFilterProxyModel*>(m_ui->m_transactionsView->model())->mapFromSource(sortedModelIndex);
+  QModelIndex index = static_cast<QSortFilterProxyModel *>(m_ui->m_transactionsView->model())->mapFromSource(sortedModelIndex);
   m_ui->m_transactionsView->scrollTo(index);
   m_ui->m_transactionsView->setFocus();
-  m_ui->m_transactionsView->setCurrentIndex(index);  
+  m_ui->m_transactionsView->setCurrentIndex(index);
 }
-
 
 } // namespace WalletGui
 

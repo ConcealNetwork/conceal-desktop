@@ -161,6 +161,11 @@ private:
   Q_SLOT void lockWallet();
   Q_SLOT void unlockWallet();
   Q_SLOT void encryptWalletClicked();
+  Q_SLOT void stexClicked();
+  Q_SLOT void hotbitClicked();
+  Q_SLOT void tradeogreClicked();
+  Q_SLOT void qtradeClicked();
+  Q_SLOT void helpClicked();
 
 Q_SIGNALS:
   void sendSignal();

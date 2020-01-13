@@ -616,7 +616,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>560</y>
+         <y>520</y>
          <width>121</width>
          <height>35</height>
         </rect>
@@ -763,6 +763,46 @@ border: none;
        </property>
        <property name="pixmap">
         <pixmap resource="../../resources.qrc">:/images/images/conceal.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_helpButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>560</y>
+         <width>121</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_helpButton {
+text-align: left; color: #ddd; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+}
+
+QPushButton#m_helpButton:hover {
+text-align: left; color: orange; margin-left: 20px;
+font-family: Poppins;
+border: none;
+font-size: 14px;
+  }</string>
+       </property>
+       <property name="text">
+        <string>HELP</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
        </property>
       </widget>
      </widget>
@@ -1488,7 +1528,7 @@ font-family: Poppins;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_9">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>30</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1517,7 +1557,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_10">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>30</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1546,7 +1586,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_11">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1575,7 +1615,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_12">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1662,7 +1702,7 @@ border: none;</string>
        <widget class="QPushButton" name="m_discordButton">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>70</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1683,7 +1723,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_telegramButton">
         <property name="geometry">
          <rect>
-          <x>60</x>
+          <x>70</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1704,7 +1744,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_twitterButton">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>280</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1725,7 +1765,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_bitcointalkButton">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>280</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1788,7 +1828,7 @@ text-align: left;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_15">
         <property name="geometry">
          <rect>
-          <x>660</x>
+          <x>670</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1814,10 +1854,10 @@ border: none;</string>
          <pixmap>../../icons/hotbit.png</pixmap>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_githubButton_2">
+       <widget class="QPushButton" name="m_hotbitButton">
         <property name="geometry">
          <rect>
-          <x>700</x>
+          <x>710</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1835,10 +1875,10 @@ text-align: left;</string>
          <string>Hotbit</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_githubButton_3">
+       <widget class="QPushButton" name="m_stexButton">
         <property name="geometry">
          <rect>
-          <x>890</x>
+          <x>910</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1859,7 +1899,7 @@ text-align: left;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_17">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>870</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1885,10 +1925,10 @@ border: none;</string>
          <pixmap>../../icons/qtrade.png</pixmap>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_githubButton_4">
+       <widget class="QPushButton" name="m_tradeogreButton">
         <property name="geometry">
          <rect>
-          <x>700</x>
+          <x>710</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1909,7 +1949,7 @@ text-align: left;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_18">
         <property name="geometry">
          <rect>
-          <x>660</x>
+          <x>670</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1935,10 +1975,10 @@ border: none;</string>
          <pixmap>../../icons/tradeogre.png</pixmap>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_githubButton_5">
+       <widget class="QPushButton" name="m_qtradeButton">
         <property name="geometry">
          <rect>
-          <x>890</x>
+          <x>910</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1959,7 +1999,7 @@ text-align: left;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_19">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>870</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -3128,8 +3168,8 @@ text-align: left;
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QTreeView" name="m_messagesView">
@@ -7840,6 +7880,86 @@ text-align: left;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_hotbitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>hotbitClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>976</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_stexButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>stexClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1176</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_tradeogreButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>tradeogreClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>976</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_qtradeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>qtradeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1176</x>
+     <y>628</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_helpButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>helpClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -7904,10 +8024,15 @@ text-align: left;
   <slot>encryptWallet()</slot>
   <slot>scrollToTransaction(QModelIndex)</slot>
   <slot>addressChanged(QString)</slot>
+  <slot>hotbitClicked()</slot>
+  <slot>tradeogreClicked()</slot>
+  <slot>stexClicked()</slot>
+  <slot>qtradeClicked()</slot>
+  <slot>helpClicked()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
