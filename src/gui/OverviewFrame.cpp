@@ -319,6 +319,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   dashboardClicked();
   depositParamsChanged();
   reset();
+  showCurrentWallet();
 }
 
 OverviewFrame::~OverviewFrame()
