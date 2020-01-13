@@ -234,6 +234,8 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 
   walletSynced = false;
 
+  m_ui->m_overviewWithdrawButton->hide();
+
   /* Hide the second chart */
   int currentChart = 2;
   m_ui->m_chart->show();
@@ -445,10 +447,12 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   if (unlockedFunds > 0)
   {
     m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+    m_ui->m_overviewWithdrawButton->show();
   }
   else
   {
     m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+    m_ui->m_overviewWithdrawButton->hide();
   }
 }
 
@@ -469,10 +473,12 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   if (unlockedFunds > 0)
   {
     m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+    m_ui->m_overviewWithdrawButton->show();
   }
   else
   {
     m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+    m_ui->m_overviewWithdrawButton->hide();
   }
 }
 
