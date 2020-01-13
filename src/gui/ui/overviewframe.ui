@@ -1546,7 +1546,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_11">
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>230</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1575,7 +1575,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_12">
         <property name="geometry">
          <rect>
-          <x>200</x>
+          <x>230</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1604,7 +1604,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_13">
         <property name="geometry">
          <rect>
-          <x>370</x>
+          <x>460</x>
           <y>70</y>
           <width>20</width>
           <height>20</height>
@@ -1633,7 +1633,7 @@ border: none;</string>
        <widget class="QLabel" name="m_depositsUnlockedTitle_14">
         <property name="geometry">
          <rect>
-          <x>370</x>
+          <x>460</x>
           <y>120</y>
           <width>20</width>
           <height>20</height>
@@ -1704,7 +1704,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_twitterButton">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>270</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1725,7 +1725,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_bitcointalkButton">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>270</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1746,7 +1746,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_githubButton">
         <property name="geometry">
          <rect>
-          <x>410</x>
+          <x>500</x>
           <y>65</y>
           <width>93</width>
           <height>28</height>
@@ -1767,7 +1767,7 @@ text-align: left;</string>
        <widget class="QPushButton" name="m_mediumButton">
         <property name="geometry">
          <rect>
-          <x>410</x>
+          <x>500</x>
           <y>115</y>
           <width>93</width>
           <height>28</height>
@@ -1783,6 +1783,206 @@ text-align: left;</string>
         </property>
         <property name="text">
          <string>Medium</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_depositsUnlockedTitle_15">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>70</y>
+          <width>20</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../icons/hotbit.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_githubButton_2">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>65</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>Hotbit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_githubButton_3">
+        <property name="geometry">
+         <rect>
+          <x>890</x>
+          <y>65</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>STEX</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_depositsUnlockedTitle_17">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>120</y>
+          <width>20</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../icons/qtrade.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_githubButton_4">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>115</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>TradeOgre</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_depositsUnlockedTitle_18">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>120</y>
+          <width>20</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../icons/tradeogre.png</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_githubButton_5">
+        <property name="geometry">
+         <rect>
+          <x>890</x>
+          <y>115</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+text-align: left;</string>
+        </property>
+        <property name="text">
+         <string>qTrade</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_depositsUnlockedTitle_19">
+        <property name="geometry">
+         <rect>
+          <x>850</x>
+          <y>70</y>
+          <width>20</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../icons/stex.png</pixmap>
         </property>
        </widget>
       </widget>
@@ -7706,8 +7906,8 @@ text-align: left;
   <slot>addressChanged(QString)</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

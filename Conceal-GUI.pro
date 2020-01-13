@@ -1171,6 +1171,10 @@ TRANSLATIONS = 	languages/tr.ts \
 RESOURCES += src/resources.qrc
 
 DISTFILES += \
+    src/icons/hotbit.png \
+    src/icons/qtrade.png \
+    src/icons/stex.png \
+    src/icons/tradeogre.png \
     src/images/logo-proper.png \
     src/images/qr.png
 RC_FILE = conceal.rc
