@@ -3599,7 +3599,7 @@ font-family: 'Poppins'; border: 0px;</string>
        <widget class="QLabel" name="label_29">
         <property name="geometry">
          <rect>
-          <x>600</x>
+          <x>610</x>
           <y>50</y>
           <width>151</width>
           <height>21</height>
@@ -3698,7 +3698,7 @@ QPushButton#m_optimizeButton:hover {color: orange; border: 1px solid orange; fon
        <widget class="QPushButton" name="m_rescanButton">
         <property name="geometry">
          <rect>
-          <x>760</x>
+          <x>800</x>
           <y>50</y>
           <width>121</width>
           <height>21</height>
@@ -3921,8 +3921,8 @@ font-family: 'Poppins'; border: 0px;</string>
          <string>Chinese</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/images/cn.png</normaloff>:/images/cn.png</iconset>
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/images/cn.png</normaloff>:/images/images/cn.png</iconset>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -3955,8 +3955,8 @@ font-family: 'Poppins'; border: 0px;</string>
          <string>English</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/images/en.png</normaloff>:/images/en.png</iconset>
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/images/en.png</normaloff>:/images/images/en.png</iconset>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -3989,8 +3989,8 @@ font-family: 'Poppins'; border: 0px;</string>
          <string>Russian</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/images/ru.png</normaloff>:/images/ru.png</iconset>
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/images/ru.png</normaloff>:/images/images/ru.png</iconset>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -4023,8 +4023,8 @@ font-family: 'Poppins'; border: 0px;</string>
          <string>Turkish</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/images/tr.png</normaloff>:/images/tr.png</iconset>
+         <iconset resource="../../resources.qrc">
+          <normaloff>:/images/images/tr.png</normaloff>:/images/images/tr.png</iconset>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -6842,12 +6842,12 @@ text-align: left;
      <zorder>walletBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
