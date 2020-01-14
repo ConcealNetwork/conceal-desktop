@@ -755,7 +755,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="src/gui/ui/overviewframe.ui" line="2595"/>
-        <source>CCX/BTC</source>
+        <source>VOLUME</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

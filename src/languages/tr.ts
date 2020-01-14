@@ -756,7 +756,7 @@ Lütfen bekle...</translation>
     </message>
     <message>
         <location filename="src/gui/ui/overviewframe.ui" line="2595"/>
-        <source>CCX/BTC</source>
+        <source>VOLUME</source>
         <translation></translation>
     </message>
     <message>

@@ -2786,7 +2786,7 @@ font-size: 14px;
 border: none;</string>
         </property>
         <property name="text">
-         <string>CCX/BTC</string>
+         <string>VOLUME</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_9">
