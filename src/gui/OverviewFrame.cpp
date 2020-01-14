@@ -4,8 +4,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <QApplication>
-#include <QClipboard>
+
 
 #include "AddressBookFrame.h"
 #include "NewAddressDialog.h"
@@ -66,6 +65,8 @@
 #include <QUrl>
 #include <QtCore>
 #include <QDesktopServices>
+#include <QApplication>
+#include <QClipboard>
 
 #include "ui_overviewframe.h"
 
@@ -406,8 +407,8 @@ void OverviewFrame::layoutChanged()
 
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
-  m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
-  m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance));
+  m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));                   // Overview screen
+  m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance)); // Send funds screen
   m_actualBalance = _balance;
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -421,6 +422,7 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
 {
+  m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -428,10 +430,11 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
   updatePortfolio();
 }
 
+
+/* Unlocked deposits */
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -441,22 +444,25 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance));
-  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance));
+  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
   updatePortfolio();
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-  if (unlockedFunds > 0)
+  if (walletSynced == true)
   {
-    m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-    m_ui->m_overviewWithdrawButton->show();
-  }
-  else
-  {
-    m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-    m_ui->m_overviewWithdrawButton->hide();
+    if (unlockedFunds > 0)
+    {
+      m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+      m_ui->m_overviewWithdrawButton->show();
+    }
+    else
+    {
+      m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+      m_ui->m_overviewWithdrawButton->hide();
+    }
   }
 }
 
+/* Unlocked investments */
 void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -466,26 +472,26 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_unlockedInvestmentsLabel->setText(CurrencyAdapter::instance().formatAmount(actualInvestmentBalance));
-  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance));
-  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance + actualInvestmentBalance));
+  m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
   updatePortfolio();
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-  if (unlockedFunds > 0)
+  if (walletSynced == true)
   {
-    m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-    m_ui->m_overviewWithdrawButton->show();
-  }
-  else
-  {
-    m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-    m_ui->m_overviewWithdrawButton->hide();
+    if (unlockedFunds > 0)
+    {
+      m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+      m_ui->m_overviewWithdrawButton->show();
+    }
+    else
+    {
+      m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
+      m_ui->m_overviewWithdrawButton->hide();
+    }
   }
 }
 
 void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
 {
-  m_ui->m_lockedDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
   quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
   quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
@@ -493,8 +499,7 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_totalDepositLabel->setText(CurrencyAdapter::instance().formatAmount(_balance + actualDepositBalance));
-  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance));
+  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
   updatePortfolio();
 }
 
@@ -509,7 +514,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance));
   m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance));
-  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(_balance + pendingDepositBalance + pendingInvestmentBalance));
+  m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
   updatePortfolio();
 }
 
@@ -1291,7 +1296,7 @@ void OverviewFrame::depositParamsChanged()
   quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
   qreal termRate = DepositModel::calculateRate(amount, interest);
   m_ui->m_interestEarnedLabel->setText(QString("%1 %2").arg(CurrencyAdapter::instance().formatAmount(interest)).arg(CurrencyAdapter::instance().getCurrencyTicker().toUpper()));
-  m_ui->m_interestRateLabel->setText(QString("%3 %)").arg(QString::number(termRate * 100, 'f', 4)));
+  m_ui->m_interestRateLabel->setText(QString("%3 %").arg(QString::number(termRate * 100, 'f', 4)));
 }
 
 void OverviewFrame::timeChanged(int _value)
@@ -1703,9 +1708,9 @@ void OverviewFrame::githubClicked()
   QDesktopServices::openUrl(QUrl("https://github.com/ConcealNetwork", QUrl::TolerantMode));
 }
 
-void OverviewFrame::bitcointalkClicked()
+void OverviewFrame::redditClicked()
 {
-  QDesktopServices::openUrl(QUrl("https://bitcointalk.org/index.php?topic=5086106", QUrl::TolerantMode));
+  QDesktopServices::openUrl(QUrl("https://www.reddit.com/r/ConcealNetwork/", QUrl::TolerantMode));
 }
 
 void OverviewFrame::mediumClicked()

@@ -1327,7 +1327,7 @@ border: none;</string>
       <property name="geometry">
        <rect>
         <x>234</x>
-        <y>65</y>
+        <y>55</y>
         <width>161</width>
         <height>25</height>
        </rect>
@@ -1351,7 +1351,7 @@ color: orange;</string>
       <property name="geometry">
        <rect>
         <x>980</x>
-        <y>60</y>
+        <y>40</y>
         <width>271</width>
         <height>31</height>
        </rect>
@@ -1554,7 +1554,7 @@ border: none;</string>
          <pixmap resource="../../resources.qrc">:/icons/discord.png</pixmap>
         </property>
        </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_10">
+       <widget class="QLabel" name="m_telegramIcon">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -1583,7 +1583,7 @@ border: none;</string>
          <pixmap resource="../../resources.qrc">:/icons/telegram.png</pixmap>
         </property>
        </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_11">
+       <widget class="QLabel" name="m_twitterIcon">
         <property name="geometry">
          <rect>
           <x>240</x>
@@ -1612,7 +1612,7 @@ border: none;</string>
          <pixmap resource="../../resources.qrc">:/icons/twitter.png</pixmap>
         </property>
        </widget>
-       <widget class="QLabel" name="m_depositsUnlockedTitle_12">
+       <widget class="QLabel" name="m_redditIcon">
         <property name="geometry">
          <rect>
           <x>240</x>
@@ -1638,7 +1638,7 @@ border: none;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="../../resources.qrc">:/icons/bitcoin.png</pixmap>
+         <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_13">
@@ -1762,7 +1762,7 @@ text-align: left;</string>
          <string>Twitter</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="m_bitcointalkButton">
+       <widget class="QPushButton" name="m_redditButton">
         <property name="geometry">
          <rect>
           <x>280</x>
@@ -1780,7 +1780,7 @@ border: none;
 text-align: left;</string>
         </property>
         <property name="text">
-         <string>Bitcoin Talk</string>
+         <string>Reddit</string>
         </property>
        </widget>
        <widget class="QPushButton" name="m_githubButton">
@@ -6314,7 +6314,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>209</x>
-        <y>30</y>
+        <y>20</y>
         <width>338</width>
         <height>40</height>
        </rect>
@@ -6354,7 +6354,7 @@ font-weight: normal;</string>
       <property name="geometry">
        <rect>
         <x>409</x>
-        <y>65</y>
+        <y>55</y>
         <width>245</width>
         <height>25</height>
        </rect>
@@ -6629,7 +6629,7 @@ color: #ccc;
       <property name="geometry">
        <rect>
         <x>402</x>
-        <y>70</y>
+        <y>60</y>
         <width>1</width>
         <height>12</height>
        </rect>
@@ -6710,7 +6710,7 @@ background-color: #282d31;</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>:/images/lock.png</pixmap>
+        <pixmap resource="../../resources.qrc">:/images/images/lock.png</pixmap>
        </property>
       </widget>
       <widget class="QLabel" name="label_37">
@@ -6774,7 +6774,7 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
       <property name="geometry">
        <rect>
         <x>209</x>
-        <y>65</y>
+        <y>55</y>
         <width>20</width>
         <height>20</height>
        </rect>
@@ -6796,9 +6796,9 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
       <property name="geometry">
        <rect>
-        <x>930</x>
-        <y>40</y>
-        <width>321</width>
+        <x>690</x>
+        <y>20</y>
+        <width>561</width>
         <height>25</height>
        </rect>
       </property>
@@ -6844,10 +6844,10 @@ text-align: left;
      <zorder>m_totalPortfolioLabelUSD</zorder>
      <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>messageBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7609,7 +7609,7 @@ text-align: left;
    </hints>
   </connection>
   <connection>
-   <sender>m_bitcointalkButton</sender>
+   <sender>m_redditButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>bitcointalkClicked()</slot>
@@ -8015,7 +8015,7 @@ text-align: left;
   <slot>aboutQTClicked()</slot>
   <slot>discordClicked()</slot>
   <slot>githubClicked()</slot>
-  <slot>bitcointalkClicked()</slot>
+  <slot>redditClicked()</slot>
   <slot>telegramClicked()</slot>
   <slot>twitterClicked()</slot>
   <slot>mediumClicked()</slot>

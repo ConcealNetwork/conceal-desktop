@@ -40,6 +40,10 @@
         <file>images/qr.png</file>
         <file>images/conceal-small.png</file>
         <file>images/lock.png</file>        
+        <file>images/en.png</file>                
+        <file>images/ru.png</file>                
+        <file>images/cn.png</file>       
+        <file>images/tr.png</file>                         
         <file>images/cryptonote2.png</file>        
     </qresource>
     <qresource prefix="/">
@@ -48,6 +52,7 @@
         <file>icons/medium.png</file>
         <file>icons/twitter.png</file>
         <file>icons/github.png</file>
+        <file>icons/reddit.png</file>
         <file>icons/bitcoin.png</file>
         <file>icons/stex.png</file>                  
         <file>icons/qtrade.png</file>        

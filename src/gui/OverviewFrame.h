@@ -156,7 +156,7 @@ private:
   Q_SLOT void telegramClicked();  
   Q_SLOT void twitterClicked();
   Q_SLOT void githubClicked();
-  Q_SLOT void bitcointalkClicked();
+  Q_SLOT void redditClicked();
   Q_SLOT void mediumClicked();
   Q_SLOT void lockWallet();
   Q_SLOT void unlockWallet();
