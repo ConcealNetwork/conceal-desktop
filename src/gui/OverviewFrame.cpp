@@ -4,69 +4,67 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include  "AddressBookDialog.h"
+#include  "AddressBookModel.h"
+#include  "AddressProvider.h"
+#include  "Common/CommandLine.h"
+#include  "Common/DnsTools.h"
+#include  "Common/PathTools.h"
+#include  "Common/SignalHandler.h"
+#include  "Common/StringTools.h"
+#include  "Common/Util.h"
+#include  "Common/Base58.h"
+#include  "Common/Util.h"
+#include  "crypto/hash.h"
+#include  "CryptoNoteCore/CryptoNoteTools.h"
+#include  "CryptoNoteCore/Account.h"
+#include  "CryptoNoteCore/CryptoNoteBasic.h"
+#include  "CryptoNoteCore/CryptoNoteBasicImpl.h"
+#include  "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include  "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include  "CurrencyAdapter.h"
+#include  "DepositDetailsDialog.h"
+#include  "DepositListModel.h"
+#include  "DepositModel.h"
+#include  "ExchangeProvider.h"
+#include  "MainWindow.h"
+#include  "MessageDetailsDialog.h"
+#include  "MessagesModel.h"
+#include  "NewAddressDialog.h"
+#include  "NodeAdapter.h"
+#include  "OverviewFrame.h"
+#include  "PasswordDialog.h"
+#include  "PriceProvider.h"
+#include  "QRLabel.h"
+#include  "RecentTransactionsModel.h"
+#include  "Settings.h"
+#include  "SortedMessagesModel.h"
+#include  "SortedTransactionsModel.h"
+#include  "transactionconfirmation.h"
+#include  "TransactionDetailsDialog.h"
+#include  "TransactionFrame.h"
+#include  "TransactionsListModel.h"
+#include  "TransactionsModel.h"
+#include  "VisibleMessagesModel.h"
+#include  "WalletAdapter.h"
+#include  "WalletEvents.h"
+#include  "WalletLegacy/WalletHelper.h"
 
-
-#include "AddressBookFrame.h"
-#include "NewAddressDialog.h"
-#include "OverviewFrame.h"
-#include "TransactionFrame.h"
-#include "RecentTransactionsModel.h"
-#include "DepositDetailsDialog.h"
-#include "DepositListModel.h"
-#include "MessageDetailsDialog.h"
-#include "MessagesModel.h"
-#include "SortedMessagesModel.h"
-#include "VisibleMessagesModel.h"
-#include "AddressBookModel.h"
-#include "AddressProvider.h"
-#include "ExchangeProvider.h"
-#include "CurrencyAdapter.h"
-#include "MainWindow.h"
-#include "PasswordDialog.h"
-#include "transactionconfirmation.h"
-#include "WalletAdapter.h"
-#include "WalletEvents.h"
-#include <CryptoNoteCore/CryptoNoteTools.h>
-#include <Common/Util.h>
-#include <Common/Base58.h>
-#include "Common/StringTools.h"
-#include "Common/CommandLine.h"
-#include "AddressBookDialog.h"
-#include "CryptoNoteCore/Account.h"
-#include "crypto/hash.h"
-#include "CryptoNoteCore/CryptoNoteBasic.h"
-#include "CryptoNoteCore/CryptoNoteBasicImpl.h"
-#include "WalletLegacy/WalletHelper.h"
-#include "Common/SignalHandler.h"
-#include "Common/PathTools.h"
-#include "Common/Util.h"
-#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
-#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
-#include "Common/DnsTools.h"
-#include "DepositModel.h"
-#include "PriceProvider.h"
-#include "NodeAdapter.h"
-#include "Settings.h"
-#include "QRLabel.h"
-#include "SortedTransactionsModel.h"
-#include "TransactionDetailsDialog.h"
-#include "TransactionsListModel.h"
-#include "TransactionsModel.h"
-#include <QFont>
-#include <QFontDatabase>
-#include <QMessageBox>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QAction>
-#include <QClipboard>
-#include <QNetworkReply>
-#include <QStringList>
-#include <QUrl>
-#include <QtCore>
-#include <QDesktopServices>
-#include <QApplication>
-#include <QClipboard>
+#include  < QAction >
+#include  < QApplication >
+#include  < QClipboard >
+#include  < QClipboard >
+#include  < QDesktopServices >
+#include  < QFont >
+#include  < QFontDatabase >
+#include  < QJsonArray >
+#include  < QJsonDocument >
+#include  < QJsonObject >
+#include  < QMessageBox >
+#include  < QNetworkReply >
+#include  < QStringList >
+#include  < QtCore >
+#include  < QUrl >
 
 #include "ui_overviewframe.h"
 
@@ -317,7 +315,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
     m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
   }
 
-
   dashboardClicked();
   depositParamsChanged();
   reset();
@@ -367,10 +364,9 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange;");
+  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange; text-align: left;");
   OverviewFrame::wallet_address = _address;
-    m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
-
+  m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
 }
 
 void OverviewFrame::showCurrentWallet()
@@ -435,7 +431,6 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
   updatePortfolio();
 }
-
 
 /* Unlocked deposits */
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
