@@ -647,154 +647,155 @@ Please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="847"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="863"/>
         <source>DEPOSITS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="873"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="1073"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="889"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1089"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1032"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1048"/>
         <source>DEPOSIT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1099"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="2318"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1115"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2334"/>
         <source>Withdrawable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1235"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1251"/>
         <source>INVESTMENTS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1344"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1360"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6862"/>
         <source>COPY WALLET ADDRESS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1436"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1452"/>
         <source>CONTACT US / STAY INFORMED</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1720"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1736"/>
         <source>Discord</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1741"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1757"/>
         <source>Telegram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1762"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1778"/>
         <source>Twitter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1783"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1799"/>
         <source>Reddit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1804"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1820"/>
         <source>Github</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1825"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1841"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1875"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1891"/>
         <source>Hotbit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1896"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1912"/>
         <source>STEX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1946"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1962"/>
         <source>TradeOgre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1996"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2012"/>
         <source>qTrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2067"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2083"/>
         <source>Locked Deposits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2093"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2109"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2231"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2247"/>
         <source>TOTAL BALANCE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2454"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2470"/>
         <source>Pending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2474"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2490"/>
         <source>Withdraw</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2512"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2528"/>
         <source>RECENT ACTIVITY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2734"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2750"/>
         <source>CCX/USD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2789"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2805"/>
         <source>VOLUME</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2815"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2831"/>
         <source>MARKETCAP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2841"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2857"/>
         <source>BTC/USD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2902"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2918"/>
         <source>MARKET INFORMATION</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3088"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3104"/>
         <source>HISTORICAL DATA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3104"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3120"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -803,12 +804,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3152"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3168"/>
         <source>MESSAGE OVERVIEW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3168"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3184"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -817,209 +818,209 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3335"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3351"/>
         <source>Connection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3360"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3376"/>
         <source>Custom Remote Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3388"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3404"/>
         <source>Built-in Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3416"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3432"/>
         <source>Automatic Remote Node</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3462"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3478"/>
         <source>Set connection type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3499"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="4067"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3515"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4083"/>
         <source>SAVE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3539"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3555"/>
         <source>Optimization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3566"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3582"/>
         <source>Auto optimization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3593"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3609"/>
         <source>Large transactions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3620"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3636"/>
         <source>Rescan wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3659"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3675"/>
         <source>ENABLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3695"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3711"/>
         <source>OPTIMIZE NOW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3731"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3747"/>
         <source>START RESCAN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3755"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3771"/>
         <source>(Optimization not required)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3798"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3814"/>
         <source>Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3825"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3841"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3852"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3868"/>
         <source>Currency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3873"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3889"/>
         <source>US Dollar ($)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3894"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3910"/>
         <source>Euro (€)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3921"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3937"/>
         <source>Chinese</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3955"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3971"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3989"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4005"/>
         <source>Russian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4023"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4039"/>
         <source>Turkish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4107"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4123"/>
         <source>Wallet Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4132"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4148"/>
         <source>OPEN WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4154"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4170"/>
         <source>NEW WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4176"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4192"/>
         <source>ENCRYPT WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4200"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4216"/>
         <source>New/Existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4227"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4243"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4254"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="4509"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4270"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4525"/>
         <source>Backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4279"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4295"/>
         <source>IMPORT TRACKING WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4301"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4317"/>
         <source>BACKUP KEYS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4323"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4339"/>
         <source>IMPORT PRIVATE KEYS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4345"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4361"/>
         <source>BACKUP WALLET FILE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4367"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4383"/>
         <source>IMPORT SEED</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4423"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4439"/>
         <source>Import Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4466"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4482"/>
         <source>New or Existing Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4577"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4593"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4611"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4627"/>
         <source>ABOUT QT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4665"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4681"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4718"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4734"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1028,148 +1029,148 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4756"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4772"/>
         <source>0.000000</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4781"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4797"/>
         <source>Payment ID (Optional) - Required at some Exchanges</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4806"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4822"/>
         <source>Message (Optional)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4831"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4847"/>
         <source>Save to Address Book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4856"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4872"/>
         <source>Amount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5024"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5480"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5040"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5496"/>
         <source>Address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5117"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5316"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5133"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5332"/>
         <source>SEND</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5153"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5390"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5169"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5406"/>
         <source>CANCEL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5246"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5429"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5262"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5445"/>
         <source>CLEAR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5534"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5550"/>
         <source>Do not include message in blockchain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5541"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5557"/>
         <source>Set self destruct time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5623"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5649"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5639"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5665"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5675"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5691"/>
         <source>Note: Maximum message size is 260 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5734"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5750"/>
         <source>NEW DEPOSIT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5758"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5774"/>
         <source>How long should your deposit last?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5844"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5860"/>
         <source>How much do you want to deposit?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5886"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5902"/>
         <source>21900 blocks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5913"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="6075"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5929"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6091"/>
         <source>interestLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5940"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5956"/>
         <source>Interest rate:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5967"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5983"/>
         <source>Rewards you will earn:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5994"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6010"/>
         <source>Fees for this deposit:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6021"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6037"/>
         <source>Length on the blockchain:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6048"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6064"/>
         <source>0.001000 CCX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6108"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6124"/>
         <source>Deposit Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6139"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6155"/>
         <source>MAKE DEPOSIT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6258"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6274"/>
         <source>DEPOSIT HISTORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6288"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6304"/>
         <source>WITHDRAW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6304"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6320"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1178,12 +1179,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6350"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6366"/>
         <source>CONCEAL.NETWORK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6386"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6402"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1192,47 +1193,47 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6436"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6452"/>
         <source>YOUR CONTACT LIST</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6536"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6552"/>
         <source>COPY ADDRESS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6558"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6574"/>
         <source>COPY PAYMENTID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6580"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6596"/>
         <source>PAY TO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6602"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6618"/>
         <source>EDIT CONTACT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6624"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6640"/>
         <source>DELETE CONTACT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6730"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6746"/>
         <source>This wallet is locked. Please click below to unlock your wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6769"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6785"/>
         <source>UNLOCK WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6821"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6837"/>
         <source>0.000000 CCX 0.00 USD</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2079,172 +2080,182 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="src/gui/OverviewFrame.cpp" line="313"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1440"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1443"/>
         <source>CLICK TO DISABLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/gui/OverviewFrame.cpp" line="317"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1431"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1434"/>
         <source>CLICK TO ENABLE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="573"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="592"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="675"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="697"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="849"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1118"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1211"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1374"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1401"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1424"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="380"/>
+        <source>Current Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="568"/>
+        <source>TOTAL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="576"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="595"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="678"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="700"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="852"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1121"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1214"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1377"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1404"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1427"/>
         <source>Tracking Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="735"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="738"/>
         <source>Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="740"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="743"/>
         <source>Synchronization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="859"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="862"/>
         <source>Payment ID Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="909"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="912"/>
         <source>Failed to lookup Conceal ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="923"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="926"/>
         <source>Invalid recipient address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="945"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1559"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1586"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1628"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="948"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1562"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1589"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1631"/>
         <source>Invalid payment ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="952"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="955"/>
         <source>Transaction Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="953"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="956"/>
         <source>Please note that there is no payment ID, are you sure you want to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="988"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="991"/>
         <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1178"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1181"/>
         <source>Message too long. Please ensure that the message is less than 260 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1220"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1223"/>
         <source>You don&apos;t have enough balance in your account!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1239"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1242"/>
         <source>Deposit Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1240"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1243"/>
         <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1433"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1442"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1436"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1445"/>
         <source>Auto Optimization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1434"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1437"/>
         <source>Auto Optimization Disabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1443"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1446"/>
         <source>Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1482"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1485"/>
         <source>Language and Currency settings saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1483"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1519"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1486"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1522"/>
         <source>Please restart the wallet for the new settings to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1518"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1521"/>
         <source>Connection settings saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1553"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1580"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1622"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1556"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1583"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1625"/>
         <source>Invalid address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1567"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1594"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1636"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1570"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1597"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1639"/>
         <source>Contact with such label already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1611"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1614"/>
         <source>Edit contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1650"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1656"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1653"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1659"/>
         <source>Address Book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1758"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1761"/>
         <source>Incorrect password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1758"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1761"/>
         <source>Wrong password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1772"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1775"/>
         <source>Lock Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1773"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1776"/>
         <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2269,6 +2280,34 @@ Are you sure?</source>
     <message>
         <location filename="src/gui/ReceiveFrame.cpp" line="109"/>
         <source>Seed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WalletGui::RecentTransactionDelegate</name>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="47"/>
+        <source>Received CCX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="50"/>
+        <source>New Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="54"/>
+        <source>Send CCX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="58"/>
+        <source>Optimization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="62"/>
+        <source>New Deposit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

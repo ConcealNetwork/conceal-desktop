@@ -377,7 +377,7 @@ void OverviewFrame::showCurrentWallet()
 {
   /* Show the name of the opened wallet */
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText("Current Wallet: " + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile.toUpper());
 }
 
 void OverviewFrame::downloadFinished(QNetworkReply *reply)
@@ -565,7 +565,7 @@ void OverviewFrame::updatePortfolio()
   {
     total = ccxusd * (float)OverviewFrame::totalBalance;
   }
-  m_ui->m_totalPortfolioLabelUSD->setText("TOTAL " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
+  m_ui->m_totalPortfolioLabelUSD->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
 }
 
 void OverviewFrame::sendClicked()

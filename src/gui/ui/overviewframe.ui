@@ -103,7 +103,7 @@ background-color: #282d31;</string>
         <rect>
          <x>10</x>
          <y>210</y>
-         <width>131</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -143,7 +143,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>290</y>
-         <width>131</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -183,7 +183,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>600</y>
-         <width>121</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -223,7 +223,7 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>250</y>
-         <width>141</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -263,7 +263,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>640</y>
-         <width>141</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -531,7 +531,7 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>170</y>
-         <width>131</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -577,7 +577,7 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>330</y>
-         <width>131</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -617,7 +617,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>520</y>
-         <width>121</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -704,7 +704,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>430</y>
-         <width>131</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -770,7 +770,7 @@ border: none;
         <rect>
          <x>10</x>
          <y>560</y>
-         <width>121</width>
+         <width>171</width>
          <height>35</height>
         </rect>
        </property>
@@ -1366,9 +1366,9 @@ color: orange;</string>
      <widget class="QLabel" name="m_currentWalletTitle">
       <property name="geometry">
        <rect>
-        <x>980</x>
+        <x>820</x>
         <y>35</y>
-        <width>271</width>
+        <width>431</width>
         <height>31</height>
        </rect>
       </property>
@@ -2224,7 +2224,7 @@ border: none;</string>
          <rect>
           <x>20</x>
           <y>15</y>
-          <width>241</width>
+          <width>441</width>
           <height>25</height>
          </rect>
         </property>
@@ -2511,7 +2511,7 @@ text-decoration: underline;</string>
          <rect>
           <x>20</x>
           <y>15</y>
-          <width>291</width>
+          <width>441</width>
           <height>23</height>
          </rect>
         </property>
@@ -6812,9 +6812,9 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
      <widget class="QLabel" name="m_totalPortfolioLabelUSD">
       <property name="geometry">
        <rect>
-        <x>690</x>
+        <x>540</x>
         <y>15</y>
-        <width>561</width>
+        <width>711</width>
         <height>25</height>
        </rect>
       </property>
@@ -8089,8 +8089,8 @@ text-align: left;</string>
   <slot>helpClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

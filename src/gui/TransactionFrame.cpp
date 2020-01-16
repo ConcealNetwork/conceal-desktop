@@ -44,22 +44,22 @@ public:
 
     case TransactionsModel::COLUMN_TYPE: {
       QString txtype = _index.data(TransactionsModel::ROLE_TYPE).toString();
-      QString txtext = "Received CCX";
+      QString txtext = tr("Received CCX");
       if (txtype == "0") 
       {
-        txtext = "New Block";
+        txtext = tr("New Block");
       } 
       else if (txtype == "2")
       {
-        txtext = "Send CCX";
+        txtext = tr("Send CCX");
       }
       else if (txtype == "3")
       {
-        txtext = "Optimization";
+        txtext = tr("Optimization");
       }
       else if (txtype == "4")
       {
-        txtext = "New Deposit";
+        txtext = tr("New Deposit");
       }    
       static_cast<QLabel*>(_editor)->setText(txtext);
       return;
