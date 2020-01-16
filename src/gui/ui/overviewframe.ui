@@ -656,7 +656,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>370</y>
+         <y>390</y>
          <width>180</width>
          <height>35</height>
         </rect>
@@ -703,7 +703,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>410</y>
+         <y>430</y>
          <width>131</width>
          <height>35</height>
         </rect>
@@ -803,6 +803,22 @@ font-size: 14px;
          <width>18</width>
          <height>18</height>
         </size>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>377</y>
+         <width>120</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #444;</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>
@@ -1327,7 +1343,7 @@ border: none;</string>
       <property name="geometry">
        <rect>
         <x>234</x>
-        <y>55</y>
+        <y>45</y>
         <width>161</width>
         <height>25</height>
        </rect>
@@ -1351,7 +1367,7 @@ color: orange;</string>
       <property name="geometry">
        <rect>
         <x>980</x>
-        <y>40</y>
+        <y>35</y>
         <width>271</width>
         <height>31</height>
        </rect>
@@ -6314,7 +6330,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>209</x>
-        <y>20</y>
+        <y>10</y>
         <width>338</width>
         <height>40</height>
        </rect>
@@ -6354,7 +6370,7 @@ font-weight: normal;</string>
       <property name="geometry">
        <rect>
         <x>409</x>
-        <y>55</y>
+        <y>45</y>
         <width>245</width>
         <height>25</height>
        </rect>
@@ -6629,7 +6645,7 @@ color: #ccc;
       <property name="geometry">
        <rect>
         <x>402</x>
-        <y>60</y>
+        <y>50</y>
         <width>1</width>
         <height>12</height>
        </rect>
@@ -6774,7 +6790,7 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
       <property name="geometry">
        <rect>
         <x>209</x>
-        <y>55</y>
+        <y>45</y>
         <width>20</width>
         <height>20</height>
        </rect>
@@ -6797,7 +6813,7 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>20</y>
+        <y>15</y>
         <width>561</width>
         <height>25</height>
        </rect>
@@ -6824,6 +6840,31 @@ text-align: left;
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
+     <widget class="QPushButton" name="m_copyAddressButton_3">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>70</y>
+        <width>1041</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none; font-size: 13px;
+font-family: 'Poppins';
+color: #999;
+text-align: left;</string>
+      </property>
+      <property name="text">
+       <string>COPY WALLET ADDRESS</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+     </widget>
      <zorder>lockBox</zorder>
      <zorder>darkness</zorder>
      <zorder>m_newDepositButton</zorder>
@@ -6846,8 +6887,9 @@ text-align: left;
      <zorder>transactionsBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>m_copyAddressButton_3</zorder>
     </widget>
    </item>
   </layout>
@@ -7960,6 +8002,22 @@ text-align: left;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_copyAddressButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>copyClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>730</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -8031,8 +8089,8 @@ text-align: left;
   <slot>helpClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

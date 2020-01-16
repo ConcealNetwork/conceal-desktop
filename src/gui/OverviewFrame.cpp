@@ -317,6 +317,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
     m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
   }
 
+
   dashboardClicked();
   depositParamsChanged();
   reset();
@@ -368,6 +369,8 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
 {
   m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange;");
   OverviewFrame::wallet_address = _address;
+    m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
+
 }
 
 void OverviewFrame::showCurrentWallet()
