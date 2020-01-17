@@ -2497,7 +2497,7 @@ text-decoration: underline;</string>
          <x>10</x>
          <y>200</y>
          <width>480</width>
-         <height>171</height>
+         <height>181</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -2606,7 +2606,7 @@ font-family: 'Poppins';
          <x>510</x>
          <y>20</y>
          <width>521</width>
-         <height>355</height>
+         <height>361</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -8090,7 +8090,7 @@ text-align: left;</string>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
