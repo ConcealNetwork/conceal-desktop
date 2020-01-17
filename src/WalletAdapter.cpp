@@ -18,6 +18,7 @@
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "WalletAdapter.h"
+#include <ITransfersContainer.h>
 
 namespace WalletGui {
 
@@ -470,7 +471,7 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
     Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(m_wallet->pendingInvestmentBalance());    
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress()));
     Q_EMIT reloadWalletTransactionsSignal();
-    Q_EMIT walletStateChangedSignal(tr("Ready"));
+    Q_EMIT walletStateChangedSignal(tr("READY"));
     QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
     if (!QFile::exists(Settings::instance().getWalletFile())) {
       save(true, true);
@@ -496,7 +497,7 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
   if (!_error && !m_isBackupInProgress) {
     closeFile();
     renameFile(Settings::instance().getWalletFile() + ".temp", Settings::instance().getWalletFile());
-    Q_EMIT walletStateChangedSignal(tr("Ready"));
+    Q_EMIT walletStateChangedSignal(tr("READY"));
     Q_EMIT updateBlockStatusTextWithDelaySignal();
   } else if (m_isBackupInProgress) {
     m_isBackupInProgress = false;
@@ -662,6 +663,29 @@ void WalletAdapter::updateBlockStatusText() {
 
 void WalletAdapter::updateBlockStatusTextWithDelay() {
   QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
+}
+
+bool WalletAdapter::checkWalletPassword(const QString& _password) {
+  Q_ASSERT(m_wallet != nullptr);
+  if (Settings::instance().getWalletFile().endsWith(".wallet")) {
+    if (openFile(Settings::instance().getWalletFile(), true)) {
+      try {
+        if (m_wallet->checkWalletPassword(m_file, _password.toStdString())) {
+          closeFile();
+          return true;
+        }
+        else {
+          closeFile();
+          return false;
+        }
+      }
+      catch (std::system_error&) {
+        closeFile();
+        return false;
+      }
+    }
+  }
+  return false;
 }
 
 }

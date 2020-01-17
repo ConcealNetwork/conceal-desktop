@@ -10,44 +10,53 @@
 #include <QNetworkReply>
 #include <QStringList>
 #include <QUrl>
-
+#include "Settings.h"
 #include "AddressProvider.h"
 
-namespace WalletGui {
+namespace WalletGui
+{
 
-AddressProvider::AddressProvider(QObject *parent) : QObject(parent), m_networkManager() {
+AddressProvider::AddressProvider(QObject *parent) : QObject(parent), m_networkManager()
+{
 }
 
-AddressProvider::~AddressProvider() {
+AddressProvider::~AddressProvider()
+{
 }
 
-void AddressProvider::getAddress(const QString& _urlString) {
+void AddressProvider::getAddress()
+{
+
+  QString _urlString = Settings::instance().getCurrentRemoteNode() + "/feeaddress";
   QUrl url = QUrl::fromUserInput(_urlString);
-  if (!url.isValid()) {
+  if (!url.isValid())
+  {
     return;
   }
 
   QNetworkRequest request(url);
-  QNetworkReply* reply = m_networkManager.get(request);
+  QNetworkReply *reply = m_networkManager.get(request);
   connect(reply, &QNetworkReply::readyRead, this, &AddressProvider::readyRead);
   connect(reply, &QNetworkReply::finished, reply, &QNetworkReply::deleteLater);
 }
 
-void AddressProvider::readyRead() {
-  QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+void AddressProvider::readyRead()
+{
+  QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
   QByteArray data = reply->readAll();
   QJsonDocument doc = QJsonDocument::fromJson(data);
-  if (doc.isNull()) {
+  if (doc.isNull())
+  {
     return;
   }
 
   QJsonObject obj = doc.object();
-
   QString address = obj.value("fee_address").toString();
 
-  if (!address.isEmpty()) {
+  if (!address.isEmpty())
+  {
     Q_EMIT addressFoundSignal(address);
   }
 }
 
-}
+} // namespace WalletGui

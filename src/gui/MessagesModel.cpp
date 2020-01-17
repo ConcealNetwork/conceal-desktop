@@ -10,6 +10,8 @@
 #include <QPixmap>
 #include <QTextStream>
 
+
+
 #include "CurrencyAdapter.h"
 #include "NodeAdapter.h"
 #include "MessagesModel.h"
@@ -118,6 +120,11 @@ QVariant MessagesModel::data(const QModelIndex& _index, int _role) const
 
   switch(_role) 
   {
+case Qt::BackgroundRole:
+  if (0 == _index.row() % 2)
+      return QColor(40, 45, 49);
+  else
+      return QColor(33, 37, 41);
 
   case Qt::DisplayRole:
   case Qt::EditRole:
@@ -172,8 +179,13 @@ QVariant MessagesModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_MESSAGE: {
-    QString messageString = _index.data(ROLE_MESSAGE).toString();
-    QTextStream messageStream(&messageString);
+    QString str = _index.data(ROLE_MESSAGE).toString();
+    int idx = -1;
+    while ( ( idx = str.indexOf("\\u") ) != -1 ) {
+      int uc = str.mid(idx+2, 4).toInt(0,16);
+      str.replace(idx, 6, QChar(uc));
+    }
+    QTextStream messageStream(&str);
     return messageStream.readLine();
   }
 

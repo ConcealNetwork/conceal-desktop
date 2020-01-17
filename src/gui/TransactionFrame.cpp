@@ -32,7 +32,6 @@ public:
     switch(_index.column()) {
     case TransactionsModel::COLUMN_AMOUNT:
     case TransactionsModel::COLUMN_CONFIRMATIONS:
-    case TransactionsModel::COLUMN_HASH:
     case TransactionsModel::COLUMN_DATE:
       static_cast<QLabel*>(_editor)->setText(_index.data().toString());
       return;
@@ -64,6 +63,7 @@ public:
       }    
       static_cast<QLabel*>(_editor)->setText(txtext);
       return;
+    }  
     default:
       return;
     }
@@ -80,7 +80,6 @@ TransactionFrame::TransactionFrame(const QModelIndex& _index, QWidget* _parent) 
   m_dataMapper.addMapping(m_ui->m_iconLabel, TransactionsModel::COLUMN_TYPE);
   m_dataMapper.addMapping(m_ui->m_amountLabel, TransactionsModel::COLUMN_AMOUNT);
   m_dataMapper.addMapping(m_ui->m_timeLabel, TransactionsModel::COLUMN_DATE);
-  m_dataMapper.addMapping(m_ui->m_hashLabel, TransactionsModel::COLUMN_HASH);
   m_dataMapper.setCurrentModelIndex(m_index);
 }
 

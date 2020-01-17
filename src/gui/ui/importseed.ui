@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #282d31; border-right: 4px solid orange;</string>
+    <string notr="true"/>
    </property>
    <property name="title">
     <string/>
@@ -69,7 +69,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd;
+     <string notr="true">color: #fff;
 border-right: 0px;
 font-size: 20px;</string>
     </property>
@@ -202,9 +202,7 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
-
-QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>IMPORT</string>
@@ -232,9 +230,7 @@ QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
-
-QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
     </property>
     <property name="text">
      <string>CANCEL</string>

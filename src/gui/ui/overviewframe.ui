@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1270</width>
-    <height>700</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -88,12 +88,12 @@ background-color: #282d31;</string>
        <rect>
         <x>0</x>
         <y>1</y>
-        <width>221</width>
+        <width>191</width>
         <height>701</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #282d31;</string>
+       <string notr="true">background-color: #282d31; border-right: 1px solid #444;</string>
       </property>
       <property name="title">
        <string/>
@@ -118,16 +118,18 @@ background-color: #282d31;</string>
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
 }
 
 QPushButton#m_bankingButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
   }</string>
        </property>
        <property name="text">
-        <string>Banking</string>
+        <string>BANKING</string>
        </property>
        <property name="iconSize">
         <size>
@@ -156,16 +158,18 @@ font-size: 14px;
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
 }
 
 QPushButton#m_messagesButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
   }</string>
        </property>
        <property name="text">
-        <string>Messages</string>
+        <string>INBOX</string>
        </property>
        <property name="iconSize">
         <size>
@@ -194,6 +198,7 @@ font-size: 14px;
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
 }
 
 QPushButton#m_about:hover {
@@ -204,7 +209,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string>About</string>
+        <string>ABOUT</string>
        </property>
        <property name="iconSize">
         <size>
@@ -233,16 +238,18 @@ font-size: 14px;
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
 }
 
 QPushButton#m_transactionButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
   }</string>
        </property>
        <property name="text">
-        <string>Transactions</string>
+        <string>TRANSACTIONS</string>
        </property>
        <property name="iconSize">
         <size>
@@ -282,7 +289,7 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string>Settings</string>
+        <string>SETTINGS</string>
        </property>
        <property name="iconSize">
         <size>
@@ -294,26 +301,10 @@ font-size: 14px;
       <widget class="QPushButton" name="m_subButton1">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>310</y>
-         <width>131</width>
+         <x>1</x>
+         <y>1</y>
+         <width>1</width>
          <height>1</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: #343a40;</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="m_subButton1">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>320</y>
-         <width>151</width>
-         <height>35</height>
         </rect>
        </property>
        <property name="font">
@@ -348,10 +339,10 @@ font-size: 14px;
       <widget class="QPushButton" name="m_subButton2">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>350</y>
-         <width>151</width>
-         <height>35</height>
+         <x>1</x>
+         <y>1</y>
+         <width>1</width>
+         <height>1</height>
         </rect>
        </property>
        <property name="font">
@@ -386,10 +377,10 @@ font-size: 14px;
       <widget class="QPushButton" name="m_subButton3">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>380</y>
-         <width>151</width>
-         <height>35</height>
+         <x>1</x>
+         <y>1</y>
+         <width>1</width>
+         <height>1</height>
         </rect>
        </property>
        <property name="font">
@@ -424,10 +415,10 @@ font-size: 14px;
       <widget class="QPushButton" name="m_subButton4">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>410</y>
-         <width>151</width>
-         <height>35</height>
+         <x>1</x>
+         <y>1</y>
+         <width>1</width>
+         <height>1</height>
         </rect>
        </property>
        <property name="font">
@@ -462,10 +453,10 @@ font-size: 14px;
       <widget class="QPushButton" name="m_subButton5">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>440</y>
-         <width>151</width>
-         <height>35</height>
+         <x>1</x>
+         <y>1</y>
+         <width>1</width>
+         <height>1</height>
         </rect>
        </property>
        <property name="font">
@@ -497,13 +488,13 @@ font-size: 14px;
         </size>
        </property>
       </widget>
-      <widget class="Line" name="logoLine">
+      <widget class="QPushButton" name="m_subButton6">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>30</y>
+         <x>1</x>
+         <y>1</y>
          <width>1</width>
-         <height>61</height>
+         <height>1</height>
         </rect>
        </property>
        <property name="font">
@@ -528,11 +519,14 @@ font-size: 14px;
        <property name="text">
         <string>Sixth</string>
        </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label_13">
+      <widget class="QPushButton" name="m_dashboardButton">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -569,10 +563,16 @@ font-size: 14px;
   }</string>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>DASHBOARD</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_subButton6">
+      <widget class="QPushButton" name="m_addressBookButton_2">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -592,16 +592,18 @@ font-size: 14px;
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
 }
 
 QPushButton#m_addressBookButton_2:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 font-size: 14px;
+border: none;
   }</string>
        </property>
        <property name="text">
-        <string>Sixth</string>
+        <string>ADDRESS BOOK</string>
        </property>
        <property name="iconSize">
         <size>
@@ -637,7 +639,8 @@ QPushButton#m_lockWalletButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 border: none;
-text-align: left;</string>
+font-size: 14px;
+  }</string>
        </property>
        <property name="text">
         <string>LOCK</string>
@@ -723,9 +726,6 @@ border: none;
          <pointsize>-1</pointsize>
         </font>
        </property>
-       <property name="focusPolicy">
-        <enum>Qt::NoFocus</enum>
-       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_newMessageButton {
 text-align: left; color: #ddd; margin-left: 20px;
@@ -792,37 +792,17 @@ QPushButton#m_helpButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 border: none;
-font-family: Lato;</string>
+font-size: 14px;
+  }</string>
        </property>
        <property name="text">
         <string>HELP</string>
        </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::NoSelection</enum>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="uniformRowHeights">
-        <bool>true</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="headerHidden">
-        <bool>true</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
+       <property name="iconSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
        </property>
       </widget>
       <widget class="Line" name="line_2">
@@ -842,320 +822,13 @@ font-family: Lato;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="fundsBox">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>131</y>
-        <width>331</width>
-        <height>191</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <widget class="QLabel" name="label_4">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>150</y>
-         <width>181</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-size: 20px;
-font-family: Poppins;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string>Pending</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>191</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string>Available</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_actualBalanceLabel">
-       <property name="geometry">
-        <rect>
-         <x>123</x>
-         <y>120</y>
-         <width>161</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_pendingBalanceLabel">
-       <property name="geometry">
-        <rect>
-         <x>123</x>
-         <y>150</y>
-         <width>161</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 13px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel2">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>150</y>
-         <width>31</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 13px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel1">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>31</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>20</y>
-         <width>241</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-size: 20px;
-font-family: Lato;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string>FUNDS</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_totalBalanceLabel">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>70</y>
-         <width>291</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 22px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.000000</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="m_sendButton">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>20</y>
-         <width>24</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../../resources.qrc">
-         <normaloff>:/icons/tx-output</normaloff>:/icons/tx-output</iconset>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="m_newDepositButton">
+     <widget class="QGroupBox" name="extra_depositsBox">
       <property name="geometry">
        <rect>
         <x>1</x>
         <y>1</y>
         <width>1</width>
         <height>1</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>1</width>
-        <height>1</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>156</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
-font-family: Poppins;
-font-size: 14px;
-}
-
-QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
-font-family: Poppins;
-font-size: 14px;
-}</string>
-      </property>
-      <property name="text">
-       <string>DEPOSIT</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="extra_statsBox_2">
-      <property name="geometry">
-       <rect>
-        <x>570</x>
-        <y>131</y>
-        <width>331</width>
-        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1175,7 +848,7 @@ font-size: 14px;
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1183,7 +856,7 @@ font-size: 14px;
         <string notr="true">color: #ddd;
 background: transparent;
 font-size: 20px;
-font-family: Lato;
+font-family: Poppins;
 border: none;</string>
        </property>
        <property name="text">
@@ -1214,87 +887,6 @@ border: none;</string>
        </property>
        <property name="text">
         <string>Locked</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_tickerLabel4">
-       <property name="geometry">
-        <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>31</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">CCX</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_unlockedDepositLabel">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>120</y>
-         <width>151</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="m_depositsUnlockedTitle">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>171</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Poppins;
-font-size: 14px;
-border: none;</string>
-       </property>
-       <property name="text">
-        <string>Withdrawable</string>
        </property>
       </widget>
       <widget class="QLabel" name="m_lockedDepositLabel">
@@ -1376,8 +968,8 @@ border: none;</string>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
 background: transparent;
-font-size: 20px;
 font-family: Poppins;
+font-size: 22px;
 border: none;</string>
        </property>
        <property name="text">
@@ -1409,58 +1001,75 @@ border: none;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
+        <iconset resource="../../resources.qrc">
+         <normaloff>:/icons/tx-deposit</normaloff>:/icons/tx-deposit</iconset>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="m_myConcealWalletTitle">
+     <widget class="QPushButton" name="m_newDepositButton">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>35</y>
-        <width>401</width>
-        <height>21</height>
+        <x>1</x>
+        <y>1</y>
+        <width>1</width>
+        <height>1</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>1</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>156</width>
+        <height>31</height>
+       </size>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;
-background: transparent;
-font-size: 22px;
-font-family: Lato;</string>
+       <string notr="true">QPushButton#m_newDepositButton {color: #ddd; background-color: #212529; border: 0px solid #343a40;
+font-family: Poppins;
+font-size: 14px;
+}
+
+QPushButton#m_newDepositButton:hover {color: orange; background-color: #212529; border: 0px solid #343a40;
+font-family: Poppins;
+font-size: 14px;
+}</string>
       </property>
       <property name="text">
-       <string>MY CONCEAL WALLET</string>
+       <string>DEPOSIT</string>
       </property>
      </widget>
-     <widget class="QGroupBox" name="addressBox">
+     <widget class="QGroupBox" name="extra_statsBox_2">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>1141</width>
-        <height>31</height>
+        <x>1</x>
+        <y>1</y>
+        <width>1</width>
+        <height>1</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
       </property>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_currentWalletTitle">
+      <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>561</width>
-         <height>21</height>
+         <x>20</x>
+         <y>150</y>
+         <width>201</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -1469,37 +1078,264 @@ font-family: Lato;</string>
          <pointsize>-1</pointsize>
         </font>
        </property>
-       <property name="contextMenuPolicy">
-        <enum>Qt::CustomContextMenu</enum>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Locked</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>120</y>
+         <width>201</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa;
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Withdrawable</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_unlockedInvestmentsLabel">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>120</y>
+         <width>141</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_lockedInvestmentLabel">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>150</y>
+         <width>111</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string notr="true">0.00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_tickerLabel2_5">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>150</y>
+         <width>31</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string notr="true">CCX</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_tickerLabel1_9">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>120</y>
+         <width>31</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-family: Poppins;
+font-size: 14px;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string notr="true">CCX</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_investmentsTitle">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>241</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>INVESTMENTS</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_investmentsButton">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>20</y>
+         <width>24</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/tx_investment.png</normaloff>:/icons/tx_investment.png</iconset>
+       </property>
+      </widget>
+      <widget class="QLabel" name="m_totalInvestmentLabel">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>70</y>
+         <width>291</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 22px;
 border: none;</string>
        </property>
        <property name="text">
-        <string>currentWallet</string>
+        <string notr="true">0.000000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="m_newTransferButton">
+     <widget class="QPushButton" name="m_qrcodebutton">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>341</y>
-        <width>215</width>
-        <height>31</height>
+        <x>1210</x>
+        <y>60</y>
+        <width>1</width>
+        <height>1</height>
        </rect>
       </property>
-      <property name="minimumSize">
+      <property name="styleSheet">
+       <string notr="true">border: none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
+      </property>
+      <property name="iconSize">
        <size>
-        <width>215</width>
-        <height>28</height>
+        <width>32</width>
+        <height>32</height>
        </size>
       </property>
      </widget>
@@ -1542,6 +1378,9 @@ color: orange;</string>
         <pointsize>-1</pointsize>
        </font>
       </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: #ddd;
 background: transparent;
@@ -1555,7 +1394,7 @@ font-size: 14px;
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QGroupBox" name="statsBox_2">
+     <widget class="QGroupBox" name="overviewBox">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -1565,25 +1404,25 @@ font-size: 14px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: #212529;border-radius: 2px; border: 0px solid #343a40;</string>
+       <string notr="true">border-top: 1px solid #444;</string>
       </property>
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="label_16">
+      <widget class="QGroupBox" name="ov_contactBox">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>150</y>
-         <width>201</width>
-         <height>25</height>
+         <x>10</x>
+         <y>400</y>
+         <width>1021</width>
+         <height>171</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 5px; border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
        </property>
        <widget class="QLabel" name="label_15">
         <property name="geometry">
@@ -2212,11 +2051,11 @@ border: none;</string>
          <height>161</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 5px; border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
        </property>
        <widget class="QLabel" name="label_4">
         <property name="geometry">
@@ -2652,33 +2491,20 @@ text-decoration: underline;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QLabel" name="m_unlockedInvestmentsLabel">
+      <widget class="QGroupBox" name="ov_recentBox">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>120</y>
-         <width>141</width>
-         <height>24</height>
+         <x>10</x>
+         <y>200</y>
+         <width>480</width>
+         <height>171</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
-background: transparent;
-font-family: Lato;
-font-size: 13px;
-border: none;</string>
+        <string notr="true">border-radius: 5px; border: 1px solid #444;</string>
        </property>
-       <property name="text">
-        <string notr="true">0.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <property name="title">
+        <string/>
        </property>
        <widget class="QPushButton" name="pushButton_2">
         <property name="geometry">
@@ -2774,20 +2600,20 @@ font-family: 'Poppins';
         </property>
        </widget>
       </widget>
-      <widget class="QLabel" name="m_lockedInvestmentLabel">
+      <widget class="QGroupBox" name="ov_marketBox">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>150</y>
-         <width>111</width>
-         <height>25</height>
+         <x>510</x>
+         <y>20</y>
+         <width>521</width>
+         <height>355</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 5px; border: 1px solid #444;</string>
+       </property>
+       <property name="title">
+        <string/>
        </property>
        <widget class="QLabel" name="m_chart">
         <property name="geometry">
@@ -3105,14 +2931,42 @@ text-align: left;
        <zorder>label_13</zorder>
        <zorder>m_chart</zorder>
       </widget>
-      <widget class="QLabel" name="m_tickerLabel2_5">
+     </widget>
+     <widget class="QGroupBox" name="transactionsBox">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>100</y>
+        <width>1031</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-top: 1px solid #444;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QTreeView" name="m_transactionsView">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>150</y>
-         <width>31</width>
-         <height>25</height>
+         <x>0</x>
+         <y>120</y>
+         <width>1011</width>
+         <height>451</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>1000</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1100</width>
+         <height>16777215</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -3209,17 +3063,26 @@ color: #ccc;
        <property name="sortingEnabled">
         <bool>false</bool>
        </property>
-       <property name="text">
-        <string notr="true">CCX</string>
+       <property name="expandsOnDoubleClick">
+        <bool>true</bool>
        </property>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>true</bool>
+       </attribute>
       </widget>
-      <widget class="QLabel" name="m_tickerLabel1_9">
+      <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>120</y>
-         <width>31</width>
-         <height>24</height>
+         <x>0</x>
+         <y>20</y>
+         <width>241</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="font">
@@ -3229,7 +3092,7 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
 font-family: Poppins;
@@ -3261,10 +3124,26 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_investmentsTitle">
+     </widget>
+     <widget class="QGroupBox" name="messageBox">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>100</y>
+        <width>1031</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-top: 1px solid #444;</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_18">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>0</x>
          <y>20</y>
          <width>241</width>
          <height>25</height>
@@ -3277,7 +3156,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd;
+        <string notr="true">color: #fff;
 background: transparent;
 font-size: 20px;
 font-family: Poppins;
@@ -3286,23 +3165,17 @@ text-align: left;
 </string>
        </property>
        <property name="text">
-        <string>INVESTMENTS</string>
+        <string>MESSAGE OVERVIEW</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="m_investmentsButton">
+      <widget class="QTextBrowser" name="textBrowser_2">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>20</y>
-         <width>24</width>
-         <height>24</height>
+         <x>0</x>
+         <y>60</y>
+         <width>1011</width>
+         <height>51</height>
         </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>8</pointsize>
-        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">border: none; color: #ddd; font-size: 13px; font-family: 'Poppins';</string>
@@ -3315,19 +3188,25 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_totalInvestmentLabel">
+      <widget class="QTreeView" name="m_messagesView">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>70</y>
-         <width>291</width>
-         <height>41</height>
+         <x>0</x>
+         <y>120</y>
+         <width>1001</width>
+         <height>431</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>0</width>
-         <height>0</height>
+         <width>1001</width>
+         <height>431</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
         </size>
        </property>
        <property name="font">
@@ -3404,15 +3283,21 @@ color: #ccc;
        <property name="uniformRowHeights">
         <bool>true</bool>
        </property>
-       <property name="text">
-        <string notr="true">0.000000</string>
+       <property name="itemsExpandable">
+        <bool>true</bool>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       <property name="sortingEnabled">
+        <bool>false</bool>
        </property>
+       <attribute name="headerCascadingSectionResizes">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="settingsBox">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -3427,7 +3312,7 @@ color: #ccc;
       <property name="title">
        <string/>
       </property>
-      <widget class="QLabel" name="m_chart">
+      <widget class="QGroupBox" name="groupBox_7">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -3436,7 +3321,10 @@ color: #ccc;
          <height>131</height>
         </rect>
        </property>
-       <property name="text">
+       <property name="styleSheet">
+        <string notr="true">border: 1px solid #444;</string>
+       </property>
+       <property name="title">
         <string/>
        </property>
        <widget class="QLabel" name="label_22">
@@ -3628,7 +3516,7 @@ font-family: 'Poppins'; border: 0px;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QLabel" name="m_volume">
+      <widget class="QGroupBox" name="groupBox_8">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -3637,20 +3525,11 @@ font-family: 'Poppins'; border: 0px;</string>
          <height>131</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
        <property name="styleSheet">
-        <string notr="true">color: #777;
-background: transparent;
-font-family: Lato;
-font-size: 11px;</string>
+        <string notr="true">border: 1px solid #444;</string>
        </property>
-       <property name="text">
-        <string notr="true">000000.00</string>
+       <property name="title">
+        <string/>
        </property>
        <widget class="QLabel" name="label_26">
         <property name="geometry">
@@ -4893,12 +4772,12 @@ p, li { white-space: pre-wrap; }
         <string>0.000000</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_marketCap">
+      <widget class="QLabel" name="pidLabel">
        <property name="geometry">
         <rect>
-         <x>430</x>
-         <y>270</y>
-         <width>81</width>
+         <x>10</x>
+         <y>90</y>
+         <width>500</width>
          <height>25</height>
         </rect>
        </property>
@@ -4906,6 +4785,8 @@ p, li { white-space: pre-wrap; }
         <font>
          <family>Poppins</family>
          <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -4913,18 +4794,15 @@ p, li { white-space: pre-wrap; }
 border: none;</string>
        </property>
        <property name="text">
-        <string notr="true">0000000.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <string>Payment ID (Optional) - Required at some Exchanges</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_ccxusd">
+      <widget class="QLabel" name="amountLabel_2">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>270</y>
-         <width>51</width>
+         <x>10</x>
+         <y>170</y>
+         <width>301</width>
          <height>25</height>
         </rect>
        </property>
@@ -4932,6 +4810,8 @@ border: none;</string>
         <font>
          <family>Poppins</family>
          <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -4939,18 +4819,15 @@ border: none;</string>
 border: none;</string>
        </property>
        <property name="text">
-        <string notr="true">00.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <string>Message (Optional)</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_12">
+      <widget class="QLabel" name="labelLabel">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>270</y>
-         <width>31</width>
+         <x>10</x>
+         <y>400</y>
+         <width>281</width>
          <height>25</height>
         </rect>
        </property>
@@ -4958,6 +4835,8 @@ border: none;</string>
         <font>
          <family>Poppins</family>
          <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -4965,15 +4844,15 @@ border: none;</string>
 border: none;</string>
        </property>
        <property name="text">
-        <string>CCX</string>
+        <string>Save to Address Book</string>
        </property>
       </widget>
-      <widget class="QLabel" name="m_btcusd">
+      <widget class="QLabel" name="amountLabel">
        <property name="geometry">
         <rect>
-         <x>280</x>
-         <y>270</y>
-         <width>61</width>
+         <x>10</x>
+         <y>250</y>
+         <width>291</width>
          <height>25</height>
         </rect>
        </property>
@@ -4981,6 +4860,8 @@ border: none;</string>
         <font>
          <family>Poppins</family>
          <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -4988,20 +4869,29 @@ border: none;</string>
 border: none;</string>
        </property>
        <property name="text">
-        <string notr="true">00000.00</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <string>Amount</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLineEdit" name="m_addressLabel">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>270</y>
-         <width>51</width>
-         <height>25</height>
+         <x>10</x>
+         <y>430</y>
+         <width>740</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>740</width>
+         <height>16777215</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -5013,17 +4903,29 @@ border: none;</string>
         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
-        <string>VOLUME</string>
+        <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="m_balanceLabel">
        <property name="geometry">
         <rect>
-         <x>370</x>
-         <y>270</y>
-         <width>71</width>
+         <x>400</x>
+         <y>250</y>
+         <width>351</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>360</width>
+         <height>16777215</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -5036,17 +4938,32 @@ border: none;</string>
 border: none;</string>
        </property>
        <property name="text">
-        <string>MARKETCAP</string>
+        <string notr="true">Available Balance: 0.000000 CCX</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLineEdit" name="m_messageEdit">
        <property name="geometry">
         <rect>
-         <x>250</x>
-         <y>270</y>
-         <width>31</width>
-         <height>25</height>
+         <x>10</x>
+         <y>200</y>
+         <width>740</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>360</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>740</width>
+         <height>16777215</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -5058,16 +4975,16 @@ border: none;</string>
         <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
        </property>
        <property name="text">
-        <string>BTC</string>
+        <string/>
        </property>
       </widget>
-      <widget class="QPushButton" name="chartButton">
+      <widget class="QPushButton" name="m_addressBookButton">
        <property name="geometry">
         <rect>
-         <x>660</x>
-         <y>270</y>
-         <width>21</width>
-         <height>23</height>
+         <x>724</x>
+         <y>43</y>
+         <width>25</width>
+         <height>25</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -7728,7 +7645,7 @@ text-align: left;</string>
      <y>578</y>
     </hint>
     <hint type="destinationlabel">
-     <x>599</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7744,7 +7661,7 @@ text-align: left;</string>
      <y>628</y>
     </hint>
     <hint type="destinationlabel">
-     <x>599</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7760,7 +7677,7 @@ text-align: left;</string>
      <y>628</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7776,7 +7693,7 @@ text-align: left;</string>
      <y>578</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7792,7 +7709,7 @@ text-align: left;</string>
      <y>79</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7808,7 +7725,7 @@ text-align: left;</string>
      <y>538</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7824,7 +7741,7 @@ text-align: left;</string>
      <y>520</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7840,7 +7757,7 @@ text-align: left;</string>
      <y>580</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7856,7 +7773,7 @@ text-align: left;</string>
      <y>580</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7920,7 +7837,7 @@ text-align: left;</string>
      <y>610</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7936,7 +7853,7 @@ text-align: left;</string>
      <y>610</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7952,7 +7869,7 @@ text-align: left;</string>
      <y>610</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7968,7 +7885,7 @@ text-align: left;</string>
      <y>410</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -7984,7 +7901,7 @@ text-align: left;</string>
      <y>155</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -8000,7 +7917,7 @@ text-align: left;</string>
      <y>257</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -8064,7 +7981,7 @@ text-align: left;</string>
      <y>628</y>
     </hint>
     <hint type="destinationlabel">
-     <x>649</x>
+     <x>634</x>
      <y>349</y>
     </hint>
    </hints>
@@ -8104,19 +8021,18 @@ text-align: left;</string>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
+  <slot>sendFundsClicked()</slot>
+  <slot>sendMessageClicked()</slot>
   <slot>copyClicked()</slot>
   <slot>depositClicked()</slot>
-  <slot>subButton1Clicked()</slot>
-  <slot>subButton2Clicked()</slot>
-  <slot>subButton3Clicked()</slot>
-  <slot>subButton4Clicked()</slot>
-  <slot>subButton5Clicked()</slot>
-  <slot>subButton6Clicked()</slot>
+  <slot>newDepositClicked()</slot>
+  <slot>dashboardClicked()</slot>
   <slot>settingsClicked()</slot>
   <slot>backupClicked()</slot>
-  <slot>importClicked()</slot>
+  <slot>backupFileClicked()</slot>
   <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
+  <slot>newTransferClicked()</slot>
   <slot>walletClicked()</slot>
   <slot>minimize()</slot>
   <slot>maximize()</slot>
@@ -8126,6 +8042,8 @@ text-align: left;</string>
   <slot>transactionClicked()</slot>
   <slot>qrCodeClicked()</slot>
   <slot>messageClicked()</slot>
+  <slot>clearAllClicked()</slot>
+  <slot>clearMessageClicked()</slot>
   <slot>addressBookClicked()</slot>
   <slot>showTransactionDetails(QModelIndex)</slot>
   <slot>addressDoubleClicked(QModelIndex)</slot>

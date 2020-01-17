@@ -27,4 +27,8 @@ QString AddressBookDialog::getAddress() const {
   return m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString();
 }
 
+QString AddressBookDialog::getPaymentID() const {
+  return m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString();
+}
+
 }

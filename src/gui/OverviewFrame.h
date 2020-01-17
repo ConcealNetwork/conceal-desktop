@@ -8,13 +8,15 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
+#include <IWalletLegacy.h>
 
-
-namespace Ui {
-  class OverviewFrame;
+namespace Ui
+{
+class OverviewFrame;
 }
 
-namespace WalletGui {
+namespace WalletGui
+{
 
 class PriceProvider;
 class RecentTransactionsModel;
@@ -25,12 +27,13 @@ class VisibleMessagesModel;
 class AddressProvider;
 class ExchangeProvider;
 
-class OverviewFrame : public QFrame {
+class OverviewFrame : public QFrame
+{
   Q_OBJECT
   Q_DISABLE_COPY(OverviewFrame)
 
 public:
-  explicit OverviewFrame(QWidget* _parent);
+  explicit OverviewFrame(QWidget *_parent);
   ~OverviewFrame();
   void setAddress(const QString &_address);
   void setPaymentId(const QString &_paymendId);
@@ -79,21 +82,21 @@ private:
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
-  void downloadFinished2(QNetworkReply *reply2);  
+  void downloadFinished2(QNetworkReply *reply2);
   void layoutChanged();
-  void setStatusBarText(const QString& _text);
-  void updateWalletAddress(const QString& _address);
-  void walletSynchronized(int _error, const QString& _error_text);
+  void setStatusBarText(const QString &_text);
+  void updateWalletAddress(const QString &_address);
+  void walletSynchronized(int _error, const QString &_error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
-  void poolUpdate(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
   void actualDepositBalanceUpdated(quint64 _balance);
-  void pendingDepositBalanceUpdated(quint64 _balance);  
+  void pendingDepositBalanceUpdated(quint64 _balance);
   void actualInvestmentBalanceUpdated(quint64 _balance);
-  void pendingInvestmentBalanceUpdated(quint64 _balance);    
+  void pendingInvestmentBalanceUpdated(quint64 _balance);
   void showCurrentWallet();
   void syncMessage();
-  void trackingMessage();  
+  void walletActualBalanceUpdated(quint64 _balance);
+  static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
   void onAddressFound(const QString &_address);
   void updatePortfolio();
@@ -104,18 +107,20 @@ private:
 
   Q_SLOT void sendClicked();
   Q_SLOT void copyClicked();
-  Q_SLOT void depositClicked();    
-  Q_SLOT void transactionClicked();      
-  Q_SLOT void messageClicked();      
-  Q_SLOT void addressBookClicked();      
+  Q_SLOT void depositClicked();
+  Q_SLOT void transactionClicked();
+  Q_SLOT void dashboardClicked();
+  Q_SLOT void messageClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
+  Q_SLOT void newTransferClicked();
   Q_SLOT void newMessageClicked();
   Q_SLOT void qrCodeClicked();
-  Q_SLOT void importClicked();
   Q_SLOT void aboutClicked();
-  Q_SLOT void walletClicked();    
-  Q_SLOT void chartButtonClicked();      
+  Q_SLOT void showTransactionDetails(const QModelIndex &_index);
+  Q_SLOT void showMessageDetails(const QModelIndex &_index);
+  Q_SLOT void walletClicked();
+  Q_SLOT void chartButtonClicked();
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
   Q_SLOT void sendFundsClicked();
@@ -164,13 +169,14 @@ private:
 
 Q_SIGNALS:
   void sendSignal();
-  void depositSignal();  
-  void backupSignal();    
+  void depositSignal();
+  void backupSignal();
+  void backupFileSignal();  
   void rescanSignal();
-  void openWalletSignal();  
+  void openWalletSignal();
   void newWalletSignal();
   void closeWalletSignal();
-  void qrSignal(const QString& _address);
+  void qrSignal(const QString &_address);
   void newMessageSignal();
   void newTransferSignal();
   void transactionSignal();
@@ -178,18 +184,19 @@ Q_SIGNALS:
   void optimizeSignal();
   void resetWalletSignal();
   void importSignal();
-  void addressBookSignal();
   void aboutSignal();
   void aboutQTSignal();
   void disclaimerSignal();
   void settingsSignal();
-  void linksSignal();  
+  void linksSignal();
   void importSeedSignal();
   void importGUIKeySignal();
-  void importTrackingKeySignal();  
+  void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
   void connectionSettingsSignal();
-  void languageSettingsSignal();  
+  void languageSettingsSignal();
+  void addressBookSignal();
+  void payToSignal(const QModelIndex& _index);  
 };
-}
+} // namespace WalletGui
