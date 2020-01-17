@@ -4,67 +4,68 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include  "AddressBookDialog.h"
-#include  "AddressBookModel.h"
-#include  "AddressProvider.h"
-#include  "Common/CommandLine.h"
-#include  "Common/DnsTools.h"
-#include  "Common/PathTools.h"
-#include  "Common/SignalHandler.h"
-#include  "Common/StringTools.h"
-#include  "Common/Util.h"
-#include  "Common/Base58.h"
-#include  "Common/Util.h"
-#include  "crypto/hash.h"
-#include  "CryptoNoteCore/CryptoNoteTools.h"
-#include  "CryptoNoteCore/Account.h"
-#include  "CryptoNoteCore/CryptoNoteBasic.h"
-#include  "CryptoNoteCore/CryptoNoteBasicImpl.h"
-#include  "CryptoNoteCore/CryptoNoteFormatUtils.h"
-#include  "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
-#include  "CurrencyAdapter.h"
-#include  "DepositDetailsDialog.h"
-#include  "DepositListModel.h"
-#include  "DepositModel.h"
-#include  "ExchangeProvider.h"
-#include  "MainWindow.h"
-#include  "MessageDetailsDialog.h"
-#include  "MessagesModel.h"
-#include  "NewAddressDialog.h"
-#include  "NodeAdapter.h"
-#include  "OverviewFrame.h"
-#include  "PasswordDialog.h"
-#include  "PriceProvider.h"
-#include  "QRLabel.h"
-#include  "RecentTransactionsModel.h"
-#include  "Settings.h"
-#include  "SortedMessagesModel.h"
-#include  "SortedTransactionsModel.h"
-#include  "transactionconfirmation.h"
-#include  "TransactionDetailsDialog.h"
-#include  "TransactionFrame.h"
-#include  "TransactionsListModel.h"
-#include  "TransactionsModel.h"
-#include  "VisibleMessagesModel.h"
-#include  "WalletAdapter.h"
-#include  "WalletEvents.h"
-#include  "WalletLegacy/WalletHelper.h"
+#include "AddressBookDialog.h"
+#include "AddressBookModel.h"
+#include "AddressProvider.h"
+#include "Common/CommandLine.h"
+#include "Common/DnsTools.h"
+#include "Common/PathTools.h"
+#include "Common/SignalHandler.h"
+#include "Common/StringTools.h"
+#include "Common/Util.h"
+#include "Common/Base58.h"
+#include "Common/Util.h"
+#include "crypto/hash.h"
+#include "CryptoNoteCore/CryptoNoteTools.h"
+#include "CryptoNoteCore/Account.h"
+#include "CryptoNoteCore/CryptoNoteBasic.h"
+#include "CryptoNoteCore/CryptoNoteBasicImpl.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include "CurrencyAdapter.h"
+#include "DepositDetailsDialog.h"
+#include "DepositListModel.h"
+#include "DepositModel.h"
+#include "ExchangeProvider.h"
+#include "MainWindow.h"
+#include "MessageDetailsDialog.h"
+#include "MessagesModel.h"
+#include "NewAddressDialog.h"
+#include "NodeAdapter.h"
+#include "OverviewFrame.h"
+#include "PasswordDialog.h"
+#include "PriceProvider.h"
+#include "QRLabel.h"
+#include "RecentTransactionsModel.h"
+#include "Settings.h"
+#include "SortedMessagesModel.h"
+#include "SortedTransactionsModel.h"
+#include "transactionconfirmation.h"
+#include "TransactionDetailsDialog.h"
+#include "TransactionFrame.h"
+#include "TransactionsListModel.h"
+#include "TransactionsModel.h"
+#include "VisibleMessagesModel.h"
+#include "WalletAdapter.h"
+#include "WalletEvents.h"
+#include "WalletLegacy/WalletHelper.h"
 
-#include  < QAction >
-#include  < QApplication >
-#include  < QClipboard >
-#include  < QClipboard >
-#include  < QDesktopServices >
-#include  < QFont >
-#include  < QFontDatabase >
-#include  < QJsonArray >
-#include  < QJsonDocument >
-#include  < QJsonObject >
-#include  < QMessageBox >
-#include  < QNetworkReply >
-#include  < QStringList >
-#include  < QtCore >
-#include  < QUrl >
+#include <QAction>
+#include <QApplication>
+#include <QClipboard>
+#include <QClipboard>
+#include <QDesktopServices>
+#include <QFont>
+#include <QFontDatabase>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QMenu>
+#include <QMessageBox>
+#include <QNetworkReply>
+#include <QStringList>
+#include <QtCore>
+#include <QUrl>
 
 #include "ui_overviewframe.h"
 
@@ -341,7 +342,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
 
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-  if (numUnlockedOutputs >= 100)
+  if (numUnlockedOutputs>= 100)
   {
     m_ui->m_optimizationMessage->setText("(Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs])");
   }
@@ -447,7 +448,7 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
   if (walletSynced == true)
   {
-    if (unlockedFunds > 0)
+    if (unlockedFunds> 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
       m_ui->m_overviewWithdrawButton->show();
@@ -475,7 +476,7 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
   if (walletSynced == true)
   {
-    if (unlockedFunds > 0)
+    if (unlockedFunds> 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
       m_ui->m_overviewWithdrawButton->show();
@@ -1079,7 +1080,7 @@ void OverviewFrame::addressChanged(QString _address)
 void OverviewFrame::recalculateMessageLength()
 {
 
-  if (m_ui->m_messageTextEdit->toPlainText().length() > 261)
+  if (m_ui->m_messageTextEdit->toPlainText().length()> 261)
   {
     m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
     m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);
@@ -1090,7 +1091,7 @@ void OverviewFrame::recalculateMessageLength()
 
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length();
-  if (messageSize > 0)
+  if (messageSize> 0)
   {
     --messageSize;
   }
@@ -1166,12 +1167,12 @@ void OverviewFrame::sendMessageClicked()
 
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length();
-  if (messageSize > 0)
+  if (messageSize> 0)
   {
     --messageSize;
   }
 
-  if (messageSize > 260)
+  if (messageSize> 260)
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Message too long. Please ensure that the message is less than 260 characters."), QtCriticalMsg));
     return;
@@ -1213,7 +1214,7 @@ void OverviewFrame::newDepositClicked()
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
 
   /* Insufficient funds */
-  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance())
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking()> WalletAdapter::instance().getActualBalance())
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
@@ -1403,7 +1404,7 @@ void OverviewFrame::optimizeClicked()
     quint64 numUnlockedOutputs;
     numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
     WalletAdapter::instance().optimizeWallet();
-    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    while (WalletAdapter::instance().getNumUnlockedOutputs()> 100)
     {
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
       if (numUnlockedOutputs == 0)
