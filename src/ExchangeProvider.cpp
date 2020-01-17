@@ -48,9 +48,9 @@ void ExchangeProvider::readyRead()
   {
     return;
   }
-  //QJsonObject obj = doc.object();
+
   QJsonArray arr = doc.array();
-    for (auto &value : arr) {
+    for (auto value : arr) {
       auto object = value.toObject();
       QString name = object.value("name").toString();
       Q_EMIT exchangeFoundSignal(name);
