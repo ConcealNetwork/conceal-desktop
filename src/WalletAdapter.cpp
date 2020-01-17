@@ -510,7 +510,9 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
 
 void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _total) {
   m_isSynchronized = false;
-  Q_EMIT walletStateChangedSignal(QString("<span style='color: orange;'>%1</span><br />Height: %2/%3").arg(tr("SYNCHRONIZING")).arg(_current).arg(_total));
+
+  qreal syncedPercentage = (static_cast<qreal>(_current)) / _total;
+  Q_EMIT walletStateChangedSignal(QString("%1 (%2%)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2)));
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
 
@@ -651,11 +653,9 @@ void WalletAdapter::updateBlockStatusText() {
   quint64 blockAge = blockTime.msecsTo(currentTime);
   const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("SYNCHRONIZED") : tr("WARNING");
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("%1").arg(tr("There was a problem, please restart your wallet."));
-  Q_EMIT walletStateChangedSignal(QString(tr("<span style='color: orange;'>%1</span><br />Height: %2<br />%4<br />%3")).
-    arg(statusString).
-    arg(NodeAdapter::instance().getLastLocalBlockHeight()).
-    arg(warningString).
-    arg(walletSecurity));
+  const QString blockHeightString = " (" + QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0) + ")";
+
+  Q_EMIT walletStateChangedSignal(QString(statusString + blockHeightString));
 
   QTimer::singleShot(LAST_BLOCK_INFO_UPDATING_INTERVAL, this, SLOT(updateBlockStatusText()));
 }

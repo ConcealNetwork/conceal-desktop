@@ -22,7 +22,8 @@
   <property name="styleSheet">
    <string notr="true">background-color: #282d31;
 color: #ddd;
-border: 0px;</string>
+border: 0px;
+font-family: 'Poppins';</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -41,6 +42,7 @@ border: 0px;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
+       <family>Poppins</family>
        <pointsize>-1</pointsize>
       </font>
      </property>
@@ -48,7 +50,7 @@ border: 0px;</string>
       <string notr="true">background-color: #212529;
 color: #ddd;
 border: 0px;
-font-size: 13px;</string>
+font-size: 14px;</string>
      </property>
     </widget>
    </item>
@@ -76,7 +78,10 @@ font-size: 13px;</string>
         </size>
        </property>
        <property name="font">
-        <font/>
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}

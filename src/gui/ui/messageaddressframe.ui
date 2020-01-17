@@ -39,7 +39,7 @@
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
-       <family>Lato</family>
+       <family>Poppins</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -61,7 +61,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Lato</family>
+       <family>Poppins</family>
        <pointsize>9</pointsize>
       </font>
      </property>

@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
+    <family>Poppins</family>
    </font>
   </property>
   <property name="windowTitle">
@@ -43,7 +43,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #282d31; color: #ddd; border: 0px;
-font-size: 13px;</string>
+font-size: 14px;</string>
      </property>
     </widget>
    </item>

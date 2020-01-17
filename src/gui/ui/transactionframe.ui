@@ -82,7 +82,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; font-size: 12px;</string>
+       <string notr="true">color: orange; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -106,6 +106,9 @@
         <height>18</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: #ddd; font-size: 14px;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -128,7 +131,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; font-size: 12px;</string>
+       <string notr="true">color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -145,7 +148,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Poppins</family>
         <pointsize>8</pointsize>
        </font>
       </property>

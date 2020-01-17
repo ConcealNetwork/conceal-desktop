@@ -18,7 +18,7 @@ namespace WalletGui {
 DepositDetailsDialog::DepositDetailsDialog(const QModelIndex &_index, QWidget* _parent) : QDialog(_parent),
   m_ui(new Ui::DepositDetailsDialog), m_detailsTemplate(
   "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-  "</style></head><body style=\" font-family:'Lato'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+  "</style></head><body style=\" font-family:'Poppins'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
   "<span style=\" font-weight:600;\">Deposit info: </span></p><br>\n"
   "<span style=\" font-weight:600;\">Status: </span>%1</p><br>\n"
   "<span style=\" font-weight:600;\">Amount: </span>%2</p><br>\n"

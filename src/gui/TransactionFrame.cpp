@@ -12,7 +12,7 @@
 #include "MainWindow.h"
 #include "TransactionFrame.h"
 #include "TransactionsModel.h"
-
+#include "OverviewFrame.h"
 #include "ui_transactionframe.h"
 
 namespace WalletGui {
@@ -43,8 +43,26 @@ public:
       return;
     }
 
-    case TransactionsModel::COLUMN_TYPE:
-      static_cast<QLabel*>(_editor)->setPixmap(_index.data(TransactionsModel::ROLE_ICON).value<QPixmap>());
+    case TransactionsModel::COLUMN_TYPE: {
+      QString txtype = _index.data(TransactionsModel::ROLE_TYPE).toString();
+      QString txtext = tr("Received CCX");
+      if (txtype == "0") 
+      {
+        txtext = tr("New Block");
+      } 
+      else if (txtype == "2")
+      {
+        txtext = tr("Send CCX");
+      }
+      else if (txtype == "3")
+      {
+        txtext = tr("Optimization");
+      }
+      else if (txtype == "4")
+      {
+        txtext = tr("New Deposit");
+      }    
+      static_cast<QLabel*>(_editor)->setText(txtext);
       return;
     default:
       return;

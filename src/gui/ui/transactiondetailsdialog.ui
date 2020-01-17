@@ -16,7 +16,8 @@
   <property name="styleSheet">
    <string notr="true">background-color: #212529;
 border: 0px;
-color: #ddd;</string>
+color: #ddd;
+font-family: 'Poppins';</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -41,13 +42,15 @@ color: #ddd;</string>
      </property>
      <property name="font">
       <font>
+       <family>Poppins</family>
        <pointsize>-1</pointsize>
       </font>
      </property>
      <property name="styleSheet">
       <string notr="true">color: #ddd;
 border-right: 0px;
-font-size: 20px;</string>
+font-size: 20px;
+font-family: 'Poppins';</string>
      </property>
      <property name="text">
       <string>Transaction Details</string>
@@ -61,7 +64,7 @@ font-size: 20px;</string>
     <widget class="QTextBrowser" name="m_detailsBrowser">
      <property name="font">
       <font>
-       <family>Lato</family>
+       <family>Poppins</family>
        <pointsize>-1</pointsize>
       </font>
      </property>
@@ -69,13 +72,13 @@ font-size: 20px;</string>
       <string notr="true">color: #ddd;
 border-right: 0px;
 font-size: 14px;
-font-family: Lato;</string>
+font-family: Poppins;</string>
      </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
@@ -104,7 +107,10 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="font">
-        <font/>
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}

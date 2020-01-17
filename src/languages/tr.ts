@@ -588,613 +588,655 @@ Lütfen bekle...</translation>
         <translation>AYARLAR</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="332"/>
-        <source>WALLET</source>
-        <translation>CÜZDAN</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="370"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="330"/>
         <source>First</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="408"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="368"/>
         <source>Second</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="446"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="406"/>
         <source>Third</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="484"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="444"/>
         <source>Fourth</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="522"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="482"/>
         <source>Fifth</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="560"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="520"/>
         <source>Sixth</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="606"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="566"/>
         <source>DASHBOARD</source>
         <translation>GÖSTERGE PANELİ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="646"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="606"/>
         <source>ADDRESS BOOK</source>
         <translation>ADRES DEFTERİ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="686"/>
-        <source>ABOUT QT</source>
-        <translation>Qt HAKKINDA</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="726"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="646"/>
         <source>LOCK</source>
-        <translation>KİLİT</translation>
+        <translation>KİLİTLE</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="774"/>
-        <source>DEPOSITS</source>
-        <translation>MEVDUATLAR</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="800"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="1000"/>
-        <source>Locked</source>
-        <translation>Kilitli</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="959"/>
-        <source>DEPOSIT</source>
-        <translation>MEVDUAT</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1026"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="2144"/>
-        <source>Withdrawable</source>
-        <translation>Çekilebilir</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1162"/>
-        <source>INVESTMENTS</source>
-        <translation>YATIRIMLAR</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1271"/>
-        <source>COPY WALLET ADDRESS</source>
-        <translation>CÜZDAN ADRESI</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1302"/>
-        <source>currentWallet</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1341"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="699"/>
         <source>SEND FUNDS</source>
         <translation>FONLARI GÖNDER</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1376"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="746"/>
         <source>NEW MESSAGE</source>
-        <translation>YENI MESAJ</translation>
+        <translation>YENİ MESAJ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1434"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="799"/>
+        <source>HELP</source>
+        <translation>YARDIM</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="863"/>
+        <source>DEPOSITS</source>
+        <translation>MEVDUATLAR</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="889"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1089"/>
+        <source>Locked</source>
+        <translation>Kilitli</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1048"/>
+        <source>DEPOSIT</source>
+        <translation>MEVDUAT</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1115"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2334"/>
+        <source>Withdrawable</source>
+        <translation>Çekilebilir</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1251"/>
+        <source>INVESTMENTS</source>
+        <translation>YATIRIMLAR</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1360"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6862"/>
+        <source>COPY WALLET ADDRESS</source>
+        <translation>CÜZDAN ADRESİ</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1452"/>
         <source>CONTACT US / STAY INFORMED</source>
         <translation>BİZE ULAŞIN</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1718"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1736"/>
         <source>Discord</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1739"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1757"/>
         <source>Telegram</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1760"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1778"/>
         <source>Twitter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1781"/>
-        <source>Bitcoin Talk</source>
+        <location filename="src/gui/ui/overviewframe.ui" line="1799"/>
+        <source>Reddit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1802"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1820"/>
         <source>Github</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1823"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1841"/>
         <source>Medium</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1865"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="1891"/>
+        <source>Hotbit</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1912"/>
+        <source>STEX</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="1962"/>
+        <source>TradeOgre</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="2012"/>
+        <source>qTrade</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="2083"/>
         <source>Locked Deposits</source>
         <translation>Kilitli Mevduat</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="1891"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2109"/>
         <source>Available</source>
         <translation>Mevcut</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2029"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2247"/>
         <source>TOTAL BALANCE</source>
-        <translation>TOPLAM DENGE</translation>
+        <translation>TOPLAM BAKİYE</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2225"/>
-        <source>Portfolio</source>
-        <translation>Portföy</translation>
+        <location filename="src/gui/ui/overviewframe.ui" line="2470"/>
+        <source>Pending</source>
+        <translation>Beklemede</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2318"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2490"/>
+        <source>Withdraw</source>
+        <translation>Para Çek</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="2528"/>
         <source>RECENT ACTIVITY</source>
         <translation>SON ETKİNLİK</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2540"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2750"/>
         <source>CCX/USD</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2595"/>
-        <source>CCX/BTC</source>
+        <location filename="src/gui/ui/overviewframe.ui" line="2805"/>
+        <source>VOLUME</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2621"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2831"/>
         <source>MARKETCAP</source>
         <translation>PIYASA DEĞERI</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2647"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2857"/>
         <source>BTC/USD</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2708"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="2918"/>
         <source>MARKET INFORMATION</source>
-        <translation>PAZAR BILGISI</translation>
+        <translation>PİYASA BİLGİSİ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2894"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3104"/>
         <source>HISTORICAL DATA</source>
         <translation>TARİHSEL VERİ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2910"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3120"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Bu işlem geçmişiniz. Gelen ve giden tüm işlemlerin, mevduatların ve optimizasyonların bir listesidir. Herhangi bir tutarsızlık varsa, başarısız işlemleri listeden temizlemek için lütfen cüzdanınızı yeniden tarayın. Daha ayrıntılı bir görünüm elde etmek için tek tek girişleri çift tıklayın.</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2958"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3168"/>
         <source>MESSAGE OVERVIEW</source>
         <translation>MESAJ GENEL BAKIŞ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="2974"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3184"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Bu cüzdan için gelen ve giden mesajların bir listesi.</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3141"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3351"/>
         <source>Connection</source>
         <translation>Bağlantı</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3166"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3376"/>
         <source>Custom Remote Node</source>
         <translation>Özel Uzak Node</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3194"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3404"/>
         <source>Built-in Node</source>
         <translation>Yerleşik Düğüm</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3222"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3432"/>
         <source>Automatic Remote Node</source>
         <translation>Otomatik Uzak Node</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3268"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3478"/>
         <source>Set connection type</source>
         <translation>Bağlantı ayarları</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3305"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="3873"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3515"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4083"/>
         <source>SAVE</source>
         <translation>KAYDET</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3345"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3555"/>
         <source>Optimization</source>
         <translation>Optimize ediliyor</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3372"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3582"/>
         <source>Auto optimization</source>
         <translation>Otomatik Optimizasyon</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3399"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3609"/>
         <source>Large transactions</source>
         <translation>Büyük Işlemler</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3426"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3636"/>
         <source>Rescan wallet</source>
         <translation>Cüzdanı Sıfırla</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3465"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3675"/>
         <source>ENABLE</source>
         <translation>AÇIK</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3501"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3711"/>
         <source>OPTIMIZE NOW</source>
         <translation>OPTİMİZE ET</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3537"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3747"/>
         <source>START RESCAN</source>
         <translation>Cüzdanı Sıfırla</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3561"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3771"/>
         <source>(Optimization not required)</source>
         <translation>(Optimizasyon gerekmez)</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3604"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3814"/>
         <source>Preferences</source>
         <translation>Tercihler</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3631"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3841"/>
         <source>Language</source>
         <translation>Dil</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3658"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3868"/>
         <source>Currency</source>
         <translation>Para birimi</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3679"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3889"/>
         <source>US Dollar ($)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3700"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3910"/>
         <source>Euro (€)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3727"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3937"/>
         <source>Chinese</source>
         <translation>Çince</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3761"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="3971"/>
         <source>English</source>
         <translation>Ingilizce</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3795"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4005"/>
         <source>Russian</source>
         <translation>Rusça</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3829"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4039"/>
         <source>Turkish</source>
         <translation>Türk</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3929"/>
-        <source>Import Wallet</source>
-        <translation>Cüzdanı İçe Aktar</translation>
+        <location filename="src/gui/ui/overviewframe.ui" line="4123"/>
+        <source>Wallet Operations</source>
+        <translation>Cüzdan</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3954"/>
-        <source>IMPORT TRACKING WALLET</source>
-        <translation>Salt Görüntülenebilir Cüzdani Içe Aktar</translation>
+        <location filename="src/gui/ui/overviewframe.ui" line="4148"/>
+        <source>OPEN WALLET</source>
+        <translation>Cüzdani Aç</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3976"/>
-        <source>IMPORT PRIVATE KEYS</source>
-        <translation>PRIVATE KEY&apos;LERİ İÇE AKTAR</translation>
+        <location filename="src/gui/ui/overviewframe.ui" line="4170"/>
+        <source>NEW WALLET</source>
+        <translation>Cüzdan dosyası</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="3998"/>
-        <source>IMPORT SEED</source>
-        <translation>SEED İÇE AKTAR</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4038"/>
-        <source>New or Existing Wallet</source>
-        <translation>Yeni veya mevcut cüzdan</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4063"/>
-        <source>CREATE NEW WALLET</source>
-        <translation>YENİ CÜZDAN OLUŞTUR</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4085"/>
-        <source>OPEN EXISTING WALLET</source>
-        <translation>MEVCUT CÜZDANI AÇ</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4107"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4192"/>
         <source>ENCRYPT WALLET</source>
         <translation>Cüzdanı Şifrele</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4147"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4216"/>
+        <source>New/Existing</source>
+        <translation>Yeni veya mevcut cüzdan</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4243"/>
+        <source>Import</source>
+        <translation>Içe Aktar</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4270"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4525"/>
         <source>Backup</source>
         <translation>Yedekle</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4172"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4295"/>
+        <source>IMPORT TRACKING WALLET</source>
+        <translation>Salt Görüntülenebilir Cüzdani Içe Aktar</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4317"/>
         <source>BACKUP KEYS</source>
         <translation>YEDEKLE </translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4194"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4339"/>
+        <source>IMPORT PRIVATE KEYS</source>
+        <translation>PRIVATE KEY&apos;LERİ İÇE AKTAR</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4361"/>
         <source>BACKUP WALLET FILE</source>
         <translation>YEDEKLE CÜZDAN DOSYASI</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4259"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4383"/>
+        <source>IMPORT SEED</source>
+        <translation>SEED İÇE AKTAR</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4439"/>
+        <source>Import Wallet</source>
+        <translation>Cüzdanı İçe Aktar</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4482"/>
+        <source>New or Existing Wallet</source>
+        <translation>Yeni veya mevcut cüzdan</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4593"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4319"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4627"/>
+        <source>ABOUT QT</source>
+        <translation>Qt HAKKINDA</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="4681"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4372"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4734"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>Lütfen göndermeden önce Adres ve Ödeme Kimliğinin (varsa) doğru olduğundan emin olun. Yanlış adrese gönderilen fonlar kaybedilecektir.</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4410"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4772"/>
         <source>0.000000</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4435"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4797"/>
         <source>Payment ID (Optional) - Required at some Exchanges</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4460"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4822"/>
         <source>Message (Optional)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4485"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4847"/>
         <source>Save to Address Book</source>
         <translation>Adres Defterine Kaydet</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4510"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="4872"/>
         <source>Amount</source>
         <translation>Miktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4678"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5133"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5040"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5496"/>
         <source>Address</source>
         <translation>Adres</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4770"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="4969"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5133"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5332"/>
         <source>SEND</source>
         <translation>GÖNDER</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4806"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5043"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5169"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5406"/>
         <source>CANCEL</source>
         <translation>İPTAL</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="4899"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5082"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5262"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5445"/>
         <source>CLEAR</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5187"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5550"/>
         <source>Do not include message in blockchain</source>
         <translation>Blok zinciri içine mesaj yerleştirme</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5194"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5557"/>
         <source>Set self destruct time</source>
         <translation>Kendini yok etme zamanı ayarla</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5276"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5302"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5639"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5665"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5328"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5691"/>
         <source>Note: Maximum message size is 260 characters.</source>
         <translation>Not: Maksimum mesaj boyutu 260 karakterdir.</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5387"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5750"/>
         <source>NEW DEPOSIT</source>
         <translation>YENİ MEVDUAT</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5411"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5774"/>
         <source>How long should your deposit last?</source>
         <translation>Depozitonuz ne kadar sürer?</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5497"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5860"/>
         <source>How much do you want to deposit?</source>
         <translation>Ne kadar yatırmak istiyorsunuz?</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5516"/>
-        <source>Deposit Details</source>
-        <translation>Mevduat Detayları</translation>
-    </message>
-    <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5539"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5902"/>
         <source>21900 blocks</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5566"/>
-        <location filename="src/gui/ui/overviewframe.ui" line="5728"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5929"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6091"/>
         <source>interestLabel</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5593"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5956"/>
         <source>Interest rate:</source>
         <translation>Faiz:</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5620"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="5983"/>
         <source>Rewards you will earn:</source>
         <translation>Kazanacağınız ödüller:</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5647"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6010"/>
         <source>Fees for this deposit:</source>
         <translation>Bu depozito ücretleri:</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5674"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6037"/>
         <source>Length on the blockchain:</source>
         <translation>Uzunluk:</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5701"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6064"/>
         <source>0.001000 CCX</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5762"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6124"/>
+        <source>Deposit Details</source>
+        <translation>Mevduat Detayları</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="6155"/>
         <source>MAKE DEPOSIT</source>
         <translation>YENİ MEVDUAT</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5881"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6274"/>
         <source>DEPOSIT HISTORY</source>
         <translation>TARİHSEL VERİ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5911"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6304"/>
         <source>WITHDRAW</source>
         <translation>PARA ÇEK</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5927"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6320"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Tüm mevduatlarınızın tam bir geçmişi. Daha ayrıntılı bir görünüm için tek bir depozitoyu çift tıklayın.</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="5973"/>
-        <source>MY CONCEAL WALLET</source>
+        <location filename="src/gui/ui/overviewframe.ui" line="6366"/>
+        <source>CONCEAL.NETWORK</source>
         <translation>CONCEAL CÜZDANI</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6009"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6402"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;SYNCHRONIZING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6059"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6452"/>
         <source>YOUR CONTACT LIST</source>
         <translation>İLETİŞİM LİSTENİZ</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6159"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6552"/>
         <source>COPY ADDRESS</source>
         <translation>ADRESİ KOPYALA</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6181"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6574"/>
         <source>COPY PAYMENTID</source>
         <translation>KOPYALA PAYMENT ID</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6203"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6596"/>
         <source>PAY TO</source>
         <translation>ÖDEMEK</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6225"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6618"/>
         <source>EDIT CONTACT</source>
         <translation>İLETİŞİM DÜZENLE</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6247"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6640"/>
         <source>DELETE CONTACT</source>
         <translation>KİŞİYİ SİLMEK</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6353"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6746"/>
         <source>This wallet is locked. Please click below to unlock your wallet.</source>
         <translation>Bu cüzdan kilitli. Cüzdanınızın kilidini açmak için lütfen aşağıya tıklayın.</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/overviewframe.ui" line="6392"/>
+        <location filename="src/gui/ui/overviewframe.ui" line="6785"/>
         <source>UNLOCK WALLET</source>
         <translation>KILIT AÇILMA CÜZDAN</translation>
+    </message>
+    <message>
+        <location filename="src/gui/ui/overviewframe.ui" line="6837"/>
+        <source>0.000000 CCX 0.00 USD</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1228,7 +1270,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="100"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="96"/>
         <source>blocks</source>
         <translation></translation>
     </message>
@@ -1286,7 +1328,7 @@ Would you like to go to the download page?</source>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -1324,7 +1366,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -1333,7 +1375,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -1397,7 +1439,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Tracking key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -1427,7 +1469,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Raleway&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -2004,208 +2046,218 @@ Emin misiniz?</translation>
 <context>
     <name>WalletGui::OverviewFrame</name>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="154"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="151"/>
         <source>&amp;Pay to</source>
         <translation>&amp;Ödemek</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="155"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="152"/>
         <source>Copy &amp;label</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="156"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="153"/>
         <source>Copy &amp;address</source>
-        <translation>Adresi Kopyala</translation>
-    </message>
-    <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="157"/>
-        <source>Copy Payment &amp;ID</source>
-        <translation>Kopyala Payment Id</translation>
-    </message>
-    <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="158"/>
-        <source>&amp;Edit</source>
-        <translation>Düzenle</translation>
-    </message>
-    <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="159"/>
-        <source>&amp;Delete</source>
-        <translation>Sil</translation>
-    </message>
-    <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="547"/>
-        <source>Week(s)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="168"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="154"/>
+        <source>Copy Payment &amp;ID</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="155"/>
+        <source>&amp;Edit</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="156"/>
+        <source>&amp;Delete</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="165"/>
         <source>Month(s)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="311"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1380"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="313"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1443"/>
         <source>CLICK TO DISABLE</source>
         <translation>KAPAT</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="315"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1371"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="317"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1434"/>
         <source>CLICK TO ENABLE</source>
         <translation>ETKİNLEŞTİRME</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="515"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="534"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="633"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="656"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="813"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1058"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1151"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1314"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1341"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1364"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="380"/>
+        <source>Current Wallet</source>
+        <translation>Mevcut Cüzdan</translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="568"/>
+        <source>TOTAL</source>
+        <translation>TOPLAM</translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="576"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="595"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="678"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="700"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="852"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1121"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1214"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1377"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1404"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1427"/>
         <source>Tracking Wallet</source>
         <translation>Cüzdanı görüntüle</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="695"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="738"/>
         <source>Wallet</source>
         <translation>Cüzdan</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="700"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="743"/>
         <source>Synchronization</source>
         <translation>Senkronizasyon</translation>
     </message>
     <message>
         <location filename="src/gui/OverviewFrame.cpp" line="862"/>
+        <source>Payment ID Required</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="src/gui/OverviewFrame.cpp" line="912"/>
         <source>Failed to lookup Conceal ID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="876"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="926"/>
         <source>Invalid recipient address</source>
         <translation>Geçersiz alıcı adresi</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="898"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1499"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1526"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1568"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="948"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1562"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1589"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1631"/>
         <source>Invalid payment ID</source>
         <translation>Geçersiz ödeme kimliği</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="905"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="955"/>
         <source>Transaction Confirmation</source>
         <translation>İşlem Onayı</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="906"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="956"/>
         <source>Please note that there is no payment ID, are you sure you want to proceed?</source>
         <translation>Lütfen ödeme kimliği girmediğinizi unutmayın, devam etmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="941"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="991"/>
         <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
         <translation>Yetersiz bakiye. Lütfen tutar artı ücretler için yeterli paranızın olduğundan emin olun.</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1118"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1181"/>
         <source>Message too long. Please ensure that the message is less than 260 characters.</source>
         <translation>Mesaj çok uzun. Lütfen mesajın 260 karakterden az olduğundan emin olun.</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1160"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1223"/>
         <source>You don&apos;t have enough balance in your account!</source>
         <translation>Hesabınızda yeterli bakiye yok!</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1179"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1242"/>
         <source>Deposit Confirmation</source>
         <translation>Mevduat Onayı</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1180"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1243"/>
         <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
         <translation>Fonlar bir mevduat için kilitlendiğinde, vadesi bitene kadar bu fonlara erişemeyeceğinizi lütfen unutmayın. Devam etmek istediğinize emin misiniz?</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1373"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1382"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1436"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1445"/>
         <source>Auto Optimization</source>
         <translation>Otomatik Optimizasyon</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1374"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1437"/>
         <source>Auto Optimization Disabled.</source>
         <translation>Otomatik Optimizasyon Devre Dışı.</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1383"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1446"/>
         <source>Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes.</source>
         <translation>Otomatik Optimizasyon Etkin. Cüzdanınız her 15 dakikada bir otomatik olarak optimize edilecektir.</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1422"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1485"/>
         <source>Language and Currency settings saved</source>
         <translation>Dil ve Para Birimi ayarları kaydedildi</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1423"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1459"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1486"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1522"/>
         <source>Please restart the wallet for the new settings to take effect.</source>
         <translation>Yeni ayarların geçerli olması için lütfen cüzdanı yeniden başlatın.</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1458"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1521"/>
         <source>Connection settings saved</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1493"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1520"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1562"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1556"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1583"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1625"/>
         <source>Invalid address</source>
         <translation>Geçersiz adres</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1507"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1534"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1576"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1570"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1597"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1639"/>
         <source>Contact with such label already exists.</source>
-        <translation>Bu etiketle temas zaten var.</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1551"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1614"/>
         <source>Edit contact</source>
-        <translation>Iletişim Düzenle</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1590"/>
-        <location filename="src/gui/OverviewFrame.cpp" line="1596"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1653"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1659"/>
         <source>Address Book</source>
         <translation>Adres Defteri</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1673"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1761"/>
         <source>Incorrect password</source>
         <translation>Yanlış Parola</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1673"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1761"/>
         <source>Wrong password.</source>
         <translation>Yanlış Parola</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1687"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1775"/>
         <source>Lock Wallet</source>
         <translation>Kilit Cüzdanı</translation>
     </message>
     <message>
-        <location filename="src/gui/OverviewFrame.cpp" line="1688"/>
+        <location filename="src/gui/OverviewFrame.cpp" line="1776"/>
         <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
         <translation>Cüzdanınızı kilitlemek ister misiniz? Cüzdanınız kilitliyken, ağ ile senkronize olmaya devam edecektir. Kilidini açmak için cüzdan şifrenizi girmeniz gerekecektir.</translation>
     </message>
@@ -2231,6 +2283,34 @@ Emin misiniz?</translation>
         <location filename="src/gui/ReceiveFrame.cpp" line="109"/>
         <source>Seed</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>WalletGui::RecentTransactionDelegate</name>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="47"/>
+        <source>Received CCX</source>
+        <translation>Alınan CCX</translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="50"/>
+        <source>New Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="54"/>
+        <source>Send CCX</source>
+        <translation>Gönderilen CCX</translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="58"/>
+        <source>Optimization</source>
+        <translation>Optimize ediliyor</translation>
+    </message>
+    <message>
+        <location filename="src/gui/TransactionFrame.cpp" line="62"/>
+        <source>New Deposit</source>
+        <translation>Yeni Mevduat</translation>
     </message>
 </context>
 <context>
@@ -2347,7 +2427,6 @@ Emin misiniz?</translation>
         <location filename="src/WalletAdapter.cpp" line="474"/>
         <location filename="src/WalletAdapter.cpp" line="500"/>
         <source>READY</source>
-        <oldsource>Ready</oldsource>
         <translation>HAZIR</translation>
     </message>
     <message>
@@ -2379,11 +2458,6 @@ Emin misiniz?</translation>
         <location filename="src/WalletAdapter.cpp" line="656"/>
         <source>There was a problem, please restart your wallet.</source>
         <translation>Bir problem oluştu, lütfen cüzdanınızı yeniden başlatın.</translation>
-    </message>
-    <message>
-        <location filename="src/WalletAdapter.cpp" line="659"/>
-        <source>&lt;span style=&apos;color: orange;&apos;&gt;%1&lt;/span&gt;&lt;br /&gt;Height: %2&lt;br /&gt;%4&lt;br /&gt;%3</source>
-        <translation></translation>
     </message>
 </context>
 <context>
@@ -2648,7 +2722,7 @@ Emin misiniz?</translation>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Raleway&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Poppins&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>

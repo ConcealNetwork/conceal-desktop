@@ -62,9 +62,53 @@ background-color: #212529;</string>
     <number>15</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <property name="topMargin">
-      <number>10</number>
+    <widget class="QTreeView" name="m_addressBookView">
+     <property name="styleSheet">
+      <string notr="true">QHeaderView::section {
+	color: white;
+	font-weight: bold;
+	background-color: #282d31;
+	font-family: 'Poppins';
+    border-top: none;
+	font-size: 14px;
+ 	border-bottom: 1px solid #444;
+   	height: 37px;
+}
+
+QTreeView {
+	font-family: 'Poppins';
+border: none;
+    color: #ccc;
+font-size: 14px;
+    height: 37px;
+background-color: #282d31;
+}
+
+QTreeView::item {
+	font-family: 'Poppins';
+    color: #ccc;
+	font-size: 14px;
+    height: 37px;
+}
+
+QTreeView::branch:selected {
+  background-color: orange;
+font-size: 14px;
+  color: black;
+}
+
+QWidget:item:selected {
+	font-family: 'Poppins';
+background-color: #555;
+font-size: 14px;
+  color: #ccc;
+}
+
+border: none;
+font-size: 14px;
+font-family: 'Poppins';
+color: #ccc;
+</string>
      </property>
      <property name="bottomMargin">
       <number>10</number>

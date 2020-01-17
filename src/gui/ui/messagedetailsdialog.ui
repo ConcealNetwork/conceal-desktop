@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Message</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font-family: 'Poppins';
+background-color: #282d31;
+color: #ddd;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
@@ -30,7 +35,7 @@
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -43,7 +48,7 @@
        <widget class="QLabel" name="m_heightLabel">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -56,7 +61,7 @@
        <widget class="QLabel" name="label_5">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -69,7 +74,7 @@
        <widget class="QLabel" name="m_hashLabel">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -82,7 +87,7 @@
        <widget class="QLabel" name="m_amountLabel">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -95,7 +100,7 @@
        <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -108,7 +113,7 @@
        <widget class="QLabel" name="label_7">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -121,7 +126,7 @@
        <widget class="QLabel" name="m_sizeLabel">
         <property name="font">
          <font>
-          <family>Lato</family>
+          <family>Poppins</family>
           <pointsize>9</pointsize>
          </font>
         </property>
@@ -155,31 +160,12 @@
        </property>
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
         </font>
        </property>
-       <property name="text">
-        <string>Reply</string>
-       </property>
-       <property name="autoDefault">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="m_saveButton">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>Save to file</string>
@@ -203,8 +189,12 @@
       <widget class="QPushButton" name="m_prevButton">
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>&lt;&lt;</string>
@@ -215,8 +205,12 @@
       <widget class="QPushButton" name="m_nextButton">
        <property name="font">
         <font>
-         <family>Lato</family>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>&gt;&gt;</string>
@@ -227,9 +221,12 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="font">
         <font>
-         <family>Lato</family>
-         <pointsize>10</pointsize>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>Ok</string>

@@ -231,8 +231,7 @@ void MainWindow::minimizeToTray(bool _on)
 
 void MainWindow::scrollToTransaction(const QModelIndex &_index)
 {
-  m_ui->m_transactionsAction->setChecked(true);
-  m_ui->m_transactionsFrame->scrollToTransaction(_index);
+  m_ui->m_overviewFrame->scrollToTransaction(_index);
 }
 
 void MainWindow::quit()
