@@ -50,16 +50,15 @@ void ExchangeProvider::readyRead()
   }
 
   QJsonArray arr = doc.array();
-    for (auto value : arr) {
-      auto object = value.toObject();
-      QString name = object.value("name").toString();
-      Q_EMIT exchangeFoundSignal(name);
+  if (arr.count() == 1)
+    {
+      for (auto value : arr)
+      {
+        auto object = value.toObject();
+        QString name = object.value("name").toString();
+        Q_EMIT exchangeFoundSignal(name);
+      }
     }
-
-
-
-
-
 }
 
 } // namespace WalletGui
