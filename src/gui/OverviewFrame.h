@@ -82,7 +82,6 @@ private:
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
-  void downloadFinished2(QNetworkReply *reply2);
   void layoutChanged();
   void setStatusBarText(const QString &_text);
   void updateWalletAddress(const QString &_address);
@@ -93,8 +92,8 @@ private:
   void pendingDepositBalanceUpdated(quint64 _balance);
   void actualInvestmentBalanceUpdated(quint64 _balance);
   void pendingInvestmentBalanceUpdated(quint64 _balance);
-  void showCurrentWallet();
-  void syncMessage();
+  void showCurrentWalletName();
+  void syncInProgressMessage();
   void walletActualBalanceUpdated(quint64 _balance);
   static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
@@ -107,10 +106,10 @@ private:
 
   Q_SLOT void sendClicked();
   Q_SLOT void copyClicked();
-  Q_SLOT void depositClicked();
-  Q_SLOT void transactionClicked();
+  Q_SLOT void bankingClicked();
+  Q_SLOT void transactionHistoryClicked();
   Q_SLOT void dashboardClicked();
-  Q_SLOT void messageClicked();
+  Q_SLOT void inboxClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
   Q_SLOT void newTransferClicked();
@@ -119,8 +118,6 @@ private:
   Q_SLOT void aboutClicked();
   Q_SLOT void showTransactionDetails(const QModelIndex &_index);
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
-  Q_SLOT void walletClicked();
-  Q_SLOT void chartButtonClicked();
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
   Q_SLOT void sendFundsClicked();
