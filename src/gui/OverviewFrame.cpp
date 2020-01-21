@@ -370,7 +370,7 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
 /* Show the name of the opened wallet */
 void OverviewFrame::showCurrentWalletName()
 {
- 
+
   QString walletFile = Settings::instance().getWalletName();
   m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile.toUpper());
 }
@@ -1796,7 +1796,11 @@ void OverviewFrame::encryptWalletClicked()
 {
   if (Settings::instance().isEncrypted())
     return;
+
+  m_ui->darkness->show();
+  m_ui->darkness->raise();
   Q_EMIT encryptWalletSignal();
+  dashboardClicked();
 }
 
 /* When a user clicks on one of the recent transactions, we redirect to the transaction history and the specific record */
