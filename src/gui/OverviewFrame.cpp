@@ -230,29 +230,15 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
-  int subMenu = 0;
-
   walletSynced = false;
-
   m_ui->m_overviewWithdrawButton->hide();
 
-  /* Hide the second chart */
-  int currentChart = 2;
-  m_ui->m_chart->show();
-  m_ui->m_chart_2->hide();
   /* Pull the chart */
   QNetworkAccessManager *nam = new QNetworkAccessManager(this);
   connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
   const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
   QNetworkRequest request(url);
   nam->get(request);
-
-  /* Pull the alternate chart */
-  //QNetworkAccessManager *nam2 = new QNetworkAccessManager(this);
-  //connect(nam2, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished2);
-  //const QUrl url2 = QUrl::fromUserInput("http://explorer.conceal.network/services/charts/price.png?vsCurrency=btc&days=7&priceDecimals=6&priceSymbol=btc&xPoints=12&width=511&height=191");
-  //QNetworkRequest request2(url2);
-  //nam2->get(request2);
 
   QString connection = Settings::instance().getConnection();
 
@@ -301,6 +287,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   {
     m_ui->radioButton_3->setChecked(true);
   }
+
   /* It is an embedded node, so let only check that */
   else if (connection.compare("embedded") == 0)
   {
@@ -319,7 +306,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   dashboardClicked();
   depositParamsChanged();
   reset();
-  showCurrentWallet();
+  showCurrentWalletName();
 }
 
 OverviewFrame::~OverviewFrame()
@@ -328,7 +315,7 @@ OverviewFrame::~OverviewFrame()
 
 void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
 {
-  showCurrentWallet();
+  showCurrentWalletName();
   walletSynced = true;
 
   /* Show total portfolio */
@@ -342,7 +329,7 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
 
   quint64 numUnlockedOutputs;
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-  if (numUnlockedOutputs>= 100)
+  if (numUnlockedOutputs >= 100)
   {
     m_ui->m_optimizationMessage->setText("(Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs])");
   }
@@ -368,31 +355,32 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
   m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange; text-align: left;");
   OverviewFrame::wallet_address = _address;
   m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
+
+  /* Show/hide the encrypt wallet button */
+  if (!Settings::instance().isEncrypted())
+  {
+    m_ui->m_encryptWalletButton->setVisible(true);
+  }
+  else
+  {
+    m_ui->m_encryptWalletButton->setVisible(false);
+  }
 }
 
-void OverviewFrame::showCurrentWallet()
+/* Show the name of the opened wallet */
+void OverviewFrame::showCurrentWalletName()
 {
-  /* Show the name of the opened wallet */
+ 
   QString walletFile = Settings::instance().getWalletName();
   m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile.toUpper());
 }
 
+/* Download is done, set the chart as the pixmap */
 void OverviewFrame::downloadFinished(QNetworkReply *reply)
 {
-  /* Download is done
-       set the chart as the pixmap */
   QPixmap pm;
   pm.loadFromData(reply->readAll());
   m_ui->m_chart->setPixmap(pm);
-}
-
-void OverviewFrame::downloadFinished2(QNetworkReply *reply2)
-{
-  /* Download is done
-       set the chart as the pixmap */
-  QPixmap pm2;
-  pm2.loadFromData(reply2->readAll());
-  m_ui->m_chart_2->setPixmap(pm2);
 }
 
 void OverviewFrame::layoutChanged()
@@ -402,9 +390,10 @@ void OverviewFrame::layoutChanged()
     QModelIndex recent_index = m_transactionModel->index(i, 0);
     m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
   }
-  showCurrentWallet();
+  showCurrentWalletName();
 }
 
+/* What happens when the available balance changes */
 void OverviewFrame::actualBalanceUpdated(quint64 _balance)
 {
   m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));                   // Overview screen
@@ -420,6 +409,7 @@ void OverviewFrame::actualBalanceUpdated(quint64 _balance)
   updatePortfolio();
 }
 
+/* What happens when the pending(locked) balance changes */
 void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
 {
   m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
@@ -433,7 +423,7 @@ void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
   updatePortfolio();
 }
 
-/* Unlocked deposits */
+/* What happens when the unlocked deposit balance changes */
 void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -448,7 +438,7 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
   if (walletSynced == true)
   {
-    if (unlockedFunds> 0)
+    if (unlockedFunds > 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
       m_ui->m_overviewWithdrawButton->show();
@@ -461,7 +451,7 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
   }
 }
 
-/* Unlocked investments */
+/* What happens when the unlocked investment balance changes */
 void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -476,7 +466,7 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
   if (walletSynced == true)
   {
-    if (unlockedFunds> 0)
+    if (unlockedFunds > 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
       m_ui->m_overviewWithdrawButton->show();
@@ -489,6 +479,7 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
   }
 }
 
+/* What happens when the locked deposit balance changes */
 void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -502,6 +493,7 @@ void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
   updatePortfolio();
 }
 
+/* What happens when the locked investment balance changes */
 void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
 {
   quint64 actualBalance = WalletAdapter::instance().getActualBalance();
@@ -517,6 +509,7 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   updatePortfolio();
 }
 
+/* Price data download complete */
 void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume)
 {
   QString currentCurrency = Settings::instance().getCurrentCurrency();
@@ -542,14 +535,15 @@ void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx,
   updatePortfolio();
 }
 
+/* Exchange address check complete */
 void OverviewFrame::onExchangeFound(QString &_exchange)
 {
   exchangeName = _exchange;
 }
 
+/* Update the total portfolio in CCX and Fiat on the top left hand corner */
 void OverviewFrame::updatePortfolio()
 {
-
   QString currentCurrency = Settings::instance().getCurrentCurrency();
 
   float total = 0;
@@ -564,26 +558,26 @@ void OverviewFrame::updatePortfolio()
   m_ui->m_totalPortfolioLabelUSD->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
 }
 
+/* Send funds menu button clicked */
 void OverviewFrame::sendClicked()
 {
-
   if (Settings::instance().isTrackingMode())
   {
     QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
     return;
   }
-
   if (walletSynced == true)
   {
     Q_EMIT sendSignal();
   }
   else
   {
-    syncMessage();
+    syncInProgressMessage();
   }
 }
 
-void OverviewFrame::depositClicked()
+/* Banking menu button clicked */
+void OverviewFrame::bankingClicked()
 {
   m_ui->darkness->hide();
   if (Settings::instance().isTrackingMode())
@@ -599,11 +593,11 @@ void OverviewFrame::depositClicked()
   }
   else
   {
-    syncMessage();
+    syncInProgressMessage();
   }
 }
 
-void OverviewFrame::transactionClicked()
+void OverviewFrame::transactionHistoryClicked()
 {
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
@@ -633,14 +627,6 @@ void OverviewFrame::settingsClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
   m_ui->settingsBox->raise();
-}
-
-void OverviewFrame::walletClicked()
-{
-  m_ui->darkness->hide();
-  m_ui->m_myConcealWalletTitle->setText("WALLET OPTIONS");
-  m_ui->walletBox->raise();
-
   if (!Settings::instance().isEncrypted())
     m_ui->m_encryptWalletButton->setVisible(true);
 }
@@ -650,7 +636,7 @@ void OverviewFrame::qrCodeClicked()
   Q_EMIT qrSignal(OverviewFrame::wallet_address);
 }
 
-void OverviewFrame::messageClicked()
+void OverviewFrame::inboxClicked()
 {
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("INBOX");
@@ -684,7 +670,7 @@ void OverviewFrame::newTransferClicked()
   }
   else
   {
-    syncMessage();
+    syncInProgressMessage();
   }
 }
 
@@ -706,7 +692,7 @@ void OverviewFrame::newMessageClicked()
   }
   else
   {
-    syncMessage();
+    syncInProgressMessage();
   }
 }
 
@@ -734,25 +720,9 @@ void OverviewFrame::copyClicked()
   QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
 }
 
-void OverviewFrame::syncMessage()
+void OverviewFrame::syncInProgressMessage()
 {
   QMessageBox::information(this, tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
-}
-
-void OverviewFrame::chartButtonClicked()
-{
-  if (currentChart == 1)
-  {
-    m_ui->m_chart->hide();
-    m_ui->m_chart_2->show();
-    currentChart = 2;
-  }
-  else
-  {
-    m_ui->m_chart->show();
-    m_ui->m_chart_2->hide();
-    currentChart = 1;
-  }
 }
 
 // TRANSACTION HISTORY
@@ -774,6 +744,7 @@ void OverviewFrame::showTransactionDetails(const QModelIndex &_index)
 
 void OverviewFrame::showMessageDetails(const QModelIndex &_index)
 {
+  /* Darken the background */
   m_ui->darkness->show();
   m_ui->darkness->raise();
   if (!_index.isValid())
@@ -783,6 +754,8 @@ void OverviewFrame::showMessageDetails(const QModelIndex &_index)
 
   MessageDetailsDialog dlg(_index, this);
   dlg.exec();
+
+  /* Restore the background */
   m_ui->darkness->hide();
 }
 
@@ -838,29 +811,20 @@ void OverviewFrame::clearAllClicked()
 
 void OverviewFrame::sendFundsClicked()
 {
-  if (!checkWalletPassword())
-  {
-    return;
-  }
-
+  /* Check if its a tracking wallet */
   if (Settings::instance().isTrackingMode())
   {
     QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
     return;
   }
 
-  QString paymentIDText = m_ui->m_paymentIdEdit->text();
-
-  if (paymentIDText.isEmpty())
+  /* Initiate a password prompt before we allow anyone to send funds */
+  if (!checkWalletPassword())
   {
-    if (!exchangeName.isEmpty())
-    {
-      QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
-      return;
-    }
+    return;
   }
 
-  /* Get the most up-to-date fee based on characters in the message */
+  /* Prepare the transfers */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
   QVector<CryptoNote::TransactionMessage> walletMessages;
@@ -873,7 +837,7 @@ void OverviewFrame::sendFundsClicked()
   QString address = m_ui->m_addressEdit->text().toUtf8();
   QString int_address = m_ui->m_addressEdit->text().toUtf8();
 
-  /* Integrated address check */
+  /* Is it an Integrated address? */
   if (address.toStdString().length() == 186)
   {
     isIntegrated = true;
@@ -898,10 +862,16 @@ void OverviewFrame::sendFundsClicked()
     address = QString::fromStdString(address_string);
   }
 
-  /* Conceal ID check */
+  /* If its an integrated address, lets copy the payment ID to the field */
+  if (isIntegrated == true)
+  {
+    m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
+  }
+
+  /* Is it a Conceal ID? */
   if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
   {
-    /*Parse the record and set address to the actual CCX address*/
+    /* Parse the record and set address to the actual CCX address */
     std::vector<std::string> records;
     if (!Common::fetch_dns_txt(address.toStdString(), records))
     {
@@ -917,6 +887,8 @@ void OverviewFrame::sendFundsClicked()
       }
     }
   }
+
+  /* Check address validity */
   if (!CurrencyAdapter::instance().validateAddress(address))
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
@@ -930,15 +902,8 @@ void OverviewFrame::sendFundsClicked()
   walletTransfers.push_back(walletTransfer);
   QString label = m_ui->m_addressLabel->text();
 
-  /* Payment id */
-  if (isIntegrated == true)
-  {
-    m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
-  }
-
+  /* Check payment id validity */
   paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-
-  /* Check payment id validity, or about */
   if (!isValidPaymentId(paymentIdString))
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
@@ -948,12 +913,21 @@ void OverviewFrame::sendFundsClicked()
   /* Warn the user if there is no payment id */
   if (paymentIdString.toStdString().length() < 64)
   {
-    if (QMessageBox::warning(&MainWindow::instance(), tr("Transaction Confirmation"),
-                             tr("Please note that there is no payment ID, are you sure you want to proceed?"),
-                             QMessageBox::Cancel,
-                             QMessageBox::Ok) != QMessageBox::Ok)
+    /* Is it an exchange address? */
+    if (!exchangeName.isEmpty())
     {
+      QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
       return;
+    }
+    else
+    {
+      if (QMessageBox::warning(&MainWindow::instance(), tr("Transaction Confirmation"),
+                               tr("Please note that there is no payment ID, are you sure you want to proceed?"),
+                               QMessageBox::Cancel,
+                               QMessageBox::Ok) != QMessageBox::Ok)
+      {
+        return;
+      }
     }
   }
 
@@ -1008,6 +982,7 @@ void OverviewFrame::sendFundsClicked()
   }
 }
 
+/* Once we complete a transaction, we either show the error or clear all fields and move back to the dashboard */
 void OverviewFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _error, const QString &_errorText)
 {
   Q_UNUSED(_id);
@@ -1040,8 +1015,7 @@ void OverviewFrame::addressBookClicked()
   m_ui->addressBookBox->raise();
 }
 
-// SEND MESSAGE
-
+/* Once we send a message, we either show the error or clear all fields and move back to the dashboard */
 void OverviewFrame::sendMessageCompleted(CryptoNote::TransactionId _id, bool _error, const QString &_errorText)
 {
   Q_UNUSED(_id);
@@ -1056,7 +1030,7 @@ void OverviewFrame::sendMessageCompleted(CryptoNote::TransactionId _id, bool _er
   }
 }
 
-/* clear all fields */
+/* Clear all fields in the Send Message screen */
 void OverviewFrame::clearMessageClicked()
 {
   m_ui->m_messageTextEdit->clear();
@@ -1072,15 +1046,18 @@ void OverviewFrame::ttlValueChanged(int _ttlValue)
   m_ui->m_ttlLabel->setText(QString("%1h %2m").arg(hours).arg(minutes));
 }
 
+/* When the address changes in the Send field, check if its from an exchange */
 void OverviewFrame::addressChanged(QString _address)
 {
+  exchangeName = "";
   m_exchangeProvider->getExchange(_address);
 }
 
+/* Prevent users from sending message over 260 characters */
 void OverviewFrame::recalculateMessageLength()
 {
 
-  if (m_ui->m_messageTextEdit->toPlainText().length()> 261)
+  if (m_ui->m_messageTextEdit->toPlainText().length() > 261)
   {
     m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
     m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);
@@ -1091,7 +1068,8 @@ void OverviewFrame::recalculateMessageLength()
 
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length();
-  if (messageSize> 0)
+
+  if (messageSize > 0)
   {
     --messageSize;
   }
@@ -1131,6 +1109,26 @@ void OverviewFrame::sendMessageClicked()
   QString address = m_ui->m_addressMessageEdit->text().toUtf8();
   QString messageString = m_ui->m_messageTextEdit->toPlainText();
 
+  /* Is it a Conceal ID? */
+  if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
+  {
+    /* Parse the record and set address to the actual CCX address */
+    std::vector<std::string> records;
+    if (!Common::fetch_dns_txt(address.toStdString(), records))
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID. Please try again later."), QtCriticalMsg));
+    }
+    std::string realAddress;
+    for (const auto &record : records)
+    {
+      if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress))
+      {
+        address = QString::fromStdString(realAddress);
+        m_ui->m_addressMessageEdit->setText(address);
+      }
+    }
+  }
+
   /* Start building the transaction */
   walletTransfer.address = address.toStdString();
   uint64_t amount = 100;
@@ -1138,7 +1136,7 @@ void OverviewFrame::sendMessageClicked()
   transfers.push_back(walletTransfer);
   messages.append({messageString.toStdString(), address.toStdString()});
 
-  /* Calculate fees */
+  /* Set fee */
   quint64 fee = 1000;
 
   /* Check if this is a self destructive message */
@@ -1167,12 +1165,12 @@ void OverviewFrame::sendMessageClicked()
 
   QString messageText = m_ui->m_messageTextEdit->toPlainText();
   quint32 messageSize = messageText.length();
-  if (messageSize> 0)
+  if (messageSize > 0)
   {
     --messageSize;
   }
 
-  if (messageSize> 260)
+  if (messageSize > 260)
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Message too long. Please ensure that the message is less than 260 characters."), QtCriticalMsg));
     return;
@@ -1214,7 +1212,7 @@ void OverviewFrame::newDepositClicked()
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
 
   /* Insufficient funds */
-  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking()> WalletAdapter::instance().getActualBalance())
+  if (amount == 0 || amount + CurrencyAdapter::instance().getMinimumFeeBanking() > WalletAdapter::instance().getActualBalance())
   {
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance in your account!"), QtCriticalMsg));
     return;
@@ -1404,7 +1402,7 @@ void OverviewFrame::optimizeClicked()
     quint64 numUnlockedOutputs;
     numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
     WalletAdapter::instance().optimizeWallet();
-    while (WalletAdapter::instance().getNumUnlockedOutputs()> 100)
+    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
     {
       numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
       if (numUnlockedOutputs == 0)
@@ -1668,6 +1666,7 @@ void OverviewFrame::payToABClicked()
   Q_EMIT payToSignal(m_ui->m_addressBookView->currentIndex());
 }
 
+/* Send the address from the address book when double clicked to either a new transfer or new message */
 void OverviewFrame::addressDoubleClicked(const QModelIndex &_index)
 {
   if (!_index.isValid())
@@ -1679,6 +1678,7 @@ void OverviewFrame::addressDoubleClicked(const QModelIndex &_index)
   m_ui->darkness->hide();
 }
 
+/* Toggle states of buttons in the address book when a user clicks on an address */
 void OverviewFrame::currentAddressChanged(const QModelIndex &_index)
 {
   m_ui->m_copyAddressButton_2->setEnabled(_index.isValid());
@@ -1686,6 +1686,8 @@ void OverviewFrame::currentAddressChanged(const QModelIndex &_index)
   m_ui->m_editAddressButton->setEnabled(_index.isValid());
   m_ui->m_copyPaymentIdButton->setEnabled(!_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
 }
+
+/* Open URL's when contact us / stay informed buttons are clicked */
 
 void OverviewFrame::discordClicked()
 {
@@ -1742,9 +1744,9 @@ void OverviewFrame::helpClicked()
   QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
 }
 
+/* Initiate a password prompt meant for critical tasks like sending funds etc */
 bool OverviewFrame::checkWalletPassword()
 {
-
   if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
     return true;
 
@@ -1762,10 +1764,10 @@ bool OverviewFrame::checkWalletPassword()
       return true;
     }
   }
-
   return false;
 }
 
+/* Lock the wallet after prompting for confirmation */
 void OverviewFrame::lockWallet()
 {
   if (QMessageBox::warning(&MainWindow::instance(), tr("Lock Wallet"),
@@ -1779,6 +1781,7 @@ void OverviewFrame::lockWallet()
   m_ui->lockBox->raise();
 }
 
+/* Unlock the wallet with the password */
 void OverviewFrame::unlockWallet()
 {
   if (!checkWalletPassword())
@@ -1788,16 +1791,18 @@ void OverviewFrame::unlockWallet()
   m_ui->lockBox->hide();
 }
 
+/* Load the wallet encryption dialog */
 void OverviewFrame::encryptWalletClicked()
 {
-  if (!Settings::instance().isEncrypted())
+  if (Settings::instance().isEncrypted())
     return;
   Q_EMIT encryptWalletSignal();
 }
 
+/* When a user clicks on one of the recent transactions, we redirect to the transaction history and the specific record */
 void OverviewFrame::scrollToTransaction(const QModelIndex &_index)
 {
-  transactionClicked();
+  transactionHistoryClicked();
   QModelIndex sortedModelIndex = SortedTransactionsModel::instance().mapFromSource(_index);
   QModelIndex index = static_cast<QSortFilterProxyModel *>(m_ui->m_transactionsView->model())->mapFromSource(sortedModelIndex);
   m_ui->m_transactionsView->scrollTo(index);
