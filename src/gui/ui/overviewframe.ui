@@ -5073,7 +5073,7 @@ border: none;</string>
         <rect>
          <x>10</x>
          <y>40</y>
-         <width>741</width>
+         <width>711</width>
          <height>31</height>
         </rect>
        </property>
@@ -6883,13 +6883,13 @@ text-align: left;</string>
      <zorder>walletBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
-     <zorder>sendBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>m_copyAddressButton_3</zorder>
+     <zorder>sendBox</zorder>
     </widget>
    </item>
   </layout>
@@ -6918,7 +6918,7 @@ text-align: left;</string>
    <sender>m_depositButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>depositClicked()</slot>
+   <slot>bankingClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1114</x>
@@ -6934,7 +6934,7 @@ text-align: left;</string>
    <sender>m_bankingButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>depositClicked()</slot>
+   <slot>bankingClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -6950,7 +6950,7 @@ text-align: left;</string>
    <sender>m_messagesButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>messageClicked()</slot>
+   <slot>inboxClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -6982,7 +6982,7 @@ text-align: left;</string>
    <sender>m_transactionButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>transactionClicked()</slot>
+   <slot>transactionHistoryClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -7046,7 +7046,7 @@ text-align: left;</string>
    <sender>m_newDepositButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>depositClicked()</slot>
+   <slot>bankingClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>660</x>
@@ -7094,7 +7094,7 @@ text-align: left;</string>
    <sender>m_investmentsButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>depositClicked()</slot>
+   <slot>bankingClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1225</x>
@@ -7142,7 +7142,7 @@ text-align: left;</string>
    <sender>m_sendFundsButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>sendFundsClicked()</slot>
+   <slot>newTransferClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>309</x>
@@ -7782,7 +7782,7 @@ text-align: left;</string>
    <sender>m_encryptWalletButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>encryptWallet()</slot>
+   <slot>encryptWalletClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>840</x>
@@ -8021,10 +8021,10 @@ text-align: left;</string>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
-  <slot>sendFundsClicked()</slot>
+  <slot>newTransferClicked()</slot>
   <slot>sendMessageClicked()</slot>
   <slot>copyClicked()</slot>
-  <slot>depositClicked()</slot>
+  <slot>bankingClicked()</slot>
   <slot>newDepositClicked()</slot>
   <slot>dashboardClicked()</slot>
   <slot>settingsClicked()</slot>
@@ -8032,16 +8032,16 @@ text-align: left;</string>
   <slot>backupFileClicked()</slot>
   <slot>aboutClicked()</slot>
   <slot>newWalletClicked()</slot>
-  <slot>newTransferClicked()</slot>
+  <slot>sendFundsClicked()</slot>
   <slot>walletClicked()</slot>
   <slot>minimize()</slot>
   <slot>maximize()</slot>
   <slot>chartButtonClicked()</slot>
   <slot>newMessageClicked()</slot>
   <slot>rescanClicked()</slot>
-  <slot>transactionClicked()</slot>
+  <slot>transactionHistoryClicked()</slot>
   <slot>qrCodeClicked()</slot>
-  <slot>messageClicked()</slot>
+  <slot>inboxClicked()</slot>
   <slot>clearAllClicked()</slot>
   <slot>clearMessageClicked()</slot>
   <slot>addressBookClicked()</slot>
@@ -8079,7 +8079,7 @@ text-align: left;</string>
   <slot>mediumClicked()</slot>
   <slot>lockWallet()</slot>
   <slot>unlockWallet()</slot>
-  <slot>encryptWallet()</slot>
+  <slot>encryptWalletClicked()</slot>
   <slot>scrollToTransaction(QModelIndex)</slot>
   <slot>addressChanged(QString)</slot>
   <slot>hotbitClicked()</slot>
@@ -8090,7 +8090,7 @@ text-align: left;</string>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
