@@ -7142,7 +7142,7 @@ text-align: left;</string>
    <sender>m_sendFundsButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>newTransferClicked()</slot>
+   <slot>sendFundsClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>309</x>
@@ -8089,8 +8089,8 @@ text-align: left;</string>
   <slot>helpClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
