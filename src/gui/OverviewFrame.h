@@ -156,6 +156,7 @@ private:
   Q_SLOT void redditClicked();
   Q_SLOT void mediumClicked();
   Q_SLOT void lockWallet();
+  Q_SLOT void exportCSV();
   Q_SLOT void unlockWallet();
   Q_SLOT void encryptWalletClicked();
   Q_SLOT void stexClicked();
