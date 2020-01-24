@@ -3108,7 +3108,7 @@ text-align: left;
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>50</y>
+         <y>60</y>
          <width>1011</width>
          <height>61</height>
         </rect>
@@ -3122,6 +3122,28 @@ text-align: left;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_exportCSVButton">
+       <property name="geometry">
+        <rect>
+         <x>890</x>
+         <y>20</y>
+         <width>141</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+       </property>
+       <property name="text">
+        <string>EXPORT CSV</string>
        </property>
       </widget>
      </widget>
@@ -6875,21 +6897,21 @@ text-align: left;</string>
      <zorder>m_statusBox</zorder>
      <zorder>extra_depositsBox</zorder>
      <zorder>extra_statsBox_2</zorder>
-     <zorder>newMessageBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>line</zorder>
      <zorder>m_qrButton</zorder>
      <zorder>aboutBox</zorder>
      <zorder>walletBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
-     <zorder>transactionsBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>m_copyAddressButton_3</zorder>
      <zorder>sendBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>messageBox</zorder>
+     <zorder>newMessageBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8018,6 +8040,22 @@ text-align: left;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_exportCSVButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>exportCSV()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1170</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>sendClicked()</slot>
@@ -8087,10 +8125,11 @@ text-align: left;</string>
   <slot>stexClicked()</slot>
   <slot>qtradeClicked()</slot>
   <slot>helpClicked()</slot>
+  <slot>exportCSV()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

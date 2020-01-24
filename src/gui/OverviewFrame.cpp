@@ -66,6 +66,7 @@
 #include <QStringList>
 #include <QtCore>
 #include <QUrl>
+#include <QFileDialog>
 
 #include "ui_overviewframe.h"
 
@@ -868,25 +869,33 @@ void OverviewFrame::sendFundsClicked()
     m_ui->m_paymentIdEdit->setText(QString::fromStdString(paymentID));
   }
 
-  /* Is it a Conceal ID? */
-  if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
+  try
   {
-    /* Parse the record and set address to the actual CCX address */
-    std::vector<std::string> records;
-    if (!Common::fetch_dns_txt(address.toStdString(), records))
+    /* Is it a Conceal ID? */
+    if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
     {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
-    }
-    std::string realAddress;
-    for (const auto &record : records)
-    {
-      if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress))
+      /* Parse the record and set address to the actual CCX address */
+      std::vector<std::string> records;
+      if (!Common::fetch_dns_txt(address.toStdString(), records))
       {
-        address = QString::fromStdString(realAddress);
-        m_ui->m_addressEdit->setText(address);
+        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+      }
+      std::string realAddress;
+      for (const auto &record : records)
+      {
+        if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress))
+        {
+          address = QString::fromStdString(realAddress);
+          m_ui->m_addressEdit->setText(address);
+        }
       }
     }
   }
+
+	catch (std::exception&) {
+		QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+    return;
+	}
 
   /* Check address validity */
   if (!CurrencyAdapter::instance().validateAddress(address))
@@ -918,16 +927,6 @@ void OverviewFrame::sendFundsClicked()
     {
       QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
       return;
-    }
-    else
-    {
-      if (QMessageBox::warning(&MainWindow::instance(), tr("Transaction Confirmation"),
-                               tr("Please note that there is no payment ID, are you sure you want to proceed?"),
-                               QMessageBox::Cancel,
-                               QMessageBox::Ok) != QMessageBox::Ok)
-      {
-        return;
-      }
     }
   }
 
@@ -1109,25 +1108,33 @@ void OverviewFrame::sendMessageClicked()
   QString address = m_ui->m_addressMessageEdit->text().toUtf8();
   QString messageString = m_ui->m_messageTextEdit->toPlainText();
 
-  /* Is it a Conceal ID? */
-  if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
+  try
   {
-    /* Parse the record and set address to the actual CCX address */
-    std::vector<std::string> records;
-    if (!Common::fetch_dns_txt(address.toStdString(), records))
+    /* Is it a Conceal ID? */
+    if (CurrencyAdapter::instance().isValidOpenAliasAddress(address))
     {
-      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID. Please try again later."), QtCriticalMsg));
-    }
-    std::string realAddress;
-    for (const auto &record : records)
-    {
-      if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress))
+      /* Parse the record and set address to the actual CCX address */
+      std::vector<std::string> records;
+      if (!Common::fetch_dns_txt(address.toStdString(), records))
       {
-        address = QString::fromStdString(realAddress);
-        m_ui->m_addressMessageEdit->setText(address);
+        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
+      }
+      std::string realAddress;
+      for (const auto &record : records)
+      {
+        if (CurrencyAdapter::instance().processServerAliasResponse(record, realAddress))
+        {
+          address = QString::fromStdString(realAddress);
+          m_ui->m_addressMessageEdit->setText(address);
+        }
       }
     }
   }
+
+	catch (std::exception&) {
+		QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+    return;
+	}
 
   /* Start building the transaction */
   walletTransfer.address = address.toStdString();
@@ -1812,6 +1819,22 @@ void OverviewFrame::scrollToTransaction(const QModelIndex &_index)
   m_ui->m_transactionsView->scrollTo(index);
   m_ui->m_transactionsView->setFocus();
   m_ui->m_transactionsView->setCurrentIndex(index);
+}
+
+/* Export the transaction history to a CSV file */
+void OverviewFrame::exportCSV()
+{
+  QString file = QFileDialog::getSaveFileName(&MainWindow::instance(), tr("Select CSV file"), QDir::homePath(), "CSV (*.csv)");
+  if (!file.isEmpty())
+  {
+    QByteArray csv = TransactionsModel::instance().toCsv();
+    QFile f(file);
+    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    {
+      f.write(csv);
+      f.close();
+    }
+  }
 }
 
 } // namespace WalletGui
