@@ -513,7 +513,7 @@ void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _
   m_isSynchronized = false;
 
   qreal syncedPercentage = (static_cast<qreal>(_current)) / _total;
-  Q_EMIT walletStateChangedSignal(QString("%1 %3/%4 (%2%)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2)).arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0)));
+  Q_EMIT walletStateChangedSignal(QString("%1 %2% (%3/%4)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2)).arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0)));
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
 
