@@ -194,7 +194,7 @@ bool WalletAdapter::importLegacyWallet(const QString &_password) {
       Settings::instance().setEncrypted(true);
       Q_EMIT openWalletWithPasswordSignal(!_password.isEmpty());
     }
-  } catch (std::runtime_error& _err) {
+  } catch (std::runtime_error&) {
     closeFile();
   }
 

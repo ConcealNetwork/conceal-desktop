@@ -190,7 +190,7 @@ public:
         callback(make_error_code(CryptoNote::error::NOT_INITIALIZED));
         return;
       }
-    } catch (std::runtime_error& _err) {
+    } catch (std::runtime_error&) {
       callback(make_error_code(CryptoNote::error::NOT_INITIALIZED));
       return;
     }

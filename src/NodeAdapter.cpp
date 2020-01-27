@@ -79,7 +79,7 @@ public:
         QCoreApplication::processEvents();
       });
     }
-    catch (std::exception &err)
+    catch (std::exception)
     {
       Q_EMIT nodeInitFailedSignal(CryptoNote::error::INTERNAL_WALLET_ERROR);
       QCoreApplication::processEvents();
@@ -395,7 +395,7 @@ CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
 
   options.insert(std::make_pair("hide-my-port", boost::program_options::variable_value(hideMyPort, false)));
   options.insert(std::make_pair("data-dir", boost::program_options::variable_value(dataDir, false)));
-  int size = options.size();
+  int size = (int)options.size();
   config.init(options);
   config.setTestnet(Settings::instance().isTestnet());
   return config;
