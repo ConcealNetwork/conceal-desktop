@@ -33,7 +33,7 @@
 
 using namespace WalletGui;
 
-const QRegularExpression LOG_SPLASH_REG_EXP("(?<=\] ).*");
+const QRegularExpression LOG_SPLASH_REG_EXP("(?<=] ).*");
 
 QSplashScreen* splash(nullptr);
 
