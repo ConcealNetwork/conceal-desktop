@@ -160,7 +160,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DisclaimerDialog.h \
            src/gui/LinksDialog.h \           
            src/gui/AddressBookDialog.h \
-           src/gui/AddressBookFrame.h \
            src/gui/AddressBookModel.h \
            src/gui/AnimatedLabel.h \
            src/gui/ChangePasswordDialog.h \
@@ -615,7 +614,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DisclaimerDialog.cpp \          
            src/gui/LinksDialog.cpp \              
            src/gui/AddressBookDialog.cpp \
-           src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
            src/gui/BankingFrame2.cpp \               
@@ -1049,7 +1047,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/linksdialog.ui \
             src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
-            src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \

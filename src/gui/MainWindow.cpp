@@ -164,7 +164,6 @@ void MainWindow::initUi()
 
   m_ui->m_overviewFrame->hide();
   m_ui->m_receiveFrame->hide();
-  m_ui->m_addressBookFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_receiveAction);
@@ -752,7 +751,6 @@ void MainWindow::walletClosed()
 
   /* frames */
   m_ui->m_overviewFrame->hide();
-  m_ui->m_addressBookFrame->hide();
   m_ui->m_welcomeFrame->show();
 
   /* labels */
