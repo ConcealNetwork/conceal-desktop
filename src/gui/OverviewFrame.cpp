@@ -643,15 +643,15 @@ void OverviewFrame::newTransferClicked()
 
   if (walletSynced == true)
   {
-
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
     if (!checkWalletPassword())
     {
       return;
     }
-
+    m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
     m_ui->sendBox->raise();
-
     OverviewFrame::fromPay = true;
   }
   else
@@ -671,10 +671,13 @@ void OverviewFrame::newMessageClicked()
 
   if (walletSynced == true)
   {
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
     if (!checkWalletPassword())
     {
       return;
     }
+    m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
     m_ui->newMessageBox->raise();
 
@@ -1738,6 +1741,9 @@ bool OverviewFrame::checkWalletPassword()
     return true;
 
   PasswordDialog dlg(false, this);
+  dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);  
   if (dlg.exec() == QDialog::Accepted)
   {
     QString password = dlg.getPassword();

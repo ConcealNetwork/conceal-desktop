@@ -5622,13 +5622,13 @@ font-weight: normal;</string>
        <rect>
         <x>409</x>
         <y>45</y>
-        <width>245</width>
+        <width>400</width>
         <height>25</height>
        </rect>
       </property>
       <property name="maximumSize">
        <size>
-        <width>245</width>
+        <width>400</width>
         <height>40</height>
        </size>
       </property>

@@ -125,7 +125,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::backupFileSignal, this, &MainWindow::backupWallet);  
+  connect(m_ui->m_overviewFrame, &OverviewFrame::backupFileSignal, this, &MainWindow::backupWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);
@@ -144,7 +144,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);
 
-
   connect(m_ui->m_overviewFrame, &OverviewFrame::settingsSignal, this, &MainWindow::settingsTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
 }
@@ -154,7 +153,7 @@ void MainWindow::initUi()
   setRemoteWindowTitle();
 
 #ifdef Q_OS_WIN32
-      if (QSystemTrayIcon::isSystemTrayAvailable())
+  if (QSystemTrayIcon::isSystemTrayAvailable())
   {
     m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
@@ -432,7 +431,7 @@ void MainWindow::createWallet()
 
 void MainWindow::openWallet()
 {
-  m_ui->m_welcomeFrame->hide();  
+  m_ui->m_welcomeFrame->hide();
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
 
@@ -481,9 +480,9 @@ void MainWindow::closeWallet()
 void MainWindow::importKey()
 {
   ImportKeyDialog dlg(this);
-  dlg.setModal(true);  
+  dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -593,9 +592,9 @@ void MainWindow::encryptWallet()
     do
     {
       ChangePasswordDialog dlg(this);
-        dlg.setModal(true);
-        dlg.setWindowFlags(Qt::FramelessWindowHint);
-          dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+      dlg.setModal(true);
+      dlg.setWindowFlags(Qt::FramelessWindowHint);
+      dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
       if (dlg.exec() == QDialog::Rejected)
       {
         return;
@@ -609,9 +608,9 @@ void MainWindow::encryptWallet()
   else
   {
     NewPasswordDialog dlg(this);
-      dlg.setModal(true);
-      dlg.setWindowFlags(Qt::FramelessWindowHint);
-        dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+    dlg.setModal(true);
+    dlg.setWindowFlags(Qt::FramelessWindowHint);
+    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
     bool error = false;
     do
     {
@@ -655,17 +654,14 @@ void MainWindow::setCloseToTray(bool _on)
 
 void MainWindow::about()
 {
-
 }
 
 void MainWindow::disclaimer()
 {
-
 }
 
 void MainWindow::links()
 {
-
 }
 
 void MainWindow::showMessage(const QString &_text, QtMsgType _type)
@@ -778,7 +774,6 @@ void MainWindow::checkTrackingMode()
 
 void MainWindow::replyTo(const QModelIndex &_index)
 {
-
 }
 
 void MainWindow::payTo(const QModelIndex &_index)
@@ -794,7 +789,7 @@ void MainWindow::payTo(const QModelIndex &_index)
   m_ui->m_overviewFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
   m_ui->m_overviewFrame->show();
   m_ui->m_overviewAction->trigger();
-  m_ui->m_overviewFrame->raise();    
+  m_ui->m_overviewFrame->raise();
 }
 
 void MainWindow::sendTo()
@@ -856,9 +851,9 @@ void MainWindow::importsecretkeys()
 {
 
   importSecretKeys dlg(this);
-    dlg.setModal(true);
+  dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -937,7 +932,7 @@ void MainWindow::importSeed()
   ImportSeed dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
 
@@ -1000,9 +995,9 @@ void MainWindow::importSeed()
 void MainWindow::importTracking()
 {
   ImportTracking dlg(this);
-  dlg.setModal(true);  
-  dlg.setWindowFlags(Qt::FramelessWindowHint);  
-    dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  dlg.setModal(true);
+  dlg.setWindowFlags(Qt::FramelessWindowHint);
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString keyString = dlg.getKeyString().trimmed();
@@ -1087,7 +1082,6 @@ void MainWindow::showQRCode(const QString &_address)
   {
   }
 }
-
 
 #ifdef Q_OS_WIN
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
