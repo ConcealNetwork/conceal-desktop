@@ -227,7 +227,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel2->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
-  m_ui->m_tickerLabel5->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
   m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
@@ -504,8 +503,6 @@ void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
   quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
   quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
   OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-  m_ui->m_lockedInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance));
-  m_ui->m_totalInvestmentLabel->setText(CurrencyAdapter::instance().formatAmount(pendingInvestmentBalance + actualInvestmentBalance));
   m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
   updatePortfolio();
 }
@@ -557,24 +554,6 @@ void OverviewFrame::updatePortfolio()
     total = ccxusd * (float)OverviewFrame::totalBalance;
   }
   m_ui->m_totalPortfolioLabelUSD->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX | " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
-}
-
-/* Send funds menu button clicked */
-void OverviewFrame::sendClicked()
-{
-  if (Settings::instance().isTrackingMode())
-  {
-    QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
-    return;
-  }
-  if (walletSynced == true)
-  {
-    Q_EMIT sendSignal();
-  }
-  else
-  {
-    syncInProgressMessage();
-  }
 }
 
 /* Banking menu button clicked */
@@ -664,6 +643,12 @@ void OverviewFrame::newTransferClicked()
 
   if (walletSynced == true)
   {
+
+    if (!checkWalletPassword())
+    {
+      return;
+    }
+
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
     m_ui->sendBox->raise();
 
@@ -686,6 +671,10 @@ void OverviewFrame::newMessageClicked()
 
   if (walletSynced == true)
   {
+    if (!checkWalletPassword())
+    {
+      return;
+    }
     m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
     m_ui->newMessageBox->raise();
 
@@ -819,12 +808,6 @@ void OverviewFrame::sendFundsClicked()
     return;
   }
 
-  /* Initiate a password prompt before we allow anyone to send funds */
-  if (!checkWalletPassword())
-  {
-    return;
-  }
-
   /* Prepare the transfers */
   QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
   CryptoNote::WalletLegacyTransfer walletTransfer;
@@ -892,10 +875,11 @@ void OverviewFrame::sendFundsClicked()
     }
   }
 
-	catch (std::exception&) {
-		QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+  catch (std::exception &)
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
     return;
-	}
+  }
 
   /* Check address validity */
   if (!CurrencyAdapter::instance().validateAddress(address))
@@ -1095,11 +1079,6 @@ void OverviewFrame::sendMessageClicked()
     return;
   }
 
-  if (!checkWalletPassword())
-  {
-    return;
-  }
-
   QVector<CryptoNote::WalletLegacyTransfer> transfers;
   QVector<CryptoNote::WalletLegacyTransfer> feeTransfer;
   CryptoNote::WalletLegacyTransfer walletTransfer;
@@ -1131,10 +1110,11 @@ void OverviewFrame::sendMessageClicked()
     }
   }
 
-	catch (std::exception&) {
-		QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
+  catch (std::exception &)
+  {
+    QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
     return;
-	}
+  }
 
   /* Start building the transaction */
   walletTransfer.address = address.toStdString();

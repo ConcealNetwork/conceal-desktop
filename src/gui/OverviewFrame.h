@@ -104,7 +104,6 @@ private:
   void delay();
   bool checkWalletPassword();
 
-  Q_SLOT void sendClicked();
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
   Q_SLOT void transactionHistoryClicked();
