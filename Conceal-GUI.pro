@@ -1053,7 +1053,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/exitwidget.ui \
             src/gui/ui/importkeydialog.ui \
             src/gui/ui/mainwindow.ui \
-            src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
             src/gui/ui/welcomeframe.ui \            
@@ -1070,7 +1069,6 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
-            src/gui/ui/transactionconfirmation.ui \    
             src/gui/ui/importseed.ui \
             src/gui/ui/importtracking.ui \            
             src/gui/ui/nodesettings.ui \
