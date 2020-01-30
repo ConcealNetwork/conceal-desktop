@@ -198,7 +198,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
   m_ui->m_transactionsView->setFont(font);
-  m_ui->m_encryptWalletButton->setVisible(false);
   m_ui->m_transactionsDescription->setFont(font);
 
   /* Connect signals */
@@ -359,11 +358,11 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
   /* Show/hide the encrypt wallet button */
   if (!Settings::instance().isEncrypted())
   {
-    m_ui->m_encryptWalletButton->setVisible(true);
+    m_ui->m_encryptWalletButton->setText("ENCRYPT WALLET");
   }
   else
   {
-    m_ui->m_encryptWalletButton->setVisible(false);
+    m_ui->m_encryptWalletButton->setText("CHANGE PASSWORD");
   }
 }
 
@@ -441,12 +440,10 @@ void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
     if (unlockedFunds > 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-      m_ui->m_overviewWithdrawButton->show();
     }
     else
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-      m_ui->m_overviewWithdrawButton->hide();
     }
   }
 }
@@ -469,12 +466,10 @@ void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
     if (unlockedFunds > 0)
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-      m_ui->m_overviewWithdrawButton->show();
     }
     else
     {
       m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins; font-size: 14px; border: none;");
-      m_ui->m_overviewWithdrawButton->hide();
     }
   }
 }
@@ -607,8 +602,6 @@ void OverviewFrame::settingsClicked()
   m_ui->darkness->hide();
   m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
   m_ui->settingsBox->raise();
-  if (!Settings::instance().isEncrypted())
-    m_ui->m_encryptWalletButton->setVisible(true);
 }
 
 void OverviewFrame::qrCodeClicked()
@@ -1214,12 +1207,6 @@ void OverviewFrame::newDepositClicked()
   }
 
   uint32_t blocksPerDeposit = 21900;
-
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-  {
-    blocksPerDeposit = 5040;
-  }
-
   quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
 
   /* Warn the user */
@@ -1272,12 +1259,6 @@ void OverviewFrame::showDepositDetails(const QModelIndex &_index)
 void OverviewFrame::depositParamsChanged()
 {
   uint32_t blocksPerDeposit = 21900;
-
-  if (NodeAdapter::instance().getLastKnownBlockHeight() < 413400)
-  {
-    blocksPerDeposit = 5040;
-  }
-
   quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
   quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
   quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
@@ -1740,6 +1721,9 @@ bool OverviewFrame::checkWalletPassword()
   if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
     return true;
 
+  m_ui->darkness->show();
+  m_ui->darkness->raise();
+
   PasswordDialog dlg(false, this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -1750,13 +1734,16 @@ bool OverviewFrame::checkWalletPassword()
     if (!WalletAdapter::instance().checkWalletPassword(password))
     {
       QMessageBox::critical(nullptr, tr("Incorrect password"), tr("Wrong password."), QMessageBox::Ok);
+      m_ui->darkness->hide();
       return false;
     }
     else
     {
+      m_ui->darkness->hide();
       return true;
     }
   }
+  m_ui->darkness->hide();
   return false;
 }
 
@@ -1787,9 +1774,6 @@ void OverviewFrame::unlockWallet()
 /* Load the wallet encryption dialog */
 void OverviewFrame::encryptWalletClicked()
 {
-  if (Settings::instance().isEncrypted())
-    return;
-
   m_ui->darkness->show();
   m_ui->darkness->raise();
   Q_EMIT encryptWalletSignal();

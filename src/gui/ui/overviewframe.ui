@@ -6130,14 +6130,14 @@ text-align: left;</string>
      <zorder>walletBox</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
      <zorder>bankingBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>m_copyAddressButton_3</zorder>
      <zorder>sendBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>messageBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>newMessageBox</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7289,8 +7289,8 @@ text-align: left;</string>
   <slot>exportCSV()</slot>
  </slots>
  <buttongroups>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
