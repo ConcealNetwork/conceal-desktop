@@ -102,8 +102,9 @@ int main(int argc, char* argv[]) {
     splash->show();
   }
 
+  splash->setEnabled(false);
   splash->showMessage(QObject::tr("LOADING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
-
+  splash->raise();
   LogFileWatcher* logWatcher(nullptr);
   if (logWatcher == nullptr) {
     logWatcher = new LogFileWatcher(Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
