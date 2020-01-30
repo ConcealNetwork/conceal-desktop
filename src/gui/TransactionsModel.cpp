@@ -266,7 +266,7 @@ QVariant TransactionsModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_AMOUNT: {
     qint64 amount = _index.data(ROLE_AMOUNT).value<qint64>();
-    QString amountStr = CurrencyAdapter::instance().formatAmount(qAbs(amount));
+    QString amountStr = CurrencyAdapter::instance().formatAmountThreeDecimals(qAbs(amount));
     return (amount < 0 ? "-" + amountStr : amountStr);
   }
 
