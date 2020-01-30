@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
   QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
 
   if (splash == nullptr) {
-    splash = new QSplashScreen(QPixmap(":images/splash"), Qt::X11BypassWindowManagerHint);
+    splash = new QSplashScreen(QPixmap(":images/splash"),Qt::WindowStaysOnTopHint, Qt::X11BypassWindowManagerHint);
   }
 
   if (!splash->isVisible()) {
