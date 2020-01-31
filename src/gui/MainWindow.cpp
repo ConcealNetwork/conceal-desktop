@@ -41,7 +41,6 @@
 #include "importsecretkeys.h"
 #include "importseed.h"
 #include "importtracking.h"
-#include "transactionconfirmation.h"
 #include "OptimizationManager.h"
 #include "MainWindow.h"
 #include "MessagesModel.h"
@@ -135,7 +134,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::optimizeSignal, this, &MainWindow::optimizeClicked);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
@@ -332,44 +330,6 @@ void MainWindow::delay()
   QTime dieTime = QTime::currentTime().addSecs(2);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-}
-
-void MainWindow::optimizeClicked()
-{
-  transactionconfirmation dlg(this);
-
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
-
-  quint64 numUnlockedOutputs;
-  numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-
-  if (numUnlockedOutputs >= 100)
-  {
-    dlg.setMessage("Optimization recommended [" + QString::number(numUnlockedOutputs) + "]");
-  }
-  else
-  {
-    dlg.setMessage("Optimization not required [" + QString::number(numUnlockedOutputs) + "]");
-  }
-
-  if (dlg.exec() == QDialog::Accepted)
-  {
-
-    WalletAdapter::instance().optimizeWallet();
-    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
-    {
-      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-      if (numUnlockedOutputs == 0)
-        break;
-      WalletAdapter::instance().optimizeWallet();
-      MainWindow::delay();
-    }
-
-    m_ui->m_overviewAction->trigger();
-    m_ui->m_overviewFrame->show();
-  }
 }
 
 void MainWindow::slotLanguageChanged(QAction *action)

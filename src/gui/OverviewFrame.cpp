@@ -40,7 +40,6 @@
 #include "Settings.h"
 #include "SortedMessagesModel.h"
 #include "SortedTransactionsModel.h"
-#include "transactionconfirmation.h"
 #include "TransactionDetailsDialog.h"
 #include "TransactionFrame.h"
 #include "TransactionsListModel.h"

@@ -565,7 +565,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/importtracking.h \           
            src/gui/NodeSettings.h \
            src/gui/LanguageSettings.h \           
-           src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
 SOURCES += libqrencode/bitstream.c \
@@ -1039,7 +1038,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/importtracking.cpp \           
            src/gui/NodeSettings.cpp \
            src/gui/LanguageSettings.cpp \           
-           src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
