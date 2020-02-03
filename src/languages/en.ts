@@ -495,44 +495,44 @@ Please wait...</source>
     </message>
 </context>
 <context>
-    <name>ImportKeyDialog</name>
+    <name>ImportGUIKeyDialog</name>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="14"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="14"/>
         <source>Import GUI key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="65"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="65"/>
         <source>Import GUI Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="89"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="89"/>
         <source>GUI Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="138"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="138"/>
         <source>Wallet Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="186"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="186"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="215"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="215"/>
         <source>IMPORT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="244"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="244"/>
         <source>CANCEL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importkeydialog.ui" line="265"/>
+        <location filename="gui/ui/importguikeydialog.ui" line="265"/>
         <source>Recreate your wallet with the GUI key</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2216,14 +2216,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>WalletGui::ImportKeyDialog</name>
+    <name>WalletGui::ImportGUIKeyDialog</name>
     <message>
-        <location filename="gui/ImportKeyDialog.cpp" line="32"/>
+        <location filename="gui/ImportGUIKeyDialog.cpp" line="32"/>
         <source>Wallet file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ImportKeyDialog.cpp" line="38"/>
+        <location filename="gui/ImportGUIKeyDialog.cpp" line="38"/>
         <source>Wallets (*.wallet)</source>
         <translation type="unfinished"></translation>
     </message>

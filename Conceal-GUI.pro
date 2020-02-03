@@ -169,7 +169,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
-           src/gui/ImportKeyDialog.h \      
+           src/gui/ImportGUIKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageAddressFrame.h \
@@ -622,7 +622,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DepositModel.cpp \
            src/gui/DepositsFrame.cpp \
            src/gui/ExitWidget.cpp \
-           src/gui/ImportKeyDialog.cpp \
+           src/gui/ImportGUIKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageAddressFrame.cpp \
@@ -1049,7 +1049,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \
             src/gui/ui/exitwidget.ui \
-            src/gui/ui/importkeydialog.ui \
+            src/gui/ui/importguikeydialog.ui \
             src/gui/ui/mainwindow.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \

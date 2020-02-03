@@ -9,22 +9,22 @@
 #include <QDialog>
 
 namespace Ui {
-  class ImportKeyDialog;
+  class ImportGUIKeyDialog;
 }
 
 namespace WalletGui {
 
-  class ImportKeyDialog : public QDialog {
+  class ImportGUIKeyDialog : public QDialog {
     Q_OBJECT
 
     public:
-      explicit ImportKeyDialog(QWidget* _parent);
-      ~ImportKeyDialog();
+      explicit ImportGUIKeyDialog(QWidget* _parent);
+      ~ImportGUIKeyDialog();
       QString getKeyString() const;
       QString getFilePath() const;
 
     private:
-      QScopedPointer<Ui::ImportKeyDialog> m_ui;
+      QScopedPointer<Ui::ImportGUIKeyDialog> m_ui;
       Q_SLOT void selectPathClicked();
   };
 }

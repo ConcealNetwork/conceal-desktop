@@ -37,7 +37,7 @@
 #include "ChangePasswordDialog.h"
 #include "CurrencyAdapter.h"
 #include "ExitWidget.h"
-#include "ImportKeyDialog.h"
+#include "ImportGUIKeyDialog.h"
 #include "importsecretkeys.h"
 #include "importseed.h"
 #include "importtracking.h"
@@ -439,7 +439,7 @@ void MainWindow::closeWallet()
 
 void MainWindow::importKey()
 {
-  ImportKeyDialog dlg(this);
+  ImportGUIKeyDialog dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);

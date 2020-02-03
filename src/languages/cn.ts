@@ -115,44 +115,44 @@ Please wait...</source>
     </message>
 </context>
 <context>
-    <name>ImportKeyDialog</name>
+    <name>ImportGUIKeyDialog</name>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="14"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="14"/>
         <source>Import GUI key</source>
         <translation>导入 GUI KEY</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="65"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="65"/>
         <source>Import GUI Key</source>
         <translation>导入 GUI KEY</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="89"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="89"/>
         <source>GUI Key</source>
         <translation>GUI KEY</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="135"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="135"/>
         <source>Wallet Path</source>
         <translation>钱包路径</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="180"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="180"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="209"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="209"/>
         <source>IMPORT</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="238"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="238"/>
         <source>CANCEL</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="259"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="259"/>
         <source>Recreate your wallet with the GUI key</source>
         <translation>根据GUI KEY重新创建你的钱包</translation>
     </message>
@@ -1781,14 +1781,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>WalletGui::ImportKeyDialog</name>
+    <name>WalletGui::ImportGUIKeyDialog</name>
     <message>
-        <location filename="src/gui/ImportKeyDialog.cpp" line="32"/>
+        <location filename="src/gui/ImportGUIKeyDialog.cpp" line="32"/>
         <source>Wallet file</source>
         <translation>钱包文件</translation>
     </message>
     <message>
-        <location filename="src/gui/ImportKeyDialog.cpp" line="38"/>
+        <location filename="src/gui/ImportGUIKeyDialog.cpp" line="38"/>
         <source>Wallets (*.wallet)</source>
         <translation>钱包 (*.wallet)</translation>
     </message>
