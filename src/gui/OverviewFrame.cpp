@@ -635,13 +635,6 @@ void OverviewFrame::newTransferClicked()
 
   if (walletSynced == true)
   {
-    m_ui->darkness->show();
-    m_ui->darkness->raise();
-    if (!checkWalletPassword())
-    {
-      return;
-    }
-    m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
     m_ui->sendBox->raise();
     OverviewFrame::fromPay = true;
@@ -654,7 +647,6 @@ void OverviewFrame::newTransferClicked()
 
 void OverviewFrame::newMessageClicked()
 {
-
   if (Settings::instance().isTrackingMode())
   {
     QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
@@ -663,16 +655,8 @@ void OverviewFrame::newMessageClicked()
 
   if (walletSynced == true)
   {
-    m_ui->darkness->show();
-    m_ui->darkness->raise();
-    if (!checkWalletPassword())
-    {
-      return;
-    }
-    m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
     m_ui->newMessageBox->raise();
-
     OverviewFrame::fromPay = false;
   }
   else
@@ -796,6 +780,12 @@ void OverviewFrame::clearAllClicked()
 
 void OverviewFrame::sendFundsClicked()
 {
+  if (!checkWalletPassword())
+  {
+    return;
+  }
+  delay();
+
   /* Check if its a tracking wallet */
   if (Settings::instance().isTrackingMode())
   {
@@ -1062,6 +1052,13 @@ void OverviewFrame::messageTextChanged()
 
 void OverviewFrame::sendMessageClicked()
 {
+
+  if (!checkWalletPassword())
+  {
+    return;
+  }
+  delay();
+
   /* Exit if the wallet is not open */
   if (!WalletAdapter::instance().isOpen())
   {
@@ -1494,7 +1491,7 @@ void OverviewFrame::rescanClicked()
 
 void OverviewFrame::delay()
 {
-  QTime dieTime = QTime::currentTime().addSecs(2);
+  QTime dieTime = QTime::currentTime().addSecs(1);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
