@@ -154,9 +154,16 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   contextMenu->addAction(QString(tr("&Edit")), this, SLOT(editClicked()));
   contextMenu->addAction(QString(tr("&Delete")), this, SLOT(deleteClicked()));
 
+  /* Don't show the LOCK button if the wallet is not encrypted */
   if (!Settings::instance().isEncrypted())
+  {
     m_ui->m_lockWalletButton->hide();
-
+  }
+  else 
+  {
+    m_ui->m_lockWalletButton->show();    
+  }
+  
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -336,6 +343,11 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
     m_ui->m_optimizationMessage->setText("(Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs])");
   }
 
+  if (!Settings::instance().isEncrypted())
+  {
+    m_ui->m_lockWalletButton->hide();
+  }
+
   updatePortfolio();
 }
 
@@ -363,6 +375,17 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
   {
     m_ui->m_encryptWalletButton->setText("CHANGE PASSWORD");
   }
+
+  /* Don't show the LOCK button if the wallet is not encrypted */
+  if (!Settings::instance().isEncrypted())
+  {
+    m_ui->m_lockWalletButton->hide();
+  }
+  else 
+  {
+    m_ui->m_lockWalletButton->show();    
+  }
+
 }
 
 /* Show the name of the opened wallet */
@@ -1723,7 +1746,7 @@ bool OverviewFrame::checkWalletPassword()
   PasswordDialog dlg(false, this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);  
+  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
     QString password = dlg.getPassword();
@@ -1746,6 +1769,11 @@ bool OverviewFrame::checkWalletPassword()
 /* Lock the wallet after prompting for confirmation */
 void OverviewFrame::lockWallet()
 {
+
+  /* Return if the wallet is not encrypted */
+  if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
+    return true;
+
   if (QMessageBox::warning(&MainWindow::instance(), tr("Lock Wallet"),
                            tr("Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it."),
                            QMessageBox::Cancel,
