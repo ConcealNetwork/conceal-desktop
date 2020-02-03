@@ -1067,7 +1067,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
-            src/gui/ui/importseed.ui \
+            src/gui/ui/importseeddialog.ui \
             src/gui/ui/importtracking.ui \            
             src/gui/ui/nodesettings.ui \
             src/gui/ui/languagesettings.ui \            
