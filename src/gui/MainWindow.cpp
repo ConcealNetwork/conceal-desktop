@@ -39,7 +39,7 @@
 #include "ExitWidget.h"
 #include "ImportGUIKeyDialog.h"
 #include "importsecretkeys.h"
-#include "importseed.h"
+#include "ImportSeedDialog.h"
 #include "importtracking.h"
 #include "OptimizationManager.h"
 #include "MainWindow.h"

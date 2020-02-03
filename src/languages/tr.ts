@@ -160,42 +160,42 @@ Lütfen bekle...</translation>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="14"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
         <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="53"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="53"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation>25 kelimelik mnemonic seed ile cüzdanınızı yeniden oluşturun</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="77"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="77"/>
         <source>Import Mnemonic Seed</source>
         <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="102"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="102"/>
         <source>Mnemonic Seed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="152"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="152"/>
         <source>Wallet Path</source>
         <translation>Cüzdan Yolu</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="208"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="208"/>
         <source>IMPORT</source>
         <translation>İÇE AKTAR</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="236"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="236"/>
         <source>CANCEL</source>
         <translation>İPTAL</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="258"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="258"/>
         <source>...</source>
         <translation></translation>
     </message>
@@ -1837,12 +1837,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>WalletGui::ImportSeed</name>
     <message>
-        <location filename="src/gui/importseed.cpp" line="31"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="31"/>
         <source>Wallet file</source>
         <translation>Cüzdan dosyası</translation>
     </message>
     <message>
-        <location filename="src/gui/importseed.cpp" line="37"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="37"/>
         <source>Wallets (*.wallet)</source>
         <translation>cüzdan (*.wallet)</translation>
     </message>

@@ -160,42 +160,42 @@ Please wait...</source>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="14"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
         <translation>导入::助记词种子</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="53"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="53"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation>采用25个助记词种子重新创建你的钱包</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="77"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="77"/>
         <source>Import Mnemonic Seed</source>
         <translation>导入助记词种子</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="102"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="102"/>
         <source>Mnemonic Seed</source>
         <translation>助记词种子</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="152"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="152"/>
         <source>Wallet Path</source>
         <translation>钱包路径</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="208"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="208"/>
         <source>IMPORT</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="236"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="236"/>
         <source>CANCEL</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="258"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="258"/>
         <source>...</source>
         <translation></translation>
     </message>
@@ -1796,12 +1796,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>WalletGui::ImportSeed</name>
     <message>
-        <location filename="src/gui/importseed.cpp" line="31"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="31"/>
         <source>Wallet file</source>
         <translation>钱包文件</translation>
     </message>
     <message>
-        <location filename="src/gui/importseed.cpp" line="37"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="37"/>
         <source>Wallets (*.wallet)</source>
         <translation>钱包 (*.wallet)</translation>
     </message>

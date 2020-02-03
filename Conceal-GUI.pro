@@ -561,7 +561,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
-           src/gui/importseed.h \
+           src/gui/ImportSeedDialog.h \
            src/gui/importtracking.h \           
            src/gui/NodeSettings.h \
            src/gui/LanguageSettings.h \           
@@ -1034,7 +1034,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
-           src/gui/importseed.cpp \
+           src/gui/ImportSeedDialog.cpp \
            src/gui/importtracking.cpp \           
            src/gui/NodeSettings.cpp \
            src/gui/LanguageSettings.cpp \           

@@ -540,42 +540,42 @@ Please wait...</source>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="gui/ui/importseed.ui" line="14"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="52"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="52"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="75"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="75"/>
         <source>Import Mnemonic Seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="99"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="99"/>
         <source>Mnemonic Seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="148"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="148"/>
         <source>Wallet Path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="206"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="206"/>
         <source>IMPORT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="235"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="235"/>
         <source>CANCEL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/ui/importseed.ui" line="261"/>
+        <location filename="gui/ui/ImportSeedDialog.ui" line="261"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2231,12 +2231,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>WalletGui::ImportSeed</name>
     <message>
-        <location filename="gui/importseed.cpp" line="31"/>
+        <location filename="gui/ImportSeedDialog.cpp" line="31"/>
         <source>Wallet file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gui/importseed.cpp" line="37"/>
+        <location filename="gui/ImportSeedDialog.cpp" line="37"/>
         <source>Wallets (*.wallet)</source>
         <translation type="unfinished"></translation>
     </message>

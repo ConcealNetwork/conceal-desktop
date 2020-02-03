@@ -7,8 +7,8 @@
 #include <QApplication>
 #include <QFileDialog>
 
-#include "importseed.h"
-#include "ui_importseed.h"
+#include "ImportSeedDialog.h"
+#include "ui_importseeddialog.h"
 
 namespace WalletGui {
 
