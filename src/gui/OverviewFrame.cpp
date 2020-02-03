@@ -1772,7 +1772,7 @@ void OverviewFrame::lockWallet()
 
   /* Return if the wallet is not encrypted */
   if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
-    return true;
+    return;
 
   if (QMessageBox::warning(&MainWindow::instance(), tr("Lock Wallet"),
                            tr("Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it."),
