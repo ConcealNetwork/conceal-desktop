@@ -2400,7 +2400,7 @@ Emin misiniz?</translation>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="366"/>
-        <source>Sending</source>
+        <source>SENDING TRANSACTION</source>
         <translation>Gönderiliyor</translation>
     </message>
     <message>
@@ -2410,7 +2410,7 @@ Emin misiniz?</translation>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="408"/>
-        <source>Sending messages</source>
+        <source>SENDING MESSAGE</source>
         <translation>Mesajlar gönderiliyor</translation>
     </message>
     <message>

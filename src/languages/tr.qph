@@ -2005,7 +2005,7 @@ Are you sure?</source>
     <target>Veriler kaydediliyor</target>
 </phrase>
 <phrase>
-    <source>Sending</source>
+    <source>SENDING TRANSACTION</source>
     <target>Gönderiliyor</target>
 </phrase>
 <phrase>
@@ -2013,7 +2013,7 @@ Are you sure?</source>
     <target>Optimize ediliyor</target>
 </phrase>
 <phrase>
-    <source>Sending messages</source>
+    <source>SENDING MESSAGE</source>
     <target>Mesajlar gönderiliyor</target>
 </phrase>
 <phrase>

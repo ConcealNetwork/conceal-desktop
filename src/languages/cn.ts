@@ -2321,7 +2321,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="366"/>
-        <source>Sending</source>
+        <source>SENDING TRANSACTION</source>
         <translation>发送中</translation>
     </message>
     <message>
@@ -2331,7 +2331,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="408"/>
-        <source>Sending messages</source>
+        <source>SENDING MESSAGE</source>
         <translation>正在发送消息</translation>
     </message>
     <message>

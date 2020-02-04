@@ -2398,7 +2398,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="366"/>
-        <source>Sending</source>
+        <source>SENDING TRANSACTION</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2408,7 +2408,7 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="408"/>
-        <source>Sending messages</source>
+        <source>SENDING MESSAGE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
