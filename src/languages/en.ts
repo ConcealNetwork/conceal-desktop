@@ -1399,7 +1399,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="main.cpp" line="88"/>
-        <source>LOADING WALLET</source>
+        <source>STARTING WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

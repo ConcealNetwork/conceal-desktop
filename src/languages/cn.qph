@@ -1039,7 +1039,7 @@ p, li { white-space: pre-wrap; }
     <target>失败</target>
 </phrase>
 <phrase>
-    <source>LOADING WALLET</source>
+    <source>STARTING WALLET</source>
     <target>正在加载钱包</target>
 </phrase>
 <phrase>

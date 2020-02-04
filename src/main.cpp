@@ -103,7 +103,7 @@ int main(int argc, char* argv[]) {
   }
 
   splash->setEnabled(false);
-  splash->showMessage(QObject::tr("LOADING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
+  splash->showMessage(QObject::tr("STARTING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
   splash->raise();
   LogFileWatcher* logWatcher(nullptr);
   if (logWatcher == nullptr) {

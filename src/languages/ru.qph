@@ -1038,7 +1038,7 @@ p, li { white-space: pre-wrap; }
     <target>Ошибка</target>
 </phrase>
 <phrase>
-    <source>LOADING WALLET</source>
+    <source>STARTING WALLET</source>
     <target>ЗАГРУЗКА КОШЕЛЬКА</target>
 </phrase>
 <phrase>

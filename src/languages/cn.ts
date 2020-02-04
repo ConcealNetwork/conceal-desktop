@@ -1249,7 +1249,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="src/main.cpp" line="105"/>
-        <source>LOADING WALLET</source>
+        <source>STARTING WALLET</source>
         <translation>正在加载钱包</translation>
     </message>
     <message>
