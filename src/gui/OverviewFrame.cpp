@@ -308,6 +308,28 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
     m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
   }
 
+#ifdef Q_OS_WIN
+  /* Set minimize to tray button status */
+  if (!Settings::instance().isMinimizeToTrayEnabled())
+  {
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+  }
+  else
+  {
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
+  }
+
+  /* Set close to tray button status */
+  if (!Settings::instance().isCloseToTrayEnabled())
+  {
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
+  }
+  else
+  {
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
+  }
+#endif
+
   dashboardClicked();
   depositParamsChanged();
   reset();
@@ -336,11 +358,11 @@ void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
   numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
   if (numUnlockedOutputs >= 100)
   {
-    m_ui->m_optimizationMessage->setText("(Optimization recommended [" + QString::number(numUnlockedOutputs) + " outputs])");
+    m_ui->m_optimizationMessage->setText("Recommended [" + QString::number(numUnlockedOutputs) + "]");
   }
   else
   {
-    m_ui->m_optimizationMessage->setText("(Optimization not required [" + QString::number(numUnlockedOutputs) + " outputs])");
+    m_ui->m_optimizationMessage->setText("Not required [" + QString::number(numUnlockedOutputs) + "]");
   }
 
   if (!Settings::instance().isEncrypted())
@@ -803,12 +825,6 @@ void OverviewFrame::clearAllClicked()
 
 void OverviewFrame::sendFundsClicked()
 {
-  if (!checkWalletPassword())
-  {
-    return;
-  }
-  delay();
-
   /* Check if its a tracking wallet */
   if (Settings::instance().isTrackingMode())
   {
@@ -952,6 +968,12 @@ void OverviewFrame::sendFundsClicked()
     QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
     return;
   }
+
+  if (!checkWalletPassword())
+  {
+    return;
+  }
+  delay();
 
   /* If the wallet is open we proceed */
   if (WalletAdapter::instance().isOpen())
@@ -1830,6 +1852,39 @@ void OverviewFrame::exportCSV()
     }
   }
 }
+
+void OverviewFrame::minToTrayClicked()
+{
+#ifdef Q_OS_WIN
+  if (!Settings::instance().isMinimizeToTrayEnabled())
+  {
+    Settings::instance().setMinimizeToTrayEnabled(true);
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
+  }
+  else
+  {
+    Settings::instance().setMinimizeToTrayEnabled(false);
+    m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+  }
+#endif
+}
+
+void OverviewFrame::closeToTrayClicked()
+{
+#ifdef Q_OS_WIN
+  if (!Settings::instance().isCloseToTrayEnabled())
+  {
+    Settings::instance().setCloseToTrayEnabled(true);
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
+  }
+  else
+  {
+    Settings::instance().setCloseToTrayEnabled(false);
+    m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
+  }
+#endif
+}
+
 
 } // namespace WalletGui
 
