@@ -951,7 +951,7 @@ p, li { white-space: pre-wrap; }
     <target></target>
 </phrase>
 <phrase>
-    <source>LOADING WALLET</source>
+    <source>STARTING WALLET</source>
     <target>CÜZDAN YÜKLENİYOR</target>
 </phrase>
 <phrase>
@@ -1726,7 +1726,7 @@ Emin misiniz?</target>
     <target>Veriler kaydediliyor</target>
 </phrase>
 <phrase>
-    <source>Sending</source>
+    <source>SENDING TRANSACTION</source>
     <target>Gönderiliyor</target>
 </phrase>
 <phrase>
@@ -1734,7 +1734,7 @@ Emin misiniz?</target>
     <target>Optimize ediliyor</target>
 </phrase>
 <phrase>
-    <source>Sending messages</source>
+    <source>SENDING MESSAGE</source>
     <target>Mesajlar gönderiliyor</target>
 </phrase>
 <phrase>

@@ -7,28 +7,27 @@
 #include <QApplication>
 #include <QFileDialog>
 
-#include "ImportKeyDialog.h"
-#include "ui_importkeydialog.h"
+#include "ImportSeedDialog.h"
+#include "ui_importseeddialog.h"
 
-namespace WalletGui 
-{
+namespace WalletGui {
 
-ImportKeyDialog::ImportKeyDialog(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ImportKeyDialog) {
+ImportSeed::ImportSeed(QWidget* _parent) : QDialog(_parent), m_ui(new Ui::ImportSeed) {
   m_ui->setupUi(this);
 }
 
-ImportKeyDialog::~ImportKeyDialog() {
+ImportSeed::~ImportSeed() {
 }
 
-QString ImportKeyDialog::getKeyString() const {
-  return m_ui->m_keyEdit->text().trimmed();
+QString ImportSeed::getKeyString() const {
+  return m_ui->m_seed->text().trimmed();
 }
 
-QString ImportKeyDialog::getFilePath() const {
+QString ImportSeed::getFilePath() const {
   return m_ui->m_pathEdit->text().trimmed();
 }
 
-void ImportKeyDialog::selectPathClicked() {
+void ImportSeed::selectPathClicked() {
   QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
 #ifdef Q_OS_WIN
     QApplication::applicationDirPath(),

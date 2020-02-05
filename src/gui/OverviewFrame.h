@@ -140,6 +140,8 @@ private:
   Q_SLOT void createNewWalletButtonClicked();
   Q_SLOT void backupClicked();
   Q_SLOT void backupFileClicked();  
+  Q_SLOT void minToTrayClicked();
+  Q_SLOT void closeToTrayClicked();
   Q_SLOT void optimizeClicked();
   Q_SLOT void autoOptimizeClicked(); 
   Q_SLOT void saveLanguageCurrencyClicked();

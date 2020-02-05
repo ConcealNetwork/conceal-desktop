@@ -169,7 +169,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
-           src/gui/ImportKeyDialog.h \      
+           src/gui/ImportGUIKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageAddressFrame.h \
@@ -561,11 +561,10 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
-           src/gui/importseed.h \
+           src/gui/ImportSeedDialog.h \
            src/gui/importtracking.h \           
            src/gui/NodeSettings.h \
            src/gui/LanguageSettings.h \           
-           src/gui/transactionconfirmation.h \     
            src/gui/ShowQRCode.h \                
 
 SOURCES += libqrencode/bitstream.c \
@@ -623,7 +622,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DepositModel.cpp \
            src/gui/DepositsFrame.cpp \
            src/gui/ExitWidget.cpp \
-           src/gui/ImportKeyDialog.cpp \
+           src/gui/ImportGUIKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageAddressFrame.cpp \
@@ -1035,11 +1034,10 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
-           src/gui/importseed.cpp \
+           src/gui/ImportSeedDialog.cpp \
            src/gui/importtracking.cpp \           
            src/gui/NodeSettings.cpp \
            src/gui/LanguageSettings.cpp \           
-           src/gui/transactionconfirmation.cpp 
            src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
@@ -1051,9 +1049,8 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \
             src/gui/ui/exitwidget.ui \
-            src/gui/ui/importkeydialog.ui \
+            src/gui/ui/importguikeydialog.ui \
             src/gui/ui/mainwindow.ui \
-            src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
             src/gui/ui/welcomeframe.ui \            
@@ -1070,8 +1067,7 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
-            src/gui/ui/transactionconfirmation.ui \    
-            src/gui/ui/importseed.ui \
+            src/gui/ui/importseeddialog.ui \
             src/gui/ui/importtracking.ui \            
             src/gui/ui/nodesettings.ui \
             src/gui/ui/languagesettings.ui \            

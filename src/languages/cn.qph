@@ -1039,7 +1039,7 @@ p, li { white-space: pre-wrap; }
     <target>失败</target>
 </phrase>
 <phrase>
-    <source>LOADING WALLET</source>
+    <source>STARTING WALLET</source>
     <target>正在加载钱包</target>
 </phrase>
 <phrase>
@@ -2007,7 +2007,7 @@ Are you sure?</source>
     <target>保存数据</target>
 </phrase>
 <phrase>
-    <source>Sending</source>
+    <source>SENDING TRANSACTION</source>
     <target>发送中</target>
 </phrase>
 <phrase>
@@ -2015,7 +2015,7 @@ Are you sure?</source>
     <target>优化中</target>
 </phrase>
 <phrase>
-    <source>Sending messages</source>
+    <source>SENDING MESSAGE</source>
     <target>正在发送消息</target>
 </phrase>
 <phrase>

@@ -115,44 +115,44 @@ Lütfen bekle...</translation>
     </message>
 </context>
 <context>
-    <name>ImportKeyDialog</name>
+    <name>ImportGUIKeyDialog</name>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="14"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="14"/>
         <source>Import GUI key</source>
         <translation>GUI anahtarını içe aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="65"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="65"/>
         <source>Import GUI Key</source>
         <translation>GUI anahtarını içe aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="89"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="89"/>
         <source>GUI Key</source>
         <translation>GUI anahtarını içe aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="135"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="135"/>
         <source>Wallet Path</source>
         <translation>Cüzdan Yolu</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="180"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="180"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="209"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="209"/>
         <source>IMPORT</source>
         <translation>İÇE AKTAR</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="238"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="238"/>
         <source>CANCEL</source>
         <translation>İPTAL</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importkeydialog.ui" line="259"/>
+        <location filename="src/gui/ui/importguikeydialog.ui" line="259"/>
         <source>Recreate your wallet with the GUI key</source>
         <translation>GUI key ile cüzdanınızı yeniden oluşturun</translation>
     </message>
@@ -160,42 +160,42 @@ Lütfen bekle...</translation>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="14"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
         <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="53"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="53"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation>25 kelimelik mnemonic seed ile cüzdanınızı yeniden oluşturun</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="77"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="77"/>
         <source>Import Mnemonic Seed</source>
         <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="102"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="102"/>
         <source>Mnemonic Seed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="152"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="152"/>
         <source>Wallet Path</source>
         <translation>Cüzdan Yolu</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="208"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="208"/>
         <source>IMPORT</source>
         <translation>İÇE AKTAR</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="236"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="236"/>
         <source>CANCEL</source>
         <translation>İPTAL</translation>
     </message>
     <message>
-        <location filename="src/gui/ui/importseed.ui" line="258"/>
+        <location filename="src/gui/ui/ImportSeedDialog.ui" line="258"/>
         <source>...</source>
         <translation></translation>
     </message>
@@ -1291,7 +1291,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="src/main.cpp" line="105"/>
-        <source>LOADING WALLET</source>
+        <source>STARTING WALLET</source>
         <translation>CÜZDAN YÜKLENİYOR</translation>
     </message>
     <message>
@@ -1822,14 +1822,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>WalletGui::ImportKeyDialog</name>
+    <name>WalletGui::ImportGUIKeyDialog</name>
     <message>
-        <location filename="src/gui/ImportKeyDialog.cpp" line="32"/>
+        <location filename="src/gui/ImportGUIKeyDialog.cpp" line="32"/>
         <source>Wallet file</source>
         <translation>Cüzdan dosyası</translation>
     </message>
     <message>
-        <location filename="src/gui/ImportKeyDialog.cpp" line="38"/>
+        <location filename="src/gui/ImportGUIKeyDialog.cpp" line="38"/>
         <source>Wallets (*.wallet)</source>
         <translation>cüzdan (*.wallet)</translation>
     </message>
@@ -1837,12 +1837,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>WalletGui::ImportSeed</name>
     <message>
-        <location filename="src/gui/importseed.cpp" line="31"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="31"/>
         <source>Wallet file</source>
         <translation>Cüzdan dosyası</translation>
     </message>
     <message>
-        <location filename="src/gui/importseed.cpp" line="37"/>
+        <location filename="src/gui/ImportSeedDialog.cpp" line="37"/>
         <source>Wallets (*.wallet)</source>
         <translation>cüzdan (*.wallet)</translation>
     </message>
@@ -2400,7 +2400,7 @@ Emin misiniz?</translation>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="366"/>
-        <source>Sending</source>
+        <source>SENDING TRANSACTION</source>
         <translation>Gönderiliyor</translation>
     </message>
     <message>
@@ -2410,7 +2410,7 @@ Emin misiniz?</translation>
     </message>
     <message>
         <location filename="src/WalletAdapter.cpp" line="408"/>
-        <source>Sending messages</source>
+        <source>SENDING MESSAGE</source>
         <translation>Mesajlar gönderiliyor</translation>
     </message>
     <message>

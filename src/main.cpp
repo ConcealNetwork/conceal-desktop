@@ -95,15 +95,16 @@ int main(int argc, char* argv[]) {
   QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
 
   if (splash == nullptr) {
-    splash = new QSplashScreen(QPixmap(":images/splash"), Qt::X11BypassWindowManagerHint);
+    splash = new QSplashScreen(QPixmap(":images/splash"), Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
   }
 
   if (!splash->isVisible()) {
     splash->show();
   }
 
-  splash->showMessage(QObject::tr("LOADING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
-
+  splash->setEnabled(false);
+  splash->showMessage(QObject::tr("STARTING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
+  splash->raise();
   LogFileWatcher* logWatcher(nullptr);
   if (logWatcher == nullptr) {
     logWatcher = new LogFileWatcher(Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);

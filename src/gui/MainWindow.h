@@ -92,7 +92,6 @@ private:
   Q_SLOT void importTracking();
   Q_SLOT void backupWallet();
   Q_SLOT void resetWallet();
-  Q_SLOT void optimizeClicked();  
   Q_SLOT void encryptWallet();
   Q_SLOT void aboutQt();
   Q_SLOT void about();

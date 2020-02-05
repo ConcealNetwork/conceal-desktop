@@ -73,9 +73,9 @@
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>280</x>
         <y>0</y>
-        <width>91</width>
+        <width>141</width>
         <height>21</height>
        </rect>
       </property>
@@ -122,9 +122,9 @@
      <widget class="QLabel" name="m_timeLabel">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>130</x>
         <y>0</y>
-        <width>121</width>
+        <width>141</width>
         <height>21</height>
        </rect>
       </property>

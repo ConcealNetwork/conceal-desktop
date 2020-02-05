@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ImportKeyDialog</class>
- <widget class="QDialog" name="ImportKeyDialog">
+ <class>ImportGUIKeyDialog</class>
+ <widget class="QDialog" name="ImportGUIKeyDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -271,7 +271,7 @@ QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size
   <connection>
    <sender>m_okButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportKeyDialog</receiver>
+   <receiver>ImportGUIKeyDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -287,7 +287,7 @@ QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size
   <connection>
    <sender>m_cancelButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportKeyDialog</receiver>
+   <receiver>ImportGUIKeyDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -303,7 +303,7 @@ QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size
   <connection>
    <sender>m_selectPathButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportKeyDialog</receiver>
+   <receiver>ImportGUIKeyDialog</receiver>
    <slot>selectPathClicked()</slot>
    <hints>
     <hint type="sourcelabel">

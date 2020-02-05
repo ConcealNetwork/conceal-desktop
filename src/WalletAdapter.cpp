@@ -363,7 +363,7 @@ void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
-    Q_EMIT walletStateChangedSignal(tr("Sending"));
+    Q_EMIT walletStateChangedSignal(tr("SENDING TRANSACTION"));
   } catch (std::system_error&) {
     unlock();
   }
@@ -387,7 +387,7 @@ void WalletAdapter::optimizeWallet() {
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
-    Q_EMIT walletStateChangedSignal(tr("Optimizing"));
+    Q_EMIT walletStateChangedSignal(tr("OPTIMIZING WALLET"));
   } catch (std::system_error&) {
     unlock();
   }
@@ -405,7 +405,7 @@ void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _tran
     lock();
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentMessageId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
-    Q_EMIT walletStateChangedSignal(tr("Sending messages"));
+    Q_EMIT walletStateChangedSignal(tr("SENDING MESSAGE"));
   } catch (std::system_error&) {
     unlock();
   }
@@ -416,7 +416,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   try {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
-    Q_EMIT walletStateChangedSignal(tr("Creating"));
+    Q_EMIT walletStateChangedSignal(tr("CREATING DEPOSIT"));
   } catch (std::system_error&) {
     unlock();
   }
@@ -427,7 +427,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _dep
   try {
     lock();
     m_depositWithdrawalId = m_wallet->withdrawDeposits(_depositIds.toStdVector(), _fee);
-    Q_EMIT walletStateChangedSignal(tr("Withdrawing"));
+    Q_EMIT walletStateChangedSignal(tr("WITHDRAWING DEPOSIT"));
   } catch (std::system_error&) {
     unlock();
   }
