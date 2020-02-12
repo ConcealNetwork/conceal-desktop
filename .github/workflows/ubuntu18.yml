@@ -3,7 +3,7 @@ name: Ubuntu 18.04
 on:
   push:
     tags:
-    - 'v*'
+    - '*'
 
 jobs:
   build-ubuntu16:
