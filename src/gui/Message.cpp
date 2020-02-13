@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,9 +84,13 @@ QString Message::getHeaderValue(const QString& _key) const {
   return QString();
 }
 
-Message& Message::operator=(const Message& _message) {
-  m_message = _message.m_message;
-  m_header = _message.m_header;
+Message& Message::operator=(const Message& _message) 
+{
+  if (this != &_message)
+  {
+    m_message = _message.m_message;
+    m_header = _message.m_header;
+  }  
   return *this;
 }
 

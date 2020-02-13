@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,7 +30,7 @@ public:
   };
 
   enum Roles {
-    ROLE_DATE = Qt::UserRole, ROLE_TYPE, ROLE_HASH, ROLE_SECRETKEY, ROLE_ADDRESS, ROLE_AMOUNT, ROLE_PAYMENT_ID, ROLE_ICON,
+    ROLE_DATE = Qt::UserRole, ROLE_TYPE, ROLE_TXTYPE, ROLE_HASH, ROLE_SECRETKEY, ROLE_ADDRESS, ROLE_AMOUNT, ROLE_PAYMENT_ID, ROLE_ICON,
     ROLE_TRANSACTION_ID, ROLE_HEIGHT, ROLE_FEE, ROLE_NUMBER_OF_CONFIRMATIONS, ROLE_COLUMN, ROLE_ROW, ROLE_MESSAGE,
     ROLE_MESSAGES, ROLE_DEPOSIT_ID, ROLE_DEPOSIT_COUNT
   };

@@ -23,6 +23,7 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
 
+set(Boost_NO_BOOST_CMAKE ON)
 set(Boost_USE_STATIC_LIBS ON)
 if(WIN32)
   set(Boost_USE_STATIC_RUNTIME OFF)
@@ -59,6 +60,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/external/miniupnpc/upnpcommands.c
   cryptonote/external/miniupnpc/upnpreplyparse.c
   cryptonote/src/Common/Base58.cpp
+  cryptonote/src/Common/Base64.cpp  
   cryptonote/src/Common/CommandLine.cpp
   cryptonote/src/Common/Util.cpp
   cryptonote/src/Common/StringTools.cpp
@@ -66,31 +68,23 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/ConsoleTools.cpp
   cryptonote/src/Common/MemoryInputStream.cpp
   cryptonote/src/Common/PathTools.cpp
+  cryptonote/src/Common/DnsTools.cpp
   cryptonote/src/Common/StdInputStream.cpp
   cryptonote/src/Common/StdOutputStream.cpp
   cryptonote/src/Common/StreamTools.cpp
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
-  cryptonote/src/crypto/blake256.c
   cryptonote/src/crypto/chacha.c
   cryptonote/src/crypto/crypto-ops-data.c
   cryptonote/src/crypto/crypto-ops.c
   cryptonote/src/crypto/crypto.cpp
-  cryptonote/src/crypto/groestl.c
-  cryptonote/src/crypto/hash-extra-blake.c
-  cryptonote/src/crypto/hash-extra-groestl.c
-  cryptonote/src/crypto/hash-extra-jh.c
-  cryptonote/src/crypto/hash-extra-skein.c
   cryptonote/src/crypto/hash.c
-  cryptonote/src/crypto/jh.c
   cryptonote/src/crypto/keccak.c
-  cryptonote/src/crypto/oaes_lib.c
   cryptonote/src/crypto/random.c
-  cryptonote/src/crypto/skein.c
-  cryptonote/src/crypto/slow-hash.c
-  cryptonote/src/crypto/slow-hash.cpp
   cryptonote/src/crypto/tree-hash.c
+  cryptonote/src/crypto/aux_hash.c 
+  cryptonote/src/crypto/cryptonight.cpp 
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -99,6 +93,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/CryptoNoteCore/CryptoNoteTools.cpp
   cryptonote/src/CryptoNoteCore/Currency.cpp
   cryptonote/src/CryptoNoteCore/DepositIndex.cpp
+  cryptonote/src/CryptoNoteCore/InvestmentIndex.cpp
   cryptonote/src/CryptoNoteCore/MinerConfig.cpp
   cryptonote/src/CryptoNoteCore/Transaction.cpp
   cryptonote/src/CryptoNoteCore/Account.cpp
@@ -184,6 +179,11 @@ set(QRC src/resources.qrc)
 qt5_wrap_ui(UIS ${FORMS})
 qt5_add_resources(RCC ${QRC})
 
+if("${ARCH}" STREQUAL "default")
+    set(ARCH_FLAG "")
+  else()
+    set(ARCH_FLAG "-march=x86-64")
+  endif()
 
 if (WIN32)
   if (NOT MSVC)
@@ -204,18 +204,18 @@ elseif (UNIX)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
     set(SOURCES ${SOURCES} ${OBJC_SOURCES})
     set(PLATFORM_DIR OSX)
-    set(MACOSX_BUNDLE_INFO_STRING "Cryptonote GUI wallet")
-    set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_NAME CryptonoteWallet)
-    set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
-    set(MACOSX_BUNDLE_BUNDLE_VERSION "$${VERSION_VERSION}.${VERSION_MINOR}.${VERSION_PATCH}")
+    set(MACOSX_BUNDLE_BUNDLE_NAME ${CN_PROJECT_NAME})
+    set(MACOSX_BUNDLE_INFO_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_LONG_VERSION_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_SHORT_VERSION_STRING ${CN_VERSION})
+    set(MACOSX_BUNDLE_BUNDLE_VERSION ${CN_VERSION})
 
     find_package(Qt5PrintSupport REQUIRED)
 
     include_directories(/usr/include/malloc)
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes -std=c++11 -stdlib=libc++")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -maes -D_DARWIN_C_SOURCE")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAG} -maes -std=c++11 -stdlib=libc++")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
     set(MACOSX_BUNDLE_ICON_FILE cryptonote.icns)
@@ -239,8 +239,13 @@ file(GLOB PLATFORM_SOURCES cryptonote/src/Platform/${PLATFORM_DIR}/System/*)
 set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
-set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
+if (APPLE OR ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES} -lresolv)
+else ()
 target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
+endif ()
+set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
+
 
 add_executable(${PROJECT_NAME} ${BUILD_PLATFORM} ${BUILD_RESOURCES} ${SOURCES} ${HEADERS} ${UIS} ${RCC})
 set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)

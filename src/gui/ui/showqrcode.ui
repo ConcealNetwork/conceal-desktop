@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ShowQRCode</class>
+ <widget class="QDialog" name="ShowQRCode">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Walllet Address :: QR Code</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #212529; color: #ddd; border: 0px;</string>
+  </property>
+  <widget class="WalletGui::QRLabel" name="m_qrLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>50</y>
+     <width>300</width>
+     <height>300</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>WalletGui::QRLabel</class>
+   <extends>QLabel</extends>
+   <header>gui/QRLabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -14,7 +14,7 @@
    <string>Saving data</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333;
+   <string notr="true">background-color: #212529;
 color: #e5e5e5;
 border: 0px;</string>
   </property>
@@ -30,9 +30,11 @@ border: 0px;</string>
     <widget class="QLabel" name="m_label">
      <property name="font">
       <font>
-       <family>Open Sans</family>
-       <pointsize>9</pointsize>
+       <pointsize>-1</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 15px;</string>
      </property>
      <property name="text">
       <string>%1 wallet is saving data.

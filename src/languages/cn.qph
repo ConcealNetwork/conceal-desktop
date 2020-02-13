@@ -1,0 +1,2281 @@
+<!DOCTYPE QPH>
+<QPH language="zh">
+<phrase>
+    <source>About %1</source>
+    <target>大约1%</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal  钱包</target>
+</phrase>
+<phrase>
+    <source>Select address</source>
+    <target>选择地址</target>
+</phrase>
+<phrase>
+    <source>CHOOSE</source>
+    <target>选择</target>
+</phrase>
+<phrase>
+    <source>Address Book</source>
+    <target>地址簿</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>地址簿</target>
+</phrase>
+<phrase>
+    <source>COPY ADDRESS</source>
+    <target>复制地址</target>
+</phrase>
+<phrase>
+    <source>REMOVE ADDRESS</source>
+    <target>删除地址</target>
+</phrase>
+<phrase>
+    <source>ADD NEW ADDRESS</source>
+    <target>增加一个新地址</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>设置</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE NOW</source>
+    <target>优化</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>此过程将优化您的钱包以进行大型交易。优化过程大约需要22分钟。请注意，在优化过程完成之前，您将无法花费任何资金。在某些情况下，钱包可能需要多次优化。</target>
+</phrase>
+<phrase>
+    <source>Optimization recommended for this wallet</source>
+    <target>建议对此钱包进行优化</target>
+</phrase>
+<phrase>
+    <source>Optimize Wallet</source>
+    <target>优化钱包</target>
+</phrase>
+<phrase>
+    <source>Auto Optimization</source>
+    <target>自动优化</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>打开</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disbaled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>启用自动优化，当钱包打开时，钱包会在后台自动优化您的钱包。仅当钱包需要优化时，此操作才会运行。该过程将每15分钟检查一次。默认情况下，自动优化处于禁用状态。</target>
+</phrase>
+<phrase>
+    <source>Rescan Wallet</source>
+    <target>重置钱包</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>重新扫描时，钱包再次扫描区块链以刷新您的钱包和交易详细信息。</target>
+</phrase>
+<phrase>
+    <source>RESCAN NOW</source>
+    <target>重置钱包</target>
+</phrase>
+<phrase>
+    <source>Close to Tray</source>
+    <target>窗口最小化</target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray</source>
+    <target>减少到最小</target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>内置节点</target>
+</phrase>
+<phrase>
+    <source>Custom Remote Node</source>
+    <target>自定义远程节点</target>
+</phrase>
+<phrase>
+    <source>Automatic Remote Node</source>
+    <target>自动远程节点</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>默认情况下，您的钱包将使用内置节点进行连接，以帮助分散。如果您不想下载整个区块链，也可以使用远程节点。请注意，某些远程节点在发送交易时会收费</target>
+</phrase>
+<phrase>
+    <source>Set Connection Type</source>
+    <target>连接设置</target>
+</phrase>
+<phrase>
+    <source>Russian</source>
+    <target>俄语</target>
+</phrase>
+<phrase>
+    <source>Turkish</source>
+    <target>土耳其</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>英文</target>
+</phrase>
+<phrase>
+    <source>Select Language</source>
+    <target>选择你的语言</target>
+</phrase>
+<phrase>
+    <source>Other</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>保存</target>
+</phrase>
+<phrase>
+    <source>Chinese</source>
+    <target>中文</target>
+</phrase>
+<phrase>
+    <source>Change Password</source>
+    <target>修改密码</target>
+</phrase>
+<phrase>
+    <source>Current Password</source>
+    <target>当前密码</target>
+</phrase>
+<phrase>
+    <source>New Password</source>
+    <target>新密码</target>
+</phrase>
+<phrase>
+    <source>Confirm New Password</source>
+    <target>确认新密码</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>密码未确认</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>保存</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Deposit Details</source>
+    <target>存款明细</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>银行业务</target>
+</phrase>
+<phrase>
+    <source>CREATE</source>
+    <target>创建</target>
+</phrase>
+<phrase>
+    <source>Select the length of your deposit</source>
+    <target>选择存款的期限</target>
+</phrase>
+<phrase>
+    <source>The fee for this deposit:</source>
+    <target>此存款的费用：</target>
+</phrase>
+<phrase>
+    <source>How much would you like to deposit?</source>
+    <target>你想存多少？</target>
+</phrase>
+<phrase>
+    <source>5040 blocks</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Interest earned at the end of your deposit:</source>
+    <target>存款到期时赚取的利息：</target>
+</phrase>
+<phrase>
+    <source>0.001000</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>interestLabel</source>
+    <target>利息标签</target>
+</phrase>
+<phrase>
+    <source>(minimum of 1 CCX)</source>
+    <target>最少1个CCX</target>
+</phrase>
+<phrase>
+    <source>(minimum term of 1 week, maximum 52 weeks)</source>
+    <target>最短期限为1周，最长期限为52周</target>
+</phrase>
+<phrase>
+    <source>Length in blocks:</source>
+    <target>区块高度</target>
+</phrase>
+<phrase>
+    <source>ADD ALL</source>
+    <target>全选</target>
+</phrase>
+<phrase>
+    <source>Unlocked Investments</source>
+    <target>未锁定投资</target>
+</phrase>
+<phrase>
+    <source>WITHDRAW</source>
+    <target>取出</target>
+</phrase>
+<phrase>
+    <source>Withdraw</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Unlocked Deposits</source>
+    <target>未锁定存款</target>
+</phrase>
+<phrase>
+    <source>Total Unlocked</source>
+    <target>解锁总数</target>
+</phrase>
+<phrase>
+    <source>INTEREST % PER WEEK</source>
+    <target>利息%每周</target>
+</phrase>
+<phrase>
+    <source>Weeks</source>
+    <target>周</target>
+</phrase>
+<phrase>
+    <source>Interest</source>
+    <target>利息</target>
+</phrase>
+<phrase>
+    <source>NEW DEPOSIT</source>
+    <target>新存款</target>
+</phrase>
+<phrase>
+    <source>NEW INVESTMENT</source>
+    <target>新投资</target>
+</phrase>
+<phrase>
+    <source>Select the length of your investment</source>
+    <target>选择投资的期限</target>
+</phrase>
+<phrase>
+    <source>Fee</source>
+    <target>费用</target>
+</phrase>
+<phrase>
+    <source> Quarters</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>How much would you like to invest?</source>
+    <target>你想投资多少？</target>
+</phrase>
+<phrase>
+    <source>68400 blocks</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source> CCX</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>investmentInterest</source>
+    <target>投资利息</target>
+</phrase>
+<phrase>
+    <source>(minimum of 50,000 CCX)</source>
+    <target>最少50,000个CCX</target>
+</phrase>
+<phrase>
+    <source>(minimum term of 1 quarter, maximum 20 quarters)</source>
+    <target>最短期限为1季度，最长期限为20季度</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Legal Disclaimer</source>
+    <target>法律免责声明</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>Saving data</source>
+    <target>保存数据</target>
+</phrase>
+<phrase>
+    <source>%1 wallet is saving data.
+Please wait...</source>
+    <target>钱包正在保存数据。
+请耐心等待...</target>
+</phrase>
+<phrase>
+    <source>Import GUI key</source>
+    <target>导入 GUI KEY</target>
+</phrase>
+<phrase>
+    <source>Import GUI Key</source>
+    <target>导入 GUI KEY</target>
+</phrase>
+<phrase>
+    <source>GUI Key</source>
+    <target>GUI KEY</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>钱包路径</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>导入</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the GUI key</source>
+    <target>根据GUI KEY重新创建你的钱包</target>
+</phrase>
+<phrase>
+    <source>Import :: Mnemonic Seed</source>
+    <target>导入::助记词种子</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the 25 word mnemonic seed</source>
+    <target>采用25个助记词种子重新创建你的钱包</target>
+</phrase>
+<phrase>
+    <source>Import Mnemonic Seed</source>
+    <target>导入助记词种子</target>
+</phrase>
+<phrase>
+    <source>Mnemonic Seed</source>
+    <target>助记词种子</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>钱包路径</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>导入</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Dialog</source>
+    <target>对话框</target>
+</phrase>
+<phrase>
+    <source>Wallet path:</source>
+    <target>钱包路径：</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Tracking key</source>
+    <target>跟踪KEY</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>导入</target>
+</phrase>
+<phrase>
+    <source>EXIT</source>
+    <target>退出</target>
+</phrase>
+<phrase>
+    <source>IMPORT VIEW ONLY WALLET</source>
+    <target>导入仅查看钱包</target>
+</phrase>
+<phrase>
+    <source>Connection Settings</source>
+    <target>连接设置</target>
+</phrase>
+<phrase>
+    <source>Select Your Language</source>
+    <target>选择你的语言</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>英文</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>保存</target>
+</phrase>
+<phrase>
+    <source>Russian</source>
+    <target>俄语</target>
+</phrase>
+<phrase>
+    <source>Turkish</source>
+    <target>土耳其</target>
+</phrase>
+<phrase>
+    <source>Chinese</source>
+    <target>中文</target>
+</phrase>
+<phrase>
+    <source>Links</source>
+    <target>链接</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Website&lt;br/&gt;&lt;a href=&quot;https://conceal.network&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Discord&lt;br/&gt;&lt;a href=&quot;https://discord.conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://discord.conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Telegram&lt;br/&gt;&lt;a href=&quot;https://t.co/55klBHKGUR&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://t.co/55klBHKGUR&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Twitter&lt;br/&gt;&lt;a href=&quot;https://twitter.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://twitter.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Reddit&lt;br/&gt;&lt;a href=&quot;https://www.reddit.com/r/ConcealNetwork/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://www.reddit.com/r/ConcealNetwork/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Medium&lt;br/&gt;&lt;a href=&quot;https://medium.com/@ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://medium.com/@ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Github&lt;br/&gt;&lt;a href=&quot;https://github.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://github.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bitcointalk&lt;br/&gt;&lt;a href=&quot;https://bitcointalk.org/index.php?topic=5086106&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://bitcointalk.org/index.php?topic=5086106&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>MainWindow</source>
+    <target>主窗口</target>
+</phrase>
+<phrase>
+    <source>OVERVIEW</source>
+    <target>概述</target>
+</phrase>
+<phrase>
+    <source>SEND</source>
+    <target>发送</target>
+</phrase>
+<phrase>
+    <source>KEYS</source>
+    <target>KEYS</target>
+</phrase>
+<phrase>
+    <source>TRANSACTIONS</source>
+    <target>交易</target>
+</phrase>
+<phrase>
+    <source>Exit</source>
+    <target>退出</target>
+</phrase>
+<phrase>
+    <source>Ctrl+Q</source>
+    <target>Ctrl+Q</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>地址簿</target>
+</phrase>
+<phrase>
+    <source>Create wallet</source>
+    <target>创建钱包</target>
+</phrase>
+<phrase>
+    <source>Open wallet</source>
+    <target>打开钱包</target>
+</phrase>
+<phrase>
+    <source>Encrypt wallet</source>
+    <target>加密钱包</target>
+</phrase>
+<phrase>
+    <source>Change password</source>
+    <target>修改密码</target>
+</phrase>
+<phrase>
+    <source>About</source>
+    <target>关于</target>
+</phrase>
+<phrase>
+    <source>About Qt</source>
+    <target>关于QT</target>
+</phrase>
+<phrase>
+    <source>Backup wallet</source>
+    <target>备份钱包</target>
+</phrase>
+<phrase>
+    <source>Start on system login</source>
+    <target>系统登录时启动</target>
+</phrase>
+<phrase>
+    <source>Minimize to tray</source>
+    <target>减少到最小</target>
+</phrase>
+<phrase>
+    <source>Close to tray</source>
+    <target>窗口最小化</target>
+</phrase>
+<phrase>
+    <source>MESSAGES</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>发送消息</target>
+</phrase>
+<phrase>
+    <source>Import GUI key</source>
+    <target>导入 GUI KEY</target>
+</phrase>
+<phrase>
+    <source>DEPOSITS</source>
+    <target>存款</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>银行业务</target>
+</phrase>
+<phrase>
+    <source>Reset wallet</source>
+    <target>重置钱包</target>
+</phrase>
+<phrase>
+    <source>Import spend/view key</source>
+    <target>导入支出/查看 KEY</target>
+</phrase>
+<phrase>
+    <source>Import mnemonic seed</source>
+    <target>导入助记词种子</target>
+</phrase>
+<phrase>
+    <source>Connection settings</source>
+    <target>连接设置</target>
+</phrase>
+<phrase>
+    <source>Optimize wallet</source>
+    <target>优化钱包</target>
+</phrase>
+<phrase>
+    <source>Import view wallet</source>
+    <target>导入查看钱包</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>Send To:</source>
+    <target>发送到:</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>Block height</source>
+    <target>区块高度</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>Transaction hash</source>
+    <target>交易哈希</target>
+</phrase>
+<phrase>
+    <source>Message size (bytes)</source>
+    <target>消息大小(字节)</target>
+</phrase>
+<phrase>
+    <source>Reply</source>
+    <target>回复</target>
+</phrase>
+<phrase>
+    <source>Save to file</source>
+    <target>保存文件</target>
+</phrase>
+<phrase>
+    <source>&lt;&lt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>&gt;&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Ok</source>
+    <target>好</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>   MESSAGES</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>NEW MESSAGE</source>
+    <target>新消息</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>MINING</source>
+    <target>采矿</target>
+</phrase>
+<phrase>
+    <source>Select a mining pool</source>
+    <target>选择挖掘池</target>
+</phrase>
+<phrase>
+    <source>Number of CPU cores</source>
+    <target>CPU核数</target>
+</phrase>
+<phrase>
+    <source>ADD MINING POOL</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Mining status :</source>
+    <target>采矿状态：</target>
+</phrase>
+<phrase>
+    <source>Stopped</source>
+    <target>停止</target>
+</phrase>
+<phrase>
+    <source>START MINING</source>
+    <target>开始挖掘</target>
+</phrase>
+<phrase>
+    <source>PAUSE MINING</source>
+    <target>暂停挖掘</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>New address</source>
+    <target>新地址</target>
+</phrase>
+<phrase>
+    <source>NEW ADDRESS BOOK ENTRY</source>
+    <target>新建通讯簿条目</target>
+</phrase>
+<phrase>
+    <source>LABEL</source>
+    <target>标签</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>地址</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID</source>
+    <target>付款ID</target>
+</phrase>
+<phrase>
+    <source>ADD</source>
+    <target>添加</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>New remote node</source>
+    <target>新建远程节点</target>
+</phrase>
+<phrase>
+    <source>Host</source>
+    <target>主机</target>
+</phrase>
+<phrase>
+    <source>OK</source>
+    <target>好</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>Add Remote Node</source>
+    <target>增加远程节点</target>
+</phrase>
+<phrase>
+    <source>Enter password</source>
+    <target>输入密码</target>
+</phrase>
+<phrase>
+    <source>New Password</source>
+    <target>新密码</target>
+</phrase>
+<phrase>
+    <source>Confirm Password</source>
+    <target>确认密码</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>密码未确认</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>保存</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>New pool</source>
+    <target>新池</target>
+</phrase>
+<phrase>
+    <source>Host:</source>
+    <target>主机</target>
+</phrase>
+<phrase>
+    <source>Port:</source>
+    <target>端口:</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>OK</source>
+    <target>好</target>
+</phrase>
+<phrase>
+    <source>Connection Settings</source>
+    <target>连接设置</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Custom Remote Node</source>
+    <target>自定义远程节点</target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>内置节点</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>保存</target>
+</phrase>
+<phrase>
+    <source>Automatic Remote Node</source>
+    <target>自动远程节点</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>Banking</source>
+    <target>银行业务</target>
+</phrase>
+<phrase>
+    <source>Messages</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>About</source>
+    <target>关于</target>
+</phrase>
+<phrase>
+    <source>Transactions</source>
+    <target>交易</target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target>设置</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>钱包</target>
+</phrase>
+<phrase>
+    <source>First</source>
+    <target>第一</target>
+</phrase>
+<phrase>
+    <source>Second</source>
+    <target>第二</target>
+</phrase>
+<phrase>
+    <source>Third</source>
+    <target>第三</target>
+</phrase>
+<phrase>
+    <source>Fourth</source>
+    <target>第四</target>
+</phrase>
+<phrase>
+    <source>Fifth</source>
+    <target>第五</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Sixth</source>
+    <target>第六</target>
+</phrase>
+<phrase>
+    <source>RECENT TRANSACTIONS</source>
+    <target>最近交易</target>
+</phrase>
+<phrase>
+    <source>Pending</source>
+    <target>等待</target>
+</phrase>
+<phrase>
+    <source>Available</source>
+    <target>可用</target>
+</phrase>
+<phrase>
+    <source>FUNDS</source>
+    <target>基金</target>
+</phrase>
+<phrase>
+    <source>DEPOSITS</source>
+    <target>存款</target>
+</phrase>
+<phrase>
+    <source>Locked</source>
+    <target>锁住</target>
+</phrase>
+<phrase>
+    <source>Withdrawable</source>
+    <target>可取出</target>
+</phrase>
+<phrase>
+    <source>CONCEAL.NETWORK</source>
+    <target>我的CONCEAL钱包</target>
+</phrase>
+<phrase>
+    <source>currentWallet</source>
+    <target>当前钱包</target>
+</phrase>
+<phrase>
+    <source>SEND</source>
+    <target>发送</target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>银行业务</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>INVESTMENTS</source>
+    <target>投资</target>
+</phrase>
+<phrase>
+    <source>CCX</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>VOLUME</source>
+    <target>体积</target>
+</phrase>
+<phrase>
+    <source>MARKETCAP</source>
+    <target>市值</target>
+</phrase>
+<phrase>
+    <source>BTC</source>
+    <target>BTC</target>
+</phrase>
+<phrase>
+    <source>WALLET ADDRESS</source>
+    <target>钱包地址</target>
+</phrase>
+<phrase>
+    <source>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>MARKET INFORMATION</source>
+    <target>市场信息</target>
+</phrase>
+<phrase>
+    <source>Enter password</source>
+    <target>输入密码</target>
+</phrase>
+<phrase>
+    <source>CONTINUE</source>
+    <target>继续</target>
+</phrase>
+<phrase>
+    <source>Incorrect Password</source>
+    <target>错误密码</target>
+</phrase>
+<phrase>
+    <source>Please Enter Your Password For Wallet</source>
+    <target>请输入您的钱包密码</target>
+</phrase>
+<phrase>
+    <source>currentWallet</source>
+    <target>当前钱包</target>
+</phrase>
+<phrase>
+    <source>blocks</source>
+    <target>区块</target>
+</phrase>
+<phrase>
+    <source>Error</source>
+    <target>错误</target>
+</phrase>
+<phrase>
+    <source>Help</source>
+    <target>帮助</target>
+</phrase>
+<phrase>
+    <source>Fail</source>
+    <target>失败</target>
+</phrase>
+<phrase>
+    <source>STARTING WALLET</source>
+    <target>正在加载钱包</target>
+</phrase>
+<phrase>
+    <source>Conceal Wallet Update</source>
+    <target>Conceal 钱包更新</target>
+</phrase>
+<phrase>
+    <source>There is an update to the wallet available.
+Would you like to go to the download page?</source>
+    <target>钱包有更新。
+您要进入下载页面吗？</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>WALLET SEED AND KEYS</source>
+    <target>钱包种子与密钥</target>
+</phrase>
+<phrase>
+    <source>YOUR 25 WORD MNEMONIC SEED</source>
+    <target>你25个助记词种子</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>COPY</source>
+    <target>复制</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>COPY SPEND KEY</source>
+    <target>复制支付KEY</target>
+</phrase>
+<phrase>
+    <source>PRIVATE SPEND KEY</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>PRIVATE VIEW KEY</source>
+    <target>查看私钥</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>COPY VIEW KEY</source>
+    <target>复制查看KEY</target>
+</phrase>
+<phrase>
+    <source>■  Keep your seed and password safe</source>
+    <target>确保您的种子和密码安全</target>
+</phrase>
+<phrase>
+    <source>■  Make a backup of your wallet file</source>
+    <target>备份钱包文件</target>
+</phrase>
+<phrase>
+    <source>■  Be aware of phishing websites and programs</source>
+    <target>注意钓鱼网站和程序</target>
+</phrase>
+<phrase>
+    <source>■  Store a copy of your seed in a safe place</source>
+    <target>复制的你种子保存在安全的地方</target>
+</phrase>
+<phrase>
+    <source>We care about your safety: Please read the following</source>
+    <target>我们关心您的安全：请阅读以下内容</target>
+</phrase>
+<phrase>
+    <source>SHOW SEED</source>
+    <target>查看种子</target>
+</phrase>
+<phrase>
+    <source>private keys</source>
+    <target>私钥</target>
+</phrase>
+<phrase>
+    <source>gui key</source>
+    <target>KEY</target>
+</phrase>
+<phrase>
+    <source>advanced users:</source>
+    <target>高级用户</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>YOUR GUI KEY</source>
+    <target>你的GUI KEY</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>SEND FUNDS</source>
+    <target>发送资金</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID (OPTIONAL)</source>
+    <target>付款ID（可选）</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>地址</target>
+</phrase>
+<phrase>
+    <source>LABEL</source>
+    <target>标签</target>
+</phrase>
+<phrase>
+    <source>0.000000</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>AMOUNT</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>AVAILABLE BALANCE</source>
+    <target>可用余额</target>
+</phrase>
+<phrase>
+    <source>CLEAR ALL</source>
+    <target>全部清除</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>费用</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>在发送之前，请确保地址和付款ID（如果包括）正确。发送到错误地址的资金将会丢失。</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>地址簿</target>
+</phrase>
+<phrase>
+    <source>NODE FEE</source>
+    <target>节点费用</target>
+</phrase>
+<phrase>
+    <source>CRYPTO MESSAGE (OPTIONAL)</source>
+    <target>加密消息（可选）</target>
+</phrase>
+<phrase>
+    <source>You can send an optional message along with your transfer. There is a 0.000010 CCX fee per character.</source>
+    <target>您可以在传输时发送可选消息。每字符收费0.000010 ccx。</target>
+</phrase>
+<phrase>
+    <source>Some exchanges and other services require that a Payment ID is included when sending funds.</source>
+    <target>一些交易所和其他服务要求在发送资金时包含付款ID。</target>
+</phrase>
+<phrase>
+    <source>Include a label if you want to save the recepient in your Address Book</source>
+    <target>如果要在通讯簿中保存收件人，请包含标签</target>
+</phrase>
+<phrase>
+    <source>Please enter the receivers address</source>
+    <target>请输入接收人地址</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>Add &quot;Reply To&quot;</source>
+    <target>添加“回复”</target>
+</phrase>
+<phrase>
+    <source>Do not include message in blockchain</source>
+    <target>不要在区块链中包含消息</target>
+</phrase>
+<phrase>
+    <source>Set self destruct time</source>
+    <target>设置自毁时间</target>
+</phrase>
+<phrase>
+    <source>ttl</source>
+    <target>TTL</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>费用</target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>发送消息</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Please enter the receivers address</source>
+    <target>请输入接收人地址</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>地址</target>
+</phrase>
+<phrase>
+    <source>Enter your encrypted message</source>
+    <target>输入您的加密消息</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>地址簿</target>
+</phrase>
+<phrase>
+    <source>NODE FEE</source>
+    <target>节点费用</target>
+</phrase>
+<phrase>
+    <source>Walllet Address :: QR Code</source>
+    <target>钱包地址 :: 二维码</target>
+</phrase>
+<phrase>
+    <source>Transaction details</source>
+    <target>交易详细信息</target>
+</phrase>
+<phrase>
+    <source>Transaction Details</source>
+    <target>交易详细信息</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>TextLabel</source>
+    <target>文本标签</target>
+</phrase>
+<phrase>
+    <source>Transaction History</source>
+    <target>交易历史</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>   TRANSACTION HISTORY</source>
+    <target>交易历史</target>
+</phrase>
+<phrase>
+    <source>EXPORT TO CSV</source>
+    <target>导出为CSV</target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>返回</target>
+</phrase>
+<phrase>
+    <source>Frame</source>
+    <target>Frame</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>Enter a label for this address to add it to your address book</source>
+    <target>输入此地址的标签，将其添加到地址簿中</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Label</source>
+    <target>标签</target>
+</phrase>
+<phrase>
+    <source>Pay to</source>
+    <target>付给</target>
+</phrase>
+<phrase>
+    <source>Crypto comment</source>
+    <target>加密注释</target>
+</phrase>
+<phrase>
+    <source>Error: %1</source>
+    <target>错误：%1</target>
+</phrase>
+<phrase>
+    <source>Unable to check for update</source>
+    <target>无法检查更新</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal  钱包</target>
+</phrase>
+<phrase>
+    <source>Invalid address</source>
+    <target>无效地址</target>
+</phrase>
+<phrase>
+    <source>Empty label</source>
+    <target>空标签</target>
+</phrase>
+<phrase>
+    <source>Label</source>
+    <target>标签</target>
+</phrase>
+<phrase>
+    <source>Address</source>
+    <target>地址</target>
+</phrase>
+<phrase>
+    <source>Payment ID</source>
+    <target>付款ID</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>打开</target>
+</phrase>
+<phrase>
+    <source>DISABLE</source>
+    <target>关掉</target>
+</phrase>
+<phrase>
+    <source>Language settings saved</source>
+    <target>语言设置已保存</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>请重新启动钱包以使新设置生效。</target>
+</phrase>
+<phrase>
+    <source>Connection settings saved</source>
+    <target>连接设置已保存</target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>密码未确认</target>
+</phrase>
+<phrase>
+    <source>Used to deploy test nets. Checkpoints and hardcoded seeds are ignored, network id is changed. Use it with –data-dir flag. The wallet must be launched with –testnet flag</source>
+    <target>用于部署测试网络。检查点和硬编码种子被忽略，网络ID被更改。与–data dir标志一起使用。钱包必须以–testnet标志启动</target>
+</phrase>
+<phrase>
+    <source>Interface for p2p network protocol</source>
+    <target>P2P网络协议接口</target>
+</phrase>
+<phrase>
+    <source>ip</source>
+    <target>IP</target>
+</phrase>
+<phrase>
+    <source>Port for p2p network protocol</source>
+    <target>P2P网络协议端口</target>
+</phrase>
+<phrase>
+    <source>port</source>
+    <target>端口</target>
+</phrase>
+<phrase>
+    <source>xternal port for p2p network protocol (if port forwarding used with NAT)</source>
+    <target>P2P网络协议的外部端口（如果端口转发与NAT一起使用）</target>
+</phrase>
+<phrase>
+    <source>Allow local ip add to peer list, mostly in debug purposes</source>
+    <target>允许本地ip添加到节点列表，主要用于调试目的</target>
+</phrase>
+<phrase>
+    <source>Manually add peer to local peerlist</source>
+    <target>手动添加节点到本地节点列表</target>
+</phrase>
+<phrase>
+    <source>peer</source>
+    <target>同等</target>
+</phrase>
+<phrase>
+    <source>Specify list of peers to connect to and attempt to keep the connection open</source>
+    <target>指定要连接的对等方列表并尝试保持连接打开</target>
+</phrase>
+<phrase>
+    <source>node</source>
+    <target>节点</target>
+</phrase>
+<phrase>
+    <source>Specify list of peers to connect to only. If this option is given the options add-priority-node and seed-node are ignored</source>
+    <target>指定仅连接到的对等方列表。如果给定此选项，则忽略“添加优先级节点”和“种子节点”选项。</target>
+</phrase>
+<phrase>
+    <source>Connect to a node to retrieve peer addresses, and disconnect</source>
+    <target>连接到节点以检索目标地址，然后断开连接</target>
+</phrase>
+<phrase>
+    <source>Do not announce yourself as peerlist candidate</source>
+    <target>不要宣布你自己是节点列表候选人</target>
+</phrase>
+<phrase>
+    <source>Specify data directory</source>
+    <target>特定目录数据</target>
+</phrase>
+<phrase>
+    <source>directory</source>
+    <target>目录</target>
+</phrase>
+<phrase>
+    <source>Run application in minimized mode</source>
+    <target>以最小化模式运行应用程序</target>
+</phrase>
+<phrase>
+    <source>Bytecoin wallet</source>
+    <target>字节币钱包</target>
+</phrase>
+<phrase>
+    <source>Status</source>
+    <target>状态</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>Interest</source>
+    <target>利息</target>
+</phrase>
+<phrase>
+    <source>Sum</source>
+    <target>总和</target>
+</phrase>
+<phrase>
+    <source>Rate</source>
+    <target>比率</target>
+</phrase>
+<phrase>
+    <source>Term</source>
+    <target>期限</target>
+</phrase>
+<phrase>
+    <source>Unlock height</source>
+    <target>解锁高度</target>
+</phrase>
+<phrase>
+    <source>Unlock time</source>
+    <target>解锁时间</target>
+</phrase>
+<phrase>
+    <source>Creating transaction</source>
+    <target>正在创建事务</target>
+</phrase>
+<phrase>
+    <source>Creating height</source>
+    <target>正在创建高度</target>
+</phrase>
+<phrase>
+    <source>Creating time</source>
+    <target>正在创建时间</target>
+</phrase>
+<phrase>
+    <source>Spending transaction</source>
+    <target>支出交易</target>
+</phrase>
+<phrase>
+    <source>Spending height</source>
+    <target>支出高度</target>
+</phrase>
+<phrase>
+    <source>Spending time</source>
+    <target>支出时间</target>
+</phrase>
+<phrase>
+    <source>Type</source>
+    <target>类型</target>
+</phrase>
+<phrase>
+    <source>Locked</source>
+    <target>锁住</target>
+</phrase>
+<phrase>
+    <source>Unlocked</source>
+    <target>解锁</target>
+</phrase>
+<phrase>
+    <source>Spent</source>
+    <target>支出</target>
+</phrase>
+<phrase>
+    <source>Weeks</source>
+    <target>周</target>
+</phrase>
+<phrase>
+    <source>Quarters</source>
+    <target>住处</target>
+</phrase>
+<phrase>
+    <source>%1 %2</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>%1 + 0.001 (Node Fee) %2</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>New deposits only work after height 108,000</source>
+    <target>新存款仅在高度108,000之后有效</target>
+</phrase>
+<phrase>
+    <source>You don&apos;t have enough balance in your account!</source>
+    <target>您的帐户余额不足！</target>
+</phrase>
+<phrase>
+    <source>Deposit Confirmation</source>
+    <target>存款确认</target>
+</phrase>
+<phrase>
+    <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
+    <target>请注意，一旦资金锁定在存款中，在到期之前您将无法访问。是否确定要继续？</target>
+</phrase>
+<phrase>
+    <source>New investments only work after height 108,000</source>
+    <target>新投资仅在高度108,000之后有效</target>
+</phrase>
+<phrase>
+    <source>Investment Confirmation</source>
+    <target>投资确认</target>
+</phrase>
+<phrase>
+    <source>Please note that once funds are locked in an investment, you will not have access to those funds until maturity. Are you sure you want to proceed?</source>
+    <target>请注意，一旦资金锁定在投资中，在到期之前您将无法使用这些资金。是否确定要继续？</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>钱包文件</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>钱包 (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>钱包文件</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>钱包 (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>钱包文件</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>钱包 (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>About %1 Wallet</source>
+    <target>大约1%钱包</target>
+</phrase>
+<phrase>
+    <source>Language was changed</source>
+    <target>语言已更改</target>
+</phrase>
+<phrase>
+    <source>Language changed to %1. The change will take effect after restarting the wallet.</source>
+    <target>语言已更改为%1。更改将在重新启动钱包后生效。</target>
+</phrase>
+<phrase>
+    <source>New wallet file</source>
+    <target>新钱包文件</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>钱包 (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Open .wallet/.keys file</source>
+    <target>打开 .wallet/.keys 文件</target>
+</phrase>
+<phrase>
+    <source>Wallet (*.wallet *.keys)</source>
+    <target>钱包 (*.wallet *.keys)</target>
+</phrase>
+<phrase>
+    <source>Backup wallet to...</source>
+    <target>将钱包备份到…</target>
+</phrase>
+<phrase>
+    <source>Warning</source>
+    <target>警告</target>
+</phrase>
+<phrase>
+    <source>Your wallet will be reset and restored from blockchain.
+Are you sure?</source>
+    <target>您的钱包将从区块链中重置和还原。
+你确定吗？</target>
+</phrase>
+<phrase>
+    <source>Wallet error</source>
+    <target>钱包错误</target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>钱包</target>
+</phrase>
+<phrase>
+    <source>Tracking key is not valid</source>
+    <target>跟踪KEY无效</target>
+</phrase>
+<phrase>
+    <source>The tracking key you entered is not valid.</source>
+    <target>您输入的跟踪密钥无效。</target>
+</phrase>
+<phrase>
+    <source>Key is not valid</source>
+    <target>KEY无效</target>
+</phrase>
+<phrase>
+    <source>The public spend key you entered is not valid.</source>
+    <target>您输入的支出公钥无效。</target>
+</phrase>
+<phrase>
+    <source>The public view key you entered is not valid.</source>
+    <target>您输入的查看公钥无效。</target>
+</phrase>
+<phrase>
+    <source>The private spend key you entered is not valid.</source>
+    <target>您输入的支出私钥无效。</target>
+</phrase>
+<phrase>
+    <source>The private view key you entered is not valid.</source>
+    <target>您输入的查看私钥无效。</target>
+</phrase>
+<phrase>
+    <source>Conection settings saved</source>
+    <target>连接设置已保存</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>请重新启动钱包以使新设置生效。</target>
+</phrase>
+<phrase>
+    <source>Language settings saved</source>
+    <target>语言设置已保存</target>
+</phrase>
+<phrase>
+    <source>Save message</source>
+    <target>保存消息</target>
+</phrase>
+<phrase>
+    <source>File already exists</source>
+    <target>文件已存在</target>
+</phrase>
+<phrase>
+    <source>Warning! File already exists and will be overwritten, are you sure?</source>
+    <target>警告！文件已存在并将被覆盖，是否确定？</target>
+</phrase>
+<phrase>
+    <source>File error</source>
+    <target>文件错误</target>
+</phrase>
+<phrase>
+    <source>Date</source>
+    <target>日期</target>
+</phrase>
+<phrase>
+    <source>Type</source>
+    <target>类型</target>
+</phrase>
+<phrase>
+    <source>Height</source>
+    <target>高度</target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>Transaction hash</source>
+    <target>交易哈希</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>Message size</source>
+    <target>消息大小</target>
+</phrase>
+<phrase>
+    <source>Out</source>
+    <target>出来</target>
+</phrase>
+<phrase>
+    <source>In</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Password not confirmed</source>
+    <target>密码未确认</target>
+</phrase>
+<phrase>
+    <source>Node URL</source>
+    <target>节点URL</target>
+</phrase>
+<phrase>
+    <source>SYNCHRONIZING</source>
+    <target>同步</target>
+</phrase>
+<phrase>
+    <source>About Conceal</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>About QT</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Disclaimer</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Links</source>
+    <target>链接</target>
+</phrase>
+<phrase>
+    <source>Import Seed</source>
+    <target>导入种子</target>
+</phrase>
+<phrase>
+    <source>Import Secret Keys</source>
+    <target>导入密钥</target>
+</phrase>
+<phrase>
+    <source>Import GUI Key</source>
+    <target>导入 GUI KEY</target>
+</phrase>
+<phrase>
+    <source>Open Wallet</source>
+    <target>打开钱包</target>
+</phrase>
+<phrase>
+    <source>Create Wallet</source>
+    <target>创建钱包</target>
+</phrase>
+<phrase>
+    <source>Backup Wallet</source>
+    <target>备份钱包</target>
+</phrase>
+<phrase>
+    <source>Import Wallet</source>
+    <target>汇入钱包</target>
+</phrase>
+<phrase>
+    <source>Close Wallet</source>
+    <target>关闭钱包</target>
+</phrase>
+<phrase>
+    <source>Encrypt Wallet</source>
+    <target>加密钱包</target>
+</phrase>
+<phrase>
+    <source>Change Password</source>
+    <target>修改密码</target>
+</phrase>
+<phrase>
+    <source>Close to Tray On</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Close to Tray Off</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray On</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Minimize to Tray Off</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wallet</source>
+    <target>钱包</target>
+</phrase>
+<phrase>
+    <source>Synchronization</source>
+    <target>同步</target>
+</phrase>
+<phrase>
+    <source>Pool URL</source>
+    <target>池URL</target>
+</phrase>
+<phrase>
+    <source>GUI Key</source>
+    <target>GUI KEY</target>
+</phrase>
+<phrase>
+    <source>Private Spend-Key</source>
+    <target>支出私钥</target>
+</phrase>
+<phrase>
+    <source>Private View-Key</source>
+    <target>查看私钥</target>
+</phrase>
+<phrase>
+    <source>Seed</source>
+    <target>种子</target>
+</phrase>
+<phrase>
+    <source>Failed to lookup Conceal ID</source>
+    <target>搜索失败</target>
+</phrase>
+<phrase>
+    <source>Invalid recipient address</source>
+    <target>接收地址无效</target>
+</phrase>
+<phrase>
+    <source>Invalid payment ID</source>
+    <target>付款ID无效</target>
+</phrase>
+<phrase>
+    <source>Transaction Confirmation</source>
+    <target>交易确认</target>
+</phrase>
+<phrase>
+    <source>Please note that there is no payment ID, are you sure you want to proceed?</source>
+    <target>请注意，没有付款ID，是否确定要继续？</target>
+</phrase>
+<phrase>
+    <source>Incorrect fee value</source>
+    <target>错误的费用值</target>
+</phrase>
+<phrase>
+    <source>Incorrect fee</source>
+    <target>错误的费用</target>
+</phrase>
+<phrase>
+    <source>Select CSV file</source>
+    <target>选择CSV文件</target>
+</phrase>
+<phrase>
+    <source>DATE</source>
+    <target>日期</target>
+</phrase>
+<phrase>
+    <source>TYPE</source>
+    <target>类型</target>
+</phrase>
+<phrase>
+    <source>ADDRESS</source>
+    <target>地址</target>
+</phrase>
+<phrase>
+    <source>AMOUNT</source>
+    <target>金额</target>
+</phrase>
+<phrase>
+    <source>FEE</source>
+    <target>费用</target>
+</phrase>
+<phrase>
+    <source>HEIGHT</source>
+    <target>高度</target>
+</phrase>
+<phrase>
+    <source>PAYMENT ID</source>
+    <target>付款ID</target>
+</phrase>
+<phrase>
+    <source>MESSAGE</source>
+    <target>消息</target>
+</phrase>
+<phrase>
+    <source>HASH</source>
+    <target>哈希</target>
+</phrase>
+<phrase>
+    <source>unconfirmed</source>
+    <target>未确认</target>
+</phrase>
+<phrase>
+    <source>confirmations</source>
+    <target>确认</target>
+</phrase>
+<phrase>
+    <source>%1 / %2</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>me (%1)</source>
+    <target>我(%1)</target>
+</phrase>
+<phrase>
+    <source>(n/a)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Importing keys</source>
+    <target>导入keys</target>
+</phrase>
+<phrase>
+    <source>Saving data</source>
+    <target>保存数据</target>
+</phrase>
+<phrase>
+    <source>SENDING TRANSACTION</source>
+    <target>发送中</target>
+</phrase>
+<phrase>
+    <source>Optimizing</source>
+    <target>优化中</target>
+</phrase>
+<phrase>
+    <source>SENDING MESSAGE</source>
+    <target>正在发送消息</target>
+</phrase>
+<phrase>
+    <source>Creating</source>
+    <target>正在创建</target>
+</phrase>
+<phrase>
+    <source>Withdrawing</source>
+    <target>取出中</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>准备</target>
+</phrase>
+<phrase>
+    <source>SYNCHRONIZING</source>
+    <target>同步</target>
+</phrase>
+<phrase>
+    <source>Unencrypted</source>
+    <target>未加密</target>
+</phrase>
+<phrase>
+    <source>Encrypted</source>
+    <target>加密</target>
+</phrase>
+<phrase>
+    <source>SYNCHRONIZED</source>
+    <target>同步</target>
+</phrase>
+<phrase>
+    <source>WARNING</source>
+    <target>警告</target>
+</phrase>
+<phrase>
+    <source>There was a problem, please restart your wallet.</source>
+    <target>请重新启动钱包以使新设置生效。</target>
+</phrase>
+<phrase>
+    <source>&lt;span style=&apos;color: orange;&apos;&gt;%1&lt;/span&gt;&lt;br /&gt;Height: %2&lt;br /&gt;%4&lt;br /&gt;%3</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>钱包文件</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>钱包 (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Welcome</source>
+    <target>欢迎</target>
+</phrase>
+<phrase>
+    <source>WELCOME TO THE CONCEAL WALLET</source>
+    <target>欢迎使用CONCEAL钱包</target>
+</phrase>
+<phrase>
+    <source>■  Conceal is a decentralized blockchain bank.</source>
+    <target>Conceal是一个分散的区块链银行.</target>
+</phrase>
+<phrase>
+    <source>■  The Conceal Wallet is a free, open-source interface.</source>
+    <target>Conceal钱包是一个免费的开源界面</target>
+</phrase>
+<phrase>
+    <source>■  The wallet allows access to all Conceal services.</source>
+    <target>钱包允许访问所有Conceal服务。</target>
+</phrase>
+<phrase>
+    <source>■  You control the private keys to your funds.</source>
+    <target>只有你控制着你资金的私钥。</target>
+</phrase>
+<phrase>
+    <source>The Conceal Wallet</source>
+    <target>Conceal  钱包</target>
+</phrase>
+<phrase>
+    <source>NEXT</source>
+    <target>下一步</target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>■  When creating a wallet, you are creating a set of cryptographic keys</source>
+    <target>创建钱包时，您将创建一组加密密钥</target>
+</phrase>
+<phrase>
+    <source>a seed, and a wallet address.</source>
+    <target>种子和钱包地址</target>
+</phrase>
+<phrase>
+    <source>■  If you send your public address to someone then they can send you CCX.</source>
+    <target>如果您将公开的地址发送给别人，他们可以向您发送CCX。</target>
+</phrase>
+<phrase>
+    <source>■  The developers of Conceal have no access to your password, your keys, </source>
+    <target>■  Conceal的开发人员无法访问您的密码，密钥，</target>
+</phrase>
+<phrase>
+    <source>How does the Conceal Wallet work?</source>
+    <target>Conceal钱包如何运作？</target>
+</phrase>
+<phrase>
+    <source>■  NEVER share your seed, keys, or wallet file with anyone.</source>
+    <target>不要与任何人分享你的种子、钥匙或钱包文件。</target>
+</phrase>
+<phrase>
+    <source>Doing so means they have complete control over your funds.</source>
+    <target>这样做意味着他们可以完全控制您的资金。</target>
+</phrase>
+<phrase>
+    <source>or your seed. If you forget your password, or lose your seed, </source>
+    <target>或你的种子。如果您忘记密码或丢失种子，</target>
+</phrase>
+<phrase>
+    <source>there is nothing we can do. Always keep a copy of your seed in a secure place.</source>
+    <target>我们无能为力。一定要把你的种子放在安全的地方。</target>
+</phrase>
+<phrase>
+    <source>■  You are responsible for your own security.</source>
+    <target>你要对自己的安全负责。</target>
+</phrase>
+<phrase>
+    <source>■  No one can recover or change your private keys or seed.</source>
+    <target>没有人可以恢复或更改您的私钥或种子。</target>
+</phrase>
+<phrase>
+    <source>■  No one can recover your password.</source>
+    <target>没有人可以恢复您的密码。</target>
+</phrase>
+<phrase>
+    <source>■  No one can refund your transactions.</source>
+    <target>没有人可以回滚您的交易。</target>
+</phrase>
+<phrase>
+    <source>only YOU are in control</source>
+    <target>只有你能控制</target>
+</phrase>
+<phrase>
+    <source>■  No one can freeze your funds.</source>
+    <target>没有人可以冻结你的资金。</target>
+</phrase>
+<phrase>
+    <source>Getting Started</source>
+    <target>开始使用</target>
+</phrase>
+<phrase>
+    <source>CREATE NEW WALLET</source>
+    <target>创建新钱包</target>
+</phrase>
+<phrase>
+    <source>OPEN EXISTING WALLET</source>
+    <target>打开已存在钱包</target>
+</phrase>
+<phrase>
+    <source>IMPORT PRIVATE KEYS</source>
+    <target>导入密钥</target>
+</phrase>
+<phrase>
+    <source>IMPORT GUI KEY</source>
+    <target>导入 GUI KEY</target>
+</phrase>
+<phrase>
+    <source>IMPORT SEED</source>
+    <target>导入种子</target>
+</phrase>
+<phrase>
+    <source>Create a new wallet address along with</source>
+    <target>创建新的钱包地址</target>
+</phrase>
+<phrase>
+    <source>Already have a wallet? open the wallet</source>
+    <target>已经有一个钱包？打开钱包</target>
+</phrase>
+<phrase>
+    <source>Import an existing wallet with the secret</source>
+    <target>导入一个已存在的钱包文件</target>
+</phrase>
+<phrase>
+    <source>a secret seed phrase</source>
+    <target>密钥种子短语</target>
+</phrase>
+<phrase>
+    <source>seed phrase and access your CCX</source>
+    <target>输入种子短语并访问你的CCX</target>
+</phrase>
+<phrase>
+    <source>and access your assets</source>
+    <target>并访问您的资产</target>
+</phrase>
+<phrase>
+    <source>advanced users can import using other keys</source>
+    <target>高级用户可以使用其他键导入</target>
+</phrase>
+<phrase>
+    <source>Dialog</source>
+    <target>对话框</target>
+</phrase>
+<phrase>
+    <source>Private Spend Key</source>
+    <target>支出私钥</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>钱包路径</target>
+</phrase>
+<phrase>
+    <source>Private View Key</source>
+    <target>查看私钥</target>
+</phrase>
+<phrase>
+    <source>...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>取消</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>导入</target>
+</phrase>
+<phrase>
+    <source>Import Private Keys</source>
+    <target>导入密钥</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the secret spend and view keys</source>
+    <target>根据支出密钥与查看密钥重新创建你的钱包</target>
+</phrase>
+<phrase>
+    <source>Dialog</source>
+    <target>对话框</target>
+</phrase>
+<phrase>
+    <source>Optimize Wallet</source>
+    <target>优化钱包</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Optimization recommended for this wallet</source>
+    <target>建议对此钱包进行优化</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE</source>
+    <target>优化</target>
+</phrase>
+<phrase>
+    <source>CLOSE</source>
+    <target>关闭</target>
+</phrase>
+</QPH>

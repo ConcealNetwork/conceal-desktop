@@ -10,11 +10,16 @@
     <height>525</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Poppins</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Select address</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #333; color: #e5e5e5;</string>
+   <string notr="true">background-color: #282d31; color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -31,8 +36,14 @@
    </property>
    <item>
     <widget class="QTreeView" name="m_addressBookView">
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #777; color: #e5e5e5;</string>
+      <string notr="true">background-color: #282d31; color: #ddd; border: 0px;
+font-size: 14px;</string>
      </property>
     </widget>
    </item>
@@ -55,23 +66,37 @@
       <widget class="QPushButton" name="m_okButton">
        <property name="minimumSize">
         <size>
-         <width>125</width>
-         <height>25</height>
+         <width>210</width>
+         <height>40</height>
         </size>
        </property>
        <property name="font">
         <font>
-         <family>Open Sans</family>
-         <pointsize>10</pointsize>
+         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #222; border-radius: 0px; border: 0px solid; background-color: orange;</string>
+        <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+
+QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>CHOOSE</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

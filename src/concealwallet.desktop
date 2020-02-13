@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Conceal Wallet
-Comment=Conceal GUI Wallet
+Name=Conceal Desktop
+Comment=Conceal Desktop
 Exec=ConcealGUI
 Terminal=false
 Type=Application

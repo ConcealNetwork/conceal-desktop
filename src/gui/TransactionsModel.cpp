@@ -98,24 +98,28 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_DATE:
       return tr("Date");
     case COLUMN_TYPE:
-      return tr("Type");
-    case COLUMN_HASH:
-      return tr("  Transaction Hash");
+      return tr("Type");        
     case COLUMN_ADDRESS:
-      return tr("    Address");
+      return tr("Address");
     case COLUMN_AMOUNT:
       return tr("Amount");
+    case COLUMN_FEE:
+      return tr("Fee");
+    case COLUMN_HEIGHT:
+      return tr("Height");
     case COLUMN_PAYMENT_ID:
-      return tr("PAYMENT ID");
+      return tr("Payment ID");
     case COLUMN_MESSAGE:
-      return tr("MESSAGE");
+      return tr("Message");
+    case COLUMN_HASH:
+      return tr("Transaction Hash");      
     default:
       break;
     }
 
   case Qt::TextAlignmentRole:
     if (_section == COLUMN_AMOUNT) {
-      return static_cast<int>(Qt::AlignRight | Qt::AlignVCenter);
+      return static_cast<int>(Qt::AlignLeft | Qt::AlignVCenter);
     }
 
     return QVariant();
@@ -151,7 +155,15 @@ QVariant TransactionsModel::data(const QModelIndex& _index, int _role) const {
     }
   }
 
+    
+
   switch(_role) {
+case Qt::BackgroundRole:
+  if (0 == _index.row() % 2)
+      return QColor(40, 45, 49);
+  else
+      return QColor(33, 37, 41);
+
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
@@ -361,11 +373,26 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
     return static_cast<quint8>(TransactionType::INPUT);
   }
 
+  case ROLE_TXTYPE: {
+    QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
+    if(_transaction.isCoinbase) {
+      return "New Block";
+    } else if (_transaction.firstDepositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+      return "New Deposit";
+    } else if (!transactionAddress.compare(WalletAdapter::instance().getAddress())) {
+      return "Optimization";
+    } else if(_transaction.totalAmount < 0) {
+      return "Sent CCX";
+    }
+
+    return "Received CCX";
+  }
+
   case ROLE_HASH:
     return QByteArray(reinterpret_cast<const char*>(&_transaction.hash), sizeof(_transaction.hash));
 
   case ROLE_SECRETKEY:
-    return QByteArray(reinterpret_cast<const char*>(&_transaction.transactionSK), sizeof(_transaction.transactionSK));
+    return QByteArray(reinterpret_cast<const char*>(&_transaction.secretKey), sizeof(_transaction.secretKey));
 
   case ROLE_ADDRESS:
     return QString::fromStdString(_transfer.address);
@@ -381,7 +408,7 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
       return static_cast<qint64>(-_transfer.amount);
     } else if (transactionType == TransactionType::DEPOSIT) {
-      return static_cast<qint64>(-(_transaction.fee + _deposit.amount));
+      return static_cast<qint64>(_transaction.fee + _deposit.amount);
     }
 
     return QVariant();

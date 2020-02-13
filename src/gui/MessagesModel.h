@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,7 +11,6 @@
 
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
-
 #include <IWalletLegacy.h>
 
 #include "Message.h"
@@ -35,8 +36,9 @@ public:
   };
 
   static const QString HEADER_REPLY_TO_KEY;
-
   static MessagesModel& instance();
+  quint64 dayPoolAmount;
+  quint64 totalPoolAmount;
 
   Qt::ItemFlags flags(const QModelIndex& _index) const Q_DECL_OVERRIDE;
   int columnCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -61,11 +63,16 @@ private:
     const Message& _message) const;
 
   void reloadWalletTransactions();
+  void resetPoolTotal();
   void appendTransaction(CryptoNote::TransactionId _id, quint32& _row_count);
   void appendTransaction(CryptoNote::TransactionId _id);
   void updateWalletTransaction(CryptoNote::TransactionId _id);
   void lastKnownHeightUpdated(quint64 _height);
   void reset();
+
+Q_SIGNALS:
+  void poolEarningsSignal(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
+
 };
 
 }

@@ -1,7 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
-//  
-// Copyright (c) 2018 The Circle Foundation
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,6 +25,10 @@ AddressBookDialog::~AddressBookDialog() {
 
 QString AddressBookDialog::getAddress() const {
   return m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString();
+}
+
+QString AddressBookDialog::getPaymentID() const {
+  return m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString();
 }
 
 }

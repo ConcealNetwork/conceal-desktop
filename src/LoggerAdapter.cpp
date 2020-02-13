@@ -1,7 +1,8 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,11 +19,11 @@ LoggerAdapter& LoggerAdapter::instance() {
 void LoggerAdapter::init() {
   Common::JsonValue loggerConfiguration(Common::JsonValue::OBJECT);
   int64_t logLevel =
-    #ifdef DEBUG
+#ifdef DEBUG
 	  Logging::TRACE
-	#else
+#else
 		Logging::INFO
-	#endif
+#endif
   ;
   loggerConfiguration.insert("globalLevel", logLevel);
   Common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", Common::JsonValue::ARRAY);

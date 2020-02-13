@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -51,6 +52,14 @@ quint64 CurrencyAdapter::getMinimumFee() const {
   return m_currency.minimumFee();
 }
 
+quint64 CurrencyAdapter::getMinimumFeeV1() const {
+  return m_currency.minimumFeeV1();
+}
+
+quint64 CurrencyAdapter::getMinimumFeeBanking() const {
+  return m_currency.minimumFeeBanking();
+}
+
 quint64 CurrencyAdapter::getAddressPrefix() const {
   return m_currency.publicAddressBase58Prefix();
 }
@@ -96,6 +105,57 @@ QString CurrencyAdapter::formatAmount(quint64 _amount) const {
   return result;
 }
 
+QString CurrencyAdapter::formatAmountThreeDecimals(quint64 _amount) const {
+  QString result = QString::number(_amount);
+  if (result.length() < 3 + 1) {
+    result = result.rightJustified(3 + 1, '0');
+  }
+
+  quint32 dot_pos = result.length() - 3;
+  for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
+    if (result[pos] == '0') {
+      result.remove(pos, 1);
+    } else {
+      break;
+    }
+  }
+
+  result.insert(dot_pos, ".");
+  for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
+    if (result[pos - 1].isDigit()) {
+      result.insert(pos, ',');
+    }
+  }
+
+  return result;
+}
+
+QString CurrencyAdapter::formatCurrencyAmount(quint64 _amount) const {
+  QString result = QString::number(_amount);
+  if (result.length() < 2 + 1) {
+    result = result.rightJustified(2 + 1, '0');
+  }
+
+  quint32 dot_pos = result.length() - 2;
+  for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
+    if (result[pos] == '0') {
+      result.remove(pos, 1);
+    } else {
+      break;
+    }
+  }
+
+  result.insert(dot_pos, ".");
+  for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
+    if (result[pos - 1].isDigit()) {
+      result.insert(pos, ',');
+    }
+  }
+
+  return result;
+}
+
+
 quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
   QString amountString = _amountString.trimmed();
   amountString.remove(',');
@@ -131,7 +191,54 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
 
 bool CurrencyAdapter::validateAddress(const QString& _address) const {
   CryptoNote::AccountPublicAddress internalAddress;
+  std::string address;
+  
   return m_currency.parseAccountAddressString(_address.toStdString(), internalAddress);
 }
+
+bool CurrencyAdapter::isValidOpenAliasAddress(const QString& _address) const {
+	_address == _address.trimmed();
+	int dot = _address.indexOf('.');
+	if (dot > 0) {
+		return true;
+	}
+	return false;
+}
+
+bool CurrencyAdapter::processServerAliasResponse(const std::string& s, std::string& address) const {
+	try {
+		//   
+		// Courtesy of Monero Project
+			  // make sure the txt record has "oa1:ccx" and find it
+		auto pos = s.find("oa1:ccx");
+		if (pos == std::string::npos)
+			return false;
+		// search from there to find "recipient_address="
+		pos = s.find("recipient_address=", pos);
+		if (pos == std::string::npos)
+			return false;
+		pos += 18; // move past "recipient_address="
+		// find the next semicolon
+		auto pos2 = s.find(";", pos);
+		if (pos2 != std::string::npos)
+		{
+			// length of address == 95, we can at least validate that much here
+			if (pos2 - pos == 98)
+			{
+				address = s.substr(pos, 98);
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	catch (std::exception&) {
+		return false;
+	}
+
+	return true;
+}
+
+
 
 }

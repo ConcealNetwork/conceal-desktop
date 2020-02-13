@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,7 +26,7 @@ public:
   enum Columns{
     COLUMN_STATE = 0, COLUMN_AMOUNT, COLUMN_INTEREST, COLUMN_SUM, COLUMN_TERM_RATE, COLUMN_TERM, COLUMN_UNLOCK_HEIGHT,
     COLUMN_UNLOCK_TIME, COLUMN_CREATRING_TRANSACTION_HASH, COLUMN_CREATING_HEIGHT, COLUMN_CREATING_TIME,
-    COLUMN_SPENDING_TRANSACTION_HASH, COLUMN_SPENDING_HEIGHT, COLUMN_SPENDING_TIME
+    COLUMN_SPENDING_TRANSACTION_HASH, COLUMN_SPENDING_HEIGHT, COLUMN_SPENDING_TIME, COLUMN_TYPE
   };
 
   enum Roles {

@@ -1,7 +1,9 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //  
-// Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,7 +22,7 @@ QRLabel::~QRLabel() {
 }
 
 void QRLabel::showQRCode(const QString& _dataString) {
-  QRcode *qrcode = QRcode_encodeString(_dataString.toStdString().c_str(), 1, QR_ECLEVEL_L, QR_MODE_8, 0);
+  QRcode *qrcode = QRcode_encodeString(_dataString.toStdString().c_str(), 1, QR_ECLEVEL_L, QR_MODE_8, 1);
   if (qrcode == nullptr) {
     return;
   }
@@ -36,7 +38,7 @@ void QRLabel::showQRCode(const QString& _dataString) {
   }
 
   QRcode_free(qrcode);
-  setPixmap(QPixmap::fromImage(qrCodeImage).scaled(150, 150));
+  setPixmap(QPixmap::fromImage(qrCodeImage).scaled(300, 300));
   setEnabled(true);
 }
 

@@ -3,6 +3,8 @@
 ######################################################################
 
 TEMPLATE = app
+QT += webkit webkitwidgets
+QT += charts
 TARGET = 
 DEPENDPATH += . \
               libqrencode \
@@ -125,11 +127,12 @@ HEADERS += libqrencode/bitstream.h \
            libqrencode/rscode.h \
            libqrencode/split.h \
            src/AliasProvider.h \
+           src/AddressProvider.h \
            src/CommandLineParser.h \
+           src/TranslatorManager.h \           
            src/CryptoNoteWrapper.h \
            src/CurrencyAdapter.h \
            src/LoggerAdapter.h \
-           src/Miner.h \
            src/miniupnpcstrings.h \
            src/NodeAdapter.h \
            src/Settings.h \
@@ -154,28 +157,31 @@ HEADERS += libqrencode/bitstream.h \
            libqrencode/tests/common.h \
            libqrencode/tests/decoder.h \
            src/gui/AboutDialog.h \
+           src/gui/DisclaimerDialog.h \
+           src/gui/LinksDialog.h \           
            src/gui/AddressBookDialog.h \
-           src/gui/AddressBookFrame.h \
            src/gui/AddressBookModel.h \
            src/gui/AnimatedLabel.h \
            src/gui/ChangePasswordDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
+           src/gui/BankingFrame2.h \           
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
-           src/gui/ImportKeyDialog.h \      
+           src/gui/ImportGUIKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageAddressFrame.h \
            src/gui/MessageDetailsDialog.h \
            src/gui/MessagesFrame.h \
            src/gui/MessagesModel.h \           
-           src/gui/MiningFrame.h \
            src/gui/WelcomeFrame.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
            src/gui/NewPoolDialog.h \
+           src/gui/NewNodeDialog.h \ 
+           src/gui/NodeModel.h \                 
            src/gui/OverviewFrame.h \
            src/gui/PasswordDialog.h \
            src/gui/PoolModel.h \
@@ -218,10 +224,12 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/ArrayRef.h \
            cryptonote/src/Common/ArrayView.h \
            cryptonote/src/Common/Base58.h \
+           cryptonote/src/Common/Base64.h \           
            cryptonote/src/Common/BlockingQueue.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
            cryptonote/src/Common/ConsoleTools.h \
+           cryptonote/src/Common/DnsTools.h \
            cryptonote/src/Common/IInputStream.h \
            cryptonote/src/Common/int-util.h \
            cryptonote/src/Common/IOutputStream.h \
@@ -246,24 +254,21 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/Util.h \
            cryptonote/src/Common/Varint.h \
            cryptonote/src/Common/VectorOutputStream.h \
-           cryptonote/src/crypto/aesb.h \
-           cryptonote/src/crypto/blake256.h \
+           cryptonote/src/crypto/aux_hash.h \
            cryptonote/src/crypto/chacha.h \
+           cryptonote/src/crypto/chacha8.h \    
+           cryptonote/src/crypto/cn_aux.hpp \
+           cryptonote/src/crypto/coin_algos.hpp \
+           cryptonote/src/crypto/soft_aes.hpp \           
+           cryptonote/src/crypto/cryptonight.hpp \
            cryptonote/src/crypto/crypto-ops.h \
            cryptonote/src/crypto/crypto.h \
            cryptonote/src/crypto/generic-ops.h \
-           cryptonote/src/crypto/groestl.h \
-           cryptonote/src/crypto/groestl_tables.h \
            cryptonote/src/crypto/hash-ops.h \
            cryptonote/src/crypto/hash.h \
            cryptonote/src/crypto/initializer.h \
-           cryptonote/src/crypto/jh.h \
            cryptonote/src/crypto/keccak.h \
-           cryptonote/src/crypto/oaes_config.h \
-           cryptonote/src/crypto/oaes_lib.h \
            cryptonote/src/crypto/random.h \
-           cryptonote/src/crypto/skein.h \
-           cryptonote/src/crypto/skein_port.h \
            cryptonote/src/CryptoNoteCore/Account.h \
            cryptonote/src/CryptoNoteCore/Blockchain.h \
            cryptonote/src/CryptoNoteCore/BlockchainIndices.h \
@@ -280,6 +285,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/CryptoNoteCore/CryptoNoteTools.h \
            cryptonote/src/CryptoNoteCore/Currency.h \
            cryptonote/src/CryptoNoteCore/DepositIndex.h \
+           cryptonote/src/CryptoNoteCore/InvestmentIndex.h \
            cryptonote/src/CryptoNoteCore/Difficulty.h \
            cryptonote/src/CryptoNoteCore/IBlock.h \
            cryptonote/src/CryptoNoteCore/IBlockchainStorageObserver.h \
@@ -291,7 +297,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/CryptoNoteCore/ITransactionValidator.h \
            cryptonote/src/CryptoNoteCore/ITxPoolObserver.h \
            cryptonote/src/CryptoNoteCore/MessageQueue.h \
-           cryptonote/src/CryptoNoteCore/Miner.h \
            cryptonote/src/CryptoNoteCore/MinerConfig.h \
            cryptonote/src/CryptoNoteCore/OnceInInterval.h \
            cryptonote/src/CryptoNoteCore/SwappedMap.h \
@@ -326,7 +331,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Logging/LoggerRef.h \
            cryptonote/src/Logging/StreamLogger.h \
            cryptonote/src/Miner/BlockchainMonitor.h \
-           cryptonote/src/Miner/Miner.h \
            cryptonote/src/Miner/MinerEvent.h \
            cryptonote/src/Miner/MinerManager.h \
            cryptonote/src/Miner/MiningConfig.h \
@@ -551,21 +555,17 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/external/gtest/include/gtest/internal/gtest-tuple.h \
            cryptonote/external/gtest/include/gtest/internal/gtest-type-util.h \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.h \
-           cryptonote/src/crypto/slow-hash.inl \
            cryptonote/tests/CoreTests/double_spend.inl \
-           cryptonote/src/crypto/crypto-ops-data.c \
-           cryptonote/src/crypto/crypto-ops.c \
-           cryptonote/src/crypto/crypto.cpp \
-           cryptonote/src/crypto/hash.c \
-           cryptonote/src/crypto/keccak.c \
-           cryptonote/src/crypto/random.c \
            cryptonote/src/Common/Base58.cpp \
+           cryptonote/src/Common/Base64.cpp \           
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
-           src/gui/importseed.h \
-           src/gui/nodesettings.h \
-           src/gui/transactionconfirmation.h \     
+           src/gui/ImportSeedDialog.h \
+           src/gui/importtracking.h \           
+           src/gui/NodeSettings.h \
+           src/gui/LanguageSettings.h \           
+           src/gui/ShowQRCode.h \                
 
 SOURCES += libqrencode/bitstream.c \
            libqrencode/mask.c \
@@ -578,12 +578,13 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/rscode.c \
            libqrencode/split.c \
            src/AliasProvider.cpp \
+           src/AddressProvider.cpp \
+           src/TranslatorManager.cpp \
            src/CommandLineParser.cpp \
            src/CryptoNoteWrapper.cpp \
            src/CurrencyAdapter.cpp \
            src/LoggerAdapter.cpp \
            src/main.cpp \
-           src/Miner.cpp \
            src/NodeAdapter.cpp \
            src/Settings.cpp \
            src/SignalHandler.cpp \
@@ -609,28 +610,31 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/tests/test_split.c \
            libqrencode/tests/view_qrcode.c \
            src/gui/AboutDialog.cpp \
+           src/gui/DisclaimerDialog.cpp \          
+           src/gui/LinksDialog.cpp \              
            src/gui/AddressBookDialog.cpp \
-           src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
+           src/gui/BankingFrame2.cpp \               
            src/gui/ChangePasswordDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
            src/gui/DepositModel.cpp \
            src/gui/DepositsFrame.cpp \
            src/gui/ExitWidget.cpp \
-           src/gui/ImportKeyDialog.cpp \
+           src/gui/ImportGUIKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageAddressFrame.cpp \
            src/gui/MessageDetailsDialog.cpp \
            src/gui/MessagesFrame.cpp \
            src/gui/MessagesModel.cpp \
-           src/gui/MiningFrame.cpp \
-           src/gui/WelcomeFrame.cpp \           
+           src/gui/WelcomeFrame.cpp \    
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
            src/gui/NewPoolDialog.cpp \
+           src/gui/NewNodeDialog.cpp \ 
+           src/gui/NodeModel.cpp \                        
            src/gui/OverviewFrame.cpp \
            src/gui/PasswordDialog.cpp \
            src/gui/PoolModel.cpp \
@@ -678,6 +682,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/CommandLine.cpp \
            cryptonote/src/Common/ConsoleHandler.cpp \
            cryptonote/src/Common/ConsoleTools.cpp \
+           cryptonote/src/Common/DnsTools.cpp \
            cryptonote/src/Common/IInputStream.cpp \
            cryptonote/src/Common/IOutputStream.cpp \
            cryptonote/src/Common/JsonValue.cpp \
@@ -696,25 +701,17 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/Util.cpp \
            cryptonote/src/Common/VectorOutputStream.cpp \
            cryptonote/src/ConnectivityTool/ConnectivityTool.cpp \
-           cryptonote/src/crypto/blake256.c \
+           cryptonote/src/crypto/aux_hash.c \
            cryptonote/src/crypto/chacha.c \
+           cryptonote/src/crypto/chacha8.c \
            cryptonote/src/crypto/crypto-ops-data.c \
            cryptonote/src/crypto/crypto-ops.c \
            cryptonote/src/crypto/crypto.cpp \
-           cryptonote/src/crypto/groestl.c \
-           cryptonote/src/crypto/hash-extra-blake.c \
-           cryptonote/src/crypto/hash-extra-groestl.c \
-           cryptonote/src/crypto/hash-extra-jh.c \
-           cryptonote/src/crypto/hash-extra-skein.c \
            cryptonote/src/crypto/hash.c \
-           cryptonote/src/crypto/jh.c \
+           cryptonote/src/crypto/cryptonight.cpp \                                
            cryptonote/src/crypto/keccak.c \
-           cryptonote/src/crypto/oaes_lib.c \
            cryptonote/src/crypto/random.c \
-           cryptonote/src/crypto/skein.c \
-           cryptonote/src/crypto/slow-hash.c \
-           cryptonote/src/crypto/slow-hash.cpp \
-           cryptonote/src/crypto/tree-hash.c \
+           cryptonote/src/crypto/tree-hash.c \                  
            cryptonote/src/CryptoNoteCore/Account.cpp \
            cryptonote/src/CryptoNoteCore/Blockchain.cpp \
            cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp \
@@ -730,10 +727,10 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/CryptoNoteCore/CryptoNoteTools.cpp \
            cryptonote/src/CryptoNoteCore/Currency.cpp \
            cryptonote/src/CryptoNoteCore/DepositIndex.cpp \
+           cryptonote/src/CryptoNoteCore/InvestmentIndex.cpp \
            cryptonote/src/CryptoNoteCore/Difficulty.cpp \
            cryptonote/src/CryptoNoteCore/IBlock.cpp \
            cryptonote/src/CryptoNoteCore/ITimeProvider.cpp \
-           cryptonote/src/CryptoNoteCore/Miner.cpp \
            cryptonote/src/CryptoNoteCore/MinerConfig.cpp \
            cryptonote/src/CryptoNoteCore/SwappedMap.cpp \
            cryptonote/src/CryptoNoteCore/SwappedVector.cpp \
@@ -764,7 +761,6 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Logging/StreamLogger.cpp \
            cryptonote/src/Miner/BlockchainMonitor.cpp \
            cryptonote/src/Miner/main.cpp \
-           cryptonote/src/Miner/Miner.cpp \
            cryptonote/src/Miner/MinerManager.cpp \
            cryptonote/src/Miner/MiningConfig.cpp \
            cryptonote/src/NodeRpcProxy/NodeErrors.cpp \
@@ -1038,23 +1034,25 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
-           src/gui/importseed.cpp \
-           src/gui/nodesettings.cpp \
-           src/gui/transactionconfirmation.cpp 
+           src/gui/ImportSeedDialog.cpp \
+           src/gui/importtracking.cpp \           
+           src/gui/NodeSettings.cpp \
+           src/gui/LanguageSettings.cpp \           
+           src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
+            src/gui/ui/disclaimerdialog.ui \
+            src/gui/ui/linksdialog.ui \
+            src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
-            src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \
             src/gui/ui/exitwidget.ui \
-            src/gui/ui/importkeydialog.ui \
+            src/gui/ui/importguikeydialog.ui \
             src/gui/ui/mainwindow.ui \
-            src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
-            src/gui/ui/miningframe.ui \
             src/gui/ui/welcomeframe.ui \            
             src/gui/ui/newaddressdialog.ui \
             src/gui/ui/newpassworddialog.ui \
@@ -1069,12 +1067,24 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
-            src/gui/ui/transactionconfirmation.ui \    
-            src/gui/ui/importseed.ui \
+            src/gui/ui/importseeddialog.ui \
+            src/gui/ui/importtracking.ui \            
             src/gui/ui/nodesettings.ui \
+            src/gui/ui/languagesettings.ui \            
+            src/gui/ui/showqrcode.ui \            
 
+TRANSLATIONS = 	languages/tr.ts \
+                languages/en.ts \
+                languages/ru.ts \                
+                languages/cn.ts \                   
 
 RESOURCES += src/resources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    src/icons/hotbit.png \
+    src/icons/qtrade.png \
+    src/icons/stex.png \
+    src/icons/tradeogre.png \
+    src/images/logo-proper.png \
+    src/images/qr.png
 RC_FILE = conceal.rc
