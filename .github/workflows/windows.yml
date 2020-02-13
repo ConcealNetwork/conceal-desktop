@@ -35,7 +35,7 @@ jobs:
           $filecontent -replace '^set\(CMAKE_PREFIX_PATH.+',"set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")" | Set-Content CMakeLists.txt
           mkdir "$build_folder"
           cd "$build_folder"
-          Start-Process cmake -ArgumentList "-G ""Visual Studio 15 2017"" -A x64",".." -NoNewWindow -Wait
+          Start-Process cmake -ArgumentList "-G ""Visual Studio 16 2019"" -A x64",".." -NoNewWindow -Wait
           Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln","/p:Configuration=Release" -NoNewWindow -Wait
           cd "$release_folder"
           Compress-Archive -Path *.exe -DestinationPath "$release_name.zip"
