@@ -179,12 +179,6 @@ set(QRC src/resources.qrc)
 qt5_wrap_ui(UIS ${FORMS})
 qt5_add_resources(RCC ${QRC})
 
-if("${ARCH}" STREQUAL "default")
-    set(ARCH_FLAG "")
-  else()
-    set(ARCH_FLAG "-march=x86-64")
-  endif()
-
 if (WIN32)
   if (NOT MSVC)
 	message(FATAL_ERROR "Only MSVC is supported on this platform")
@@ -214,9 +208,9 @@ elseif (UNIX)
 
     include_directories(/usr/include/malloc)
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAG} -maes -std=c++11 -stdlib=libc++")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAG} -maes -std=c++11 -stdlib=libc++ -d2FH4-")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -maes -D_DARWIN_C_SOURCE")
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib -d2:-FH4-")
 
     set(MACOSX_BUNDLE_ICON_FILE cryptonote.icns)
     set(APPLICATION_ICON src/images/cryptonote.icns)
