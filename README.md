@@ -20,7 +20,7 @@ No one owns Conceal, everyone can take part.
 
 ## Resources
 - Web: [conceal.network](https://conceal.network/)
-- GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
+- GitHub: [https://github.com/ConcealNetwork](https://github.com/ConcealNetwork)
 - Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
 - Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
 - Telegram Official (News Feed): [https://t.me/concealnetwork](https://t.me/concealnetwork)
@@ -28,7 +28,7 @@ No one owns Conceal, everyone can take part.
 - Medium: [https://medium.com/@ConcealNetwork](https://medium.com/@ConcealNetwork)
 - Reddit: [https://www.reddit.com/r/ConcealNetwork/](https://www.reddit.com/r/ConcealNetwork/)
 - Bitcoin Talk: [https://bitcointalk.org/index.php?topic=4515873](https://bitcointalk.org/index.php?topic=4515873)
-- Paperwallet: [https://paperwallet.conceal.network/](https://paperwallet.conceal.network/)
+- Paperwallet: [https://conceal.network/paperwallet](https://conceal.network/paperwallet)
 
 ## Compiling Conceal from source
 
