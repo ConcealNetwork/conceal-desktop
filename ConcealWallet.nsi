@@ -81,18 +81,7 @@ Section -MainProgram
 ${INSTALL_TYPE}
 SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
-File ".\build\Release\CONCEAL-GUI.exe"
-File ".\build\Release\CONCEAL-GUI.lib"
-File ".\build\Release\Qt5Core.dll"
-File ".\build\Release\Qt5Gui.dll"
-File ".\build\Release\Qt5Network.dll"
-File ".\build\Release\Qt5Widgets.dll"
-SetOutPath "$INSTDIR\platforms"
-File ".\build\Release\platforms\qwindows.dll"
-SetOutPath "$INSTDIR\languages"
-File ".\src\languages\tr.qm"
-File ".\src\languages\ru.qm"
-File ".\src\languages\cn.qm"
+File ".\build\Release\*"
 SectionEnd
 
 ######################################################################
