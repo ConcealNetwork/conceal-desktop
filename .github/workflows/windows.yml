@@ -60,8 +60,6 @@ jobs:
           $release_folder = "Release"
           cd "$build_folder"
           mkdir "$release_folder/$release_name"
-          mkdir "$release_folder/$release_name/languages"
-          cp ../src/languages/*.qm "$release_folder/$release_name/languages/"
           cd "$release_folder"
           cp CONCEAL-GUI.exe "$release_name/"
           windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
