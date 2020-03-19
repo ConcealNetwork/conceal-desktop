@@ -82,6 +82,7 @@ ${INSTALL_TYPE}
 SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
 File /r ".\build\Release\*"
+File /r ".\files\*"
 SectionEnd
 
 ######################################################################
@@ -140,7 +141,7 @@ Delete "$INSTDIR\Qt5Widgets.dll"
 Delete "$INSTDIR\platforms\qwindows.dll"
  
 RmDir "$INSTDIR\platforms"
- 
+
 Delete "$INSTDIR\uninstall.exe"
 !ifdef WEB_SITE
 Delete "$INSTDIR\${APP_NAME} website.url"
