@@ -14,6 +14,10 @@ jobs:
 
       - name: Setup MSBuild.exe
         uses: warrenbuckley/Setup-MSBuild@v1
+        # uses: microsoft/setup-msbuild@v1.0.0
+        # with:
+        #   vs-version: '2017'
+        #   vswhere-path: 'C:\path\to\your\tools\'
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -33,8 +37,20 @@ jobs:
         shell: powershell
         id: build
         env:
-          BOOST_ROOT: ${{ env.BOOST_ROOT }}
+          VCINSTALLDIR: "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/"
+          BOOST_ROOT: ""
         run: |
+          pushd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools"
+          cmd /c "VsMSBuildCmd.bat&set" |
+          foreach {
+            if ($_ -match "=") {
+              $v = $_.split("="); set-item -force -path "ENV:\$($v[0])"  -value "$($v[1])"
+              # echo ::set-env name=$($v[0])::$($v[1])
+              Write-Host "$v"
+            }
+          }
+          popd
+
           $build_folder = "build"
           $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
           $release_name = "ccx-desktop-win64-v$ccx_ver"
@@ -47,8 +63,9 @@ jobs:
           $filecontent -replace '^set\(CMAKE_PREFIX_PATH.+',"set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")" | Set-Content CMakeLists.txt
           mkdir "$build_folder"
           cd "$build_folder"
-          Start-Process cmake -ArgumentList "-G ""Visual Studio 16 2019"" -A x64",".." -NoNewWindow -Wait
-          Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln","/p:Configuration=Release" -NoNewWindow -Wait
+          Start-Process cmake -ArgumentList "-G ""Visual Studio 15 2017 Win64"" -DBOOST_LIBRARYDIR:PATH=C:\hostedtoolcache\windows\Boost\1.69.0 .." -NoNewWindow -Wait
+          Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln /p:Configuration=Release" -NoNewWindow -Wait
+
           $build_path = "./$build_folder"
           echo "::set-output name=build_path::${build_path}"
           echo "::set-output name=release_name::${release_name}"
