@@ -68,7 +68,7 @@ jobs:
           cp *.exe "$release_name/"
           windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
           cd ../../
-          makensis WindowsInstall.nsi
+          makensis ConcealWallet.nsi
           cd "$build_folder/$release_folder"
           Compress-Archive -Path *.exe -DestinationPath "$release_name.zip"
           $sha256 = (Get-FileHash "$release_name.zip").Hash
