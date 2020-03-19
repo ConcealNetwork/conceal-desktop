@@ -36,6 +36,8 @@ jobs:
           BOOST_ROOT: ${{ env.BOOST_ROOT }}
         run: |
           $build_folder = "build"
+          $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
+          $release_name = "ccx-desktop-win64-v$ccx_ver"
           $release_folder = "Release"
           set CMAKE_PREFIX_PATH="$($qt5_cmake)"
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
@@ -47,6 +49,9 @@ jobs:
           cd "$build_folder"
           Start-Process cmake -ArgumentList "-G ""Visual Studio 16 2019"" -A x64",".." -NoNewWindow -Wait
           Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln","/p:Configuration=Release" -NoNewWindow -Wait
+          $build_path = "./$build_folder"
+          echo "::set-output name=build_path::${build_path}"
+          echo "::set-output name=release_name::${release_name}"
 
       - name: Pack
         shell: powershell
@@ -54,14 +59,13 @@ jobs:
         env:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\'
         run: |
-          $build_folder = "${{ steps.build.outputs.build_folder }}"
-          $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
-          $release_name = "ccx-desktop-win64-v$ccx_ver"
+          $build_folder = "${{ steps.build.outputs.build_path }}"
+          $release_name = "${{ steps.build.outputs.release_name }}"
           $release_folder = "Release"
           cd "$build_folder"
           mkdir "$release_folder/$release_name"
           cd "$release_folder"
-          cp CONCEAL-GUI.exe "$release_name/"
+          cp *.exe "$release_name/"
           windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
           cd ../../
           makensis WindowsInstall.nsi
