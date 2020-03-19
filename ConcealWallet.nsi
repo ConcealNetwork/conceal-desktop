@@ -34,7 +34,7 @@ VIAddVersionKey "FileVersion"  "${VERSION}"
 SetCompressor ZLIB
 Name "${APP_NAME}"
 Caption "${APP_NAME}"
-OutFile ".\build\Release\Conceal.exe"
+OutFile ".\build\Release\Conceal-Setup.exe"
 BrandingText "${APP_NAME}"
 XPStyle on
 InstallDirRegKey "${REG_ROOT}" "${REG_APP_PATH}" ""

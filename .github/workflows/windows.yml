@@ -17,6 +17,17 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
+        with:
+          version: '5.12.2'
+          host: 'windows'
+          target: 'desktop'
+          modules: 'qttools5'
+          install-deps: 'true'
+
+      - name: Install NSIS
+        uses: joncloud/makensis-action@v1
+        with:
+          just-include: true
 
       - name: Build
         shell: powershell
@@ -28,6 +39,7 @@ jobs:
           $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
           $release_name = "ccx-desktop-win64-v$ccx_ver"
           $release_folder = "Release"
+          set CMAKE_PREFIX_PATH="$($qt5_cmake)"
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
           Remove-Item cryptonote -Recurse -ErrorAction Ignore
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
@@ -37,7 +49,26 @@ jobs:
           cd "$build_folder"
           Start-Process cmake -ArgumentList "-G ""Visual Studio 16 2019"" -A x64",".." -NoNewWindow -Wait
           Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln","/p:Configuration=Release" -NoNewWindow -Wait
+
+      - name: Pack
+        shell: powershell
+        id: pack
+        env:
+          VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\'
+        run: |
+          $build_folder = "${{ steps.build.outputs.build_folder }}"
+          $release_name = "${{ steps.build.outputs.release_name }}"
+          $release_folder = "Release"
+          cd "$build_folder"
+          mkdir "$release_folder/$release_name"
+          mkdir "$release_folder/$release_name/languages"
+          cp languages/*.qm "$release_folder/$release_name/languages/"
           cd "$release_folder"
+          cp CONCEAL-GUI.exe "$release_name/"
+          windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
+          cd ../../
+          makensis WindowsInstall.nsi
+          cd "$build_folder/$release_folder"
           Compress-Archive -Path *.exe -DestinationPath "$release_name.zip"
           $sha256 = (Get-FileHash "$release_name.zip").Hash
           $asset_path = "./$build_folder/$release_folder/$release_name.zip"
@@ -45,7 +76,6 @@ jobs:
           echo "::set-output name=release_name::${release_name}.zip"
           echo "::set-output name=asset_path::${asset_path}"
           echo "::set-output name=ccx_ver::${ccx_ver}"
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
