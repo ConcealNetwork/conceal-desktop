@@ -36,8 +36,6 @@ jobs:
           BOOST_ROOT: ${{ env.BOOST_ROOT }}
         run: |
           $build_folder = "build"
-          $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
-          $release_name = "ccx-desktop-win64-v$ccx_ver"
           $release_folder = "Release"
           set CMAKE_PREFIX_PATH="$($qt5_cmake)"
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
@@ -57,12 +55,13 @@ jobs:
           VCINSTALLDIR: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\'
         run: |
           $build_folder = "${{ steps.build.outputs.build_folder }}"
-          $release_name = "${{ steps.build.outputs.release_name }}"
+          $ccx_ver = "${{ github.ref }}" -replace '[refs/tags/v]'
+          $release_name = "ccx-desktop-win64-v$ccx_ver"
           $release_folder = "Release"
           cd "$build_folder"
           mkdir "$release_folder/$release_name"
           mkdir "$release_folder/$release_name/languages"
-          cp languages/*.qm "$release_folder/$release_name/languages/"
+          cp ../src/languages/*.qm "$release_folder/$release_name/languages/"
           cd "$release_folder"
           cp CONCEAL-GUI.exe "$release_name/"
           windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
