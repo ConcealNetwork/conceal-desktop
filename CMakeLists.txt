@@ -179,6 +179,12 @@ set(QRC src/resources.qrc)
 qt5_wrap_ui(UIS ${FORMS})
 qt5_add_resources(RCC ${QRC})
 
+if("${ARCH}" STREQUAL "default")
+    set(ARCH_FLAG "")
+  else()
+    set(ARCH_FLAG "-march=x86-64")
+  endif()
+
 if (WIN32)
   if (NOT MSVC)
 	message(FATAL_ERROR "Only MSVC is supported on this platform")
