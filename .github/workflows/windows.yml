@@ -109,7 +109,7 @@ jobs:
           mkdir "$release_folder/Final"
           cd "$release_folder"
           mkdir "Final/languages"
-          cp ../../src/languages/*.qm "languages"          
+          cp ../../src/languages/*.qm "Final/languages"          
           windeployqt --release CONCEAL-GUI.exe --dir "Final/"
           cd ../../
           makensis ConcealWallet.nsi
