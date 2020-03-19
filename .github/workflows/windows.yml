@@ -67,7 +67,7 @@ jobs:
           cd "$release_folder"
           cp *.exe "$release_name/"
           mkdir "$release_folder/$release_name/languages"
-          cp src/languages/*.qm "$release_folder/$release_name/languages/"          
+          cp ../../src/languages/*.qm "$release_folder/$release_name/languages/"          
           windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
           cd ../../
           makensis ConcealWallet.nsi
