@@ -82,7 +82,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ steps.build.outputs.asset_path }}
+          files: ${{ steps.pack.outputs.asset_path }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_ver }}
           body: |
             **${{ steps.pack.outputs.release_name }}**
