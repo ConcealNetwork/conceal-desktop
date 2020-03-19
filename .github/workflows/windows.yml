@@ -85,8 +85,8 @@ jobs:
           files: ${{ steps.build.outputs.asset_path }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_ver }}
           body: |
-            **${{ steps.build.outputs.release_name }}**
-            ${{ steps.build.outputs.sha256 }}
+            **${{ steps.pack.outputs.release_name }}**
+            ${{ steps.pack.outputs.sha256 }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
