@@ -81,8 +81,7 @@ Section -MainProgram
 ${INSTALL_TYPE}
 SetOverwrite ifnewer
 SetOutPath "$INSTDIR"
-File /r ".\build\Release\*"
-File /r ".\files\*"
+File /r ".\build\Release\Final\*"
 SectionEnd
 
 ######################################################################

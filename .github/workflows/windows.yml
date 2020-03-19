@@ -104,16 +104,15 @@ jobs:
           $release_name = "${{ steps.build.outputs.release_name }}"
           $release_folder = "Release"
           cd "$build_folder"
-          mkdir "$release_folder/$release_name"
+          mkdir "$release_folder/Final"
           cd "$release_folder"
-          cp *.exe "$release_name/"
-          mkdir "$release_folder/$release_name/languages"
-          cp ../../src/languages/*.qm "$release_folder/$release_name/languages/"          
-          windeployqt --release CONCEAL-GUI.exe --dir "$release_name/"
+          mkdir "Final/languages"
+          cp ../../src/languages/*.qm "languages"          
+          windeployqt --release CONCEAL-GUI.exe --dir "Final/"
           cd ../../
           makensis ConcealWallet.nsi
           cd "$build_folder/$release_folder"
-          Compress-Archive -Path *.exe -DestinationPath "$release_name.zip"
+          Compress-Archive -Path Conceal-Setup.exe -DestinationPath "$release_name.zip"
           $sha256 = (Get-FileHash "$release_name.zip").Hash
           $asset_path = "./$build_folder/$release_folder/$release_name.zip"
           echo "::set-output name=sha256::${sha256}"
