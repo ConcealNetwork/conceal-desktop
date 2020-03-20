@@ -15,7 +15,8 @@ jobs:
       - name: Build
         id: build
         run: |
-          BOOST_ROOT=
+         BOOST_ROOT=
+          sudo apt-get purge '*boost*'
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
           build_folder="build/release"
