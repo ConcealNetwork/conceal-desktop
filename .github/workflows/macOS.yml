@@ -19,7 +19,7 @@ jobs:
         id: build
         run: |
           build_folder="build/release"
-          ccx_ver=$(echo ${{ github.ref }} | sed 's|refs/tags/v||')
+          ccx_ver=$(echo ${{ github.ref }} | sed 's|refs/tags/||')
           release_name="ccx-desktop-macOS-v$ccx_ver"
           app_name="CONCEAL-GUI.app"
           lang_folder="/Contents/Resources/languages"
