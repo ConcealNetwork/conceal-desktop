@@ -1,7 +1,7 @@
 ![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Desktop (GUI Wallet)
-Latest Release: v6.1.3
+Latest Release: v6.1.4
 
 Maintained by Conceal Devs.
 
@@ -20,7 +20,7 @@ No one owns Conceal, everyone can take part.
 
 ## Resources
 - Web: [conceal.network](https://conceal.network/)
-- GitHub: [https://github.com/ConcealNetwork](https://github.com/ConcealNetwork)
+- GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
 - Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
 - Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
 - Telegram Official (News Feed): [https://t.me/concealnetwork](https://t.me/concealnetwork)

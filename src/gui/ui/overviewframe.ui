@@ -515,7 +515,7 @@ border: none;
 </string>
        </property>
        <property name="text">
-        <string>NEW MESSAGE</string>
+        <string>SEND MESSAGE</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_42">
@@ -591,6 +591,53 @@ font-size: 14px;
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_newOpenWalletButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>470</y>
+         <width>171</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>131</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#m_newOpenWalletButton {
+text-align: left; color: #ddd; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+}
+
+QPushButton#m_newOpenWalletButton:hover {
+text-align: left; color: orange; margin-left: 20px;
+font-family: Poppins;
+font-size: 14px;
+border: none;
+  }
+</string>
+       </property>
+       <property name="text">
+        <string>OPEN WALLET</string>
        </property>
       </widget>
      </widget>
@@ -792,8 +839,8 @@ font-family: Poppins;</string>
         <property name="text">
          <string notr="true">000000.00 USD</string>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <property name="pixmap">
+         <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
         </property>
        </widget>
        <widget class="QLabel" name="m_depositsUnlockedTitle_9">
@@ -2314,6 +2361,18 @@ color: #ccc;
          <height>25</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>360</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Poppins</family>
@@ -2362,6 +2421,18 @@ p, li { white-space: pre-wrap; }
          <height>30</height>
         </rect>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Poppins</family>
@@ -2399,6 +2470,18 @@ p, li { white-space: pre-wrap; }
          <width>241</width>
          <height>25</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>180</width>
+         <height>35</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -6111,12 +6194,12 @@ text-align: left;</string>
      <zorder>overviewBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
+     <zorder>bankingBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7229,6 +7312,22 @@ text-align: left;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_newOpenWalletButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>openWalletButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>newTransferClicked()</slot>
@@ -7302,8 +7401,8 @@ text-align: left;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
