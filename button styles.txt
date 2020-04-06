@@ -9,7 +9,7 @@ QPushButton#m_varName
     font-family: 'Poppins';
 }
 
-QPushButton#m_depositButton_2:hover
+QPushButton#m_varName:hover
 {
     color: orange;
     border: 1px solid orange;
@@ -18,9 +18,9 @@ QPushButton#m_depositButton_2:hover
     font-family: 'Poppins';
 }
 
-//Orange on Orange = ?
+//Orange on Orange
 
-QPushButton#m_sendMessageButton
+QPushButton#m_varName
 {
     color: orange; ;
     border: 1px solid orange;
@@ -28,7 +28,7 @@ QPushButton#m_sendMessageButton
     border-radius: 5px; font-family: 'Poppins';
 }
 
-QPushButton#m_sendMessageButton:hover
+QPushButton#m_m_varName:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
@@ -36,3 +36,24 @@ QPushButton#m_sendMessageButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }
+
+//White on White
+QPushButton#m_cancelButton 
+{
+    color: #ccc; 
+    border: 1px solid #343a40;
+    font-size: 16px; 
+    background-color: #212529;
+}
+
+QPushButton#m_cancelButton:hover
+{
+    color: #ddd;
+    border: 2px solid #444;
+    font-size: 16px;
+    background-color: #212529;
+}
+
+QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+
+QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
