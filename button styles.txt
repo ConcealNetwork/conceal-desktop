@@ -38,22 +38,21 @@ QPushButton#m_m_varName:hover
 }
 
 //White on White
-QPushButton#m_cancelButton 
+QPushButton#m_varName
 {
-    color: #ccc; 
-    border: 1px solid #343a40;
-    font-size: 16px; 
-    background-color: #212529;
+    color: #ccc;
+    border: 1px solid #444;
+    font-size: 14px;
+    border-radius:
+    5px;font-family: 'Poppins';
 }
 
-QPushButton#m_cancelButton:hover
+QPushButton#m_varName:hover
 {
-    color: #ddd;
-    border: 2px solid #444;
-    font-size: 16px;
-    background-color: #212529;
+    color: #fff;
+    border:
+    1px solid #444;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
 }
-
-QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
-
-QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
