@@ -1,0 +1,38 @@
+//Orange border white text (when not hovered)
+
+QPushButton#m_varName
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_depositButton_2:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+//Orange on Orange = ?
+
+QPushButton#m_sendMessageButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_sendMessageButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
