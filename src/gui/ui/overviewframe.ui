@@ -4178,7 +4178,22 @@ border-radius: 5px;</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+         <string notr="true">QPushButton#m_aboutQT
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_aboutQT:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
         </property>
         <property name="text">
          <string>ABOUT QT</string>
@@ -6434,7 +6449,6 @@ text-align: left;</string>
      <zorder>m_totalPortfolioLabelUSD</zorder>
      <zorder>m_copyAddressButton_3</zorder>
      <zorder>overviewBox</zorder>
-     <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
@@ -6442,6 +6456,7 @@ text-align: left;</string>
      <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>transactionsBox</zorder>
+     <zorder>aboutBox</zorder>
     </widget>
    </item>
   </layout>
