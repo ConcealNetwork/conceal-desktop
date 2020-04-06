@@ -680,9 +680,18 @@ border: none;
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: none; font-size: 14px;
+       <string notr="true">QPushButton#m_copyAddressButton {
+border: none; font-size: 14px;
 font-family: 'Poppins';
-color: orange;</string>
+color: orange;
+}
+
+QPushButton#m_copyAddressButton:hover {
+border: none; font-size: 14px;
+font-family: 'Poppins';
+color: #ddd;
+ }
+</string>
       </property>
       <property name="text">
        <string>COPY WALLET ADDRESS</string>
@@ -837,7 +846,7 @@ font-size: 18px;
 font-family: Poppins;</string>
         </property>
         <property name="text">
-         <string notr="true">000000.00 USD</string>
+         <string notr="true"/>
         </property>
         <property name="pixmap">
          <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
@@ -2417,8 +2426,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>890</x>
          <y>20</y>
-         <width>141</width>
-         <height>30</height>
+         <width>180</width>
+         <height>35</height>
         </rect>
        </property>
        <property name="minimumSize">
@@ -2467,8 +2476,8 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>0</x>
          <y>20</y>
-         <width>241</width>
-         <height>25</height>
+         <width>180</width>
+         <height>35</height>
         </rect>
        </property>
        <property name="minimumSize">

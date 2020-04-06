@@ -384,7 +384,6 @@ void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first,
 
 void OverviewFrame::updateWalletAddress(const QString &_address)
 {
-  m_ui->m_copyAddressButton->setStyleSheet("border: none; font-size: 14px;font-family: 'Poppins';color: orange; text-align: left;");
   OverviewFrame::wallet_address = _address;
   m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
 
