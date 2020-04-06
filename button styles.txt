@@ -28,7 +28,7 @@ QPushButton#m_varName
     border-radius: 5px; font-family: 'Poppins';
 }
 
-QPushButton#m_m_varName:hover
+QPushButton#m_varName:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
