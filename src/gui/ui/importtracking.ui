@@ -199,7 +199,22 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+     <string notr="true">QPushButton#m_okButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_okButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
     </property>
     <property name="text">
      <string>IMPORT</string>
@@ -227,7 +242,22 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;</string>
+     <string notr="true">QPushButton#m_cancelButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_cancelButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
     </property>
     <property name="text">
      <string>CANCEL</string>

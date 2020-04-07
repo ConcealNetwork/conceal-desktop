@@ -87,7 +87,23 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+      <string notr="true">QPushButton#m_cancelButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_cancelButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
      </property>
      <property name="text">
       <string>CANCEL</string>
@@ -106,7 +122,23 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+      <string notr="true">QPushButton#m_okButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_okButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
      </property>
      <property name="text">
       <string>OK</string>

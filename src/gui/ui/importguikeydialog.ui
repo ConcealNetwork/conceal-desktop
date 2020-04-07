@@ -245,9 +245,22 @@ QPushButton#m_okButton:hover
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+       <string notr="true">QPushButton#m_cancelButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
 
-QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_cancelButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>

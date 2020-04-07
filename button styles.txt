@@ -22,7 +22,7 @@ QPushButton#m_varName:hover
 
 QPushButton#m_varName
 {
-    color: orange; ;
+    color: orange;
     border: 1px solid orange;
     font-size: 14px;
     border-radius: 5px; font-family: 'Poppins';
@@ -30,7 +30,7 @@ QPushButton#m_varName
 
 QPushButton#m_varName:hover
 {
-    color:#FFD700; ;
+    color:#FFD700;
     border: 1px solid orange;
     font-size: 14px;
     border-radius: 5px;

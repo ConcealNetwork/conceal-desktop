@@ -2507,19 +2507,19 @@ QPushButton#m_exportCSVButton:hover
         <rect>
          <x>0</x>
          <y>20</y>
-         <width>180</width>
+         <width>300</width>
          <height>35</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>180</width>
+         <width>300</width>
          <height>35</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>180</width>
+         <width>300</width>
          <height>35</height>
         </size>
        </property>
@@ -2540,6 +2540,9 @@ text-align: left;
        </property>
        <property name="text">
         <string>MESSAGE OVERVIEW</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
        </property>
       </widget>
       <widget class="QTextBrowser" name="textBrowser_2">
@@ -6546,12 +6549,12 @@ text-align: left;</string>
      <zorder>darkness</zorder>
      <zorder>leftMenu</zorder>
      <zorder>lockBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>transactionsBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>

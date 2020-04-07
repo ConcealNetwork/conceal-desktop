@@ -113,9 +113,22 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_okButton {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;}
+        <string notr="true">QPushButton#m_okButton
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
 
-QPushButton#m_okButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px;}</string>
+QPushButton#m_okButton:hover
+{
+    color:#FFD700;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>CLOSE</string>

@@ -166,7 +166,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copySeedButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copySeedButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -204,7 +220,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_backButton_2
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_backButton_2:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -242,7 +274,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copySpendKeyButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copySpendKeyButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY SPEND KEY</string>
@@ -374,7 +422,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copyViewKeyButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyViewKeyButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY VIEW KEY</string>
@@ -396,7 +460,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_backButton_4
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_backButton_4:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -556,7 +636,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_showSeed
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_showSeed:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>SHOW SEED</string>
@@ -578,7 +674,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_backButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_backButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -600,7 +712,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_showPrivate
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_showPrivate:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>PRIVATE KEYS</string>
@@ -638,7 +766,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_showGUI
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_showGUI:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>TRACKING KEY</string>
@@ -712,7 +856,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copyGUIKeyButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyGUIKeyButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY</string>
@@ -785,7 +945,23 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_backButton_3
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_backButton_3:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>BACK</string>
@@ -811,8 +987,8 @@ p, li { white-space: pre-wrap; }
      <zorder>label</zorder>
      <zorder>guiKeyBox</zorder>
      <zorder>introBox</zorder>
-     <zorder>seedBox</zorder>
      <zorder>privateKeyBox</zorder>
+     <zorder>seedBox</zorder>
     </widget>
    </item>
   </layout>
