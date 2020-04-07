@@ -1765,11 +1765,22 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: none; font-size: 14px;
-font-family: 'Poppins';
-color: orange;
-text-align: left;
-text-decoration: underline;</string>
+         <string notr="true">QPushButton#m_overviewWithdrawButton
+{
+	border: none; font-size: 14px;
+	font-family: 'Poppins';
+	color: orange;
+	text-align: left;
+	text-decoration: underline;
+}
+QPushButton#m_overviewWithdrawButton:hover
+{
+	border: none; font-size: 14px;
+	font-family: 'Poppins';
+	color: #ddd;
+	text-align: left;
+	text-decoration: underline;
+}</string>
         </property>
         <property name="text">
          <string>Withdraw</string>
@@ -2216,6 +2227,10 @@ text-align: left;
        <zorder>label_13</zorder>
        <zorder>m_chart</zorder>
       </widget>
+      <zorder>ov_fundsBox</zorder>
+      <zorder>ov_recentBox</zorder>
+      <zorder>ov_marketBox</zorder>
+      <zorder>ov_contactBox</zorder>
      </widget>
      <widget class="QGroupBox" name="transactionsBox">
       <property name="geometry">
@@ -6104,7 +6119,7 @@ color: #ccc;
       <widget class="QPushButton" name="m_copyAddressButton_2">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>4</x>
          <y>60</y>
          <width>141</width>
          <height>30</height>
@@ -6117,7 +6132,23 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copyAddressButton_2
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyAddressButton_2:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY ADDRESS</string>
@@ -6126,7 +6157,7 @@ color: #ccc;
       <widget class="QPushButton" name="m_copyPaymentIdButton">
        <property name="geometry">
         <rect>
-         <x>150</x>
+         <x>154</x>
          <y>60</y>
          <width>141</width>
          <height>30</height>
@@ -6139,7 +6170,23 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_copyPaymentIdButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyPaymentIdButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>COPY PAYMENTID</string>
@@ -6148,7 +6195,7 @@ color: #ccc;
       <widget class="QPushButton" name="m_payToButton">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>304</x>
          <y>60</y>
          <width>141</width>
          <height>30</height>
@@ -6161,7 +6208,23 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_payToButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_payToButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>PAY TO</string>
@@ -6170,7 +6233,7 @@ color: #ccc;
       <widget class="QPushButton" name="m_editAddressButton">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>454</x>
          <y>60</y>
          <width>141</width>
          <height>30</height>
@@ -6183,7 +6246,23 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_editAddressButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_editAddressButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>EDIT CONTACT</string>
@@ -6192,7 +6271,7 @@ color: #ccc;
       <widget class="QPushButton" name="m_deleteAddressButton">
        <property name="geometry">
         <rect>
-         <x>600</x>
+         <x>604</x>
          <y>60</y>
          <width>141</width>
          <height>30</height>
@@ -6205,7 +6284,23 @@ color: #ccc;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">QPushButton#m_deleteAddressButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_deleteAddressButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>DELETE CONTACT</string>
@@ -6436,27 +6531,27 @@ text-align: left;</string>
        <bool>false</bool>
       </property>
      </widget>
-     <zorder>lockBox</zorder>
-     <zorder>darkness</zorder>
      <zorder>m_qrcodebutton</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_currentWalletTitle</zorder>
      <zorder>m_myConcealWalletTitle</zorder>
      <zorder>m_statusBox</zorder>
-     <zorder>leftMenu</zorder>
      <zorder>line</zorder>
      <zorder>m_qrButton</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
      <zorder>m_copyAddressButton_3</zorder>
-     <zorder>overviewBox</zorder>
+     <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>darkness</zorder>
+     <zorder>leftMenu</zorder>
+     <zorder>lockBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>newMessageBox</zorder>
+     <zorder>overviewBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>aboutBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7658,8 +7753,8 @@ text-align: left;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>
