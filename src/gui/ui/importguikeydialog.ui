@@ -197,13 +197,27 @@ padding: 5px;
       </property>
       <property name="font">
        <font>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_okButton {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
+       <string notr="true">QPushButton#m_okButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
 
-QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#m_okButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
       </property>
       <property name="text">
        <string>IMPORT</string>
@@ -226,13 +240,27 @@ QPushButton#m_okButton:hover {color: orange; background-color: #212529; border: 
       </property>
       <property name="font">
        <font>
+        <family>Poppins</family>
         <pointsize>-1</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #343a40; font-size: 16px; background-color: #212529;}
+       <string notr="true">QPushButton#m_cancelButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px; font-family: 'Poppins';
+}
 
-QPushButton#m_cancelButton:hover {color: #ddd; border: 2px solid #444; font-size: 16px; background-color: #212529;}</string>
+QPushButton#m_cancelButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
