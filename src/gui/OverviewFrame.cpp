@@ -159,11 +159,11 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   {
     m_ui->m_lockWalletButton->hide();
   }
-  else 
+  else
   {
-    m_ui->m_lockWalletButton->show();    
+    m_ui->m_lockWalletButton->show();
   }
-  
+
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -238,12 +238,19 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   walletSynced = false;
   m_ui->m_overviewWithdrawButton->hide();
 
-  /* Pull the chart */
-  QNetworkAccessManager *nam = new QNetworkAccessManager(this);
-  connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
-  const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
-  QNetworkRequest request(url);
-  nam->get(request);
+  /* Get current currency */
+  QString currency = Settings::instance().getCurrentCurrency();
+  if (currency.compare("EUR") == 0)
+  {
+    m_ui->m_eur->setChecked(true);
+  }
+  else
+  {
+    m_ui->m_usd->setChecked(true);
+  }
+
+  /* Show the price chart */
+  loadChart();
 
   QString connection = Settings::instance().getConnection();
 
@@ -264,17 +271,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   else
   {
     m_ui->m_english->setChecked(true);
-  }
-
-  /* Get current currency */
-  QString currency = Settings::instance().getCurrentCurrency();
-  if (currency.compare("EUR") == 0)
-  {
-    m_ui->m_eur->setChecked(true);
-  }
-  else
-  {
-    m_ui->m_usd->setChecked(true);
   }
 
   /* Set current connection options */
@@ -334,6 +330,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   depositParamsChanged();
   reset();
   showCurrentWalletName();
+  calculateFee();
 }
 
 OverviewFrame::~OverviewFrame()
@@ -402,11 +399,35 @@ void OverviewFrame::updateWalletAddress(const QString &_address)
   {
     m_ui->m_lockWalletButton->hide();
   }
-  else 
+  else
   {
-    m_ui->m_lockWalletButton->show();    
+    m_ui->m_lockWalletButton->show();
+  }
+}
+
+/* Load the price chart on the overview screen */
+void OverviewFrame::loadChart()
+{
+  /* Get current currency */
+  QString currency = Settings::instance().getCurrentCurrency();
+
+  /* Pull the chart */
+  QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+  connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
+
+  QUrl url;
+
+  if (currency.compare("EUR") == 0)
+  {
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=DD-MM");
+  }
+  else
+  {
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
   }
 
+  QNetworkRequest request(url);
+  nam->get(request);
 }
 
 /* Show the name of the opened wallet */
@@ -423,6 +444,19 @@ void OverviewFrame::downloadFinished(QNetworkReply *reply)
   QPixmap pm;
   pm.loadFromData(reply->readAll());
   m_ui->m_chart->setPixmap(pm);
+}
+
+void OverviewFrame::calculateFee()
+{
+  m_actualFee = 1000;
+  QString connection = Settings::instance().getConnection();
+  if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
+  {
+    if (!OverviewFrame::remote_node_fee_address.isEmpty())
+    {
+      m_actualFee = m_actualFee + 11000;
+    }
+  }
 }
 
 void OverviewFrame::layoutChanged()
@@ -820,6 +854,29 @@ void OverviewFrame::clearAllClicked()
   m_ui->m_addressLabel->clear();
   m_ui->m_messageEdit->clear();
   m_ui->m_amountEdit->setText("0.000000");
+}
+
+/* Set the amount to 25% of available funds */
+void OverviewFrame::setPercentage25()
+{
+  calculateFee();
+  uint64_t amount = m_actualBalance / 4 - m_actualFee;
+  m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
+}
+
+/* Set the amount to 50% of available funds */
+void OverviewFrame::setPercentage50()
+{
+  calculateFee();
+  uint64_t amount = (m_actualBalance / 2) - m_actualFee;
+  m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
+}
+
+/* Set the amount to total available funds */
+void OverviewFrame::setPercentage100()
+{
+  calculateFee();
+  m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(m_actualBalance - m_actualFee));
 }
 
 void OverviewFrame::sendFundsClicked()
@@ -1486,6 +1543,9 @@ void OverviewFrame::saveLanguageCurrencyClicked()
   }
   Settings::instance().setCurrentCurrency(currency);
 
+  loadChart();
+  m_priceProvider->getPrice();
+
   QMessageBox::information(this,
                            tr("Language and Currency settings saved"),
                            tr("Please restart the wallet for the new settings to take effect."),
@@ -1883,7 +1943,6 @@ void OverviewFrame::closeToTrayClicked()
   }
 #endif
 }
-
 
 } // namespace WalletGui
 
