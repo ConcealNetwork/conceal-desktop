@@ -38,6 +38,7 @@ public:
   void setAddress(const QString &_address);
   void setPaymentId(const QString &_paymendId);
   bool fromPay = true;
+  quint64 m_actualFee = 0;
   QModelIndex index;
   void scrollToTransaction(const QModelIndex& _index);
 
@@ -83,8 +84,10 @@ private:
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
+  void loadChart();
   void setStatusBarText(const QString &_text);
   void updateWalletAddress(const QString &_address);
+  void calculateFee();
   void walletSynchronized(int _error, const QString &_error_text);
   void actualBalanceUpdated(quint64 _balance);
   void pendingBalanceUpdated(quint64 _balance);
@@ -143,6 +146,9 @@ private:
   Q_SLOT void minToTrayClicked();
   Q_SLOT void closeToTrayClicked();
   Q_SLOT void optimizeClicked();
+  Q_SLOT void setPercentage25();
+  Q_SLOT void setPercentage50();
+  Q_SLOT void setPercentage100();    
   Q_SLOT void autoOptimizeClicked(); 
   Q_SLOT void saveLanguageCurrencyClicked();
   Q_SLOT void saveConnectionClicked();

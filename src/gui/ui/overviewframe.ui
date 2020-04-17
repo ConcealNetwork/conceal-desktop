@@ -102,7 +102,7 @@ background-color: #282d31;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>210</y>
+         <y>200</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -142,7 +142,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>290</y>
+         <y>280</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -222,7 +222,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>250</y>
+         <y>240</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -302,7 +302,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>170</y>
+         <y>160</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -348,7 +348,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>330</y>
+         <y>320</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -428,7 +428,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>390</y>
+         <y>380</y>
          <width>180</width>
          <height>35</height>
         </rect>
@@ -475,7 +475,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>430</y>
+         <y>420</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -581,7 +581,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>377</y>
+         <y>367</y>
          <width>120</width>
          <height>1</height>
         </rect>
@@ -597,7 +597,7 @@ font-size: 14px;
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>470</y>
+         <y>460</y>
          <width>171</width>
          <height>35</height>
         </rect>
@@ -638,6 +638,22 @@ border: none;
        </property>
        <property name="text">
         <string>OPEN WALLET</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>505</y>
+         <width>120</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #444;</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>
@@ -681,13 +697,15 @@ border: none;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#m_copyAddressButton {
-border: none; font-size: 14px;
+border: none; 
+font-size: 14px;
 font-family: 'Poppins';
 color: orange;
 }
 
 QPushButton#m_copyAddressButton:hover {
-border: none; font-size: 14px;
+border: none; 
+font-size: 14px;
 font-family: 'Poppins';
 color: #ddd;
  }
@@ -1965,9 +1983,9 @@ border: none;</string>
        <widget class="QLabel" name="m_marketCap">
         <property name="geometry">
          <rect>
-          <x>410</x>
+          <x>390</x>
           <y>60</y>
-          <width>81</width>
+          <width>101</width>
           <height>25</height>
          </rect>
         </property>
@@ -2106,7 +2124,7 @@ border: none;</string>
          <rect>
           <x>270</x>
           <y>60</y>
-          <width>101</width>
+          <width>91</width>
           <height>25</height>
          </rect>
         </property>
@@ -4311,8 +4329,8 @@ font-family: Poppins;</string>
         <rect>
          <x>0</x>
          <y>330</y>
-         <width>731</width>
-         <height>51</height>
+         <width>751</width>
+         <height>71</height>
         </rect>
        </property>
        <property name="font">
@@ -4337,7 +4355,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>10</x>
          <y>280</y>
-         <width>740</width>
+         <width>501</width>
          <height>31</height>
         </rect>
        </property>
@@ -4420,8 +4438,8 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>400</y>
-         <width>281</width>
+         <y>415</y>
+         <width>181</width>
          <height>25</height>
         </rect>
        </property>
@@ -4470,7 +4488,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>430</y>
+         <y>450</y>
          <width>740</width>
          <height>31</height>
         </rect>
@@ -4694,7 +4712,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>490</y>
+         <y>500</y>
          <width>180</width>
          <height>35</height>
         </rect>
@@ -4730,7 +4748,7 @@ QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; 
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>490</y>
+         <y>500</y>
          <width>180</width>
          <height>35</height>
         </rect>
@@ -4803,8 +4821,8 @@ border: none;</string>
       <widget class="QCheckBox" name="m_saveAddress">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>404</y>
+         <x>190</x>
+         <y>420</y>
          <width>21</width>
          <height>17</height>
         </rect>
@@ -4820,7 +4838,7 @@ border: none;</string>
        <property name="geometry">
         <rect>
          <x>410</x>
-         <y>490</y>
+         <y>500</y>
          <width>180</width>
          <height>35</height>
         </rect>
@@ -4855,6 +4873,54 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
         <string>CLEAR</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="m_percent100">
+       <property name="geometry">
+        <rect>
+         <x>675</x>
+         <y>280</y>
+         <width>75</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+       </property>
+       <property name="text">
+        <string>100%</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_percent50">
+       <property name="geometry">
+        <rect>
+         <x>595</x>
+         <y>280</y>
+         <width>75</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+       </property>
+       <property name="text">
+        <string>50%</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="m_percent25">
+       <property name="geometry">
+        <rect>
+         <x>515</x>
+         <y>280</y>
+         <width>75</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+       </property>
+       <property name="text">
+        <string>25%</string>
+       </property>
+      </widget>
       <zorder>textBrowser_3</zorder>
       <zorder>m_amountEdit</zorder>
       <zorder>pidLabel</zorder>
@@ -4873,6 +4939,9 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
       <zorder>m_saveAddress</zorder>
       <zorder>m_clearAllButton</zorder>
       <zorder>m_balanceLabel</zorder>
+      <zorder>m_percent100</zorder>
+      <zorder>m_percent50</zorder>
+      <zorder>m_percent25</zorder>
      </widget>
      <widget class="QGroupBox" name="newMessageBox">
       <property name="geometry">
@@ -5962,8 +6031,8 @@ font-weight: normal;</string>
      <widget class="QTextBrowser" name="m_statusBox">
       <property name="geometry">
        <rect>
-        <x>409</x>
-        <y>50</y>
+        <x>400</x>
+        <y>49</y>
         <width>400</width>
         <height>25</height>
        </rect>
@@ -5981,7 +6050,7 @@ font-weight: normal;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: Poppins;
+       <string notr="true">font-family: 'Poppins';
 font-size: 14px;
 border: none; color: orange;</string>
       </property>
@@ -6545,9 +6614,6 @@ text-align: left;</string>
      <zorder>darkness</zorder>
      <zorder>lockBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>overviewBox</zorder>
-     <zorder>sendBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>leftMenu</zorder>
@@ -6559,6 +6625,9 @@ text-align: left;</string>
      <zorder>m_qrcodebutton</zorder>
      <zorder>m_copyAddressButton</zorder>
      <zorder>m_totalPortfolioLabelUSD</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>sendBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7687,6 +7756,54 @@ text-align: left;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_percent25</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>setPercentage25()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>762</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_percent50</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>setPercentage50()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>842</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_percent100</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>setPercentage100()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>922</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>newTransferClicked()</slot>
@@ -7744,6 +7861,9 @@ text-align: left;</string>
   <slot>redditClicked()</slot>
   <slot>telegramClicked()</slot>
   <slot>twitterClicked()</slot>
+  <slot>setPercentage25()</slot>
+  <slot>setPercentage50()</slot>
+  <slot>setPercentage100()</slot>
   <slot>mediumClicked()</slot>
   <slot>lockWallet()</slot>
   <slot>unlockWallet()</slot>
