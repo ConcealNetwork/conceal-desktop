@@ -35,6 +35,3 @@ script:
    - make build-release
    - mkdir bin && mv build/release/CONCEAL-GUI bin/
    - make clean
-  - cd build
-  - cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC=true ..
-  - make
