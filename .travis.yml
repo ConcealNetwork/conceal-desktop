@@ -16,21 +16,13 @@ matrix:
           packages:
             - libboost-all-dev
             - g++-6
+            - qt5-default
     env:
     - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
     - LABEL="linux"
     - _DEPLOY="true"
 
-before_install:
-  - sudo add-apt-repository ppa:beineri/opt-qt58-trusty -y
-  - sudo apt-get update
-
-install:
-  - sudo apt-get install qt58base qt58svg qt58charts-no-lgpl qt58xmlpatterns
-  - source /opt/qt58/bin/qt58-env.sh
-
 script:
-  - /opt/qt58/bin/qmake PREFIX=/usr
   - mkdir build
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC=true ..
