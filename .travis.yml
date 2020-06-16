@@ -22,8 +22,19 @@ matrix:
     - LABEL="linux"
     - _DEPLOY="true"
 
+ git:
+   submodules: false
+
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+
 script:
-  - mkdir build
+   - cd conceal-wallet
+   - git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+   - make build-release
+   - mkdir bin && mv build/release/CONCEAL-GUI bin/
+   - make clean
   - cd build
   - cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC=true ..
   - make
