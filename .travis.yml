@@ -21,6 +21,25 @@ matrix:
     - LABEL="linux"
     - _DEPLOY="true"
 
+before_install:
+  # repo for Qt
+  - sudo apt-add-repository --yes ppa:beineri/opt-qt551-trusty
+  - sudo apt-get -qq update
+
+install:
+  - sudo apt-get --yes install qt55base qt55imageformats qt55svg
+  - export CXX="g++-4.8"
+  - export CC="gcc-4.8"
+
+before_script:
+  # Qt variables
+  - QTDIR="/opt/qt55"
+  - PATH="$QTDIR/bin:$PATH"
+  - source /opt/qt55/bin/qt55-env.sh
+
+  # cmake build of the project
+  - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/opt/qt55/lib/cmake
+
 script:
   - mkdir build
   - cd build
