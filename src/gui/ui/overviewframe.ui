@@ -7328,7 +7328,7 @@ text-align: left;</string>
    <sender>m_redditButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>bitcointalkClicked()</slot>
+   <slot>redditClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>
