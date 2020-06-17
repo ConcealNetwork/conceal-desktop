@@ -1378,12 +1378,18 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_qtradeButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_qtradeButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>qTrade</string>
