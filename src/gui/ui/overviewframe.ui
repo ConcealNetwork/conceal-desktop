@@ -1272,12 +1272,18 @@ color: orange;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_stexButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_stexButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>STEX</string>
