@@ -16,7 +16,7 @@ class PriceProvider : public QObject {
   Q_OBJECT
 
 public:
-  PriceProvider(QObject *parent);
+  explicit PriceProvider(QObject *parent);
   ~PriceProvider();
 
   void getPrice();
@@ -26,7 +26,7 @@ private:
   void readyRead();
 
 Q_SIGNALS:
-  void priceFoundSignal(const QString& _btcccx,const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume);
+  void priceFoundSignal(const QString& _btcccx,const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
 };
 
 }

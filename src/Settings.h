@@ -24,6 +24,7 @@ public:
 
   void setCommandLineParser(CommandLineParser* _cmd_line_parser);
   void load();
+  void setOptions();
 
   bool hasAllowLocalIpOption() const;
   bool hasHideMyPortOption() const;
@@ -41,13 +42,18 @@ public:
   QStringList getRpcNodesList() const;
   QString getCurrentRemoteNode() const;  
   QString getCurrentFeeAddress() const;   
+  QString getCurrentCurrency() const;   
+  QString getAutoOptimizationStatus() const;     
   QString getConnection() const;    
   QString getWalletFile() const;
   QString getWalletName() const;
   QString getAddressBookFile() const;
   QStringList getMiningPoolList() const;
   bool isEncrypted() const;
+  bool isTrackingMode() const;  
+  quint64 getOptimizationInterval() const;
   QString getVersion() const;
+  QString getLanguage() const;  
   bool isStartOnLoginEnabled() const;
 #ifdef Q_OS_WIN
   bool isMinimizeToTrayEnabled() const;
@@ -56,14 +62,19 @@ public:
 
   void setWalletFile(const QString& _file);
   void setEncrypted(bool _encrypted);
-  void setCurrentTheme(const QString& _theme);
+  void setTrackingMode(bool _tracking);  
   void setStartOnLoginEnabled(bool _enable);
+  void setLanguage(const QString& _language);  
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
   void setCurrentFeeAddress(const QString& _feeAddress);  
+  void setCurrentCurrency(const QString& _currency);    
+  void setAutoOptimizationStatus(const QString& _status);    
+  void setOptimizationInterval(quint64 _interval);  
   void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
+
 #ifdef Q_OS_WIN
   void setMinimizeToTrayEnabled(bool _enable);
   void setCloseToTrayEnabled(bool _enable);
@@ -74,6 +85,9 @@ private:
   QString m_addressBookFile;
   CommandLineParser* m_cmdLineParser;
   QString m_connectionMode;
+  QString m_autoOptimizationStatus;
+  QString m_currentLang;  
+  QString m_currentCurrency;    
   QString m_remoteNode;  
   quint16 m_daemonPort;  
 

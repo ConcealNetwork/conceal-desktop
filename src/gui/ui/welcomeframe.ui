@@ -18,7 +18,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Lato</family>
+    <family>Poppins</family>
     <pointsize>9</pointsize>
    </font>
   </property>
@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">color: #e5e5e5;
-border: 0px; background-color: #212529;</string>
+border: 0px; background-color: #212529; font-family: Poppins;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -61,7 +61,7 @@ border: 0px; background-color: #212529;</string>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Poppins</family>
         <pointsize>18</pointsize>
        </font>
       </property>
@@ -98,6 +98,7 @@ border: 0px; background-color: #212529;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -120,6 +121,7 @@ font-size: 15px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -142,6 +144,7 @@ font-size: 15px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -164,6 +167,7 @@ font-size: 15px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -173,31 +177,6 @@ font-size: 15px;</string>
        </property>
        <property name="text">
         <string>■  You control the private keys to your funds.</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>59</y>
-         <width>481</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>-1</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: #ddd;
-font-size: 20px;</string>
-       </property>
-       <property name="text">
-        <string>The Conceal Wallet</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QPushButton" name="next1">
@@ -211,13 +190,27 @@ font-size: 20px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#next1 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#next1
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 16px;
+    border-radius: 5px; font-family: 'Poppins';
+}
 
-QPushButton#next1:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#next1:hover
+{
+    color:#FFD700;
+    border: 1px solid orange;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -239,66 +232,40 @@ QPushButton#next1:hover {color: orange; background-color: #1; border: 2px solid 
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>50</y>
+         <width>1191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ddd; 
+font-size: 22px;
+font-family: Poppins;</string>
+       </property>
+       <property name="text">
+        <string>WELCOME TO THE CONCEAL WALLET</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
       <zorder>label_5</zorder>
       <zorder>next1</zorder>
       <zorder>label_3</zorder>
       <zorder>label_8</zorder>
       <zorder>label_9</zorder>
-      <zorder>label_10</zorder>
       <zorder>line_2</zorder>
-     </widget>
-     <widget class="Line" name="logoLine">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>10</y>
-        <width>1</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #333;</string>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>25</y>
-        <width>571</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>-1</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: #ddd; 
-font-size: 22px;
-font-family: Lato;</string>
-      </property>
-      <property name="text">
-       <string>WELCOME TO THE CONCEAL WALLET</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>0</y>
-        <width>61</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
+      <zorder>label</zorder>
      </widget>
      <widget class="QGroupBox" name="box2">
       <property name="geometry">
@@ -323,6 +290,7 @@ font-family: Lato;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -345,6 +313,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -367,6 +336,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -389,6 +359,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -411,6 +382,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -436,13 +408,14 @@ font-size: 20px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#next2 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#next2 {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#next2:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#next2:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -475,6 +448,7 @@ QPushButton#next2:hover {color: orange; background-color: #1; border: 2px solid 
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -497,6 +471,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -519,6 +494,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -541,6 +517,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -576,6 +553,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -598,6 +576,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -620,6 +599,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -642,6 +622,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -664,6 +645,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -689,13 +671,14 @@ font-size: 20px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#next3 {color: orange; background-color: #1; border: 1px solid orange; font-size: 16px;}
+        <string notr="true">QPushButton#next3 {color: orange; background-color: #212529; border: 1px solid orange; font-size: 16px;}
 
-QPushButton#next3:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 16px;}</string>
+QPushButton#next3:hover {color: orange; background-color: #212529; border: 2px solid orange; font-size: 16px;}</string>
        </property>
        <property name="text">
         <string>NEXT</string>
@@ -728,6 +711,7 @@ QPushButton#next3:hover {color: orange; background-color: #1; border: 2px solid 
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -763,6 +747,7 @@ font-size: 14px;</string>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -796,21 +781,20 @@ font-size: 20px;</string>
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>100</x>
          <y>200</y>
-         <width>180</width>
+         <width>210</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#pushButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
-
-QPushButton#pushButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>CREATE NEW WALLET</string>
@@ -819,21 +803,20 @@ QPushButton#pushButton:hover {color: orange; background-color: #1; border: 2px s
       <widget class="QPushButton" name="pushButton_2">
        <property name="geometry">
         <rect>
-         <x>500</x>
+         <x>490</x>
          <y>200</y>
-         <width>180</width>
+         <width>210</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#pushButton_2 {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
-
-QPushButton#pushButton_2:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>OPEN EXISTING WALLET</string>
@@ -842,24 +825,23 @@ QPushButton#pushButton_2:hover {color: orange; background-color: #1; border: 2px
       <widget class="QPushButton" name="spendkeyButton">
        <property name="geometry">
         <rect>
-         <x>400</x>
+         <x>370</x>
          <y>380</y>
-         <width>180</width>
+         <width>210</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#spendkeyButton {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
-
-QPushButton#spendkeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
-        <string>IMPORT SPEND/VIEW KEYS</string>
+        <string>IMPORT PRIVATE KEYS</string>
        </property>
       </widget>
       <widget class="QPushButton" name="guikeyButton">
@@ -867,19 +849,18 @@ QPushButton#spendkeyButton:hover {color: #ddd; border: 2px solid #444; font-size
         <rect>
          <x>600</x>
          <y>380</y>
-         <width>180</width>
+         <width>210</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#guikeyButton {color: #ccc; border: 1px solid #343a40; font-size: 13px; background-color: #21259;}
-
-QPushButton#guikeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 13px; background-color: #21259;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>IMPORT GUI KEY</string>
@@ -888,21 +869,20 @@ QPushButton#guikeyButton:hover {color: #ddd; border: 2px solid #444; font-size: 
       <widget class="QPushButton" name="seedButton">
        <property name="geometry">
         <rect>
-         <x>850</x>
+         <x>840</x>
          <y>200</y>
-         <width>180</width>
+         <width>210</width>
          <height>30</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#seedButton {color: orange; background-color: #1; border: 1px solid orange; font-size: 13px;}
-
-QPushButton#seedButton:hover {color: orange; background-color: #1; border: 2px solid orange; font-size: 13px;}</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
        </property>
        <property name="text">
         <string>IMPORT SEED</string>
@@ -911,14 +891,15 @@ QPushButton#seedButton:hover {color: orange; background-color: #1; border: 2px s
       <widget class="QLabel" name="label_25">
        <property name="geometry">
         <rect>
-         <x>40</x>
+         <x>30</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -936,14 +917,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_26">
        <property name="geometry">
         <rect>
-         <x>430</x>
+         <x>420</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -961,14 +943,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_27">
        <property name="geometry">
         <rect>
-         <x>780</x>
+         <x>770</x>
          <y>140</y>
-         <width>321</width>
+         <width>351</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -986,14 +969,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_28">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>30</x>
          <y>170</y>
-         <width>271</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1011,14 +995,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_30">
        <property name="geometry">
         <rect>
-         <x>790</x>
+         <x>770</x>
          <y>170</y>
-         <width>301</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1036,14 +1021,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_31">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>420</x>
          <y>170</y>
-         <width>271</width>
+         <width>351</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1061,14 +1047,15 @@ font-size: 14px;</string>
       <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
-         <x>390</x>
+         <x>340</x>
          <y>310</y>
-         <width>391</width>
+         <width>511</width>
          <height>31</height>
         </rect>
        </property>
        <property name="font">
         <font>
+         <family>Poppins</family>
          <pointsize>-1</pointsize>
         </font>
        </property>
@@ -1101,13 +1088,10 @@ font-size: 14px;</string>
       </widget>
      </widget>
      <zorder>label_4</zorder>
-     <zorder>logoLine</zorder>
-     <zorder>label</zorder>
-     <zorder>label_11</zorder>
-     <zorder>box1</zorder>
      <zorder>box2</zorder>
      <zorder>box3</zorder>
      <zorder>box4</zorder>
+     <zorder>box1</zorder>
     </widget>
    </item>
   </layout>

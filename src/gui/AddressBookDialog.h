@@ -22,10 +22,11 @@ class AddressBookDialog : public QDialog {
   Q_DISABLE_COPY(AddressBookDialog)
 
 public:
-  AddressBookDialog(QWidget* _parent);
+  explicit AddressBookDialog(QWidget* _parent);
   ~AddressBookDialog();
 
   QString getAddress() const;
+  QString getPaymentID() const;
 
 private:
   QScopedPointer<Ui::AddressBookDialog> m_ui;

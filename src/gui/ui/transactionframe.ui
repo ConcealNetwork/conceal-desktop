@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>311</width>
-    <height>66</height>
+    <width>441</width>
+    <height>20</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>311</width>
-    <height>60</height>
+    <height>20</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>670</width>
-    <height>100</height>
+    <width>441</width>
+    <height>30</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -38,6 +38,9 @@
    <enum>QFrame::Raised</enum>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0">
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -54,14 +57,14 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="minimumSize">
       <size>
-       <width>311</width>
-       <height>60</height>
+       <width>441</width>
+       <height>20</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>311</width>
-       <height>16777215</height>
+       <width>441</width>
+       <height>20</height>
       </size>
      </property>
      <property name="title">
@@ -70,9 +73,9 @@
      <widget class="QLabel" name="m_amountLabel">
       <property name="geometry">
        <rect>
-        <x>207</x>
-        <y>20</y>
-        <width>91</width>
+        <x>280</x>
+        <y>0</y>
+        <width>141</width>
         <height>21</height>
        </rect>
       </property>
@@ -82,7 +85,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: orange; font-size: 12px;</string>
+       <string notr="true">color: orange; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -94,31 +97,34 @@
      <widget class="QLabel" name="m_iconLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>18</width>
+        <x>10</x>
+        <y>0</y>
+        <width>121</width>
         <height>18</height>
        </rect>
       </property>
       <property name="maximumSize">
        <size>
-        <width>18</width>
+        <width>125</width>
         <height>18</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="m_timeLabel">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>20</y>
-        <width>131</width>
+        <x>130</x>
+        <y>0</y>
+        <width>141</width>
         <height>21</height>
        </rect>
       </property>
@@ -128,7 +134,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd; font-size: 12px;</string>
+       <string notr="true">color: #ddd; font-size: 14px;</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
@@ -145,7 +151,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Poppins</family>
         <pointsize>8</pointsize>
        </font>
       </property>

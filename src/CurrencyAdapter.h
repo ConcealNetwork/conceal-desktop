@@ -34,8 +34,12 @@ public:
   quint64 getDifficultyTarget() const;
   quintptr getNumberOfDecimalPlaces() const;
   QString formatAmount(quint64 _amount) const;
+  QString formatAmountThreeDecimals(quint64 _amount) const;  
+  QString formatCurrencyAmount(quint64 _amount) const;  
   quint64 parseAmount(const QString& _amountString) const;
   bool validateAddress(const QString& _address) const;
+  bool isValidOpenAliasAddress(const QString& _address) const;
+  bool processServerAliasResponse(const std::string& s, std::string& address) const;
 
 private:
   CryptoNote::Currency m_currency;

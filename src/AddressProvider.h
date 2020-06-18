@@ -15,10 +15,10 @@ class AddressProvider : public QObject {
   Q_OBJECT
 
 public:
-  AddressProvider(QObject *parent);
+  explicit AddressProvider(QObject *parent);
   ~AddressProvider();
 
-  void getAddress(const QString& _urlString);
+  void getAddress();
 
 private:
   QNetworkAccessManager m_networkManager;

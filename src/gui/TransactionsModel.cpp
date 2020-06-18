@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 //  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018 The Circle Foundation
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -98,23 +96,23 @@ QVariant TransactionsModel::headerData(int _section, Qt::Orientation _orientatio
     case COLUMN_STATE:
       return QVariant();
     case COLUMN_DATE:
-      return tr("DATE");
+      return tr("Date");
     case COLUMN_TYPE:
-      return tr("TYPE");
+      return tr("Type");        
     case COLUMN_ADDRESS:
-      return tr("ADDRESS");
+      return tr("Address");
     case COLUMN_AMOUNT:
-      return tr("AMOUNT");
+      return tr("Amount");
     case COLUMN_FEE:
-      return tr("FEE");
+      return tr("Fee");
     case COLUMN_HEIGHT:
-      return tr("HEIGHT");
+      return tr("Height");
     case COLUMN_PAYMENT_ID:
-      return tr("PAYMENT ID");
+      return tr("Payment ID");
     case COLUMN_MESSAGE:
-      return tr("MESSAGE");
+      return tr("Message");
     case COLUMN_HASH:
-      return tr("HASH");      
+      return tr("Transaction Hash");      
     default:
       break;
     }
@@ -157,7 +155,15 @@ QVariant TransactionsModel::data(const QModelIndex& _index, int _role) const {
     }
   }
 
+    
+
   switch(_role) {
+case Qt::BackgroundRole:
+  if (0 == _index.row() % 2)
+      return QColor(40, 45, 49);
+  else
+      return QColor(33, 37, 41);
+
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);
@@ -367,6 +373,21 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
     return static_cast<quint8>(TransactionType::INPUT);
   }
 
+  case ROLE_TXTYPE: {
+    QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
+    if(_transaction.isCoinbase) {
+      return "New Block";
+    } else if (_transaction.firstDepositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+      return "New Deposit";
+    } else if (!transactionAddress.compare(WalletAdapter::instance().getAddress())) {
+      return "Optimization";
+    } else if(_transaction.totalAmount < 0) {
+      return "Sent CCX";
+    }
+
+    return "Received CCX";
+  }
+
   case ROLE_HASH:
     return QByteArray(reinterpret_cast<const char*>(&_transaction.hash), sizeof(_transaction.hash));
 
@@ -387,7 +408,7 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
       return static_cast<qint64>(-_transfer.amount);
     } else if (transactionType == TransactionType::DEPOSIT) {
-      return static_cast<qint64>(-(_transaction.fee + _deposit.amount));
+      return static_cast<qint64>(_transaction.fee + _deposit.amount);
     }
 
     return QVariant();

@@ -129,6 +129,7 @@ HEADERS += libqrencode/bitstream.h \
            src/AliasProvider.h \
            src/AddressProvider.h \
            src/CommandLineParser.h \
+           src/TranslatorManager.h \           
            src/CryptoNoteWrapper.h \
            src/CurrencyAdapter.h \
            src/LoggerAdapter.h \
@@ -159,16 +160,16 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DisclaimerDialog.h \
            src/gui/LinksDialog.h \           
            src/gui/AddressBookDialog.h \
-           src/gui/AddressBookFrame.h \
            src/gui/AddressBookModel.h \
            src/gui/AnimatedLabel.h \
            src/gui/ChangePasswordDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
+           src/gui/BankingFrame2.h \           
            src/gui/DepositModel.h \
            src/gui/DepositsFrame.h \
            src/gui/ExitWidget.h \
-           src/gui/ImportKeyDialog.h \      
+           src/gui/ImportGUIKeyDialog.h \      
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageAddressFrame.h \
@@ -223,6 +224,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/ArrayRef.h \
            cryptonote/src/Common/ArrayView.h \
            cryptonote/src/Common/Base58.h \
+           cryptonote/src/Common/Base64.h \           
            cryptonote/src/Common/BlockingQueue.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
@@ -555,12 +557,14 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.h \
            cryptonote/tests/CoreTests/double_spend.inl \
            cryptonote/src/Common/Base58.cpp \
+           cryptonote/src/Common/Base64.cpp \           
            cryptonote/src/P2p/PeerListManager.cpp \
            src/gui/ui/importsecretkeys.h \
            src/gui/importsecretkeys.h \
-           src/gui/importseed.h \
+           src/gui/ImportSeedDialog.h \
+           src/gui/importtracking.h \           
            src/gui/NodeSettings.h \
-           src/gui/transactionconfirmation.h \     
+           src/gui/LanguageSettings.h \           
            src/gui/ShowQRCode.h \                
 
 SOURCES += libqrencode/bitstream.c \
@@ -575,6 +579,7 @@ SOURCES += libqrencode/bitstream.c \
            libqrencode/split.c \
            src/AliasProvider.cpp \
            src/AddressProvider.cpp \
+           src/TranslatorManager.cpp \
            src/CommandLineParser.cpp \
            src/CryptoNoteWrapper.cpp \
            src/CurrencyAdapter.cpp \
@@ -608,16 +613,16 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DisclaimerDialog.cpp \          
            src/gui/LinksDialog.cpp \              
            src/gui/AddressBookDialog.cpp \
-           src/gui/AddressBookFrame.cpp \
            src/gui/AddressBookModel.cpp \
            src/gui/AnimatedLabel.cpp \
+           src/gui/BankingFrame2.cpp \               
            src/gui/ChangePasswordDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
            src/gui/DepositModel.cpp \
            src/gui/DepositsFrame.cpp \
            src/gui/ExitWidget.cpp \
-           src/gui/ImportKeyDialog.cpp \
+           src/gui/ImportGUIKeyDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageAddressFrame.cpp \
@@ -1029,23 +1034,23 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc \
            src/gui/ui/importsecretkeys.cpp \
            src/gui/importsecretkeys.cpp \
-           src/gui/importseed.cpp \
+           src/gui/ImportSeedDialog.cpp \
+           src/gui/importtracking.cpp \           
            src/gui/NodeSettings.cpp \
-           src/gui/transactionconfirmation.cpp 
+           src/gui/LanguageSettings.cpp \           
            src/gui/ShowQRCode.cpp \                           
 
 FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/disclaimerdialog.ui \
-            src/gui/ui/linksdialog.ui \            
+            src/gui/ui/linksdialog.ui \
+            src/gui/ui/bankingframe2.ui \
             src/gui/ui/addressbookdialog.ui \
-            src/gui/ui/addressbookframe.ui \
             src/gui/ui/changepassworddialog.ui \
             src/gui/ui/depositdetailsdialog.ui \
             src/gui/ui/depositsframe.ui \
             src/gui/ui/exitwidget.ui \
-            src/gui/ui/importkeydialog.ui \
+            src/gui/ui/importguikeydialog.ui \
             src/gui/ui/mainwindow.ui \
-            src/gui/ui/messageaddressframe.ui \
             src/gui/ui/messagedetailsdialog.ui \
             src/gui/ui/messagesframe.ui \
             src/gui/ui/welcomeframe.ui \            
@@ -1062,15 +1067,24 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/transactionsframe.ui \
             src/gui/ui/transferframe.ui \
             src/gui/ui/importsecretkeys.ui \
-            src/gui/ui/transactionconfirmation.ui \    
-            src/gui/ui/importseed.ui \
+            src/gui/ui/importseeddialog.ui \
+            src/gui/ui/importtracking.ui \            
             src/gui/ui/nodesettings.ui \
+            src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
+TRANSLATIONS = 	languages/tr.ts \
+                languages/en.ts \
+                languages/ru.ts \                
+                languages/cn.ts \                   
 
 RESOURCES += src/resources.qrc
 
 DISTFILES += \
+    src/icons/hotbit.png \
+    src/icons/qtrade.png \
+    src/icons/stex.png \
+    src/icons/tradeogre.png \
     src/images/logo-proper.png \
     src/images/qr.png
 RC_FILE = conceal.rc
