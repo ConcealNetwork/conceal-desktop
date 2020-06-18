@@ -1,37 +1,48 @@
-sudo: true
-language: cpp
+name: Ubuntu 18.04
 
-matrix:
-  include:
+on:
+  push:
+    tags:
+    - '*'
 
-  # Ubuntu, g++-6
-  - os: linux
-    dist: xenial
-    compiler: gcc
-    addons:
-        apt:
-          update: true
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - libboost-all-dev
-            - g++-6
-            - qt5-default
-    env:
-    - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
-    - LABEL="linux"
-    - _DEPLOY="true"
+jobs:
+  build-ubuntu16:
+    name: Ubuntu 18.04
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
 
- git:
-   submodules: false
-
-before_install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive
-
-script:
-   - cd conceal-wallet
-   - git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-   - make build-release
-   - mkdir bin && mv build/release/CONCEAL-GUI bin/
-   - make clean
+      - name: Build
+        id: build
+        run: |
+         BOOST_ROOT=
+          sudo apt-get purge '*boost*'
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          build_folder="build/release"
+          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
+          release_name=ccx-desktop-ubuntu-1804-v"$ccx_ver"
+          app_name="CONCEAL-GUI"
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          mkdir -p "$build_folder"
+          cd "$build_folder"
+          cmake ../..
+          make
+          tar -czf "$release_name".tar.gz "$app_name"
+          sha256=$(shasum -a 256 "$release_name".tar.gz | awk '{print toupper($1)}')
+          asset_path="./$build_folder/$release_name".tar.gz
+          echo "::set-output name=sha256::${sha256}"
+          echo "::set-output name=release_name::${release_name}.tar.gz"
+          echo "::set-output name=asset_path::${asset_path}"
+          echo "::set-output name=ccx_ver::${ccx_ver}"
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.build.outputs.asset_path }}
+          name: Conceal Desktop v${{ steps.build.outputs.ccx_ver }}
+          body: |
+            **${{ steps.build.outputs.release_name }}**
+            ${{ steps.build.outputs.sha256 }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
