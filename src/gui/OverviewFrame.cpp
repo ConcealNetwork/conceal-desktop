@@ -859,8 +859,8 @@ void OverviewFrame::clearAllClicked()
 /* Set the amount to 25% of available funds */
 void OverviewFrame::setPercentage25()
 {
-  calculateFee();
-  uint64_t amount = m_actualBalance / 4 - m_actualFee;
+  calculateFee;
+  uint64_t amount = (m_actualBalance - m_actualFee) / 0.25;
   m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
 
@@ -868,7 +868,7 @@ void OverviewFrame::setPercentage25()
 void OverviewFrame::setPercentage50()
 {
   calculateFee();
-  uint64_t amount = (m_actualBalance / 2) - m_actualFee;
+  uint64_t amount = (m_actualBalance - m_actualFee) / 0.5;
   m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
 
@@ -876,7 +876,8 @@ void OverviewFrame::setPercentage50()
 void OverviewFrame::setPercentage100()
 {
   calculateFee();
-  m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(m_actualBalance - m_actualFee));
+  uint64_t amount = m_actualBalance - m_actualFee;
+  m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
 
 void OverviewFrame::sendFundsClicked()
