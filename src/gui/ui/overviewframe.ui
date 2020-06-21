@@ -86,6 +86,18 @@ background-color: #282d31;</string>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0" rowspan="3">
        <widget class="QGroupBox" name="leftMenu">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: #282d31; border-right: 1px solid #444;</string>
         </property>
@@ -95,6 +107,18 @@ background-color: #282d31;</string>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QLabel" name="label_42">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">border: none;</string>
            </property>
@@ -344,6 +368,18 @@ border: none;
          </item>
          <item>
           <widget class="Line" name="line_2">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color: #444;</string>
            </property>
@@ -477,6 +513,18 @@ border: none;
          </item>
          <item>
           <widget class="Line" name="line_3">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">background-color: #444;</string>
            </property>
@@ -7938,8 +7986,8 @@ text-align: left;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
