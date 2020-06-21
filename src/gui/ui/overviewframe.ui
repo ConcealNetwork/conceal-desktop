@@ -86,9 +86,15 @@ background-color: #282d31;</string>
                     <layout class="QGridLayout" name="gridLayout_2">
                         <item row="0" column="0" rowspan="8">
                             <widget class="QGroupBox" name="leftMenu">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
                                 <property name="minimumSize">
                                     <size>
-                                        <width>180</width>
+                                        <width>200</width>
                                         <height>0</height>
                                     </size>
                                 </property>
@@ -140,7 +146,7 @@ background-color: #282d31;</string>
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -192,7 +198,7 @@ font-size: 14px;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -238,7 +244,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -284,7 +290,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -330,7 +336,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -376,7 +382,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>16777215</height>
                                                 </size>
                                             </property>
@@ -398,7 +404,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -439,7 +445,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -480,7 +486,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -521,7 +527,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>16777215</height>
                                                 </size>
                                             </property>
@@ -543,7 +549,7 @@ border: none;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -589,7 +595,7 @@ font-size: 14px;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -635,7 +641,7 @@ font-size: 14px;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -681,7 +687,7 @@ font-size: 14px;
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>200</width>
+                                                    <width>180</width>
                                                     <height>60</height>
                                                 </size>
                                             </property>
@@ -1052,6 +1058,12 @@ p, li { white-space: pre-wrap; }
                         </item>
                         <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="aboutBox">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -1200,16 +1212,8 @@ QPushButton#m_aboutQT:hover
                                 </layout>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="7" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="overviewBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>591</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -2765,16 +2769,8 @@ text-align: left;
                                 <zorder>ov_contactBox</zorder>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="transactionsBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>591</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -3022,16 +3018,8 @@ QPushButton#m_exportCSVButton:hover
                                 </widget>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="messageBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>581</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -3211,16 +3199,8 @@ color: #ccc;
                                 </widget>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="settingsBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>591</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true" />
                                 </property>
@@ -4656,16 +4636,8 @@ QPushButton#m_importSeedButton:hover
                                 <zorder>groupBox_9</zorder>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="sendBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>581</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -5294,16 +5266,8 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
                                 <zorder>m_percent25</zorder>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="newMessageBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>581</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444; font-family: 'Poppins';</string>
                                 </property>
@@ -5709,16 +5673,8 @@ border: none;</string>
                                 </widget>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="bankingBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>571</height>
-                                    </rect>
-                                </property>
                                 <property name="styleSheet">
                                     <string notr="true" />
                                 </property>
@@ -6345,330 +6301,8 @@ p, li { white-space: pre-wrap; }
                                 </widget>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
-                            <widget class="QGroupBox" name="addressBookBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>210</x>
-                                        <y>105</y>
-                                        <width>1041</width>
-                                        <height>581</height>
-                                    </rect>
-                                </property>
-                                <property name="styleSheet">
-                                    <string notr="true">border-top: 1px solid #444;</string>
-                                </property>
-                                <property name="title">
-                                    <string />
-                                </property>
-                                <widget class="QLabel" name="label_24">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>20</y>
-                                            <width>241</width>
-                                            <height>25</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">color: #fff;
-background: transparent;
-font-size: 20px;
-font-family: Poppins;
-border: none;
-text-align: left;
-</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>YOUR CONTACT LIST</string>
-                                    </property>
-                                </widget>
-                                <widget class="QTreeView" name="m_addressBookView">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>120</y>
-                                            <width>1031</width>
-                                            <height>441</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QHeaderView::section {
-    color: white;
-    font-weight: bold;
-    background-color: #282d31;
-    font-family: 'Poppins';
-    border-top: none;
-    font-size: 14px;
-     border-bottom: 1px solid #444;
-       height: 37px;
-}
-
-QTreeView {
-    font-family: 'Poppins';
-border: none;
-    color: #ccc;
-font-size: 14px;
-    height: 37px;
-background-color: #282d31;
-}
-
-QTreeView::item {
-    font-family: 'Poppins';
-    color: #ccc;
-    font-size: 14px;
-    height: 37px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-font-size: 14px;
-  color: black;
-}
-
-QWidget:item:selected {
-    font-family: 'Poppins';
-background-color: #555;
-font-size: 14px;
-  color: #ccc;
-}
-
-border: none;
-font-size: 14px;
-font-family: 'Poppins';
-color: #ccc;
-</string>
-                                    </property>
-                                    <property name="sizeAdjustPolicy">
-                                        <enum>QAbstractScrollArea::AdjustToContents</enum>
-                                    </property>
-                                    <property name="alternatingRowColors">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="indentation">
-                                        <number>0</number>
-                                    </property>
-                                    <property name="rootIsDecorated">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="sortingEnabled">
-                                        <bool>true</bool>
-                                    </property>
-                                    <attribute name="headerDefaultSectionSize">
-                                        <number>150</number>
-                                    </attribute>
-                                    <attribute name="headerStretchLastSection">
-                                        <bool>false</bool>
-                                    </attribute>
-                                </widget>
-                                <widget class="QPushButton" name="m_copyAddressButton_2">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>4</x>
-                                            <y>60</y>
-                                            <width>141</width>
-                                            <height>30</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_copyAddressButton_2
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_copyAddressButton_2:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>COPY ADDRESS</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_copyPaymentIdButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>154</x>
-                                            <y>60</y>
-                                            <width>141</width>
-                                            <height>30</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_copyPaymentIdButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_copyPaymentIdButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>COPY PAYMENTID</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_payToButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>304</x>
-                                            <y>60</y>
-                                            <width>141</width>
-                                            <height>30</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_payToButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_payToButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>PAY TO</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_editAddressButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>454</x>
-                                            <y>60</y>
-                                            <width>141</width>
-                                            <height>30</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_editAddressButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_editAddressButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>EDIT CONTACT</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_deleteAddressButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>604</x>
-                                            <y>60</y>
-                                            <width>141</width>
-                                            <height>30</height>
-                                        </rect>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_deleteAddressButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_deleteAddressButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>DELETE CONTACT</string>
-                                    </property>
-                                </widget>
-                            </widget>
-                        </item>
-                        <item row="1" column="1" rowspan="6" colspan="3">
+                        <item row="2" column="1" rowspan="6" colspan="3">
                             <widget class="QGroupBox" name="lockBox">
-                                <property name="geometry">
-                                    <rect>
-                                        <x>1</x>
-                                        <y>1</y>
-                                        <width>1270</width>
-                                        <height>700</height>
-                                    </rect>
-                                </property>
                                 <property name="minimumSize">
                                     <size>
                                         <width>1270</width>
@@ -6762,8 +6396,279 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
                                 </widget>
                             </widget>
                         </item>
+                        <item row="2" column="1" rowspan="6" colspan="3">
+                            <widget class="QGroupBox" name="addressBookBox">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="styleSheet">
+                                    <string notr="true">border-top: 1px solid #444;</string>
+                                </property>
+                                <property name="title">
+                                    <string />
+                                </property>
+                                <layout class="QGridLayout" name="gridLayout_7">
+                                    <item row="0" column="0" colspan="2">
+                                        <widget class="QLabel" name="label_24">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #fff;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;
+border: none;
+text-align: left;
+</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>YOUR CONTACT LIST</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="0">
+                                        <widget class="QPushButton" name="m_copyAddressButton_2">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_copyAddressButton_2
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyAddressButton_2:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>COPY ADDRESS</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="1">
+                                        <widget class="QPushButton" name="m_copyPaymentIdButton">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_copyPaymentIdButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_copyPaymentIdButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>COPY PAYMENTID</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="2">
+                                        <widget class="QPushButton" name="m_payToButton">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_payToButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_payToButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>PAY TO</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="3">
+                                        <widget class="QPushButton" name="m_editAddressButton">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_editAddressButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_editAddressButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>EDIT CONTACT</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="4">
+                                        <widget class="QPushButton" name="m_deleteAddressButton">
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_deleteAddressButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_deleteAddressButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>DELETE CONTACT</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="2" column="0" colspan="5">
+                                        <widget class="QTreeView" name="m_addressBookView">
+                                            <property name="styleSheet">
+                                                <string notr="true">QHeaderView::section {
+    color: white;
+    font-weight: bold;
+    background-color: #282d31;
+    font-family: 'Poppins';
+    border-top: none;
+    font-size: 14px;
+     border-bottom: 1px solid #444;
+       height: 37px;
+}
+
+QTreeView {
+    font-family: 'Poppins';
+border: none;
+    color: #ccc;
+font-size: 14px;
+    height: 37px;
+background-color: #282d31;
+}
+
+QTreeView::item {
+    font-family: 'Poppins';
+    color: #ccc;
+    font-size: 14px;
+    height: 37px;
+}
+
+QTreeView::branch:selected {
+  background-color: orange;
+font-size: 14px;
+  color: black;
+}
+
+QWidget:item:selected {
+    font-family: 'Poppins';
+background-color: #555;
+font-size: 14px;
+  color: #ccc;
+}
+
+border: none;
+font-size: 14px;
+font-family: 'Poppins';
+color: #ccc;
+</string>
+                                            </property>
+                                            <property name="sizeAdjustPolicy">
+                                                <enum>QAbstractScrollArea::AdjustToContents</enum>
+                                            </property>
+                                            <property name="alternatingRowColors">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="indentation">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="rootIsDecorated">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="sortingEnabled">
+                                                <bool>true</bool>
+                                            </property>
+                                            <attribute name="headerDefaultSectionSize">
+                                                <number>150</number>
+                                            </attribute>
+                                            <attribute name="headerStretchLastSection">
+                                                <bool>false</bool>
+                                            </attribute>
+                                        </widget>
+                                    </item>
+                                </layout>
+                            </widget>
+                        </item>
                     </layout>
-                    <zorder>addressBookBox</zorder>
                     <zorder>darkness</zorder>
                     <zorder>lockBox</zorder>
                     <zorder>newMessageBox</zorder>
@@ -6773,8 +6678,9 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
                     <zorder>settingsBox</zorder>
                     <zorder>leftMenu</zorder>
                     <zorder>bankingBox</zorder>
-                    <zorder>overviewBox</zorder>
                     <zorder>headerBox</zorder>
+                    <zorder>addressBookBox</zorder>
+                    <zorder>overviewBox</zorder>
                     <zorder>aboutBox</zorder>
                 </widget>
             </item>
