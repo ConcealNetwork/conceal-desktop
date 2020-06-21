@@ -7375,6 +7375,22 @@ text-align: left;</string>
             </hints>
         </connection>
         <connection>
+            <sender>m_aboutQT</sender>
+            <signal>clicked()</signal>
+            <receiver>OverviewFrame</receiver>
+            <slot>aboutQTClicked()</slot>
+            <hints>
+                <hint type="sourcelabel">
+                    <x>326</x>
+                    <y>583</y>
+                </hint>
+                <hint type="destinationlabel">
+                    <x>634</x>
+                    <y>349</y>
+                </hint>
+            </hints>
+        </connection>
+        <connection>
             <sender>m_discordButton</sender>
             <signal>clicked()</signal>
             <receiver>OverviewFrame</receiver>
