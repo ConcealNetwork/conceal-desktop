@@ -103,9 +103,21 @@ background-color: #282d31;</string>
         <rect>
          <x>10</x>
          <y>200</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -143,9 +155,21 @@ border: none;
         <rect>
          <x>10</x>
          <y>280</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -183,9 +207,21 @@ border: none;
         <rect>
          <x>10</x>
          <y>600</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -223,9 +259,21 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>240</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -263,9 +311,21 @@ border: none;
         <rect>
          <x>10</x>
          <y>640</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -303,9 +363,21 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>160</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -349,9 +421,21 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>320</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -389,9 +473,21 @@ border: none;
         <rect>
          <x>10</x>
          <y>520</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -441,7 +537,7 @@ font-size: 14px;
        </property>
        <property name="maximumSize">
         <size>
-         <width>600</width>
+         <width>200</width>
          <height>60</height>
         </size>
        </property>
@@ -476,13 +572,13 @@ border: none;
         <rect>
          <x>10</x>
          <y>420</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>131</width>
+         <width>180</width>
          <height>31</height>
         </size>
        </property>
@@ -542,9 +638,21 @@ border: none;
         <rect>
          <x>10</x>
          <y>560</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>180</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>60</height>
+        </size>
        </property>
        <property name="font">
         <font>
@@ -598,13 +706,13 @@ font-size: 14px;
         <rect>
          <x>10</x>
          <y>460</y>
-         <width>171</width>
+         <width>180</width>
          <height>35</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>131</width>
+         <width>180</width>
          <height>31</height>
         </size>
        </property>
@@ -7940,8 +8048,8 @@ text-align: left;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
