@@ -52,7 +52,7 @@ To acquire the source via git and build the release version, run the following c
 
 - `cd ~`
 - `git clone https://github.com/ConcealNetwork/conceal-desktop`
-- `cd conceal-wallet`
+- `cd conceal-desktop`
 - `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
 - `make build-release`
 - `mkdir bin && mv build/release/CONCEAL-GUI bin/`
