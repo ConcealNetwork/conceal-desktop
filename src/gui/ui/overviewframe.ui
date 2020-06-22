@@ -769,13 +769,50 @@ font-size: 14px;
                                     <string />
                                 </property>
                                 <layout class="QGridLayout" name="gridLayout_6">
-                                    <item row="0" column="0">
-                                        <widget class="Line" name="line">
-                                            <property name="styleSheet">
-                                                <string notr="true">background-color: orange;</string>
+                                    <item row="1" column="1">
+                                        <widget class="QPushButton" name="m_copyAddressButton">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
                                             </property>
-                                            <property name="orientation">
-                                                <enum>Qt::Vertical</enum>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>0</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>16777215</width>
+                                                    <height>25</height>
+                                                </size>
+                                            </property>
+                                            <property name="layoutDirection">
+                                                <enum>Qt::LeftToRight</enum>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_copyAddressButton {
+        border: none; 
+        font-size: 14px;
+        font-family: 'Poppins';
+        color: orange;
+        }
+        
+        QPushButton#m_copyAddressButton:hover {
+        border: none; 
+        font-size: 14px;
+        font-family: 'Poppins';
+        color: #ddd;
+         }
+        </string>
+                                            </property>
+                                            <property name="text">
+                                                <string>COPY WALLET ADDRESS</string>
+                                            </property>
+                                            <property name="checkable">
+                                                <bool>false</bool>
                                             </property>
                                         </widget>
                                     </item>
@@ -806,216 +843,11 @@ font-size: 14px;
         background: transparent;
         font-size: 30px;
         font-family: Poppins;
-        font-weight: normal;</string>
+        font-weight: normal;
+  		 border: none;</string>
                                             </property>
                                             <property name="text">
                                                 <string>CONCEAL.NETWORK</string>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="1" column="0">
-                                        <widget class="QPushButton" name="m_qrButton">
-                                            <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                                                    <horstretch>0</horstretch>
-                                                    <verstretch>0</verstretch>
-                                                </sizepolicy>
-                                            </property>
-                                            <property name="minimumSize">
-                                                <size>
-                                                    <width>0</width>
-                                                    <height>40</height>
-                                                </size>
-                                            </property>
-                                            <property name="maximumSize">
-                                                <size>
-                                                    <width>16777215</width>
-                                                    <height>50</height>
-                                                </size>
-                                            </property>
-                                            <property name="text">
-                                                <string notr="true" />
-                                            </property>
-                                            <property name="icon">
-                                                <iconset resource="../../resources.qrc">
-                                                    <normaloff>:/images/images/qr.png</normaloff>
-                                                    :/images/images/qr.png
-                                                </iconset>
-                                            </property>
-                                            <property name="iconSize">
-                                                <size>
-                                                    <width>16</width>
-                                                    <height>16</height>
-                                                </size>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="1" column="1">
-                                        <widget class="QPushButton" name="m_qrcodebutton">
-                                            <property name="styleSheet">
-                                                <string notr="true">border: none;</string>
-                                            </property>
-                                            <property name="text">
-                                                <string />
-                                            </property>
-                                            <property name="icon">
-                                                <iconset>
-                                                    <normaloff>:/images/qr.png</normaloff>
-                                                    :/images/qr.png
-                                                </iconset>
-                                            </property>
-                                            <property name="iconSize">
-                                                <size>
-                                                    <width>32</width>
-                                                    <height>32</height>
-                                                </size>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="1" column="1">
-                                        <widget class="QPushButton" name="m_copyAddressButton">
-                                            <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                                                    <horstretch>0</horstretch>
-                                                    <verstretch>0</verstretch>
-                                                </sizepolicy>
-                                            </property>
-                                            <property name="minimumSize">
-                                                <size>
-                                                    <width>0</width>
-                                                    <height>40</height>
-                                                </size>
-                                            </property>
-                                            <property name="maximumSize">
-                                                <size>
-                                                    <width>16777215</width>
-                                                    <height>50</height>
-                                                </size>
-                                            </property>
-                                            <property name="layoutDirection">
-                                                <enum>Qt::LeftToRight</enum>
-                                            </property>
-                                            <property name="styleSheet">
-                                                <string notr="true">QPushButton#m_copyAddressButton {
-        border: none; 
-        font-size: 14px;
-        font-family: 'Poppins';
-        color: orange;
-        }
-        
-        QPushButton#m_copyAddressButton:hover {
-        border: none; 
-        font-size: 14px;
-        font-family: 'Poppins';
-        color: #ddd;
-         }
-        </string>
-                                            </property>
-                                            <property name="text">
-                                                <string>COPY WALLET ADDRESS</string>
-                                            </property>
-                                            <property name="checkable">
-                                                <bool>false</bool>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="1" column="2">
-                                        <widget class="QTextBrowser" name="m_statusBox">
-                                            <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                                                    <horstretch>0</horstretch>
-                                                    <verstretch>0</verstretch>
-                                                </sizepolicy>
-                                            </property>
-                                            <property name="minimumSize">
-                                                <size>
-                                                    <width>0</width>
-                                                    <height>40</height>
-                                                </size>
-                                            </property>
-                                            <property name="maximumSize">
-                                                <size>
-                                                    <width>400</width>
-                                                    <height>50</height>
-                                                </size>
-                                            </property>
-                                            <property name="font">
-                                                <font>
-                                                    <family>Poppins</family>
-                                                    <pointsize>-1</pointsize>
-                                                </font>
-                                            </property>
-                                            <property name="styleSheet">
-                                                <string notr="true">font-family: 'Poppins';
-        font-size: 14px;
-        border: none; color: orange;</string>
-                                            </property>
-                                            <property name="verticalScrollBarPolicy">
-                                                <enum>Qt::ScrollBarAlwaysOff</enum>
-                                            </property>
-                                            <property name="horizontalScrollBarPolicy">
-                                                <enum>Qt::ScrollBarAlwaysOff</enum>
-                                            </property>
-                                            <property name="html">
-                                                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;        &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;CONNECTING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                                            </property>
-                                            <property name="openLinks">
-                                                <bool>false</bool>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="2" column="0" colspan="3">
-                                        <widget class="QPushButton" name="m_copyAddressButton_3">
-                                            <property name="layoutDirection">
-                                                <enum>Qt::LeftToRight</enum>
-                                            </property>
-                                            <property name="styleSheet">
-                                                <string notr="true">border: none; font-size: 13px;
-        font-family: 'Poppins';
-        color: #999;
-        text-align: left;</string>
-                                            </property>
-                                            <property name="text">
-                                                <string>COPY WALLET ADDRESS</string>
-                                            </property>
-                                            <property name="checkable">
-                                                <bool>false</bool>
-                                            </property>
-                                        </widget>
-                                    </item>
-                                    <item row="1" column="3">
-                                        <widget class="QLabel" name="m_currentWalletTitle">
-                                            <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                                                    <horstretch>0</horstretch>
-                                                    <verstretch>0</verstretch>
-                                                </sizepolicy>
-                                            </property>
-                                            <property name="font">
-                                                <font>
-                                                    <family>Poppins</family>
-                                                    <pointsize>-1</pointsize>
-                                                </font>
-                                            </property>
-                                            <property name="contextMenuPolicy">
-                                                <enum>Qt::CustomContextMenu</enum>
-                                            </property>
-                                            <property name="styleSheet">
-                                                <string notr="true">color: #ddd;
-        background: transparent;
-        font-size: 14px;
-        </string>
-                                            </property>
-                                            <property name="text">
-                                                <string />
-                                            </property>
-                                            <property name="alignment">
-                                                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                                             </property>
                                         </widget>
                                     </item>
@@ -1050,6 +882,182 @@ p, li { white-space: pre-wrap; }
                                             </property>
                                             <property name="alignment">
                                                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="2">
+                                        <widget class="QTextBrowser" name="m_statusBox">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>0</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>400</width>
+                                                    <height>25</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">font-family: 'Poppins';
+        font-size: 14px;
+        border: none; color: orange;</string>
+                                            </property>
+                                            <property name="verticalScrollBarPolicy">
+                                                <enum>Qt::ScrollBarAlwaysOff</enum>
+                                            </property>
+                                            <property name="horizontalScrollBarPolicy">
+                                                <enum>Qt::ScrollBarAlwaysOff</enum>
+                                            </property>
+                                            <property name="html">
+                                                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;        &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;CONNECTING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                            </property>
+                                            <property name="openLinks">
+                                                <bool>false</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="3">
+                                        <widget class="QLabel" name="m_currentWalletTitle">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>16777215</width>
+                                                    <height>25</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="contextMenuPolicy">
+                                                <enum>Qt::CustomContextMenu</enum>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #ddd;
+        background: transparent;
+        font-size: 14px;
+		border: none;
+        </string>
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="0">
+                                        <widget class="QPushButton" name="m_qrButton">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>20</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>16777215</width>
+                                                    <height>25</height>
+                                                </size>
+                                            </property>
+                                            <property name="text">
+                                                <string notr="true" />
+                                            </property>
+                                            <property name="icon">
+                                                <iconset resource="../../resources.qrc">
+                                                    <normaloff>:/images/images/qr.png</normaloff>
+                                                    :/images/images/qr.png
+                                                </iconset>
+                                            </property>
+                                            <property name="iconSize">
+                                                <size>
+                                                    <width>16</width>
+                                                    <height>16</height>
+                                                </size>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="0" column="0">
+                                        <widget class="Line" name="line">
+                                            <property name="styleSheet">
+                                                <string notr="true">background-color: orange;</string>
+                                            </property>
+                                            <property name="orientation">
+                                                <enum>Qt::Vertical</enum>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="2" column="3">
+                                        <widget class="QPushButton" name="m_qrcodebutton">
+                                            <property name="styleSheet">
+                                                <string notr="true">border: none;</string>
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="icon">
+                                                <iconset>
+                                                    <normaloff>:/images/qr.png</normaloff>
+                                                    :/images/qr.png
+                                                </iconset>
+                                            </property>
+                                            <property name="iconSize">
+                                                <size>
+                                                    <width>32</width>
+                                                    <height>32</height>
+                                                </size>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="2" column="0" colspan="3">
+                                        <widget class="QPushButton" name="m_copyAddressButton_3">
+                                            <property name="layoutDirection">
+                                                <enum>Qt::LeftToRight</enum>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">border: none; font-size: 13px;
+        font-family: 'Poppins';
+        color: #999;
+        text-align: left;</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>COPY WALLET ADDRESS</string>
+                                            </property>
+                                            <property name="checkable">
+                                                <bool>false</bool>
                                             </property>
                                         </widget>
                                     </item>
@@ -7950,8 +7958,8 @@ color: #ccc;
         <slot>minToTrayClicked()</slot>
     </slots>
     <buttongroups>
+        <buttongroup name="buttonGroup" />
         <buttongroup name="buttonGroup_2" />
         <buttongroup name="buttonGroup_3" />
-        <buttongroup name="buttonGroup" />
     </buttongroups>
 </ui>
