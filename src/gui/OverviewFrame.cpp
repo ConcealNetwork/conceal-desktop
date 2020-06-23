@@ -859,7 +859,7 @@ void OverviewFrame::clearAllClicked()
 /* Set the amount to 25% of available funds */
 void OverviewFrame::setPercentage25()
 {
-  calculateFee;
+  calculateFee();
   uint64_t amount = (m_actualBalance - m_actualFee) / 0.25;
   m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
