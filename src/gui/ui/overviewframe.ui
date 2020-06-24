@@ -726,8 +726,14 @@ font-size: 14px;
                                 </layout>
                             </widget>
                         </item>
-                        <item row="0" column="1" rowspan="5" colspan="3">
+                        <item row="0" column="0" rowspan="5" colspan="4">
                             <widget class="QGroupBox" name="darkness">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
                                 <property name="minimumSize">
                                     <size>
                                         <width>1270</width>
@@ -736,8 +742,8 @@ font-size: 14px;
                                 </property>
                                 <property name="maximumSize">
                                     <size>
-                                        <width>1270</width>
-                                        <height>700</height>
+                                        <width>16777215</width>
+                                        <height>16777215</height>
                                     </size>
                                 </property>
                                 <property name="styleSheet">
@@ -6669,7 +6675,6 @@ color: #ccc;
                             </widget>
                         </item>
                     </layout>
-                    <zorder>darkness</zorder>
                     <zorder>transactionsBox</zorder>
                     <zorder>sendBox</zorder>
                     <zorder>settingsBox</zorder>
@@ -6682,6 +6687,7 @@ color: #ccc;
                     <zorder>lockBox</zorder>
                     <zorder>messageBox</zorder>
                     <zorder>newMessageBox</zorder>
+                    <zorder>darkness</zorder>
                 </widget>
             </item>
         </layout>
