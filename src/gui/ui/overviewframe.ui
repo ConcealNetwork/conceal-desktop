@@ -6307,8 +6307,14 @@ QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; fo
                                 </layout>
                             </widget>
                         </item>
-                        <item row="1" column="1" rowspan="4" colspan="3">
+                        <item row="0" column="0" rowspan="5" colspan="4">
                             <widget class="QGroupBox" name="lockBox">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
                                 <property name="minimumSize">
                                     <size>
                                         <width>1270</width>
@@ -6317,8 +6323,8 @@ QPushButton#m_depositButton_2:hover {color: orange; border: 1px solid orange; fo
                                 </property>
                                 <property name="maximumSize">
                                     <size>
-                                        <width>1270</width>
-                                        <height>700</height>
+                                        <width>16777215</width>
+                                        <height>16777215</height>
                                     </size>
                                 </property>
                                 <property name="styleSheet">
@@ -6328,78 +6334,121 @@ background-color: #282d31;</string>
                                 <property name="title">
                                     <string />
                                 </property>
-                                <widget class="QLabel" name="label_36">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>450</x>
-                                            <y>90</y>
-                                            <width>301</width>
-                                            <height>321</height>
-                                        </rect>
-                                    </property>
-                                    <property name="text">
-                                        <string />
-                                    </property>
-                                    <property name="pixmap">
-                                        <pixmap resource="../../resources.qrc">:/images/images/lock.png</pixmap>
-                                    </property>
-                                </widget>
-                                <widget class="QLabel" name="label_37">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>310</x>
-                                            <y>460</y>
-                                            <width>601</width>
-                                            <height>21</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">color: #ddd; font-family: 'Poppins';
+                                <layout class="QVBoxLayout" name="verticalLayout_6">
+                                    <item>
+                                        <widget class="QLabel" name="empty_1">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #ddd; font-family: 'Poppins';
 font-size: 16px;</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>This wallet is locked. Please click below to unlock your wallet.</string>
-                                    </property>
-                                    <property name="alignment">
-                                        <set>Qt::AlignCenter</set>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_unlockWalletButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>510</x>
-                                            <y>500</y>
-                                            <width>180</width>
-                                            <height>40</height>
-                                        </rect>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>180</width>
-                                            <height>31</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>600</width>
-                                            <height>60</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                                        <widget class="QLabel" name="label_36">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="pixmap">
+                                                <pixmap resource="../../resources.qrc">:/images/images/lock.png</pixmap>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QLabel" name="label_37">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #ddd; font-family: 'Poppins';
+font-size: 16px;</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>This wallet is locked. Please click below to unlock your wallet.</string>
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item alignment="Qt::AlignHCenter">
+                                        <widget class="QPushButton" name="m_unlockWalletButton">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>180</width>
+                                                    <height>31</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>600</width>
+                                                    <height>50</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';
+margin-bottom: 10%;}
 
 QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>UNLOCK WALLET</string>
-                                    </property>
-                                </widget>
+                                            </property>
+                                            <property name="text">
+                                                <string>UNLOCK WALLET</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QLabel" name="empty">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #ddd; font-family: 'Poppins';
+font-size: 16px;</string>
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                </layout>
                             </widget>
                         </item>
                         <item row="1" column="1" rowspan="4" colspan="3">
@@ -6684,10 +6733,10 @@ color: #ccc;
                     <zorder>aboutBox</zorder>
                     <zorder>bankingBox</zorder>
                     <zorder>overviewBox</zorder>
-                    <zorder>lockBox</zorder>
                     <zorder>messageBox</zorder>
                     <zorder>newMessageBox</zorder>
                     <zorder>darkness</zorder>
+                    <zorder>lockBox</zorder>
                 </widget>
             </item>
         </layout>
