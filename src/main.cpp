@@ -41,7 +41,7 @@ inline void newLogString(const QString& _string) {
   QRegularExpressionMatch match = LOG_SPLASH_REG_EXP.match(_string);
   if (match.hasMatch()) {
     QString message = match.captured(0).toUpper();
-    splash->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::white);
+    splash->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
   }
 }
 
@@ -98,12 +98,19 @@ int main(int argc, char* argv[]) {
     splash = new QSplashScreen(QPixmap(":images/splash"), Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
   }
 
-  if (!splash->isVisible()) {
+  QFont splashFont;
+  splashFont.setFamily("Arial");
+  splashFont.setBold(true);
+  splashFont.setPixelSize(9);
+  splashFont.setStretch(125);
+
+  splash->setFont(splashFont);
+  if (!splash->isVisible())
+  {
     splash->show();
   }
-
   splash->setEnabled(false);
-  splash->showMessage(QObject::tr("STARTING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::white);
+  splash->showMessage(QObject::tr("STARTING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
   splash->raise();
   LogFileWatcher* logWatcher(nullptr);
   if (logWatcher == nullptr) {
