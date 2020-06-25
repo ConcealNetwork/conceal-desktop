@@ -46,7 +46,8 @@ jobs:
           popd
           $build_folder = "build"
           $release_folder = "Release"
-          $ccx_ver=${GITHUB_SHA::7}
+          $sha = "${{ github.sha }}"
+          $ccx_ver = $sha.SubString(0,7)
           $release_name = "ccx-desktop-win64-v$ccx_ver"
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
           $filecontent = Get-Content CMakeLists.txt
@@ -109,7 +110,8 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
           build_folder="build/release"
-          $ccx_ver=${GITHUB_SHA::7}
+          $sha = "${{ github.sha }}"
+          $ccx_ver = $sha.SubString(0,7)
           release_name=ccx-desktop-ubuntu-1604-v"$ccx_ver"
           app_name="CONCEAL-GUI"
           rm -rf cryptonote
@@ -148,7 +150,8 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
           build_folder="build/release"
-          $ccx_ver=${GITHUB_SHA::7}
+          $sha = "${{ github.sha }}"
+          $ccx_ver = $sha.SubString(0,7)
           release_name=ccx-desktop-ubuntu-1804-v"$ccx_ver"
           app_name="CONCEAL-GUI"
           rm -rf cryptonote
@@ -186,7 +189,8 @@ jobs:
         id: build
         run: |
           build_folder="build/release"
-          $ccx_ver=${GITHUB_SHA::7}
+          $sha = "${{ github.sha }}"
+          $ccx_ver = $sha.SubString(0,7)
           release_name="ccx-desktop-macOS-v$ccx_ver"
           app_name="CONCEAL-GUI.app"
           lang_folder="/Contents/Resources/languages"
