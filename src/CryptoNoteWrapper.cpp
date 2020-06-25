@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 //  
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2020 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -163,7 +163,7 @@ public:
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
     m_protocolHandler(currency, m_dispatcher, m_core, nullptr, logManager),
-    m_core(currency, &m_protocolHandler, logManager),
+    m_core(currency, &m_protocolHandler, logManager, blockchainIndexesEnabled),
     m_nodeServer(m_dispatcher, m_protocolHandler, logManager),
     m_node(m_core, m_protocolHandler) {
 
@@ -250,6 +250,7 @@ private:
   CryptoNote::NodeServer m_nodeServer;
   CryptoNote::InProcessNode m_node;
   std::future<bool> m_nodeServerFuture;
+  bool blockchainIndexesEnabled;
 
   void peerCountUpdated(size_t count) {
     m_callback.peerCountUpdated(*this, count);

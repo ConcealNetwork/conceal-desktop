@@ -1054,12 +1054,18 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_discordButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_discordButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Discord</string>
@@ -1075,12 +1081,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_telegramButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_telegramButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Telegram</string>
@@ -1096,12 +1108,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_twitterButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_twitterButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Twitter</string>
@@ -1117,12 +1135,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_redditButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_redditButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Reddit</string>
@@ -1138,12 +1162,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_githubButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_githubButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Github</string>
@@ -1159,12 +1189,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_mediumButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_mediumButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Medium</string>
@@ -1209,12 +1245,18 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_hotbitButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_hotbitButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>Hotbit</string>
@@ -1230,12 +1272,18 @@ text-align: left;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_stexButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_stexButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>STEX</string>
@@ -1280,12 +1328,18 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_tradeogreButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_tradeogreButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>TradeOgre</string>
@@ -1330,12 +1384,18 @@ border: none;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #ddd;
+         <string notr="true">QPushButton#m_qtradeButton {
+color: #ddd;
 background: transparent;
 font-family: Poppins;
 font-size: 14px;
 border: none;
-text-align: left;</string>
+text-align: left;
+}
+
+QPushButton#m_qtradeButton:hover{
+color: orange;
+}</string>
         </property>
         <property name="text">
          <string>qTrade</string>
@@ -7328,7 +7388,7 @@ text-align: left;</string>
    <sender>m_redditButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>bitcointalkClicked()</slot>
+   <slot>redditClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>

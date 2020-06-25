@@ -76,6 +76,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
   cryptonote/src/crypto/chacha.c
+  cryptonote/src/crypto/soft_aes.hpp
   cryptonote/src/crypto/crypto-ops-data.c
   cryptonote/src/crypto/crypto-ops.c
   cryptonote/src/crypto/crypto.cpp
@@ -253,8 +254,10 @@ target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${QTMAIN} ${CRYPTONOTE_
 
 if (APPLE)
   qt5_use_modules(${PROJECT_NAME} PrintSupport)
+  add_definitions(/DHAVE_ROTR)
 elseif (UNIX)
   target_link_libraries(${PROJECT_NAME} -lpthread)
+  add_definitions(/DHAVE_ROTR)
 elseif (WIN32)
   target_link_libraries(${PROJECT_NAME} Imm32 Iphlpapi Winmm)
 endif (APPLE)

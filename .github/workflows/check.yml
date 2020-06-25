@@ -1,0 +1,134 @@
+name: Build check
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*'            # We don't want this to run on release
+  pull_request:
+
+jobs:
+  build-windows:
+    name: Windows
+    runs-on: windows-2016
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: '5.12.2'
+          host: 'windows'
+          target: 'desktop'
+          modules: 'qttools5'
+          install-deps: 'true'
+
+      - name: Build
+        shell: powershell
+        id: build
+        env:
+          VCINSTALLDIR: "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/"
+          BOOST_ROOT: ""
+        run: |
+          pushd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools"
+          cmd /c "VsMSBuildCmd.bat&set" |
+          foreach {
+            if ($_ -match "=") {
+              $v = $_.split("="); set-item -force -path "ENV:\$($v[0])"  -value "$($v[1])"
+              # echo ::set-env name=$($v[0])::$($v[1])
+              Write-Host "$v"
+            }
+          }
+          popd
+          $build_folder = "build"
+          $release_folder = "Release"
+          $ccx_ver = "${{ github.ref }}" -replace 'refs/tags/'
+          $release_name = "ccx-desktop-win64-v$ccx_ver"
+          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
+          $filecontent = Get-Content CMakeLists.txt
+          $filecontent -replace '^set\(CMAKE_PREFIX_PATH.+',"set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")" | Set-Content CMakeLists.txt
+          Remove-Item cryptonote -Recurse -ErrorAction Ignore
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+          New-Item "$build_folder\$release_folder" -ItemType Directory
+          cd "$build_folder"
+          Copy-Item "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Redist" "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/" -Recurse
+          Start-Process cmake -ArgumentList "-G ""Visual Studio 15 2017 Win64"" -DBOOST_LIBRARYDIR:PATH=C:\hostedtoolcache\windows\Boost\1.69.0 .." -NoNewWindow -Wait
+          Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln /p:Configuration=Release" -NoNewWindow -Wait
+
+  build-ubuntu16:
+    name: Ubuntu 16.04
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build
+        id: build
+        run: |
+         BOOST_ROOT=
+          sudo apt-get purge '*boost*'
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          build_folder="build/release"
+          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
+          release_name=ccx-desktop-ubuntu-1604-v"$ccx_ver"
+          app_name="CONCEAL-GUI"
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          mkdir -p "$build_folder"
+          cd "$build_folder"
+          cmake ../..
+          make
+
+  build-ubuntu18:
+    name: Ubuntu 18.04
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build
+        id: build
+        run: |
+         BOOST_ROOT=
+          sudo apt-get purge '*boost*'
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          build_folder="build/release"
+          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
+          release_name=ccx-desktop-ubuntu-1804-v"$ccx_ver"
+          app_name="CONCEAL-GUI"
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          mkdir -p "$build_folder"
+          cd "$build_folder"
+          cmake ../..
+          make
+
+  build-macos:
+    name: macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+
+      - name: Build
+        id: build
+        run: |
+          build_folder="build/release"
+          ccx_ver=$(echo ${{ github.ref }} | sed 's|refs/tags/||')
+          release_name="ccx-desktop-macOS-v$ccx_ver"
+          app_name="CONCEAL-GUI.app"
+          lang_folder="/Contents/Resources/languages"
+          brew install gcc boost@1.60
+          brew link boost@1.60 --force
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          mkdir -p "$build_folder"
+          cd "$build_folder"
+          cmake -DCMAKE_C_FLAGS="-mmacosx-version-min=10.12" -DCMAKE_CXX_FLAGS="-mmacosx-version-min=10.12" -D CMAKE_BUILD_TYPE=Release ../..
+          make
