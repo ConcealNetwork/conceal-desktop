@@ -46,6 +46,7 @@ jobs:
           popd
           $build_folder = "build"
           $release_folder = "Release"
+          $sha = "${{ github.sha }}"
           $ccx_ver = $sha.SubString(0,7)
           $release_name = "ccx-desktop-win64-v$ccx_ver"
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
