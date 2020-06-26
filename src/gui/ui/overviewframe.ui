@@ -3449,204 +3449,83 @@ color: #ccc;
                                 <property name="title">
                                     <string />
                                 </property>
-                                <widget class="QGroupBox" name="groupBox_7">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>10</y>
-                                            <width>1041</width>
-                                            <height>125</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border: 1px solid #444;</string>
-                                    </property>
-                                    <property name="title">
-                                        <string />
-                                    </property>
-                                    <widget class="QLabel" name="label_22">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>20</x>
-                                                <y>10</y>
-                                                <width>311</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                <layout class="QVBoxLayout" name="verticalLayout_8">
+                                    <item>
+                                        <widget class="QGroupBox" name="groupBox_7">
+                                            <property name="styleSheet">
+                                                <string notr="true">border: 1px solid #444;</string>
+                                            </property>
+                                            <property name="title">
+                                                <string />
+                                            </property>
+                                            <layout class="QGridLayout" name="gridLayout_18">
+                                                <item row="0" column="0" colspan="2">
+                                                    <widget class="QLabel" name="label_22">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>30</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>35</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="sizeIncrement">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 18px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Connection</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QRadioButton" name="radioButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>420</x>
-                                                <y>50</y>
-                                                <width>351</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Custom Remote Node</string>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup_3</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="radioButton_2">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>50</y>
-                                                <width>201</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Built-in Node</string>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup_3</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="radioButton_3">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>80</y>
-                                                <width>211</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Automatic Remote Node</string>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup_3</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QLineEdit" name="m_hostEdit">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>420</x>
-                                                <y>80</y>
-                                                <width>411</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string />
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_23">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>50</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Set connection type</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_saveConnectionButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>870</x>
-                                                <y>20</y>
-                                                <width>150</width>
-                                                <height>30</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>150</width>
-                                                <height>30</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_saveConnectionButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Connection</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="0" column="3">
+                                                    <widget class="QPushButton" name="m_saveConnectionButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>31</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_saveConnectionButton
 {
     color: #fff;
     border: 1px solid orange;
@@ -3663,164 +3542,289 @@ QPushButton#m_saveConnectionButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>SAVE</string>
-                                        </property>
-                                    </widget>
-                                </widget>
-                                <widget class="QGroupBox" name="groupBox_8">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>145</y>
-                                            <width>1041</width>
-                                            <height>121</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border: 1px solid #444;</string>
-                                    </property>
-                                    <property name="title">
-                                        <string />
-                                    </property>
-                                    <widget class="QLabel" name="label_26">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>20</x>
-                                                <y>10</y>
-                                                <width>311</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>SAVE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="0">
+                                                    <widget class="QLabel" name="label_23">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Set connection type</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="1">
+                                                    <widget class="QRadioButton" name="radioButton_2">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Built-in Node</string>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup_3</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="2">
+                                                    <widget class="QRadioButton" name="radioButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Custom Remote Node</string>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup_3</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="1">
+                                                    <widget class="QRadioButton" name="radioButton_3">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Automatic Remote Node</string>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup_3</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="2">
+                                                    <widget class="QLineEdit" name="m_hostEdit">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string />
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QGroupBox" name="groupBox_8">
+                                            <property name="styleSheet">
+                                                <string notr="true">border: 1px solid #444;</string>
+                                            </property>
+                                            <property name="title">
+                                                <string />
+                                            </property>
+                                            <layout class="QGridLayout" name="gridLayout_19">
+                                                <item row="0" column="0" colspan="2">
+                                                    <widget class="QLabel" name="label_26">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>30</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>35</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="sizeIncrement">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 18px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Optimization</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_27">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>50</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Optimization</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="0">
+                                                    <widget class="QLabel" name="label_27">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Auto optimization</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_28">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>80</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Large transactions</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_29">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>690</x>
-                                                <y>50</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Rescan wallet</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_autoOptimizeButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>100</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_autoOptimizeButton
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Auto optimization</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="1">
+                                                    <widget class="QPushButton" name="m_autoOptimizeButton">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_autoOptimizeButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -3836,89 +3840,67 @@ QPushButton#m_autoOptimizeButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>ENABLE</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_optimizeButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>80</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>101</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_optimizeButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
-}
-
-QPushButton#m_optimizeButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>OPTIMIZE NOW</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_rescanButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>870</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>101</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_rescanButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>ENABLE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="3">
+                                                    <widget class="QLabel" name="label_29">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Rescan wallet</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="4">
+                                                    <widget class="QPushButton" name="m_rescanButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_rescanButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -3934,350 +3916,207 @@ QPushButton#m_rescanButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>START RESCAN</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="m_optimizationMessage">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>330</x>
-                                                <y>80</y>
-                                                <width>181</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #ccc; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>START RESCAN</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="0">
+                                                    <widget class="QLabel" name="label_28">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Large transactions</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="1">
+                                                    <widget class="QPushButton" name="m_optimizeButton">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_optimizeButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_optimizeButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>OPTIMIZE NOW</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="2">
+                                                    <widget class="QLabel" name="m_optimizationMessage">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #ccc; 
 font-size: 14px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>(Optimization not required)</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                </widget>
-                                <widget class="QGroupBox" name="groupBox_9">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>275</y>
-                                            <width>1041</width>
-                                            <height>151</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border: 1px solid #444;</string>
-                                    </property>
-                                    <property name="title">
-                                        <string />
-                                    </property>
-                                    <widget class="QLabel" name="label_30">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>20</x>
-                                                <y>10</y>
-                                                <width>311</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>(Optimization not required)</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QGroupBox" name="groupBox_9">
+                                            <property name="styleSheet">
+                                                <string notr="true">border: 1px solid #444;</string>
+                                            </property>
+                                            <property name="title">
+                                                <string />
+                                            </property>
+                                            <layout class="QGridLayout" name="gridLayout_20">
+                                                <item row="0" column="0" colspan="2">
+                                                    <widget class="QLabel" name="label_30">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>30</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>35</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="sizeIncrement">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 18px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Preferences</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_34">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>50</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Language</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_35">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>80</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Currency</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_usd">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>80</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>US Dollar ($)</string>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup_2</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_eur">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>330</x>
-                                                <y>80</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Euro (€)</string>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup_2</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_chinese">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>460</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Chinese</string>
-                                        </property>
-                                        <property name="icon">
-                                            <iconset resource="../../resources.qrc">
-                                                <normaloff>:/images/images/cn.png</normaloff>
-                                                :/images/images/cn.png
-                                            </iconset>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_english">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>English</string>
-                                        </property>
-                                        <property name="icon">
-                                            <iconset resource="../../resources.qrc">
-                                                <normaloff>:/images/images/en.png</normaloff>
-                                                :/images/images/en.png
-                                            </iconset>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>true</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_russian">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>590</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Russian</string>
-                                        </property>
-                                        <property name="icon">
-                                            <iconset resource="../../resources.qrc">
-                                                <normaloff>:/images/images/ru.png</normaloff>
-                                                :/images/images/ru.png
-                                            </iconset>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QRadioButton" name="m_turkish">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>330</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Turkish</string>
-                                        </property>
-                                        <property name="icon">
-                                            <iconset resource="../../resources.qrc">
-                                                <normaloff>:/images/images/tr.png</normaloff>
-                                                :/images/images/tr.png
-                                            </iconset>
-                                        </property>
-                                        <property name="checked">
-                                            <bool>false</bool>
-                                        </property>
-                                        <attribute name="buttonGroup">
-                                            <string notr="true">buttonGroup</string>
-                                        </attribute>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_saveLanguageButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>870</x>
-                                                <y>20</y>
-                                                <width>150</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>150</width>
-                                                <height>30</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>150</width>
-                                                <height>31</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_saveLanguageButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Preferences</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="0" column="6">
+                                                    <widget class="QPushButton" name="m_saveLanguageButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>31</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_saveLanguageButton
 {
     color: #fff;
     border: 1px solid orange;
@@ -4294,67 +4133,358 @@ QPushButton#m_saveLanguageButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>SAVE</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_44">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>110</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>SAVE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="0">
+                                                    <widget class="QLabel" name="label_34">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Language</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="1">
+                                                    <widget class="QRadioButton" name="m_english">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 14px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Minimize to tray</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_minToTrayButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>110</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>100</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_minToTrayButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>English</string>
+                                                        </property>
+                                                        <property name="icon">
+                                                            <iconset resource="../../resources.qrc">
+                                                                <normaloff>:/images/images/en.png</normaloff>
+                                                                :/images/images/en.png
+                                                            </iconset>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>true</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="2">
+                                                    <widget class="QRadioButton" name="m_turkish">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Turkish</string>
+                                                        </property>
+                                                        <property name="icon">
+                                                            <iconset resource="../../resources.qrc">
+                                                                <normaloff>:/images/images/tr.png</normaloff>
+                                                                :/images/images/tr.png
+                                                            </iconset>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="3">
+                                                    <widget class="QRadioButton" name="m_chinese">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Chinese</string>
+                                                        </property>
+                                                        <property name="icon">
+                                                            <iconset resource="../../resources.qrc">
+                                                                <normaloff>:/images/images/cn.png</normaloff>
+                                                                :/images/images/cn.png
+                                                            </iconset>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="4">
+                                                    <widget class="QRadioButton" name="m_russian">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Russian</string>
+                                                        </property>
+                                                        <property name="icon">
+                                                            <iconset resource="../../resources.qrc">
+                                                                <normaloff>:/images/images/ru.png</normaloff>
+                                                                :/images/images/ru.png
+                                                            </iconset>
+                                                        </property>
+                                                        <property name="checked">
+                                                            <bool>false</bool>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="0">
+                                                    <widget class="QLabel" name="label_35">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Currency</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="1">
+                                                    <widget class="QRadioButton" name="m_usd">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>US Dollar ($)</string>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup_2</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="2">
+                                                    <widget class="QRadioButton" name="m_eur">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Euro (€)</string>
+                                                        </property>
+                                                        <attribute name="buttonGroup">
+                                                            <string notr="true">buttonGroup_2</string>
+                                                        </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="0">
+                                                    <widget class="QLabel" name="label_44">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Minimize to tray</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="1">
+                                                    <widget class="QPushButton" name="m_minToTrayButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_minToTrayButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4370,67 +4500,67 @@ QPushButton#m_minToTrayButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>ENABLE</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_45">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>330</x>
-                                                <y>110</y>
-                                                <width>151</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>ENABLE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="2">
+                                                    <widget class="QLabel" name="label_45">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 14px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Close to tray</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_closeToTrayButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>490</x>
-                                                <y>110</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="minimumSize">
-                                            <size>
-                                                <width>100</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                            <size>
-                                                <width>180</width>
-                                                <height>35</height>
-                                            </size>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_closeToTrayButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Close to tray</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="3" colspan="2">
+                                                    <widget class="QPushButton" name="m_closeToTrayButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>100</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>150</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_closeToTrayButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4446,108 +4576,137 @@ QPushButton#m_closeToTrayButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>ENABLE</string>
-                                        </property>
-                                    </widget>
-                                </widget>
-                                <widget class="QGroupBox" name="groupBox_13">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>435</y>
-                                            <width>1041</width>
-                                            <height>141</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border: 1px solid #444;</string>
-                                    </property>
-                                    <property name="title">
-                                        <string />
-                                    </property>
-                                    <widget class="QLabel" name="label_38">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>20</x>
-                                                <y>10</y>
-                                                <width>311</width>
-                                                <height>31</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>ENABLE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </widget>
+                                    </item>
+                                    <item>
+                                        <widget class="QGroupBox" name="groupBox_13">
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>0</width>
+                                                    <height>20</height>
+                                                </size>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">border: 1px solid #444;</string>
+                                            </property>
+                                            <property name="title">
+                                                <string />
+                                            </property>
+                                            <layout class="QGridLayout" name="gridLayout_17">
+                                                <item row="0" column="0" colspan="2">
+                                                    <widget class="QLabel" name="label_38">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>30</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>16777215</width>
+                                                                <height>35</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="sizeIncrement">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>0</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 18px;
 font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Wallet Operations</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_openExistingWalletButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>370</x>
-                                                <y>50</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_openExistingWalletButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
-}
-
-QPushButton#m_openExistingWalletButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>OPEN WALLET</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_createNewWalletButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>50</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_createNewWalletButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Wallet Operations</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="0">
+                                                    <widget class="QLabel" name="label_39">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>New/Existing</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="1">
+                                                    <widget class="QPushButton" name="m_createNewWalletButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_createNewWalletButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4563,28 +4722,77 @@ QPushButton#m_createNewWalletButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>NEW WALLET</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_encryptWalletButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>550</x>
-                                                <y>50</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_encryptWalletButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>NEW WALLET</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="2">
+                                                    <widget class="QPushButton" name="m_openExistingWalletButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_openExistingWalletButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_openExistingWalletButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>OPEN WALLET</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="3">
+                                                    <widget class="QPushButton" name="m_encryptWalletButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_encryptWalletButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4600,183 +4808,74 @@ QPushButton#m_encryptWalletButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>ENCRYPT WALLET</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_39">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>50</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>ENCRYPT WALLET</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="0">
+                                                    <widget class="QLabel" name="label_40">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
 font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>New/Existing</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_40">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>80</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Import</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel" name="label_41">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>30</x>
-                                                <y>110</y>
-                                                <width>121</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>Backup</string>
-                                        </property>
-                                        <property name="alignment">
-                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_importTrackingWalletButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>550</x>
-                                                <y>80</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_importTrackingWalletButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
-}
-
-QPushButton#m_importTrackingWalletButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>IMPORT TRACKING WALLET</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_backupKeysButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>110</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_backupKeysButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
-}
-
-QPushButton#m_backupKeysButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>BACKUP KEYS</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_importSpendKeyButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>190</x>
-                                                <y>80</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_importSpendKeyButton
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Import</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="1">
+                                                    <widget class="QPushButton" name="m_importSpendKeyButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_importSpendKeyButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4792,65 +4891,34 @@ QPushButton#m_importSpendKeyButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>IMPORT PRIVATE KEYS</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_backupKeysButton_2">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>370</x>
-                                                <y>110</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_backupKeysButton_2
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
-}
-
-QPushButton#m_backupKeysButton_2:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>BACKUP WALLET FILE</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QPushButton" name="m_importSeedButton">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>370</x>
-                                                <y>80</y>
-                                                <width>161</width>
-                                                <height>21</height>
-                                            </rect>
-                                        </property>
-                                        <property name="font">
-                                            <font>
-                                                <family>Poppins</family>
-                                                <pointsize>-1</pointsize>
-                                            </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                            <string notr="true">QPushButton#m_importSeedButton
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>IMPORT PRIVATE KEYS</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="2">
+                                                    <widget class="QPushButton" name="m_importSeedButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_importSeedButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -4866,12 +4934,198 @@ QPushButton#m_importSeedButton:hover
     border-radius: 5px;
     font-family: 'Poppins';
 }</string>
-                                        </property>
-                                        <property name="text">
-                                            <string>IMPORT SEED</string>
-                                        </property>
-                                    </widget>
-                                </widget>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>IMPORT SEED</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="2" column="3">
+                                                    <widget class="QPushButton" name="m_importTrackingWalletButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_importTrackingWalletButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_importTrackingWalletButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>IMPORT TRACKING WALLET</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="0">
+                                                    <widget class="QLabel" name="label_41">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>180</width>
+                                                                <height>16</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #fff; 
+font-size: 14px;
+font-family: 'Poppins'; border: 0px;
+margin-left: 10px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>Backup</string>
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="1">
+                                                    <widget class="QPushButton" name="m_backupKeysButton">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_backupKeysButton
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_backupKeysButton:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>BACKUP KEYS</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="3" column="2">
+                                                    <widget class="QPushButton" name="m_backupKeysButton_2">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>160</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                            <size>
+                                                                <width>200</width>
+                                                                <height>20</height>
+                                                            </size>
+                                                        </property>
+                                                        <property name="font">
+                                                            <font>
+                                                                <family>Poppins</family>
+                                                                <pointsize>-1</pointsize>
+                                                            </font>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">QPushButton#m_backupKeysButton_2
+{
+    color: orange; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px; font-family: 'Poppins';
+}
+
+QPushButton#m_backupKeysButton_2:hover
+{
+    color:#FFD700; ;
+    border: 1px solid orange;
+    font-size: 11px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string>BACKUP WALLET FILE</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="4" rowspan="3">
+                                                    <widget class="QLabel" name="empty_col">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">border:none;</string>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                            </layout>
+                                        </widget>
+                                    </item>
+                                </layout>
                                 <zorder>groupBox_7</zorder>
                                 <zorder>groupBox_8</zorder>
                                 <zorder>groupBox_13</zorder>
@@ -6824,7 +7078,6 @@ color: #ccc;
                         </item>
                     </layout>
                     <zorder>lockBox</zorder>
-                    <zorder>settingsBox</zorder>
                     <zorder>darkness</zorder>
                     <zorder>leftMenu</zorder>
                     <zorder>headerBox</zorder>
@@ -6836,6 +7089,7 @@ color: #ccc;
                     <zorder>overviewBox</zorder>
                     <zorder>newMessageBox</zorder>
                     <zorder>transactionsBox</zorder>
+                    <zorder>settingsBox</zorder>
                 </widget>
             </item>
         </layout>
