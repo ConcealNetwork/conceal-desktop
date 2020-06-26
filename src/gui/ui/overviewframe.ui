@@ -819,7 +819,7 @@ font-size: 14px;
                                             </property>
                                         </widget>
                                     </item>
-                                    <item row="0" column="0" colspan="3">
+                                    <item row="0" column="0" colspan="2">
                                         <widget class="QLabel" name="m_myConcealWalletTitle">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -876,7 +876,7 @@ font-size: 14px;
                                             </property>
                                         </widget>
                                     </item>
-                                    <item row="0" column="3">
+                                    <item row="0" column="2" colspan="2">
                                         <widget class="QLabel" name="m_totalPortfolioLabelUSD">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
@@ -2548,6 +2548,18 @@ font-family: Poppins;</string>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
                                             </property>
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>500</width>
+                                                    <height>0</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>16777215</width>
+                                                    <height>16777215</height>
+                                                </size>
+                                            </property>
                                             <property name="styleSheet">
                                                 <string notr="true">border: none;
 padding: 0px;</string>
@@ -2615,6 +2627,12 @@ margin-left: 10px;
                                                             </item>
                                                             <item row="3" column="3">
                                                                 <widget class="QLabel" name="m_tickerLabel2">
+                                                                    <property name="sizePolicy">
+                                                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                            <horstretch>0</horstretch>
+                                                                            <verstretch>0</verstretch>
+                                                                        </sizepolicy>
+                                                                    </property>
                                                                     <property name="font">
                                                                         <font>
                                                                             <family>Poppins</family>
@@ -2635,6 +2653,12 @@ margin-left: 10px;
                                                             </item>
                                                             <item row="4" column="3">
                                                                 <widget class="QLabel" name="m_tickerLabel4">
+                                                                    <property name="sizePolicy">
+                                                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                            <horstretch>0</horstretch>
+                                                                            <verstretch>0</verstretch>
+                                                                        </sizepolicy>
+                                                                    </property>
                                                                     <property name="font">
                                                                         <font>
                                                                             <family>Poppins</family>
@@ -2723,6 +2747,12 @@ margin-left: 10px;
                                                             </item>
                                                             <item row="2" column="3">
                                                                 <widget class="QLabel" name="m_tickerLabel1_2">
+                                                                    <property name="sizePolicy">
+                                                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                            <horstretch>0</horstretch>
+                                                                            <verstretch>0</verstretch>
+                                                                        </sizepolicy>
+                                                                    </property>
                                                                     <property name="font">
                                                                         <font>
                                                                             <family>Poppins</family>
@@ -2813,6 +2843,12 @@ margin-left: 10px;
                                                             </item>
                                                             <item row="1" column="3">
                                                                 <widget class="QLabel" name="m_tickerLabel1">
+                                                                    <property name="sizePolicy">
+                                                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                                                            <horstretch>0</horstretch>
+                                                                            <verstretch>0</verstretch>
+                                                                        </sizepolicy>
+                                                                    </property>
                                                                     <property name="font">
                                                                         <font>
                                                                             <family>Poppins</family>
@@ -2991,35 +3027,121 @@ margin-left: 10px;
                                 <property name="title">
                                     <string />
                                 </property>
-                                <widget class="QTreeView" name="m_transactionsView">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>120</y>
-                                            <width>1031</width>
-                                            <height>451</height>
-                                        </rect>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>1000</width>
-                                            <height>300</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>1100</width>
-                                            <height>16777215</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QHeaderView::section {
+                                <layout class="QGridLayout" name="gridLayout_16">
+                                    <item row="0" column="0">
+                                        <widget class="QLabel" name="label_14">
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>100</width>
+                                                    <height>25</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>360</width>
+                                                    <height>16777215</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">color: #fff;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;
+border: none;
+text-align: left;
+</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>HISTORICAL DATA</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="0" column="1">
+                                        <widget class="QPushButton" name="m_exportCSVButton">
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>180</width>
+                                                    <height>35</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>180</width>
+                                                    <height>35</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QPushButton#m_exportCSVButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}
+
+QPushButton#m_exportCSVButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+}</string>
+                                            </property>
+                                            <property name="text">
+                                                <string>EXPORT CSV</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="0" colspan="2">
+                                        <widget class="QTextBrowser" name="m_transactionsDescription">
+                                            <property name="styleSheet">
+                                                <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
+                                            </property>
+                                            <property name="html">
+                                                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="2" column="0" colspan="2">
+                                        <widget class="QTreeView" name="m_transactionsView">
+                                            <property name="minimumSize">
+                                                <size>
+                                                    <width>1000</width>
+                                                    <height>300</height>
+                                                </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>1100</width>
+                                                    <height>16777215</height>
+                                                </size>
+                                            </property>
+                                            <property name="font">
+                                                <font>
+                                                    <family>Poppins</family>
+                                                    <pointsize>-1</pointsize>
+                                                </font>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">QHeaderView::section {
     color: white;
     font-weight: bold;
     background-color: #282d31;
@@ -3064,172 +3186,64 @@ font-size: 14px;
 font-family: 'Poppins';
 color: #ccc;
 </string>
-                                    </property>
-                                    <property name="frameShape">
-                                        <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                        <enum>QFrame::Plain</enum>
-                                    </property>
-                                    <property name="lineWidth">
-                                        <number>0</number>
-                                    </property>
-                                    <property name="midLineWidth">
-                                        <number>0</number>
-                                    </property>
-                                    <property name="horizontalScrollBarPolicy">
-                                        <enum>Qt::ScrollBarAlwaysOff</enum>
-                                    </property>
-                                    <property name="sizeAdjustPolicy">
-                                        <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-                                    </property>
-                                    <property name="autoScrollMargin">
-                                        <number>0</number>
-                                    </property>
-                                    <property name="editTriggers">
-                                        <set>QAbstractItemView::EditKeyPressed</set>
-                                    </property>
-                                    <property name="alternatingRowColors">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="indentation">
-                                        <number>0</number>
-                                    </property>
-                                    <property name="rootIsDecorated">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="uniformRowHeights">
-                                        <bool>true</bool>
-                                    </property>
-                                    <property name="itemsExpandable">
-                                        <bool>true</bool>
-                                    </property>
-                                    <property name="sortingEnabled">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="expandsOnDoubleClick">
-                                        <bool>true</bool>
-                                    </property>
-                                    <attribute name="headerCascadingSectionResizes">
-                                        <bool>false</bool>
-                                    </attribute>
-                                    <attribute name="headerShowSortIndicator" stdset="0">
-                                        <bool>false</bool>
-                                    </attribute>
-                                    <attribute name="headerStretchLastSection">
-                                        <bool>true</bool>
-                                    </attribute>
-                                </widget>
-                                <widget class="QLabel" name="label_14">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>20</y>
-                                            <width>241</width>
-                                            <height>25</height>
-                                        </rect>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>100</width>
-                                            <height>25</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>360</width>
-                                            <height>16777215</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">color: #fff;
-background: transparent;
-font-size: 20px;
-font-family: Poppins;
-border: none;
-text-align: left;
-</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>HISTORICAL DATA</string>
-                                    </property>
-                                </widget>
-                                <widget class="QTextBrowser" name="m_transactionsDescription">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>0</x>
-                                            <y>60</y>
-                                            <width>1011</width>
-                                            <height>61</height>
-                                        </rect>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
-                                    </property>
-                                    <property name="html">
-                                        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                                    </property>
-                                </widget>
-                                <widget class="QPushButton" name="m_exportCSVButton">
-                                    <property name="geometry">
-                                        <rect>
-                                            <x>840</x>
-                                            <y>20</y>
-                                            <width>180</width>
-                                            <height>35</height>
-                                        </rect>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>180</width>
-                                            <height>35</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>180</width>
-                                            <height>35</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Poppins</family>
-                                            <pointsize>-1</pointsize>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">QPushButton#m_exportCSVButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}
-
-QPushButton#m_exportCSVButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-}</string>
-                                    </property>
-                                    <property name="text">
-                                        <string>EXPORT CSV</string>
-                                    </property>
-                                </widget>
+                                            </property>
+                                            <property name="frameShape">
+                                                <enum>QFrame::StyledPanel</enum>
+                                            </property>
+                                            <property name="frameShadow">
+                                                <enum>QFrame::Plain</enum>
+                                            </property>
+                                            <property name="lineWidth">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="midLineWidth">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="horizontalScrollBarPolicy">
+                                                <enum>Qt::ScrollBarAlwaysOff</enum>
+                                            </property>
+                                            <property name="sizeAdjustPolicy">
+                                                <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+                                            </property>
+                                            <property name="autoScrollMargin">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="editTriggers">
+                                                <set>QAbstractItemView::EditKeyPressed</set>
+                                            </property>
+                                            <property name="alternatingRowColors">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="indentation">
+                                                <number>0</number>
+                                            </property>
+                                            <property name="rootIsDecorated">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="uniformRowHeights">
+                                                <bool>true</bool>
+                                            </property>
+                                            <property name="itemsExpandable">
+                                                <bool>true</bool>
+                                            </property>
+                                            <property name="sortingEnabled">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="expandsOnDoubleClick">
+                                                <bool>true</bool>
+                                            </property>
+                                            <attribute name="headerCascadingSectionResizes">
+                                                <bool>false</bool>
+                                            </attribute>
+                                            <attribute name="headerShowSortIndicator" stdset="0">
+                                                <bool>false</bool>
+                                            </attribute>
+                                            <attribute name="headerStretchLastSection">
+                                                <bool>true</bool>
+                                            </attribute>
+                                        </widget>
+                                    </item>
+                                </layout>
                             </widget>
                         </item>
                         <item row="1" column="1" rowspan="4" colspan="3">
@@ -6792,7 +6806,6 @@ color: #ccc;
                         </item>
                     </layout>
                     <zorder>lockBox</zorder>
-                    <zorder>transactionsBox</zorder>
                     <zorder>settingsBox</zorder>
                     <zorder>darkness</zorder>
                     <zorder>leftMenu</zorder>
@@ -6803,6 +6816,7 @@ color: #ccc;
                     <zorder>messageBox</zorder>
                     <zorder>newMessageBox</zorder>
                     <zorder>sendBox</zorder>
+                    <zorder>transactionsBox</zorder>
                     <zorder>overviewBox</zorder>
                 </widget>
             </item>
