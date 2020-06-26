@@ -419,11 +419,11 @@ void OverviewFrame::loadChart()
 
   if (currency.compare("EUR") == 0)
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=DD-MM");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=DD-MM");
   }
   else
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=MM-DD");
   }
 
   QNetworkRequest request(url);
@@ -444,6 +444,7 @@ void OverviewFrame::downloadFinished(QNetworkReply *reply)
   QPixmap pm;
   pm.loadFromData(reply->readAll());
   m_ui->m_chart->setPixmap(pm);
+  m_ui->m_chart->setScaledContents(true);
 }
 
 void OverviewFrame::calculateFee()
