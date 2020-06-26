@@ -3021,6 +3021,12 @@ margin-left: 10px;
                         </item>
                         <item row="1" column="1" rowspan="4" colspan="3">
                             <widget class="QGroupBox" name="transactionsBox">
+                                <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
                                 <property name="styleSheet">
                                     <string notr="true">border-top: 1px solid #444;</string>
                                 </property>
@@ -3030,6 +3036,12 @@ margin-left: 10px;
                                 <layout class="QGridLayout" name="gridLayout_16">
                                     <item row="0" column="0">
                                         <widget class="QLabel" name="label_14">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
                                             <property name="minimumSize">
                                                 <size>
                                                     <width>100</width>
@@ -3108,6 +3120,12 @@ QPushButton#m_exportCSVButton:hover
                                     </item>
                                     <item row="1" column="0" colspan="2">
                                         <widget class="QTextBrowser" name="m_transactionsDescription">
+                                            <property name="maximumSize">
+                                                <size>
+                                                    <width>16777215</width>
+                                                    <height>16777215</height>
+                                                </size>
+                                            </property>
                                             <property name="styleSheet">
                                                 <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
                                             </property>
@@ -3130,7 +3148,7 @@ p, li { white-space: pre-wrap; }
                                             </property>
                                             <property name="maximumSize">
                                                 <size>
-                                                    <width>1100</width>
+                                                    <width>16777215</width>
                                                     <height>16777215</height>
                                                 </size>
                                             </property>
@@ -6814,10 +6832,10 @@ color: #ccc;
                     <zorder>addressBookBox</zorder>
                     <zorder>bankingBox</zorder>
                     <zorder>messageBox</zorder>
-                    <zorder>newMessageBox</zorder>
                     <zorder>sendBox</zorder>
-                    <zorder>transactionsBox</zorder>
                     <zorder>overviewBox</zorder>
+                    <zorder>newMessageBox</zorder>
+                    <zorder>transactionsBox</zorder>
                 </widget>
             </item>
         </layout>
