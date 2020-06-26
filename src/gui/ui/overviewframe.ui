@@ -383,7 +383,7 @@ border: none;
                                             <property name="maximumSize">
                                                 <size>
                                                     <width>180</width>
-                                                    <height>16777215</height>
+                                                    <height>1</height>
                                                 </size>
                                             </property>
                                             <property name="styleSheet">
@@ -528,7 +528,7 @@ border: none;
                                             <property name="maximumSize">
                                                 <size>
                                                     <width>180</width>
-                                                    <height>16777215</height>
+                                                    <height>1</height>
                                                 </size>
                                             </property>
                                             <property name="styleSheet">
@@ -775,7 +775,7 @@ font-size: 14px;
                                     </size>
                                 </property>
                                 <property name="styleSheet">
-                                    <string notr="true">border-top: 1px solid #444;</string>
+                                    <string notr="true">border: none;</string>
                                 </property>
                                 <property name="title">
                                     <string />
