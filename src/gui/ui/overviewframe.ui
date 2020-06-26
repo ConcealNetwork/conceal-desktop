@@ -1120,41 +1120,46 @@ p, li { white-space: pre-wrap; }
                                             </property>
                                             <layout class="QGridLayout" name="gridLayout_5">
                                                 <item row="0" column="0">
-                                                    <widget class="QLabel" name="m_aboutLabel_3">
-                                                        <property name="sizePolicy">
-                                                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                                                                <horstretch>0</horstretch>
-                                                                <verstretch>0</verstretch>
-                                                            </sizepolicy>
-                                                        </property>
-                                                        <property name="font">
-                                                            <font>
-                                                                <family>Poppins</family>
-                                                                <pointsize>-1</pointsize>
-                                                            </font>
-                                                        </property>
-                                                        <property name="styleSheet">
-                                                            <string notr="true">border: none;
-color: #ccc;
-border-right: 0px;
-font-size: 14px;
-font-family: Poppins;</string>
-                                                        </property>
-                                                        <property name="text">
-                                                            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                                                        </property>
-                                                        <property name="textFormat">
-                                                            <enum>Qt::RichText</enum>
-                                                        </property>
-                                                        <property name="alignment">
-                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                                                        </property>
-                                                        <property name="wordWrap">
+                                                    <widget class="QScrollArea" name="scrollArea">
+                                                        <property name="widgetResizable">
                                                             <bool>true</bool>
                                                         </property>
-                                                        <property name="openExternalLinks">
-                                                            <bool>true</bool>
-                                                        </property>
+                                                        <widget class="QLabel" name="m_aboutLabel_3">
+                                                            <property name="sizePolicy">
+                                                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                                    <horstretch>0</horstretch>
+                                                                    <verstretch>0</verstretch>
+                                                                </sizepolicy>
+                                                            </property>
+                                                            <property name="font">
+                                                                <font>
+                                                                    <family>Poppins</family>
+                                                                    <pointsize>-1</pointsize>
+                                                                </font>
+                                                            </property>
+                                                            <property name="styleSheet">
+                                                                <string notr="true">border: none;
+    color: #ccc;
+    border-right: 0px;
+    font-size: 14px;
+    font-family: Poppins;</string>
+                                                            </property>
+                                                            <property name="text">
+                                                                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                                            </property>
+                                                            <property name="textFormat">
+                                                                <enum>Qt::RichText</enum>
+                                                            </property>
+                                                            <property name="alignment">
+                                                                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                                                            </property>
+                                                            <property name="wordWrap">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                            <property name="openExternalLinks">
+                                                                <bool>true</bool>
+                                                            </property>
+                                                        </widget>
                                                     </widget>
                                                 </item>
                                             </layout>
@@ -1171,8 +1176,8 @@ font-family: Poppins;</string>
                                             <property name="alignment">
                                                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                                             </property>
-                                            <layout class="QGridLayout" name="gridLayout_4">
-                                                <item row="0" column="0">
+                                            <layout class="QVBoxLayout" name="verticalLayout_7">
+                                                <item>
                                                     <widget class="QLabel" name="m_aboutLabel">
                                                         <property name="sizePolicy">
                                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1223,7 +1228,7 @@ border-radius: 5px;</string>
                                                         </property>
                                                     </widget>
                                                 </item>
-                                                <item row="1" column="0">
+                                                <item>
                                                     <widget class="QPushButton" name="m_aboutQT">
                                                         <property name="sizePolicy">
                                                             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -1275,6 +1280,26 @@ QPushButton#m_aboutQT:hover
                                                                 <width>18</width>
                                                                 <height>18</height>
                                                             </size>
+                                                        </property>
+                                                    </widget>
+                                                </item>
+                                                <item>
+                                                    <widget class="QLabel" name="empty_align">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">color: #ddd; font-family: 'Poppins';
+            font-size: 16px;</string>
+                                                        </property>
+                                                        <property name="text">
+                                                            <string />
+                                                        </property>
+                                                        <property name="alignment">
+                                                            <set>Qt::AlignCenter</set>
                                                         </property>
                                                     </widget>
                                                 </item>
@@ -6639,7 +6664,6 @@ color: #ccc;
                     <zorder>transactionsBox</zorder>
                     <zorder>settingsBox</zorder>
                     <zorder>addressBookBox</zorder>
-                    <zorder>aboutBox</zorder>
                     <zorder>bankingBox</zorder>
                     <zorder>overviewBox</zorder>
                     <zorder>messageBox</zorder>
@@ -6648,6 +6672,7 @@ color: #ccc;
                     <zorder>sendBox</zorder>
                     <zorder>leftMenu</zorder>
                     <zorder>headerBox</zorder>
+                    <zorder>aboutBox</zorder>
                 </widget>
             </item>
         </layout>
@@ -7916,8 +7941,8 @@ color: #ccc;
         <slot>minToTrayClicked()</slot>
     </slots>
     <buttongroups>
+        <buttongroup name="buttonGroup" />
         <buttongroup name="buttonGroup_2" />
         <buttongroup name="buttonGroup_3" />
-        <buttongroup name="buttonGroup" />
     </buttongroups>
 </ui>
