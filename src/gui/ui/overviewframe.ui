@@ -952,7 +952,7 @@ font-size: 14px;
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -989,7 +989,7 @@ font-size: 14px;
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>0</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -1027,10 +1027,16 @@ font-size: 14px;
                                                 </item>
                                                 <item>
                                                     <widget class="Line" name="line">
+                                                        <property name="minimumSize">
+                                                            <size>
+                                                                <width>0</width>
+                                                                <height>25</height>
+                                                            </size>
+                                                        </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>1</width>
-                                                                <height>16777215</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="styleSheet">
@@ -1052,7 +1058,7 @@ font-size: 14px;
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>0</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -3126,6 +3132,12 @@ QPushButton#m_exportCSVButton:hover
                                     </item>
                                     <item row="1" column="0" colspan="2">
                                         <widget class="QTextBrowser" name="m_transactionsDescription">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
                                             <property name="maximumSize">
                                                 <size>
                                                     <width>16777215</width>
