@@ -852,7 +852,7 @@ void OverviewFrame::clearAllClicked()
 void OverviewFrame::setPercentage25()
 {
   calculateFee();
-  uint64_t amount = (m_actualBalance - m_actualFee) / 0.25;
+  uint64_t amount = (m_actualBalance - m_actualFee) * 0.25;
   m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
 
@@ -860,7 +860,7 @@ void OverviewFrame::setPercentage25()
 void OverviewFrame::setPercentage50()
 {
   calculateFee();
-  uint64_t amount = (m_actualBalance - m_actualFee) / 0.5;
+  uint64_t amount = (m_actualBalance - m_actualFee) * 0.5;
   m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
 }
 
