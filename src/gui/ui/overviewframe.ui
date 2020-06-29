@@ -1845,19 +1845,19 @@ border: none;</string>
         <property name="styleSheet">
          <string notr="true">QPushButton#m_overviewWithdrawButton
 {
-	border: none; font-size: 14px;
+	border: 1px solid orange;
+	font-size: 14px;
 	font-family: 'Poppins';
-	color: orange;
-	text-align: left;
-	text-decoration: underline;
+	color: #ddd;
+	text-align: centre;
 }
 QPushButton#m_overviewWithdrawButton:hover
 {
-	border: none; font-size: 14px;
+	border: 1px solid orange;
+	font-size: 14px;
 	font-family: 'Poppins';
-	color: #ddd;
-	text-align: left;
-	text-decoration: underline;
+	color: orange;
+	text-align: centre;
 }</string>
         </property>
         <property name="text">
