@@ -5289,7 +5289,25 @@ border: none;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: white;</string>
+        <string notr="true">QSlider::groove:horizontal#m_ttlSlider {
+    border: 1px solid orange;
+    border-radius: 5px;
+    height: 11px;
+    background: #282d31;
+}
+
+QSlider::handle:horizontal#m_ttlSlider {
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 18px;
+    margin: -2px 0;
+    border-radius: 5px;
+}
+
+QSlider::sub-page:horizontal#m_ttlSlider {
+    background: orange;
+    border-radius: 5px;
+}</string>
        </property>
        <property name="singleStep">
         <number>300</number>
