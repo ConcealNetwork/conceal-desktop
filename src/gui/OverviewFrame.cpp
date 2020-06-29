@@ -1670,6 +1670,7 @@ void OverviewFrame::editABClicked()
     QString label = dlg.getLabel();
     QString address = dlg.getAddress();
     QByteArray paymentid = dlg.getPaymentID().toUtf8();
+    m_ui->darkness->hide();
     if (!CurrencyAdapter::instance().validateAddress(address))
     {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
