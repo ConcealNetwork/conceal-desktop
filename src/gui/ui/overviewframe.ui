@@ -2553,7 +2553,7 @@ font-family: Poppins;</string>
                                         </widget>
                                     </item>
                                     <item row="0" column="0" rowspan="2">
-                                        <widget class="QGroupBox" name="groupBox">
+                                        <widget class="QGroupBox" name="groupBox_1">
                                             <property name="sizePolicy">
                                                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                                                     <horstretch>0</horstretch>
@@ -8045,22 +8045,6 @@ color: #ccc;
             </hints>
         </connection>
         <connection>
-            <sender>m_recentTransactionsView</sender>
-            <signal>clicked(QModelIndex)</signal>
-            <receiver>OverviewFrame</receiver>
-            <slot>scrollToTransaction(QModelIndex)</slot>
-            <hints>
-                <hint type="sourcelabel">
-                    <x>460</x>
-                    <y>410</y>
-                </hint>
-                <hint type="destinationlabel">
-                    <x>634</x>
-                    <y>349</y>
-                </hint>
-            </hints>
-        </connection>
-        <connection>
             <sender>m_addressEdit</sender>
             <signal>textChanged(QString)</signal>
             <receiver>OverviewFrame</receiver>
@@ -8364,7 +8348,6 @@ color: #ccc;
         <slot>lockWallet()</slot>
         <slot>unlockWallet()</slot>
         <slot>encryptWalletClicked()</slot>
-        <slot>scrollToTransaction(QModelIndex)</slot>
         <slot>addressChanged(QString)</slot>
         <slot>hotbitClicked()</slot>
         <slot>tradeogreClicked()</slot>

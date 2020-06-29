@@ -144,15 +144,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   //connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
 
   m_ui->m_addressBookView->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(m_ui->m_addressBookView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(onCustomContextMenu(const QPoint &)));
-
-  contextMenu = new QMenu();
-  contextMenu->addAction(QString(tr("&Pay to")), this, SLOT(payToClicked()));
-  contextMenu->addAction(QString(tr("Copy &label")), this, SLOT(copyLabelClicked()));
-  contextMenu->addAction(QString(tr("Copy &address")), this, SLOT(copyClicked()));
-  contextMenu->addAction(QString(tr("Copy Payment &ID")), this, SLOT(copyPaymentIdClicked()));
-  contextMenu->addAction(QString(tr("&Edit")), this, SLOT(editClicked()));
-  contextMenu->addAction(QString(tr("&Delete")), this, SLOT(deleteClicked()));
 
   /* Don't show the LOCK button if the wallet is not encrypted */
   if (!Settings::instance().isEncrypted())
@@ -1600,14 +1591,6 @@ void OverviewFrame::delay()
   QTime dieTime = QTime::currentTime().addSecs(1);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-}
-
-void OverviewFrame::onCustomContextMenu(const QPoint &point)
-{
-  index = m_ui->m_addressBookView->indexAt(point);
-  if (!index.isValid())
-    return;
-  contextMenu->exec(m_ui->m_addressBookView->mapToGlobal(point));
 }
 
 void OverviewFrame::addABClicked()
