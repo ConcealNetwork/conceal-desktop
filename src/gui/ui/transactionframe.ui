@@ -65,7 +65,8 @@
                         </size>
                     </property>
                     <property name="styleSheet">
-                        <string notr="true">color: #ddd; font-size: 14px;</string>
+                        <string notr="true">color: #ddd; font-size: 14px;
+margin-left: 10px;</string>
                     </property>
                     <property name="text">
                         <string />
