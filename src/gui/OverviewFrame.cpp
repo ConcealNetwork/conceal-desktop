@@ -227,7 +227,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
   walletSynced = false;
-  m_ui->m_overviewWithdrawButton->hide();
 
   /* Get current currency */
   QString currency = Settings::instance().getCurrentCurrency();
