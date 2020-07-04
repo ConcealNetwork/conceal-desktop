@@ -4100,6 +4100,12 @@ font-family: 'Poppins'; border: 0px;</string>
                                     </item>
                                     <item>
                                         <widget class="QGroupBox" name="groupBox_9">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
                                             <property name="styleSheet">
                                                 <string notr="true">border: 1px solid #444;</string>
                                             </property>
@@ -4232,15 +4238,21 @@ margin-left: 10px;</string>
                                                 </item>
                                                 <item row="1" column="1">
                                                     <widget class="QRadioButton" name="m_english">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4274,15 +4286,21 @@ font-family: 'Poppins'; border: 0px;</string>
                                                 </item>
                                                 <item row="1" column="2">
                                                     <widget class="QRadioButton" name="m_turkish">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4316,15 +4334,21 @@ font-family: 'Poppins'; border: 0px;</string>
                                                 </item>
                                                 <item row="1" column="3">
                                                     <widget class="QRadioButton" name="m_chinese">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4358,15 +4382,21 @@ font-family: 'Poppins'; border: 0px;</string>
                                                 </item>
                                                 <item row="1" column="4">
                                                     <widget class="QRadioButton" name="m_russian">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4396,6 +4426,19 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <attribute name="buttonGroup">
                                                             <string notr="true">buttonGroup</string>
                                                         </attribute>
+                                                    </widget>
+                                                </item>
+                                                <item row="1" column="5" rowspan="3">
+                                                    <widget class="QLabel" name="alignLabel">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                            <string notr="true">border:none;</string>
+                                                        </property>
                                                     </widget>
                                                 </item>
                                                 <item row="2" column="0">
@@ -4434,15 +4477,21 @@ margin-left: 10px;</string>
                                                 </item>
                                                 <item row="2" column="1">
                                                     <widget class="QRadioButton" name="m_usd">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4461,15 +4510,21 @@ font-family: 'Poppins'; border: 0px;</string>
                                                 </item>
                                                 <item row="2" column="2">
                                                     <widget class="QRadioButton" name="m_eur">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4522,9 +4577,15 @@ margin-left: 10px;</string>
                                                 </item>
                                                 <item row="3" column="1">
                                                     <widget class="QPushButton" name="m_minToTrayButton">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>100</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4565,15 +4626,21 @@ QPushButton#m_minToTrayButton:hover
                                                 </item>
                                                 <item row="3" column="2">
                                                     <widget class="QLabel" name="label_45">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>0</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
-                                                                <width>16777215</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -4592,15 +4659,21 @@ font-family: 'Poppins'; border: 0px;</string>
                                                             <string>Close to tray</string>
                                                         </property>
                                                         <property name="alignment">
-                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                            <set>Qt::AlignCenter</set>
                                                         </property>
                                                     </widget>
                                                 </item>
                                                 <item row="3" column="3" colspan="2">
                                                     <widget class="QPushButton" name="m_closeToTrayButton">
+                                                        <property name="sizePolicy">
+                                                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                                <horstretch>0</horstretch>
+                                                                <verstretch>0</verstretch>
+                                                            </sizepolicy>
+                                                        </property>
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>100</width>
+                                                                <width>150</width>
                                                                 <height>20</height>
                                                             </size>
                                                         </property>
@@ -7318,12 +7391,12 @@ color: #ccc;
                     <zorder>aboutBox</zorder>
                     <zorder>addressBookBox</zorder>
                     <zorder>bankingBox</zorder>
-                    <zorder>settingsBox</zorder>
                     <zorder>transactionsBox</zorder>
                     <zorder>overviewBox</zorder>
                     <zorder>messageBox</zorder>
                     <zorder>sendBox</zorder>
                     <zorder>newMessageBox</zorder>
+                    <zorder>settingsBox</zorder>
                 </widget>
             </item>
         </layout>
@@ -8559,8 +8632,8 @@ color: #ccc;
         <slot>minToTrayClicked()</slot>
     </slots>
     <buttongroups>
+        <buttongroup name="buttonGroup_2" />
         <buttongroup name="buttonGroup" />
         <buttongroup name="buttonGroup_3" />
-        <buttongroup name="buttonGroup_2" />
     </buttongroups>
 </ui>
