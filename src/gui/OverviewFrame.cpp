@@ -156,6 +156,15 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   }
 
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
+  m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
+  m_ui->m_transactionsView->header()->moveSection(3, 5);
+  m_ui->m_transactionsView->header()->moveSection(0, 1);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
+  m_ui->m_transactionsView->setSortingEnabled(true);
+  m_ui->m_transactionsView->sortByColumn(TransactionsModel::COLUMN_DATE, Qt::DescendingOrder);
+  
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
 
@@ -175,13 +184,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 
   m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
-  m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->moveSection(3, 5);
-  m_ui->m_transactionsView->header()->moveSection(0, 1);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
+  m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 180);
 
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_STATE, 75);
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_AMOUNT, 100);
@@ -192,6 +195,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   QFont font;
   font.setFamily("Poppins");
   font.setPointSize(13);
+
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
   m_ui->m_transactionsView->setFont(font);
