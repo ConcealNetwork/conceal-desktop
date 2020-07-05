@@ -3871,13 +3871,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>100</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3938,7 +3938,7 @@ font-family: 'Poppins'; border: 0px;</string>
                                                             <string>Rescan wallet</string>
                                                         </property>
                                                         <property name="alignment">
-                                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                            <set>Qt::AlignCenter</set>
                                                         </property>
                                                     </widget>
                                                 </item>
@@ -3947,13 +3947,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>100</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4030,13 +4030,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>100</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4592,13 +4592,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4680,13 +4680,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>150</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4825,14 +4825,14 @@ margin-left: 10px;</string>
                                                     <widget class="QPushButton" name="m_createNewWalletButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4848,6 +4848,8 @@ margin-left: 10px;</string>
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+	margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_createNewWalletButton:hover
@@ -4868,14 +4870,14 @@ QPushButton#m_createNewWalletButton:hover
                                                     <widget class="QPushButton" name="m_openExistingWalletButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4891,6 +4893,8 @@ QPushButton#m_createNewWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_openExistingWalletButton:hover
@@ -4911,14 +4915,14 @@ QPushButton#m_openExistingWalletButton:hover
                                                     <widget class="QPushButton" name="m_encryptWalletButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4934,6 +4938,8 @@ QPushButton#m_openExistingWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_encryptWalletButton:hover
@@ -4994,14 +5000,14 @@ margin-left: 10px;</string>
                                                     <widget class="QPushButton" name="m_importSpendKeyButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5017,6 +5023,8 @@ margin-left: 10px;</string>
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_importSpendKeyButton:hover
@@ -5037,14 +5045,14 @@ QPushButton#m_importSpendKeyButton:hover
                                                     <widget class="QPushButton" name="m_importSeedButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5060,6 +5068,8 @@ QPushButton#m_importSpendKeyButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_importSeedButton:hover
@@ -5080,14 +5090,14 @@ QPushButton#m_importSeedButton:hover
                                                     <widget class="QPushButton" name="m_importTrackingWalletButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5103,6 +5113,8 @@ QPushButton#m_importSeedButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_importTrackingWalletButton:hover
@@ -5163,14 +5175,14 @@ margin-left: 10px;</string>
                                                     <widget class="QPushButton" name="m_backupKeysButton">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5186,6 +5198,8 @@ margin-left: 10px;</string>
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_backupKeysButton:hover
@@ -5206,14 +5220,14 @@ QPushButton#m_backupKeysButton:hover
                                                     <widget class="QPushButton" name="m_backupKeysButton_2">
                                                         <property name="minimumSize">
                                                             <size>
-                                                                <width>160</width>
-                                                                <height>20</height>
+                                                                <width>170</width>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>200</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5229,6 +5243,8 @@ QPushButton#m_backupKeysButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px; font-family: 'Poppins';
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 QPushButton#m_backupKeysButton_2:hover
@@ -7532,10 +7548,10 @@ color: #ccc;
                     <zorder>overviewBox</zorder>
                     <zorder>sendBox</zorder>
                     <zorder>newMessageBox</zorder>
-                    <zorder>settingsBox</zorder>
                     <zorder>messageBox</zorder>
                     <zorder>transactionsBox</zorder>
                     <zorder>addressBookBox</zorder>
+                    <zorder>settingsBox</zorder>
                 </widget>
             </item>
         </layout>
@@ -8771,8 +8787,8 @@ color: #ccc;
         <slot>minToTrayClicked()</slot>
     </slots>
     <buttongroups>
-        <buttongroup name="buttonGroup_3" />
         <buttongroup name="buttonGroup_2" />
         <buttongroup name="buttonGroup" />
+        <buttongroup name="buttonGroup_3" />
     </buttongroups>
 </ui>
