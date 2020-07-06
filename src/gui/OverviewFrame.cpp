@@ -187,9 +187,9 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 180);
 
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_STATE, 75);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_AMOUNT, 100);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_UNLOCK_TIME, 200);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_TYPE, 50);
+  m_ui->m_depositView->header()->resizeSection(1, 100);
+  m_ui->m_depositView->header()->resizeSection(2, 200);
+  m_ui->m_depositView->header()->resizeSection(3, 50);
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
   QFont font;
