@@ -1175,8 +1175,8 @@ p, li { white-space: pre-wrap; }
                                                                 <rect>
                                                                     <x>0</x>
                                                                     <y>0</y>
-                                                                    <width>576</width>
-                                                                    <height>508</height>
+                                                                    <width>590</width>
+                                                                    <height>503</height>
                                                                 </rect>
                                                             </property>
                                                             <property name="sizePolicy">
@@ -3540,7 +3540,7 @@ border-radius: 5px;</string>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>35</height>
+                                                                <height>32</height>
                                                             </size>
                                                         </property>
                                                         <property name="sizeIncrement">
@@ -3617,13 +3617,13 @@ QPushButton#m_saveConnectionButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3651,13 +3651,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3685,13 +3685,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3719,13 +3719,13 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3753,17 +3753,21 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>0</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>20</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="styleSheet">
-                                                            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+                                                            <string notr="true">border: 1px solid #444;
+border-radius: 5px;
+font-family: 'Poppins';
+font-size: 14px;
+color: #aaa;</string>
                                                         </property>
                                                         <property name="text">
                                                             <string />
@@ -3800,7 +3804,7 @@ border-radius: 5px;</string>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>35</height>
+                                                                <height>32</height>
                                                             </size>
                                                         </property>
                                                         <property name="sizeIncrement">
@@ -3833,13 +3837,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -3992,13 +3996,13 @@ QPushButton#m_rescanButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4109,7 +4113,7 @@ font-family: 'Poppins'; border: 0px;</string>
                                     <item>
                                         <widget class="QGroupBox" name="groupBox_9">
                                             <property name="sizePolicy">
-                                                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                                                     <horstretch>0</horstretch>
                                                     <verstretch>0</verstretch>
                                                 </sizepolicy>
@@ -4139,7 +4143,7 @@ border-radius: 5px;</string>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>35</height>
+                                                                <height>32</height>
                                                             </size>
                                                         </property>
                                                         <property name="sizeIncrement">
@@ -4216,13 +4220,13 @@ QPushButton#m_saveLanguageButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4455,13 +4459,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4555,13 +4559,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4729,7 +4733,7 @@ QPushButton#m_closeToTrayButton:hover
                                             <property name="minimumSize">
                                                 <size>
                                                     <width>0</width>
-                                                    <height>20</height>
+                                                    <height>0</height>
                                                 </size>
                                             </property>
                                             <property name="styleSheet">
@@ -4757,7 +4761,7 @@ border-radius: 5px;</string>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>16777215</width>
-                                                                <height>35</height>
+                                                                <height>32</height>
                                                             </size>
                                                         </property>
                                                         <property name="sizeIncrement">
@@ -4796,13 +4800,13 @@ font-family: 'Poppins'; border: 0px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -4830,7 +4834,7 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -4875,7 +4879,7 @@ QPushButton#m_createNewWalletButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -4920,7 +4924,7 @@ QPushButton#m_openExistingWalletButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -4971,13 +4975,13 @@ QPushButton#m_encryptWalletButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5005,7 +5009,7 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -5050,7 +5054,7 @@ QPushButton#m_importSpendKeyButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -5095,7 +5099,7 @@ QPushButton#m_importSeedButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -5146,13 +5150,13 @@ QPushButton#m_importTrackingWalletButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>20</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                             <size>
                                                                 <width>180</width>
-                                                                <height>16</height>
+                                                                <height>25</height>
                                                             </size>
                                                         </property>
                                                         <property name="font">
@@ -5180,7 +5184,7 @@ margin-left: 10px;</string>
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -5225,7 +5229,7 @@ QPushButton#m_backupKeysButton:hover
                                                         <property name="minimumSize">
                                                             <size>
                                                                 <width>170</width>
-                                                                <height>25</height>
+                                                                <height>22</height>
                                                             </size>
                                                         </property>
                                                         <property name="maximumSize">
@@ -5281,7 +5285,27 @@ QPushButton#m_backupKeysButton_2:hover
                                             </layout>
                                         </widget>
                                     </item>
+                                    <item>
+                                        <widget class="QLabel" name="empty_align_9">
+                                            <property name="sizePolicy">
+                                                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                                    <horstretch>0</horstretch>
+                                                    <verstretch>0</verstretch>
+                                                </sizepolicy>
+                                            </property>
+                                            <property name="styleSheet">
+                                                <string notr="true">border: none;</string>
+                                            </property>
+                                            <property name="text">
+                                                <string />
+                                            </property>
+                                            <property name="alignment">
+                                                <set>Qt::AlignCenter</set>
+                                            </property>
+                                        </widget>
+                                    </item>
                                 </layout>
+                                <zorder>empty_align_9</zorder>
                                 <zorder>groupBox_7</zorder>
                                 <zorder>groupBox_8</zorder>
                                 <zorder>groupBox_13</zorder>
@@ -7971,8 +7995,8 @@ color: #ccc;
                     <zorder>messageBox</zorder>
                     <zorder>transactionsBox</zorder>
                     <zorder>addressBookBox</zorder>
-                    <zorder>settingsBox</zorder>
                     <zorder>bankingBox</zorder>
+                    <zorder>settingsBox</zorder>
                 </widget>
             </item>
         </layout>
