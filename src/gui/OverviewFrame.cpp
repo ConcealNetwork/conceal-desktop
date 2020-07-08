@@ -144,15 +144,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   //connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
 
   m_ui->m_addressBookView->setContextMenuPolicy(Qt::CustomContextMenu);
-  connect(m_ui->m_addressBookView, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(onCustomContextMenu(const QPoint &)));
-
-  contextMenu = new QMenu();
-  contextMenu->addAction(QString(tr("&Pay to")), this, SLOT(payToClicked()));
-  contextMenu->addAction(QString(tr("Copy &label")), this, SLOT(copyLabelClicked()));
-  contextMenu->addAction(QString(tr("Copy &address")), this, SLOT(copyClicked()));
-  contextMenu->addAction(QString(tr("Copy Payment &ID")), this, SLOT(copyPaymentIdClicked()));
-  contextMenu->addAction(QString(tr("&Edit")), this, SLOT(editClicked()));
-  contextMenu->addAction(QString(tr("&Delete")), this, SLOT(deleteClicked()));
 
   /* Don't show the LOCK button if the wallet is not encrypted */
   if (!Settings::instance().isEncrypted())
@@ -165,6 +156,15 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   }
 
   m_ui->m_transactionsView->setModel(m_transactionsModel.data());
+  m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
+  m_ui->m_transactionsView->header()->moveSection(3, 5);
+  m_ui->m_transactionsView->header()->moveSection(0, 1);
+  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
+  m_ui->m_transactionsView->setSortingEnabled(true);
+  m_ui->m_transactionsView->sortByColumn(TransactionsModel::COLUMN_DATE, Qt::DescendingOrder);
+  
   m_ui->m_depositView->setModel(m_depositModel.data());
   m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
 
@@ -184,23 +184,18 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
 
   m_ui->m_amountSpin->setSuffix(" " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
-  m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_DATE, 140);
-  m_ui->m_transactionsView->header()->moveSection(3, 5);
-  m_ui->m_transactionsView->header()->moveSection(0, 1);
-  m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
+  m_ui->m_messagesView->header()->resizeSection(MessagesModel::COLUMN_DATE, 180);
 
   m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_STATE, 75);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_AMOUNT, 100);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_UNLOCK_TIME, 200);
-  m_ui->m_depositView->header()->resizeSection(DepositModel::COLUMN_TYPE, 50);
+  m_ui->m_depositView->header()->resizeSection(1, 100);
+  m_ui->m_depositView->header()->resizeSection(2, 200);
+  m_ui->m_depositView->header()->resizeSection(3, 50);
 
   int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
   QFont font;
   font.setFamily("Poppins");
   font.setPointSize(13);
+
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
   m_ui->m_transactionsView->setFont(font);
@@ -236,7 +231,6 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
 
   walletSynced = false;
-  m_ui->m_overviewWithdrawButton->hide();
 
   /* Get current currency */
   QString currency = Settings::instance().getCurrentCurrency();
@@ -419,11 +413,11 @@ void OverviewFrame::loadChart()
 
   if (currency.compare("EUR") == 0)
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=DD-MM");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=DD-MM");
   }
   else
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=MM-DD");
   }
 
   QNetworkRequest request(url);
@@ -444,6 +438,7 @@ void OverviewFrame::downloadFinished(QNetworkReply *reply)
   QPixmap pm;
   pm.loadFromData(reply->readAll());
   m_ui->m_chart->setPixmap(pm);
+  m_ui->m_chart->setScaledContents(true);
 }
 
 void OverviewFrame::calculateFee()
@@ -1601,14 +1596,6 @@ void OverviewFrame::delay()
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
-void OverviewFrame::onCustomContextMenu(const QPoint &point)
-{
-  index = m_ui->m_addressBookView->indexAt(point);
-  if (!index.isValid())
-    return;
-  contextMenu->exec(m_ui->m_addressBookView->mapToGlobal(point));
-}
-
 void OverviewFrame::addABClicked()
 {
   NewAddressDialog dlg(&MainWindow::instance());
@@ -1686,6 +1673,7 @@ void OverviewFrame::editABClicked()
     QString label = dlg.getLabel();
     QString address = dlg.getAddress();
     QByteArray paymentid = dlg.getPaymentID().toUtf8();
+    m_ui->darkness->hide();
     if (!CurrencyAdapter::instance().validateAddress(address))
     {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));

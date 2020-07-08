@@ -42,9 +42,6 @@ public:
   QModelIndex index;
   void scrollToTransaction(const QModelIndex& _index);
 
-public slots:
-  void onCustomContextMenu(const QPoint &point);
-
 public Q_SLOTS:
   void addABClicked();
   void editABClicked();
