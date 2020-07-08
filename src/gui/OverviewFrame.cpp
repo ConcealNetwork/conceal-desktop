@@ -194,7 +194,7 @@ OverviewFrame::OverviewFrame(QWidget *_parent) : QFrame(_parent), m_ui(new Ui::O
   int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
   QFont font;
   font.setFamily("Poppins");
-  font.setPointSize(13);
+  font.setPointSize(15);
 
   m_ui->m_messagesView->setFont(font);
   m_ui->m_depositView->setFont(font);
@@ -413,11 +413,11 @@ void OverviewFrame::loadChart()
 
   if (currency.compare("EUR") == 0)
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=DD-MM");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=DD-MM");
   }
   else
   {
-    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=7&priceDecimals=2&xPoints=12&width=1022&height=382&dateFormat=MM-DD");
+    url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD");
   }
 
   QNetworkRequest request(url);
@@ -429,7 +429,7 @@ void OverviewFrame::showCurrentWalletName()
 {
 
   QString walletFile = Settings::instance().getWalletName();
-  m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile.toUpper());
+  m_ui->m_currentWalletTitle->setText(tr("WALLET") + ": " + walletFile.toUpper());
 }
 
 /* Download is done, set the chart as the pixmap */
