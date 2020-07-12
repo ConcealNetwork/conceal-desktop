@@ -12,6 +12,8 @@
         <file alias="clock3">icons/clock3.png</file>
         <file alias="clock4">icons/clock4.png</file>
         <file alias="clock5">icons/clock5.png</file>
+        <file alias="clock5">icons/settings.png</file>
+        <file alias="clock5">icons/lock.png</file>
         <file alias="tx-inout">icons/tx_inout.png</file>
         <file alias="unconfirmed">icons/unconfirmed.png</file>
         <file alias="tx-deposit">icons/tx_deposit.png</file>
@@ -19,6 +21,8 @@
         <file>icons/editcopy-old.png</file>
         <file>icons/qrcode-scan.png</file>
         <file>icons/close.png</file>
+        <file alias="lock">icons/lock.png</file>
+        <file alias="settings">icons/settings.png</file>
         <file>icons/minimize.png</file>
         <file>icons/maximize.png</file>      
         <file>icons/tx_input.png</file>
