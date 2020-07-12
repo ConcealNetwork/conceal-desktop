@@ -20,7 +20,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #212529; color: #ddd; font-family: 'Poppins';</string>
+   <string notr="true">border: 0px; background-color: #212529; color: #ddd; </string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -172,7 +172,7 @@ p, li { white-space: pre-wrap; }
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_copySeedButton:hover
@@ -181,7 +181,7 @@ QPushButton#m_copySeedButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -226,7 +226,7 @@ QPushButton#m_copySeedButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_backButton_2:hover
@@ -235,7 +235,7 @@ QPushButton#m_backButton_2:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -280,7 +280,7 @@ QPushButton#m_backButton_2:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_copySpendKeyButton:hover
@@ -289,7 +289,7 @@ QPushButton#m_copySpendKeyButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -428,7 +428,7 @@ p, li { white-space: pre-wrap; }
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_copyViewKeyButton:hover
@@ -437,7 +437,7 @@ QPushButton#m_copyViewKeyButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -466,7 +466,7 @@ QPushButton#m_copyViewKeyButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_backButton_4:hover
@@ -475,7 +475,7 @@ QPushButton#m_backButton_4:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -642,7 +642,7 @@ QPushButton#m_backButton_4:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_showSeed:hover
@@ -651,7 +651,7 @@ QPushButton#m_showSeed:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -680,7 +680,7 @@ QPushButton#m_showSeed:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_backButton:hover
@@ -689,7 +689,7 @@ QPushButton#m_backButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -718,7 +718,7 @@ QPushButton#m_backButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_showPrivate:hover
@@ -727,7 +727,7 @@ QPushButton#m_showPrivate:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -772,7 +772,7 @@ QPushButton#m_showPrivate:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_showGUI:hover
@@ -781,7 +781,7 @@ QPushButton#m_showGUI:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -804,7 +804,7 @@ QPushButton#m_showGUI:hover
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #aaa; font-size: 14px;</string>
+        <string notr="true">color: #aaa; </string>
        </property>
        <property name="text">
         <string>Advanced Users:</string>
@@ -862,7 +862,7 @@ QPushButton#m_showGUI:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_copyGUIKeyButton:hover
@@ -871,7 +871,7 @@ QPushButton#m_copyGUIKeyButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -951,7 +951,7 @@ p, li { white-space: pre-wrap; }
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_backButton_3:hover
@@ -960,7 +960,7 @@ QPushButton#m_backButton_3:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">

@@ -47,7 +47,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;</string>
     </property>
     <property name="text">
      <string>Import a tracking wallet (view-only)</string>
@@ -99,7 +99,7 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;</string>
     </property>
     <property name="text">
      <string>Tracking Key</string>
@@ -127,7 +127,7 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa; padding: 5px;</string>
+     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa; padding: 5px;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -146,7 +146,7 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+     <string notr="true">color: #ddd;border-right: 0px;</string>
     </property>
     <property name="text">
      <string>Wallet Path</string>
@@ -174,7 +174,7 @@ font-size: 20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa; padding: 5px;</string>
+     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa; padding: 5px;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="m_okButton">
@@ -203,17 +203,17 @@ font-size: 20px;</string>
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
     </property>
     <property name="text">
@@ -246,17 +246,17 @@ QPushButton#m_okButton:hover
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_cancelButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
     </property>
     <property name="text">
@@ -279,7 +279,7 @@ QPushButton#m_cancelButton:hover
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+     <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
     </property>
     <property name="text">
      <string>...</string>

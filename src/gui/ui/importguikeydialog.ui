@@ -83,7 +83,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;</string>
       </property>
       <property name="text">
        <string>GUI Key</string>
@@ -111,7 +111,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -129,7 +129,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;</string>
       </property>
       <property name="text">
        <string>Wallet Path</string>
@@ -157,7 +157,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+       <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
       </property>
      </widget>
      <widget class="QToolButton" name="m_selectPathButton">
@@ -206,17 +206,17 @@ padding: 5px;
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
       </property>
       <property name="text">
@@ -249,17 +249,17 @@ QPushButton#m_okButton:hover
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_cancelButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
       </property>
       <property name="text">
@@ -281,7 +281,7 @@ QPushButton#m_cancelButton:hover
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ddd;border-right: 0px;font-size: 14px;</string>
+       <string notr="true">color: #ddd;border-right: 0px;</string>
       </property>
       <property name="text">
        <string>Recreate your wallet with the GUI key</string>

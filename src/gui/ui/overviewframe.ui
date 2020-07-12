@@ -74,7 +74,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; color: #aaa; font-family: 'Poppins';
+      <string notr="true">border: 0px; color: #aaa; 
 background-color: #282d31;</string>
      </property>
      <property name="title">
@@ -114,8 +114,11 @@ background-color: #282d31;</string>
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_7">
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
          <item row="0" column="0" colspan="2">
-          <widget class="QLabel" name="label_24">
+          <widget class="QLabel" name="title_addressBook">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -143,7 +146,7 @@ text-align: left;
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QPushButton" name="m_copyAddressButton_2">
+          <widget class="QPushButton" name="b1_copyAddressButton_2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -169,22 +172,22 @@ text-align: left;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_copyAddressButton_2
+            <string notr="true">QPushButton
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
-QPushButton#m_copyAddressButton_2:hover
+QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -193,7 +196,7 @@ QPushButton#m_copyAddressButton_2:hover
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="m_copyPaymentIdButton">
+          <widget class="QPushButton" name="b1_copyPaymentIdButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -219,22 +222,22 @@ QPushButton#m_copyAddressButton_2:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_copyPaymentIdButton
+            <string notr="true">QPushButton
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
-QPushButton#m_copyPaymentIdButton:hover
+QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -243,7 +246,7 @@ QPushButton#m_copyPaymentIdButton:hover
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QPushButton" name="m_payToButton">
+          <widget class="QPushButton" name="b1_payToButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -269,22 +272,22 @@ QPushButton#m_copyPaymentIdButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_payToButton
+            <string notr="true">QPushButton
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
-QPushButton#m_payToButton:hover
+QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -293,7 +296,7 @@ QPushButton#m_payToButton:hover
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QPushButton" name="m_editAddressButton">
+          <widget class="QPushButton" name="b1_editAddressButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -319,22 +322,22 @@ QPushButton#m_payToButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_editAddressButton
+            <string notr="true">QPushButton
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
-QPushButton#m_editAddressButton:hover
+QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -343,7 +346,7 @@ QPushButton#m_editAddressButton:hover
           </widget>
          </item>
          <item row="1" column="4">
-          <widget class="QPushButton" name="m_deleteAddressButton">
+          <widget class="QPushButton" name="b1_deleteAddressButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -369,22 +372,22 @@ QPushButton#m_editAddressButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_deleteAddressButton
+            <string notr="true">QPushButton
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
-QPushButton#m_deleteAddressButton:hover
+QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -436,45 +439,45 @@ QPushButton#m_deleteAddressButton:hover
     color: white;
     font-weight: bold;
     background-color: #282d31;
-    font-family: 'Poppins';
+    
     border-top: none;
-    font-size: 14px;
+    
      border-bottom: 1px solid #444;
        height: 37px;
 }
 
 QTreeView {
-    font-family: 'Poppins';
+    
 border: none;
     color: #ccc;
-font-size: 14px;
+
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-    font-family: 'Poppins';
+    
     color: #ccc;
-    font-size: 14px;
+    
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 14px;
+
   color: black;
 }
 
 QWidget:item:selected {
-    font-family: 'Poppins';
+    
 background-color: #555;
-font-size: 14px;
+
   color: #ccc;
 }
 
 border: none;
-font-size: 14px;
-font-family: 'Poppins';
+
+
 color: #ccc;
 </string>
            </property>
@@ -547,7 +550,7 @@ color: #ccc;
            </property>
            <property name="maximumSize">
             <size>
-             <width>200</width>
+             <width>190</width>
              <height>160</height>
             </size>
            </property>
@@ -582,7 +585,6 @@ color: #ccc;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>50</weight>
              <bold>false</bold>
             </font>
@@ -594,7 +596,7 @@ color: #fff;
 margin-left: 20px;
 font-family: Poppins;
 font-weight: normal;
-font-size: 14px;
+
 border: none;
 }
 
@@ -603,7 +605,7 @@ text-align: left; color: orange;
 margin-left: 20px;
 font-family: Poppins;
 border: none;
-font-size: 14px;
+
   }</string>
            </property>
            <property name="text">
@@ -634,21 +636,20 @@ font-size: 14px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_bankingButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_bankingButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }</string>
            </property>
@@ -680,21 +681,20 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_transactionButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_transactionButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }</string>
            </property>
@@ -726,21 +726,20 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_messagesButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_messagesButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }</string>
            </property>
@@ -772,21 +771,20 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_addressBookButton_2 {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_addressBookButton_2:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }</string>
            </property>
@@ -811,7 +809,7 @@ border: none;
            </property>
            <property name="maximumSize">
             <size>
-             <width>16777215</width>
+             <width>180</width>
              <height>1</height>
             </size>
            </property>
@@ -840,14 +838,13 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_newTransferButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
@@ -855,7 +852,7 @@ border: none;
 QPushButton#m_newTransferButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }</string>
            </property>
@@ -881,21 +878,20 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_newMessageButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_newMessageButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }
 </string>
@@ -922,21 +918,20 @@ border: none;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_newOpenWalletButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
 QPushButton#m_newOpenWalletButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
   }
 </string>
@@ -962,7 +957,7 @@ border: none;
            </property>
            <property name="maximumSize">
             <size>
-             <width>16777215</width>
+             <width>190</width>
              <height>16777215</height>
             </size>
            </property>
@@ -974,52 +969,6 @@ border: none;
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="m_lockWalletButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton#m_lockWalletButton {
-text-align: left; color: #ddd; margin-left: 20px;
-font-family: Poppins;
-font-size: 14px;
-border: none;
-}
-
-QPushButton#m_lockWalletButton:hover {
-text-align: left; color: orange; margin-left: 20px;
-font-family: Poppins;
-border: none;
-font-size: 14px;
-  }</string>
-           </property>
-           <property name="text">
-            <string>LOCK</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>18</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -1040,14 +989,13 @@ font-size: 14px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_helpButton {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
@@ -1055,7 +1003,7 @@ QPushButton#m_helpButton:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 border: none;
-font-size: 14px;
+
   }</string>
            </property>
            <property name="text">
@@ -1086,14 +1034,13 @@ font-size: 14px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton#m_about {
 text-align: left; color: #ddd; margin-left: 20px;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 }
 
@@ -1101,57 +1048,11 @@ QPushButton#m_about:hover {
 text-align: left; color: orange; margin-left: 20px;
 font-family: Poppins;
 border: none;
-font-size: 14px;
+
   }</string>
            </property>
            <property name="text">
             <string>ABOUT</string>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>18</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="m_settingsButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton#m_settingsButton {
-text-align: left; color: #ddd; margin-left: 20px;
-font-family: Poppins;
-border: none;
-font-size: 14px;
-}
-
-QPushButton#m_settingsButton:hover {
-text-align: left; color: orange; margin-left: 20px;
-font-family: Poppins;
-border: none;
-font-size: 14px;
-  }</string>
-           </property>
-           <property name="text">
-            <string>SETTINGS</string>
            </property>
            <property name="iconSize">
             <size>
@@ -1184,13 +1085,12 @@ font-size: 14px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -1216,11 +1116,10 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #ddd;  
 border: none;</string>
            </property>
            <property name="text">
@@ -1242,11 +1141,10 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string/>
@@ -1295,13 +1193,12 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -1321,11 +1218,10 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string/>
@@ -1343,13 +1239,12 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -1375,11 +1270,10 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string/>
@@ -1397,13 +1291,12 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -1429,11 +1322,10 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #ddd;  
 border: none;</string>
            </property>
            <property name="text">
@@ -1461,11 +1353,10 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string>0.000000</string>
@@ -1487,7 +1378,7 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_percent25{ padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa; }
+            <string notr="true">QPushButton#m_percent25{ padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa; }
                                                     QPushButton#m_percent25:hover{ color: white;}
                                                 </string>
            </property>
@@ -1511,7 +1402,7 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_percent50{ padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;}
+            <string notr="true">QPushButton#m_percent50{ padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;}
                                                     QPushButton#m_percent50:hover{ color: white;}
                                                 </string>
            </property>
@@ -1535,7 +1426,7 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_percent100{ padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;}
+            <string notr="true">QPushButton#m_percent100{ padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;}
                                                     QPushButton#m_percent100:hover{ color: white;}
                                                 </string>
            </property>
@@ -1555,13 +1446,12 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -1626,11 +1516,10 @@ border-radius: 2px;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string/>
@@ -1680,13 +1569,12 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
 
-QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}</string>
+QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -1710,13 +1598,12 @@ QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; 
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
 
-QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -1740,16 +1627,15 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444; font-size
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="cursor">
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
 
-QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -1830,14 +1716,13 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
                <property name="font">
                 <font>
                  <family>Poppins</family>
-                 <pointsize>-1</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">border: none;
     color: #ccc;
     border-right: 0px;
-    font-size: 14px;
+    
     font-family: Poppins;</string>
                </property>
                <property name="text">
@@ -1896,14 +1781,13 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444; font-si
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">border: 1px solid #444;
 color: #ccc;
 padding: 15px;
-font-size: 14px;
+
 font-family: Poppins;
 border-radius: 5px;</string>
               </property>
@@ -1925,7 +1809,7 @@ border-radius: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="m_aboutQT">
+             <widget class="QPushButton" name="b1_aboutQT">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -1947,7 +1831,6 @@ border-radius: 5px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
@@ -1955,17 +1838,17 @@ border-radius: 5px;</string>
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_aboutQT:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -1988,7 +1871,7 @@ QPushButton#m_aboutQT:hover
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd; font-family: 'Poppins';
+               <string notr="true">color: #ddd; 
             font-size: 16px;</string>
               </property>
               <property name="text">
@@ -2087,7 +1970,7 @@ text-align: left;
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_exportCSVButton:hover
@@ -2096,7 +1979,7 @@ QPushButton#m_exportCSVButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
            </property>
            <property name="text">
@@ -2153,7 +2036,6 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -2161,45 +2043,45 @@ p, li { white-space: pre-wrap; }
     color: white;
     font-weight: bold;
     background-color: #282d31;
-    font-family: 'Poppins';
+    
     border-top: none;
-    font-size: 14px;
+    
      border-bottom: 1px solid #444;
        height: 37px;
 }
 
 QTreeView {
-    font-family: 'Poppins';
+    
 border: none;
     color: #ccc;
-font-size: 14px;
+
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-    font-family: 'Poppins';
+    
     color: #ccc;
-    font-size: 14px;
+    
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 14px;
+
   color: black;
 }
 
 QWidget:item:selected {
-    font-family: 'Poppins';
+    
 background-color: #555;
-font-size: 14px;
+
   color: #ccc;
 }
 
 border: none;
-font-size: 14px;
-font-family: 'Poppins';
+
+
 color: #ccc;
 </string>
            </property>
@@ -2265,7 +2147,7 @@ color: #ccc;
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="newMessageBox">
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444; font-family: 'Poppins';</string>
+         <string notr="true">border-top: 1px solid #444; </string>
         </property>
         <property name="title">
          <string/>
@@ -2282,15 +2164,14 @@ color: #ccc;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #fff;
-font-size: 14px;
-font-family: 'Poppins';
+
+
 font-weight: bold;
 border: none;
 padding-left: 5px</string>
@@ -2323,11 +2204,10 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #ddd;  
 border: none;</string>
            </property>
            <property name="text">
@@ -2349,11 +2229,10 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string/>
@@ -2402,15 +2281,14 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #fff;
-font-size: 14px;
-font-family: 'Poppins';
+
+
 font-weight: bold;
 border: none;
 padding-left: 5px</string>
@@ -2437,17 +2315,16 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px; font-family: 'Poppins'; font-size: 14px; color: #aaa;</string>
+            <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="html">
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -2472,11 +2349,10 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #ddd;  
         border: none; margin: 10px;</string>
            </property>
            <property name="text">
@@ -2498,13 +2374,12 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins'; font-weight: bold;
+            <string notr="true">color: #fff;   font-weight: bold;
 border: none;
 padding-left: 5px</string>
            </property>
@@ -2561,11 +2436,10 @@ border-radius: 2px;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #ddd;  
 border: none;</string>
            </property>
            <property name="text">
@@ -2622,13 +2496,12 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
 
-QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}</string>
+QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -2652,13 +2525,12 @@ QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
 
-QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -2682,16 +2554,15 @@ QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444; fo
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="cursor">
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444; font-size: 14px; border-radius: 5px;font-family: 'Poppins';}
+            <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
 
-QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -2709,11 +2580,10 @@ QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444; fon
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff; font-size: 14px; font-family: 'Poppins';
+            <string notr="true">color: #fff;  
 border: none;</string>
            </property>
            <property name="text">
@@ -2777,34 +2647,6 @@ border-left: 1px solid #444;
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item row="0" column="0" colspan="4">
-             <widget class="QLabel" name="label_13">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>38</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-font-size: 20px;
-font-family: Poppins;
-border: none;
-text-align: left;
-</string>
-              </property>
-              <property name="text">
-               <string>MARKET INFORMATION</string>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_12">
               <property name="sizePolicy">
@@ -2822,14 +2664,13 @@ text-align: left;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -2854,14 +2695,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -2889,14 +2729,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -2921,14 +2760,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -2956,14 +2794,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -2988,14 +2825,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -3023,14 +2859,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -3055,14 +2890,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -3122,6 +2956,40 @@ border: none;</string>
               </property>
              </widget>
             </item>
+            <item row="0" column="0" colspan="3">
+             <widget class="QLabel" name="title_marketInformation">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>38</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>-1</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff;
+background: transparent;
+font-size: 20px;
+font-family: Poppins;
+border: none;
+text-align: left;
+</string>
+              </property>
+              <property name="text">
+               <string>MARKET INFORMATION</string>
+              </property>
+             </widget>
+            </item>
            </layout>
            <zorder>m_volume</zorder>
            <zorder>m_marketCap</zorder>
@@ -3133,7 +3001,7 @@ border: none;</string>
            <zorder>label_11</zorder>
            <zorder>chartButton</zorder>
            <zorder>m_chart_2</zorder>
-           <zorder>label_13</zorder>
+           <zorder>title_marketInformation</zorder>
            <zorder>m_chart</zorder>
           </widget>
          </item>
@@ -3183,28 +3051,6 @@ padding: 0px;</string>
                <string/>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="0" colspan="3">
-                <widget class="QLabel" name="label_totalBalance">
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                   <pointsize>-1</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            font-size: 20px;
-            font-family: Poppins;
-            border: none;
-            text-align: left;
-            </string>
-                 </property>
-                 <property name="text">
-                  <string>TOTAL BALANCE</string>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_available">
                  <property name="sizePolicy">
@@ -3216,14 +3062,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;
 </string>
                  </property>
@@ -3237,14 +3082,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3266,14 +3110,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3292,14 +3135,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;
 </string>
                  </property>
@@ -3313,14 +3155,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3342,14 +3183,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3368,14 +3208,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;
 </string>
                  </property>
@@ -3389,14 +3228,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3418,14 +3256,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3444,14 +3281,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;
 </string>
                  </property>
@@ -3465,14 +3301,13 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
@@ -3494,18 +3329,51 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
             background: transparent;
             font-family: Poppins;
-            font-size: 14px;
+            
             border: none;</string>
                  </property>
                  <property name="text">
                   <string notr="true">CCX</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="title_totalBalance">
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #fff;
+            background: transparent;
+            font-size: 20px;
+            font-family: Poppins;
+            border: none;
+            text-align: left;
+            </string>
+                 </property>
+                 <property name="text">
+                  <string>TOTAL BALANCE</string>
                  </property>
                 </widget>
                </item>
@@ -3528,7 +3396,7 @@ padding: 0px;</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_13">
                <item row="0" column="0">
-                <widget class="QPushButton" name="pushButton_2">
+                <widget class="QPushButton" name="title_recentActivity">
                  <property name="styleSheet">
                   <string notr="true">color: #fff;
             background: transparent;
@@ -3566,6 +3434,7 @@ padding: 0px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
+                   <pointsize>10</pointsize>
                   </font>
                  </property>
                  <property name="focusPolicy">
@@ -3573,8 +3442,7 @@ padding: 0px;</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">border: none;
-            font-family: 'Poppins';
-            </string>
+font-size: 10pt;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::NoFrame</enum>
@@ -3673,7 +3541,7 @@ padding: 0px;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -3712,7 +3580,7 @@ color: orange;
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -3749,14 +3617,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -3792,7 +3659,7 @@ border: none;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -3829,14 +3696,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 margin-left: 10px;</string>
               </property>
@@ -3871,14 +3737,13 @@ margin-left: 10px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -3914,7 +3779,7 @@ border: none;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -3951,14 +3816,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 margin-left: 10px;</string>
               </property>
@@ -3995,7 +3859,7 @@ margin-left: 10px;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4034,7 +3898,7 @@ color: orange;
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4049,7 +3913,7 @@ color: orange;
              </widget>
             </item>
             <item row="0" column="0" colspan="4">
-             <widget class="QLabel" name="label_15">
+             <widget class="QLabel" name="title_contactUs">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -4111,14 +3975,13 @@ text-align: left;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4152,14 +4015,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4195,7 +4057,7 @@ border: none;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4232,14 +4094,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4275,7 +4136,7 @@ border: none;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4314,7 +4175,7 @@ color: orange;
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4351,14 +4212,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4394,7 +4254,7 @@ border: none;</string>
 color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;
 text-align: left;
 }
@@ -4431,14 +4291,13 @@ color: orange;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4472,14 +4331,13 @@ border: none;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ddd;
 background: transparent;
 font-family: Poppins;
-font-size: 14px;
+
 border: none;</string>
               </property>
               <property name="text">
@@ -4533,6 +4391,12 @@ font-family: Poppins;</string>
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item row="0" column="1">
           <widget class="QGroupBox" name="groupBox_5">
            <property name="sizePolicy">
@@ -4542,15 +4406,14 @@ font-family: Poppins;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 1px solid #444;
-border-radius: 5px;</string>
+            <string notr="true"/>
            </property>
            <property name="title">
             <string/>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
-             <widget class="QLabel" name="label_20">
+             <widget class="QLabel" name="title_depositHistory">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -4592,14 +4455,14 @@ text-align: left;
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: none; color: #ddd; font-size: 14px; font-family: 'Poppins';</string>
+               <string notr="true">border: none; color: #ddd;  </string>
               </property>
               <property name="html">
                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:14px;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -4620,55 +4483,22 @@ p, li { white-space: pre-wrap; }
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">QHeaderView::section {
-	color: white;
-	font-weight: bold;
-	background-color: #282d31;
-	font-family: 'Poppins';
-    border-top: none;
-	font-size: 14px;
- 	border-bottom: 1px solid #444;
-   	height: 37px;
-}
-
-QTreeView {
-	font-family: 'Poppins';
-	border: none;
-    color: #ccc;
-	font-size: 14px;
+    background-color: #282d31;
+    color: white;
+    font-weight: bold; 
+    font-size:14px;
     height: 37px;
-	background-color: #282d31;
+    border-top: 1px solid #444;
 }
 
-QTreeView::item {
-	font-family: 'Poppins';
-    color: #ccc;
-	font-size: 14px;
-    height: 37px;
-}
-
-QTreeView::branch:selected {
-  	background-color: orange;
-	font-size: 14px;
-	color: black;
-}
-
-QWidget:item:selected {
-	font-family: 'Poppins';
-	background-color: #555555;
-	font-size: 14px;
-	color: #ccc;
-}
-
-border: none;
-font-size: 14px;
-font-family: 'Poppins';
-color: #ccc;
-</string>
+QHeaderView::section:checked
+{
+    background-color: red;
+}</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
@@ -4691,9 +4521,15 @@ color: #ccc;
               <property name="indentation">
                <number>0</number>
               </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
               <property name="sortingEnabled">
                <bool>true</bool>
               </property>
+              <attribute name="headerShowSortIndicator" stdset="0">
+               <bool>false</bool>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -4728,7 +4564,7 @@ color: #ccc;
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="m_withdrawButton">
+                <widget class="QPushButton" name="b1_withdrawButton">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -4750,25 +4586,24 @@ color: #ccc;
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QPushButton#m_withdrawButton {
             color: #fff; 
             border: 1px solid orange; 
-            font-size: 14px; 
+             
             border-radius: 5px; 
-            font-family: 'Poppins';
+            
            
            }
             
             QPushButton#m_withdrawButton:hover {
             color: orange; 
             border: 1px solid orange;
-            font-size: 14px; 
+             
             border-radius: 5px;
-            font-family: 'Poppins';
+            
             }</string>
                  </property>
                  <property name="text">
@@ -4810,8 +4645,8 @@ color: #ccc;
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: 1px solid #444;
-border-radius: 5px;</string>
+            <string notr="true">border-right: 1px solid #444;
+</string>
            </property>
            <property name="title">
             <string/>
@@ -4820,8 +4655,11 @@ border-radius: 5px;</string>
             <set>Qt::AlignCenter</set>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="topMargin">
+             <number>9</number>
+            </property>
             <item>
-             <widget class="QLabel" name="label_21">
+             <widget class="QLabel" name="title_newDeposit">
               <property name="font">
                <font>
                 <family>Poppins</family>
@@ -4877,14 +4715,13 @@ text-align: left;
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd; font-size: 14px; 
-font-family: 'Poppins';
+                  <string notr="true">color: #ddd;  
+
 border: none;</string>
                  </property>
                  <property name="text">
@@ -4918,15 +4755,14 @@ border: none;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
-font-size: 14px;
+
 border: 1px solid #444;
 border-radius: 5px; 
-font-family: 'Poppins';</string>
+</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4965,14 +4801,13 @@ font-family: 'Poppins';</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                    <weight>50</weight>
                    <bold>false</bold>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd; font-size: 14px; 
-font-family: 'Poppins';
+                  <string notr="true">color: #ddd;  
+
 border: none;</string>
                  </property>
                  <property name="text">
@@ -5006,15 +4841,14 @@ border: none;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #ddd;
-font-size: 14px;
+
 border: 1px solid #444;
 border-radius: 5px; 
-font-family: 'Poppins';</string>
+</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -5072,22 +4906,21 @@ font-family: 'Poppins';</string>
                  <property name="minimumSize">
                   <size>
                    <width>400</width>
-                   <height>0</height>
+                   <height>290</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
-                   <height>260</height>
+                   <height>290</height>
                   </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: #fff; 
-font-size: 14px;
 font-weight: normal; 
-font-family: 'Poppins';
-border-radius: 5px;
-border: 1px solid #444;</string>
+border-radius: 7px;
+background-color: #555;
+padding: 5px;</string>
                  </property>
                  <property name="title">
                   <string/>
@@ -5116,13 +4949,12 @@ border: 1px solid #444;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>Interest rate:</string>
@@ -5149,13 +4981,12 @@ border: 1px solid #444;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>Fees for this deposit:</string>
@@ -5166,11 +4997,11 @@ border: 1px solid #444;</string>
                    </widget>
                   </item>
                   <item row="0" column="0" colspan="2">
-                   <widget class="QLabel" name="label_43">
+                   <widget class="QLabel" name="title_depositDetails">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>25</height>
+                      <height>30</height>
                      </size>
                     </property>
                     <property name="maximumSize">
@@ -5183,21 +5014,24 @@ border: 1px solid #444;</string>
                      <font>
                       <family>Poppins</family>
                       <pointsize>-1</pointsize>
-                      <weight>75</weight>
-                      <bold>true</bold>
+                      <weight>50</weight>
+                      <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
                      <string notr="true">color: #fff;
 background: transparent;
-font-size: 16px;
+font-size: 20px;
 font-family: Poppins;
 border: none;
-font-weight: bold;
-padding-left: -20px;</string>
+text-align: left;
+</string>
                     </property>
                     <property name="text">
                      <string>Deposit Details</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -5224,13 +5058,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>0.001000 CCX</string>
@@ -5263,13 +5096,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>interestLabel</string>
@@ -5296,13 +5128,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>Length on the blockchain:</string>
@@ -5329,13 +5160,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>interestLabel</string>
@@ -5362,13 +5192,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>21900 blocks</string>
@@ -5395,13 +5224,12 @@ padding-left: -20px;</string>
                     <property name="font">
                      <font>
                       <family>Poppins</family>
-                      <pointsize>-1</pointsize>
                       <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff; font-size: 14px; font-weight: normal; border: none; font-family: 'Poppins';</string>
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
                      <string>Rewards you will earn:</string>
@@ -5487,7 +5315,7 @@ padding-left: -20px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="m_depositButton_2">
+                <widget class="QPushButton" name="b1_depositButton_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -5509,23 +5337,22 @@ padding-left: -20px;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QPushButton#m_depositButton_2 {
             color: #fff; 
             border: 1px solid orange; 
-            font-size: 14px; border-radius: 5px; 
-            font-family: 'Poppins';
+             border-radius: 5px; 
+            
             }
             
             QPushButton#m_depositButton_2:hover {
             color: orange;
              border: 1px solid orange; 
-            font-size: 14px; 
+             
             border-radius: 5px; 
-            font-family: 'Poppins';
+            
             }</string>
                  </property>
                  <property name="text">
@@ -5582,7 +5409,7 @@ padding-left: -20px;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 0px; color: #aaa; font-family: 'Poppins';
+         <string notr="true">border: 0px; color: #aaa; 
 background-color: #282d31;</string>
         </property>
         <property name="title">
@@ -5598,7 +5425,7 @@ background-color: #282d31;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-family: 'Poppins';
+            <string notr="true">color: #ddd; 
 font-size: 16px;</string>
            </property>
            <property name="text">
@@ -5634,7 +5461,7 @@ font-size: 16px;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-family: 'Poppins';
+            <string notr="true">color: #ddd; 
 font-size: 16px;</string>
            </property>
            <property name="text">
@@ -5646,7 +5473,7 @@ font-size: 16px;</string>
           </widget>
          </item>
          <item alignment="Qt::AlignHCenter">
-          <widget class="QPushButton" name="m_unlockWalletButton">
+          <widget class="QPushButton" name="b1_unlockWalletButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -5668,14 +5495,13 @@ font-size: 16px;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';
+            <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange;  border-radius: 5px; 
 margin-bottom: 10%;}
 
-QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange; font-size: 14px; border-radius: 5px; font-family: 'Poppins';}</string>
+QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;  border-radius: 5px; }</string>
            </property>
            <property name="text">
             <string>UNLOCK WALLET</string>
@@ -5691,7 +5517,7 @@ QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-family: 'Poppins';
+            <string notr="true">color: #ddd; 
 font-size: 16px;</string>
            </property>
            <property name="text">
@@ -5726,7 +5552,7 @@ font-size: 16px;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: none;</string>
+         <string notr="true">border: none; border-bottom: 1px solid #444;</string>
         </property>
         <property name="title">
          <string/>
@@ -5741,6 +5567,95 @@ font-size: 16px;</string>
          <property name="rightMargin">
           <number>18</number>
          </property>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="m_copyAddressButton_3">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none; 
+        
+        color: #999;
+        text-align: left;</string>
+           </property>
+           <property name="text">
+            <string>ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QPushButton" name="m_qrButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>25</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>25</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;</string>
+           </property>
+           <property name="text">
+            <string notr="true"/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/images/images/qr.png</normaloff>:/images/images/qr.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4">
+          <widget class="QPushButton" name="m_qrcodebutton">
+           <property name="styleSheet">
+            <string notr="true">border: none;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0" colspan="3">
           <widget class="QLabel" name="m_myConcealWalletTitle">
            <property name="sizePolicy">
@@ -5782,89 +5697,99 @@ font-size: 16px;</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="3">
-          <widget class="QPushButton" name="m_qrcodebutton">
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QPushButton" name="m_qrButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="m_settingsButton">
            <property name="minimumSize">
             <size>
-             <width>25</width>
-             <height>40</height>
+             <width>100</width>
+             <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>25</width>
-             <height>40</height>
+             <width>100</width>
+             <height>60</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton#m_settingsButton {
+text-align: left; color: #ddd; 
+font-family: Poppins;
+border: none;
+
+}
+
+QPushButton#m_settingsButton:hover {
+text-align: left; color: orange; 
+font-family: Poppins;
+border: none;
+
+  }</string>
+           </property>
            <property name="text">
-            <string notr="true"/>
+            <string>SETTINGS</string>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
-             <normaloff>:/images/images/qr.png</normaloff>:/images/images/qr.png</iconset>
+             <normaloff>:/icons/settings</normaloff>:/icons/settings</iconset>
            </property>
            <property name="iconSize">
             <size>
-             <width>16</width>
-             <height>16</height>
+             <width>18</width>
+             <height>18</height>
             </size>
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
-          <widget class="QPushButton" name="m_copyAddressButton_3">
+         <item row="0" column="3">
+          <widget class="QPushButton" name="m_lockWalletButton">
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>40</height>
+             <width>100</width>
+             <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>16777215</width>
-             <height>40</height>
+             <width>100</width>
+             <height>60</height>
             </size>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none; font-size: 14px;
-        font-family: 'Poppins';
-        color: #999;
-        text-align: right;</string>
+            <string notr="true">QPushButton {
+text-align: left; color: #ddd;
+font-family: Poppins;
+border: none;
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+font-family: Poppins;
+border: none;
+  }</string>
            </property>
            <property name="text">
-            <string>ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
+            <string>LOCK</string>
            </property>
-           <property name="checkable">
-            <bool>false</bool>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/lock</normaloff>:/icons/lock</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>18</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -5925,7 +5850,7 @@ border-radius: 5px;</string>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Poppins'; border: 0px;</string>
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Connection</string>
@@ -5962,7 +5887,7 @@ font-family: 'Poppins'; border: 0px;</string>
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_saveConnectionButton:hover
@@ -5971,7 +5896,7 @@ QPushButton#m_saveConnectionButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -5996,13 +5921,12 @@ QPushButton#m_saveConnectionButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6030,11 +5954,10 @@ margin-left: 10px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+               <string notr="true">color: #aaa; border: none;  </string>
               </property>
               <property name="text">
                <string>Built-in Node</string>
@@ -6064,11 +5987,10 @@ margin-left: 10px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+               <string notr="true">color: #aaa; border: none;  </string>
               </property>
               <property name="text">
                <string>Custom Remote Node</string>
@@ -6098,11 +6020,10 @@ margin-left: 10px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #aaa; border: none; font-size: 14px; font-family: 'Poppins';</string>
+               <string notr="true">color: #aaa; border: none;  </string>
               </property>
               <property name="text">
                <string>Automatic Remote Node</string>
@@ -6132,8 +6053,8 @@ margin-left: 10px;</string>
               <property name="styleSheet">
                <string notr="true">border: 1px solid #444;
 border-radius: 5px;
-font-family: 'Poppins';
-font-size: 14px;
+
+
 color: #aaa;</string>
               </property>
               <property name="text">
@@ -6189,7 +6110,7 @@ border-radius: 5px;</string>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Poppins'; border: 0px;</string>
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Optimization</string>
@@ -6216,13 +6137,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6265,7 +6185,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_autoOptimizeButton:hover
@@ -6274,7 +6194,7 @@ QPushButton#m_autoOptimizeButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -6299,13 +6219,12 @@ QPushButton#m_autoOptimizeButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Rescan wallet</string>
@@ -6341,7 +6260,7 @@ font-family: 'Poppins'; border: 0px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_rescanButton:hover
@@ -6350,7 +6269,7 @@ QPushButton#m_rescanButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -6375,13 +6294,12 @@ QPushButton#m_rescanButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6424,7 +6342,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_optimizeButton:hover
@@ -6433,7 +6351,7 @@ QPushButton#m_optimizeButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -6458,13 +6376,12 @@ QPushButton#m_optimizeButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #ccc; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>(Optimization not required)</string>
@@ -6528,7 +6445,7 @@ border-radius: 5px;</string>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Poppins'; border: 0px;</string>
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Preferences</string>
@@ -6565,7 +6482,7 @@ font-family: 'Poppins'; border: 0px;</string>
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_saveLanguageButton:hover
@@ -6574,7 +6491,7 @@ QPushButton#m_saveLanguageButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -6599,13 +6516,12 @@ QPushButton#m_saveLanguageButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6639,13 +6555,12 @@ margin-left: 10px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>English</string>
@@ -6685,13 +6600,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Turkish</string>
@@ -6731,13 +6645,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Chinese</string>
@@ -6777,13 +6690,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Russian</string>
@@ -6830,13 +6742,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6869,8 +6780,8 @@ margin-left: 10px;</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>US Dollar ($)</string>
@@ -6902,8 +6813,8 @@ font-family: 'Poppins'; border: 0px;</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Euro (€)</string>
@@ -6930,13 +6841,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -6979,7 +6889,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_minToTrayButton:hover
@@ -6988,7 +6898,7 @@ QPushButton#m_minToTrayButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7019,13 +6929,12 @@ QPushButton#m_minToTrayButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;</string>
+
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Close to tray</string>
@@ -7067,7 +6976,7 @@ font-family: 'Poppins'; border: 0px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_closeToTrayButton:hover
@@ -7076,7 +6985,7 @@ QPushButton#m_closeToTrayButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7138,7 +7047,7 @@ border-radius: 5px;</string>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
 font-size: 18px;
-font-family: 'Poppins'; border: 0px;</string>
+ border: 0px;</string>
               </property>
               <property name="text">
                <string>Wallet Operations</string>
@@ -7171,13 +7080,12 @@ font-family: 'Poppins'; border: 0px;</string>
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -7214,7 +7122,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 	margin-left: 5px;
     margin-right: 5px;
 }
@@ -7225,7 +7133,7 @@ QPushButton#m_createNewWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7259,7 +7167,7 @@ QPushButton#m_createNewWalletButton:hover
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7270,7 +7178,7 @@ QPushButton#m_openExistingWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7304,7 +7212,7 @@ QPushButton#m_openExistingWalletButton:hover
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7315,7 +7223,7 @@ QPushButton#m_encryptWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7346,13 +7254,12 @@ QPushButton#m_encryptWalletButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -7389,7 +7296,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7400,7 +7307,7 @@ QPushButton#m_importSpendKeyButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7434,7 +7341,7 @@ QPushButton#m_importSpendKeyButton:hover
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7445,7 +7352,7 @@ QPushButton#m_importSeedButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7479,7 +7386,7 @@ QPushButton#m_importSeedButton:hover
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7490,7 +7397,7 @@ QPushButton#m_importTrackingWalletButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7521,13 +7428,12 @@ QPushButton#m_importTrackingWalletButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
-font-size: 14px;
-font-family: 'Poppins'; border: 0px;
+
+ border: 0px;
 margin-left: 10px;</string>
               </property>
               <property name="text">
@@ -7564,7 +7470,7 @@ margin-left: 10px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7575,7 +7481,7 @@ QPushButton#m_backupKeysButton:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7609,7 +7515,7 @@ QPushButton#m_backupKeysButton:hover
     color: orange; ;
     border: 1px solid orange;
     font-size: 11px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -7620,7 +7526,7 @@ QPushButton#m_backupKeysButton_2:hover
     border: 1px solid orange;
     font-size: 11px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
               </property>
               <property name="text">
@@ -7674,14 +7580,14 @@ QPushButton#m_backupKeysButton_2:hover
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="messageBox">
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_18">
+          <widget class="QLabel" name="title_messageOverview">
            <property name="minimumSize">
             <size>
              <width>300</width>
@@ -7732,14 +7638,14 @@ text-align: left;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none; color: #ddd; font-size: 13px; font-family: 'Poppins';</string>
+            <string notr="true">border: none; color: #ddd; font-size: 13px; </string>
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Poppins'; font-size:13px;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -7760,7 +7666,6 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -7768,45 +7673,45 @@ p, li { white-space: pre-wrap; }
     color: white;
     font-weight: bold;
     background-color: #282d31;
-    font-family: 'Poppins';
+    
     border-top: none;
-    font-size: 14px;
+    
      border-bottom: 1px solid #444;
        height: 37px;
 }
 
 QTreeView {
-    font-family: 'Poppins';
+    
 border: none;
     color: #ccc;
-font-size: 14px;
+
     height: 37px;
 background-color: #282d31;
 }
 
 QTreeView::item {
-    font-family: 'Poppins';
+    
     color: #ccc;
-    font-size: 14px;
+    
     height: 37px;
 }
 
 QTreeView::branch:selected {
   background-color: orange;
-font-size: 14px;
+
   color: black;
 }
 
 QWidget:item:selected {
-    font-family: 'Poppins';
+    
 background-color: #555555;
-font-size: 14px;
+
   color: #ccc;
 }
 
 border: none;
-font-size: 14px;
-font-family: 'Poppins';
+
+
 color: #ccc;
 </string>
            </property>
@@ -7877,7 +7782,7 @@ color: #ccc;
        </widget>
       </item>
       <item row="5" column="0" colspan="2">
-       <widget class="QGroupBox" name="groupBox_14">
+       <widget class="QGroupBox" name="statusBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
@@ -7907,7 +7812,7 @@ color: #ccc;
         </property>
         <layout class="QGridLayout" name="gridLayout_22">
          <item row="0" column="0">
-          <widget class="QTextBrowser" name="m_statusBox">
+          <widget class="QLabel" name="m_statusBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -7916,7 +7821,38 @@ color: #ccc;
            </property>
            <property name="minimumSize">
             <size>
-             <width>400</width>
+             <width>190</width>
+             <height>38</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>38</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-family: Poppins;
+border: none;
+text-align: left;
+color: orange;</string>
+           </property>
+           <property name="text">
+            <string>STATUS</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QLabel" name="ccxTotal">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
              <height>38</height>
             </size>
            </property>
@@ -7929,37 +7865,45 @@ color: #ccc;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
            <property name="styleSheet">
-            <string notr="true">        font-size: 14px;
-        font-family: Poppins;
-        border: none;
-        text-align: right;
-        color: orange;</string>
+            <string notr="true">font-family: Poppins;
+border: none;
+text-align: right;
+color: orange;</string>
            </property>
-           <property name="verticalScrollBarPolicy">
-            <enum>Qt::ScrollBarAlwaysOff</enum>
+           <property name="text">
+            <string>CCX TOTAL</string>
            </property>
-           <property name="horizontalScrollBarPolicy">
-            <enum>Qt::ScrollBarAlwaysOff</enum>
-           </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;        &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;                &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;CONNECTING&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="openLinks">
-            <bool>false</bool>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
+          <widget class="QLabel" name="statusHeight">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>38</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-family: Poppins;
+border: none;
+text-align: left;
+color: orange;</string>
+           </property>
+           <property name="text">
+            <string>HEIGHT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
           <widget class="QLabel" name="m_currentWalletTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -7969,51 +7913,7 @@ p, li { white-space: pre-wrap; }
            </property>
            <property name="minimumSize">
             <size>
-             <width>400</width>
-             <height>38</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>38</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="contextMenuPolicy">
-            <enum>Qt::CustomContextMenu</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">        font-size: 14px;
-        font-family: Poppins;
-        border: none;
-        text-align: right;
-        color: orange;</string>
-           </property>
-           <property name="text">
-            <string>WALLET NAME</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QLabel" name="m_totalPortfolioLabelUSD">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>400</width>
+             <width>600</width>
              <height>38</height>
             </size>
            </property>
@@ -8026,21 +7926,48 @@ p, li { white-space: pre-wrap; }
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+           <property name="contextMenuPolicy">
+            <enum>Qt::CustomContextMenu</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">        font-size: 14px;
+            <string notr="true">        
         font-family: Poppins;
         border: none;
-        text-align: right;
+        text-align: left;
         color: orange;</string>
            </property>
            <property name="text">
-            <string>0.000000 CCX 0.00 USD</string>
+            <string>WALLET NAME</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QLabel" name="fiatTotal">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>38</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-family: Poppins;
+border: none;
+text-align: right;
+color: orange;</string>
+           </property>
+           <property name="text">
+            <string>FIAT TOTAL</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -8055,16 +7982,16 @@ p, li { white-space: pre-wrap; }
      <zorder>darkness</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
-     <zorder>aboutBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>messageBox</zorder>
-     <zorder>transactionsBox</zorder>
-     <zorder>addressBookBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
-     <zorder>groupBox_14</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>aboutBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>statusBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8426,7 +8353,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_depositButton_2</sender>
+   <sender>b1_depositButton_2</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>newDepositClicked()</slot>
@@ -8442,7 +8369,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_withdrawButton</sender>
+   <sender>b1_withdrawButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>withdrawClicked()</slot>
@@ -8570,7 +8497,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_copyAddressButton_2</sender>
+   <sender>b1_copyAddressButton_2</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>copyABClicked()</slot>
@@ -8586,7 +8513,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_copyPaymentIdButton</sender>
+   <sender>b1_copyPaymentIdButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>copyABPaymentIdClicked()</slot>
@@ -8602,7 +8529,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_payToButton</sender>
+   <sender>b1_payToButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>payToABClicked()</slot>
@@ -8618,7 +8545,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_editAddressButton</sender>
+   <sender>b1_editAddressButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>editABClicked()</slot>
@@ -8634,7 +8561,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_deleteAddressButton</sender>
+   <sender>b1_deleteAddressButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>deleteABClicked()</slot>
@@ -8698,7 +8625,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_aboutQT</sender>
+   <sender>b1_aboutQT</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>aboutQTClicked()</slot>
@@ -8842,7 +8769,7 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>m_unlockWalletButton</sender>
+   <sender>b1_unlockWalletButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>unlockWallet()</slot>
@@ -9284,8 +9211,8 @@ p, li { white-space: pre-wrap; }
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>
 </ui>

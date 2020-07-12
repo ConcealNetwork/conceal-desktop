@@ -43,7 +43,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #282d31; color: #ddd; border: 0px;
-font-size: 14px;</string>
+</string>
      </property>
     </widget>
    </item>
@@ -82,7 +82,7 @@ font-size: 14px;</string>
     color: orange; ;
     border: 1px solid orange;
     font-size: 16px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
@@ -91,7 +91,7 @@ QPushButton#m_okButton:hover
     border: 1px solid orange;
     font-size: 16px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">

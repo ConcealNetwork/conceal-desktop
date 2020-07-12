@@ -65,7 +65,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; font-size: 14px;
+      <string notr="true">color: #ddd; 
 </string>
      </property>
      <property name="text">
@@ -90,7 +90,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: #ddd; font-size: 14px;</string>
+      <string notr="true">color: #ddd; </string>
      </property>
      <property name="text">
       <string>TextLabel</string>
@@ -111,7 +111,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: orange; font-size: 14px;</string>
+      <string notr="true">color: orange; </string>
      </property>
      <property name="text">
       <string>TextLabel</string>

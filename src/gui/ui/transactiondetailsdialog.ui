@@ -17,7 +17,7 @@
    <string notr="true">background-color: #282d31;
 border: 0px;
 color: #ddd;
-font-family: 'Poppins';</string>
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -50,7 +50,7 @@ font-family: 'Poppins';</string>
       <string notr="true">color: #ddd;
 border-right: 0px;
 font-size: 20px;
-font-family: 'Poppins';</string>
+</string>
      </property>
      <property name="text">
       <string>TRANSACTION DETAILS</string>
@@ -71,7 +71,7 @@ font-family: 'Poppins';</string>
      <property name="styleSheet">
       <string notr="true">color: #ddd;
 border-right: 0px;
-font-size: 14px;
+
 font-family: Poppins;</string>
      </property>
      <property name="html">
@@ -117,17 +117,17 @@ p, li { white-space: pre-wrap; }
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
 {
     color:#FFD700;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
