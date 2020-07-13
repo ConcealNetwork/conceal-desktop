@@ -82,7 +82,7 @@ private:
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStatusBarText(const QString &_text);
+  void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
   void walletSynchronized(int _error, const QString &_error_text);
