@@ -125,8 +125,7 @@ int main(int argc, char* argv[])
   }
 
   splashScreen->finish(&MainWindow::instance());
-  // splashScreen->close();
-
+  
   if (logWatcher != nullptr) {
     logWatcher->deleteLater();
     logWatcher = nullptr;
