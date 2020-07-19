@@ -155,6 +155,44 @@ namespace WalletGui
       m_ui->m_lockWalletButton->show();
     }
 
+    m_ui->m_language->addItem("USD");
+    m_ui->m_language->addItem("EUR");
+    m_ui->m_language->addItem("GBP");
+    m_ui->m_language->addItem("RUB");
+    m_ui->m_language->addItem("TRY");
+    m_ui->m_language->addItem("CNY");
+    m_ui->m_language->addItem("AUD");
+    m_ui->m_language->addItem("NZD");
+    m_ui->m_language->addItem("SGD");
+    m_ui->m_language->addItem("LKR");
+    m_ui->m_language->addItem("VND");
+    m_ui->m_language->addItem("ISK");
+    m_ui->m_language->addItem("INR");
+    m_ui->m_language->addItem("IDR");
+    m_ui->m_language->addItem("ISK");
+    m_ui->m_language->addItem("HKD");
+    m_ui->m_language->addItem("PAB");
+    m_ui->m_language->addItem("ZAR");
+    m_ui->m_language->addItem("KRW");
+    m_ui->m_language->addItem("BRL");
+    m_ui->m_language->addItem("BYN");
+    m_ui->m_language->addItem("VEF");
+    m_ui->m_language->addItem("MUR");
+    m_ui->m_language->addItem("IRR");
+    m_ui->m_language->addItem("SAR");
+    m_ui->m_language->addItem("AED");
+    m_ui->m_language->addItem("PKR");
+    m_ui->m_language->addItem("EGP");
+    m_ui->m_language->addItem("ILS");
+    m_ui->m_language->addItem("NOK");
+    m_ui->m_language->addItem("LSL");
+    m_ui->m_language->addItem("UAH");
+    m_ui->m_language->addItem("RON");
+    m_ui->m_language->addItem("KZT");
+    m_ui->m_language->addItem("MYR");
+    m_ui->m_language->addItem("RON");
+    m_ui->m_language->addItem("MXN");
+    
     m_ui->m_transactionsView->setModel(m_transactionsModel.data());
     m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
@@ -191,8 +229,6 @@ namespace WalletGui
     m_ui->m_depositView->header()->resizeSection(2, 200);
     m_ui->m_depositView->header()->resizeSection(3, 50);
 
-
-
     /* Connect signals */
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendMessageCompletedSignal, this, &OverviewFrame::sendMessageCompleted, Qt::QueuedConnection);
@@ -226,15 +262,11 @@ namespace WalletGui
 
     /* Get current currency */
     QString currency = Settings::instance().getCurrentCurrency();
-    if (currency.compare("EUR") == 0)
-    {
-      m_ui->m_eur->setChecked(true);
-    }
-    else
-    {
-      m_ui->m_usd->setChecked(true);
-    }
+    int index = m_ui->m_language->findText(currency, Qt::MatchExactly);
+    m_ui->m_language->setCurrentIndex(index);
 
+    /** Set the font and have two size, one for regular text
+     * and the other for the titles */
     int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
     QFont font;
     font.setFamily("Poppins");
@@ -244,39 +276,56 @@ namespace WalletGui
     titleFont.setFamily("Poppins");
     titleFont.setPointSize(10);
 
+    /* Set the font and styling for the left menu */
     QList<QPushButton *> pb = m_ui->leftMenu->findChildren<QPushButton *>();
     foreach (QPushButton *o, pb)
     {
       o->setFont(font);
     }
 
+    /** Set the font and styles for the all the labels in the OverviewFrame */
     QList<QLabel *> lb = m_ui->groupBox->findChildren<QLabel *>();
     foreach (QLabel *r, lb)
     {
       r->setFont(font);
     }
 
-    QList<QLabel *> lb2 = m_ui->groupBox->findChildren<QLabel *>("title_");
-    foreach (QLabel *s, lb2)
+    /** Set the font and style for all social media buttons */
+    QList<QLabel *> lb2 = m_ui->ov_contactBox->findChildren<QLabel *>("sm_");
+    foreach (QLabel *t, lb2)
+    {
+      t->setFont(font);
+    }
+
+    /** Set the font and style for all titles in the OverviewFrame, they are identified
+     * by names that contain the text title_ */
+    QList<QLabel *> lb3 = m_ui->groupBox->findChildren<QLabel *>("title_");
+    foreach (QLabel *s, lb3)
     {
       s->setFont(titleFont);
     }
 
+    /** Set the font and styles for all the table views */
     m_ui->m_recentTransactionsView->setFont(font);
+    m_ui->m_recentTransactionsView->setStyleSheet("border: none; font-size:9pt;");
     m_ui->m_messagesView->setFont(font);
     m_ui->m_depositView->setFont(font);
     m_ui->m_transactionsView->setFont(font);
+    m_ui->m_addressBookView->setFont(font);
+    m_ui->m_addressBookView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
+    m_ui->m_messagesView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
+    m_ui->m_depositView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
+    m_ui->m_transactionsView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
     m_ui->m_transactionsDescription->setFont(font);
 
-    m_ui->m_recentTransactionsView->setStyleSheet("border: none; font-size:9pt;");
-
-    /* Show the price chart */
+    /* Load the price chart */
     loadChart();
 
     QString connection = Settings::instance().getConnection();
 
     /* Get current language */
     QString language = Settings::instance().getLanguage();
+
     if (language.compare("tr") == 0)
     {
       m_ui->m_turkish->setChecked(true);
@@ -318,32 +367,32 @@ namespace WalletGui
 
     if (Settings::instance().getAutoOptimizationStatus() == "enabled")
     {
-      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+      m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
     }
     else
     {
-      m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+      m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
     }
 
 #ifdef Q_OS_WIN
     /* Set minimize to tray button status */
     if (!Settings::instance().isMinimizeToTrayEnabled())
     {
-      m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+      m_ui->b2_minToTrayButton->setText(tr("CLICK TO ENABLE"));
     }
     else
     {
-      m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
+      m_ui->b2_minToTrayButton->setText(tr("CLICK TO DISABLE"));
     }
 
     /* Set close to tray button status */
     if (!Settings::instance().isCloseToTrayEnabled())
     {
-      m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
+      m_ui->b2_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
     }
     else
     {
-      m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
+      m_ui->b2_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
     }
 #endif
 
@@ -403,16 +452,16 @@ namespace WalletGui
   void OverviewFrame::updateWalletAddress(const QString &_address)
   {
     OverviewFrame::wallet_address = _address;
-    //m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
+    m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
 
     /* Show/hide the encrypt wallet button */
     if (!Settings::instance().isEncrypted())
     {
-      m_ui->m_encryptWalletButton->setText("ENCRYPT WALLET");
+      m_ui->b2_encryptWalletButton->setText("ENCRYPT WALLET");
     }
     else
     {
-      m_ui->m_encryptWalletButton->setText("CHANGE PASSWORD");
+      m_ui->b2_encryptWalletButton->setText("CHANGE PASSWORD");
     }
 
     /* Don't show the LOCK button if the wallet is not encrypted */
@@ -430,22 +479,15 @@ namespace WalletGui
   void OverviewFrame::loadChart()
   {
     /* Get current currency */
-    QString currency = Settings::instance().getCurrentCurrency();
+    QString currency = Settings::instance().getCurrentCurrency().toLower();
 
     /* Pull the chart */
     QNetworkAccessManager *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
 
     QUrl url;
-
-    if (currency.compare("EUR") == 0)
-    {
-      url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=eur&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=DD-MM");
-    }
-    else
-    {
-      url = QUrl::fromUserInput("http://walletapi.conceal.network/services/charts/price.png?vsCurrency=usd&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD");
-    }
+    QString link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD";
+    url = QUrl::fromUserInput(link);
 
     QNetworkRequest request(url);
     nam->get(request);
@@ -456,7 +498,7 @@ namespace WalletGui
   {
 
     QString walletFile = Settings::instance().getWalletName();
-    m_ui->m_currentWalletTitle->setText(tr("WALLET") + ": " + walletFile.toUpper());
+    m_ui->m_currentWalletTitle->setText(tr("CURRENT WALLET") + ": " + walletFile.toUpper());
   }
 
   /* Download is done, set the chart as the pixmap */
@@ -602,27 +644,27 @@ namespace WalletGui
   }
 
   /* Price data download complete */
-  void OverviewFrame::onPriceFound(const QString &_btcccx, const QString &_usdccx, const QString &_usdbtc, const QString &_usdmarketcap, const QString &_usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume)
+  void OverviewFrame::onPriceFound(QJsonObject &result)
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
 
-    float total = 0;
-    if (currentCurrency == "EUR")
-    {
-      ccxeur = _eurccx.toFloat();
-      m_ui->m_ccxusd->setText("€" + _eurccx);
-      m_ui->m_btcusd->setText("€" + _eurbtc);
-      m_ui->m_marketCap->setText("€" + _eurmarketcap);
-      m_ui->m_volume->setText("€" + _eurvolume);
-    }
-    else
-    {
-      ccxusd = _usdccx.toFloat();
-      m_ui->m_ccxusd->setText("$" + _usdccx);
-      m_ui->m_btcusd->setText("$" + _usdbtc);
-      m_ui->m_marketCap->setText("$" + _usdmarketcap);
-      m_ui->m_volume->setText("$" + _usdvolume);
-    }
+    QString selectedCurrency = currentCurrency.toLower();
+    QString marketCapCurrency = selectedCurrency + "_market_cap";
+    QString volumeCurrency = selectedCurrency + "_24h_vol";
+    QString changeCurrency = selectedCurrency + "_24h_change";
+
+    double currency = result[selectedCurrency].toDouble();
+    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
+    double market_cap = result[marketCapCurrency].toDouble();
+    QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
+    double c24h_volume = result[volumeCurrency].toDouble();
+    QString ccx_24h_volume = QLocale(QLocale::system()).toString(c24h_volume, 'f', 2);
+    double c24h_change = result[changeCurrency].toDouble();
+    QString ccx_24h_change = QLocale(QLocale::system()).toString(c24h_change, 'f', 2);
+    m_ui->m_ccx->setText(currentCurrency + " " + ccx);
+    m_ui->m_24hChange->setText(currentCurrency + " " + ccx_24h_change);
+    m_ui->m_marketCap->setText(currentCurrency + " " + ccx_market_cap);
+    m_ui->m_volume->setText(currentCurrency + " " + ccx_24h_volume);
 
     updatePortfolio();
   }
@@ -648,7 +690,7 @@ namespace WalletGui
       total = ccxusd * (float)OverviewFrame::totalBalance;
     }
     m_ui->ccxTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
+    m_ui->fiatTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
   }
 
   /* Banking menu button clicked */
@@ -1518,7 +1560,7 @@ namespace WalletGui
       if (Settings::instance().getAutoOptimizationStatus() == "enabled")
       {
         Settings::instance().setAutoOptimizationStatus("disabled");
-        m_ui->m_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
+        m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
         QMessageBox::information(this,
                                  tr("Auto Optimization"),
                                  tr("Auto Optimization Disabled."),
@@ -1527,7 +1569,7 @@ namespace WalletGui
       else
       {
         Settings::instance().setAutoOptimizationStatus("enabled");
-        m_ui->m_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
+        m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
         QMessageBox::information(this,
                                  tr("Auto Optimization"),
                                  tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
@@ -1557,16 +1599,8 @@ namespace WalletGui
     }
     Settings::instance().setLanguage(language);
 
-    QString currency;
-    if (m_ui->m_eur->isChecked())
-    {
-      currency = "EUR";
-    }
-    else
-    {
-      currency = "USD";
-    }
-    Settings::instance().setCurrentCurrency(currency);
+    /* Save the selected currency */
+    Settings::instance().setCurrentCurrency(m_ui->m_language->currentText());
 
     loadChart();
     m_priceProvider->getPrice();
@@ -1936,12 +1970,12 @@ namespace WalletGui
     if (!Settings::instance().isMinimizeToTrayEnabled())
     {
       Settings::instance().setMinimizeToTrayEnabled(true);
-      m_ui->m_minToTrayButton->setText(tr("CLICK TO DISABLE"));
+      m_ui->b2_minToTrayButton->setText(tr("CLICK TO DISABLE"));
     }
     else
     {
       Settings::instance().setMinimizeToTrayEnabled(false);
-      m_ui->m_minToTrayButton->setText(tr("CLICK TO ENABLE"));
+      m_ui->b2_minToTrayButton->setText(tr("CLICK TO ENABLE"));
     }
 #endif
   }
@@ -1952,12 +1986,12 @@ namespace WalletGui
     if (!Settings::instance().isCloseToTrayEnabled())
     {
       Settings::instance().setCloseToTrayEnabled(true);
-      m_ui->m_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
+      m_ui->b2_closeToTrayButton->setText(tr("CLICK TO DISABLE"));
     }
     else
     {
       Settings::instance().setCloseToTrayEnabled(false);
-      m_ui->m_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
+      m_ui->b2_closeToTrayButton->setText(tr("CLICK TO ENABLE"));
     }
 #endif
   }
