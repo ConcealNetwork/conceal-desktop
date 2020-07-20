@@ -82,6 +82,7 @@ private:
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
+  void setStyles(int change);
   void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
@@ -119,6 +120,7 @@ private:
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
+  Q_SLOT void changeFontSize();
   Q_SLOT void sendFundsClicked();
   Q_SLOT void sendMessageClicked();
   Q_SLOT void clearAllClicked();

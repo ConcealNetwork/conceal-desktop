@@ -148,11 +148,11 @@ namespace WalletGui
     /* Don't show the LOCK button if the wallet is not encrypted */
     if (!Settings::instance().isEncrypted())
     {
-      m_ui->m_lockWalletButton->hide();
+      m_ui->lm_lockWalletButton->hide();
     }
     else
     {
-      m_ui->m_lockWalletButton->show();
+      m_ui->lm_lockWalletButton->show();
     }
 
     /* Add the currencies we support to the combobox */
@@ -267,82 +267,9 @@ namespace WalletGui
     int index = m_ui->m_language->findText(currency, Qt::MatchExactly);
     m_ui->m_language->setCurrentIndex(index);
 
-    /** Set the font and have two sizes, one for regular text
-     * and the other for the titles, we can then later change all the 
-     * font sizes */
-    int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
-    QFont font;
-    font.setFamily("Poppins");
-    font.setPixelSize(14);
-
-    QFont titleFont;
-    titleFont.setFamily("Poppins");
-    titleFont.setPixelSize(18);
-
-    /* Create our common pool of styles */
-    QString tableStyle = "QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
-    QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
-
-    /* Set the font and styling for b1 styled buttons */
-    QList<QPushButton *> b1 = m_ui->groupBox->findChildren<QPushButton *>("b1_");
-    foreach (QPushButton *b, b1)
-    {
-      b->setStyleSheet(b1Style);
-      b->setFont(font);
-    }
-
-    /* Set the font and styling for b2 styled buttons */
-    QList<QPushButton *> b2 = m_ui->groupBox->findChildren<QPushButton *>("b2_");
-    foreach (QPushButton *b, b2)
-    {
-      b->setFont(font);
-      b->setStyleSheet(b2Style);
-    }
-
-    /* Set the font and styling for the left menu */
-    QList<QPushButton *> pb = m_ui->leftMenu->findChildren<QPushButton *>();
-    foreach (QPushButton *o, pb)
-    {
-      o->setFont(font);
-    }
-
-    /** Set the font and styles for the all the labels in the OverviewFrame */
-    QList<QLabel *> lb = m_ui->groupBox->findChildren<QLabel *>();
-    foreach (QLabel *r, lb)
-    {
-      r->setFont(font);
-    }
-
-    /** Set the font and style for all social media buttons */
-    QList<QLabel *> lb2 = m_ui->ov_contactBox->findChildren<QLabel *>("sm_");
-    foreach (QLabel *t, lb2)
-    {
-      t->setFont(font);
-    }
-
-    /** Set the font and style for all titles in the OverviewFrame, they are identified
-     * by names that contain the text title_. These are headings of each section */
-    QList<QLabel *> lb3 = m_ui->groupBox->findChildren<QLabel *>("title_");
-    foreach (QLabel *s, lb3)
-    {
-      s->setFont(titleFont);
-    }
-
-
-    /** Set the font and styles for all the table views */
-    m_ui->m_recentTransactionsView->setFont(font);
-
-    m_ui->m_recentTransactionsView->setStyleSheet("border: none; font-size:9pt;");
-    m_ui->m_messagesView->setFont(font);
-    m_ui->m_depositView->setFont(font);
-    m_ui->m_transactionsView->setFont(font);
-    m_ui->m_addressBookView->setFont(font);
-    m_ui->m_addressBookView->setStyleSheet(tableStyle);
-    m_ui->m_messagesView->setStyleSheet(tableStyle);
-    m_ui->m_depositView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsDescription->setFont(font);
+    /* Set the styles */
+    int startingFontSize = Settings::instance().getFontSize();
+    setStyles(startingFontSize);
 
     /* Load the price chart */
     loadChart();
@@ -460,7 +387,7 @@ namespace WalletGui
 
     if (!Settings::instance().isEncrypted())
     {
-      m_ui->m_lockWalletButton->hide();
+      m_ui->lm_lockWalletButton->hide();
     }
 
     updatePortfolio();
@@ -493,12 +420,120 @@ namespace WalletGui
     /* Don't show the LOCK button if the wallet is not encrypted */
     if (!Settings::instance().isEncrypted())
     {
-      m_ui->m_lockWalletButton->hide();
+      m_ui->lm_lockWalletButton->hide();
     }
     else
     {
-      m_ui->m_lockWalletButton->show();
+      m_ui->lm_lockWalletButton->show();
     }
+  }
+
+  void OverviewFrame::changeFontSize()
+  {
+    int fontSize = Settings::instance().getFontSize();
+    fontSize++;
+    if (fontSize < 5) {
+      setStyles(fontSize);
+    }
+    else
+    {
+      fontSize = 0;
+      setStyles(fontSize);
+    }
+    Settings::instance().setFontSize(fontSize);
+  }
+
+  void OverviewFrame::setStyles(int change)
+  {
+
+    /** Set the base font sizes */
+    int baseFontSize = 12 + change;
+    int baseTitleSize = 16 + change;
+    int baseSmallButtonSize = 9 + change;
+    int baseLargeButtonSize = 11 + change;
+
+    /** Set the font and have two sizes, one for regular text
+     * and the other for the titles, we can then later change all the 
+     * font sizes */
+    int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
+
+    QFont font;
+    font.setFamily("Poppins");
+    font.setPixelSize(baseFontSize);
+
+    QFont smallButtonFont;
+    font.setFamily("Poppins");
+    font.setPixelSize(baseSmallButtonSize);
+
+    QFont largeButtonFont;
+    font.setFamily("Poppins");
+    font.setPixelSize(baseLargeButtonSize);
+
+    QFont titleFont;
+    titleFont.setFamily("Poppins");
+    titleFont.setPixelSize(baseTitleSize);
+
+    /* Create our common pool of styles */
+    QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
+    QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
+    QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+
+    QList<QPushButton *> buttons = m_ui->groupBox->findChildren<QPushButton *>();
+    foreach (QPushButton *button, buttons)
+    {
+      /* Set the font and styling for b1 styled buttons */
+      if (button->objectName().contains("b1_"))
+      {
+        button->setStyleSheet(b1Style);
+        button->setFont(largeButtonFont);
+      }
+
+      /* Set the font and styling for b2 styled buttons */
+      if (button->objectName().contains("b2_"))
+      {
+        button->setStyleSheet(b2Style);
+        button->setFont(smallButtonFont);
+      }
+
+      /* Set the font and styling for lm styled buttons */
+      if (button->objectName().contains("lm_"))
+      {
+        button->setFont(font);
+      }
+
+      /* Set the font and styling for sm styled buttons */
+      if (button->objectName().contains("sm_"))
+      {
+        button->setFont(font);
+      }
+
+    }
+
+    QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
+    foreach (QLabel *label, labels)
+    {
+      if (label->objectName().contains("title_"))
+      {
+        label->setFont(titleFont);
+      }
+      else 
+      {
+        label->setFont(font);
+      }
+    }
+
+    /** Set the font and styles for all the table views */
+    m_ui->m_recentTransactionsView->setFont(font);
+    m_ui->m_recentTransactionsView->setStyleSheet("border: none;");
+    m_ui->m_addressBookView->setStyleSheet(tableStyle);
+    m_ui->m_messagesView->setStyleSheet(tableStyle);
+    m_ui->m_depositView->setStyleSheet(tableStyle);
+    m_ui->m_transactionsView->setStyleSheet(tableStyle);
+    m_ui->m_transactionsDescription->setFont(font);
+    m_ui->m_messagesView->setFont(font);
+    m_ui->m_depositView->setFont(font);
+    m_ui->m_transactionsView->setFont(font);
+    m_ui->m_addressBookView->setFont(font);
   }
 
   /* Load the price chart on the overview screen */
@@ -752,8 +787,8 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
     m_ui->overviewBox->raise();
-    m_ui->m_newTransferButton->show();
-    m_ui->m_newMessageButton->show();
+    m_ui->lm_newTransferButton->show();
+    m_ui->lm_newMessageButton->show();
   }
 
   void OverviewFrame::aboutClicked()
@@ -761,8 +796,8 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("ABOUT");
     m_ui->aboutBox->raise();
-    m_ui->m_newTransferButton->show();
-    m_ui->m_newMessageButton->show();
+    m_ui->lm_newTransferButton->show();
+    m_ui->lm_newMessageButton->show();
   }
 
   void OverviewFrame::settingsClicked()

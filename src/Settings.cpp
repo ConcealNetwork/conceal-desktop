@@ -25,6 +25,7 @@ namespace WalletGui
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
 Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
 Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "language";
+Q_DECL_CONSTEXPR char OPTION_FONTSIZE[] = "fontSize";
 Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
 Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
@@ -120,9 +121,25 @@ QString Settings::getLanguage() const
   return currentLang;
 }
 
+int Settings::getFontSize() const
+{
+  int currentSize;
+  if (m_settings.contains(OPTION_FONTSIZE))
+  {
+    currentSize = m_settings.value(OPTION_FONTSIZE).toInt();
+  }
+  return currentSize;
+}
+
 void Settings::setLanguage(const QString &_language)
 {
   m_settings.insert(OPTION_LANGUAGE, _language);
+  saveSettings();
+}
+
+void Settings::setFontSize(const int &_change)
+{
+  m_settings.insert(OPTION_FONTSIZE, _change);
   saveSettings();
 }
 
@@ -154,6 +171,11 @@ void Settings::setOptions()
     lang.truncate(lang.lastIndexOf('_'));
     m_currentLang = lang;
     m_settings.insert(OPTION_LANGUAGE, lang);
+  }
+
+  if (!m_settings.contains(OPTION_FONTSIZE))
+  {
+    m_settings.insert(OPTION_FONTSIZE, 1);
   }
 
   if (!m_settings.contains(OPTION_CONNECTION))
