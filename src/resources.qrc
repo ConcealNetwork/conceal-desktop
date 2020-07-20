@@ -64,5 +64,6 @@
         <file>icons/tradeogre.png</file>
         <file>icons/hotbit.png</file>
         <file>fonts/Poppins-Regular.ttf</file>
+        <file>fonts/Roboto-Regular.ttf</file>
     </qresource>
 </RCC>
