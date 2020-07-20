@@ -155,6 +155,7 @@ namespace WalletGui
       m_ui->m_lockWalletButton->show();
     }
 
+    /* Add the currencies we support to the combobox */
     m_ui->m_language->addItem("USD");
     m_ui->m_language->addItem("EUR");
     m_ui->m_language->addItem("GBP");
@@ -192,7 +193,7 @@ namespace WalletGui
     m_ui->m_language->addItem("MYR");
     m_ui->m_language->addItem("RON");
     m_ui->m_language->addItem("MXN");
-    
+
     m_ui->m_transactionsView->setModel(m_transactionsModel.data());
     m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_STATE, 15);
@@ -260,21 +261,44 @@ namespace WalletGui
 
     walletSynced = false;
 
-    /* Get current currency */
+    /** Get current currency from the config file and update 
+     * the dropdown in settings to show the correct currency */
     QString currency = Settings::instance().getCurrentCurrency();
     int index = m_ui->m_language->findText(currency, Qt::MatchExactly);
     m_ui->m_language->setCurrentIndex(index);
 
-    /** Set the font and have two size, one for regular text
-     * and the other for the titles */
+    /** Set the font and have two sizes, one for regular text
+     * and the other for the titles, we can then later change all the 
+     * font sizes */
     int id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
     QFont font;
     font.setFamily("Poppins");
-    font.setPointSize(9);
+    font.setPixelSize(14);
 
     QFont titleFont;
     titleFont.setFamily("Poppins");
-    titleFont.setPointSize(10);
+    titleFont.setPixelSize(18);
+
+    /* Create our common pool of styles */
+    QString tableStyle = "QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
+    QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
+    QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+
+    /* Set the font and styling for b1 styled buttons */
+    QList<QPushButton *> b1 = m_ui->groupBox->findChildren<QPushButton *>("b1_");
+    foreach (QPushButton *b, b1)
+    {
+      b->setStyleSheet(b1Style);
+      b->setFont(font);
+    }
+
+    /* Set the font and styling for b2 styled buttons */
+    QList<QPushButton *> b2 = m_ui->groupBox->findChildren<QPushButton *>("b2_");
+    foreach (QPushButton *b, b2)
+    {
+      b->setFont(font);
+      b->setStyleSheet(b2Style);
+    }
 
     /* Set the font and styling for the left menu */
     QList<QPushButton *> pb = m_ui->leftMenu->findChildren<QPushButton *>();
@@ -298,24 +322,26 @@ namespace WalletGui
     }
 
     /** Set the font and style for all titles in the OverviewFrame, they are identified
-     * by names that contain the text title_ */
+     * by names that contain the text title_. These are headings of each section */
     QList<QLabel *> lb3 = m_ui->groupBox->findChildren<QLabel *>("title_");
     foreach (QLabel *s, lb3)
     {
       s->setFont(titleFont);
     }
 
+
     /** Set the font and styles for all the table views */
     m_ui->m_recentTransactionsView->setFont(font);
+
     m_ui->m_recentTransactionsView->setStyleSheet("border: none; font-size:9pt;");
     m_ui->m_messagesView->setFont(font);
     m_ui->m_depositView->setFont(font);
     m_ui->m_transactionsView->setFont(font);
     m_ui->m_addressBookView->setFont(font);
-    m_ui->m_addressBookView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
-    m_ui->m_messagesView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
-    m_ui->m_depositView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
-    m_ui->m_transactionsView->setStyleSheet("QHeaderView::section{background-color:#282d31;color:#fff;font-weight:700;font-size:14px;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}");
+    m_ui->m_addressBookView->setStyleSheet(tableStyle);
+    m_ui->m_messagesView->setStyleSheet(tableStyle);
+    m_ui->m_depositView->setStyleSheet(tableStyle);
+    m_ui->m_transactionsView->setStyleSheet(tableStyle);
     m_ui->m_transactionsDescription->setFont(font);
 
     /* Load the price chart */
