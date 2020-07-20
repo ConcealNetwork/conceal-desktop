@@ -19,8 +19,7 @@
         <file>icons/editcopy-old.png</file>
         <file>icons/qrcode-scan.png</file>
         <file>icons/close.png</file>
-        <file>icons/minimize.png</file>
-        <file>icons/maximize.png</file>      
+        <file alias="minimize">icons/minimize.png</file>    
         <file>icons/tx_input.png</file>
         <file>icons/home.png</file>
         <file>icons/home-icon.png</file>

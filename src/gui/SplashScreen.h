@@ -8,6 +8,7 @@
 
 #include <QLabel>
 #include <QPalette>
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -27,7 +28,11 @@ public:
       const QColor& color = Qt::black);
   void finish(QWidget* mainWin);
 
+private slots:
+  void minimize();
+
 private:
+  QPushButton* minimizeButton;
   QLabel* text;
   QLabel* image;
   QVBoxLayout* layout;

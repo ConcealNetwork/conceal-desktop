@@ -26,15 +26,23 @@ SplashScreen::SplashScreen(QWidget* parent) : QWidget(parent)
   text->setAlignment(Qt::AlignCenter);
   text->setFont(splashFont);
 
+  minimizeButton = new QPushButton();
+  minimizeButton->setIcon(QIcon(":/icons/minimize"));
+  minimizeButton->setStyleSheet("text-align: right; border: none;");
+
+  connect(minimizeButton, SIGNAL(released()), this, SLOT(minimize()));
+
   layout = new QVBoxLayout();
+  layout->addWidget(minimizeButton);
   layout->addWidget(image);
   layout->addWidget(text);
   setLayout(layout);
 
-  setFixedSize(500, 300);
+  setFixedSize(500, 325);
 
   setStyleSheet("background-color: #282d31;");
   setWindowIcon(QIcon(":/images/cryptonote"));
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 }
 
 void SplashScreen::centerOnScreen(QApplication* app)
@@ -90,4 +98,9 @@ void SplashScreen::finish(QWidget* mainWin)
     waitForWindowExposed(mainWin->windowHandle());
   }
   close();
+}
+
+void SplashScreen::minimize()
+{
+  showMinimized();
 }
