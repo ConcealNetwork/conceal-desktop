@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1523</width>
+    <width>1270</width>
     <height>750</height>
    </rect>
   </property>
@@ -771,7 +771,8 @@ border: none;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #444;</string>
+            <string notr="true">background-color: #444;
+margin-left: 20px;</string>
            </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -1660,7 +1661,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>632</width>
+                 <width>505</width>
                  <height>563</height>
                 </rect>
                </property>
@@ -2556,7 +2557,7 @@ border: none;</string>
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="overviewBox">
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -2991,6 +2992,9 @@ padding: 0px;</string>
             </property>
             <property name="topMargin">
              <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
             </property>
             <item>
              <widget class="QGroupBox" name="ov_fundsBox">
@@ -4489,7 +4493,6 @@ border: none;</string>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -4497,18 +4500,14 @@ border: none;</string>
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 14px;
     border-radius: 5px;
-    
 }
 
 QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 14px;
     border-radius: 5px;
-    
 }</string>
                  </property>
                  <property name="text">
@@ -5264,7 +5263,6 @@ text-align: left;
                  <property name="font">
                   <font>
                    <family>Poppins</family>
-                   <pointsize>-1</pointsize>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -5272,18 +5270,14 @@ text-align: left;
 {
     color: #fff;
     border: 1px solid orange;
-    font-size: 14px;
     border-radius: 5px;
-    
 }
 
 QPushButton:hover
 {
     color: orange;
     border: 1px solid orange;
-    font-size: 14px;
     border-radius: 5px;
-    
 }</string>
                  </property>
                  <property name="text">
@@ -5548,6 +5542,53 @@ font-size: 16px;</string>
            </property>
           </widget>
          </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="m_lockWalletButton">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; color: #ddd;
+font-family: Poppins;
+border: none;
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+font-family: Poppins;
+border: none;
+  }</string>
+           </property>
+           <property name="text">
+            <string>LOCK</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/lock</normaloff>:/icons/lock</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>18</height>
+            </size>
+           </property>
+          </widget>
+         </item>
          <item row="4" column="0">
           <widget class="QPushButton" name="m_qrButton">
            <property name="sizePolicy">
@@ -5582,26 +5623,6 @@ font-size: 16px;</string>
             <size>
              <width>16</width>
              <height>16</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="4">
-          <widget class="QPushButton" name="m_qrcodebutton">
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
             </size>
            </property>
           </widget>
@@ -5647,6 +5668,26 @@ font-size: 16px;</string>
            </property>
           </widget>
          </item>
+         <item row="5" column="4">
+          <widget class="QPushButton" name="m_qrcodebutton">
+           <property name="styleSheet">
+            <string notr="true">border: none;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="4">
           <widget class="QPushButton" name="m_settingsButton">
            <property name="minimumSize">
@@ -5667,19 +5708,17 @@ font-size: 16px;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_settingsButton {
+            <string notr="true">QPushButton {
 text-align: left; color: #ddd; 
 font-family: Poppins;
 border: none;
-
 }
 
-QPushButton#m_settingsButton:hover {
+QPushButton:hover {
 text-align: left; color: orange; 
 font-family: Poppins;
 border: none;
-
-  }</string>
+}</string>
            </property>
            <property name="text">
             <string>SETTINGS</string>
@@ -5696,28 +5735,23 @@ border: none;
            </property>
           </widget>
          </item>
-         <item row="0" column="3">
-          <widget class="QPushButton" name="m_lockWalletButton">
+         <item row="0" column="5">
+          <widget class="QPushButton" name="pushButton">
            <property name="minimumSize">
             <size>
-             <width>100</width>
+             <width>75</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>100</width>
-             <height>60</height>
+             <width>75</width>
+             <height>31</height>
             </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
-text-align: left; color: #ddd;
+text-align: left; color: #ddd; 
 font-family: Poppins;
 border: none;
 }
@@ -5726,20 +5760,14 @@ QPushButton:hover {
 text-align: left; color: orange; 
 font-family: Poppins;
 border: none;
-  }</string>
+}</string>
            </property>
            <property name="text">
-            <string>LOCK</string>
+            <string>RESIZE</string>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
-             <normaloff>:/icons/lock</normaloff>:/icons/lock</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>18</width>
-             <height>18</height>
-            </size>
+             <normaloff>:/icons/icons/font-size.png</normaloff>:/icons/icons/font-size.png</iconset>
            </property>
           </widget>
          </item>
@@ -6129,7 +6157,7 @@ margin-left: 10px;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#b2_autoOptimizeButton
+               <string notr="true">QPushButton
 {
     color: orange; ;
     border: 1px solid orange;
@@ -6137,7 +6165,7 @@ margin-left: 10px;</string>
     border-radius: 5px; 
 }
 
-QPushButton#b2_autoOptimizeButton:hover
+QPushButton#hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
@@ -7868,11 +7896,11 @@ color: orange;</string>
      <zorder>addressBookBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
