@@ -3,8 +3,6 @@
 ######################################################################
 
 TEMPLATE = app
-QT += webkit webkitwidgets
-QT += charts
 TARGET = 
 DEPENDPATH += . \
               libqrencode \
@@ -1071,10 +1069,10 @@ FORMS +=    src/gui/ui/aboutdialog.ui \
             src/gui/ui/languagesettings.ui \            
             src/gui/ui/showqrcode.ui \            
 
-TRANSLATIONS = 	languages/tr.ts \
-                languages/en.ts \
-                languages/ru.ts \                
-                languages/cn.ts \                   
+TRANSLATIONS = 	src/languages/tr.ts \
+                src/languages/en.ts \
+                src/languages/ru.ts \                
+                src/languages/cn.ts \                   
 
 RESOURCES += src/resources.qrc
 

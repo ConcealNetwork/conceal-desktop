@@ -36,10 +36,6 @@ public:
 protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
   bool event(QEvent* _event) Q_DECL_OVERRIDE;
-
-protected slots:
-  void slotLanguageChanged(QAction* action);
-
 private:
   QScopedPointer<Ui::MainWindow> m_ui;
   QSystemTrayIcon* m_trayIcon;
@@ -65,7 +61,6 @@ private:
   void walletOpened(bool _error, const QString& _error_text);
   void walletClosed();
   void replyTo(const QModelIndex& _index);
-  void loadLanguage(const QString& rLanguage);  
   void payTo(const QModelIndex& _index);
   void sendTo();
   void delay();

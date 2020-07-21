@@ -66,4 +66,9 @@
         <file>fonts/Poppins-Regular.ttf</file>
         <file>fonts/Roboto-Regular.ttf</file>
     </qresource>
+    <qresource prefix="/translations">
+        <file alias="cn">languages/cn.qm</file>
+        <file alias="ru">languages/ru.qm</file>
+        <file alias="tr">languages/tr.qm</file>
+    </qresource>
 </RCC>

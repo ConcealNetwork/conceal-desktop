@@ -43,6 +43,7 @@
 #include "TransactionDetailsDialog.h"
 #include "TransactionFrame.h"
 #include "TransactionsListModel.h"
+#include "TranslatorManager.h"
 #include "TransactionsModel.h"
 #include "VisibleMessagesModel.h"
 #include "WalletAdapter.h"
@@ -880,6 +881,7 @@ namespace WalletGui
     pendingDepositBalanceUpdated(0);
     actualInvestmentBalanceUpdated(0);
     pendingInvestmentBalanceUpdated(0);
+    layoutChanged();
     m_priceProvider->getPrice();
     m_addressProvider->getAddress();
     Q_EMIT resetWalletSignal();
@@ -1668,6 +1670,11 @@ namespace WalletGui
 
     loadChart();
     m_priceProvider->getPrice();
+
+    // to restranslate without restarting the wallet, some text is missing after retranslate
+    // TranslatorManager::instance()->switchTranslator(language);
+    // m_ui->retranslateUi(this);
+    reset();
 
     QMessageBox::information(this,
                              tr("Language and Currency settings saved"),
