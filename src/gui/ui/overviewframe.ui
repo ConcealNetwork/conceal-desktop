@@ -1912,7 +1912,7 @@ QPushButton#m_exportCSVButton:hover
           </widget>
          </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_14">
+          <widget class="QLabel" name="title_transactions">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -2605,7 +2605,7 @@ border-left: 1px solid #444;
              <number>18</number>
             </property>
             <property name="topMargin">
-             <number>5</number>
+             <number>18</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
@@ -2924,13 +2924,13 @@ border: none;</string>
               <property name="minimumSize">
                <size>
                 <width>250</width>
-                <height>14</height>
+                <height>16</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>250</width>
-                <height>38</height>
+                <height>31</height>
                </size>
               </property>
               <property name="font">
@@ -3360,13 +3360,15 @@ padding: 0px;</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_13">
                <item row="0" column="0">
-                <widget class="QPushButton" name="title_recentActivity">
+                <widget class="QLabel" name="title_recent">
                  <property name="styleSheet">
                   <string notr="true">color: #fff;
-background: transparent;      
-border: none;
-text-align: left;
-</string>
+            background: transparent;
+            
+            
+            border: none;
+            text-align: left;
+            </string>
                  </property>
                  <property name="text">
                   <string>RECENT ACTIVITY</string>
@@ -7893,12 +7895,12 @@ color: orange;</string>
      <zorder>aboutBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>addressBookBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>statusBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>bankingBox</zorder>
+     <zorder>transactionsBox</zorder>
      <zorder>overviewBox</zorder>
     </widget>
    </item>

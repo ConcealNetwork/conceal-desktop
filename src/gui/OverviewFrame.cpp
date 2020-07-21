@@ -448,7 +448,7 @@ namespace WalletGui
 
     /** Set the base font sizes */
     int baseFontSize = 12 + change;
-    int baseTitleSize = 16 + change;
+    int baseTitleSize = 19 + change;
     int baseSmallButtonSize = 9 + change;
     int baseLargeButtonSize = 11 + change;
 
@@ -521,6 +521,9 @@ namespace WalletGui
         label->setFont(font);
       }
     }
+
+    m_ui->m_copyAddressButton_3->setFont(font);
+    m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
 
     /** Set the font and styles for all the table views */
     m_ui->m_recentTransactionsView->setFont(font);
@@ -723,7 +726,7 @@ namespace WalletGui
     double c24h_change = result[changeCurrency].toDouble();
     QString ccx_24h_change = QLocale(QLocale::system()).toString(c24h_change, 'f', 2);
     m_ui->m_ccx->setText(currentCurrency + " " + ccx);
-    m_ui->m_24hChange->setText(currentCurrency + " " + ccx_24h_change);
+    m_ui->m_24hChange->setText(ccx_24h_change + "%");
     m_ui->m_marketCap->setText(currentCurrency + " " + ccx_market_cap);
     m_ui->m_volume->setText(currentCurrency + " " + ccx_24h_volume);
 
