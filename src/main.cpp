@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2014-2017 XDN developers  
+// Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
@@ -9,25 +9,26 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDesktopWidget>
 #include <QLocale>
-#include <QTranslator>
 #include <QLockFile>
 #include <QMessageBox>
-#include <QSplashScreen>
-#include <QStyleFactory>
 #include <QRegularExpression>
-#include "LogFileWatcher.h"
+#include <QStyle>
+#include <QStyleFactory>
 
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
+#include "LogFileWatcher.h"
 #include "LoggerAdapter.h"
-#include "UpdateManager.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
 #include "SignalHandler.h"
-#include "WalletAdapter.h"
 #include "TranslatorManager.h"
+#include "UpdateManager.h"
+#include "WalletAdapter.h"
 #include "gui/MainWindow.h"
+#include "gui/SplashScreen.h"
 
 #define DEBUG 1
 
@@ -35,46 +36,49 @@ using namespace WalletGui;
 
 const QRegularExpression LOG_SPLASH_REG_EXP("(?<=] ).*");
 
-QSplashScreen* splash(nullptr);
+SplashScreen* splashScreen(nullptr);
 
-inline void newLogString(const QString& _string) {
+inline void newLogString(const QString& _string)
+{
   QRegularExpressionMatch match = LOG_SPLASH_REG_EXP.match(_string);
   if (match.hasMatch()) {
     QString message = match.captured(0).toUpper();
-    splash->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
+    splashScreen->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
   QApplication app(argc, argv);
   app.setApplicationName("Conceal Desktop");
   app.setApplicationVersion(Settings::instance().getVersion());
   app.setQuitOnLastWindowClosed(false);
 
-  #ifndef Q_OS_MAC
-    QApplication::setStyle(QStyleFactory::create("Fusion"));
-  #endif
-  
+#ifndef Q_OS_MAC
+  QApplication::setStyle(QStyleFactory::create("Fusion"));
+#endif
+
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
   bool cmdLineParseResult = cmdLineParser.process(app.arguments());
   Settings::instance().load();
 
-  //Translator must be created before the application's widgets.
+  // Translator must be created before the application's widgets.
   TranslatorManager* tmanager = TranslatorManager::instance();
   Q_UNUSED(tmanager)
 
   setlocale(LC_ALL, "");
 
-  #ifdef Q_OS_WIN
-    if(!cmdLineParseResult) {
-      QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
-      return app.exec();
-    } else if (cmdLineParser.hasHelpOption()) {
-      QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
-      return app.exec();
-    }
-  #endif
+#ifdef Q_OS_WIN
+  if (!cmdLineParseResult) {
+    QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
+    return app.exec();
+  }
+  else if (cmdLineParser.hasHelpOption()) {
+    QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
+    return app.exec();
+  }
+#endif
 
   LoggerAdapter::instance().init();
 
@@ -83,38 +87,33 @@ int main(int argc, char* argv[]) {
     QDir().mkpath(dataDirPath);
   }
 
-  QLockFile lockFile(Settings::instance().getDataDir().absoluteFilePath(QApplication::applicationName() + ".lock"));
+  QLockFile lockFile(Settings::instance().getDataDir().absoluteFilePath(
+      QApplication::applicationName() + ".lock"));
   if (!lockFile.tryLock()) {
-    QMessageBox::warning(nullptr, QObject::tr("Fail"), QString("%1 wallet already running").arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
+    QMessageBox::warning(
+        nullptr, QObject::tr("Fail"),
+        QString("%1 wallet already running")
+            .arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
     return 0;
   }
 
   QLocale::setDefault(QLocale::c());
 
   SignalHandler::instance().init();
-  QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
+  QObject::connect(
+      &SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
 
-  if (splash == nullptr) {
-    splash = new QSplashScreen(QPixmap(":images/splash"), Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint);
+  if (splashScreen == nullptr) {
+    splashScreen = new SplashScreen();
+    splashScreen->centerOnScreen(&app);
   }
 
-  QFont splashFont;
-  splashFont.setFamily("Arial");
-  splashFont.setBold(true);
-  splashFont.setPixelSize(9);
-  splashFont.setStretch(125);
+  splashScreen->show();
 
-  splash->setFont(splashFont);
-  if (!splash->isVisible())
-  {
-    splash->show();
-  }
-  splash->setEnabled(false);
-  splash->showMessage(QObject::tr("STARTING WALLET"), Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
-  splash->raise();
   LogFileWatcher* logWatcher(nullptr);
   if (logWatcher == nullptr) {
-    logWatcher = new LogFileWatcher(Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
+    logWatcher = new LogFileWatcher(
+        Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
     QObject::connect(logWatcher, &LogFileWatcher::newLogStringSignal, &app, &newLogString);
   }
 
@@ -125,20 +124,20 @@ int main(int argc, char* argv[]) {
     return 0;
   }
 
-  splash->finish(&MainWindow::instance());
-
+  splashScreen->finish(&MainWindow::instance());
+  
   if (logWatcher != nullptr) {
     logWatcher->deleteLater();
     logWatcher = nullptr;
   }
 
-  splash->deleteLater();
-  splash = nullptr;
+  splashScreen->deleteLater();
+  splashScreen = nullptr;
 
-  Updater *d = new Updater();
-  d->checkForUpdate();  
+  Updater* d = new Updater();
+  d->checkForUpdate();
   MainWindow::instance().show();
-  
+
   WalletAdapter::instance().open("");
   QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, []() {
     MainWindow::instance().quit();
