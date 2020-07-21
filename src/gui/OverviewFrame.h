@@ -42,9 +42,6 @@ public:
   QModelIndex index;
   void scrollToTransaction(const QModelIndex& _index);
 
-public slots:
-  void onCustomContextMenu(const QPoint &point);
-
 public Q_SLOTS:
   void addABClicked();
   void editABClicked();
@@ -78,14 +75,15 @@ private:
   QString exchangeName = "";
 
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
+  void onPriceFound(QJsonObject &result);
   void onExchangeFound(QString &_exchange);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStatusBarText(const QString &_text);
+  void setStyles(int change);
+  void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
   void walletSynchronized(int _error, const QString &_error_text);
@@ -122,6 +120,7 @@ private:
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
+  Q_SLOT void changeFontSize();
   Q_SLOT void sendFundsClicked();
   Q_SLOT void sendMessageClicked();
   Q_SLOT void clearAllClicked();

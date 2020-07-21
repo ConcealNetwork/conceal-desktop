@@ -145,17 +145,17 @@ color: #e5e5e5;</string>
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
       </property>
       <property name="text">
@@ -182,17 +182,17 @@ QPushButton#m_okButton:hover
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_cancelButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
       </property>
       <property name="text">

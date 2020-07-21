@@ -255,7 +255,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/Varint.h \
            cryptonote/src/Common/VectorOutputStream.h \
            cryptonote/src/crypto/aux_hash.h \
-           cryptonote/src/crypto/chacha.h \
            cryptonote/src/crypto/chacha8.h \    
            cryptonote/src/crypto/cn_aux.hpp \
            cryptonote/src/crypto/coin_algos.hpp \
@@ -702,7 +701,6 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/VectorOutputStream.cpp \
            cryptonote/src/ConnectivityTool/ConnectivityTool.cpp \
            cryptonote/src/crypto/aux_hash.c \
-           cryptonote/src/crypto/chacha.c \
            cryptonote/src/crypto/chacha8.c \
            cryptonote/src/crypto/crypto-ops-data.c \
            cryptonote/src/crypto/crypto-ops.c \

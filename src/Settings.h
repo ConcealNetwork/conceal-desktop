@@ -53,7 +53,8 @@ public:
   bool isTrackingMode() const;  
   quint64 getOptimizationInterval() const;
   QString getVersion() const;
-  QString getLanguage() const;  
+  QString getLanguage() const;
+  int getFontSize() const;
   bool isStartOnLoginEnabled() const;
 #ifdef Q_OS_WIN
   bool isMinimizeToTrayEnabled() const;
@@ -64,7 +65,8 @@ public:
   void setEncrypted(bool _encrypted);
   void setTrackingMode(bool _tracking);  
   void setStartOnLoginEnabled(bool _enable);
-  void setLanguage(const QString& _language);  
+  void setLanguage(const QString& _language);
+  void setFontSize(const int& _change);
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);

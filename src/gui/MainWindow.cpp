@@ -148,6 +148,7 @@ void MainWindow::connectToSignals()
 
 void MainWindow::initUi()
 {
+  showMaximized();
   setRemoteWindowTitle();
 
 #ifdef Q_OS_WIN32

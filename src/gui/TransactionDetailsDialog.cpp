@@ -20,7 +20,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   m_ui(new Ui::TransactionDetailsDialog), m_detailsTemplate(
     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
     "</style></head><body style=\" font-family:'Poppins'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-    "<span style=\" font-weight:600;\">Status: </span>%1<br>\n"
+    "<span style=\" font-weight:600;\">Status: </span>%1 confirmations<br>\n"
     "<span style=\" font-weight:600;\">Date: </span>%2<br>\n"
     "<span style=\" font-weight:600;\">To: </span>%4<br>\n"
     "<span style=\" font-weight:600;\">Amount: </span>%5<br>\n"
@@ -29,6 +29,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
     "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n" 
     "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
+    "<span><br>%12<br>\n"
     "</body></html>") {
   m_ui->setupUi(this);
 
@@ -43,7 +44,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   QStringList messageList = _index.data(TransactionsModel::ROLE_MESSAGES).toStringList();
 
   for (quint32 i = 0; i < messageList.size(); ++i) {
-    messageList[i] = messageList[i].toHtmlEscaped().replace("\n", "<br/>");
+    messageList[i] = messageList[i].toHtmlEscaped().replace("\n", "<br>");
   }
 
   CryptoNote::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<CryptoNote::DepositId>();
@@ -59,7 +60,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
       CurrencyAdapter::instance().getCurrencyTicker().toUpper();
     QString depositInfoTemplate =
       "<span style=\" font-weight:600;\">Deposit info: </span></p><br>\n"
-      "<span style=\" font-weight:600;\">Status: </span>%1</p><br>\n"
+      "<span style=\" font-weight:600;\">Status: </span>%1 confirmations</p><br>\n"
       "<span style=\" font-weight:600;\">Amount: </span>%2</p><br>\n"
       "<span style=\" font-weight:600;\">Interest: </span>%3</p><br>\n"
       "<span style=\" font-weight:600;\">Sum: </span>%4</p><br>\n"
@@ -92,8 +93,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   }
 
   m_ui->m_detailsBrowser->setHtml(m_detailsTemplate.
-    arg(QString("%1 confirmations").
-    arg(numberOfConfirmations)).
+    arg(numberOfConfirmations).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_DATE).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_ADDRESS).data().toString()).
     arg(amountText).
@@ -101,7 +101,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_PAYMENT_ID).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_HASH).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_SECRETKEY).data().toString()).    
-    arg(messageList.join("<br/><br/>=========<br/><br/>")).
+    arg(messageList.join("<br><br>=========<br><br>")).
     arg(depositInfo));
 }
 

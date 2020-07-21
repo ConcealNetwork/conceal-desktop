@@ -200,7 +200,7 @@ font-size: 15px;</string>
     color: orange;
     border: 1px solid orange;
     font-size: 16px;
-    border-radius: 5px; font-family: 'Poppins';
+    border-radius: 5px; 
 }
 
 QPushButton#next1:hover
@@ -209,7 +209,7 @@ QPushButton#next1:hover
     border: 1px solid orange;
     font-size: 16px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -296,7 +296,7 @@ font-family: Poppins;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  When creating a wallet, you are creating a set of cryptographic keys</string>
@@ -319,7 +319,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>a seed, and a wallet address.</string>
@@ -342,7 +342,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  If you send your public address to someone then they can send you CCX.</string>
@@ -365,7 +365,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  The developers of Conceal have no access to your password, your keys, </string>
@@ -454,7 +454,7 @@ QPushButton#next2:hover {color: orange; background-color: #212529; border: 2px s
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  NEVER share your seed, keys, or wallet file with anyone.</string>
@@ -477,7 +477,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>Doing so means they have complete control over your funds.</string>
@@ -500,7 +500,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>or your seed. If you forget your password, or lose your seed, </string>
@@ -523,7 +523,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>there is nothing we can do. Always keep a copy of your seed in a secure place.</string>
@@ -559,7 +559,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  You are responsible for your own security.</string>
@@ -582,7 +582,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  No one can recover or change your private keys or seed.</string>
@@ -605,7 +605,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  No one can recover your password.</string>
@@ -628,7 +628,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  No one can refund your transactions.</string>
@@ -717,7 +717,7 @@ QPushButton#next3:hover {color: orange; background-color: #212529; border: 2px s
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>■  No one can freeze your funds.</string>
@@ -794,7 +794,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; </string>
        </property>
        <property name="text">
         <string>CREATE NEW WALLET</string>
@@ -816,7 +816,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; </string>
        </property>
        <property name="text">
         <string>OPEN EXISTING WALLET</string>
@@ -838,7 +838,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; </string>
        </property>
        <property name="text">
         <string>IMPORT PRIVATE KEYS</string>
@@ -860,7 +860,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; </string>
        </property>
        <property name="text">
         <string>IMPORT GUI KEY</string>
@@ -882,7 +882,7 @@ font-size: 20px;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; font-family: 'Poppins';</string>
+        <string notr="true">color: #ddd; border: 1px solid orange; font-size: 12px; border-radius: 5px; </string>
        </property>
        <property name="text">
         <string>IMPORT SEED</string>
@@ -905,7 +905,7 @@ font-size: 20px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>Create a new wallet address along with</string>
@@ -931,7 +931,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>Already have a wallet? open the wallet</string>
@@ -957,7 +957,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>Import an existing wallet with the secret</string>
@@ -983,7 +983,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>a secret seed phrase</string>
@@ -1009,7 +1009,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>seed phrase and access your CCX</string>
@@ -1035,7 +1035,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>and access your assets</string>
@@ -1061,7 +1061,7 @@ font-size: 14px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: #ddd;
-font-size: 14px;</string>
+</string>
        </property>
        <property name="text">
         <string>advanced users can import using other keys</string>

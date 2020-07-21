@@ -14,7 +14,7 @@
    <string>Message</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font-family: 'Poppins';
+   <string notr="true">
 background-color: #282d31;
 color: #ddd;</string>
   </property>
@@ -171,7 +171,7 @@ color: #ddd;</string>
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_saveButton:hover
@@ -180,7 +180,7 @@ QPushButton#m_saveButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -222,7 +222,7 @@ QPushButton#m_saveButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_prevButton:hover
@@ -231,7 +231,7 @@ QPushButton#m_prevButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -260,7 +260,7 @@ QPushButton#m_prevButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_nextButton:hover
@@ -269,7 +269,7 @@ QPushButton#m_nextButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
@@ -298,7 +298,7 @@ QPushButton#m_nextButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }
 
 QPushButton#m_okButton:hover
@@ -307,7 +307,7 @@ QPushButton#m_okButton:hover
     border: 1px solid orange;
     font-size: 12px;
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">
