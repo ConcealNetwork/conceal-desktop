@@ -526,7 +526,6 @@ namespace WalletGui
     m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
 
     /** Set the font and styles for all the table views */
-    m_ui->m_recentTransactionsView->setFont(font);
     m_ui->m_recentTransactionsView->setStyleSheet("border: none;");
     m_ui->m_addressBookView->setStyleSheet(tableStyle);
     m_ui->m_messagesView->setStyleSheet(tableStyle);
@@ -537,6 +536,7 @@ namespace WalletGui
     m_ui->m_depositView->setFont(font);
     m_ui->m_transactionsView->setFont(font);
     m_ui->m_addressBookView->setFont(font);
+    m_ui->m_recentTransactionsView->setFont(font);
   }
 
   /* Load the price chart on the overview screen */
