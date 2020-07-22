@@ -1034,7 +1034,7 @@ border: none;
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="sendBox">
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -2110,7 +2110,7 @@ color: #ccc;
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="newMessageBox">
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444; </string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -2287,7 +2287,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -2428,8 +2428,25 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: white;
-border: none;</string>
+            <string notr="true">QSlider::groove:horizontal#m_ttlSlider {
+    border: 1px solid orange;
+    border-radius: 5px;
+    height: 11px;
+    background: #282d31;
+}
+
+QSlider::handle:horizontal#m_ttlSlider {
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 18px;
+    margin: -2px 0;
+    border-radius: 5px;
+}
+
+QSlider::sub-page:horizontal#m_ttlSlider {
+    background: orange;
+    border-radius: 5px;
+}</string>
            </property>
            <property name="singleStep">
             <number>300</number>
@@ -3016,80 +3033,7 @@ padding: 0px;</string>
                <string/>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_available">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;
-</string>
-                 </property>
-                 <property name="text">
-                  <string>Available</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="m_actualBalanceLabel">
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">0.000000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLabel" name="m_tickerLabel1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">CCX</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
+               <item row="3" column="0">
                 <widget class="QLabel" name="label_pending">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -3115,102 +3059,7 @@ padding: 0px;</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="m_lockedBalance">
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">0.000000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLabel" name="m_tickerLabel1_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">CCX</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="label_lockedDeposits">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;
-</string>
-                 </property>
-                 <property name="text">
-                  <string>Locked Deposits</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLabel" name="m_lockedDeposits">
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">0.000000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
+               <item row="4" column="2">
                 <widget class="QLabel" name="m_tickerLabel2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3235,8 +3084,8 @@ padding: 0px;</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="m_depositsUnlockedTitle">
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_available">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -3257,54 +3106,7 @@ padding: 0px;</string>
 </string>
                  </property>
                  <property name="text">
-                  <string>Withdrawable</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLabel" name="m_unlockedDeposits">
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">0.000000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="2">
-                <widget class="QLabel" name="m_tickerLabel4">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Poppins</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">CCX</string>
+                  <string>Available</string>
                  </property>
                 </widget>
                </item>
@@ -3338,6 +3140,228 @@ padding: 0px;</string>
                  </property>
                  <property name="text">
                   <string>TOTAL BALANCE</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="1">
+                <widget class="QLabel" name="m_unlockedDeposits">
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLabel" name="m_tickerLabel4">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">CCX</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLabel" name="m_lockedBalance">
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="m_tickerLabel1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">CCX</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="m_depositsUnlockedTitle">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Withdrawable</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="m_tickerLabel1_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">CCX</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="m_actualBalanceLabel">
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_lockedDeposits">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Locked Deposits</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLabel" name="m_lockedDeposits">
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;
+            background: transparent;
+            
+            
+            border: none;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="pushButton">
+                 <property name="text">
+                  <string>Refresh</string>
                  </property>
                 </widget>
                </item>
@@ -5787,13 +5811,16 @@ border: none;
            </property>
            <layout class="QGridLayout" name="gridLayout_18">
             <property name="leftMargin">
-             <number>9</number>
+             <number>18</number>
             </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>9</number>
             </property>
             <property name="rightMargin">
              <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>18</number>
             </property>
             <item row="2" column="2">
              <widget class="QLineEdit" name="m_hostEdit">
@@ -6053,8 +6080,14 @@ font-size: 18px;
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
+            <property name="leftMargin">
+             <number>18</number>
+            </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>18</number>
             </property>
             <item row="0" column="0" colspan="2">
              <widget class="QLabel" name="label_26">
@@ -6388,8 +6421,14 @@ QPushButton:hover
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_20">
+            <property name="leftMargin">
+             <number>18</number>
+            </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>18</number>
             </property>
             <item row="3" column="1">
              <widget class="QPushButton" name="b2_minToTrayButton">
@@ -6946,8 +6985,14 @@ color: #aaa;</string>
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_17">
+            <property name="leftMargin">
+             <number>18</number>
+            </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>18</number>
             </property>
             <item row="0" column="0" colspan="2">
              <widget class="QLabel" name="label_38">
@@ -7896,11 +7941,11 @@ color: orange;</string>
      <zorder>messageBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>statusBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>transactionsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
-     <zorder>bankingBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>overviewBox</zorder>
     </widget>
    </item>
@@ -9138,7 +9183,7 @@ color: orange;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
