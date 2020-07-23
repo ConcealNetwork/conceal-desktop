@@ -10,7 +10,7 @@ jobs:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       - name: Build
         id: build
@@ -20,8 +20,8 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
           build_folder="build/release"
-          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
-          release_name=ccx-desktop-ubuntu-1804-v"$ccx_ver"
+          ccx_version=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
+          release_name=ccx-desktop-ubuntu-1804-v"$ccx_version"
           app_name="CONCEAL-GUI"
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
@@ -35,15 +35,15 @@ jobs:
           echo "::set-output name=sha256::${sha256}"
           echo "::set-output name=release_name::${release_name}.tar.gz"
           echo "::set-output name=asset_path::${asset_path}"
-          echo "::set-output name=ccx_ver::${ccx_ver}"
+          echo "::set-output name=ccx_version::${ccx_version}"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ steps.build.outputs.asset_path }}
-          name: Conceal Desktop v${{ steps.build.outputs.ccx_ver }}
+          name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
           body: |
-            **${{ steps.build.outputs.release_name }}**
-            ${{ steps.build.outputs.sha256 }}
+            <img src="https://image.flaticon.com/icons/svg/25/25719.svg" width="16"> [Download for Ubuntu 18](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
+            `SHA256 : ${{ steps.build.outputs.sha256 }}`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
