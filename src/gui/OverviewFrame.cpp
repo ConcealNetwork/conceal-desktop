@@ -267,6 +267,7 @@ namespace WalletGui
     m_ui->m_language->setCurrentIndex(index);
 
     /* Set the styles */
+    setStyles(1);
     int startingFontSize = Settings::instance().getFontSize();
     setStyles(startingFontSize);
 
@@ -791,7 +792,7 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
     m_ui->overviewBox->raise();
-    m_ui->newTransferButton->show();
+    m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
   }
 
@@ -800,7 +801,7 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("ABOUT");
     m_ui->aboutBox->raise();
-    m_ui->newTransferButton->show();
+    m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
   }
 
