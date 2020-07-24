@@ -52,7 +52,6 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
-#include <QClipboard>
 #include <QDesktopServices>
 #include <QFont>
 #include <QFontDatabase>
@@ -478,8 +477,10 @@ namespace WalletGui
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
     QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
     QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px;";
 
-    QList<QPushButton *> buttons = m_ui->groupBox->findChildren<QPushButton *>();
+    QList<QPushButton *>
+        buttons = m_ui->groupBox->findChildren<QPushButton *>();
     foreach (QPushButton *button, buttons)
     {
       /* Set the font and styling for b1 styled buttons */
@@ -541,7 +542,7 @@ namespace WalletGui
     QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
     foreach (QLabel *label, labels2)
     {
-      label->setFont(font);
+      label->setStyleSheet(fontStyle);
     }
   }
 
