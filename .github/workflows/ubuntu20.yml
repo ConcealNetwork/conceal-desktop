@@ -1,4 +1,4 @@
-name: Ubuntu 16.04
+name: Ubuntu 20.04
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
 
 jobs:
   build-ubuntu16:
-    name: Ubuntu 16.04
-    runs-on: ubuntu-16.04
+    name: Ubuntu 20.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
 
@@ -21,7 +21,7 @@ jobs:
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
           build_folder="build/release"
           ccx_version=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
-          release_name=ccx-desktop-ubuntu-1604-v"$ccx_version"
+          release_name=ccx-desktop-ubuntu-2004-v"$ccx_version"
           app_name="CONCEAL-GUI"
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
@@ -43,7 +43,7 @@ jobs:
           files: ${{ steps.build.outputs.asset_path }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
           body: |
-            <img src="https://image.flaticon.com/icons/svg/25/25719.svg" width="16"> [Download for Ubuntu 16](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
+            <img src="https://image.flaticon.com/icons/svg/25/25719.svg" width="16"> [Download for Ubuntu 20](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
             `SHA256 : ${{ steps.build.outputs.sha256 }}`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
