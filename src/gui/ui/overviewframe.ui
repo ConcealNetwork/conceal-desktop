@@ -523,6 +523,135 @@ padding-left: 35px;</string>
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="lm_newMessageButton">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; 
+color: #fff; 
+margin-left: 20px;
+background-color: #444;
+font-weight: normal;
+padding-left: 10px;
+border-right: 5px solid orange;
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+margin-left: 20px;
+border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>SEND MESSAGE</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="newTransferButton">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; 
+color: #fff; 
+margin-left: 20px;
+background-color: #444;
+font-weight: normal;
+padding-left: 10px;
+border-right: 5px solid orange;
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+margin-left: 20px;
+border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>SEND FUNDS</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="lm_newOpenWalletButton">
+           <property name="minimumSize">
+            <size>
+             <width>180</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>180</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; 
+color: #fff; 
+margin-left: 20px;
+background-color: #444;
+font-weight: normal;
+padding-left: 10px;
+border-right: 5px solid orange;
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+margin-left: 20px;
+border: none;
+}</string>
+           </property>
+           <property name="text">
+            <string>OPEN WALLET</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="lm_dashboardButton">
            <property name="minimumSize">
             <size>
@@ -548,6 +677,7 @@ padding-left: 35px;</string>
 text-align: left; 
 color: #fff; 
 margin-left: 20px;
+margin-top: 20px;
 font-weight: normal;
 border: none;
 }
@@ -754,152 +884,6 @@ border: none;
              <width>18</width>
              <height>18</height>
             </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="Line" name="line_2">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>1</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: #444;
-margin-left: 20px;</string>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lm_newTransferButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-text-align: left; 
-color: #fff; 
-margin-left: 20px;
-font-weight: normal;
-border: none;
-}
-
-QPushButton:hover {
-text-align: left; color: orange; 
-margin-left: 20px;
-border: none;
-}</string>
-           </property>
-           <property name="text">
-            <string>SEND FUNDS</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lm_newMessageButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-text-align: left; 
-color: #fff; 
-margin-left: 20px;
-font-weight: normal;
-border: none;
-}
-
-QPushButton:hover {
-text-align: left; color: orange; 
-margin-left: 20px;
-border: none;
-}</string>
-           </property>
-           <property name="text">
-            <string>SEND MESSAGE</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lm_newOpenWalletButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-text-align: left; 
-color: #fff; 
-margin-left: 20px;
-font-weight: normal;
-border: none;
-}
-
-QPushButton:hover {
-text-align: left; color: orange; 
-margin-left: 20px;
-border: none;
-}</string>
-           </property>
-           <property name="text">
-            <string>OPEN WALLET</string>
            </property>
           </widget>
          </item>
@@ -1669,8 +1653,8 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>504</width>
-                 <height>561</height>
+                 <width>505</width>
+                 <height>563</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -8052,7 +8036,7 @@ color: orange;</string>
    </hints>
   </connection>
   <connection>
-   <sender>lm_newTransferButton</sender>
+   <sender>newTransferButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>newTransferClicked()</slot>
@@ -9183,7 +9167,7 @@ color: orange;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
