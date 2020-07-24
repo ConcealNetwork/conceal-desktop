@@ -432,7 +432,8 @@ namespace WalletGui
   {
     int fontSize = Settings::instance().getFontSize();
     fontSize++;
-    if (fontSize < 5) {
+    if (fontSize < 5)
+    {
       setStyles(fontSize);
     }
     else
@@ -506,8 +507,8 @@ namespace WalletGui
       {
         button->setFont(font);
       }
-
     }
+
 
     QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
     foreach (QLabel *label, labels)
@@ -516,7 +517,7 @@ namespace WalletGui
       {
         label->setFont(titleFont);
       }
-      else 
+      else
       {
         label->setFont(font);
       }
@@ -526,7 +527,6 @@ namespace WalletGui
     m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
 
     /** Set the font and styles for all the table views */
-    m_ui->m_recentTransactionsView->setStyleSheet("border: none;");
     m_ui->m_addressBookView->setStyleSheet(tableStyle);
     m_ui->m_messagesView->setStyleSheet(tableStyle);
     m_ui->m_depositView->setStyleSheet(tableStyle);
@@ -537,6 +537,12 @@ namespace WalletGui
     m_ui->m_transactionsView->setFont(font);
     m_ui->m_addressBookView->setFont(font);
     m_ui->m_recentTransactionsView->setFont(font);
+
+    QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
+    foreach (QLabel *label, labels2)
+    {
+      label->setFont(font);
+    }
   }
 
   /* Load the price chart on the overview screen */
@@ -718,6 +724,7 @@ namespace WalletGui
     QString changeCurrency = selectedCurrency + "_24h_change";
 
     double currency = result[selectedCurrency].toDouble();
+    ccxfiat = (float)currency;
     QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
     double market_cap = result[marketCapCurrency].toDouble();
     QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
@@ -745,14 +752,7 @@ namespace WalletGui
     QString currentCurrency = Settings::instance().getCurrentCurrency();
 
     float total = 0;
-    if (currentCurrency == "EUR")
-    {
-      total = ccxeur * (float)OverviewFrame::totalBalance;
-    }
-    else
-    {
-      total = ccxusd * (float)OverviewFrame::totalBalance;
-    }
+    total = ccxfiat * (float)OverviewFrame::totalBalance;
     m_ui->ccxTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
     m_ui->fiatTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
   }
@@ -790,7 +790,7 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
     m_ui->overviewBox->raise();
-    m_ui->lm_newTransferButton->show();
+    m_ui->newTransferButton->show();
     m_ui->lm_newMessageButton->show();
   }
 
@@ -799,7 +799,7 @@ namespace WalletGui
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("ABOUT");
     m_ui->aboutBox->raise();
-    m_ui->lm_newTransferButton->show();
+    m_ui->newTransferButton->show();
     m_ui->lm_newMessageButton->show();
   }
 
