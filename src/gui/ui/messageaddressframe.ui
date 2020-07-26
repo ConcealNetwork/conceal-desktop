@@ -73,7 +73,7 @@
    <item>
     <widget class="QToolButton" name="m_addressBookButton">
      <property name="text">
-      <string>...</string>
+      <string notr="true"/>
      </property>
      <property name="icon">
       <iconset resource="../../resources.qrc">
@@ -84,7 +84,7 @@
    <item>
     <widget class="QToolButton" name="m_pasteButton">
      <property name="text">
-      <string>...</string>
+      <string notr="true"/>
      </property>
      <property name="icon">
       <iconset resource="../../resources.qrc">
@@ -95,7 +95,7 @@
    <item>
     <widget class="QToolButton" name="m_removeButton">
      <property name="text">
-      <string>...</string>
+      <string notr="true"/>
      </property>
      <property name="icon">
       <iconset resource="../../resources.qrc">

@@ -5381,7 +5381,7 @@ font-size: 16px;</string>
         text-align: left;</string>
            </property>
            <property name="text">
-            <string>ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
+            <string notr="true">ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
            </property>
            <property name="checkable">
             <bool>false</bool>
