@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1270</width>
-    <height>750</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1270</width>
-    <height>750</height>
+    <height>650</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -64,7 +64,7 @@
      <property name="minimumSize">
       <size>
        <width>1270</width>
-       <height>700</height>
+       <height>650</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -1662,8 +1662,8 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>505</width>
-                 <height>563</height>
+                 <width>557</width>
+                 <height>551</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -1719,7 +1719,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
             <item>
              <widget class="QLabel" name="m_aboutLabel">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1727,13 +1727,13 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>280</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>280</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -1823,7 +1823,7 @@ QPushButton#m_aboutQT:hover
             <item>
              <widget class="QLabel" name="empty_align">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -2280,7 +2280,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -5346,7 +5346,7 @@ text-align: left;
         <property name="minimumSize">
          <size>
           <width>1270</width>
-          <height>700</height>
+          <height>650</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -5792,7 +5792,7 @@ border: none;
          <property name="rightMargin">
           <number>0</number>
          </property>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_7">
            <property name="styleSheet">
             <string notr="true">border-bottom: 1px solid #444;
@@ -6062,7 +6062,7 @@ font-size: 18px;
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_8">
            <property name="styleSheet">
             <string notr="true">border-bottom: 1px solid #444;
@@ -6169,7 +6169,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>100</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6324,7 +6324,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>100</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6397,7 +6397,7 @@ QPushButton:hover
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_9">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -6433,7 +6433,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>150</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6482,7 +6482,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>150</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6940,7 +6940,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -6961,7 +6961,7 @@ color: #aaa;</string>
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_13">
            <property name="minimumSize">
             <size>
@@ -7074,7 +7074,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7117,7 +7117,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7160,7 +7160,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7241,7 +7241,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7284,7 +7284,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7327,7 +7327,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7408,7 +7408,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7451,7 +7451,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7512,6 +7512,11 @@ QPushButton:hover
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>1</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;</string>
@@ -7699,7 +7704,7 @@ color: #ccc;
         <property name="minimumSize">
          <size>
           <width>1270</width>
-          <height>700</height>
+          <height>650</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -7929,7 +7934,6 @@ color: orange;</string>
      <zorder>darkness</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
-     <zorder>aboutBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>statusBox</zorder>
@@ -7937,8 +7941,9 @@ color: orange;</string>
      <zorder>transactionsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>aboutBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
