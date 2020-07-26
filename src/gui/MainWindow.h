@@ -42,11 +42,6 @@ private:
   QActionGroup* m_tabActionGroup;
   bool m_isAboutToQuit;
 
-  QTranslator m_translator; // contains the translations for this application
-  QTranslator m_translatorQt; // contains the translations for qt
-  QString m_currLang; // contains the currently loaded language
-  QString m_langPath; // Path of language files. This is always fixed to /languages
-
   static MainWindow* m_instance;
 
   MainWindow();

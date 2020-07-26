@@ -195,6 +195,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="220"/>
+        <location filename="../gui/ui/importviewkey.ui" line="162"/>
         <source>IMPORT</source>
         <translation>ИМПОРТИРОВАТЬ</translation>
     </message>
@@ -205,28 +206,34 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="285"/>
+        <location filename="../gui/ui/importviewkey.ui" line="66"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="vanished">Диалог</translation>
+        <translation>Диалог</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="38"/>
         <source>Wallet path:</source>
-        <translation type="vanished">Путь к файлу кошелька:</translation>
+        <translation>Путь к файлу кошелька:</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="100"/>
         <source>Tracking key</source>
-        <translation type="vanished">Ключ для отслеживания транзакции (Tracking Key)</translation>
+        <translation>Ключ для отслеживания транзакции (Tracking Key)</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="199"/>
         <source>EXIT</source>
-        <translation type="vanished">ВЫХОД</translation>
+        <translation>ВЫХОД</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="237"/>
         <source>IMPORT VIEW ONLY WALLET</source>
-        <translation type="vanished">ИМПОРТИРОВАТЬ VIEW-ONLY КОШЕЛЕК</translation>
+        <translation>ИМПОРТИРОВАТЬ VIEW-ONLY КОШЕЛЕК</translation>
     </message>
 </context>
 <context>
@@ -382,8 +389,21 @@ Please wait...</source>
 <context>
     <name>MessageAddressFrame</name>
     <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="50"/>
         <source>Send To:</source>
-        <translation type="vanished">Получатель:</translation>
+        <translation>Получатель:</translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="76"/>
+        <location filename="../gui/ui/messageaddressframe.ui" line="87"/>
+        <location filename="../gui/ui/messageaddressframe.ui" line="98"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1279,17 +1299,20 @@ p, li { white-space: pre-wrap; }
         <translation>Ошибка</translation>
     </message>
     <message>
+        <location filename="../gui/SplashScreen.cpp" line="25"/>
         <source>STARTING WALLET</source>
-        <translation type="vanished">ЗАГРУЗКА КОШЕЛЬКА</translation>
+        <translation>ЗАГРУЗКА КОШЕЛЬКА</translation>
     </message>
     <message>
+        <location filename="../UpdateManager.cpp" line="93"/>
         <source>Conceal Wallet Update</source>
-        <translation type="vanished">Обновить кошелек Conceal</translation>
+        <translation>Обновить кошелек Conceal</translation>
     </message>
     <message>
+        <location filename="../UpdateManager.cpp" line="93"/>
         <source>There is an update to the wallet available.
 Would you like to go to the download page?</source>
-        <translation type="vanished">Доступно обновление для кошелька.
+        <translation>Доступно обновление для кошелька.
 Хотите перейти на страницу загрузки?</translation>
     </message>
 </context>
@@ -1523,12 +1546,14 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Updater</name>
     <message>
+        <location filename="../UpdateManager.cpp" line="80"/>
         <source>Error: %1</source>
-        <translation type="vanished">Ошибка: %1</translation>
+        <translation>Ошибка: %1</translation>
     </message>
     <message>
+        <location filename="../UpdateManager.cpp" line="81"/>
         <source>Unable to check for update</source>
-        <translation type="vanished">Сервер обновлений недоступен</translation>
+        <translation>Сервер обновлений недоступен</translation>
     </message>
 </context>
 <context>
@@ -1812,88 +1837,88 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Язык изменен на %1. Изменения вступят в силу после того, как вы перезапустите кошелек.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="339"/>
+        <location filename="../gui/MainWindow.cpp" line="338"/>
         <source>New wallet file</source>
         <translation>Новый файл кошелька</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="346"/>
-        <location filename="../gui/MainWindow.cpp" line="494"/>
+        <location filename="../gui/MainWindow.cpp" line="345"/>
+        <location filename="../gui/MainWindow.cpp" line="493"/>
         <source>Wallets (*.wallet)</source>
         <translation>Кошельки (*.wallet)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="389"/>
+        <location filename="../gui/MainWindow.cpp" line="388"/>
         <source>Open .wallet/.keys file</source>
         <translation>Открыть файлы .wallet/.keys</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="391"/>
+        <location filename="../gui/MainWindow.cpp" line="390"/>
         <source>Wallet (*.wallet *.keys)</source>
         <translation>Кошелек (*.wallet *.keys)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="488"/>
+        <location filename="../gui/MainWindow.cpp" line="487"/>
         <source>Backup wallet to...</source>
         <translation>Сделать запасную копию кошелька в...</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="509"/>
+        <location filename="../gui/MainWindow.cpp" line="508"/>
         <source>Warning</source>
         <translation>Внимание</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="509"/>
+        <location filename="../gui/MainWindow.cpp" line="508"/>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
         <translation>Ваш кошелек будет сброшен и восстановлен из блокчейна.
 Вы уверены?</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="603"/>
+        <location filename="../gui/MainWindow.cpp" line="602"/>
         <source>Wallet error</source>
         <translation>Ошибка кошелька</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="606"/>
+        <location filename="../gui/MainWindow.cpp" line="605"/>
         <source>Wallet</source>
         <translation>Кошелек</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="942"/>
+        <location filename="../gui/MainWindow.cpp" line="941"/>
         <source>Tracking key is not valid</source>
         <translation>Ключ для отслеживания транзакции (Tracking Key) неверен</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="942"/>
+        <location filename="../gui/MainWindow.cpp" line="941"/>
         <source>The tracking key you entered is not valid.</source>
         <translation>Введенный вами ключ для отслеживания транзакции (Tracking Key) неверен.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="966"/>
-        <location filename="../gui/MainWindow.cpp" line="971"/>
-        <location filename="../gui/MainWindow.cpp" line="976"/>
-        <location filename="../gui/MainWindow.cpp" line="981"/>
+        <location filename="../gui/MainWindow.cpp" line="965"/>
+        <location filename="../gui/MainWindow.cpp" line="970"/>
+        <location filename="../gui/MainWindow.cpp" line="975"/>
+        <location filename="../gui/MainWindow.cpp" line="980"/>
         <source>Key is not valid</source>
         <translation>Ключ неверен</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="966"/>
+        <location filename="../gui/MainWindow.cpp" line="965"/>
         <source>The public spend key you entered is not valid.</source>
         <translation>Введенный вами публичный ключ для трат (Public Spend Key) неверен.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="971"/>
+        <location filename="../gui/MainWindow.cpp" line="970"/>
         <source>The public view key you entered is not valid.</source>
         <translation>Введенный вами публичный ключ для просмотра (Public View Key) неверен.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="976"/>
+        <location filename="../gui/MainWindow.cpp" line="975"/>
         <source>The private spend key you entered is not valid.</source>
         <translation>Введенный вами приватный ключ для трат (Private Spend Key) неверен.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="981"/>
+        <location filename="../gui/MainWindow.cpp" line="980"/>
         <source>The private view key you entered is not valid.</source>
         <translation>Введенный вами приватный ключ для просмотра (Private View Key) неверен.</translation>
     </message>

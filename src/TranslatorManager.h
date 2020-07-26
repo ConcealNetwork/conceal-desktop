@@ -31,8 +31,10 @@ private:
   static TranslatorManager* m_Instance;
 
   QString m_keyLang;
-  QString m_langPath;
-  QTranslator* translator;
+  QString m_langPath = ":/translations/%1";       // path of translations for conceal-desktop app
+  QString m_qtLangPath = ":/translations/qt/%1";  // path of translations for qt components
+  QTranslator* translator;                        // translator for conceal-desktop app
+  QTranslator* qtTranslator;                      // translator for qt components
 };
 
 #endif  // TRANSLATORMANAGER_H

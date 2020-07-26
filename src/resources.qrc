@@ -12,8 +12,6 @@
         <file alias="clock3">icons/clock3.png</file>
         <file alias="clock4">icons/clock4.png</file>
         <file alias="clock5">icons/clock5.png</file>
-        <file alias="clock5">icons/settings.png</file>
-        <file alias="clock5">icons/lock.png</file>
         <file alias="tx-inout">icons/tx_inout.png</file>
         <file alias="unconfirmed">icons/unconfirmed.png</file>
         <file alias="tx-deposit">icons/tx_deposit.png</file>
@@ -70,5 +68,9 @@
         <file alias="cn">languages/cn.qm</file>
         <file alias="ru">languages/ru.qm</file>
         <file alias="tr">languages/tr.qm</file>
+    </qresource>
+    <qresource prefix="/translations/qt">
+        <file alias="ru">languages/qt/qtbase_ru.qm</file>
+        <file alias="cn">languages/qt/qtbase_zh_TW.qm</file>
     </qresource>
 </RCC>

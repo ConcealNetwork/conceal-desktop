@@ -16,8 +16,6 @@ TranslatorManager* TranslatorManager::m_Instance = 0;
 
 TranslatorManager::TranslatorManager()
 {
-  m_langPath = ":/translations/%1";
-
   QString lang = Settings::instance().getLanguage();
   if (lang.isEmpty()) {
     lang = QLocale::system().name();
@@ -25,6 +23,7 @@ TranslatorManager::TranslatorManager()
   }
 
   translator = new QTranslator;
+  qtTranslator = new QTranslator;
   switchTranslator(lang);
 }
 
@@ -49,15 +48,20 @@ TranslatorManager* TranslatorManager::instance()
 
 void TranslatorManager::switchTranslator(const QString& lang)
 {
-  // remove the old translator
+  // remove old translators
   qApp->removeTranslator(translator);
+  qApp->removeTranslator(qtTranslator);
 
-  // load the new translator
+  // load new translators
   if (translator->load(m_langPath.arg(lang))) {
     qApp->installTranslator(translator);
     m_keyLang = lang;
   }
   else {
     m_keyLang = "en";
+  }
+
+  if (qtTranslator->load(m_qtLangPath.arg(lang))) {
+    qApp->installTranslator(qtTranslator);
   }
 }

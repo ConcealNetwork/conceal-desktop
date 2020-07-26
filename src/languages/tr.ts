@@ -196,6 +196,7 @@ Lütfen bekle...</translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="220"/>
+        <location filename="../gui/ui/importviewkey.ui" line="162"/>
         <source>IMPORT</source>
         <translation>İÇE AKTAR</translation>
     </message>
@@ -206,20 +207,34 @@ Lütfen bekle...</translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="285"/>
+        <location filename="../gui/ui/importviewkey.ui" line="66"/>
         <source>...</source>
         <translation></translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/importviewkey.ui" line="38"/>
         <source>Wallet path:</source>
-        <translation type="vanished">Cüzdan Yolu</translation>
+        <translation>Cüzdan Yolu</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="100"/>
+        <source>Tracking key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/importviewkey.ui" line="199"/>
         <source>EXIT</source>
-        <translation type="vanished">ÇIKIŞ</translation>
+        <translation>ÇIKIŞ</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importviewkey.ui" line="237"/>
         <source>IMPORT VIEW ONLY WALLET</source>
-        <translation type="vanished">SALT GÖRÜNTÜLENEBİLİR CÜZDANI İÇE AKTAR</translation>
+        <translation>SALT GÖRÜNTÜLENEBİLİR CÜZDANI İÇE AKTAR</translation>
     </message>
 </context>
 <context>
@@ -375,8 +390,21 @@ Lütfen bekle...</translation>
 <context>
     <name>MessageAddressFrame</name>
     <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="14"/>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="50"/>
         <source>Send To:</source>
-        <translation type="vanished">Gönder</translation>
+        <translation>Gönder</translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/messageaddressframe.ui" line="76"/>
+        <location filename="../gui/ui/messageaddressframe.ui" line="87"/>
+        <location filename="../gui/ui/messageaddressframe.ui" line="98"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1232,17 +1260,20 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
+        <location filename="../gui/SplashScreen.cpp" line="25"/>
         <source>STARTING WALLET</source>
-        <translation type="vanished">CÜZDAN YÜKLENİYOR</translation>
+        <translation>CÜZDAN YÜKLENİYOR</translation>
     </message>
     <message>
+        <location filename="../UpdateManager.cpp" line="93"/>
         <source>Conceal Wallet Update</source>
-        <translation type="vanished">Conceal Cüzdan Güncellemesi</translation>
+        <translation>Conceal Cüzdan Güncellemesi</translation>
     </message>
     <message>
+        <location filename="../UpdateManager.cpp" line="93"/>
         <source>There is an update to the wallet available.
 Would you like to go to the download page?</source>
-        <translation type="vanished">Bir cüzdan güncellemesi bulunuyor. İndirme sayfasına gitmek ister misiniz?</translation>
+        <translation>Bir cüzdan güncellemesi bulunuyor. İndirme sayfasına gitmek ister misiniz?</translation>
     </message>
 </context>
 <context>
@@ -1475,8 +1506,14 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Updater</name>
     <message>
+        <location filename="../UpdateManager.cpp" line="80"/>
+        <source>Error: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../UpdateManager.cpp" line="81"/>
         <source>Unable to check for update</source>
-        <translation type="vanished">Güncelleme kontrol edilemiyor</translation>
+        <translation>Güncelleme kontrol edilemiyor</translation>
     </message>
 </context>
 <context>
@@ -1764,88 +1801,88 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Dil %1 olarak değiştirildi. Değişiklik cüzdanı yeniden başlattığınızda </translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="339"/>
+        <location filename="../gui/MainWindow.cpp" line="338"/>
         <source>New wallet file</source>
         <translation>Cüzdan dosyası</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="346"/>
-        <location filename="../gui/MainWindow.cpp" line="494"/>
+        <location filename="../gui/MainWindow.cpp" line="345"/>
+        <location filename="../gui/MainWindow.cpp" line="493"/>
         <source>Wallets (*.wallet)</source>
         <translation>cüzdan (*.wallet)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="389"/>
+        <location filename="../gui/MainWindow.cpp" line="388"/>
         <source>Open .wallet/.keys file</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="391"/>
+        <location filename="../gui/MainWindow.cpp" line="390"/>
         <source>Wallet (*.wallet *.keys)</source>
         <translation>Cüzdan (*.wallet *.keys)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="488"/>
+        <location filename="../gui/MainWindow.cpp" line="487"/>
         <source>Backup wallet to...</source>
         <translation>Cüzdanı yedekle…</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="509"/>
+        <location filename="../gui/MainWindow.cpp" line="508"/>
         <source>Warning</source>
         <translation>Uyarı</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="509"/>
+        <location filename="../gui/MainWindow.cpp" line="508"/>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
         <translation>Cüzdanınız sıfırlanacak ve blockchain&apos;den geri yüklenecek.
 Emin misiniz?</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="603"/>
+        <location filename="../gui/MainWindow.cpp" line="602"/>
         <source>Wallet error</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="606"/>
+        <location filename="../gui/MainWindow.cpp" line="605"/>
         <source>Wallet</source>
         <translation>Cüzdan</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="942"/>
+        <location filename="../gui/MainWindow.cpp" line="941"/>
         <source>Tracking key is not valid</source>
         <translation>Girdiğiniz izleme anahtarı geçerli değil.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="942"/>
+        <location filename="../gui/MainWindow.cpp" line="941"/>
         <source>The tracking key you entered is not valid.</source>
         <translation>Girdiğiniz izleme anahtarı geçerli değil.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="966"/>
-        <location filename="../gui/MainWindow.cpp" line="971"/>
-        <location filename="../gui/MainWindow.cpp" line="976"/>
-        <location filename="../gui/MainWindow.cpp" line="981"/>
+        <location filename="../gui/MainWindow.cpp" line="965"/>
+        <location filename="../gui/MainWindow.cpp" line="970"/>
+        <location filename="../gui/MainWindow.cpp" line="975"/>
+        <location filename="../gui/MainWindow.cpp" line="980"/>
         <source>Key is not valid</source>
         <translation>Anahtar geçerli değil</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="966"/>
+        <location filename="../gui/MainWindow.cpp" line="965"/>
         <source>The public spend key you entered is not valid.</source>
         <translation>Girdiğiniz public spend key geçerli değil.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="971"/>
+        <location filename="../gui/MainWindow.cpp" line="970"/>
         <source>The public view key you entered is not valid.</source>
         <translation>Girdiğiniz public view key geçerli değil.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="976"/>
+        <location filename="../gui/MainWindow.cpp" line="975"/>
         <source>The private spend key you entered is not valid.</source>
         <translation>Girdiğiniz private spend key geçerli değil.</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="981"/>
+        <location filename="../gui/MainWindow.cpp" line="980"/>
         <source>The private view key you entered is not valid.</source>
         <translation>Girdiğiniz private view key geçerli değil.</translation>
     </message>
