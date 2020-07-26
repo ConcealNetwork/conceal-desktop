@@ -53,7 +53,6 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
-#include <QClipboard>
 #include <QDesktopServices>
 #include <QFont>
 #include <QFontDatabase>
@@ -269,6 +268,7 @@ namespace WalletGui
     m_ui->m_language->setCurrentIndex(index);
 
     /* Set the styles */
+    setStyles(1);
     int startingFontSize = Settings::instance().getFontSize();
     setStyles(startingFontSize);
 
@@ -433,7 +433,8 @@ namespace WalletGui
   {
     int fontSize = Settings::instance().getFontSize();
     fontSize++;
-    if (fontSize < 5) {
+    if (fontSize < 5)
+    {
       setStyles(fontSize);
     }
     else
@@ -478,8 +479,10 @@ namespace WalletGui
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
     QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
     QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px;";
 
-    QList<QPushButton *> buttons = m_ui->groupBox->findChildren<QPushButton *>();
+    QList<QPushButton *>
+        buttons = m_ui->groupBox->findChildren<QPushButton *>();
     foreach (QPushButton *button, buttons)
     {
       /* Set the font and styling for b1 styled buttons */
@@ -507,8 +510,8 @@ namespace WalletGui
       {
         button->setFont(font);
       }
-
     }
+
 
     QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
     foreach (QLabel *label, labels)
@@ -517,7 +520,7 @@ namespace WalletGui
       {
         label->setFont(titleFont);
       }
-      else 
+      else
       {
         label->setFont(font);
       }
@@ -527,8 +530,6 @@ namespace WalletGui
     m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
 
     /** Set the font and styles for all the table views */
-    m_ui->m_recentTransactionsView->setFont(font);
-    m_ui->m_recentTransactionsView->setStyleSheet("border: none;");
     m_ui->m_addressBookView->setStyleSheet(tableStyle);
     m_ui->m_messagesView->setStyleSheet(tableStyle);
     m_ui->m_depositView->setStyleSheet(tableStyle);
@@ -538,6 +539,13 @@ namespace WalletGui
     m_ui->m_depositView->setFont(font);
     m_ui->m_transactionsView->setFont(font);
     m_ui->m_addressBookView->setFont(font);
+    m_ui->m_recentTransactionsView->setFont(font);
+
+    QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
+    foreach (QLabel *label, labels2)
+    {
+      label->setStyleSheet(fontStyle);
+    }
   }
 
   /* Load the price chart on the overview screen */
@@ -719,6 +727,7 @@ namespace WalletGui
     QString changeCurrency = selectedCurrency + "_24h_change";
 
     double currency = result[selectedCurrency].toDouble();
+    ccxfiat = (float)currency;
     QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
     double market_cap = result[marketCapCurrency].toDouble();
     QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
@@ -746,14 +755,7 @@ namespace WalletGui
     QString currentCurrency = Settings::instance().getCurrentCurrency();
 
     float total = 0;
-    if (currentCurrency == "EUR")
-    {
-      total = ccxeur * (float)OverviewFrame::totalBalance;
-    }
-    else
-    {
-      total = ccxusd * (float)OverviewFrame::totalBalance;
-    }
+    total = ccxfiat * (float)OverviewFrame::totalBalance;
     m_ui->ccxTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
     m_ui->fiatTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
   }
