@@ -477,8 +477,8 @@ namespace WalletGui
 
     /* Create our common pool of styles */
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
-    QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+    QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
+    QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
     QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px;";
 
     QList<QPushButton *>

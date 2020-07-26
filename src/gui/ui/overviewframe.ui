@@ -169,23 +169,7 @@ text-align: left;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>COPY ADDRESS</string>
@@ -219,23 +203,7 @@ QPushButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>COPY PAYMENTID</string>
@@ -269,23 +237,7 @@ QPushButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>PAY TO</string>
@@ -319,23 +271,7 @@ QPushButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>EDIT CONTACT</string>
@@ -369,23 +305,7 @@ QPushButton:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>DELETE CONTACT</string>
@@ -1497,11 +1417,11 @@ border-radius: 2px;</string>
             <string notr="true">padding: 3px; font-size: 16px; color: #aaa; border: none;</string>
            </property>
            <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+            <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-size:14px;"&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -1531,9 +1451,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
-
-QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -1560,9 +1478,7 @@ QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; 
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -1592,9 +1508,7 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_clearAllButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -1658,6 +1572,9 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
                <bool>true</bool>
               </property>
               <widget class="QLabel" name="m_aboutLabel_3">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
                <property name="geometry">
                 <rect>
                  <x>0</x>
@@ -1684,7 +1601,7 @@ QPushButton#m_clearAllButton:hover {color: #fff; border: 1px solid #444;  border
     </string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::RichText</enum>
@@ -1750,7 +1667,7 @@ padding: 15px;
 border-radius: 5px;</string>
               </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href="http://opensource.org/licenses/MIT"&gt;&lt;span style=" text-decoration: underline; color:#ffa500;"&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href="https://conceal.network/"&gt;&lt;span style=" text-decoration: underline; color:#ffa500;"&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="textFormat">
                <enum>Qt::RichText</enum>
@@ -1792,22 +1709,7 @@ border-radius: 5px;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_aboutQT
-{
-    color: orange; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px; 
-}
-
-QPushButton#m_aboutQT:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ABOUT QT</string>
@@ -1881,23 +1783,7 @@ QPushButton#m_aboutQT:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_exportCSVButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_exportCSVButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>EXPORT CSV</string>
@@ -1967,11 +1853,11 @@ text-align: left;
             <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
            </property>
            <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+            <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-size:13px;"&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -2277,11 +2163,11 @@ padding-left: 5px</string>
             <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="html">
-            <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+            <string notr="true">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;"&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
             <bool>false</bool>
@@ -2472,9 +2358,7 @@ QSlider::sub-page:horizontal#m_ttlSlider {
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
-
-QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -2501,9 +2385,7 @@ QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -2533,9 +2415,7 @@ QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444;  b
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -4514,19 +4394,7 @@ border: none;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    border-radius: 5px;
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    border-radius: 5px;
-}</string>
+                  <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
                  </property>
                  <property name="text">
                   <string>WITHDRAW</string>
@@ -5281,7 +5149,7 @@ text-align: left;
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
                  </property>
                  <property name="text">
                   <string>MAKE DEPOSIT</string>
@@ -5445,10 +5313,7 @@ font-size: 16px;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange;  border-radius: 5px; 
-margin-bottom: 10%;}
-
-QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>UNLOCK WALLET</string>
@@ -5926,23 +5791,7 @@ color: #aaa;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_saveConnectionButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_saveConnectionButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>SAVE</string>
@@ -6185,22 +6034,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6259,22 +6093,7 @@ QPushButton#hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_rescanButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#m_rescanButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>START RESCAN</string>
@@ -6324,7 +6143,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>100</width>
-                <height>20</height>
+                <height>25</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6340,22 +6159,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>OPTIMIZE NOW</string>
@@ -6449,22 +6253,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6498,22 +6287,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#b2_closeToTrayButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#b2_closeToTrayButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6758,23 +6532,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_saveLanguageButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_saveLanguageButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>SAVE</string>
@@ -7086,26 +6844,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>NEW WALLET</string>
@@ -7133,22 +6875,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>OPEN WALLET</string>
@@ -7176,22 +6903,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENCRYPT WALLET</string>
@@ -7257,22 +6969,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT PRIVATE KEYS</string>
@@ -7300,22 +6997,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT SEED</string>
@@ -7343,22 +7025,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT TRACKING WALLET</string>
@@ -7424,22 +7091,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>BACKUP KEYS</string>
@@ -7467,22 +7119,7 @@ QPushButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>BACKUP WALLET FILE</string>
@@ -7930,19 +7567,19 @@ color: orange;</string>
        </widget>
       </item>
      </layout>
-     <zorder>lockBox</zorder>
      <zorder>darkness</zorder>
-     <zorder>leftMenu</zorder>
-     <zorder>headerBox</zorder>
-     <zorder>messageBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>bankingBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>lockBox</zorder>
+     <zorder>leftMenu</zorder>
+     <zorder>headerBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
+     <zorder>addressBookBox</zorder>
      <zorder>settingsBox</zorder>
     </widget>
    </item>
