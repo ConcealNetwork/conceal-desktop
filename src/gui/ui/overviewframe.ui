@@ -1576,8 +1576,8 @@ border-radius: 2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>557</width>
-                 <height>551</height>
+                 <width>560</width>
+                 <height>534</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -7537,7 +7537,6 @@ color: orange;</string>
      <zorder>darkness</zorder>
      <zorder>statusBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
@@ -7548,6 +7547,7 @@ color: orange;</string>
      <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8705,6 +8705,22 @@ color: orange;</string>
     <hint type="destinationlabel">
      <x>634</x>
      <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_addressEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>addressEditTextChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>

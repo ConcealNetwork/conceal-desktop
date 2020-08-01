@@ -53,6 +53,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
+#include <QCompleter>
 #include <QDesktopServices>
 #include <QFont>
 #include <QFontDatabase>
@@ -848,11 +849,31 @@ namespace WalletGui
       m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
+
+      /* Add addresses suggestions from the address book*/
+      QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
+      completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
+      completer->setCaseSensitivity(Qt::CaseInsensitive);
+      QTreeView* popup = new QTreeView;
+      completer->setPopup(popup);
+      popup->setStyleSheet("background-color: #282d31; color: #aaa");
+      popup->setIndentation(0);
+      popup->header()->setStretchLastSection(false);
+      popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+      m_ui->m_addressEdit->setCompleter(completer);
     }
     else
     {
       syncInProgressMessage();
     }
+  }
+
+  void OverviewFrame::addressEditTextChanged(QString text)
+  {
+    /* Small trick for the completer to show all the rows in the popup. Without this, one row is missing due to the header */
+    int rowCount = m_ui->m_addressEdit->completer()->popup()->model()->rowCount();
+    m_ui->m_addressEdit->completer()->popup()->window()->setMinimumHeight(
+      20 * (rowCount + 1));
   }
 
   void OverviewFrame::newMessageClicked()

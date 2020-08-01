@@ -169,6 +169,7 @@ private:
   Q_SLOT void tradeogreClicked();
   Q_SLOT void qtradeClicked();
   Q_SLOT void helpClicked();
+  Q_SLOT void addressEditTextChanged(QString text);
 
 Q_SIGNALS:
   void sendSignal();
