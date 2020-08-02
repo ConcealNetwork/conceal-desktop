@@ -5,13 +5,18 @@
 #include "../qrencode_inner.h"
 #include "decoder.h"
 
-void print_eccTable(void)
+#ifndef SRCDIR
+#	define SRCDIR
+#endif
+
+static void print_eccTable(void)
 {
 	int i, j;
 	int ecc;
 	int data;
 	int spec[5];
 
+	puts("\nPrinting ECC table.\n");
 	for(i=1; i<=QRSPEC_VERSION_MAX; i++) {
 		printf("Version %2d\n", i);
 		for(j=0; j<4; j++) {
@@ -38,7 +43,7 @@ void print_eccTable(void)
 	}
 }
 
-void test_eccTable(void)
+static void test_eccTable(void)
 {
 	int i, j;
 	int ecc;
@@ -69,7 +74,7 @@ void test_eccTable(void)
 	testEnd(err);
 }
 
-void test_eccTable2(void)
+static void test_eccTable2(void)
 {
 	int i;
 	int spec[5];
@@ -118,7 +123,7 @@ void test_eccTable2(void)
 	testFinish();
 }
 
-void test_newframe(void)
+static void test_newframe(void)
 {
 	unsigned char buf[QRSPEC_WIDTH_MAX * QRSPEC_WIDTH_MAX];
 	int i, width;
@@ -126,12 +131,12 @@ void test_newframe(void)
 	FILE *fp;
 	unsigned char *frame;
 	QRcode *qrcode;
-	unsigned int version;
+	int version;
 
 	testStart("Checking newly created frame.");
-	fp = fopen("frame", "rb");
+	fp = fopen(SRCDIR "frame", "rb");
 	if(fp == NULL) {
-		perror("Failed to open \"frame\":");
+		perror("Failed to open \"" SRCDIR "frame\":");
 		abort();
 	}
 	for(i=1; i<=QRSPEC_VERSION_MAX; i++) {
@@ -153,7 +158,7 @@ void test_newframe(void)
 	fclose(fp);
 }
 
-void test_newframe_invalid(void)
+static void test_newframe_invalid(void)
 {
 	unsigned char *frame;
 
@@ -171,7 +176,7 @@ void test_newframe_invalid(void)
  * this test, change the value of the pattern marker's center dot from 0xa1
  * to 0xb1 (QRspec_putAlignmentMarker() : finder).
  */
-void test_alignment(void)
+static void test_alignment(void)
 {
 	unsigned char *frame;
 	int i, x, y, width, c;
@@ -201,7 +206,7 @@ void test_alignment(void)
 }
 #endif
 
-void test_verpat(void)
+static void test_verpat(void)
 {
 	int version;
 	unsigned int pattern;
@@ -242,23 +247,6 @@ void test_verpat(void)
 	}
 }
 
-void print_newFrame(void)
-{
-	int width;
-	int x, y;
-	unsigned char *frame;
-
-	frame = QRspec_newFrame(7);
-	width = QRspec_getWidth(7);
-	for(y=0; y<width; y++) {
-		for(x=0; x<width; x++) {
-			printf("%02x ", frame[y * width + x]);
-		}
-		printf("\n");
-	}
-	free(frame);
-}
-
 /* See Table 22 (pp.45) and Appendix C (pp. 65) of JIS X0510:2004 */
 static unsigned int levelIndicator[4] = {1, 0, 3, 2};
 static unsigned int calcFormatInfo(int mask, QRecLevel level)
@@ -283,11 +271,11 @@ static unsigned int calcFormatInfo(int mask, QRecLevel level)
 		code = code >> 1;
 		b = b >> 1;
 	}
-	
+
 	return (data | ecc) ^ 0x5412;
 }
 
-void test_format(void)
+static void test_format(void)
 {
 	unsigned int format;
 	int i, j;
@@ -308,21 +296,20 @@ void test_format(void)
 	testEnd(err);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	test_eccTable();
 	test_eccTable2();
-	//print_eccTable();
 	test_newframe();
 	test_newframe_invalid();
 	//test_alignment();
 	test_verpat();
-	//print_newFrame();
 	test_format();
-
-	QRspec_clearCache();
-
 	report();
+
+	if(argc > 1) {
+		print_eccTable();
+	}
 
 	return 0;
 }
