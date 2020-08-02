@@ -27,6 +27,12 @@ jobs:
           modules: "qttools5"
           install-deps: "true"
 
+      - name: Clone conceal-core
+        shell: powershell
+        run: |
+          Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+
       - name: Build
         shell: powershell
         id: build
@@ -52,8 +58,6 @@ jobs:
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
           $filecontent = Get-Content CMakeLists.txt
           $filecontent -replace '^set\(CMAKE_PREFIX_PATH.+',"set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")" | Set-Content CMakeLists.txt
-          Remove-Item cryptonote -Recurse -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
           Copy-Item "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Redist" "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/" -Recurse
