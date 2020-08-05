@@ -773,7 +773,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("BANKING");
+      m_ui->m_myConcealWalletTitle->setText(tr("BANKING"));
       m_ui->bankingBox->raise();
     }
     else
@@ -785,14 +785,14 @@ namespace WalletGui
   void OverviewFrame::transactionHistoryClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
+    m_ui->m_myConcealWalletTitle->setText(tr("TRANSACTIONS"));
     m_ui->transactionsBox->raise();
   }
 
   void OverviewFrame::dashboardClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
+    m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -801,7 +801,7 @@ namespace WalletGui
   void OverviewFrame::aboutClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("ABOUT");
+    m_ui->m_myConcealWalletTitle->setText(tr("ABOUT"));
     m_ui->aboutBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -810,7 +810,7 @@ namespace WalletGui
   void OverviewFrame::settingsClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
+    m_ui->m_myConcealWalletTitle->setText(tr("WALLET SETTINGS"));
     m_ui->settingsBox->raise();
   }
 
@@ -822,7 +822,7 @@ namespace WalletGui
   void OverviewFrame::inboxClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("INBOX");
+    m_ui->m_myConcealWalletTitle->setText(tr("INBOX"));
     m_ui->messageBox->raise();
   }
 
@@ -846,7 +846,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
 
@@ -886,7 +886,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
+      m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
     }
@@ -969,13 +969,13 @@ namespace WalletGui
     if (OverviewFrame::fromPay == true)
     {
       m_ui->m_addressEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->sendBox->raise();
     }
     else
     {
       m_ui->m_addressMessageEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText("SEND MESSAGE");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
       m_ui->newMessageBox->raise();
     }
   }
@@ -1236,7 +1236,7 @@ namespace WalletGui
   /* Open address book */
   void OverviewFrame::addressBookClicked()
   {
-    m_ui->m_myConcealWalletTitle->setText("ADDRESS BOOK");
+    m_ui->m_myConcealWalletTitle->setText(tr("ADDRESS BOOK"));
     m_ui->addressBookBox->raise();
   }
 
