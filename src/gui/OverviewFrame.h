@@ -50,6 +50,9 @@ public Q_SLOTS:
   void deleteABClicked();
   void payToABClicked();
 
+protected:
+  void resizeEvent(QResizeEvent *event) override;
+
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;

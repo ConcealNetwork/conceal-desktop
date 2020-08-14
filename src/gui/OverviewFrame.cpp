@@ -558,7 +558,16 @@ namespace WalletGui
     connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
 
     QUrl url;
-    QString link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD";
+    QString link = "";
+    QSize size = m_ui->groupBox->size();
+    int width = size.width();
+    if (width < 1300) {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD";
+    }
+    else
+    {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD";
+    }
     url = QUrl::fromUserInput(link);
 
     QNetworkRequest request(url);
@@ -699,6 +708,12 @@ namespace WalletGui
     OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
     m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
     updatePortfolio();
+  }
+
+  void OverviewFrame::resizeEvent(QResizeEvent *event)
+  {
+    //if (width() > image.width() || height() > image.height())
+    loadChart();
   }
 
   /* What happens when the locked investment balance changes */
