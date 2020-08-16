@@ -887,10 +887,11 @@ namespace WalletGui
     Q_EMIT resetWalletSignal();
   }
 
-  void OverviewFrame::setStatusBarText(const QString &_text, const QString &_height)
+  void OverviewFrame::setStatusBarText(const QString& _text, const QString& _height)
   {
     m_ui->m_statusBox->setText(_text);
     m_ui->statusHeight->setText(_height);
+    showCurrentWalletName();
   }
 
   void OverviewFrame::copyClicked()

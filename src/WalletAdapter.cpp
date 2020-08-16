@@ -4,21 +4,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "WalletAdapter.h"
+
+#include <CryptoNoteCore/Account.h>
+#include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
+#include <Mnemonics/electrum-words.h>
+#include <Wallet/LegacyKeysImporter.h>
+#include <Wallet/WalletErrors.h>
+
 #include <QCoreApplication>
 #include <QDateTime>
-#include <QLocale>
 #include <QVector>
-#include <QMessageBox>
-#include <Common/Base58.h>
-#include <Common/Util.h>
-#include <Wallet/WalletErrors.h>
-#include <Wallet/LegacyKeysImporter.h>
-#include "Common/StringTools.h"
-#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+
 #include "NodeAdapter.h"
 #include "Settings.h"
-#include "WalletAdapter.h"
-#include <ITransfersContainer.h>
 
 namespace WalletGui {
 
@@ -151,7 +150,6 @@ void WalletAdapter::createWallet() {
   Q_EMIT walletStateChangedSignal(tr(""), "");
 
   m_wallet = NodeAdapter::instance().createWallet();
-  m_wallet->addObserver(this);
 
   try {
     m_wallet->initAndGenerate("");
@@ -159,6 +157,12 @@ void WalletAdapter::createWallet() {
     delete m_wallet;
     m_wallet = nullptr;
   }
+}
+
+void WalletAdapter::addObserver()
+{
+  Q_CHECK_PTR(m_wallet);
+  m_wallet->addObserver(this);
 }
 
 void WalletAdapter::createWithKeys(const CryptoNote::AccountKeys& _keys) {
@@ -348,6 +352,29 @@ bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys)
   catch (std::system_error&) 
   {
     return false;    
+  }
+}
+
+bool WalletAdapter::getMnemonicSeed(std::string& _seed)
+{
+  CryptoNote::AccountKeys keys;
+  WalletAdapter::instance().getAccountKeys(keys);
+
+  /* check if the wallet is deterministic
+     generate a view key from the spend key and them compare it to the existing view key */
+  Crypto::PublicKey unused_dummy_variable;
+  Crypto::SecretKey deterministic_private_view_key;
+  CryptoNote::AccountBase::generateViewFromSpend(
+      keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
+  bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
+
+  if (deterministic_private_keys) {
+    crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, _seed, "English");
+    return true;
+  }
+  else {
+    _seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
+    return false;
   }
 }
 

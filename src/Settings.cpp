@@ -6,18 +6,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "Settings.h"
+
+#include <Common/Util.h>
+
 #include <QCoreApplication>
 #include <QFile>
 #include <QJsonArray>
-#include <QLocale>
 #include <QJsonDocument>
+#include <QLocale>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QTextCodec>
-#include <Common/Util.h>
+
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
-#include "Settings.h"
 
 namespace WalletGui
 {
@@ -123,7 +125,7 @@ QString Settings::getLanguage() const
 
 int Settings::getFontSize() const
 {
-  int currentSize;
+  int currentSize = 1;
   if (m_settings.contains(OPTION_FONTSIZE))
   {
     currentSize = m_settings.value(OPTION_FONTSIZE).toInt();
