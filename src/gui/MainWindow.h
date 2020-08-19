@@ -105,7 +105,8 @@ public:
 
 private:
   void installDockHandler();
-#elif !defined(QT_NO_SYSTEMTRAYICON)
+#endif
+#ifndef QT_NO_SYSTEMTRAYICON
 protected:
   void changeEvent(QEvent* _event) Q_DECL_OVERRIDE;
 
