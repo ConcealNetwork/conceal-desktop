@@ -232,6 +232,14 @@ void WelcomeFrame::backShowSeed()
 
 void WelcomeFrame::nextValidate()
 {
+  if (!m_ui->validationCheckBox->isChecked())
+  {
+    QMessageBox::warning(
+        nullptr, QObject::tr("Error"),
+        tr("You must confirm that you have safely stored the mnemonic seed and understand that the "
+           "Conceal Team cannot restore this wallet and is not responsible for loss of funds."));
+    return;
+  }
   QString walletSeed = m_ui->mnemonicSeed->text();
   QString confirmedWalletSeed = m_ui->mnemonicSeedConfirmation->toPlainText();
   if (walletSeed == confirmedWalletSeed) {

@@ -775,7 +775,7 @@ margin-left: 3em;</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>1000</width>
           <height>500</height>
          </size>
         </property>
@@ -799,7 +799,7 @@ margin-left: 3em;</string>
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>1000</width>
              <height>500</height>
             </size>
            </property>
@@ -1012,7 +1012,7 @@ color: white;
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>1000</width>
              <height>500</height>
             </size>
            </property>
@@ -1183,7 +1183,7 @@ border-radius: 5px;</string>
            </property>
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>1000</width>
              <height>500</height>
             </size>
            </property>
@@ -1235,6 +1235,64 @@ border-radius: 5px;</string>
              </widget>
             </item>
             <item>
+             <widget class="QGroupBox" name="horizontalGroupBox">
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item alignment="Qt::AlignLeft">
+                <widget class="QCheckBox" name="validationCheckBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                 <property name="baseSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border: 1px solid #aaa;
+color: white;
+border-radius: 2px;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="tristate">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>I have safely stored the mnemonic seed and I understand that the Conceal Team cannot restore this wallet and is not responsible for loss of funds.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                 <property name="indent">
+                  <number>8</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
              <widget class="QGroupBox" name="horizontalGroupBox_3">
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
@@ -1278,8 +1336,8 @@ border-radius: 5px;</string>
          </item>
         </layout>
         <zorder>confirmSeedBox</zorder>
-        <zorder>walletPathBox</zorder>
         <zorder>showSeedBox</zorder>
+        <zorder>walletPathBox</zorder>
        </widget>
       </item>
       <item row="2" column="1">
