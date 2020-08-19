@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2020 Conceal Network & Conceal Devs
 //
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,6 +14,9 @@
 #include <QTimer>
 #include <QThread>
 #include <QTranslator>
+#include <QAction>
+#include <QMenu>
+
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
@@ -148,16 +149,29 @@ void MainWindow::connectToSignals()
 
 void MainWindow::initUi()
 {
-  showMaximized();
-  setRemoteWindowTitle();
-
-#ifdef Q_OS_WIN32
+#ifndef QT_NO_SYSTEMTRAYICON32
   if (QSystemTrayIcon::isSystemTrayAvailable())
   {
-    m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
+    QAction* showAction = new QAction(tr("Show"), this);
+    connect(showAction, &QAction::triggered, this, &MainWindow::restoreFromTray);
+
+    QAction* quitAction = new QAction(tr("Quit Conceal Desktop"), this);
+    connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
+
+    QMenu* trayIconMenu = new QMenu(this);
+    trayIconMenu->addAction(showAction);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(quitAction);
+
+    m_trayIcon = new QSystemTrayIcon(this);
+    m_trayIcon->setIcon(QPixmap(":/images/cryptonote"));
+    m_trayIcon->setContextMenu(trayIconMenu);
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
   }
 #endif
+  showMaximized();
+  setRemoteWindowTitle();
+
   m_ui->m_aboutCryptonoteAction->setText(QString(tr("About %1 Wallet")).arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
 
   m_ui->m_overviewFrame->hide();
@@ -173,7 +187,7 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-#ifndef Q_OS_WIN
+#ifdef QT_NO_SYSTEMTRAYICON
   m_ui->m_minimizeToTrayAction->deleteLater();
   m_ui->m_closeToTrayAction->deleteLater();
 #endif
@@ -181,7 +195,13 @@ void MainWindow::initUi()
   OptimizationManager *optimizationManager = new OptimizationManager(this);
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
+void MainWindow::restoreFromTray()
+{
+  activateWindow();
+  showMaximized();
+}
+
 void MainWindow::minimizeToTray(bool _on)
 {
   if (_on)
@@ -191,8 +211,6 @@ void MainWindow::minimizeToTray(bool _on)
   }
   else
   {
-    showNormal();
-    activateWindow();
     m_trayIcon->hide();
   }
 }
@@ -229,7 +247,7 @@ void MainWindow::restoreFromDock()
 
 void MainWindow::closeEvent(QCloseEvent *_event)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   if (m_isAboutToQuit)
   {
     QMainWindow::closeEvent(_event);
@@ -255,8 +273,8 @@ void MainWindow::closeEvent(QCloseEvent *_event)
   QMainWindow::closeEvent(_event);
 }
 
-#ifdef Q_OS_WIN
-void MainWindow::changeEvent(QEvent *_event)
+#ifndef QT_NO_SYSTEMTRAYICON
+void MainWindow::changeEvent(QEvent* _event)
 {
   QMainWindow::changeEvent(_event);
   if (!QSystemTrayIcon::isSystemTrayAvailable())
@@ -266,24 +284,24 @@ void MainWindow::changeEvent(QEvent *_event)
   }
   switch (_event->type())
   {
-  case QEvent::LocaleChange:
-  {
-    QString locale = QLocale::system().name();
-    locale.truncate(locale.lastIndexOf('_'));
-    loadLanguage(locale);
-  }
-  case QEvent::WindowStateChange:
-  {
-    if (Settings::instance().isMinimizeToTrayEnabled())
+    case QEvent::LocaleChange:
     {
-      minimizeToTray(isMinimized());
+      QString locale = QLocale::system().name();
+      locale.truncate(locale.lastIndexOf('_'));
+      loadLanguage(locale);
+      break;
     }
-    break;
+    case QEvent::WindowStateChange:
+    {
+      if (Settings::instance().isMinimizeToTrayEnabled())
+      {
+        minimizeToTray(isMinimized());
+      }
+      break;
+    }
+    default:
+      break;
   }
-  default:
-    break;
-  }
-  QMainWindow::changeEvent(_event);
 }
 #endif
 
@@ -601,14 +619,14 @@ void MainWindow::setStartOnLogin(bool _on)
 
 void MainWindow::setMinimizeToTray(bool _on)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   Settings::instance().setMinimizeToTrayEnabled(_on);
 #endif
 }
 
 void MainWindow::setCloseToTray(bool _on)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   Settings::instance().setCloseToTrayEnabled(_on);
 #endif
 }
@@ -1044,11 +1062,10 @@ void MainWindow::showQRCode(const QString &_address)
   }
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 {
-  showNormal();
-  m_trayIcon->hide();
+  restoreFromTray();
 }
 #endif
 

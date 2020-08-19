@@ -473,7 +473,7 @@ bool Settings::isStartOnLoginEnabled() const
   return res;
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 bool Settings::isMinimizeToTrayEnabled() const
 {
   return m_settings.contains("minimizeToTray") ? m_settings.value("minimizeToTray").toBool() : false;
@@ -600,7 +600,7 @@ void Settings::setMiningPoolList(const QStringList &_miningPoolList)
   saveSettings();
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 void Settings::setMinimizeToTrayEnabled(bool _enable)
 {
   if (isMinimizeToTrayEnabled() != _enable)
