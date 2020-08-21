@@ -195,16 +195,10 @@ void WelcomeFrame::nextShowSeed()
 void WelcomeFrame::selectPathClicked()
 {
   QString filePath = QFileDialog::getSaveFileName(
-      this, tr("New wallet file"),
+      this, tr("New wallet file"), QDir::homePath(), tr("Wallets (*.wallet)"));
 
-#ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
-#else
-      QDir::homePath(),
-#endif
-      tr("Wallets (*.wallet)"));
-
-  if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
+  if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
+  {
     filePath.append(".wallet");
   }
   m_ui->lineEdit->setText(filePath);
