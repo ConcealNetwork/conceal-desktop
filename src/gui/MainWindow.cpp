@@ -166,7 +166,9 @@ void MainWindow::initUi()
     m_trayIcon = new QSystemTrayIcon(this);
     m_trayIcon->setIcon(QPixmap(":/images/cryptonote"));
     m_trayIcon->setContextMenu(trayIconMenu);
+#ifndef Q_OS_MAC
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
+#endif
   }
 #endif
   showMaximized();
@@ -1065,7 +1067,10 @@ void MainWindow::showQRCode(const QString &_address)
 #ifndef QT_NO_SYSTEMTRAYICON
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 {
-  restoreFromTray();
+  if (_reason == QSystemTrayIcon::Trigger)
+  {
+    restoreFromTray();
+  }
 }
 #endif
 
