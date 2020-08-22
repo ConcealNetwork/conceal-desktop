@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Name=Conceal Desktop
 Comment=Conceal Desktop
-Exec=ConcealGUI
+Exec=CONCEAL-GUI
 Terminal=false
 Type=Application
-Icon=conceal
+Icon=conceal.svg
 MimeType=x-scheme-handler/concealwallet;
-Categories=Office;Finance;Cryptocurrency
+Categories=Office;Finance;Cryptocurrency;

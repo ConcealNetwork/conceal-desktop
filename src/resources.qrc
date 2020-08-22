@@ -38,18 +38,15 @@
         <file>icons/icon-sendmsg.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file alias="conceal-logo">images/conceal.svg</file>
         <file alias="splash">images/splash.png</file>
-        <file alias="cryptonote">images/cryptonote.png</file>
         <file alias="clock">images/clock.gif</file>
-        <file>images/conceal.png</file>
         <file>images/qr.png</file>
-        <file>images/conceal-small.png</file>
         <file>images/lock.png</file>
         <file>images/en.png</file>
         <file>images/ru.png</file>
         <file>images/cn.png</file>
         <file>images/tr.png</file>
-        <file>images/cryptonote2.png</file>
     </qresource>
     <qresource prefix="/">
         <file>icons/discord.png</file>

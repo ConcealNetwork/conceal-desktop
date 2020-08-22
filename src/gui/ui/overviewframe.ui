@@ -497,28 +497,30 @@ QPushButton:hover
           <widget class="QLabel" name="label_42">
            <property name="minimumSize">
             <size>
-             <width>180</width>
-             <height>160</height>
+             <width>0</width>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>190</width>
-             <height>160</height>
+             <width>200</width>
+             <height>200</height>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-padding-left: 35px;</string>
+            <string notr="true">padding: 20px;</string>
            </property>
            <property name="text">
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/images/images/conceal.png</pixmap>
+            <pixmap resource="../../resources.qrc">:/images/conceal-logo</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -1660,7 +1662,7 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>505</width>
+                 <width>574</width>
                  <height>563</height>
                 </rect>
                </property>
@@ -2278,7 +2280,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">

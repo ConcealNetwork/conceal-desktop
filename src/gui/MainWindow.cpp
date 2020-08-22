@@ -154,7 +154,7 @@ void MainWindow::initUi()
 #ifdef Q_OS_WIN32
   if (QSystemTrayIcon::isSystemTrayAvailable())
   {
-    m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
+    m_trayIcon = new QSystemTrayIcon(QPixmap(":/images/conceal-logo"), this);
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
   }
 #endif
