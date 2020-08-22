@@ -3608,7 +3608,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/github.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/github</pixmap>
               </property>
              </widget>
             </item>
@@ -3687,7 +3687,7 @@ margin-left: 10px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/discord.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/discord</pixmap>
               </property>
              </widget>
             </item>
@@ -3727,7 +3727,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/medium.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
               </property>
              </widget>
             </item>
@@ -3806,7 +3806,7 @@ margin-left: 10px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/telegram.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/telegram</pixmap>
               </property>
              </widget>
             </item>
@@ -3961,7 +3961,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/qtrade.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/qtrade</pixmap>
               </property>
              </widget>
             </item>
@@ -4001,7 +4001,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/reddit</pixmap>
               </property>
              </widget>
             </item>
@@ -4079,7 +4079,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/hotbit.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/hotbit</pixmap>
               </property>
              </widget>
             </item>
@@ -4195,7 +4195,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/stex.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/stex</pixmap>
               </property>
              </widget>
             </item>
@@ -4273,7 +4273,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/twitter.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/twitter</pixmap>
               </property>
              </widget>
             </item>
@@ -4313,7 +4313,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/tradeogre.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
               </property>
              </widget>
             </item>
@@ -4343,7 +4343,7 @@ font-size: 18px;
              <string notr="true"/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
+             <pixmap>:/icons/reddit.png</pixmap>
             </property>
            </widget>
           </widget>
@@ -5395,7 +5395,7 @@ font-size: 16px;</string>
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/images/images/lock.png</pixmap>
+            <pixmap resource="../../resources.qrc">:/images/lock</pixmap>
            </property>
           </widget>
          </item>
@@ -5573,7 +5573,7 @@ font-size: 16px;</string>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
-             <normaloff>:/images/images/qr.png</normaloff>:/images/images/qr.png</iconset>
+             <normaloff>:/images/qr</normaloff>:/images/qr</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -5621,26 +5621,6 @@ font-size: 16px;</string>
            </property>
            <property name="text">
             <string>CONCEAL.NETWORK</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="5">
-          <widget class="QPushButton" name="m_qrcodebutton">
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -6577,7 +6557,7 @@ font-size: 18px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/en.png</normaloff>:/images/images/en.png</iconset>
+                <normaloff>:/images/flags/en</normaloff>:/images/flags/en</iconset>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -6660,7 +6640,7 @@ font-size: 18px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/cn.png</normaloff>:/images/images/cn.png</iconset>
+                <normaloff>:/images/flags/cn</normaloff>:/images/flags/cn</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -6780,7 +6760,7 @@ QPushButton#m_saveLanguageButton:hover
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/tr.png</normaloff>:/images/images/tr.png</iconset>
+                <normaloff>:/images/flags/tr</normaloff>:/images/flags/tr</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -6857,7 +6837,7 @@ border: 0px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/ru.png</normaloff>:/images/images/ru.png</iconset>
+                <normaloff>:/images/flags/ru</normaloff>:/images/flags/ru</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -7936,10 +7916,10 @@ color: orange;</string>
      <zorder>statusBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>overviewBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8021,22 +8001,6 @@ color: orange;</string>
     <hint type="sourcelabel">
      <x>100</x>
      <y>360</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_qrcodebutton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>qrCodeClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1220</x>
-     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -9176,7 +9140,7 @@ color: orange;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

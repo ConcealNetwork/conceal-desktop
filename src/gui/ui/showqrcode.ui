@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Walllet Address :: QR Code</string>
+   <string>Wallet Address QR Code</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #212529; color: #ddd; border: 0px;</string>
