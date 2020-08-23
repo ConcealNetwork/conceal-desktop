@@ -33,13 +33,18 @@ namespace WalletGui {
     Q_SLOT void importKey();
     Q_SLOT void nextOne();    
     Q_SLOT void nextTwo();    
-    Q_SLOT void nextThree();        
+    Q_SLOT void nextThree();      
+    Q_SLOT void nextShowSeed();  
+    Q_SLOT void selectPathClicked();
+    Q_SLOT void copySeedClicked();
+    Q_SLOT void nextConfirmSeed();  
+    Q_SLOT void backShowSeed();
+    Q_SLOT void nextValidate();
 
   private:
     QScopedPointer<Ui::WelcomeFrame> m_ui;
 
   Q_SIGNALS:
-    void createWalletClickedSignal();
     void openWalletClickedSignal(); 
     void importSeedClickedSignal();   
     void importsecretkeysClickedSignal();  
