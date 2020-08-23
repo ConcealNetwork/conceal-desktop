@@ -104,6 +104,11 @@ void Settings::load()
   if (!m_settings.contains("tracking")) {
        m_settings.insert("tracking", false);
   }
+
+  if (!m_settings.contains("fontSize"))
+  {
+    m_settings.insert("fontSize", 1);
+  }
 }
 
 QString Settings::getVersion() const
