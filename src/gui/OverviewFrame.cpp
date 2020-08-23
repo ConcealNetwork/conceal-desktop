@@ -267,7 +267,7 @@ namespace WalletGui
     m_ui->m_language->setCurrentIndex(index);
 
     /* Set the styles */
-    setStyles(1);
+    setStyles(2);
     int startingFontSize = Settings::instance().getFontSize();
     setStyles(startingFontSize);
 
@@ -432,7 +432,7 @@ namespace WalletGui
   {
     int fontSize = Settings::instance().getFontSize();
     fontSize++;
-    if (fontSize < 5)
+    if (fontSize < 6)
     {
       setStyles(fontSize);
     }
@@ -561,17 +561,38 @@ namespace WalletGui
     QString link = "";
     QSize size = m_ui->groupBox->size();
     int width = size.width();
-    if (width < 1300) {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD";
+    int height = size.height();
+
+    /** 1280 x 720 or smaller is the default */
+    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+
+    /** 1365 x 768 */
+    if ((width == 1363) && (height == 750) ){
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
     }
-    else
+
+    /** 1440 x 900 */
+    if ((width == 1438) && (height == 868))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD";
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
+    }
+
+    /** 1680 x 1050 */
+    if ((width == 1678) && (height == 1008))
+    {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
+    }
+
+    /** This should cover 1920 and above */
+    if (width > 1599)
+    {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
     }
     url = QUrl::fromUserInput(link);
 
     QNetworkRequest request(url);
     nam->get(request);
+
   }
 
   /* Show the name of the opened wallet */
