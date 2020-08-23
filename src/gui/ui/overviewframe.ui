@@ -3205,16 +3205,6 @@ border: none;
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="pushButton">
-                 <property name="styleSheet">
-                  <string notr="true">color: orange;</string>
-                 </property>
-                 <property name="text">
-                  <string>Refresh</string>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
@@ -4726,7 +4716,7 @@ margin: 0px;</string>
                   <string notr="true">color: #fff; 
 font-weight: normal; 
 border-radius: 7px;
-background-color: #000;
+background-color: #212429;
 padding: 5px;</string>
                  </property>
                  <property name="title">
@@ -5352,7 +5342,7 @@ font-size: 16px;</string>
           <number>18</number>
          </property>
          <property name="topMargin">
-          <number>18</number>
+          <number>9</number>
          </property>
          <property name="rightMargin">
           <number>18</number>
@@ -5405,7 +5395,7 @@ font-size: 16px;</string>
            <property name="maximumSize">
             <size>
              <width>25</width>
-             <height>40</height>
+             <height>31</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -7547,10 +7537,10 @@ color: orange;</string>
      <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
