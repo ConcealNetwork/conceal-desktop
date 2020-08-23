@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1270</width>
-    <height>750</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1270</width>
-    <height>750</height>
+    <height>650</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -64,7 +64,7 @@
      <property name="minimumSize">
       <size>
        <width>1270</width>
-       <height>750</height>
+       <height>650</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -165,27 +165,10 @@ text-align: left;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>COPY ADDRESS</string>
@@ -215,27 +198,10 @@ QPushButton:hover
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>COPY PAYMENTID</string>
@@ -265,27 +231,10 @@ QPushButton:hover
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>PAY TO</string>
@@ -315,27 +264,10 @@ QPushButton:hover
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>EDIT CONTACT</string>
@@ -365,27 +297,10 @@ QPushButton:hover
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>DELETE CONTACT</string>
@@ -1486,22 +1401,24 @@ border-radius: 2px;</string>
           </widget>
          </item>
          <item row="10" column="0" colspan="8">
-          <widget class="QTextBrowser" name="textBrowser_3">
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
+          <widget class="QLabel" name="sendFundsWarningLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 3px; font-size: 16px; color: #aaa; border: none;</string>
+            <string notr="true">border: none;</string>
            </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="text">
+            <string>Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -1531,9 +1448,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendFundsButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
-
-QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -1560,9 +1475,7 @@ QPushButton#m_sendFundsButton:hover {color:#FFD700; ; border: 1px solid orange; 
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -1592,7 +1505,7 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -1600,7 +1513,7 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
           </widget>
          </item>
         </layout>
-        <zorder>textBrowser_3</zorder>
+        <zorder>sendFundsWarningLabel</zorder>
         <zorder>m_amountEdit</zorder>
         <zorder>pidLabel</zorder>
         <zorder>amountLabel_2</zorder>
@@ -1656,12 +1569,15 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
                <bool>true</bool>
               </property>
               <widget class="QLabel" name="m_aboutLabel_3">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>505</width>
-                 <height>563</height>
+                 <width>560</width>
+                 <height>534</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -1717,7 +1633,7 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
             <item>
              <widget class="QLabel" name="m_aboutLabel">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1725,13 +1641,13 @@ QPushButton#m_cancelButton:hover {color: #fff; border: 1px solid #444;  border-r
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>280</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>280</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -1790,22 +1706,7 @@ border-radius: 5px;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_aboutQT
-{
-    color: orange; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px; 
-}
-
-QPushButton#m_aboutQT:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ABOUT QT</string>
@@ -1821,7 +1722,7 @@ QPushButton#m_aboutQT:hover
             <item>
              <widget class="QLabel" name="empty_align">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -1879,23 +1780,7 @@ QPushButton#m_aboutQT:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_exportCSVButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_exportCSVButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>EXPORT CSV</string>
@@ -1942,34 +1827,15 @@ text-align: left;
           </widget>
          </item>
          <item row="1" column="0" colspan="2">
-          <widget class="QTextBrowser" name="m_transactionsDescription">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>50</height>
-            </size>
-           </property>
+          <widget class="QLabel" name="m_transactionsDescription">
            <property name="styleSheet">
-            <string notr="true">border: none; color: #ddd; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;</string>
+            <string notr="true">border: none;</string>
            </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="text">
+            <string>This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -2278,7 +2144,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -2470,9 +2336,7 @@ QSlider::sub-page:horizontal#m_ttlSlider {
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_sendMessageButton {color: orange; ; border: 1px solid orange;  border-radius: 5px; }
-
-QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange;  border-radius: 5px;}</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>SEND</string>
@@ -2499,9 +2363,7 @@ QPushButton#m_sendMessageButton:hover {color:#FFD700; ; border: 1px solid orange
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_cancelMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CANCEL</string>
@@ -2531,9 +2393,7 @@ QPushButton#m_cancelMessageButton:hover {color: #fff; border: 1px solid #444;  b
             <cursorShape>ArrowCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_clearMessageButton {color: #ccc; border: 1px solid #444;  border-radius: 5px;}
-
-QPushButton#m_clearMessageButton:hover {color: #fff; border: 1px solid #444;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>CLEAR</string>
@@ -4502,19 +4362,7 @@ border: none;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">QPushButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    border-radius: 5px;
-}
-
-QPushButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    border-radius: 5px;
-}</string>
+                  <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
                  </property>
                  <property name="text">
                   <string>WITHDRAW</string>
@@ -5269,7 +5117,7 @@ text-align: left;
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
                  </property>
                  <property name="text">
                   <string>MAKE DEPOSIT</string>
@@ -5323,7 +5171,7 @@ text-align: left;
         </layout>
        </widget>
       </item>
-      <item row="0" column="0" rowspan="5" colspan="4">
+      <item row="0" column="0" rowspan="6" colspan="4">
        <widget class="QGroupBox" name="lockBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -5334,7 +5182,7 @@ text-align: left;
         <property name="minimumSize">
          <size>
           <width>1270</width>
-          <height>700</height>
+          <height>650</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -5433,10 +5281,7 @@ font-size: 16px;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QPushButton#m_unlockWalletButton {color: #fff; border: 1px solid orange;  border-radius: 5px; 
-margin-bottom: 10%;}
-
-QPushButton#m_unlockWalletButton:hover {color: orange; border: 1px solid orange;  border-radius: 5px; }</string>
+            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
             <string>UNLOCK WALLET</string>
@@ -5526,7 +5371,7 @@ font-size: 16px;</string>
         text-align: left;</string>
            </property>
            <property name="text">
-            <string>ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
+            <string notr="true">ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -5744,7 +5589,7 @@ border: none;
          <property name="rightMargin">
           <number>0</number>
          </property>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_7">
            <property name="styleSheet">
             <string notr="true">border-bottom: 1px solid #444;
@@ -5878,23 +5723,7 @@ color: #aaa;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_saveConnectionButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_saveConnectionButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>SAVE</string>
@@ -6014,7 +5843,7 @@ font-size: 18px;
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_8">
            <property name="styleSheet">
             <string notr="true">border-bottom: 1px solid #444;
@@ -6121,7 +5950,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>100</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6133,26 +5962,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6211,22 +6024,7 @@ QPushButton#hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_rescanButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#m_rescanButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>START RESCAN</string>
@@ -6288,26 +6086,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>OPTIMIZE NOW</string>
@@ -6349,7 +6131,7 @@ QPushButton:hover
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_9">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -6385,7 +6167,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>150</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6397,26 +6179,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6434,7 +6200,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>150</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -6446,26 +6212,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#b2_closeToTrayButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton#b2_closeToTrayButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
@@ -6710,23 +6460,7 @@ border: 0px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_saveLanguageButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_saveLanguageButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>SAVE</string>
@@ -6892,7 +6626,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>25</height>
+                <height>20</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -6950,7 +6684,7 @@ color: #aaa;</string>
            </layout>
           </widget>
          </item>
-         <item>
+         <item alignment="Qt::AlignTop">
           <widget class="QGroupBox" name="groupBox_13">
            <property name="minimumSize">
             <size>
@@ -7063,7 +6797,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7075,26 +6809,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>NEW WALLET</string>
@@ -7106,7 +6824,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7118,26 +6836,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>OPEN WALLET</string>
@@ -7149,7 +6851,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7161,26 +6863,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENCRYPT WALLET</string>
@@ -7230,7 +6916,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7242,26 +6928,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT PRIVATE KEYS</string>
@@ -7273,7 +6943,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7285,26 +6955,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT SEED</string>
@@ -7316,7 +6970,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7328,26 +6982,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>IMPORT TRACKING WALLET</string>
@@ -7397,7 +7035,7 @@ border: 0px;
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7409,26 +7047,10 @@ border: 0px;
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>BACKUP KEYS</string>
@@ -7440,7 +7062,7 @@ QPushButton:hover
               <property name="minimumSize">
                <size>
                 <width>170</width>
-                <height>22</height>
+                <height>20</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7452,26 +7074,10 @@ QPushButton:hover
               <property name="font">
                <font>
                 <family>Poppins</family>
-                <pointsize>-1</pointsize>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px; 
-}
-
-QPushButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    font-size: 11px;
-    border-radius: 5px;
-    
-}</string>
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>BACKUP WALLET FILE</string>
@@ -7501,6 +7107,11 @@ QPushButton:hover
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>1</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;</string>
@@ -7677,7 +7288,7 @@ color: #ccc;
         </layout>
        </widget>
       </item>
-      <item row="0" column="0" rowspan="5" colspan="4">
+      <item row="0" column="0" rowspan="6" colspan="4">
        <widget class="QGroupBox" name="darkness">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -7688,7 +7299,7 @@ color: #ccc;
         <property name="minimumSize">
          <size>
           <width>1270</width>
-          <height>700</height>
+          <height>650</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -7914,15 +7525,17 @@ color: orange;</string>
        </widget>
       </item>
      </layout>
-     <zorder>lockBox</zorder>
      <zorder>darkness</zorder>
+     <zorder>statusBox</zorder>
+     <zorder>newMessageBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
-     <zorder>aboutBox</zorder>
+     <zorder>bankingBox</zorder>
      <zorder>messageBox</zorder>
+     <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
-     <zorder>statusBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>newMessageBox</zorder>
@@ -9085,6 +8698,22 @@ color: orange;</string>
     <hint type="destinationlabel">
      <x>634</x>
      <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_addressEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>addressEditTextChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>
