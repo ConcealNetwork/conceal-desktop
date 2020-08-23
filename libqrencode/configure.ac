@@ -1,6 +1,6 @@
-m4_define([__MAJOR_VERSION], [3])dnl
-m4_define([__MINOR_VERSION], [4])dnl
-m4_define([__MICRO_VERSION], [4])dnl
+m4_define([__MAJOR_VERSION], [4])dnl
+m4_define([__MINOR_VERSION], [1])dnl
+m4_define([__MICRO_VERSION], [0])dnl
 m4_define([__VERSION], [__MAJOR_VERSION.__MINOR_VERSION.__MICRO_VERSION])dnl
 AC_INIT(QRencode, __VERSION)
 
@@ -28,14 +28,20 @@ AC_C_CONST
 AC_C_INLINE
 AC_HEADER_STDC
 
+LT_INIT
 AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_INSTALL
 AC_PROG_LIBTOOL
-AC_PROG_RANLIB
 PKG_PROG_PKG_CONFIG
 
-AC_CONFIG_FILES([Makefile libqrencode.pc tests/Makefile qrencode.spec qrencode.1])
+case "${target}" in
+*-*-mingw*)
+	mingw=yes
+esac
+AM_CONDITIONAL(MINGW, [test "x$mingw" = "xyes" ])
+
+AC_CONFIG_FILES([Makefile libqrencode.pc tests/Makefile qrencode.1])
 
 AC_CHECK_FUNCS([strdup])
 
@@ -50,17 +56,30 @@ AM_CONDITIONAL([HAVE_LIBPTHREAD], [test "x$ac_cv_lib_pthread_pthread_mutex_init"
 # FIXME: isn't it able to integrate the followings to AC_CHECK_LIB?
 if test x$ac_cv_lib_pthread_pthread_mutex_init = xyes ; then
 	AC_DEFINE([HAVE_LIBPTHREAD], [1], [Define to 1 if using pthread is enabled.])
+	CFLAGS="$CFLAGS -pthread"
 fi
 
+AC_ARG_WITH(png,
+    [AC_HELP_STRING([--without-png],
+                    [disable PNG support])],
+    [with_png=$withval], [with_png=yes])
 
 dnl --with-tools
 AC_ARG_WITH([tools], [AS_HELP_STRING([--with-tools], [build utility tools [default=yes]])],
  [build_tools=$withval], [build_tools=yes])
 
 AM_CONDITIONAL(BUILD_TOOLS, [test "x$build_tools" = "xyes" ])
-if test x$build_tools = xyes ; then
-	PKG_CHECK_MODULES(png, "libpng")
+if test x$build_tools = xyes && test x$with_png = xyes ; then
+	PKG_CHECK_MODULES(png, "libpng", [AC_DEFINE([HAVE_PNG], [1], [Define to 1 if using libpng is enabled.])], [AC_DEFINE([HAVE_PNG], [0])])
+	if test "x$png_CFLAGS" = "x" && test x$with_png = xyes ; then
+		echo "
+!!!!!!!!!!
+LIBPNG is required to build the utility tools. Temporarily disabled.
+!!!!!!!!!!
+"
+	fi
 fi
+AM_CONDITIONAL(HAVE_PNG, [test "x$png_CFLAGS" != "x" ])
 
 dnl --with-tests
 AC_ARG_WITH([tests], [AS_HELP_STRING([--with-tests], [build tests [default=no]])],
@@ -69,21 +88,20 @@ AC_ARG_WITH([tests], [AS_HELP_STRING([--with-tests], [build tests [default=no]])
 AM_CONDITIONAL(BUILD_TESTS, [test "x$build_tests" = "xyes" ])
 AH_VERBATIM([tests],
 [/* Define to 'static' if no test programs will be compiled. */
-#define __STATIC static
+#define STATIC_IN_RELEASE static
 #undef WITH_TESTS
    ])
 if test x$build_tests = xyes ; then
-echo "#define __STATIC" >>confdefs.h
+echo "#define STATIC_IN_RELEASE" >>confdefs.h
 echo "#define WITH_TESTS 1" >>confdefs.h
 else
-echo "#define __STATIC static" >>confdefs.h
+echo "#define STATIC_IN_RELEASE static" >>confdefs.h
 echo "/* #undef WITH_TESTS */" >>confdefs.h
 fi
 
 if test x$build_tests = xyes ; then
-	SDL_REQUIRED_VERSION=1.2.0
-	AM_PATH_SDL($SDL_REQUIRED_VERSION,,AC_MSG_WARN([*** SDL $SDL_REQUIRED_VERSION or better is required.]))
-	AC_MSG_NOTICE([SDL check done.])
+	SDL_REQUIRED_VERSION=2.0.0
+	PKG_CHECK_MODULES(SDL, [sdl2 >= $SDL_REQUIRED_VERSION], [AC_DEFINE([HAVE_SDL], [1], [Define to 1 if using SDL is enabled.])], [AC_DEFINE([HAVE_SDL], [0])])
 	AM_ICONV_LINK
 fi
 AM_CONDITIONAL(HAVE_SDL, [test "x$SDL_CFLAGS" != "x" ])

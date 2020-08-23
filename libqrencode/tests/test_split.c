@@ -62,33 +62,35 @@ static int inputTest(QRinput_List *list, const char *fmt, ...)
 	return 0;
 }
 
-int inputSize(QRinput *input)
+static int inputSize(QRinput *input)
 {
 	BitStream *bstream;
 	int size;
 
-	bstream = QRinput_mergeBitStream(input);
+	bstream = BitStream_new();
+	QRinput_mergeBitStream(input, bstream);
 	size = BitStream_size(bstream);
 	BitStream_free(bstream);
 
 	return size;
 }
 
-void test_split1(void)
+static void test_split1(void)
 {
 	QRinput *input;
-	BitStream *stream;
+	BitStream *bstream;
 
 	testStart("Split test: null string");
 	input = QRinput_new2(0, QR_ECLEVEL_L);
 	Split_splitStringToQRinput("", input, QR_MODE_8, 0);
-	stream = QRinput_mergeBitStream(input);
-	testEndExp(BitStream_size(stream) == 0);
+	bstream = BitStream_new();
+	QRinput_mergeBitStream(input, bstream);
+	testEndExp(BitStream_size(bstream) == 0);
 	QRinput_free(input);
-	BitStream_free(stream);
+	BitStream_free(bstream);
 }
 
-void test_split2(void)
+static void test_split2(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -116,7 +118,7 @@ void test_split2(void)
 	QRinput_free(input);
 }
 
-void test_split3(void)
+static void test_split3(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -156,7 +158,7 @@ void test_split3(void)
 	QRinput_free(input);
 }
 
-void test_split4(void)
+static void test_split4(void)
 {
 	QRinput *input;
 	QRinput *i1, *i2;
@@ -217,7 +219,7 @@ void test_split4(void)
 	QRinput_free(i2);
 }
 
-void test_split5(void)
+static void test_split5(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -234,7 +236,7 @@ void test_split5(void)
 	QRinput_free(input);
 }
 
-void test_split6(void)
+static void test_split6(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -252,7 +254,7 @@ void test_split6(void)
 	QRinput_free(input);
 }
 
-void test_split7(void)
+static void test_split7(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -269,7 +271,7 @@ void test_split7(void)
 	QRinput_free(input);
 }
 
-void test_split8(void)
+static void test_split8(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -286,7 +288,7 @@ void test_split8(void)
 	QRinput_free(input);
 }
 
-void test_split3c(void)
+static void test_split3c(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -326,7 +328,7 @@ void test_split3c(void)
 	QRinput_free(input);
 }
 
-void test_toupper(void)
+static void test_toupper(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -376,7 +378,7 @@ void test_toupper(void)
 	QRinput_free(input);
 }
 
-void test_splitNum8(void)
+static void test_splitNum8(void)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -394,7 +396,7 @@ void test_splitNum8(void)
 	QRinput_free(input);
 }
 
-void test_splitAnNAn(void)
+static void test_splitAnNAn(void)
 {
 	QRinput *input1, *input2, *input3;
 	int s1, s2, s3;
@@ -427,7 +429,7 @@ void test_splitAnNAn(void)
 	QRinput_free(input3);
 }
 
-void test_splitAn8An(void)
+static void test_splitAn8An(void)
 {
 	QRinput *input1, *input2, *input3;
 	int s1, s2, s3;
@@ -460,7 +462,7 @@ void test_splitAn8An(void)
 	QRinput_free(input3);
 }
 
-void test_split8An8(void)
+static void test_split8An8(void)
 {
 	QRinput *input1, *input2, *input3;
 	int s1, s2, s3;
@@ -493,7 +495,7 @@ void test_split8An8(void)
 	QRinput_free(input3);
 }
 
-void test_split8N8(void)
+static void test_split8N8(void)
 {
 	QRinput *input1, *input2, *input3;
 	int s1, s2, s3;
@@ -526,7 +528,7 @@ void test_split8N8(void)
 	QRinput_free(input3);
 }
 
-int main(void)
+int main()
 {
 	test_split1();
 	test_split2();

@@ -7,7 +7,7 @@
 #include "../mqrspec.h"
 #include "../qrinput.h"
 #include "../mask.h"
-#include "../rscode.h"
+#include "../rsecc.h"
 #include "../split.h"
 #include "decoder.h"
 
@@ -30,26 +30,14 @@ typedef struct {
 
 #define drand(__scale__) ((__scale__) * (double)rand() / ((double)RAND_MAX + 1.0))
 
-int inputSize(QRinput *input)
-{
-	BitStream *bstream;
-	int size;
-
-	bstream = QRinput_mergeBitStream(input);
-	size = BitStream_size(bstream);
-	BitStream_free(bstream);
-
-	return size;
-}
-
-void test_qrraw_new(void)
+static void test_qrraw_new(void)
 {
 	int i;
 	QRinput *stream;
 	char num[9] = "01234567";
 	QRRawCode *raw;
 
-	testStart("Test QRRaw_new()");
+	testStart("Test QRraw_new()");
 	stream = QRinput_new();
 	QRinput_setVersion(stream, 10);
 	QRinput_setErrorCorrectionLevel(stream, QR_ECLEVEL_Q);
@@ -65,13 +53,13 @@ void test_qrraw_new(void)
 	assert_equal(raw->blocks, 8, "QRraw.blocks was not as expected.\n");
 
 	for(i=0; i<raw->b1; i++) {
-		assert_equal(raw->rsblock[i].dataLength, 19, "QRraw.rsblock[].dataLength was not as expected.\n");
+		assert_equal(raw->rsblock[i].dataLength, 19, "QRraw.rsblock[%d].dataLength was not as expected. (%d)\n", i, raw->rsblock[i].dataLength);
 	}
 	for(i=raw->b1; i<raw->blocks; i++) {
-		assert_equal(raw->rsblock[i].dataLength, 20, "QRraw.rsblock[].dataLength was not as expected.\n");
+		assert_equal(raw->rsblock[i].dataLength, 20, "QRraw.rsblock[%d].dataLength was not as expected. (%d)\n", i, raw->rsblock[i].dataLength);
 	}
 	for(i=0; i<raw->blocks; i++) {
-		assert_equal(raw->rsblock[i].eccLength, 24, "QRraw.rsblock[].eccLength was not as expected.\n");
+		assert_equal(raw->rsblock[i].eccLength, 24, "QRraw.rsblock[%d].eccLength was not as expected. (%d)\n", i, raw->rsblock[i].eccLength);
 	}
 
 	QRinput_free(stream);
@@ -79,7 +67,7 @@ void test_qrraw_new(void)
 	testFinish();
 }
 
-void test_iterate()
+static void test_iterate()
 {
 	int i;
 	QRinput *stream;
@@ -107,7 +95,7 @@ void test_iterate()
 	testEnd(err);
 }
 
-void test_iterate2()
+static void test_iterate2()
 {
 	int i;
 	QRinput *stream;
@@ -152,12 +140,13 @@ void test_iterate2()
 	testEnd(err);
 }
 
-void print_filler(void)
+static void print_filler(void)
 {
 	int width;
 	int version = 7;
 	unsigned char *frame;
 
+	puts("\nPrinting debug info of FrameFiller.");
 	width = QRspec_getWidth(version);
 	frame = FrameFiller_test(version);
 	if(frame == NULL) abort();
@@ -166,7 +155,7 @@ void print_filler(void)
 	free(frame);
 }
 
-void test_filler(void)
+static void test_filler(void)
 {
 	unsigned char *frame;
 	int i, j, w, e, length;
@@ -195,12 +184,13 @@ void test_filler(void)
 	testFinish();
 }
 
-void print_fillerMQR(void)
+static void print_fillerMQR(void)
 {
 	int width;
 	int version = 3;
 	unsigned char *frame;
 
+	puts("\nPrinting debug info of FrameFiller for Micro QR.");
 	for(version = 1; version <= MQRSPEC_VERSION_MAX; version++) {
 		width = MQRspec_getWidth(version);
 		frame = FrameFiller_testMQR(version);
@@ -210,7 +200,7 @@ void print_fillerMQR(void)
 	}
 }
 
-void test_fillerMQR(void)
+static void test_fillerMQR(void)
 {
 	unsigned char *frame;
 	int i, j, w, e, length;
@@ -242,7 +232,7 @@ void test_fillerMQR(void)
 	testFinish();
 }
 
-void test_format(void)
+static void test_format(void)
 {
 	unsigned char *frame;
 	unsigned int format;
@@ -335,7 +325,7 @@ unsigned int m1pat[8][21] = {
 	 0x1fc358, 0x10544b, 0x1749cf, 0x1758e7, 0x174ae5, 0x10472a, 0x1fd0ac}
 };
 
-void test_encode(void)
+static void test_encode(void)
 {
 	QRinput *stream;
 	char num[9] = "01234567";
@@ -371,7 +361,7 @@ ABORT:
 	testEnd(err);
 }
 
-void test_encode2(void)
+static void test_encode2(void)
 {
 	QRcode *qrcode;
 
@@ -381,7 +371,7 @@ void test_encode2(void)
 	QRcode_free(qrcode);
 }
 
-void test_encode3(void)
+static void test_encode3(void)
 {
 	QRcode *code1, *code2;
 	QRinput *input;
@@ -398,7 +388,7 @@ void test_encode3(void)
 	QRinput_free(input);
 }
 
-void test_encodeNull(void)
+static void test_encodeNull(void)
 {
 	QRcode *qrcode;
 
@@ -410,7 +400,7 @@ void test_encodeNull(void)
 }
 
 
-void test_encodeEmpty(void)
+static void test_encodeEmpty(void)
 {
 	QRcode *qrcode;
 
@@ -421,7 +411,7 @@ void test_encodeEmpty(void)
 	if(qrcode != NULL) QRcode_free(qrcode);
 }
 
-void test_encodeNull8(void)
+static void test_encodeNull8(void)
 {
 	QRcode *qrcode;
 
@@ -433,7 +423,7 @@ void test_encodeNull8(void)
 }
 
 
-void test_encodeEmpty8(void)
+static void test_encodeEmpty8(void)
 {
 	QRcode *qrcode;
 
@@ -444,29 +434,62 @@ void test_encodeEmpty8(void)
 	if(qrcode != NULL) QRcode_free(qrcode);
 }
 
-void test_encodeTooLong(void)
+static void test_encodeLongData(void)
 {
-	QRcode *code;
-	char *data;
+	QRinput *stream;
+	unsigned char data[7090];
+	int maxlength[4][4] = {{7089,5596,3993,3057},
+						   {4296,3391,2420,1852},
+						   {2953,2331,1663,1273},
+						   {1817*2,1435*2,1024*2, 784*2}};
+	int i, l, len, ret;
+	QRcode *qrcode;
 
-	testStart("Encode too large data");
-	data = (char *)malloc(4300);
-	memset(data, 'a', 4295);
-	memset(data + 4295, '0', 4);
-	data[4299] = '\0';
+	testStart("Encoding long data.");
 
-	code = QRcode_encodeString(data, 0, QR_ECLEVEL_L, QR_MODE_8, 0);
-	assert_null(code, "Too large data is incorrectly accepted.\n");
-	assert_equal(errno, ERANGE, "errno != ERANGE\n");
-	testFinish();
+	for(i=QR_MODE_NUM; i<=QR_MODE_KANJI; i++) {
+		if(i != QR_MODE_KANJI) {
+			memset(data, '0', maxlength[i][0] + 1);
+		} else {
+			for(l=0; l<=maxlength[i][0]/2+1; l++) {
+				data[l*2] = 0x93; data[l*2+1] = 0x5f;
+			}
+		}
+		for(l=QR_ECLEVEL_L; l<=QR_ECLEVEL_H; l++) {
+			stream = QRinput_new2(0, l);
+			ret = QRinput_append(stream, i, maxlength[i][l], data);
+			assert_zero(ret, "Failed to add %d-byte %s to a QRinput\n", maxlength[i][l], modeStr[i]);
+			qrcode = QRcode_encodeInput(stream);
+			assert_nonnull(qrcode, "(QRcode_encodeInput) failed to encode %d-byte %s in level %d.\n", maxlength[i][l], modeStr[i], l);
+			if(qrcode != NULL) {
+				QRcode_free(qrcode);
+			}
+			QRinput_free(stream);
 
-	if(code != NULL) {
-		QRcode_free(code);
+			stream = QRinput_new2(0, l);
+			len = maxlength[i][l];
+			if(i == QR_MODE_KANJI) {
+				len += 2;
+			} else {
+				len += 1;
+			}
+			ret = QRinput_append(stream, i, len, data);
+			if(ret == 0) {
+				qrcode = QRcode_encodeInput(stream);
+				assert_null(qrcode, "(QRcode_encodeInput) incorrectly succeeded to encode %d-byte %s in level %d.\n", len, modeStr[i], l);
+				if(qrcode != NULL) {
+					printf("version: %d\n", qrcode->version);
+					QRcode_free(qrcode);
+				}
+			}
+			QRinput_free(stream);
+		}
 	}
-	free(data);
+
+	testFinish();
 }
 
-void test_01234567(void)
+static void test_01234567(void)
 {
 	QRinput *stream;
 	char num[9] = "01234567";
@@ -477,23 +500,23 @@ void test_01234567(void)
 0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x84, 0x03, 0x03, 0x03, 0x03, 0xc0, 0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1,
 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x02, 0x02, 0x02, 0xc0, 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1,
 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x03, 0x02, 0x02, 0x02, 0xc0, 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1,
-0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x03, 0x03, 0xc0, 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1,
-0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x02, 0x02, 0x03, 0xc0, 0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1,
+0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x01, 0x01, 0xc0, 0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1,
+0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x02, 0x00, 0x01, 0xc0, 0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1,
 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc0, 0x91, 0x90, 0x91, 0x90, 0x91, 0xc0, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1,
-0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0x85, 0x02, 0x02, 0x03, 0x03, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0,
-0x85, 0x84, 0x85, 0x85, 0x85, 0x85, 0x91, 0x84, 0x84, 0x03, 0x02, 0x02, 0x03, 0x84, 0x85, 0x85, 0x85, 0x85, 0x85, 0x84, 0x84,
-0x02, 0x02, 0x02, 0x03, 0x02, 0x03, 0x90, 0x03, 0x03, 0x02, 0x03, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x03, 0x02, 0x02,
-0x02, 0x02, 0x03, 0x02, 0x02, 0x02, 0x91, 0x03, 0x02, 0x03, 0x02, 0x03, 0x02, 0x03, 0x02, 0x02, 0x03, 0x03, 0x03, 0x03, 0x03,
-0x02, 0x02, 0x02, 0x02, 0x03, 0x02, 0x90, 0x02, 0x02, 0x03, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, 0x03, 0x03, 0x03, 0x02, 0x02,
-0x02, 0x02, 0x02, 0x03, 0x03, 0x03, 0x91, 0x03, 0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x02, 0x02, 0x02,
-0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0x81, 0x02, 0x03, 0x03, 0x03, 0x03, 0x03, 0x02, 0x02, 0x03, 0x03, 0x02, 0x02,
-0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc0, 0x84, 0x03, 0x03, 0x02, 0x03, 0x02, 0x03, 0x03, 0x02, 0x02, 0x02, 0x02, 0x02,
-0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x03, 0x03, 0x03, 0x03, 0x02, 0x02, 0x02, 0x03, 0x02, 0x03,
-0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x02, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x03, 0x02, 0x02,
-0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x03, 0x02, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x02, 0x02, 0x02, 0x02,
-0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x03, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x02, 0x02,
-0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x84, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x03, 0x03, 0x02, 0x03, 0x03, 0x02,
-0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc0, 0x85, 0x03, 0x03, 0x03, 0x02, 0x03, 0x02, 0x02, 0x03, 0x02, 0x03, 0x02, 0x02};
+0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0x85, 0x02, 0x02, 0x01, 0x01, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0,
+0x85, 0x84, 0x85, 0x85, 0x85, 0x85, 0x91, 0x84, 0x84, 0x03, 0x02, 0x00, 0x01, 0x84, 0x85, 0x85, 0x85, 0x85, 0x85, 0x84, 0x84,
+0x02, 0x02, 0x02, 0x03, 0x02, 0x03, 0x90, 0x03, 0x03, 0x02, 0x03, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00,
+0x02, 0x02, 0x03, 0x02, 0x02, 0x02, 0x91, 0x03, 0x02, 0x03, 0x02, 0x01, 0x00, 0x01, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x01,
+0x02, 0x02, 0x02, 0x02, 0x03, 0x02, 0x90, 0x02, 0x02, 0x03, 0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00,
+0x02, 0x02, 0x02, 0x03, 0x03, 0x03, 0x91, 0x03, 0x03, 0x02, 0x02, 0x01, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00,
+0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0x81, 0x02, 0x03, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00, 0x01, 0x01, 0x00, 0x00,
+0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc0, 0x84, 0x03, 0x03, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
+0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01,
+0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x02, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x00,
+0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x03, 0x02, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00,
+0xc1, 0xc0, 0xc1, 0xc1, 0xc1, 0xc0, 0xc1, 0xc0, 0x85, 0x02, 0x03, 0x01, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00,
+0xc1, 0xc0, 0xc0, 0xc0, 0xc0, 0xc0, 0xc1, 0xc0, 0x84, 0x02, 0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x00, 0x01, 0x01, 0x00,
+0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc1, 0xc0, 0x85, 0x03, 0x03, 0x01, 0x00, 0x01, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00};
 
 	testStart("Encode 01234567 in 1-M");
 	stream = QRinput_new2(1, QR_ECLEVEL_M);
@@ -509,12 +532,13 @@ void test_01234567(void)
 	QRcode_free(qrcode);
 }
 
-void print_01234567(void)
+static void print_01234567(void)
 {
 	QRinput *stream;
 	char num[9] = "01234567";
 	QRcode *qrcode;
 
+	puts("\nPrinting QR code of '01234567'.");
 	stream = QRinput_new2(1, QR_ECLEVEL_M);
 	QRinput_append(stream, QR_MODE_NUM, 8, (unsigned char *)num);
 	qrcode = QRcode_encodeInput(stream);
@@ -523,7 +547,7 @@ void print_01234567(void)
 	QRcode_free(qrcode);
 }
 
-void test_invalid_input(void)
+static void test_invalid_input(void)
 {
 	QRinput *input;
 	QRcode *code;
@@ -560,7 +584,7 @@ void test_invalid_input(void)
 	testFinish();
 }
 
-void test_struct_semilong(void)
+static void test_struct_semilong(void)
 {
 	QRcode_List *codes, *list;
 	const char *str = "asdfasdfasdfasdfasdfASDFASDASDFASDFAsdfasdfasdfasdASDFASDFADSADadsfasdf";
@@ -594,7 +618,7 @@ void test_struct_semilong(void)
 	testFinish();
 }
 
-void test_struct_example(void)
+static void test_struct_example(void)
 {
 	QRcode_List *codes, *list;
 	const char *str = "an example of four Structured Append symbols,";
@@ -614,7 +638,7 @@ void test_struct_example(void)
 	QRcode_List_free(codes);
 }
 
-void test_null_free(void)
+static void test_null_free(void)
 {
 	testStart("Testing free NULL pointers");
 	assert_nothing(QRcode_free(NULL), "Check QRcode_free(NULL).\n");
@@ -623,7 +647,7 @@ void test_null_free(void)
 	testFinish();
 }
 
-void test_encodeTooLongMQR(void)
+static void test_encodeTooLongMQR(void)
 {
 	QRcode *code;
 	char *data[] = {"012345", "ABC0EFG", "0123456789", "0123456789ABCDEFG"};
@@ -650,7 +674,7 @@ void test_encodeTooLongMQR(void)
 	}
 }
 
-void test_mqrraw_new(void)
+static void test_mqrraw_new(void)
 {
 	QRinput *stream;
 	char *num = "01234";
@@ -675,7 +699,7 @@ void test_mqrraw_new(void)
 	testFinish();
 }
 
-void test_encodeData(void)
+static void test_encodeData(void)
 {
 	QRcode *qrcode;
 
@@ -691,7 +715,7 @@ void test_encodeData(void)
 	testFinish();
 }
 
-void test_formatInfo(void)
+static void test_formatInfo(void)
 {
 	QRcode *qrcode;
 	QRecLevel level;
@@ -709,7 +733,7 @@ void test_formatInfo(void)
 	testFinish();
 }
 
-void test_formatInfoMQR(void)
+static void test_formatInfoMQR(void)
 {
 	QRcode *qrcode;
 	QRecLevel level;
@@ -732,7 +756,7 @@ void test_formatInfoMQR(void)
 	testFinish();
 }
 
-void test_decodeSimple(void)
+static void test_decodeSimple(void)
 {
 	char *str = "AC-42";
 	QRcode *qrcode;
@@ -754,7 +778,7 @@ void test_decodeSimple(void)
 }
 
 
-void test_decodeLong(void)
+static void test_decodeLong(void)
 {
 	char *str = "12345678901234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ?????????????";
 	QRcode *qrcode;
@@ -775,7 +799,7 @@ void test_decodeLong(void)
 	testFinish();
 }
 
-void test_decodeVeryLong(void)
+static void test_decodeVeryLong(void)
 {
 	char str[4000];
 	int i;
@@ -803,7 +827,7 @@ void test_decodeVeryLong(void)
 	testFinish();
 }
 
-void test_decodeShortMQR(void)
+static void test_decodeShortMQR(void)
 {
 	char str[]="55";
 	QRcode *qrcode;
@@ -827,7 +851,7 @@ void test_decodeShortMQR(void)
 	testFinish();
 }
 
-void test_oddBitCalcMQR(void)
+static void test_oddBitCalcMQR(void)
 {
 	/* test issue #25 (odd bits calculation bug) */
 	/* test pattern contributed by vlad417 */
@@ -859,7 +883,7 @@ void test_oddBitCalcMQR(void)
 	testFinish();
 }
 
-void test_mqrencode(void)
+static void test_mqrencode(void)
 {
 	char *str = "MICROQR";
 	char pattern[] = {
@@ -906,7 +930,7 @@ void test_mqrencode(void)
 	testFinish();
 }
 
-void test_apiversion(void)
+static void test_apiversion(void)
 {
 	int major_version, minor_version, micro_version;
 	char *str, *str2;
@@ -923,11 +947,10 @@ void test_apiversion(void)
 	testFinish();
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	test_iterate();
 	test_iterate2();
-	//print_filler();
 	test_filler();
 	test_format();
 	test_encode();
@@ -937,10 +960,9 @@ int main(void)
 	test_encodeEmpty();
 	test_encodeNull8();
 	test_encodeEmpty8();
-	test_encodeTooLong();
+	test_encodeLongData();
 	test_01234567();
 	test_invalid_input();
-//	print_01234567();
 	test_struct_example();
 	test_struct_semilong();
 	test_null_free();
@@ -951,7 +973,6 @@ int main(void)
 	test_decodeSimple();
 	test_decodeLong();
 	test_decodeVeryLong();
-	//print_fillerMQR();
 	test_fillerMQR();
 	test_formatInfoMQR();
 	test_encodeTooLongMQR();
@@ -959,10 +980,13 @@ int main(void)
 	test_oddBitCalcMQR();
 	test_mqrencode();
 	test_apiversion();
-
-	QRcode_clearCache();
-
 	report();
+
+	if(argc > 1) {
+		print_filler();
+		print_01234567();
+		print_fillerMQR();
+	}
 
 	return 0;
 }

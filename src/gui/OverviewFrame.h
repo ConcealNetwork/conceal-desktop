@@ -50,6 +50,9 @@ public Q_SLOTS:
   void deleteABClicked();
   void payToABClicked();
 
+protected:
+  void resizeEvent(QResizeEvent *event) override;
+
 private:
   QNetworkAccessManager m_networkManager;
   QScopedPointer<Ui::OverviewFrame> m_ui;
@@ -169,6 +172,7 @@ private:
   Q_SLOT void tradeogreClicked();
   Q_SLOT void qtradeClicked();
   Q_SLOT void helpClicked();
+  Q_SLOT void addressEditTextChanged(QString text);
 
 Q_SIGNALS:
   void sendSignal();

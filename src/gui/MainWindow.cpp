@@ -20,7 +20,24 @@
 #include <QLocale>
 #include <QMessageBox>
 #include <QSystemTrayIcon>
-
+#include <QTimer>
+#include <QThread>
+#include <boost/lexical_cast.hpp>
+#include <boost/program_options.hpp>
+#include <boost/algorithm/string.hpp>
+#include <Common/Base58.h>
+#include <Common/Util.h>
+#include "Common/CommandLine.h"
+#include "Common/SignalHandler.h"
+#include "Common/StringTools.h"
+#include "Common/PathTools.h"
+#include "CryptoNoteCore/CryptoNoteFormatUtils.h"
+#include "CryptoNoteCore/CryptoNoteTools.h"
+#include "CryptoNoteCore/Account.cpp"
+#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+#include "CryptoNoteCore/CryptoNoteBasicImpl.h"
+#include "Mnemonics/electrum-words.cpp"
+#include "ShowQRCode.h"
 #include "AddressBookModel.h"
 #include "ChangePasswordDialog.h"
 #include "CurrencyAdapter.h"
@@ -33,6 +50,7 @@
 #include "Settings.h"
 #include "ShowQRCode.h"
 #include "TranslatorManager.h"
+
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include "importsecretkeys.h"
@@ -254,7 +272,6 @@ void MainWindow::changeEvent(QEvent *_event)
   {
     QString locale = QLocale::system().name();
     locale.truncate(locale.lastIndexOf('_'));
-    loadLanguage(locale);
   }
   case QEvent::WindowStateChange:
   {
@@ -315,34 +332,6 @@ void MainWindow::delay()
   QTime dieTime = QTime::currentTime().addSecs(2);
   while (QTime::currentTime() < dieTime)
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-}
-
-void MainWindow::slotLanguageChanged(QAction *action)
-{
-  if (0 != action)
-  {
-    // load the language dependant on the action content
-    QString lang = action->data().toString();
-    loadLanguage(lang);
-    // save is in settings
-    Settings::instance().setLanguage((lang));
-  }
-}
-
-void MainWindow::loadLanguage(const QString &rLanguage)
-{
-  if (m_currLang != rLanguage)
-  {
-    m_currLang = rLanguage;
-    QLocale locale = QLocale(m_currLang);
-    QLocale::setDefault(locale);
-    QString languageName = QLocale::languageToString(locale.language());
-    TranslatorManager::instance()->switchTranslator(m_translator, QString("%1.qm").arg(rLanguage));
-    TranslatorManager::instance()->switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
-    Settings::instance().setLanguage((m_currLang));
-    QMessageBox::information(this, tr("Language was changed"),
-                             tr("Language changed to %1. The change will take effect after restarting the wallet.").arg(languageName), QMessageBox::Ok);
-  }
 }
 
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */

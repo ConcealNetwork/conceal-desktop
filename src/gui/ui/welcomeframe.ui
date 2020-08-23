@@ -867,7 +867,7 @@ font-size: 20px;</string>
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignTop">
+<item alignment="Qt::AlignTop">
              <widget class="QGroupBox" name="horizontalGroupBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">

@@ -21,7 +21,7 @@ namespace WalletGui {
 WelcomeFrame::WelcomeFrame(QWidget* _parent) : QFrame(_parent), m_ui(new Ui::WelcomeFrame) {
 m_ui->setupUi(this);
 
-int change = 4;
+int change = 2;
 
 /** Set the base font sizes */
 int baseFontSize = 12 + change;
