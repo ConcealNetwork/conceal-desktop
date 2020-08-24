@@ -287,13 +287,6 @@ void MainWindow::changeEvent(QEvent* _event)
   }
   switch (_event->type())
   {
-    case QEvent::LocaleChange:
-    {
-      QString locale = QLocale::system().name();
-      locale.truncate(locale.lastIndexOf('_'));
-      loadLanguage(locale);
-      break;
-    }
     case QEvent::WindowStateChange:
     {
       if (Settings::instance().isMinimizeToTrayEnabled())

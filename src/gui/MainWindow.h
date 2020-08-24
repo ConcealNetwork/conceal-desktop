@@ -32,8 +32,7 @@ protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
   bool event(QEvent* _event) Q_DECL_OVERRIDE;
 
-protected slots:
-  void slotLanguageChanged(QAction* action);
+protected Q_SLOTS:
 #ifndef QT_NO_SYSTEMTRAYICON
   void restoreFromTray();
 #endif
