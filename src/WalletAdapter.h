@@ -1,21 +1,20 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
-//
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
+#include <IWalletLegacy.h>
+
 #include <QMutex>
 #include <QObject>
 #include <QTimer>
-
 #include <atomic>
 #include <fstream>
-
-#include <IWalletLegacy.h>
 
 namespace WalletGui {
 
@@ -33,6 +32,7 @@ public:
   void backup(const QString& _file);
   void reset();
   void createWallet();
+  void addObserver();
 
   QString getAddress() const;
   quint64 getActualBalance() const;
@@ -49,6 +49,7 @@ public:
   bool getTransfer(CryptoNote::TransferId _id, CryptoNote::WalletLegacyTransfer& _transfer);
   bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
   bool getAccountKeys(CryptoNote::AccountKeys& _keys);
+  bool getMnemonicSeed(std::string& _seed);
   bool isOpen() const;
   void sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
     const QVector<CryptoNote::TransactionMessage>& _messages);

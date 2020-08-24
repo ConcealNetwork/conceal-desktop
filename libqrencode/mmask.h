@@ -2,7 +2,7 @@
  * qrencode - QR Code encoder
  *
  * Masking for Micro QR Code.
- * Copyright (C) 2006-2011 Kentaro Fukuchi <kentaro@fukuchi.org>
+ * Copyright (C) 2006-2017 Kentaro Fukuchi <kentaro@fukuchi.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef __MMASK_H__
-#define __MMASK_H__
+#ifndef MMASK_H
+#define MMASK_H
 
 extern unsigned char *MMask_makeMask(int version, unsigned char *frame, int mask, QRecLevel level);
 extern unsigned char *MMask_mask(int version, unsigned char *frame, QRecLevel level);
@@ -31,4 +31,4 @@ extern void MMask_writeFormatInformation(int version, int width, unsigned char *
 extern unsigned char *MMask_makeMaskedFrame(int width, unsigned char *frame, int mask);
 #endif
 
-#endif /* __MMASK_H__ */
+#endif /* MMASK_H */

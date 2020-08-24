@@ -43,6 +43,7 @@
 #include "TransactionDetailsDialog.h"
 #include "TransactionFrame.h"
 #include "TransactionsListModel.h"
+#include "TranslatorManager.h"
 #include "TransactionsModel.h"
 #include "VisibleMessagesModel.h"
 #include "WalletAdapter.h"
@@ -52,6 +53,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QClipboard>
+#include <QCompleter>
 #include <QDesktopServices>
 #include <QFont>
 #include <QFontDatabase>
@@ -267,7 +269,7 @@ namespace WalletGui
     m_ui->m_language->setCurrentIndex(index);
 
     /* Set the styles */
-    setStyles(1);
+    setStyles(2);
     int startingFontSize = Settings::instance().getFontSize();
     setStyles(startingFontSize);
 
@@ -432,7 +434,7 @@ namespace WalletGui
   {
     int fontSize = Settings::instance().getFontSize();
     fontSize++;
-    if (fontSize < 5)
+    if (fontSize < 6)
     {
       setStyles(fontSize);
     }
@@ -476,8 +478,8 @@ namespace WalletGui
 
     /* Create our common pool of styles */
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    QString b1Style = "QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}";
-    QString b2Style = "QPushButton{color:orange;border:1px solid orange;border-radius:5px}QPushButton#hover{color:gold;border:1px solid orange;font-size:11px;border-radius:5px}";
+    QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
+    QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
     QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px;";
 
     QList<QPushButton *>
@@ -561,17 +563,38 @@ namespace WalletGui
     QString link = "";
     QSize size = m_ui->groupBox->size();
     int width = size.width();
-    if (width < 1300) {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=511&height=191&dateFormat=MM-DD";
+    int height = size.height();
+
+    /** 1280 x 720 or smaller is the default */
+    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+
+    /** 1365 x 768 */
+    if ((width == 1363) && (height == 750) ){
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
     }
-    else
+
+    /** 1440 x 900 */
+    if ((width == 1438) && (height == 868))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=60&priceDecimals=2&xPoints=12&width=1700&height=700&dateFormat=MM-DD";
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
+    }
+
+    /** 1680 x 1050 */
+    if ((width == 1678) && (height == 1008))
+    {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
+    }
+
+    /** This should cover 1920 and above */
+    if (width > 1599)
+    {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
     }
     url = QUrl::fromUserInput(link);
 
     QNetworkRequest request(url);
     nam->get(request);
+
   }
 
   /* Show the name of the opened wallet */
@@ -786,7 +809,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("BANKING");
+      m_ui->m_myConcealWalletTitle->setText(tr("BANKING"));
       m_ui->bankingBox->raise();
     }
     else
@@ -798,14 +821,14 @@ namespace WalletGui
   void OverviewFrame::transactionHistoryClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
+    m_ui->m_myConcealWalletTitle->setText(tr("TRANSACTIONS"));
     m_ui->transactionsBox->raise();
   }
 
   void OverviewFrame::dashboardClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
+    m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -814,7 +837,7 @@ namespace WalletGui
   void OverviewFrame::aboutClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("ABOUT");
+    m_ui->m_myConcealWalletTitle->setText(tr("ABOUT"));
     m_ui->aboutBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -823,7 +846,7 @@ namespace WalletGui
   void OverviewFrame::settingsClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
+    m_ui->m_myConcealWalletTitle->setText(tr("WALLET SETTINGS"));
     m_ui->settingsBox->raise();
   }
 
@@ -835,7 +858,7 @@ namespace WalletGui
   void OverviewFrame::inboxClicked()
   {
     m_ui->darkness->hide();
-    m_ui->m_myConcealWalletTitle->setText("INBOX");
+    m_ui->m_myConcealWalletTitle->setText(tr("INBOX"));
     m_ui->messageBox->raise();
   }
 
@@ -859,14 +882,34 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
+
+      /* Add addresses suggestions from the address book*/
+      QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
+      completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
+      completer->setCaseSensitivity(Qt::CaseInsensitive);
+      QTreeView* popup = new QTreeView;
+      completer->setPopup(popup);
+      popup->setStyleSheet("background-color: #282d31; color: #aaa");
+      popup->setIndentation(0);
+      popup->header()->setStretchLastSection(false);
+      popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+      m_ui->m_addressEdit->setCompleter(completer);
     }
     else
     {
       syncInProgressMessage();
     }
+  }
+
+  void OverviewFrame::addressEditTextChanged(QString text)
+  {
+    /* Small trick for the completer to show all the rows in the popup. Without this, one row is missing due to the header */
+    int rowCount = m_ui->m_addressEdit->completer()->popup()->model()->rowCount();
+    m_ui->m_addressEdit->completer()->popup()->window()->setMinimumHeight(
+      20 * (rowCount + 1));
   }
 
   void OverviewFrame::newMessageClicked()
@@ -879,7 +922,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
+      m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
     }
@@ -897,15 +940,17 @@ namespace WalletGui
     pendingDepositBalanceUpdated(0);
     actualInvestmentBalanceUpdated(0);
     pendingInvestmentBalanceUpdated(0);
+    layoutChanged();
     m_priceProvider->getPrice();
     m_addressProvider->getAddress();
     Q_EMIT resetWalletSignal();
   }
 
-  void OverviewFrame::setStatusBarText(const QString &_text, const QString &_height)
+  void OverviewFrame::setStatusBarText(const QString& _text, const QString& _height)
   {
     m_ui->m_statusBox->setText(_text);
     m_ui->statusHeight->setText(_height);
+    showCurrentWalletName();
   }
 
   void OverviewFrame::copyClicked()
@@ -961,13 +1006,13 @@ namespace WalletGui
     if (OverviewFrame::fromPay == true)
     {
       m_ui->m_addressEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
       m_ui->sendBox->raise();
     }
     else
     {
       m_ui->m_addressMessageEdit->setText(_address);
-      m_ui->m_myConcealWalletTitle->setText("SEND MESSAGE");
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
       m_ui->newMessageBox->raise();
     }
   }
@@ -1228,7 +1273,7 @@ namespace WalletGui
   /* Open address book */
   void OverviewFrame::addressBookClicked()
   {
-    m_ui->m_myConcealWalletTitle->setText("ADDRESS BOOK");
+    m_ui->m_myConcealWalletTitle->setText(tr("ADDRESS BOOK"));
     m_ui->addressBookBox->raise();
   }
 
@@ -1685,6 +1730,11 @@ namespace WalletGui
 
     loadChart();
     m_priceProvider->getPrice();
+
+    // to restranslate without restarting the wallet, some text is missing after retranslate
+    // TranslatorManager::instance()->switchTranslator(language);
+    // m_ui->retranslateUi(this);
+    reset();
 
     QMessageBox::information(this,
                              tr("Language and Currency settings saved"),

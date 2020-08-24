@@ -1,13 +1,13 @@
 /*
  * qrencode - QR Code encoder
  *
- * Micor QR Code specification in convenient format. 
- * Copyright (C) 2006-2011 Kentaro Fukuchi <kentaro@fukuchi.org>
+ * Micro QR Code specification in convenient format.
+ * Copyright (C) 2006-2017 Kentaro Fukuchi <kentaro@fukuchi.org>
  *
  * The following data / specifications are taken from
  * "Two dimensional symbol -- QR-code -- Basic Specification" (JIS X0510:2004)
  *  or
- * "Automatic identification and data capture techniques -- 
+ * "Automatic identification and data capture techniques --
  *  QR Code 2005 bar code symbology specification" (ISO/IEC 18004:2006)
  *
  * This library is free software; you can redistribute it and/or
@@ -32,9 +32,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#ifdef HAVE_LIBPTHREAD
-#include <pthread.h>
-#endif
 
 #include "mqrspec.h"
 
@@ -43,8 +40,8 @@
  *****************************************************************************/
 
 typedef struct {
-	int width; //< Edge length of the symbol
-	int ec[4];  //< Number of ECC code (bytes)
+	int width; ///< Edge length of the symbol
+	int ec[4]; ///< Number of ECC code (bytes)
 } MQRspec_Capacity;
 
 /**
@@ -157,16 +154,6 @@ unsigned int MQRspec_getFormatInfo(int mask, int version, QRecLevel level)
  *****************************************************************************/
 
 /**
- * Cache of initial frames.
- */
-/* C99 says that static storage shall be initialized to a null pointer
- * by compiler. */
-static unsigned char *frames[MQRSPEC_VERSION_MAX + 1];
-#ifdef HAVE_LIBPTHREAD
-static pthread_mutex_t frames_mutex = PTHREAD_MUTEX_INITIALIZER;
-#endif
-
-/**
  * Put a finder pattern.
  * @param frame
  * @param width
@@ -188,8 +175,8 @@ static void putFinderPattern(unsigned char *frame, int width, int ox, int oy)
 
 	frame += oy * width + ox;
 	s = finder;
-	for(y=0; y<7; y++) {
-		for(x=0; x<7; x++) {
+	for(y = 0; y < 7; y++) {
+		for(x = 0; x < 7; x++) {
 			frame[x] = s[x];
 		}
 		frame += width;
@@ -204,15 +191,15 @@ static unsigned char *MQRspec_createFrame(int version)
 	int x, y;
 
 	width = mqrspecCapacity[version].width;
-	frame = (unsigned char *)malloc(width * width);
+	frame = (unsigned char *)malloc((size_t)(width * width));
 	if(frame == NULL) return NULL;
 
-	memset(frame, 0, width * width);
+	memset(frame, 0, (size_t)(width * width));
 	/* Finder pattern */
 	putFinderPattern(frame, width, 0, 0);
 	/* Separator */
 	p = frame;
-	for(y=0; y<7; y++) {
+	for(y = 0; y < 7; y++) {
 		p[7] = 0xc0;
 		p += width;
 	}
@@ -220,14 +207,14 @@ static unsigned char *MQRspec_createFrame(int version)
 	/* Mask format information area */
 	memset(frame + width * 8 + 1, 0x84, 8);
 	p = frame + width + 8;
-	for(y=0; y<7; y++) {
+	for(y = 0; y < 7; y++) {
 		*p = 0x84;
 		p += width;
 	}
 	/* Timing pattern */
 	p = frame + 8;
 	q = frame + width * 8;
-	for(x=1; x<width-7; x++) {
+	for(x = 1; x < width-7; x++) {
 		*p =  0x90 | (x & 1);
 		*q =  0x90 | (x & 1);
 		p++;
@@ -239,42 +226,7 @@ static unsigned char *MQRspec_createFrame(int version)
 
 unsigned char *MQRspec_newFrame(int version)
 {
-	unsigned char *frame;
-	int width;
-
 	if(version < 1 || version > MQRSPEC_VERSION_MAX) return NULL;
 
-#ifdef HAVE_LIBPTHREAD
-	pthread_mutex_lock(&frames_mutex);
-#endif
-	if(frames[version] == NULL) {
-		frames[version] = MQRspec_createFrame(version);
-	}
-#ifdef HAVE_LIBPTHREAD
-	pthread_mutex_unlock(&frames_mutex);
-#endif
-	if(frames[version] == NULL) return NULL;
-
-	width = mqrspecCapacity[version].width;
-	frame = (unsigned char *)malloc(width * width);
-	if(frame == NULL) return NULL;
-	memcpy(frame, frames[version], width * width);
-
-	return frame;
-}
-
-void MQRspec_clearCache(void)
-{
-	int i;
-
-#ifdef HAVE_LIBPTHREAD
-	pthread_mutex_lock(&frames_mutex);
-#endif
-	for(i=1; i<=MQRSPEC_VERSION_MAX; i++) {
-		free(frames[i]);
-		frames[i] = NULL;
-	}
-#ifdef HAVE_LIBPTHREAD
-	pthread_mutex_unlock(&frames_mutex);
-#endif
+	return MQRspec_createFrame(version);
 }

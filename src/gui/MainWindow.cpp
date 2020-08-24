@@ -5,18 +5,23 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "MainWindow.h"
+
+#include <Common/Base58.h>
+#include <CryptoNoteCore/Account.h>
+#include <CryptoNoteCore/CryptoNoteTools.h>
+
 #include <QCloseEvent>
 #include <QFileDialog>
 #include <QInputDialog>
-#include <QMessageBox>
 #include <QLocale>
+#include <QMessageBox>
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
 #include <QTranslator>
 #include <QAction>
 #include <QMenu>
-
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
@@ -34,25 +39,22 @@
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
 #include "AddressBookModel.h"
-#include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
 #include "CurrencyAdapter.h"
 #include "ExitWidget.h"
 #include "ImportGUIKeyDialog.h"
-#include "importsecretkeys.h"
 #include "ImportSeedDialog.h"
-#include "importtracking.h"
-#include "OptimizationManager.h"
-#include "MainWindow.h"
-#include "MessagesModel.h"
 #include "NewPasswordDialog.h"
-#include "NodeAdapter.h"
+#include "OptimizationManager.h"
 #include "PasswordDialog.h"
 #include "Settings.h"
+#include "ShowQRCode.h"
 #include "TranslatorManager.h"
+
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-
+#include "importsecretkeys.h"
+#include "importtracking.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
@@ -114,7 +116,6 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::newTransferSignal, this, &MainWindow::sendTo, Qt::QueuedConnection);
   connect(m_ui->m_overviewFrame, &OverviewFrame::newMessageSignal, this, &MainWindow::sendMessageTo);
 
-  connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);
@@ -353,61 +354,13 @@ void MainWindow::delay()
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
-void MainWindow::slotLanguageChanged(QAction *action)
-{
-  if (0 != action)
-  {
-    // load the language dependant on the action content
-    QString lang = action->data().toString();
-    loadLanguage(lang);
-    // save is in settings
-    Settings::instance().setLanguage((lang));
-  }
-}
-
-void MainWindow::loadLanguage(const QString &rLanguage)
-{
-  if (m_currLang != rLanguage)
-  {
-    m_currLang = rLanguage;
-    QLocale locale = QLocale(m_currLang);
-    QLocale::setDefault(locale);
-    QString languageName = QLocale::languageToString(locale.language());
-    TranslatorManager::instance()->switchTranslator(m_translator, QString("%1.qm").arg(rLanguage));
-    TranslatorManager::instance()->switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
-    Settings::instance().setLanguage((m_currLang));
-    QMessageBox::information(this, tr("Language was changed"),
-                             tr("Language changed to %1. The change will take effect after restarting the wallet.").arg(languageName), QMessageBox::Ok);
-  }
-}
-
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
 
 void MainWindow::createWallet()
 {
-
-  QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
-
-#ifdef Q_OS_WIN
-                                                  QApplication::applicationDirPath(),
-#else
-                                                  QDir::homePath(),
-#endif
-                                                  tr("Wallets (*.wallet)"));
-
-  if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
-  {
-    filePath.append(".wallet");
-  }
-  if (!filePath.isEmpty() && !QFile::exists(filePath))
-  {
-    if (WalletAdapter::instance().isOpen())
-    {
-      WalletAdapter::instance().close();
-    }
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWallet();
-  }
+  m_ui->m_overviewFrame->hide();
+  m_ui->m_welcomeFrame->show();
+  m_ui->m_welcomeFrame->createWallet();
 }
 
 void MainWindow::openWallet()
