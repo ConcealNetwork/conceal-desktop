@@ -42,7 +42,7 @@
         <file alias="font-size">icons/font-size.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file alias="conceal-logo">images/conceal.svg</file>
+        <file alias="conceal-logo">images/conceal.png</file>
         <file alias="splash">images/splash.png</file>
         <file alias="clock">images/clock.gif</file>
         <file alias="lock">images/lock.png</file>
