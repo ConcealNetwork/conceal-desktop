@@ -24,24 +24,22 @@
         <file alias="lock">icons/lock.png</file>
         <file alias="settings">icons/settings.png</file>
         <file alias="minimize">icons/minimize.png</file>
-        <file>icons/tx_input.png</file>
         <!-- TX status-->
         <file alias="tx-mined">icons/tx_mined.png</file>
         <file alias="tx-input">icons/tx_input.png</file>
         <file alias="tx-output">icons/tx_output.png</file>
         <file alias="tx-inout">icons/tx_inout.png</file>
         <file alias="tx-deposit">icons/tx_deposit.png</file>
-        <file>icons/tx_investment.png</file>
+        <!-- Title icons -->
+        <file alias="icon-address">icons/icon-address.png</file>
+        <file alias="icon-banking">icons/icon-banking.png</file>
+        <file alias="icon-home">icons/icon-home.png</file>
+        <file alias="icon-messages">icons/icon-messages.png</file>
+        <file alias="icon-send-message">icons/icon-sendmsg.png</file>
+        <file alias="icon-send">icons/icon-send.png</file>
+        <file alias="icon-transactions">icons/icon-tx.png</file>
         <!-- Other icons-->
-        <file>icons/home-icon.png</file>
-        <file>icons/icon-send.png</file>
-        <file>icons/font-size.png</file>
-        <file>icons/icon-deposit.png</file>
-        <file>icons/icon-messages.png</file>
-        <file>icons/icon-tx.png</file>
-        <file>icons/icon-keys.png</file>
-        <file>icons/icon-address.png</file>
-        <file>icons/icon-sendmsg.png</file>
+        <file alias="font-size">icons/font-size.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="conceal-logo">images/conceal.svg</file>

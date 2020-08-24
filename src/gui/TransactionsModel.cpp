@@ -9,6 +9,7 @@
 #include <QFont>
 #include <QMetaEnum>
 #include <QPixmap>
+#include <QPainter>
 #include <QTextStream>
 
 #include "CurrencyAdapter.h"
@@ -334,7 +335,10 @@ QVariant TransactionsModel::getDecorationRole(const QModelIndex& _index) const {
     case 9:
       return QPixmap(":icons/clock5");
     default:
-      return QPixmap(":icons/transaction");
+      QPixmap icon = _index.data(ROLE_ICON).value<QPixmap>();
+      QPainter painter(&icon);
+      painter.drawPixmap(0, 0, QPixmap(":icons/transaction"));
+      return icon;
     }
 
   } else if (_index.column() == COLUMN_ADDRESS) {

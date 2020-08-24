@@ -64,24 +64,15 @@ private:
   void askForWalletPassword(bool _error);
   void walletOpened(bool _error, const QString& _error_text);
   void walletClosed();
-  void replyTo(const QModelIndex& _index);
   void loadLanguage(const QString& rLanguage);  
   void payTo(const QModelIndex& _index);
-  void sendTo();
   void delay();
   void setRemoteWindowTitle();  
-  void depositTo();
   void showQRCode(const QString& _address);
   void backupTo();
   void rescanTo();
   void dashboardTo();
-  void settingsTo();
-  void transactionTo();
-  void addressBookTo();
-  void sendMessageTo();
   void checkTrackingMode();
-  void messageTo();
-  void miningTo();
   
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();
@@ -94,9 +85,6 @@ private:
   Q_SLOT void resetWallet();
   Q_SLOT void encryptWallet();
   Q_SLOT void aboutQt();
-  Q_SLOT void about();
-  Q_SLOT void disclaimer();  
-  Q_SLOT void links();   
   Q_SLOT void setStartOnLogin(bool _on);
   Q_SLOT void setMinimizeToTray(bool _on);
   Q_SLOT void setCloseToTray(bool _on);

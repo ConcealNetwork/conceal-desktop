@@ -787,6 +787,7 @@ namespace WalletGui
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText("BANKING");
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-banking"));
       m_ui->bankingBox->raise();
     }
     else
@@ -799,6 +800,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("TRANSACTIONS");
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-transactions"));
     m_ui->transactionsBox->raise();
   }
 
@@ -806,6 +808,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("CONCEAL.NETWORK");
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-home"));
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -815,6 +818,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("ABOUT");
+    m_ui->m_titleIcon->setText("?");
     m_ui->aboutBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -824,6 +828,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("WALLET SETTINGS");
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/settings").scaled(36, 36));
     m_ui->settingsBox->raise();
   }
 
@@ -836,6 +841,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText("INBOX");
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-messages"));
     m_ui->messageBox->raise();
   }
 
@@ -860,6 +866,7 @@ namespace WalletGui
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
     }
@@ -880,6 +887,7 @@ namespace WalletGui
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText("NEW MESSAGE");
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
     }
@@ -962,12 +970,14 @@ namespace WalletGui
     {
       m_ui->m_addressEdit->setText(_address);
       m_ui->m_myConcealWalletTitle->setText("SEND FUNDS");
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
     }
     else
     {
       m_ui->m_addressMessageEdit->setText(_address);
       m_ui->m_myConcealWalletTitle->setText("SEND MESSAGE");
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
     }
   }
@@ -1229,6 +1239,7 @@ namespace WalletGui
   void OverviewFrame::addressBookClicked()
   {
     m_ui->m_myConcealWalletTitle->setText("ADDRESS BOOK");
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-address"));
     m_ui->addressBookBox->raise();
   }
 
