@@ -1,20 +1,15 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-// 
+// Copyright (c) 2018-2020 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
-#include <QLabel>
-#include <QLocale>
 #include <QTranslator>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
-#include <QTimer>
 
 class QActionGroup;
 
@@ -36,6 +31,13 @@ public:
 protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
   bool event(QEvent* _event) Q_DECL_OVERRIDE;
+
+protected slots:
+  void slotLanguageChanged(QAction* action);
+#ifndef QT_NO_SYSTEMTRAYICON
+  void restoreFromTray();
+#endif
+
 private:
   QScopedPointer<Ui::MainWindow> m_ui;
   QSystemTrayIcon* m_trayIcon;
@@ -97,7 +99,8 @@ public:
 
 private:
   void installDockHandler();
-#elif defined(Q_OS_WIN)
+#endif
+#ifndef QT_NO_SYSTEMTRAYICON
 protected:
   void changeEvent(QEvent* _event) Q_DECL_OVERRIDE;
 

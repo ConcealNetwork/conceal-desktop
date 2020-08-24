@@ -329,7 +329,7 @@ namespace WalletGui
       m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
     }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
     /* Set minimize to tray button status */
     if (!Settings::instance().isMinimizeToTrayEnabled())
     {
@@ -2097,7 +2097,7 @@ namespace WalletGui
 
   void OverviewFrame::minToTrayClicked()
   {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
     if (!Settings::instance().isMinimizeToTrayEnabled())
     {
       Settings::instance().setMinimizeToTrayEnabled(true);
@@ -2113,7 +2113,7 @@ namespace WalletGui
 
   void OverviewFrame::closeToTrayClicked()
   {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
     if (!Settings::instance().isCloseToTrayEnabled())
     {
       Settings::instance().setCloseToTrayEnabled(true);

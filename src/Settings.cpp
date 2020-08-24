@@ -457,7 +457,7 @@ bool Settings::isStartOnLoginEnabled() const
   return res;
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 bool Settings::isMinimizeToTrayEnabled() const
 {
   return m_settings.contains("minimizeToTray") ? m_settings.value("minimizeToTray").toBool() : false;
@@ -575,7 +575,8 @@ quint64 Settings::getOptimizationInterval() const
   return DEFAULT_OPTIMIZATION_PERIOD;
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
+
 void Settings::setMinimizeToTrayEnabled(bool _enable)
 {
   if (isMinimizeToTrayEnabled() != _enable)
