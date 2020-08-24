@@ -13,7 +13,6 @@
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteCore/CryptoNoteTools.h>
 
-#include <Mnemonics/electrum-words.cpp>
 #include <QCloseEvent>
 #include <QFileDialog>
 #include <QInputDialog>
