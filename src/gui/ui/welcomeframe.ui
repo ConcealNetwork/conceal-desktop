@@ -1067,7 +1067,7 @@ font-size: 20px;</string>
                </font>
               </property>
               <property name="text">
-               <string>Don't loose your seed or you might loose your wallet (and funds) forever.</string>
+               <string>Don't lose your seed or you might lose your wallet (and funds) forever.</string>
               </property>
              </widget>
             </item>
