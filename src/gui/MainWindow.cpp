@@ -373,6 +373,7 @@ void MainWindow::createWallet()
 
 void MainWindow::openWallet()
 {
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
@@ -410,6 +411,7 @@ void MainWindow::openWallet()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().open("");
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::closeWallet()
@@ -421,6 +423,8 @@ void MainWindow::closeWallet()
 
 void MainWindow::importKey()
 {
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
   ImportGUIKeyDialog dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -432,6 +436,7 @@ void MainWindow::importKey()
 
     if (keyString.isEmpty() || filePath.isEmpty())
     {
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -492,6 +497,7 @@ void MainWindow::importKey()
       WalletAdapter::instance().createWithKeys(keys);
     }
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::backupWallet()
@@ -614,7 +620,7 @@ void MainWindow::askForWalletPassword(bool _error)
 {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide();
-
+  m_ui->m_overviewFrame->hide();
   PasswordDialog dlg(_error, this);
 
   dlg.setModal(true);
@@ -725,7 +731,8 @@ void MainWindow::rescanTo()
 
 void MainWindow::importsecretkeys()
 {
-
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
   importSecretKeys dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -739,7 +746,7 @@ void MainWindow::importsecretkeys()
 
     if (spendKey.isEmpty() || filePath.isEmpty())
     {
-
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -765,12 +772,13 @@ void MainWindow::importsecretkeys()
                          size) ||
         size != sizeof(private_spend_key_hash))
     {
-
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
     if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash))
     {
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -800,11 +808,13 @@ void MainWindow::importsecretkeys()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::importSeed()
 {
-
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
   ImportSeed dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -816,7 +826,7 @@ void MainWindow::importSeed()
     QString filePath = dlg.getFilePath();
     if (seed.isEmpty() || filePath.isEmpty())
     {
-
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -866,6 +876,7 @@ void MainWindow::importSeed()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::importTracking()

@@ -71,11 +71,11 @@ int main(int argc, char* argv[])
 
 #ifdef Q_OS_WIN
   if (!cmdLineParseResult) {
-    QMessageBox::critical(nullptr, QObject::tr("Error"), cmdLineParser.getErrorText());
+    QMessageBox::critical(&MainWindow::instance(), QObject::tr("Error"), cmdLineParser.getErrorText());
     return app.exec();
   }
   else if (cmdLineParser.hasHelpOption()) {
-    QMessageBox::information(nullptr, QObject::tr("Help"), cmdLineParser.getHelpText());
+    QMessageBox::information(&MainWindow::instance(), QObject::tr("Help"), cmdLineParser.getHelpText());
     return app.exec();
   }
 #endif

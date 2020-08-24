@@ -26,8 +26,8 @@
    <string>Welcome</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #e5e5e5;
-border: 0px; background-color: #212529; font-family: Poppins;</string>
+   <string notr="true">color: #ddd;
+border: 0px; background-color: #282d31; font-family: Poppins;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -1472,10 +1472,10 @@ font-size: 20px;</string>
      </layout>
      <zorder>emptyLabelForAlignmentLeft</zorder>
      <zorder>emptyLabelForAlignmentRight</zorder>
-     <zorder>box4</zorder>
      <zorder>box2</zorder>
      <zorder>box3</zorder>
      <zorder>box1</zorder>
+     <zorder>box4</zorder>
     </widget>
    </item>
    <item>
