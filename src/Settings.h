@@ -56,7 +56,7 @@ public:
   QString getLanguage() const;
   int getFontSize() const;
   bool isStartOnLoginEnabled() const;
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   bool isMinimizeToTrayEnabled() const;
   bool isCloseToTrayEnabled() const;
 #endif
@@ -77,7 +77,7 @@ public:
   void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   void setMinimizeToTrayEnabled(bool _enable);
   void setCloseToTrayEnabled(bool _enable);
 #endif
