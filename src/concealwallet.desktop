@@ -5,6 +5,6 @@ Comment=Conceal Desktop
 Exec=CONCEAL-GUI
 Terminal=false
 Type=Application
-Icon=conceal.svg
+Icon=conceal.png
 MimeType=x-scheme-handler/concealwallet;
 Categories=Office;Finance;Cryptocurrency;

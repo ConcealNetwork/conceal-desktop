@@ -7084,35 +7084,24 @@ border: 0px;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="empty_align_9">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="font">
-            <font>
-             <pointsize>1</pointsize>
-            </font>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
+          </spacer>
          </item>
         </layout>
-        <zorder>empty_align_9</zorder>
         <zorder>groupBox_7</zorder>
         <zorder>groupBox_8</zorder>
         <zorder>groupBox_13</zorder>
         <zorder>groupBox_9</zorder>
+        <zorder>verticalSpacer_2</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
@@ -7518,10 +7507,10 @@ color: orange;</string>
      <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8757,7 +8746,7 @@ color: orange;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
