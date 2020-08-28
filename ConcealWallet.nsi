@@ -47,6 +47,16 @@ InstallDir "$PROGRAMFILES\Conceal Wallet"
 !define MUI_ABORTWARNING
 !define MUI_UNABORTWARNING
 
+!define MUI_ICON "src\images\appicon\conceal.ico"
+!define MUI_UNICON "src\images\appicon\conceal.ico"
+
+!define MUI_WELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
+
+!define MUI_HEADERIMAGE
+!define MUI_HEADERIMAGE_RIGHT
+!define MUI_HEADERIMAGE_BITMAP "src\images\installer\conceal-header.bmp"
+
 !insertmacro MUI_PAGE_WELCOME
 
 !ifdef LICENSE_TXT
