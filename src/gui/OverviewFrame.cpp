@@ -601,7 +601,7 @@ namespace WalletGui
   {
 
     QString walletFile = Settings::instance().getWalletName();
-    m_ui->m_currentWalletTitle->setText(tr("CURRENT WALLET") + ": " + walletFile.toUpper());
+    m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile);
   }
 
   /* Download is done, set the chart as the pixmap */
@@ -792,8 +792,8 @@ namespace WalletGui
 
     float total = 0;
     total = ccxfiat * (float)OverviewFrame::totalBalance;
-    m_ui->ccxTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(tr("TOTAL") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
+    m_ui->ccxTotal->setText(tr("Total") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
+    m_ui->fiatTotal->setText(tr("Total") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
   }
 
   /* Banking menu button clicked */

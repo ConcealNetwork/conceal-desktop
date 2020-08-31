@@ -7351,7 +7351,8 @@ color: #ccc;
            </property>
            <property name="styleSheet">
             <string notr="true">padding: 40px;
-border:none;</string>
+border:none;
+color: #aaa;</string>
            </property>
            <property name="text">
             <string>STATUS</string>
@@ -7387,10 +7388,9 @@ border:none;</string>
             <enum>Qt::LeftToRight</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border: none;
+            <string notr="true">border: none;
 text-align: right;
-color: orange;</string>
+color: #aaa;</string>
            </property>
            <property name="text">
             <string>CCX TOTAL</string>
@@ -7415,10 +7415,9 @@ color: orange;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border: none;
+            <string notr="true">border: none;
 text-align: left;
-color: orange;</string>
+color: #aaa;</string>
            </property>
            <property name="text">
             <string>HEIGHT</string>
@@ -7454,11 +7453,9 @@ color: orange;</string>
             <enum>Qt::CustomContextMenu</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">        
-        
-        border: none;
-        text-align: left;
-        color: orange;</string>
+            <string notr="true">border: none;
+text-align: left;
+color: #aaa;</string>
            </property>
            <property name="text">
             <string>WALLET NAME</string>
@@ -7489,10 +7486,9 @@ color: orange;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border: none;
+            <string notr="true">border: none;
 text-align: right;
-color: orange;</string>
+color: #aaa;</string>
            </property>
            <property name="text">
             <string>FIAT TOTAL</string>
