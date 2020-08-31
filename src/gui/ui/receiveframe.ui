@@ -20,7 +20,9 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px; background-color: #212529; color: #ddd; </string>
+   <string notr="true">border: 0px;
+background-color: #282d31;
+color: #ddd;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -85,7 +87,7 @@ font-size: 22px;</string>
       <item row="0" column="0">
        <widget class="QGroupBox" name="seedBox">
         <property name="styleSheet">
-         <string notr="true">background-color: #212529;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -658,7 +660,7 @@ QPushButton#m_showGUI:hover
       <item row="0" column="0">
        <widget class="QGroupBox" name="guiKeyBox">
         <property name="styleSheet">
-         <string notr="true">background-color: #212529;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -714,7 +716,7 @@ QPushButton#m_showGUI:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #e5e5e5; font-size: 17px;</string>
+               <string notr="true">font-size: 17px;</string>
               </property>
               <property name="html">
                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -840,7 +842,7 @@ QPushButton#m_backButton_3:hover
       <item row="0" column="0">
        <widget class="QGroupBox" name="privateKeyBox">
         <property name="styleSheet">
-         <string notr="true">background-color: #212529;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -883,8 +885,7 @@ font-family: Poppins;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #ddd;
-font-size: 16px;
-font-family: Poppins;color: #e5e5e5;</string>
+font-size: 16px;</string>
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -932,8 +933,7 @@ font-family: Poppins;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #ddd;
-font-size: 16px;
-font-family: Poppins;</string>
+font-size: 16px;</string>
            </property>
            <property name="html">
             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1087,9 +1087,9 @@ QPushButton#m_backButton_4:hover
       </item>
      </layout>
      <zorder>introBox</zorder>
+     <zorder>seedBox</zorder>
      <zorder>guiKeyBox</zorder>
      <zorder>privateKeyBox</zorder>
-     <zorder>seedBox</zorder>
     </widget>
    </item>
   </layout>

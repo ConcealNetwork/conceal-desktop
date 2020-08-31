@@ -412,28 +412,31 @@ text-align: left;
           <widget class="QLabel" name="label_42">
            <property name="minimumSize">
             <size>
-             <width>180</width>
-             <height>160</height>
+             <width>0</width>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>190</width>
-             <height>160</height>
+             <width>199</width>
+             <height>199</height>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-padding-left: 35px;</string>
+            <string notr="true">padding: 20px;
+border:none;</string>
            </property>
            <property name="text">
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/images/images/conceal.png</pixmap>
+            <pixmap resource="../../resources.qrc">:/images/conceal-logo</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -812,35 +815,17 @@ border-right: 3px solid orange;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="emptyMenuLabel">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="minimumSize">
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>0</width>
-             <height>31</height>
+             <width>20</width>
+             <height>40</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>190</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="sizeIncrement">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-          </widget>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="lm_helpButton">
@@ -1576,8 +1561,8 @@ border-radius: 2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>560</width>
-                 <height>534</height>
+                 <width>557</width>
+                 <height>551</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2754,17 +2739,6 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="0">
-             <widget class="QPushButton" name="chartButton">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../../resources.qrc">
-                <normaloff>:/icons/tx-mined</normaloff>:/icons/tx-mined</iconset>
-              </property>
-             </widget>
-            </item>
             <item row="3" column="0" rowspan="8" colspan="4">
              <widget class="QLabel" name="m_chart">
               <property name="sizePolicy">
@@ -2827,7 +2801,6 @@ text-align: left;
            <zorder>label_7</zorder>
            <zorder>label_9</zorder>
            <zorder>label_11</zorder>
-           <zorder>chartButton</zorder>
            <zorder>m_chart_2</zorder>
            <zorder>title_marketInformation</zorder>
            <zorder>m_chart</zorder>
@@ -3456,7 +3429,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/github.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/github</pixmap>
               </property>
              </widget>
             </item>
@@ -3535,7 +3508,7 @@ margin-left: 10px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/discord.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/discord</pixmap>
               </property>
              </widget>
             </item>
@@ -3575,7 +3548,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/medium.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
               </property>
              </widget>
             </item>
@@ -3654,7 +3627,7 @@ margin-left: 10px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/telegram.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/telegram</pixmap>
               </property>
              </widget>
             </item>
@@ -3809,7 +3782,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/qtrade.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/qtrade</pixmap>
               </property>
              </widget>
             </item>
@@ -3849,7 +3822,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/reddit</pixmap>
               </property>
              </widget>
             </item>
@@ -3927,7 +3900,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/hotbit.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/hotbit</pixmap>
               </property>
              </widget>
             </item>
@@ -4043,7 +4016,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/stex.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/stex</pixmap>
               </property>
              </widget>
             </item>
@@ -4121,7 +4094,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/twitter.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/twitter</pixmap>
               </property>
              </widget>
             </item>
@@ -4161,7 +4134,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/tradeogre.png</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
               </property>
              </widget>
             </item>
@@ -4191,7 +4164,7 @@ font-size: 18px;
              <string notr="true"/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../resources.qrc">:/icons/reddit.png</pixmap>
+             <pixmap>:/icons/reddit.png</pixmap>
             </property>
            </widget>
           </widget>
@@ -5231,7 +5204,7 @@ font-size: 16px;</string>
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/images/images/lock.png</pixmap>
+            <pixmap resource="../../resources.qrc">:/images/lock</pixmap>
            </property>
           </widget>
          </item>
@@ -5406,7 +5379,7 @@ font-size: 16px;</string>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
-             <normaloff>:/images/images/qr.png</normaloff>:/images/images/qr.png</iconset>
+             <normaloff>:/images/qr</normaloff>:/images/qr</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -5416,7 +5389,7 @@ font-size: 16px;</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="0" colspan="3">
+         <item row="0" column="1" colspan="3">
           <widget class="QLabel" name="m_myConcealWalletTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -5454,26 +5427,6 @@ font-size: 16px;</string>
            </property>
            <property name="text">
             <string>CONCEAL.NETWORK</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="5">
-          <widget class="QPushButton" name="m_qrcodebutton">
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>:/images/qr.png</normaloff>:/images/qr.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>32</width>
-             <height>32</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -5568,6 +5521,36 @@ border: none;
              <width>18</width>
              <height>18</height>
             </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="m_titleIcon">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+color: #fff;
+font-size: 30px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../../resources.qrc">:/icons/icon-home</pixmap>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -6315,7 +6298,7 @@ font-size: 18px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/en.png</normaloff>:/images/images/en.png</iconset>
+                <normaloff>:/images/flags/en</normaloff>:/images/flags/en</iconset>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -6398,7 +6381,7 @@ font-size: 18px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/cn.png</normaloff>:/images/images/cn.png</iconset>
+                <normaloff>:/images/flags/cn</normaloff>:/images/flags/cn</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -6502,7 +6485,7 @@ border: 0px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/tr.png</normaloff>:/images/images/tr.png</iconset>
+                <normaloff>:/images/flags/tr</normaloff>:/images/flags/tr</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -6579,7 +6562,7 @@ border: 0px;
               </property>
               <property name="icon">
                <iconset resource="../../resources.qrc">
-                <normaloff>:/images/images/ru.png</normaloff>:/images/images/ru.png</iconset>
+                <normaloff>:/images/flags/ru</normaloff>:/images/flags/ru</iconset>
               </property>
               <property name="checked">
                <bool>false</bool>
@@ -7101,35 +7084,24 @@ border: 0px;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="empty_align_9">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="font">
-            <font>
-             <pointsize>1</pointsize>
-            </font>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
            </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
+          </spacer>
          </item>
         </layout>
-        <zorder>empty_align_9</zorder>
         <zorder>groupBox_7</zorder>
         <zorder>groupBox_8</zorder>
         <zorder>groupBox_13</zorder>
         <zorder>groupBox_9</zorder>
+        <zorder>verticalSpacer_2</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
@@ -7527,20 +7499,18 @@ color: orange;</string>
      </layout>
      <zorder>darkness</zorder>
      <zorder>statusBox</zorder>
-     <zorder>newMessageBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -7622,22 +7592,6 @@ color: orange;</string>
     <hint type="sourcelabel">
      <x>100</x>
      <y>360</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>649</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_qrcodebutton</sender>
-   <signal>clicked()</signal>
-   <receiver>OverviewFrame</receiver>
-   <slot>qrCodeClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1220</x>
-     <y>90</y>
     </hint>
     <hint type="destinationlabel">
      <x>649</x>
@@ -8735,7 +8689,6 @@ color: orange;</string>
   <slot>walletClicked()</slot>
   <slot>minimize()</slot>
   <slot>maximize()</slot>
-  <slot>chartButtonClicked()</slot>
   <slot>newMessageClicked()</slot>
   <slot>rescanClicked()</slot>
   <slot>transactionHistoryClicked()</slot>

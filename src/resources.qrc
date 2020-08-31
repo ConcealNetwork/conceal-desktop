@@ -1,66 +1,60 @@
 <RCC>
     <qresource prefix="/icons">
-        <file alias="tx-mined">icons/tx_mined.png</file>
-        <file alias="copy">icons/editcopy.png</file>
-        <file alias="tx-input">icons/tx_input.png</file>
-        <file alias="tx-output">icons/tx_output.png</file>
-        <file alias="address-book">icons/address-book.png</file>
-        <file alias="paste">icons/editpaste.png</file>
-        <file alias="remove">icons/remove.png</file>
+        <!-- Social media & Exchanges icons -->
+        <file alias="discord">icons/discord.png</file>
+        <file alias="telegram">icons/telegram.png</file>
+        <file alias="medium">icons/medium.png</file>
+        <file alias="twitter">icons/twitter.png</file>
+        <file alias="github">icons/github.png</file>
+        <file alias="reddit">icons/reddit.png</file>
+        <file alias="stex">icons/stex.png</file>
+        <file alias="qtrade">icons/qtrade.png</file>
+        <file alias="tradeogre">icons/tradeogre.png</file>
+        <file alias="hotbit">icons/hotbit.png</file>
+        <!-- Clock icons -->
         <file alias="clock1">icons/clock1.png</file>
         <file alias="clock2">icons/clock2.png</file>
         <file alias="clock3">icons/clock3.png</file>
         <file alias="clock4">icons/clock4.png</file>
         <file alias="clock5">icons/clock5.png</file>
-        <file alias="tx-inout">icons/tx_inout.png</file>
-        <file alias="unconfirmed">icons/unconfirmed.png</file>
-        <file alias="tx-deposit">icons/tx_deposit.png</file>
-        <file>icons/tx_investment.png</file>
-        <file>icons/editcopy-old.png</file>
-        <file>icons/qrcode-scan.png</file>
-        <file>icons/close.png</file>
+        <!-- General icons -->
+        <file alias="address-book">icons/address-book.png</file>
+        <file alias="remove">icons/remove.png</file>
+        <file alias="transaction">icons/transaction.png</file>
         <file alias="lock">icons/lock.png</file>
         <file alias="settings">icons/settings.png</file>
         <file alias="minimize">icons/minimize.png</file>
-        <file>icons/maximize.png</file>
-        <file>icons/tx_input.png</file>
-        <file>icons/home.png</file>
-        <file>icons/home-icon.png</file>
-        <file>icons/icon-send.png</file>
-        <file>icons/font-size.png</file>
-        <file>icons/icon-deposit.png</file>
-        <file>icons/icon-messages.png</file>
-        <file>icons/icon-tx.png</file>
-        <file>icons/icon-keys.png</file>
-        <file>icons/icon-address.png</file>
-        <file>icons/icon-sendmsg.png</file>
+        <!-- TX status-->
+        <file alias="tx-mined">icons/tx_mined.png</file>
+        <file alias="tx-input">icons/tx_input.png</file>
+        <file alias="tx-output">icons/tx_output.png</file>
+        <file alias="tx-inout">icons/tx_inout.png</file>
+        <file alias="tx-deposit">icons/tx_deposit.png</file>
+        <!-- Title icons -->
+        <file alias="icon-address">icons/icon-address.png</file>
+        <file alias="icon-banking">icons/icon-banking.png</file>
+        <file alias="icon-home">icons/icon-home.png</file>
+        <file alias="icon-messages">icons/icon-messages.png</file>
+        <file alias="icon-send-message">icons/icon-sendmsg.png</file>
+        <file alias="icon-send">icons/icon-send.png</file>
+        <file alias="icon-transactions">icons/icon-tx.png</file>
+        <!-- Other icons-->
+        <file alias="font-size">icons/font-size.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file alias="conceal-logo">images/conceal.png</file>
         <file alias="splash">images/splash.png</file>
-        <file alias="cryptonote">images/cryptonote.png</file>
         <file alias="clock">images/clock.gif</file>
-        <file>images/conceal.png</file>
-        <file>images/qr.png</file>
-        <file>images/conceal-small.png</file>
-        <file>images/lock.png</file>
-        <file>images/en.png</file>
-        <file>images/ru.png</file>
-        <file>images/cn.png</file>
-        <file>images/tr.png</file>
-        <file>images/cryptonote2.png</file>
+        <file alias="lock">images/lock.png</file>
+        <file alias="qr">images/qr.png</file>
+    </qresource>
+    <qresource prefix="/images/flags">
+        <file alias="en">images/en.png</file>
+        <file alias="ru">images/ru.png</file>
+        <file alias="cn">images/cn.png</file>
+        <file alias="tr">images/tr.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>icons/discord.png</file>
-        <file>icons/telegram.png</file>
-        <file>icons/medium.png</file>
-        <file>icons/twitter.png</file>
-        <file>icons/github.png</file>
-        <file>icons/reddit.png</file>
-        <file>icons/bitcoin.png</file>
-        <file>icons/stex.png</file>
-        <file>icons/qtrade.png</file>
-        <file>icons/tradeogre.png</file>
-        <file>icons/hotbit.png</file>
         <file>fonts/Poppins-Regular.ttf</file>
         <file>fonts/Roboto-Regular.ttf</file>
     </qresource>

@@ -105,7 +105,7 @@ private:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
-  bool checkWalletPassword();
+  bool checkWalletPassword(bool _error=false);
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
@@ -175,8 +175,6 @@ private:
   Q_SLOT void addressEditTextChanged(QString text);
 
 Q_SIGNALS:
-  void sendSignal();
-  void depositSignal();
   void backupSignal();
   void backupFileSignal();  
   void rescanSignal();
@@ -184,26 +182,13 @@ Q_SIGNALS:
   void newWalletSignal();
   void closeWalletSignal();
   void qrSignal(const QString &_address);
-  void newMessageSignal();
-  void newTransferSignal();
-  void transactionSignal();
-  void messageSignal();
-  void optimizeSignal();
   void resetWalletSignal();
-  void importSignal();
-  void aboutSignal();
   void aboutQTSignal();
-  void disclaimerSignal();
-  void settingsSignal();
-  void linksSignal();
   void importSeedSignal();
   void importGUIKeySignal();
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void connectionSettingsSignal();
-  void languageSettingsSignal();
-  void addressBookSignal();
   void payToSignal(const QModelIndex& _index);  
 };
 } // namespace WalletGui

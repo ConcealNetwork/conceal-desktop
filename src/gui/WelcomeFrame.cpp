@@ -13,6 +13,7 @@
 #include <QFontDatabase>
 #include <QMessageBox>
 
+#include "MainWindow.h"
 #include "WalletAdapter.h"
 #include "ui_welcomeframe.h"
 
@@ -181,13 +182,13 @@ void WelcomeFrame::nextShowSeed()
       m_ui->mnemonicSeed->setText(QString::fromStdString(seed));
     }
     else {
-      QMessageBox::warning(nullptr, QObject::tr("Error"), tr("Unable to create the wallet."));
+      QMessageBox::warning(&MainWindow::instance(), QObject::tr("Error"), tr("Unable to create the wallet."));
       nextThree();
     }
   }
   else {
     QMessageBox::warning(
-        nullptr, QObject::tr("Error"),
+        &MainWindow::instance(), QObject::tr("Error"),
         tr("Unable to create a new wallet at the path provided. Please select another."));
   }
 }
@@ -207,7 +208,7 @@ void WelcomeFrame::selectPathClicked()
 void WelcomeFrame::copySeedClicked()
 {
   QApplication::clipboard()->setText(m_ui->mnemonicSeed->text());
-  QMessageBox::information(nullptr, tr("Seed"), tr("Seed copied to clipboard"));
+  QMessageBox::information(&MainWindow::instance(), tr("Seed"), tr("Seed copied to clipboard"));
 }
 
 void WelcomeFrame::nextConfirmSeed()
@@ -229,7 +230,7 @@ void WelcomeFrame::nextValidate()
   if (!m_ui->validationCheckBox->isChecked())
   {
     QMessageBox::warning(
-        nullptr, QObject::tr("Error"),
+        &MainWindow::instance(), QObject::tr("Error"),
         tr("You must confirm that you have safely stored the mnemonic seed and understand that the "
            "Conceal Team cannot restore this wallet and is not responsible for loss of funds."));
     return;
@@ -244,7 +245,7 @@ void WelcomeFrame::nextValidate()
   }
   else {
     QMessageBox::warning(
-        nullptr, QObject::tr("Seed confirmation error"),
+        &MainWindow::instance(), QObject::tr("Seed confirmation error"),
         tr("The words entered does not match the seed. Please try again."));
   }
 }

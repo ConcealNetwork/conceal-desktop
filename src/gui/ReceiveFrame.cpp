@@ -15,6 +15,7 @@
 
 #include "WalletAdapter.h"
 #include "ui_receiveframe.h"
+#include "MainWindow.h"
 
 namespace WalletGui {
 
@@ -71,22 +72,22 @@ void ReceiveFrame::backClicked() {
 
 void ReceiveFrame::copyGUIClicked() {
     QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
-    QMessageBox::information(this, tr("Tracking Key"), "Tracking key copied to clipboard"); 
+    QMessageBox::information(&MainWindow::instance(), tr("Tracking Key"), "Tracking key copied to clipboard"); 
 }
 
 void ReceiveFrame::copySpendKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_spendKey->toPlainText());
-    QMessageBox::information(this, tr("Private Spend-Key"), "Private spend-key copied to clipboard"); 
+    QMessageBox::information(&MainWindow::instance(), tr("Private Spend-Key"), "Private spend-key copied to clipboard"); 
 }
 
 void ReceiveFrame::copyViewKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_viewKey->toPlainText());
-    QMessageBox::information(this, tr("Private View-Key"), "Private view-key copied to clipboard");    
+    QMessageBox::information(&MainWindow::instance(), tr("Private View-Key"), "Private view-key copied to clipboard");    
 }
 
 void ReceiveFrame::copySeedClicked() {
     QApplication::clipboard()->setText(m_ui->m_seed->toPlainText());
-    QMessageBox::information(this, tr("Seed"), "Seed copied to clipboard");
+    QMessageBox::information(&MainWindow::instance(), tr("Seed"), "Seed copied to clipboard");
 }
 
 void ReceiveFrame::showSeed() {

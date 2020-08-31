@@ -43,7 +43,6 @@
 #include "TransactionDetailsDialog.h"
 #include "TransactionFrame.h"
 #include "TransactionsListModel.h"
-#include "TranslatorManager.h"
 #include "TransactionsModel.h"
 #include "VisibleMessagesModel.h"
 #include "WalletAdapter.h"
@@ -803,13 +802,14 @@ namespace WalletGui
     m_ui->darkness->hide();
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText(tr("BANKING"));
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-banking"));
       m_ui->bankingBox->raise();
     }
     else
@@ -822,6 +822,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText(tr("TRANSACTIONS"));
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-transactions"));
     m_ui->transactionsBox->raise();
   }
 
@@ -829,6 +830,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-home"));
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -838,6 +840,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText(tr("ABOUT"));
+    m_ui->m_titleIcon->setText("?");
     m_ui->aboutBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
@@ -847,6 +850,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText(tr("WALLET SETTINGS"));
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/settings").scaled(36, 36));
     m_ui->settingsBox->raise();
   }
 
@@ -859,6 +863,7 @@ namespace WalletGui
   {
     m_ui->darkness->hide();
     m_ui->m_myConcealWalletTitle->setText(tr("INBOX"));
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-messages"));
     m_ui->messageBox->raise();
   }
 
@@ -876,13 +881,14 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
 
@@ -916,13 +922,14 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
     if (walletSynced == true)
     {
       m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
     }
@@ -956,12 +963,12 @@ namespace WalletGui
   void OverviewFrame::copyClicked()
   {
     QApplication::clipboard()->setText(OverviewFrame::wallet_address);
-    QMessageBox::information(this, tr("Wallet"), "Address copied to clipboard");
+    QMessageBox::information(&MainWindow::instance(), tr("Wallet"), "Address copied to clipboard");
   }
 
   void OverviewFrame::syncInProgressMessage()
   {
-    QMessageBox::information(this, tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
+    QMessageBox::information(&MainWindow::instance(), tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
   }
 
   // TRANSACTION HISTORY
@@ -1007,12 +1014,14 @@ namespace WalletGui
     {
       m_ui->m_addressEdit->setText(_address);
       m_ui->m_myConcealWalletTitle->setText(tr("SEND FUNDS"));
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
     }
     else
     {
       m_ui->m_addressMessageEdit->setText(_address);
       m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
+      m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
     }
   }
@@ -1077,7 +1086,7 @@ namespace WalletGui
     /* Check if its a tracking wallet */
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
@@ -1182,7 +1191,7 @@ namespace WalletGui
       /* Is it an exchange address? */
       if (!exchangeName.isEmpty())
       {
-        QMessageBox::information(this, tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
+        QMessageBox::information(&MainWindow::instance(), tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
         return;
       }
     }
@@ -1274,6 +1283,7 @@ namespace WalletGui
   void OverviewFrame::addressBookClicked()
   {
     m_ui->m_myConcealWalletTitle->setText(tr("ADDRESS BOOK"));
+    m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-address"));
     m_ui->addressBookBox->raise();
   }
 
@@ -1323,7 +1333,7 @@ namespace WalletGui
     {
       m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
       m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);
-      QMessageBox::information(NULL, QString::fromUtf8("Warning"),
+      QMessageBox::information(&MainWindow::instance(), QString::fromUtf8("Warning"),
                                QString::fromUtf8("Warning: you have reached the maximum message size of 260 characters."),
                                QString::fromUtf8("Ok"));
     }
@@ -1361,7 +1371,7 @@ namespace WalletGui
 
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
@@ -1478,7 +1488,7 @@ namespace WalletGui
 
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
@@ -1629,7 +1639,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
       return;
     }
 
@@ -1656,7 +1666,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
     }
     else
     {
@@ -1679,7 +1689,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(this, tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
     }
     else
     {
@@ -1687,7 +1697,7 @@ namespace WalletGui
       {
         Settings::instance().setAutoOptimizationStatus("disabled");
         m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
-        QMessageBox::information(this,
+        QMessageBox::information(&MainWindow::instance(),
                                  tr("Auto Optimization"),
                                  tr("Auto Optimization Disabled."),
                                  QMessageBox::Ok);
@@ -1696,7 +1706,7 @@ namespace WalletGui
       {
         Settings::instance().setAutoOptimizationStatus("enabled");
         m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
-        QMessageBox::information(this,
+        QMessageBox::information(&MainWindow::instance(),
                                  tr("Auto Optimization"),
                                  tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
                                  QMessageBox::Ok);
@@ -1731,12 +1741,7 @@ namespace WalletGui
     loadChart();
     m_priceProvider->getPrice();
 
-    // to restranslate without restarting the wallet, some text is missing after retranslate
-    // TranslatorManager::instance()->switchTranslator(language);
-    // m_ui->retranslateUi(this);
-    reset();
-
-    QMessageBox::information(this,
+    QMessageBox::information(&MainWindow::instance(),
                              tr("Language and Currency settings saved"),
                              tr("Please restart the wallet for the new settings to take effect."),
                              QMessageBox::Ok);
@@ -1772,7 +1777,7 @@ namespace WalletGui
     }
     Settings::instance().setCurrentRemoteNode(remoteHost);
 
-    QMessageBox::information(this,
+    QMessageBox::information(&MainWindow::instance(),
                              tr("Connection settings saved"),
                              tr("Please restart the wallet for the new settings to take effect."),
                              QMessageBox::Ok);
@@ -1898,13 +1903,13 @@ namespace WalletGui
   void OverviewFrame::copyABClicked()
   {
     QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
-    QMessageBox::information(this, tr("Address Book"), "Address copied to clipboard");
+    QMessageBox::information(&MainWindow::instance(), tr("Address Book"), "Address copied to clipboard");
   }
 
   void OverviewFrame::copyABPaymentIdClicked()
   {
     QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
-    QMessageBox::information(this, tr("Address Book"), "Payment ID copied to clipboard");
+    QMessageBox::information(&MainWindow::instance(), tr("Address Book"), "Payment ID copied to clipboard");
   }
 
   void OverviewFrame::deleteABClicked()
@@ -1999,7 +2004,7 @@ namespace WalletGui
   }
 
   /* Initiate a password prompt meant for critical tasks like sending funds etc */
-  bool OverviewFrame::checkWalletPassword()
+  bool OverviewFrame::checkWalletPassword(bool _error)
   {
     if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
       return true;
@@ -2007,7 +2012,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
 
-    PasswordDialog dlg(false, this);
+    PasswordDialog dlg(_error, this);
     dlg.setModal(true);
     dlg.setWindowFlags(Qt::FramelessWindowHint);
     dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
@@ -2016,9 +2021,7 @@ namespace WalletGui
       QString password = dlg.getPassword();
       if (!WalletAdapter::instance().checkWalletPassword(password))
       {
-        QMessageBox::critical(nullptr, tr("Incorrect password"), tr("Wrong password."), QMessageBox::Ok);
-        m_ui->darkness->hide();
-        return false;
+        return checkWalletPassword(true);
       }
       else
       {
