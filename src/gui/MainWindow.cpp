@@ -47,6 +47,7 @@
 #include "NewPasswordDialog.h"
 #include "OptimizationManager.h"
 #include "PasswordDialog.h"
+#include "MainPasswordDialog.h"
 #include "Settings.h"
 #include "ShowQRCode.h"
 #include "TranslatorManager.h"
@@ -584,9 +585,8 @@ void MainWindow::askForWalletPassword(bool _error)
 {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide();
-  m_ui->m_overviewFrame->hide();
-  PasswordDialog dlg(_error, this);
 
+  MainPasswordDialog dlg(_error, this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
