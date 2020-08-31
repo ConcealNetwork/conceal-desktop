@@ -423,7 +423,7 @@ text-align: left;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 20px;
+            <string notr="true">padding: 40px;
 border:none;</string>
            </property>
            <property name="text">
@@ -922,6 +922,17 @@ border: none;
           </widget>
          </item>
         </layout>
+        <zorder>lm_dashboardButton</zorder>
+        <zorder>lm_bankingButton</zorder>
+        <zorder>lm_transactionButton</zorder>
+        <zorder>lm_messagesButton</zorder>
+        <zorder>lm_addressBookButton_2</zorder>
+        <zorder>lm_newTransferButton</zorder>
+        <zorder>lm_newMessageButton</zorder>
+        <zorder>lm_newOpenWalletButton</zorder>
+        <zorder>lm_helpButton</zorder>
+        <zorder>lm_about</zorder>
+        <zorder>label_42</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
@@ -1242,7 +1253,7 @@ border: none;</string>
                                                 </string>
            </property>
            <property name="text">
-            <string>25%</string>
+            <string>QUARTER</string>
            </property>
           </widget>
          </item>
@@ -1266,7 +1277,7 @@ border: none;</string>
                                                 </string>
            </property>
            <property name="text">
-            <string>50%</string>
+            <string>HALF</string>
            </property>
           </widget>
          </item>
@@ -1290,7 +1301,7 @@ border: none;</string>
                                                 </string>
            </property>
            <property name="text">
-            <string>100%</string>
+            <string>ALL</string>
            </property>
           </widget>
          </item>
@@ -1561,8 +1572,8 @@ border-radius: 2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>557</width>
-                 <height>551</height>
+                 <width>504</width>
+                 <height>461</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2129,7 +2140,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -7339,10 +7350,8 @@ color: #ccc;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border: none;
-text-align: left;
-color: orange;</string>
+            <string notr="true">padding: 40px;
+border:none;</string>
            </property>
            <property name="text">
             <string>STATUS</string>
@@ -7506,11 +7515,11 @@ color: orange;</string>
      <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>addressBookBox</zorder>
-     <zorder>sendBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>sendBox</zorder>
     </widget>
    </item>
   </layout>
