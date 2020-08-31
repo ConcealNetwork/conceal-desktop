@@ -499,6 +499,7 @@ FORMS += src/gui/ui/addressbookdialog.ui \
          src/gui/ui/newpassworddialog.ui \
          src/gui/ui/overviewframe.ui \
          src/gui/ui/passworddialog.ui \
+         src/gui/ui/mainpassworddialog.ui \
          src/gui/ui/receiveframe.ui \
          src/gui/ui/showqrcode.ui \
          src/gui/ui/transactiondetailsdialog.ui \
