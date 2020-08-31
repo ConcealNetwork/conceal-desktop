@@ -75,7 +75,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
-  cryptonote/src/crypto/chacha.c
+  cryptonote/src/crypto/chacha8.c
   cryptonote/src/crypto/soft_aes.hpp
   cryptonote/src/crypto/crypto-ops-data.c
   cryptonote/src/crypto/crypto-ops.c
