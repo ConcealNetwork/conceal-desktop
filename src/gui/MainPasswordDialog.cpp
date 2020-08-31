@@ -8,7 +8,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <QDesktopServices>
-
+#include <QUrl>
 #include "MainPasswordDialog.h"
 #include "Settings.h"
 
