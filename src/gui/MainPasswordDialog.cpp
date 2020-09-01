@@ -12,7 +12,7 @@
 #include "MainPasswordDialog.h"
 #include "Settings.h"
 
-#include "ui_MainPasswordDialog.h"
+#include "ui_mainpassworddialog.h"
 
 namespace WalletGui
 {
