@@ -128,12 +128,14 @@ jobs:
       - name: Create AppImage
         id: appimage
         run: |
-          appimage_name=Conceal_Desktop-dev-"${{steps.build.outputs.ccx_version}}"-x86_64.AppImage
+          ccx_version="${{steps.build.outputs.ccx_version}}"
+          appimage_name=Conceal_Desktop-dev-"$ccx_version"-x86_64.AppImage
 
           cd appimage
           ./create-appimage.sh
           mv Conceal_Desktop*.AppImage ../$appimage_name
           cd ..
+          ls -l $appimage_name
           
           echo "::set-output name=artifact_name::${appimage_name}"
 
