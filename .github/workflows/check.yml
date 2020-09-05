@@ -99,8 +99,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build-ubuntu16:
-    name: Ubuntu 16.04
+  build-ubuntu16-and-create-appimage:
+    name: Ubuntu 16.04 and AppImage
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
@@ -125,19 +125,40 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          mv build/release/CONCEAL-GUI $release_name
+          cp build/release/CONCEAL-GUI $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"
 
           echo "::set-output name=release_name::${release_name}"
           echo "::set-output name=artifact_path::$release_name.tar.gz"
+          echo "::set-output name=ccx_version::$ccx_version"
+
+      - name: Create AppImage
+        id: appimage
+        run: |
+          appimage_name=Conceal_Desktop-dev-"${steps.build.outputs.ccx_version}"-x86_64.AppImage
+          cd appimage
+          ./create-appimage.sh
+          mv Conceal_Desktop*.AppImage ../$appimage_name
+          cd ..
+          tar -czf "$appimage_name".tar.gz $appimage_name
+          echo "::set-output name=appimage_name::$appimage_name"
+          echo "::set-output name=appimage_path::$appimage_name.tar.gz"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload AppImage To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.appimage.outputs.appimage_name }}
+          path: ${{ steps.appimage.outputs.appimage_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
