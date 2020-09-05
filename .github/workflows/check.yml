@@ -150,9 +150,9 @@ jobs:
           ./create-appimage.sh
           mv Conceal_Desktop*.AppImage ../$appimage_name
           cd ..
-          tar -czf "$appimage_name".tar.gz $appimage_name
+          ls
+          
           echo "::set-output name=appimage_name::$appimage_name"
-          echo "::set-output name=appimage_path::$appimage_name.tar.gz"
 
       - name: Upload AppImage To GH Artifacts
         uses: actions/upload-artifact@v2
