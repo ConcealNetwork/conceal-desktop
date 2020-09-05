@@ -99,8 +99,54 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build-ubuntu16-and-create-appimage:
-    name: Ubuntu 16.04 and AppImage
+  build-appimage:
+    name: AppImage
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get purge '*boost*'
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+
+      - name: Clone conceal-core
+        run: |
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+
+      - name: Build
+        id: build
+        run: |
+          ccx_version=${GITHUB_SHA::7}
+
+          make -j4 build-release
+
+          echo "::set-output name=ccx_version::$ccx_version"
+
+      - name: Create AppImage
+        id: appimage
+        run: |
+          appimage_name=Conceal_Desktop-dev-"${{steps.build.outputs.ccx_version}}"-x86_64.AppImage
+          
+          cd appimage
+          ./create-appimage.sh
+          mv Conceal_Desktop*.AppImage ../$appimage_name
+          cd ..
+          
+          echo "::set-output name=appimage_name::$appimage_name"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.appimage.outputs.appimage_name }}
+          path: ${{ steps.appimage.outputs.appimage_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-ubuntu16:
+    name: Ubuntu 16.04
     runs-on: ubuntu-16.04
     steps:
       - uses: actions/checkout@v2
@@ -125,14 +171,13 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          cp build/release/CONCEAL-GUI $release_name
+          mv build/release/CONCEAL-GUI $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"
 
           echo "::set-output name=release_name::${release_name}"
           echo "::set-output name=artifact_path::$release_name.tar.gz"
-          echo "::set-output name=ccx_version::$ccx_version"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
@@ -141,26 +186,7 @@ jobs:
           path: ${{ steps.build.outputs.artifact_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create AppImage
-        id: appimage
-        run: |
-          appimage_name=Conceal_Desktop-dev-"${{steps.build.outputs.ccx_version}}"-x86_64.AppImage
-          cd appimage
-          ./create-appimage.sh
-          mv Conceal_Desktop*.AppImage ../$appimage_name
-          cd ..
-          
-          echo "::set-output name=appimage_name::$appimage_name"
-
-      - name: Upload AppImage To GH Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.appimage.outputs.appimage_name }}
-          path: ${{ steps.appimage.outputs.appimage_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  
   build-ubuntu18:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
