@@ -129,19 +129,19 @@ jobs:
         id: appimage
         run: |
           appimage_name=Conceal_Desktop-dev-"${{steps.build.outputs.ccx_version}}"-x86_64.AppImage
-          
+
           cd appimage
           ./create-appimage.sh
           mv Conceal_Desktop*.AppImage ../$appimage_name
           cd ..
           
-          echo "::set-output name=appimage_name::$appimage_name"
+          echo "::set-output name=artifact_name::${appimage_name}"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.appimage.outputs.appimage_name }}
-          path: ${{ steps.appimage.outputs.appimage_name }}
+          name: ${{ steps.appimage.outputs.artifact_name }}
+          path: ${{ steps.appimage.outputs.artifact_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
