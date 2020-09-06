@@ -101,7 +101,7 @@ jobs:
 
   build-appimage:
     name: AppImage
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
 
@@ -188,7 +188,7 @@ jobs:
           path: ${{ steps.build.outputs.artifact_path }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+
   build-ubuntu18:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
