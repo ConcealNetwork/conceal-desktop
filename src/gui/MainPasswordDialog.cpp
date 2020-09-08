@@ -20,6 +20,7 @@ namespace WalletGui
 MainPasswordDialog::MainPasswordDialog(bool _error, QWidget *_parent) : QDialog(_parent), m_ui(new Ui::MainPasswordDialog)
 {
   m_ui->setupUi(this);
+  m_ui->m_version->setText(QString(tr("Conceal Desktop %1")).arg(Settings::instance().getVersion()));
 
   QString walletFile = Settings::instance().getWalletName();
   m_ui->m_currentWalletTitle->setText("Wallet: " + walletFile);
