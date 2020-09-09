@@ -3,132 +3,270 @@ name: Build check
 on:
   push:
     branches:
-      - '**'
+      - "**"
     tags-ignore:
-      - '*'            # We don't want this to run on release
+      - "*" # We don't want this to run on release
   pull_request:
 
 jobs:
   build-windows:
     name: Windows
-    runs-on: windows-2016
+    runs-on: windows-2019
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.0.0
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
-          version: '5.12.2'
-          host: 'windows'
-          target: 'desktop'
-          modules: 'qttools5'
-          install-deps: 'true'
+          host: "windows"
+          target: "desktop"
+          modules: "qttools5"
+          install-deps: "true"
+
+      - name: Clone conceal-core
+        shell: powershell
+        run: |
+          Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+
+      - name: Pre-build setup
+        shell: powershell
+        run: |
+          $search = "set\(CN_VERSION "
+          $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
+          $ccx_version = $ccx_version + ".0"
+
+          # Update "CMakeLists.txt" with cmake dir
+          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
+          $file = "CMakeLists.txt"
+          $find = '^set\(CMAKE_PREFIX_PATH.+'
+          $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
+          (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
+
+          # Update ConcealWallet.nsi with the current version
+          $file = "ConcealWallet.nsi"
+          $find = "^!define VERSION.+"
+          $replace = "!define VERSION '$ccx_version.0'"
+          (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
 
       - name: Build
         shell: powershell
         id: build
-        env:
-          VCINSTALLDIR: "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/"
-          BOOST_ROOT: ""
         run: |
-          pushd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools"
-          cmd /c "VsMSBuildCmd.bat&set" |
-          foreach {
-            if ($_ -match "=") {
-              $v = $_.split("="); set-item -force -path "ENV:\$($v[0])"  -value "$($v[1])"
-              # echo ::set-env name=$($v[0])::$($v[1])
-              Write-Host "$v"
-            }
-          }
-          popd
           $build_folder = "build"
           $release_folder = "Release"
-          $ccx_ver = "${{ github.ref }}" -replace 'refs/tags/'
-          $release_name = "ccx-desktop-win64-v$ccx_ver"
-          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
-          $filecontent = Get-Content CMakeLists.txt
-          $filecontent -replace '^set\(CMAKE_PREFIX_PATH.+',"set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")" | Set-Content CMakeLists.txt
-          Remove-Item cryptonote -Recurse -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+          $sha = "${{ github.sha }}"
+          $ccx_version = $sha.SubString(0,7)
+          $release_name = "ccx-desktop-win64-dev-$ccx_version"
+
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
-          Copy-Item "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Redist" "C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/" -Recurse
-          Start-Process cmake -ArgumentList "-G ""Visual Studio 15 2017 Win64"" -DBOOST_LIBRARYDIR:PATH=C:\hostedtoolcache\windows\Boost\1.69.0 .." -NoNewWindow -Wait
-          Start-Process msbuild -ArgumentList "CONCEAL-GUI.sln /p:Configuration=Release" -NoNewWindow -Wait
+
+          cmake -G "Visual Studio 16 2019" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
+
+          echo "::set-output name=build_folder::${build_folder}"
+          echo "::set-output name=release_folder::${release_folder}"
+          echo "::set-output name=release_name::${release_name}"
+
+      - name: Pack
+        shell: powershell
+        id: pack
+        run: |
+          $build_folder = "${{ steps.build.outputs.build_folder }}"
+          $release_name = "${{ steps.build.outputs.release_name }}"
+          $release_folder = "${{ steps.build.outputs.release_folder }}"
+
+          cd "$build_folder/$release_folder"
+          mkdir "Final"
+          windeployqt --release CONCEAL-GUI.exe --dir "Final/" --no-translations --no-opengl-sw
+          cd ../../
+          makensis ConcealWallet.nsi
+          cd "$build_folder/$release_folder"
+          Compress-Archive -Path Conceal-Setup.exe -DestinationPath "$release_name.zip"
+
+          $artifact_path = "$build_folder/$release_folder/$release_name.zip"
+          echo "::set-output name=artifact_path::${artifact_path}"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.build.outputs.release_name }}
+          path: ${{ steps.pack.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-ubuntu16:
     name: Ubuntu 16.04
     runs-on: ubuntu-16.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get purge '*boost*'
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+
+      - name: Clone conceal-core
+        run: |
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
 
       - name: Build
         id: build
         run: |
-         BOOST_ROOT=
-          sudo apt-get purge '*boost*'
-          sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
-          build_folder="build/release"
-          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
-          release_name=ccx-desktop-ubuntu-1604-v"$ccx_ver"
-          app_name="CONCEAL-GUI"
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-          mkdir -p "$build_folder"
-          cd "$build_folder"
-          cmake ../..
-          make
+          ccx_version=${GITHUB_SHA::7}
+          release_name=ccx-desktop-ubuntu-1604-dev-"$ccx_version"
+
+          make -j4 build-release
+          mkdir $release_name
+          mkdir -p $release_name/icon
+          mv build/release/CONCEAL-GUI $release_name
+          cp conceal-desktop.desktop $release_name
+          cp src/images/conceal.png $release_name/icon
+          tar -czf "$release_name".tar.gz "$release_name"
+
+          echo "::set-output name=release_name::${release_name}"
+          echo "::set-output name=artifact_path::$release_name.tar.gz"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.build.outputs.release_name }}
+          path: ${{ steps.build.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-ubuntu18:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+
+      - name: Clone conceal-core
+        run: |
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
 
       - name: Build
         id: build
         run: |
-         BOOST_ROOT=
-          sudo apt-get purge '*boost*'
+          ccx_version=${GITHUB_SHA::7}
+          release_name=ccx-desktop-ubuntu-1804-dev-"$ccx_version"
+
+          make -j4 build-release
+          mkdir $release_name
+          mkdir -p $release_name/icon
+          mv build/release/CONCEAL-GUI $release_name
+          cp conceal-desktop.desktop $release_name
+          cp src/images/conceal.png $release_name/icon
+          tar -czf "$release_name".tar.gz "$release_name"
+
+          echo "::set-output name=release_name::${release_name}"
+          echo "::set-output name=artifact_path::$release_name.tar.gz"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.build.outputs.release_name }}
+          path: ${{ steps.build.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-ubuntu20:
+    name: Ubuntu 20.04
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
-          build_folder="build/release"
-          ccx_ver=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
-          release_name=ccx-desktop-ubuntu-1804-v"$ccx_ver"
-          app_name="CONCEAL-GUI"
+
+      - name: Clone conceal-core
+        run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-          mkdir -p "$build_folder"
-          cd "$build_folder"
-          cmake ../..
-          make
+
+      - name: Build
+        id: build
+        run: |
+          ccx_version=${GITHUB_SHA::7}
+          release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
+
+          make -j4 build-release
+          mkdir $release_name
+          mkdir -p $release_name/icon
+          mv build/release/CONCEAL-GUI $release_name
+          cp conceal-desktop.desktop $release_name
+          cp src/images/conceal.png $release_name/icon
+          tar -czf "$release_name".tar.gz "$release_name"
+
+          echo "::set-output name=release_name::${release_name}"
+          echo "::set-output name=artifact_path::$release_name.tar.gz"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.build.outputs.release_name }}
+          path: ${{ steps.build.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-macos:
     name: macOS
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
+
+      - name: Install dependencies
+        run: |
+          brew install gcc boost@1.60
+          brew link boost@1.60 --force
+
+      - name: Clone conceal-core
+        run: |
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
 
       - name: Build
         id: build
         run: |
           build_folder="build/release"
-          ccx_ver=$(echo ${{ github.ref }} | sed 's|refs/tags/||')
-          release_name="ccx-desktop-macOS-v$ccx_ver"
+          ccx_ver=${GITHUB_SHA::7}
+          release_name="ccx-desktop-macOS-dev-$ccx_ver"
           app_name="CONCEAL-GUI.app"
-          lang_folder="/Contents/Resources/languages"
-          brew install gcc boost@1.60
-          brew link boost@1.60 --force
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+
           mkdir -p "$build_folder"
           cd "$build_folder"
           cmake -DCMAKE_C_FLAGS="-mmacosx-version-min=10.12" -DCMAKE_CXX_FLAGS="-mmacosx-version-min=10.12" -D CMAKE_BUILD_TYPE=Release ../..
-          make
+          make -j4
+          macdeployqt "$app_name"
+          cpack
+          mkdir "$release_name"
+          mv *.dmg "$release_name".dmg
+          mv "$release_name".dmg "$release_name"
+
+          echo "::set-output name=release_name::${release_name}"
+          echo "::set-output name=artifact_path::$build_folder/$release_name"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.build.outputs.release_name }}
+          path: ${{ steps.build.outputs.artifact_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

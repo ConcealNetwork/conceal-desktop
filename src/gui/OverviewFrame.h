@@ -42,9 +42,6 @@ public:
   QModelIndex index;
   void scrollToTransaction(const QModelIndex& _index);
 
-public slots:
-  void onCustomContextMenu(const QPoint &point);
-
 public Q_SLOTS:
   void addABClicked();
   void editABClicked();
@@ -52,6 +49,9 @@ public Q_SLOTS:
   void copyABPaymentIdClicked();
   void deleteABClicked();
   void payToABClicked();
+
+protected:
+  void resizeEvent(QResizeEvent *event) override;
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -65,8 +65,7 @@ private:
   ExchangeProvider *m_exchangeProvider;
   QString remote_node_fee_address;
   quint64 totalBalance = 0;
-  float ccxusd = 0;
-  float ccxeur = 0;
+  float ccxfiat = 0;
   QString wallet_address;
   quint64 remote_node_fee;
   quint64 m_actualBalance = 0;
@@ -78,14 +77,15 @@ private:
   QString exchangeName = "";
 
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
+  void onPriceFound(QJsonObject &result);
   void onExchangeFound(QString &_exchange);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStatusBarText(const QString &_text);
+  void setStyles(int change);
+  void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
   void walletSynchronized(int _error, const QString &_error_text);
@@ -105,7 +105,7 @@ private:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
-  bool checkWalletPassword();
+  bool checkWalletPassword(bool _error=false);
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
@@ -122,6 +122,7 @@ private:
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
+  Q_SLOT void changeFontSize();
   Q_SLOT void sendFundsClicked();
   Q_SLOT void sendMessageClicked();
   Q_SLOT void clearAllClicked();
@@ -171,10 +172,9 @@ private:
   Q_SLOT void tradeogreClicked();
   Q_SLOT void qtradeClicked();
   Q_SLOT void helpClicked();
+  Q_SLOT void addressEditTextChanged(QString text);
 
 Q_SIGNALS:
-  void sendSignal();
-  void depositSignal();
   void backupSignal();
   void backupFileSignal();  
   void rescanSignal();
@@ -182,26 +182,13 @@ Q_SIGNALS:
   void newWalletSignal();
   void closeWalletSignal();
   void qrSignal(const QString &_address);
-  void newMessageSignal();
-  void newTransferSignal();
-  void transactionSignal();
-  void messageSignal();
-  void optimizeSignal();
   void resetWalletSignal();
-  void importSignal();
-  void aboutSignal();
   void aboutQTSignal();
-  void disclaimerSignal();
-  void settingsSignal();
-  void linksSignal();
   void importSeedSignal();
   void importGUIKeySignal();
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void connectionSettingsSignal();
-  void languageSettingsSignal();
-  void addressBookSignal();
   void payToSignal(const QModelIndex& _index);  
 };
 } // namespace WalletGui

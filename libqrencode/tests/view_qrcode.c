@@ -10,14 +10,18 @@
 #include "../split.h"
 #include "../qrencode_inner.h"
 
-static SDL_Surface *screen = NULL;
+static SDL_Window *window;
+static SDL_Renderer *renderer;
+static SDL_Texture *texture = NULL;
+static SDL_Surface *surface = NULL;
 static int casesensitive = 1;
 static int eightbit = 0;
-static int version = 1;
+static int version = 0;
 static int size = 4;
-static int margin = 4;
+static int margin = -1;
 static int structured = 0;
 static int micro = 0;
+static int colorize = 0;
 static QRecLevel level = QR_ECLEVEL_L;
 static QRencodeMode hint = QR_MODE_8;
 
@@ -61,9 +65,10 @@ static void usage(int help, int longopt)
 "               specify error correction level from L (lowest) to H (highest).\n"
 "               (default=L)\n\n"
 "  -v NUMBER, --symversion=NUMBER\n"
-"               specify the version of the symbol. (default=auto)\n\n"
+"               specify the version of the symbol. See SYMBOL VERSIONS for more\n"
+"               information. (default=auto)\n\n"
 "  -m NUMBER, --margin=NUMBER\n"
-"               specify the width of the margins. (default=4)\n\n"
+"               specify the width of the margins. (default=4 (2 for Micro QR)))\n\n"
 "  -S, --structured\n"
 "               make structured symbols. Version must be specified.\n\n"
 "  -k, --kanji  assume that the input text contains kanji (shift-jis).\n\n"
@@ -76,7 +81,15 @@ static void usage(int help, int longopt)
 "  -V, --version\n"
 "               display the version number and copyrights of the qrencode.\n\n"
 "  [STRING]     input data. If it is not specified, data will be taken from\n"
-"               standard input.\n"
+"               standard input.\n\n"
+"*SYMBOL VERSIONS\n"
+"               The symbol versions of QR Code range from Version 1 to Version\n"
+"               40. Each version has a different module configuration or number\n"
+"               of modules, ranging from Version 1 (21 x 21 modules) up to\n"
+"               Version 40 (177 x 177 modules). Each higher version number\n"
+"               comprises 4 additional modules per side by default. See\n"
+"               http://www.qrcode.com/en/about/version.html for a detailed\n"
+"               version list.\n"
 			);
 		} else {
 			fprintf(stderr,
@@ -88,7 +101,7 @@ static void usage(int help, int longopt)
 "  -l {LMQH}    specify error correction level from L (lowest) to H (highest).\n"
 "               (default=L)\n"
 "  -v NUMBER    specify the version of the symbol. (default=auto)\n"
-"  -m NUMBER    specify the width of the margins. (default=4)\n"
+"  -m NUMBER    specify the width of the margins. (default=4 (2 for Micro))\n"
 "  -S           make structured symbols. Version must be specified.\n"
 "  -k           assume that the input text contains kanji (shift-jis).\n"
 "  -c           encode lower-case alphabet characters in 8-bit mode. (default)\n"
@@ -136,6 +149,17 @@ static void draw_QRcode(QRcode *qrcode, int ox, int oy)
 	int x, y, width;
 	unsigned char *p;
 	SDL_Rect rect;
+	Uint32 color[8];
+	int col;
+
+	color[0] = SDL_MapRGBA(surface->format, 255, 255, 255, 255);
+	color[1] = SDL_MapRGBA(surface->format,   0,   0,   0, 255);
+	color[2] = SDL_MapRGBA(surface->format, 192, 192, 255, 255);
+	color[3] = SDL_MapRGBA(surface->format,   0,   0,  64, 255);
+	color[4] = SDL_MapRGBA(surface->format, 255, 255, 192, 255);
+	color[5] = SDL_MapRGBA(surface->format,  64,  64,   0, 255);
+	color[6] = SDL_MapRGBA(surface->format, 255, 192, 192, 255);
+	color[7] = SDL_MapRGBA(surface->format,  64,   0,   0, 255);
 
 	ox += margin * size;
 	oy += margin * size;
@@ -147,13 +171,25 @@ static void draw_QRcode(QRcode *qrcode, int ox, int oy)
 			rect.y = oy + y * size;
 			rect.w = size;
 			rect.h = size;
-			SDL_FillRect(screen, &rect, (*p&1)?0:0xffffff);
+			if(!colorize) {
+				col = 0;
+			} else {
+				if(*p & 0x80) {
+					col = 6;
+				} else if(*p & 0x02) {
+					col = 4;
+				} else {
+					col = 2;
+				}
+			}
+			col += (*p & 1);
+			SDL_FillRect(surface, &rect, color[col]);
 			p++;
 		}
 	}
 }
 
-void draw_singleQRcode(QRinput *stream, int mask)
+static void draw_singleQRcode(QRinput *stream, int mask)
 {
 	QRcode *qrcode;
 	int width;
@@ -172,16 +208,23 @@ void draw_singleQRcode(QRinput *stream, int mask)
 		width = (qrcode->width + margin * 2) * size;
 	}
 
-	screen = SDL_SetVideoMode(width, width, 32, 0);
-	SDL_FillRect(screen, NULL, 0xffffff);
+	SDL_SetWindowSize(window, width, width);
+	if(surface != NULL) {
+		SDL_FreeSurface(surface);
+	}
+	surface = SDL_CreateRGBSurface(0, width, width, 32, 0, 0, 0, 0);
+	SDL_FillRect(surface, NULL, SDL_MapRGBA(surface->format, 255, 255, 255, 255));
 	if(qrcode) {
 		draw_QRcode(qrcode, 0, 0);
 	}
-	SDL_Flip(screen);
+	if(texture != NULL) {
+		SDL_DestroyTexture(texture);
+	}
+	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	QRcode_free(qrcode);
 }
 
-void draw_structuredQRcode(QRinput_Struct *s)
+static void draw_structuredQRcode(QRinput_Struct *s)
 {
 	int i, w, h, n, x, y;
 	int swidth;
@@ -195,8 +238,12 @@ void draw_structuredQRcode(QRinput_Struct *s)
 	w = (n < 4)?n:4;
 	h = (n - 1) / 4 + 1;
 
-	screen = SDL_SetVideoMode(swidth * w, swidth * h, 32, 0);
-	SDL_FillRect(screen, NULL, 0xffffff);
+	SDL_SetWindowSize(window, swidth * w, swidth * h);
+	if(surface != NULL) {
+		SDL_FreeSurface(surface);
+	}
+	surface = SDL_CreateRGBSurface(0, swidth * w, swidth * h, 32, 0, 0, 0, 0);
+	SDL_FillRect(surface, NULL, SDL_MapRGBA(surface->format, 255, 255, 255, 255));
 
 	p = qrcodes;
 	for(i=0; i<n; i++) {
@@ -205,11 +252,14 @@ void draw_structuredQRcode(QRinput_Struct *s)
 		draw_QRcode(p->code, x, y);
 		p = p->next;
 	}
-	SDL_Flip(screen);
+	if(texture != NULL) {
+		SDL_DestroyTexture(texture);
+	}
+	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	QRcode_List_free(qrcodes);
 }
 
-void draw_structuredQRcodeFromText(int argc, char **argv)
+static void draw_structuredQRcodeFromText(int argc, char **argv)
 {
 	QRinput_Struct *s;
 	QRinput *input;
@@ -250,7 +300,7 @@ void draw_structuredQRcodeFromText(int argc, char **argv)
 	QRinput_Struct_free(s);
 }
 
-void draw_structuredQRcodeFromQRinput(QRinput *stream)
+static void draw_structuredQRcodeFromQRinput(QRinput *stream)
 {
 	QRinput_Struct *s;
 
@@ -265,108 +315,136 @@ void draw_structuredQRcodeFromQRinput(QRinput *stream)
 	}
 }
 
-void view(int mode, QRinput *input)
+static void view(int mode, QRinput *input)
 {
 	int flag = 1;
 	int mask = -1;
 	SDL_Event event;
 	int loop;
+	int codeChanged = 1;
 
 	while(flag) {
-		if(mode) {
-			draw_structuredQRcodeFromText(textc, textv);
-		} else {
-			if(structured) {
-				draw_structuredQRcodeFromQRinput(input);
+		if(codeChanged) {
+			if(mode) {
+				draw_structuredQRcodeFromText(textc, textv);
 			} else {
-				draw_singleQRcode(input, mask);
+				if(structured) {
+					draw_structuredQRcodeFromQRinput(input);
+				} else {
+					draw_singleQRcode(input, mask);
+				}
+			}
+			if(mode || structured) {
+				printf("Version %d, Level %c.\n", version, levelChar[level]);
+			} else {
+				printf("Version %d, Level %c, Mask %d.\n", version, levelChar[level], mask);
 			}
 		}
-		if(mode || structured) {
-			printf("Version %d, Level %c.\n", version, levelChar[level]);
-		} else {
-			printf("Version %d, Level %c, Mask %d.\n", version, levelChar[level], mask);
-		}
+		SDL_RenderClear(renderer);
+		SDL_RenderCopy(renderer, texture, NULL, NULL);
+		SDL_RenderPresent(renderer);
 		loop = 1;
+		codeChanged = 0;
 		while(loop) {
-			usleep(10000);
-			while(SDL_PollEvent(&event)) {
-				if(event.type == SDL_KEYDOWN) {
-					switch(event.key.keysym.sym) {
-					case SDLK_RIGHT:
-						version++;
-						if(version > QRSPEC_VERSION_MAX)
-							version = QRSPEC_VERSION_MAX;
+			SDL_WaitEvent(&event);
+			if(event.type == SDL_KEYDOWN) {
+				codeChanged = 1;
+				switch(event.key.keysym.sym) {
+				case SDLK_RIGHT:
+					version++;
+					if(version > QRSPEC_VERSION_MAX)
+						version = QRSPEC_VERSION_MAX;
+					loop = 0;
+					break;
+				case SDLK_LEFT:
+					version--;
+					if(version < 1)
+						version = 1;
+					loop = 0;
+					break;
+				case SDLK_UP:
+					size++;
+					loop = 0;
+					break;
+				case SDLK_DOWN:
+					size--;
+					if(size < 1) size = 1;
+					loop = 0;
+					break;
+				case SDLK_0:
+				case SDLK_1:
+				case SDLK_2:
+				case SDLK_3:
+				case SDLK_4:
+				case SDLK_5:
+				case SDLK_6:
+				case SDLK_7:
+					if(!mode && !structured) {
+						mask = (event.key.keysym.sym - SDLK_0);
 						loop = 0;
-						break;
-					case SDLK_LEFT:
-						version--;
-						if(version < 1)
-							version = 1;
-						loop = 0;
-						break;
-					case SDLK_UP:
-						size++;
-						loop = 0;
-						break;
-					case SDLK_DOWN:
-						size--;
-						if(size < 1) size = 1;
-						loop = 0;
-						break;
-					case SDLK_0:
-					case SDLK_1:
-					case SDLK_2:
-					case SDLK_3:
-					case SDLK_4:
-					case SDLK_5:
-					case SDLK_6:
-					case SDLK_7:
-						if(!mode && !structured) {
-							mask = (event.key.keysym.sym - SDLK_0);
-							loop = 0;
-						}
-						break;
-					case SDLK_8:
-						if(!mode && !structured) {
-							mask = -1;
-							loop = 0;
-						}
-						break;
-					case SDLK_l:
-						level = QR_ECLEVEL_L;
-						loop = 0;
-						break;
-					case SDLK_m:
-						level = QR_ECLEVEL_M;
-						loop = 0;
-						break;
-					case SDLK_h:
-						level = QR_ECLEVEL_H;
-						loop = 0;
-						break;
-					case SDLK_q:
-						level = QR_ECLEVEL_Q;
-						loop = 0;
-						break;
-					case SDLK_ESCAPE:
-						loop = 0;
-						flag = 0;
-						break;
-					default:
-						break;
 					}
+					break;
+				case SDLK_8:
+					if(!mode && !structured) {
+						mask = -1;
+						loop = 0;
+					}
+					break;
+				case SDLK_9:
+					if(!mode && !structured) {
+						mask = -2;
+						loop = 0;
+					}
+					break;
+				case SDLK_l:
+					level = QR_ECLEVEL_L;
+					loop = 0;
+					break;
+				case SDLK_m:
+					level = QR_ECLEVEL_M;
+					loop = 0;
+					break;
+				case SDLK_h:
+					level = QR_ECLEVEL_H;
+					loop = 0;
+					break;
+				case SDLK_q:
+					level = QR_ECLEVEL_Q;
+					loop = 0;
+					break;
+				case SDLK_c:
+					colorize ^= 1;
+					loop = 0;
+					break;
+				case SDLK_ESCAPE:
+					loop = 0;
+					flag = 0;
+					break;
+				default:
+					break;
 				}
 				if(event.type == SDL_QUIT) {
 					loop = 0;
 					flag = 0;
 				}
 			}
+			if (event.type == SDL_WINDOWEVENT) {
+				switch (event.window.event) {
+					case SDL_WINDOWEVENT_SHOWN:
+					case SDL_WINDOWEVENT_EXPOSED:
+					case SDL_WINDOWEVENT_SIZE_CHANGED:
+					case SDL_WINDOWEVENT_RESIZED:
+						loop = 0;
+						break;
+					default:
+						break;
+				}
+			}
 		}
 	}
 }
 
-void view_simple(const unsigned char *str, int length)
+static void view_simple(const unsigned char *str, int length)
 {
 	QRinput *input;
 	int ret;
@@ -395,7 +473,7 @@ void view_simple(const unsigned char *str, int length)
 	QRinput_free(input);
 }
 
-void view_multiText(char **argv, int argc)
+static void view_multiText(char **argv, int argc)
 {
 	textc = argc;
 	textv = argv;
@@ -408,6 +486,7 @@ int main(int argc, char **argv)
 	int opt, lindex = -1;
 	unsigned char *intext = NULL;
 	int length = 0;
+	int ret;
 
 	while((opt = getopt_long(argc, argv, optstring, options, &lindex)) != -1) {
 		switch(opt) {
@@ -491,6 +570,7 @@ int main(int argc, char **argv)
 				break;
 		}
 	}
+
 	if(argc == 1) {
 		usage(1, 0);
 		exit(EXIT_SUCCESS);
@@ -504,14 +584,51 @@ int main(int argc, char **argv)
 		intext = readStdin(&length);
 	}
 
+	if(micro && version > MQRSPEC_VERSION_MAX) {
+		fprintf(stderr, "Version should be less or equal to %d.\n", MQRSPEC_VERSION_MAX);
+		exit(EXIT_FAILURE);
+	} else if(!micro && version > QRSPEC_VERSION_MAX) {
+		fprintf(stderr, "Version should be less or equal to %d.\n", QRSPEC_VERSION_MAX);
+		exit(EXIT_FAILURE);
+	}
+
+	if(margin < 0) {
+		if(micro) {
+			margin = 2;
+		} else {
+			margin = 4;
+		}
+	}
+
+	if(micro) {
+		if(version == 0) {
+			fprintf(stderr, "Version must be specified to encode a Micro QR Code symbol.\n");
+			exit(EXIT_FAILURE);
+		}
+		if(structured) {
+			fprintf(stderr, "Micro QR Code does not support structured symbols.\n");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	if(structured && version == 0) {
+		fprintf(stderr, "Version must be specified to encode structured symbols.\n");
+		exit(EXIT_FAILURE);
+	}
+
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
 		fprintf(stderr, "Failed initializing SDL: %s\n", SDL_GetError());
 		return -1;
 	}
-	if(structured && version < 1) {
-		fprintf(stderr, "Version number must be greater than 0 to encode structured symbols.\n");
-		exit(EXIT_FAILURE);
+
+	ret = SDL_CreateWindowAndRenderer(100, 100, SDL_WINDOW_SHOWN, &window, &renderer);
+	if(ret < 0) {
+		fprintf(stderr, "Failed to create a window: %s\n", SDL_GetError());
+		return -1;
 	}
+
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+
 	if(structured && (argc - optind > 1)) {
 		view_multiText(argv + optind, argc - optind);
 	} else {

@@ -6,18 +6,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "Settings.h"
+
+#include <Common/Util.h>
+
 #include <QCoreApplication>
 #include <QFile>
 #include <QJsonArray>
-#include <QLocale>
 #include <QJsonDocument>
+#include <QLocale>
 #include <QSettings>
 #include <QStandardPaths>
-#include <QTextCodec>
-#include <Common/Util.h>
+
 #include "CommandLineParser.h"
 #include "CurrencyAdapter.h"
-#include "Settings.h"
 
 namespace WalletGui
 {
@@ -25,7 +27,7 @@ namespace WalletGui
 Q_DECL_CONSTEXPR char OPTION_WALLET_FILE[] = "walletFile";
 Q_DECL_CONSTEXPR char OPTION_ENCRYPTED[] = "encrypted";
 Q_DECL_CONSTEXPR char OPTION_LANGUAGE[] = "language";
-Q_DECL_CONSTEXPR char OPTION_MINING_POOLS[] = "miningPools";
+Q_DECL_CONSTEXPR char OPTION_FONTSIZE[] = "fontSize";
 Q_DECL_CONSTEXPR char OPTION_CONNECTION[] = "connectionMode";
 Q_DECL_CONSTEXPR char OPTION_RPCNODES[] = "remoteNodes";
 Q_DECL_CONSTEXPR char OPTION_DAEMON_PORT[] = "daemonPort";
@@ -80,6 +82,8 @@ void Settings::load()
     m_addressBookFile = getDataDir().absoluteFilePath(QCoreApplication::applicationName() + ".addressbook");
   }
 
+  setOptions();
+
   if (m_settings.contains(OPTION_CONNECTION))
   {
     m_connectionMode = m_settings.value(OPTION_CONNECTION).toString();
@@ -100,9 +104,6 @@ void Settings::load()
     m_currentCurrency = m_settings.value(OPTION_CURRENCY).toString();
   }
 
-  if (!m_settings.contains("tracking")) {
-       m_settings.insert("tracking", false);
-  }
 }
 
 QString Settings::getVersion() const
@@ -120,9 +121,25 @@ QString Settings::getLanguage() const
   return currentLang;
 }
 
+int Settings::getFontSize() const
+{
+  int currentSize = 1;
+  if (m_settings.contains(OPTION_FONTSIZE))
+  {
+    currentSize = m_settings.value(OPTION_FONTSIZE).toInt();
+  }
+  return currentSize;
+}
+
 void Settings::setLanguage(const QString &_language)
 {
   m_settings.insert(OPTION_LANGUAGE, _language);
+  saveSettings();
+}
+
+void Settings::setFontSize(const int &_change)
+{
+  m_settings.insert(OPTION_FONTSIZE, _change);
   saveSettings();
 }
 
@@ -154,6 +171,11 @@ void Settings::setOptions()
     lang.truncate(lang.lastIndexOf('_'));
     m_currentLang = lang;
     m_settings.insert(OPTION_LANGUAGE, lang);
+  }
+
+  if (!m_settings.contains(OPTION_FONTSIZE))
+  {
+    m_settings.insert(OPTION_FONTSIZE, 2);
   }
 
   if (!m_settings.contains(OPTION_CONNECTION))
@@ -393,17 +415,6 @@ bool Settings::isTrackingMode() const {
   return m_settings.contains("tracking") ? m_settings.value("tracking").toBool() : false;
 }
 
-QStringList Settings::getMiningPoolList() const
-{
-  QStringList res;
-  if (m_settings.contains(OPTION_MINING_POOLS))
-  {
-    res << m_settings.value(OPTION_MINING_POOLS).toVariant().toStringList();
-  }
-
-  return res;
-}
-
 bool Settings::isStartOnLoginEnabled() const
 {
   bool res = false;
@@ -446,7 +457,7 @@ bool Settings::isStartOnLoginEnabled() const
   return res;
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 bool Settings::isMinimizeToTrayEnabled() const
 {
   return m_settings.contains("minimizeToTray") ? m_settings.value("minimizeToTray").toBool() : false;
@@ -564,16 +575,8 @@ quint64 Settings::getOptimizationInterval() const
   return DEFAULT_OPTIMIZATION_PERIOD;
 }
 
-void Settings::setMiningPoolList(const QStringList &_miningPoolList)
-{
-  if (getMiningPoolList() != _miningPoolList)
-  {
-    m_settings.insert(OPTION_MINING_POOLS, QJsonArray::fromStringList(_miningPoolList));
-  }
-  saveSettings();
-}
+#ifndef QT_NO_SYSTEMTRAYICON
 
-#ifdef Q_OS_WIN
 void Settings::setMinimizeToTrayEnabled(bool _enable)
 {
   if (isMinimizeToTrayEnabled() != _enable)

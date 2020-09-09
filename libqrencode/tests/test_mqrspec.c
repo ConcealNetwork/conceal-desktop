@@ -3,7 +3,7 @@
 #include "common.h"
 #include "../mqrspec.h"
 
-unsigned char v4frame[] = {
+static unsigned char v4frame[] = {
 	0xc1,0xc1,0xc1,0xc1,0xc1,0xc1,0xc1,0xc0,0x91,0x90,0x91,0x90,0x91,0x90,0x91,0x90,0x91,
 	0xc1,0xc0,0xc0,0xc0,0xc0,0xc0,0xc1,0xc0,0x84,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 	0xc1,0xc0,0xc1,0xc1,0xc1,0xc0,0xc1,0xc0,0x84,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
@@ -23,7 +23,7 @@ unsigned char v4frame[] = {
 	0x91,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
 };
 
-void test_newFrame(void)
+static void test_newFrame(void)
 {
 	int width, i, y;
 	unsigned char *frame;
@@ -40,7 +40,7 @@ void test_newFrame(void)
 	testFinish();
 }
 
-void test_newframe_invalid(void)
+static void test_newframe_invalid(void)
 {
 	unsigned char *frame;
 
@@ -75,7 +75,7 @@ static unsigned int calcFormatInfo(int type, int mask)
 		code = code >> 1;
 		b = b >> 1;
 	}
-	
+
 	return (data | ecc) ^ 0x4445;
 }
 
@@ -87,7 +87,7 @@ static const int typeTable[4][3] = {
 	{ 5,  6,  7}
 };
 
-void test_format(void)
+static void test_format(void)
 {
 	unsigned int format;
 	int version, l, mask;
@@ -95,8 +95,8 @@ void test_format(void)
 	int err = 0;
 
 	testStart("Format info test");
-	for(version=1; version<=4; version++) {
-		for(l=0; l<3; l++) {
+	for(version=1; version<=MQRSPEC_VERSION_MAX; version++) {
+		for(l=QR_ECLEVEL_L; l<=QR_ECLEVEL_Q; l++) {
 			for(mask=0; mask<4; mask++) {
 				format = MQRspec_getFormatInfo(mask, version, (QRecLevel)l);
 				type = typeTable[version - 1][l];
@@ -119,11 +119,12 @@ void test_format(void)
 	testEnd(err);
 }
 
-void print_format(void)
+static void print_format(void)
 {
 	unsigned int format;
 	int i, j;
 
+	puts("\nPrinting hex strings of format information.");
 	for(i=0; i<4; i++) {
 		for(j=0; j<8; j++) {
 			format = calcFormatInfo(j, i);
@@ -136,14 +137,14 @@ void print_format(void)
 /**
  * See Table 7 of Appendix 1.
  */
-int datalen[4][3] = {
+static int datalen[4][3] = {
 	{ 20,   0,  0},
 	{ 40,  32,  0},
 	{ 84,  68,  0},
 	{128, 112, 80},
 };
 
-void test_dataLength(void)
+static void test_dataLength(void)
 {
 	int v, l;
 	int bits;
@@ -162,17 +163,17 @@ void test_dataLength(void)
 	testEnd(err);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	test_newFrame();
 	test_newframe_invalid();
-	//print_format();
 	test_format();
 	test_dataLength();
-
-	MQRspec_clearCache();
-
 	report();
+
+	if(argc > 1) {
+		print_format();
+	}
 
 	return 0;
 }

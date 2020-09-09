@@ -23,7 +23,7 @@
    <string notr="true">background-color: #282d31;
 color: #ddd;
 border: 0px;
-font-family: 'Poppins';</string>
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -50,7 +50,7 @@ font-family: 'Poppins';</string>
       <string notr="true">
 color: #ddd;
 border: 0px;
-font-size: 14px;</string>
+</string>
      </property>
     </widget>
    </item>
@@ -88,17 +88,17 @@ font-size: 14px;</string>
 {
     color: orange; ;
     border: 1px solid orange;
-    font-size: 14px;
-    border-radius: 5px; font-family: 'Poppins';
+    
+    border-radius: 5px; 
 }
 
 QPushButton#m_okButton:hover
 {
     color:#FFD700; ;
     border: 1px solid orange;
-    font-size: 14px;
+    
     border-radius: 5px;
-    font-family: 'Poppins';
+    
 }</string>
        </property>
        <property name="text">

@@ -9,6 +9,7 @@
 #include <QFont>
 #include <QMetaEnum>
 #include <QPixmap>
+#include <QPainter>
 #include <QTextStream>
 
 #include "CurrencyAdapter.h"
@@ -159,7 +160,7 @@ QVariant TransactionsModel::data(const QModelIndex& _index, int _role) const {
 
   switch(_role) {
 case Qt::BackgroundRole:
-  if (0 == _index.row() % 2)
+  if ((_index.row() % 2) == 0)
       return QColor(40, 45, 49);
   else
       return QColor(33, 37, 41);
@@ -334,7 +335,10 @@ QVariant TransactionsModel::getDecorationRole(const QModelIndex& _index) const {
     case 9:
       return QPixmap(":icons/clock5");
     default:
-      return QPixmap(":icons/transaction");
+      QPixmap icon = _index.data(ROLE_ICON).value<QPixmap>();
+      QPainter painter(&icon);
+      painter.drawPixmap(0, 0, QPixmap(":icons/transaction"));
+      return icon;
     }
 
   } else if (_index.column() == COLUMN_ADDRESS) {
@@ -355,6 +359,10 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
   {
 
   switch(_role) {
+
+  case ROLE_STATE:
+    return static_cast<quint8>(_transaction.state);
+
   case ROLE_DATE:
     return (_transaction.timestamp > 0 ? QDateTime::fromTime_t(_transaction.timestamp) : QDateTime());
 
@@ -375,9 +383,17 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
 
   case ROLE_TXTYPE: {
     QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
-    if(_transaction.isCoinbase) {
-      return "New Block";
-    } else if (_transaction.firstDepositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+
+    TransactionState transactionState = static_cast<TransactionState>(_index.data(ROLE_STATE).value<quint8>());
+    if (transactionState != TransactionState::ACTIVE && transactionState != TransactionState::SENDING)
+    {
+      return "Failed";
+    }
+
+      if (_transaction.isCoinbase)
+      {
+        return "New Block";
+      } else if (_transaction.firstDepositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
       return "New Deposit";
     } else if (!transactionAddress.compare(WalletAdapter::instance().getAddress())) {
       return "Optimization";
@@ -386,7 +402,7 @@ QVariant TransactionsModel::getUserRole(const QModelIndex& _index, int _role, Cr
     }
 
     return "Received CCX";
-  }
+    }
 
   case ROLE_HASH:
     return QByteArray(reinterpret_cast<const char*>(&_transaction.hash), sizeof(_transaction.hash));

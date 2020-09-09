@@ -53,9 +53,10 @@ public:
   bool isTrackingMode() const;  
   quint64 getOptimizationInterval() const;
   QString getVersion() const;
-  QString getLanguage() const;  
+  QString getLanguage() const;
+  int getFontSize() const;
   bool isStartOnLoginEnabled() const;
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   bool isMinimizeToTrayEnabled() const;
   bool isCloseToTrayEnabled() const;
 #endif
@@ -64,7 +65,8 @@ public:
   void setEncrypted(bool _encrypted);
   void setTrackingMode(bool _tracking);  
   void setStartOnLoginEnabled(bool _enable);
-  void setLanguage(const QString& _language);  
+  void setLanguage(const QString& _language);
+  void setFontSize(const int& _change);
   void setConnection(const QString& _connection);
   void setCurrentLocalDaemonPort(const quint16& _daemonPort);
   void setCurrentRemoteNode(const QString& _remoteNode);
@@ -75,7 +77,7 @@ public:
   void setRpcNodesList(const QStringList& _RpcNodesList);
   void setMiningPoolList(const QStringList& _miningPoolList);
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   void setMinimizeToTrayEnabled(bool _enable);
   void setCloseToTrayEnabled(bool _enable);
 #endif
