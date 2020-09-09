@@ -564,9 +564,13 @@ namespace WalletGui
     int width = size.width();
     int height = size.height();
 
-    /** 1280 x 720 or smaller is the default */
-    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
 
+    /** 1280 x 720 or smaller is the default */
+    if (width < 1363) {
+      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+    }
+    
     /** 1365 x 768 */
     if ((width == 1363) && (height == 750) ){
       link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
@@ -611,6 +615,9 @@ namespace WalletGui
     pm.loadFromData(reply->readAll());
     m_ui->m_chart->setPixmap(pm);
     m_ui->m_chart->setScaledContents(true);
+
+    int startingFontSize = Settings::instance().getFontSize();
+    setStyles(startingFontSize);
   }
 
   void OverviewFrame::calculateFee()
