@@ -479,7 +479,7 @@ namespace WalletGui
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
     QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
     QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
-    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px;";
+    QString fontStyle = "font-size:" + QString::number(baseFontSize-1) + "px;";
 
     QList<QPushButton *>
         buttons = m_ui->groupBox->findChildren<QPushButton *>();
