@@ -17,8 +17,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost@1.60
-          brew link boost@1.60 --force
+          brew install gcc boost@1.73
+          brew link boost@1.73 --force
 
       - name: Clone conceal-core
         run: |
