@@ -413,14 +413,14 @@ text-align: left;
           <widget class="QLabel" name="label_42">
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>0</height>
+             <width>175</width>
+             <height>175</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>199</width>
-             <height>199</height>
+             <width>175</width>
+             <height>175</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -445,14 +445,14 @@ border:none;</string>
           <widget class="QPushButton" name="lm_dashboardButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -466,7 +466,7 @@ border:none;</string>
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -474,13 +474,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>DASHBOARD</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-home</normaloff>:/icons/icon-home</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -494,14 +498,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_bankingButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -515,7 +519,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -523,13 +527,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>BANKING</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-banking</normaloff>:/icons/icon-banking</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -543,14 +551,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_transactionButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -564,7 +572,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -572,13 +580,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>TRANSACTIONS</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-transactions</normaloff>:/icons/icon-transactions</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -592,14 +604,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_messagesButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -613,7 +625,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -621,13 +633,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>INBOX</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-messages</normaloff>:/icons/icon-messages</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -641,14 +657,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_addressBookButton_2">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -662,7 +678,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -670,13 +686,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>ADDRESS BOOK</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -690,14 +710,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_newTransferButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -711,7 +731,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -719,13 +739,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>SEND FUNDS</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-send</normaloff>:/icons/icon-send</iconset>
            </property>
           </widget>
          </item>
@@ -733,14 +757,14 @@ border-right: 3px solid orange;
           <widget class="QPushButton" name="lm_newMessageButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
-             <height>60</height>
+             <width>199</width>
+             <height>31</height>
             </size>
            </property>
            <property name="font">
@@ -754,7 +778,7 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
 
@@ -762,56 +786,17 @@ border: none;
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
-border-right: 3px solid orange;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
             <string>SEND MESSAGE</string>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="lm_newOpenWalletButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>60</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <weight>50</weight>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-text-align: left; 
-color: #fff; 
-margin-left: 20px;
-font-weight: normal;
-border: none;
-
-}
-
-QPushButton:hover {
-text-align: left; color: orange; 
-margin-left: 20px;
-border: none;
-border-right: 3px solid orange;
-}</string>
-           </property>
-           <property name="text">
-            <string>OPEN WALLET</string>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/icon-send-message</normaloff>:/icons/icon-send-message</iconset>
            </property>
           </widget>
          </item>
@@ -829,16 +814,16 @@ border-right: 3px solid orange;
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="lm_helpButton">
+          <widget class="QPushButton" name="lm_newOpenWalletButton">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>60</height>
             </size>
            </property>
@@ -853,15 +838,60 @@ border-right: 3px solid orange;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
+
 }
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
+background-color: #333;
+}</string>
+           </property>
+           <property name="text">
+            <string>OPEN WALLET</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="lm_helpButton">
+           <property name="minimumSize">
+            <size>
+             <width>199</width>
+             <height>31</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>199</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; 
+color: #fff; 
+padding-left: 20px;
+font-weight: normal;
+border: none;
+
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+padding-left: 20px;
+border: none;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
@@ -879,13 +909,13 @@ border: none;
           <widget class="QPushButton" name="lm_about">
            <property name="minimumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>180</width>
+             <width>199</width>
              <height>60</height>
             </size>
            </property>
@@ -900,15 +930,17 @@ border: none;
             <string notr="true">QPushButton {
 text-align: left; 
 color: #fff; 
-margin-left: 20px;
+padding-left: 20px;
 font-weight: normal;
 border: none;
+
 }
 
 QPushButton:hover {
 text-align: left; color: orange; 
-margin-left: 20px;
+padding-left: 20px;
 border: none;
+background-color: #333;
 }</string>
            </property>
            <property name="text">
@@ -930,10 +962,10 @@ border: none;
         <zorder>lm_addressBookButton_2</zorder>
         <zorder>lm_newTransferButton</zorder>
         <zorder>lm_newMessageButton</zorder>
-        <zorder>lm_newOpenWalletButton</zorder>
         <zorder>lm_helpButton</zorder>
         <zorder>lm_about</zorder>
         <zorder>label_42</zorder>
+        <zorder>lm_newOpenWalletButton</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
@@ -945,6 +977,12 @@ border: none;
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_12">
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="adressLabel">
            <property name="minimumSize">
@@ -1573,8 +1611,8 @@ border-radius: 2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>560</width>
-                 <height>534</height>
+                 <width>505</width>
+                 <height>463</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2141,7 +2179,7 @@ padding-left: 5px</string>
             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.Helvetica Neue DeskInterface'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="acceptRichText">
@@ -2861,7 +2899,7 @@ padding: 0px;</string>
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">border-bottom: 1px solid #444;</string>
               </property>
               <property name="title">
                <string/>
@@ -2875,15 +2913,23 @@ padding: 0px;</string>
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-background: transparent;
-border: none;
+                  <string notr="true">color: #fff;
+            background: transparent;
+            
+            
+            border: none;
 </string>
                  </property>
                  <property name="text">
@@ -2898,6 +2944,12 @@ border: none;
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
                  </property>
                  <property name="font">
                   <font>
@@ -2924,13 +2976,19 @@ border: none;
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
+                  <string notr="true">color: #fff;
             background: transparent;
             
             
@@ -2977,6 +3035,12 @@ border: none;
                </item>
                <item row="5" column="1">
                 <widget class="QLabel" name="m_unlockedDeposits">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -3005,6 +3069,12 @@ border: none;
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -3024,6 +3094,12 @@ border: none;
                </item>
                <item row="3" column="1">
                 <widget class="QLabel" name="m_lockedBalance">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -3052,6 +3128,12 @@ border: none;
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -3077,13 +3159,19 @@ border: none;
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
+                  <string notr="true">color: #fff;
             background: transparent;
             
             
@@ -3102,6 +3190,12 @@ border: none;
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
                  </property>
                  <property name="font">
                   <font>
@@ -3122,6 +3216,12 @@ border: none;
                </item>
                <item row="2" column="1">
                 <widget class="QLabel" name="m_actualBalanceLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -3150,13 +3250,19 @@ border: none;
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
+                  <string notr="true">color: #fff;
             background: transparent;
             
             
@@ -3170,6 +3276,12 @@ border: none;
                </item>
                <item row="4" column="1">
                 <widget class="QLabel" name="m_lockedDeposits">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>21</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>Poppins</family>
@@ -5307,13 +5419,13 @@ font-size: 16px;</string>
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>100</height>
+          <height>75</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>100</height>
+          <height>75</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -5332,38 +5444,7 @@ font-size: 16px;</string>
          <property name="rightMargin">
           <number>18</number>
          </property>
-         <item row="1" column="1" colspan="4">
-          <widget class="QPushButton" name="m_copyAddressButton_3">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>31</height>
-            </size>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none; 
-        
-        color: #999;
-        text-align: left;</string>
-           </property>
-           <property name="text">
-            <string notr="true">ccx7QiP7Z5nZDwyvvCAH3rjSNFRMrfdy41PVsV9b2HEoTa1SrcxdfHzNyoMV7rb6DggAoYmi3hFiwDN3gurhiiiQ1zkdyteASK</string>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
+         <item row="0" column="6">
           <widget class="QPushButton" name="m_qrButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
@@ -5373,18 +5454,24 @@ font-size: 16px;</string>
            </property>
            <property name="minimumSize">
             <size>
-             <width>25</width>
+             <width>40</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>25</width>
+             <width>30</width>
              <height>31</height>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;</string>
+            <string notr="true">QPushButton {
+text-align: left; color: #ddd; 
+border: none;
+padding-left: 10px;
+}
+
+</string>
            </property>
            <property name="text">
             <string notr="true"/>
@@ -5395,13 +5482,94 @@ font-size: 16px;</string>
            </property>
            <property name="iconSize">
             <size>
-             <width>16</width>
-             <height>16</height>
+             <width>18</width>
+             <height>18</height>
             </size>
            </property>
           </widget>
          </item>
-         <item row="0" column="1" colspan="3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="m_titleIcon">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+color: #fff;
+font-size: 30px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../../resources.qrc">:/icons/icon-home</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="m_copyAddressButton_3">
+           <property name="minimumSize">
+            <size>
+             <width>350</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>350</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+border: none; 
+color: #999;
+background-color: #444;
+border-radius:7px;
+padding: 5px;
+}
+
+QPushButton:hover {
+border: none; 
+color: #999;
+background-color: #555;
+border-radius:7px;
+padding: 5px;
+}</string>
+           </property>
+           <property name="text">
+            <string notr="true">ccx7Qiv.......1zkdyteASK</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
           <widget class="QLabel" name="m_myConcealWalletTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -5442,17 +5610,17 @@ font-size: 16px;</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="5">
+         <item row="0" column="7">
           <widget class="QPushButton" name="lm_settingsButton">
            <property name="minimumSize">
             <size>
-             <width>100</width>
+             <width>40</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>100</width>
+             <width>30</width>
              <height>60</height>
             </size>
            </property>
@@ -5464,18 +5632,14 @@ font-size: 16px;</string>
            <property name="styleSheet">
             <string notr="true">QPushButton {
 text-align: left; color: #ddd; 
-
 border: none;
+padding-left: 10px;
 }
 
-QPushButton:hover {
-text-align: left; color: orange; 
-
-border: none;
-}</string>
+</string>
            </property>
            <property name="text">
-            <string>SETTINGS</string>
+            <string/>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
@@ -5489,17 +5653,17 @@ border: none;
            </property>
           </widget>
          </item>
-         <item row="0" column="4">
+         <item row="0" column="5">
           <widget class="QPushButton" name="lm_lockWalletButton">
            <property name="minimumSize">
             <size>
-             <width>100</width>
+             <width>40</width>
              <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>100</width>
+             <width>30</width>
              <height>60</height>
             </size>
            </property>
@@ -5510,19 +5674,15 @@ border: none;
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
-text-align: left; color: #ddd;
-
+text-align: left; color: #ddd; 
 border: none;
+padding-left: 10px;
 }
 
-QPushButton:hover {
-text-align: left; color: orange; 
-
-border: none;
-  }</string>
+</string>
            </property>
            <property name="text">
-            <string>LOCK</string>
+            <string/>
            </property>
            <property name="icon">
             <iconset resource="../../resources.qrc">
@@ -5533,36 +5693,6 @@ border: none;
              <width>18</width>
              <height>18</height>
             </size>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="m_titleIcon">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: #fff;
-font-size: 30px;</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../../resources.qrc">:/icons/icon-home</pixmap>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -7310,13 +7440,13 @@ color: #ccc;
         <property name="minimumSize">
          <size>
           <width>1200</width>
-          <height>50</height>
+          <height>75</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>50</height>
+          <height>75</height>
          </size>
         </property>
         <property name="layoutDirection">
@@ -7329,7 +7459,13 @@ color: #ccc;
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_22">
-         <item row="0" column="0">
+         <property name="topMargin">
+          <number>16</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
+         <item row="4" column="0">
           <widget class="QLabel" name="m_statusBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -7339,92 +7475,62 @@ color: #ccc;
            </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
-             <height>38</height>
+             <width>200</width>
+             <height>20</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>300</width>
-             <height>38</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">padding: 40px;
-border:none;
-color: #aaa;</string>
+            <string notr="true">border:none;
+color: orange;
+font-size: 14px;</string>
            </property>
            <property name="text">
             <string>STATUS</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
           </widget>
          </item>
-         <item row="0" column="4">
-          <widget class="QLabel" name="ccxTotal">
+         <item row="3" column="5">
+          <widget class="QLabel" name="fiatLabel">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>175</width>
-             <height>38</height>
+             <width>200</width>
+             <height>20</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>250</width>
-             <height>38</height>
+             <width>16777215</width>
+             <height>20</height>
             </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-text-align: right;
-color: #aaa;</string>
+color: white;</string>
            </property>
            <property name="text">
-            <string>CCX TOTAL</string>
+            <string>Portfolio (USD)</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QLabel" name="statusHeight">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>38</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-text-align: left;
-color: #aaa;</string>
-           </property>
-           <property name="text">
-            <string>HEIGHT</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
+         <item row="4" column="2">
           <widget class="QLabel" name="m_currentWalletTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -7434,28 +7540,30 @@ color: #aaa;</string>
            </property>
            <property name="minimumSize">
             <size>
-             <width>400</width>
-             <height>38</height>
+             <width>200</width>
+             <height>20</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>38</height>
+             <height>16777215</height>
             </size>
            </property>
            <property name="font">
             <font>
              <family>Poppins</family>
+             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="contextMenuPolicy">
             <enum>Qt::CustomContextMenu</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-text-align: left;
-color: #aaa;</string>
+            <string notr="true">
+border:none;
+color: orange;
+font-size: 14px;</string>
            </property>
            <property name="text">
             <string>WALLET NAME</string>
@@ -7465,36 +7573,242 @@ color: #aaa;</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="5">
-          <widget class="QLabel" name="fiatTotal">
+         <item row="4" column="1">
+          <widget class="QLabel" name="statusHeight">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>175</width>
-             <height>38</height>
+             <width>200</width>
+             <height>20</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>250</width>
+             <width>16777215</width>
              <height>16777215</height>
             </size>
            </property>
            <property name="styleSheet">
+            <string notr="true">
+border:none;
+color: orange;
+font-size: 14px;</string>
+           </property>
+           <property name="text">
+            <string>HEIGHT</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_15">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
             <string notr="true">border: none;
-text-align: right;
-color: #aaa;</string>
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>Current Height</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLabel" name="fiatTotal">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+border:none;
+color: orange;
+font-size: 14px;</string>
            </property>
            <property name="text">
             <string>FIAT TOTAL</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="label_16">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>Current Wallet</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLabel" name="label_13">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>Portfolio (CCX)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="ccxTotal">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <pointsize>-1</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+border:none;
+color: orange;
+font-size: 14px;</string>
+           </property>
+           <property name="text">
+            <string>CCX TOTAL</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>15</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+color: white;</string>
+           </property>
+           <property name="text">
+            <string>Status</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -7503,19 +7817,19 @@ color: #aaa;</string>
       </item>
      </layout>
      <zorder>darkness</zorder>
-     <zorder>statusBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>bankingBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>statusBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -8751,7 +9065,7 @@ color: #aaa;</string>
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

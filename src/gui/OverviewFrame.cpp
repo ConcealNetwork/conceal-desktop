@@ -185,6 +185,7 @@ namespace WalletGui
     m_ui->m_language->addItem("PKR");
     m_ui->m_language->addItem("EGP");
     m_ui->m_language->addItem("ILS");
+    m_ui->m_language->addItem("SEK");
     m_ui->m_language->addItem("NOK");
     m_ui->m_language->addItem("LSL");
     m_ui->m_language->addItem("UAH");
@@ -447,7 +448,6 @@ namespace WalletGui
 
   void OverviewFrame::setStyles(int change)
   {
-
     /** Set the base font sizes */
     int baseFontSize = 12 + change;
     int baseTitleSize = 19 + change;
@@ -605,7 +605,7 @@ namespace WalletGui
   {
 
     QString walletFile = Settings::instance().getWalletName();
-    m_ui->m_currentWalletTitle->setText(tr("Current Wallet") + ": " + walletFile);
+    m_ui->m_currentWalletTitle->setText(walletFile);
   }
 
   /* Download is done, set the chart as the pixmap */
@@ -778,10 +778,10 @@ namespace WalletGui
     QString ccx_24h_volume = QLocale(QLocale::system()).toString(c24h_volume, 'f', 2);
     double c24h_change = result[changeCurrency].toDouble();
     QString ccx_24h_change = QLocale(QLocale::system()).toString(c24h_change, 'f', 2);
-    m_ui->m_ccx->setText(currentCurrency + " " + ccx);
+    m_ui->m_ccx->setText(ccx + " " + currentCurrency);
     m_ui->m_24hChange->setText(ccx_24h_change + "%");
-    m_ui->m_marketCap->setText(currentCurrency + " " + ccx_market_cap);
-    m_ui->m_volume->setText(currentCurrency + " " + ccx_24h_volume);
+    m_ui->m_marketCap->setText(ccx_market_cap + " " + currentCurrency);
+    m_ui->m_volume->setText(ccx_24h_volume + " " + currentCurrency);
 
     updatePortfolio();
   }
@@ -799,8 +799,9 @@ namespace WalletGui
 
     float total = 0;
     total = ccxfiat * (float)OverviewFrame::totalBalance;
-    m_ui->ccxTotal->setText(tr("Total") + " " + CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(tr("Total") + " " + CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
+    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
+    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
+    m_ui->fiatLabel->setText("Portfolio (" + Settings::instance().getCurrentCurrency() + ")");
   }
 
   /* Banking menu button clicked */
