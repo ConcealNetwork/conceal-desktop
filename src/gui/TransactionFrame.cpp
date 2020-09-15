@@ -30,11 +30,20 @@ public:
 
   void setEditorData(QWidget* _editor, const QModelIndex& _index) const Q_DECL_OVERRIDE {
     switch(_index.column()) {
-    case TransactionsModel::COLUMN_AMOUNT:
-    case TransactionsModel::COLUMN_CONFIRMATIONS:
-    case TransactionsModel::COLUMN_DATE:
-      static_cast<QLabel*>(_editor)->setText(_index.data().toString());
+
+    case TransactionsModel::COLUMN_HASH: {
+      QString txhash = _index.data(TransactionsModel::ROLE_HASH).toByteArray().toHex().toUpper();
+      std::string theAddress = txhash.toStdString();
+      std::string start = theAddress.substr(0, 8);
+      std::string end = theAddress.substr(56, 8);
+      static_cast<QLabel *>(_editor)->setText("Hash: " + QString::fromStdString(start) + "............" + QString::fromStdString(end));
       return;
+    }
+
+    case TransactionsModel::COLUMN_DATE:
+      {static_cast<QLabel*>(_editor)->setText(_index.data().toString());
+      return;
+    }
     case TransactionsModel::COLUMN_MESSAGE: {
       QFontMetrics fm(_editor->font());
       QString elidedText = fm.elidedText(_index.data().toString(), Qt::ElideRight, 425);
@@ -44,14 +53,14 @@ public:
 
     case TransactionsModel::COLUMN_TYPE: {
       QString txtype = _index.data(TransactionsModel::ROLE_TYPE).toString();
-      QString txtext = tr("Received CCX");
+      QString txtext = tr("Incoming TX");
       if (txtype == "0") 
       {
         txtext = tr("New Block");
       } 
       else if (txtype == "2")
       {
-        txtext = tr("Send CCX");
+        txtext = tr("Outgoing TX");
       }
       else if (txtype == "3")
       {
@@ -63,7 +72,19 @@ public:
       }    
       static_cast<QLabel*>(_editor)->setText(txtext);
       return;
-    }  
+    }
+
+    case TransactionsModel::COLUMN_AMOUNT:
+    {
+        static_cast<QLabel *>(_editor)->setText(_index.data().toString());
+        return;
+    }
+    case TransactionsModel::COLUMN_CONFIRMATIONS:
+    {
+        static_cast<QLabel *>(_editor)->setText(_index.data().toString());
+        return;
+    }
+
     default:
       return;
     }
@@ -80,6 +101,8 @@ TransactionFrame::TransactionFrame(const QModelIndex& _index, QWidget* _parent) 
   m_dataMapper.addMapping(m_ui->m_iconLabel, TransactionsModel::COLUMN_TYPE);
   m_dataMapper.addMapping(m_ui->m_amountLabel, TransactionsModel::COLUMN_AMOUNT);
   m_dataMapper.addMapping(m_ui->m_timeLabel, TransactionsModel::COLUMN_DATE);
+  m_dataMapper.addMapping(m_ui->m_confirmationsLabel, TransactionsModel::COLUMN_CONFIRMATIONS);
+  m_dataMapper.addMapping(m_ui->m_txLabel, TransactionsModel::COLUMN_HASH);
   m_dataMapper.setCurrentModelIndex(m_index);
 }
 

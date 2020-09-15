@@ -160,7 +160,9 @@ void MainWindow::initUi()
 #endif
   }
 #endif
-  showMaximized();
+
+  // TODO, add maximize option to settings
+  //  showMaximized();
   setRemoteWindowTitle();
 
   m_ui->m_overviewFrame->hide();
@@ -182,7 +184,6 @@ void MainWindow::initUi()
 void MainWindow::restoreFromTray()
 {
   activateWindow();
-  showMaximized();
 }
 
 void MainWindow::minimizeToTray(bool _on)

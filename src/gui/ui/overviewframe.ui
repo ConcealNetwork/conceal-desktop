@@ -4800,7 +4800,7 @@ margin: 0px;</string>
                  <property name="minimumSize">
                   <size>
                    <width>400</width>
-                   <height>290</height>
+                   <height>250</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -4826,38 +4826,12 @@ padding: 5px;</string>
                   <bool>false</bool>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_11">
-                  <item row="1" column="0">
-                   <widget class="QLabel" name="label_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>31</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Poppins</family>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
-                    </property>
-                    <property name="text">
-                     <string>Interest rate:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item row="3" column="0">
                    <widget class="QLabel" name="label_8">
                     <property name="minimumSize">
@@ -4887,44 +4861,6 @@ padding: 5px;</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0" colspan="2">
-                   <widget class="QLabel" name="title_depositDetails">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>30</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <family>Poppins</family>
-                      <weight>50</weight>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Deposit Details</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -4966,14 +4902,8 @@ text-align: left;
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="1">
-                   <widget class="QLabel" name="m_interestRateLabel">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_5">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -4994,10 +4924,10 @@ text-align: left;
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>interestLabel</string>
+                     <string>Interest rate:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -5068,6 +4998,38 @@ text-align: left;
                     </property>
                    </widget>
                   </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_6">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>31</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Poppins</family>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                    </property>
+                    <property name="text">
+                     <string>Rewards you will earn:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="4" column="1">
                    <widget class="QLabel" name="m_timeLabel">
                     <property name="minimumSize">
@@ -5100,8 +5062,14 @@ text-align: left;
                     </property>
                    </widget>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="label_6">
+                  <item row="1" column="1">
+                   <widget class="QLabel" name="m_interestRateLabel">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -5122,13 +5090,51 @@ text-align: left;
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>Rewards you will earn:</string>
+                     <string>interestLabel</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0" colspan="2">
+                   <widget class="QLabel" name="title_depositDetails">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Poppins</family>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: #fff;
+background: transparent;
+
+
+border: none;
+text-align: left;
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Deposit Details</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
                     </property>
                    </widget>
                   </item>
@@ -5464,6 +5470,9 @@ font-size: 16px;</string>
              <height>31</height>
             </size>
            </property>
+           <property name="toolTip">
+            <string>Show QR Code</string>
+           </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
 text-align: left; color: #ddd; 
@@ -5471,6 +5480,7 @@ border: none;
 padding-left: 10px;
 }
 
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}
 </string>
            </property>
            <property name="text">
@@ -5541,13 +5551,16 @@ font-size: 30px;</string>
              <height>25</height>
             </size>
            </property>
+           <property name="toolTip">
+            <string>Click to Copy</string>
+           </property>
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
 border: none; 
-color: #999;
+color: #eee;
 background-color: #444;
 border-radius:7px;
 padding: 5px;
@@ -5555,14 +5568,16 @@ padding: 5px;
 
 QPushButton:hover {
 border: none; 
-color: #999;
+color: #eee;
 background-color: #555;
 border-radius:7px;
 padding: 5px;
-}</string>
+}
+
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
-            <string notr="true">ccx7Qiv.......1zkdyteASK</string>
+            <string notr="true">Wallet Address: ccx7Qiv.......1zkdyteASK</string>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -5600,7 +5615,7 @@ padding: 5px;
            <property name="styleSheet">
             <string notr="true">color: #fff;
         background: transparent;
-        font-size: 30px;
+        font-size: 28px;
         
         font-weight: normal;
   		 border: none;</string>
@@ -5629,6 +5644,9 @@ padding: 5px;
              <family>Poppins</family>
             </font>
            </property>
+           <property name="toolTip">
+            <string>Settings</string>
+           </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
 text-align: left; color: #ddd; 
@@ -5636,7 +5654,7 @@ border: none;
 padding-left: 10px;
 }
 
-</string>
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string/>
@@ -5672,6 +5690,9 @@ padding-left: 10px;
              <family>Poppins</family>
             </font>
            </property>
+           <property name="toolTip">
+            <string>Lock Wallet</string>
+           </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
 text-align: left; color: #ddd; 
@@ -5679,7 +5700,7 @@ border: none;
 padding-left: 10px;
 }
 
-</string>
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string/>
@@ -7520,7 +7541,8 @@ font-size: 14px;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-color: white;</string>
+color: white;
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>Portfolio (USD)</string>
@@ -7629,7 +7651,8 @@ font-size: 14px;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-color: white;</string>
+color: white;
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>Current Height</string>
@@ -7695,7 +7718,8 @@ font-size: 14px;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-color: white;</string>
+color: white;
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>Current Wallet</string>
@@ -7727,7 +7751,8 @@ color: white;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-color: white;</string>
+color: white;
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>Portfolio (CCX)</string>
@@ -7770,7 +7795,9 @@ color: white;</string>
             <string notr="true">
 border:none;
 color: orange;
-font-size: 14px;</string>
+font-size: 14px;
+
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>CCX TOTAL</string>
@@ -7802,7 +7829,8 @@ font-size: 14px;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
-color: white;</string>
+color: white;
+QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
             <string>Status</string>
@@ -7824,11 +7852,11 @@ color: white;</string>
      <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>bankingBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>statusBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
     </widget>
    </item>

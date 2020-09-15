@@ -407,7 +407,10 @@ namespace WalletGui
   void OverviewFrame::updateWalletAddress(const QString &_address)
   {
     OverviewFrame::wallet_address = _address;
-    m_ui->m_copyAddressButton_3->setText(OverviewFrame::wallet_address);
+    std::string theAddress = _address.toStdString();
+    std::string start = theAddress.substr(0, 12);
+    std::string end = theAddress.substr(86, 12);
+    m_ui->m_copyAddressButton_3->setText("Wallet Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
 
     /* Show/hide the encrypt wallet button */
     if (!Settings::instance().isEncrypted())
@@ -544,7 +547,8 @@ namespace WalletGui
     QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
     foreach (QLabel *label, labels2)
     {
-      label->setStyleSheet(fontStyle);
+      //label->setStyleSheet(fontStyle);
+      label->setFont(font);
     }
   }
 
