@@ -15,11 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup VSWhere
-        uses: warrenbuckley/Setup-VSWhere@v1
-
-      - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.0.0
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
