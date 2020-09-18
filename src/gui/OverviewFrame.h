@@ -148,6 +148,7 @@ private:
   Q_SLOT void closeToTrayClicked();
   Q_SLOT void optimizeClicked();
   Q_SLOT void setPercentage25();
+  Q_SLOT void startMaximizedClicked();
   Q_SLOT void setPercentage50();
   Q_SLOT void setPercentage100();    
   Q_SLOT void autoOptimizeClicked(); 

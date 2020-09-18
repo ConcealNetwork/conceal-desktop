@@ -56,7 +56,12 @@
     </qresource>
     <qresource prefix="/">
         <file>fonts/Poppins-Regular.ttf</file>
-        <file>fonts/Roboto-Regular.ttf</file>
+        <file>fonts/Lekton-Regular.ttf</file>
+        <file>fonts/Montserrat-Regular.ttf</file>
+        <file>fonts/RobotoSlab-Regular.ttf</file>
+        <file>fonts/OpenSans-Regular.ttf</file>
+        <file>fonts/Lato-Regular.ttf</file>
+        <file>fonts/Oswald-Regular.ttf</file>
     </qresource>
     <qresource prefix="/translations">
         <file alias="cn">languages/cn.qm</file>

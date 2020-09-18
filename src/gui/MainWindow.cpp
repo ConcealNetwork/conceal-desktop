@@ -161,8 +161,10 @@ void MainWindow::initUi()
   }
 #endif
 
-  // TODO, add maximize option to settings
-  //  showMaximized();
+  if (Settings::instance().getMaximizedStatus() == "enabled") {
+    showMaximized();
+  }
+    
   setRemoteWindowTitle();
 
   m_ui->m_overviewFrame->hide();
