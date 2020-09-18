@@ -134,7 +134,7 @@ namespace WalletGui
 
   int Settings::getFontSize() const
   {
-    int currentSize = 1;
+    int currentSize = 13;
     if (m_settings.contains(OPTION_FONTSIZE))
     {
       currentSize = m_settings.value(OPTION_FONTSIZE).toInt();
@@ -197,7 +197,7 @@ namespace WalletGui
 
     if (!m_settings.contains(OPTION_FONTSIZE))
     {
-      m_settings.insert(OPTION_FONTSIZE, 2);
+      m_settings.insert(OPTION_FONTSIZE, 13);
     }
 
     if (!m_settings.contains(OPTION_FONT))
