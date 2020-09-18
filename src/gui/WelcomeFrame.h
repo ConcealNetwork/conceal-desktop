@@ -25,6 +25,7 @@ namespace WalletGui {
   public:
     WelcomeFrame(QWidget* _parent);
     ~WelcomeFrame();
+    void setStyles(int change);
 
     Q_SLOT void createWallet();
     Q_SLOT void openWallet();

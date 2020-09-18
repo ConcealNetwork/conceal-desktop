@@ -22,6 +22,7 @@ namespace WalletGui {
       ~ImportSeed();
       QString getKeyString() const;
       QString getFilePath() const;
+      void setStyles(int change);
 
     private:
       QScopedPointer<Ui::ImportSeed> m_ui;

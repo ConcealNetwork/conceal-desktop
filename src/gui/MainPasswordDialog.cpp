@@ -9,8 +9,11 @@
 
 #include <QDesktopServices>
 #include <QUrl>
-#include "MainPasswordDialog.h"
+#include <QFont>
 #include "Settings.h"
+#include <QFontDatabase>
+#include "MainPasswordDialog.h"
+
 
 #include "ui_mainpassworddialog.h"
 
@@ -124,7 +127,7 @@ void MainPasswordDialog::setStyles(int change)
   QString fontStyle = "font-size:" + QString::number(baseFontSize - 1) + "px;";
 
   QList<QPushButton *>
-      buttons = m_ui->groupBox->findChildren<QPushButton *>();
+  buttons = m_ui->passwordBox->findChildren<QPushButton *>();
   foreach (QPushButton *button, buttons)
   {
     /* Set the font and styling for b1 styled buttons */
@@ -154,7 +157,7 @@ void MainPasswordDialog::setStyles(int change)
     }
   }
 
-  QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
+  QList<QLabel *> labels = m_ui->passwordBox->findChildren<QLabel *>();
   foreach (QLabel *label, labels)
   {
     if (label->objectName().contains("title_"))
@@ -167,29 +170,7 @@ void MainPasswordDialog::setStyles(int change)
     }
   }
 
-  m_ui->m_copyAddressButton_3->setFont(font);
-  m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
-
-  /** Set the font and styles for all the table views */
-  m_ui->m_addressBookView->setStyleSheet(tableStyle);
-  m_ui->m_messagesView->setStyleSheet(tableStyle);
-  m_ui->m_depositView->setStyleSheet(tableStyle);
-  m_ui->m_transactionsView->setStyleSheet(tableStyle);
-  m_ui->m_transactionsDescription->setFont(font);
-  m_ui->m_messagesView->setFont(font);
-  m_ui->m_depositView->setFont(font);
-  m_ui->m_transactionsView->setFont(font);
-  m_ui->m_addressBookView->setFont(font);
-  m_ui->m_recentTransactionsView->setFont(font);
-
-  QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
-  foreach (QLabel *label, labels2)
-  {
-    //label->setStyleSheet(fontStyle);
-    label->setFont(font);
-  }
-
-  m_ui->groupBox->update();
+   m_ui->passwordBox->update();
 }
 
 } // namespace WalletGui
