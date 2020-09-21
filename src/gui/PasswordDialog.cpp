@@ -84,23 +84,23 @@ void PasswordDialog::setStyles(int change)
   QFont font;
   font.setFamily(currentFont);
   font.setPixelSize(baseFontSize);
-  font.setLetterSpacing(QFont::PercentageSpacing, 106);
+  font.setLetterSpacing(QFont::PercentageSpacing, 102);
   font.setHintingPreference(QFont::PreferFullHinting);
   font.setStyleStrategy(QFont::PreferAntialias);
 
   QFont smallButtonFont;
   smallButtonFont.setFamily("Poppins");
-  smallButtonFont.setLetterSpacing(QFont::PercentageSpacing, 106);
+  smallButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
   smallButtonFont.setPixelSize(baseSmallButtonSize);
 
   QFont largeButtonFont;
   largeButtonFont.setFamily("Poppins");
-  largeButtonFont.setLetterSpacing(QFont::PercentageSpacing, 106);
+  largeButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
   largeButtonFont.setPixelSize(baseLargeButtonSize);
 
   QFont titleFont;
   titleFont.setFamily("Poppins");
-  titleFont.setLetterSpacing(QFont::PercentageSpacing, 106);
+  titleFont.setLetterSpacing(QFont::PercentageSpacing, 102);
   titleFont.setPixelSize(baseTitleSize);
 
   /* Create our common pool of styles */
