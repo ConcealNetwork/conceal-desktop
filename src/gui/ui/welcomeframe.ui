@@ -67,7 +67,7 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
       <string notr="true">color: #ddd; background: transparent;</string>
      </property>
      <property name="text">
-      <string>WELCOME TO THE CONCEAL WALLET</string>
+      <string>WELCOME TO CONCEAL DESKTOP</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -865,7 +865,7 @@ font-size: 20px;</string>
               </property>
              </widget>
             </item>
-<item alignment="Qt::AlignTop">
+            <item alignment="Qt::AlignTop">
              <widget class="QGroupBox" name="horizontalGroupBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1418,7 +1418,7 @@ margin-left: 3em;</string>
 margin-left: 3em;</string>
            </property>
            <property name="text">
-            <string>■  The Conceal Wallet is a free, open-source interface.</string>
+            <string>■  Conceal Desktop is a free, open-source interface.</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1579,7 +1579,7 @@ margin-left: 3em;</string>
 font-size: 20px;</string>
            </property>
            <property name="text">
-            <string>How does the Conceal Wallet work?</string>
+            <string>How does Conceal Desktop work?</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -1965,11 +1965,11 @@ margin-left: 3em;</string>
        </spacer>
       </item>
      </layout>
-     <zorder>box1</zorder>
-     <zorder>box2</zorder>
-     <zorder>box3</zorder>
      <zorder>box4</zorder>
      <zorder>newWalletBox</zorder>
+     <zorder>box3</zorder>
+     <zorder>box1</zorder>
+     <zorder>box2</zorder>
     </widget>
    </item>
    <item>

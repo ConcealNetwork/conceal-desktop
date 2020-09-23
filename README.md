@@ -55,7 +55,7 @@ To acquire the source via git and build the release version, run the following c
 - `cd conceal-desktop`
 - `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
 - `make build-release`
-- `mkdir bin && mv build/release/CONCEAL-GUI bin/`
+- `mkdir bin && mv build/release/conceal-desktop bin/`
 - `make clean`
 
 If the build is successful the binaries will be in the bin folder.
@@ -81,7 +81,7 @@ If the build is successful the binaries will be in the bin folder.
 - `mkdir build`
 - `cd build`
 - `cmake -G "Visual Studio 15 2017 Win64" -DBOOST_LIBRARYDIR:PATH=c:/local/boost_1_67_0 ..` (Or your boost installed dir.)
-- `msbuild CONCEAL-GUI.sln /p:Configuration=Release`
+- `msbuild conceal-desktop.sln /p:Configuration=Release`
 
 If the build is successful the binaries will be in the Release folder.
 

@@ -96,8 +96,8 @@ void Updater::replyFinished(QNetworkReply* reply)
     if (ourVersion < remoteVersion)
     {
       if (QMessageBox::warning(
-              &MainWindow::instance(), QObject::tr("Conceal Wallet Update"),
-              QObject::tr("There is an update to the wallet available.\nWould you like to go to "
+              &MainWindow::instance(), QObject::tr("Conceal Desktop Update"),
+              QObject::tr("There is an update available.\nWould you like to go to "
                           "the download page?"),
               QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok)
       {

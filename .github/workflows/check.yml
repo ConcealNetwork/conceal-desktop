@@ -11,12 +11,12 @@ on:
 jobs:
   build-windows:
     name: Windows
-    runs-on: windows-2016
+    runs-on: windows-2019
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.0.0
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -37,7 +37,6 @@ jobs:
         run: |
           $search = "set\(CN_VERSION "
           $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
-          $ccx_version = $ccx_version + ".0"
 
           # Update "CMakeLists.txt" with cmake dir
           $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
@@ -46,10 +45,10 @@ jobs:
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
 
-          # Update ConcealWallet.nsi with the current version
-          $file = "ConcealWallet.nsi"
-          $find = "^!define VERSION.+"
-          $replace = "!define VERSION '$ccx_version.0'"
+          # Update installer/windows/setup.iss with the current version
+          $file = "installer/windows/setup.iss"
+          $find = "^#define AppVersion.+"
+          $replace = "#define AppVersion '$ccx_version'"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
 
       - name: Build
@@ -65,8 +64,8 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
-          msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
+          cmake -G "Visual Studio 16 2019" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
           echo "::set-output name=release_folder::${release_folder}"
@@ -82,13 +81,16 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
-          windeployqt --release CONCEAL-GUI.exe --dir "Final/" --no-translations --no-opengl-sw
-          cd ../../
-          makensis ConcealWallet.nsi
-          cd "$build_folder/$release_folder"
-          Compress-Archive -Path Conceal-Setup.exe -DestinationPath "$release_name.zip"
+          windeployqt --release conceal-desktop.exe --dir "Final/" --no-translations --no-opengl-sw
 
-          $artifact_path = "$build_folder/$release_folder/$release_name.zip"
+          mv Final ../../installer/windows/build
+          mv conceal-desktop.exe ../../installer/windows/build/
+          cd ../../installer/windows/
+          iscc setup.iss
+          cd bin
+          Compress-Archive -Path Conceal*.exe -DestinationPath "$release_name.zip"
+
+          $artifact_path = "installer/windows/bin/$release_name.zip"
           echo "::set-output name=artifact_path::${artifact_path}"
 
       - name: Upload To GH Artifacts
@@ -125,7 +127,7 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          mv build/release/CONCEAL-GUI $release_name
+          mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"
@@ -166,7 +168,7 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          mv build/release/CONCEAL-GUI $release_name
+          mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"
@@ -207,7 +209,7 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          mv build/release/CONCEAL-GUI $release_name
+          mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"
@@ -248,7 +250,7 @@ jobs:
           build_folder="build/release"
           ccx_ver=${GITHUB_SHA::7}
           release_name="ccx-desktop-macOS-dev-$ccx_ver"
-          app_name="CONCEAL-GUI.app"
+          app_name="conceal-desktop.app"
 
           mkdir -p "$build_folder"
           cd "$build_folder"
