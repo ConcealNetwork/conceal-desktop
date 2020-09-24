@@ -22,6 +22,7 @@ namespace WalletGui {
       ~ImportGUIKeyDialog();
       QString getKeyString() const;
       QString getFilePath() const;
+      void setStyles(int change);
 
     private:
       QScopedPointer<Ui::ImportGUIKeyDialog> m_ui;

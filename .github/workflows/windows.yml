@@ -8,12 +8,12 @@ on:
 jobs:
   build-windows:
     name: Windows
-    runs-on: windows-2019
+    runs-on: windows-2016
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.0.0
+      - name: Setup MSBuild.exe
+        uses: warrenbuckley/Setup-MSBuild@v1
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -61,7 +61,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 16 2019" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
           msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"

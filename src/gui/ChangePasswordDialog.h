@@ -24,7 +24,7 @@ class ChangePasswordDialog : public QDialog {
 public:
   ChangePasswordDialog(QWidget* _parent);
   ~ChangePasswordDialog();
-
+  void setStyles(int change);
   QString getNewPassword() const;
   QString getOldPassword() const;
 

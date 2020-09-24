@@ -160,7 +160,11 @@ void MainWindow::initUi()
 #endif
   }
 #endif
-  showMaximized();
+
+  if (Settings::instance().getMaximizedStatus() == "enabled") {
+    showMaximized();
+  }
+    
   setRemoteWindowTitle();
 
   m_ui->m_overviewFrame->hide();
@@ -182,7 +186,6 @@ void MainWindow::initUi()
 void MainWindow::restoreFromTray()
 {
   activateWindow();
-  showMaximized();
 }
 
 void MainWindow::minimizeToTray(bool _on)
