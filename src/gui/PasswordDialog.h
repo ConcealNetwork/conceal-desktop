@@ -24,7 +24,7 @@ class PasswordDialog : public QDialog {
 public:
   PasswordDialog(bool _error, QWidget* _parent);
   ~PasswordDialog();
-
+  void setStyles(int change);
   QString getPassword() const;
 
 private:
