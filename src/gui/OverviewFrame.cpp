@@ -296,7 +296,7 @@ namespace WalletGui
 
     /* Check saved sizes and ensure they are within the acceptable parameters */
     int startingFontSize = Settings::instance().getFontSize();
-    if ((startingFontSize < 12) || (startingFontSize > 17)){
+    if ((startingFontSize < 12) || (startingFontSize > 19)){
       startingFontSize = 13;
       Settings::instance().setFontSize(startingFontSize);
     }
