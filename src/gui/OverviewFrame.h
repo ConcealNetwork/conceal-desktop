@@ -122,7 +122,6 @@ private:
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
-  Q_SLOT void changeFontSize();
   Q_SLOT void sendFundsClicked();
   Q_SLOT void sendMessageClicked();
   Q_SLOT void clearAllClicked();
