@@ -36,7 +36,7 @@ public:
       std::string theAddress = txhash.toStdString();
       std::string start = theAddress.substr(0, 8);
       std::string end = theAddress.substr(56, 8);
-      static_cast<QLabel *>(_editor)->setText("Hash: " + QString::fromStdString(start) + "............" + QString::fromStdString(end));
+      static_cast<QLabel *>(_editor)->setText("Hash: " + QString::fromStdString(start) + "....." + QString::fromStdString(end));
       return;
     }
 
