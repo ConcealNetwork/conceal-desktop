@@ -162,6 +162,8 @@ namespace WalletGui
     m_ui->m_size->addItem("15");
     m_ui->m_size->addItem("16");
     m_ui->m_size->addItem("17");
+    m_ui->m_size->addItem("18");
+    m_ui->m_size->addItem("19");
 
     m_ui->m_font->addItem("Poppins");
     m_ui->m_font->addItem("Roboto");
@@ -292,8 +294,14 @@ namespace WalletGui
     int index3 = m_ui->m_size->findText(size, Qt::MatchExactly);
     m_ui->m_size->setCurrentIndex(index3);
 
-    /* Set the styles */
+    /* Check saved sizes and ensure they are within the acceptable parameters */
     int startingFontSize = Settings::instance().getFontSize();
+    if ((startingFontSize < 12) || (startingFontSize > 17)){
+      startingFontSize = 13;
+      Settings::instance().setFontSize(startingFontSize);
+    }
+
+    /* Apply the default or saved style */
     setStyles(startingFontSize);
 
     /* Load the price chart */
@@ -401,6 +409,17 @@ namespace WalletGui
     showCurrentWalletName();
     walletSynced = true;
 
+    /* Check saved sizes and ensure they are within the acceptable parameters */
+    int startingFontSize = Settings::instance().getFontSize();
+    if ((startingFontSize < 12) || (startingFontSize > 19))
+    {
+      startingFontSize = 13;
+      Settings::instance().setFontSize(startingFontSize);
+    }
+
+    /* Apply the default or saved style */
+    setStyles(startingFontSize);
+
     /* Show total portfolio */
     quint64 actualBalance = WalletAdapter::instance().getActualBalance();
     quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
@@ -442,8 +461,8 @@ namespace WalletGui
   {
     OverviewFrame::wallet_address = _address;
     std::string theAddress = _address.toStdString();
-    std::string start = theAddress.substr(0, 12);
-    std::string end = theAddress.substr(86, 12);
+    std::string start = theAddress.substr(0, 6);
+    std::string end = theAddress.substr(92, 6);
     m_ui->m_copyAddressButton_3->setText("Wallet Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
 
     /* Show/hide the encrypt wallet button */
@@ -465,22 +484,6 @@ namespace WalletGui
     {
       m_ui->lm_lockWalletButton->show();
     }
-  }
-
-  void OverviewFrame::changeFontSize()
-  {
-    int fontSize = Settings::instance().getFontSize();
-    fontSize++;
-    if (fontSize < 6)
-    {
-      setStyles(fontSize);
-    }
-    else
-    {
-      fontSize = 0;
-      setStyles(fontSize);
-    }
-    Settings::instance().setFontSize(fontSize);
   }
 
   void OverviewFrame::setStyles(int change)
@@ -526,30 +529,34 @@ namespace WalletGui
     QFont font;
     font.setFamily(currentFont);
     font.setPixelSize(baseFontSize);
-    font.setLetterSpacing(QFont::PercentageSpacing, 102);
     font.setHintingPreference(QFont::PreferFullHinting);
     font.setStyleStrategy(QFont::PreferAntialias);
 
     QFont smallButtonFont;
-    smallButtonFont.setFamily("Poppins");
-    smallButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
+    font.setFamily(currentFont);
     smallButtonFont.setPixelSize(baseSmallButtonSize);
+    smallButtonFont.setHintingPreference(QFont::PreferFullHinting);
+    smallButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
     QFont largeButtonFont;
-    largeButtonFont.setFamily("Poppins");
-    largeButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
+    font.setFamily(currentFont);
     largeButtonFont.setPixelSize(baseLargeButtonSize);
+    largeButtonFont.setHintingPreference(QFont::PreferFullHinting);
+    largeButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
     QFont titleFont;
-    titleFont.setFamily("Poppins");
-    titleFont.setLetterSpacing(QFont::PercentageSpacing, 102);
+    font.setFamily(currentFont);
     titleFont.setPixelSize(baseTitleSize);
+    titleFont.setHintingPreference(QFont::PreferFullHinting);
+    titleFont.setStyleStrategy(QFont::PreferAntialias);
 
     /* Create our common pool of styles */
     QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
     QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
     QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
-    QString fontStyle = "font-size:" + QString::number(baseFontSize-1) + "px;";
+    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #ddd;";
+    QString darkFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #999;";
+    QString orangeFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: orange;";
 
     QList<QPushButton *>
         buttons = m_ui->groupBox->findChildren<QPushButton *>();
@@ -614,11 +621,24 @@ namespace WalletGui
     QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
     foreach (QLabel *label, labels2)
     {
-      //label->setStyleSheet(fontStyle);
       label->setFont(font);
+      label->setStyleSheet(darkFontStyle);
+
+      if (label->objectName().contains("icon"))
+      {
+        label->setStyleSheet(fontStyle);
+      }
+
+      if (label->objectName().contains("amount"))
+      {
+        label->setStyleSheet(fontStyle);
+      }
     }
 
+
+
     m_ui->groupBox->update();
+    m_ui->m_recentTransactionsView->update();
   }
 
   /* Load the price chart on the overview screen */
