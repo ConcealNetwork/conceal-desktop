@@ -56,6 +56,7 @@ private:
   void askForWalletPassword(bool _error);
   void walletOpened(bool _error, const QString& _error_text);
   void walletClosed();
+  void payTo(const QModelIndex& _index);
   void delay();
   void setRemoteWindowTitle();  
   void showQRCode(const QString& _address);

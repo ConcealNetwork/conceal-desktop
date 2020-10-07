@@ -110,6 +110,7 @@ void MainWindow::connectToSignals()
 */
 
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
 
@@ -659,6 +660,22 @@ void MainWindow::checkTrackingMode()
   {
     Settings::instance().setTrackingMode(false);
   }
+}
+
+void MainWindow::payTo(const QModelIndex& _index)
+{
+  if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "")
+  {
+    m_ui->m_overviewFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
+  }
+  else
+  {
+    m_ui->m_overviewFrame->setPaymentId("");
+  }
+  m_ui->m_overviewFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
+  m_ui->m_overviewFrame->show();
+  m_ui->m_overviewAction->trigger();
+  m_ui->m_overviewFrame->raise();
 }
 
 void MainWindow::dashboardTo()
