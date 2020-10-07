@@ -1233,7 +1233,7 @@ border-radius: 5px;</string>
              </widget>
             </item>
             <item>
-             <widget class="QGroupBox" name="horizontalGroupBox">
+             <widget class="QGroupBox" name="horizontalGroupBox_5">
               <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item alignment="Qt::AlignLeft">
                 <widget class="QCheckBox" name="validationCheckBox">
