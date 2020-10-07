@@ -187,6 +187,7 @@ void MainWindow::initUi()
 void MainWindow::restoreFromTray()
 {
   activateWindow();
+  showNormal();
 }
 
 void MainWindow::minimizeToTray(bool _on)
