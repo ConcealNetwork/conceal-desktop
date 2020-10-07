@@ -221,7 +221,6 @@ namespace WalletGui
     m_ui->m_transactionsView->header()->moveSection(0, 1);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
     m_ui->m_transactionsView->setSortingEnabled(true);
-    m_ui->m_transactionsView->sortByColumn(TransactionsModel::COLUMN_DATE, Qt::DescendingOrder);
 
     m_ui->m_depositView->setModel(m_depositModel.data());
     m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -398,6 +397,18 @@ namespace WalletGui
     reset();
     showCurrentWalletName();
     calculateFee();
+
+    /* Add addresses suggestions from the address book*/
+    QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
+    completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    QTreeView* popup = new QTreeView;
+    completer->setPopup(popup);
+    popup->setStyleSheet("background-color: #282d31; color: #aaa");
+    popup->setIndentation(0);
+    popup->header()->setStretchLastSection(false);
+    popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+    m_ui->m_addressEdit->setCompleter(completer);
   }
 
   OverviewFrame::~OverviewFrame()
@@ -992,18 +1003,6 @@ namespace WalletGui
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
-
-      /* Add addresses suggestions from the address book*/
-      QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
-      completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
-      completer->setCaseSensitivity(Qt::CaseInsensitive);
-      QTreeView* popup = new QTreeView;
-      completer->setPopup(popup);
-      popup->setStyleSheet("background-color: #282d31; color: #aaa");
-      popup->setIndentation(0);
-      popup->header()->setStretchLastSection(false);
-      popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
-      m_ui->m_addressEdit->setCompleter(completer);
     }
     else
     {
