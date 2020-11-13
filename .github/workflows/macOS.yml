@@ -34,14 +34,12 @@ jobs:
           make -j4
           macdeployqt "$app_name"
           cpack
-          mkdir "$release_name"
           mv *.dmg "$release_name".dmg
-          zip "$release_name".zip "$release_name".dmg
-          sha256=$(shasum -a 256 "$release_name".zip | awk '{ print toupper($1) }')
+          sha256=$(shasum -a 256 "$release_name".dmg | awk '{ print toupper($1) }')
 
           echo "::set-output name=sha256::${sha256}"
-          echo "::set-output name=release_name::${release_name}.zip"
-          echo "::set-output name=asset_path::$build_folder/$release_name.zip"
+          echo "::set-output name=release_name::${release_name}.dmg"
+          echo "::set-output name=asset_path::$build_folder/$release_name.dmg"
           echo "::set-output name=ccx_ver::${ccx_ver}"
           
       - name: Create Release
