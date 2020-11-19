@@ -31,7 +31,9 @@ jobs:
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
           git clone https://github.com/AxVultis/conceal-core cryptonote
-          cd cryptonote && git checkout desktop && cd ..
+          cd cryptonote
+          git checkout desktop
+          cd ..
 
       - name: Pre-build setup
         shell: powershell
