@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.0.2
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -238,8 +238,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost@1.73
-          brew link boost@1.73 --force
+          brew install gcc boost
 
       - name: Clone conceal-core
         run: |
