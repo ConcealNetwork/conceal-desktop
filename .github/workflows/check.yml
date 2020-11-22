@@ -26,15 +26,11 @@ jobs:
           modules: "qttools5"
           install-deps: "true"
 
-      - name: Clone conceal-core
-        shell: powershell
-        run: |
-          Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
-
       - name: Pre-build setup
         shell: powershell
         run: |
+          git submodule init
+          git submodule update
           $search = "set\(CN_VERSION "
           $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
           $ccx_version = $ccx_version + ".0"
@@ -65,7 +61,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_72_0}"/include ..
           msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
@@ -111,14 +107,10 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
 
-      - name: Clone conceal-core
-        run: |
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-
       - name: Build
         id: build
         run: |
+          git submodule init && git submodule update
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1604-dev-"$ccx_version"
 
@@ -152,14 +144,10 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
 
-      - name: Clone conceal-core
-        run: |
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-
       - name: Build
         id: build
         run: |
+          git submodule init && git submodule update
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1804-dev-"$ccx_version"
 
@@ -193,14 +181,10 @@ jobs:
           sudo apt update -y
           sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
 
-      - name: Clone conceal-core
-        run: |
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-
       - name: Build
         id: build
         run: |
+          git submodule init && git submodule update
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
 
@@ -234,17 +218,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost@1.73
-          brew link boost@1.73 --force
-
-      - name: Clone conceal-core
-        run: |
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          brew install gcc boost
 
       - name: Build
         id: build
         run: |
+          git submodule init && git submodule update
           build_folder="build/release"
           ccx_ver=${GITHUB_SHA::7}
           release_name="ccx-desktop-macOS-dev-$ccx_ver"
@@ -256,7 +235,6 @@ jobs:
           make -j4
           macdeployqt "$app_name"
           cpack
-          mkdir "$release_name"
           mv *.dmg "$release_name".dmg
           mv "$release_name".dmg "$release_name"
 
