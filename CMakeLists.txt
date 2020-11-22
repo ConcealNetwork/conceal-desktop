@@ -86,6 +86,16 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/pow_hash/arm8_neon.hpp
+  cryptonote/src/crypto/pow_hash/arm_vfp.hpp
+  cryptonote/src/crypto/pow_hash/aux_hash.c
+  cryptonote/src/crypto/pow_hash/aux_hash.h
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_arm.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_intel.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash.hpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_intel_avx2.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_soft.cpp
+  cryptonote/src/crypto/pow_hash/hw_detect.hpp
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp

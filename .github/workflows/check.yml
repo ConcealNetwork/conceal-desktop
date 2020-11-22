@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup MSBuild.exe
-        uses: warrenbuckley/Setup-MSBuild@v1
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.0.2
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -30,7 +30,10 @@ jobs:
         shell: powershell
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+          git clone https://github.com/AxVultis/conceal-core cryptonote
+          cd cryptonote
+          git checkout desktop
+          cd ..
 
       - name: Pre-build setup
         shell: powershell
@@ -65,7 +68,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_72_0}"/include ..
           msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
@@ -114,7 +117,8 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/AxVultis/conceal-core.git cryptonote
+          cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
         id: build
@@ -155,7 +159,8 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/AxVultis/conceal-core.git cryptonote
+          cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
         id: build
@@ -196,7 +201,8 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/AxVultis/conceal-core.git cryptonote
+          cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
         id: build
@@ -234,13 +240,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost@1.73
-          brew link boost@1.73 --force
+          brew install gcc boost
 
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/AxVultis/conceal-core.git cryptonote
+          cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
         id: build
