@@ -51,8 +51,9 @@ Alternatively, it may be possible to install them using a package manager.
 To acquire the source via git and build the release version, run the following commands:
 
 - `cd ~`
-- `git clone --recursive https://github.com/ConcealNetwork/conceal-desktop`
+- `git clone https://github.com/ConcealNetwork/conceal-desktop`
 - `cd conceal-desktop`
+- `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
 - `make build-release`
 - `mkdir bin && mv build/release/CONCEAL-GUI bin/`
 - `make clean`
@@ -72,8 +73,10 @@ If the build is successful the binaries will be in the bin folder.
 ##### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
-- Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: `set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\")`.
-- `git clone --recursive https://github.com/ConcealNetwork/conceal-desktop`
+- Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
+- `git clone https://github.com/ConcealNetwork/conceal-core`
+- `git clone https://github.com/ConcealNetwork/conceal-desktop`
+- Copy the contents of the conceal-core folder into conceal-wallet\cryptonote
 - `cd conceal-desktop`
 - `mkdir build`
 - `cd build`
@@ -81,40 +84,6 @@ If the build is successful the binaries will be in the bin folder.
 - `msbuild CONCEAL-GUI.sln /p:Configuration=Release`
 
 If the build is successful the binaries will be in the Release folder.
-
-### macOS
-
-##### Prerequisites
-
-In order to install prerequisites, [XCode](https://developer.apple.com/xcode/) and [Homebrew](https://brew.sh/) need to be installed.
-
-Once both are ready, open Terminal app and run the following command to install additional tools:
-
-```bash
-$ xcode-select --install
-```
-
-On newer macOS versions (v10.14 and higher) this step is done through Software Update in System Preferences.
-
-After that, proceed with installing dependencies:
-
-```bash
-$ brew install git python cmake gcc boost qt
-```
-
-#### Building
-
-Clone the project and build it:
-
-```bash
-$ git clone --recursive https://github.com/ConcealNetwork/conceal-desktop
-$ cd conceal-desktop
-$ make build-release
-$ mkdir bin && mv build/release/CONCEAL-GUI.app bin/
-```
-
-If the build is successful the binaries will be in the `bin/` folder.
-
 
 #### Special Thanks
 Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, Forknote, TurtleCoin, and Masari.
