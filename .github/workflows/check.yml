@@ -30,7 +30,7 @@ jobs:
         shell: powershell
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote
           git checkout desktop
           cd ..
@@ -117,7 +117,7 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
@@ -159,7 +159,7 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
@@ -201,7 +201,7 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
@@ -245,7 +245,7 @@ jobs:
       - name: Clone conceal-core
         run: |
           rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote && git checkout desktop && cd ..
 
       - name: Build
