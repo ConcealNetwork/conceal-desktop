@@ -32,7 +32,7 @@ jobs:
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
           cd cryptonote
-          git checkout desktop
+          git checkout master
           cd ..
 
       - name: Pre-build setup
@@ -118,7 +118,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
-          cd cryptonote && git checkout desktop && cd ..
+          cd cryptonote && git checkout master && cd ..
 
       - name: Build
         id: build
@@ -160,7 +160,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
-          cd cryptonote && git checkout desktop && cd ..
+          cd cryptonote && git checkout master && cd ..
 
       - name: Build
         id: build
@@ -202,7 +202,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
-          cd cryptonote && git checkout desktop && cd ..
+          cd cryptonote && git checkout master && cd ..
 
       - name: Build
         id: build
@@ -246,7 +246,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core cryptonote
-          cd cryptonote && git checkout desktop && cd ..
+          cd cryptonote && git checkout master && cd ..
 
       - name: Build
         id: build
