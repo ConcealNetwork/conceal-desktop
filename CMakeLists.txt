@@ -86,6 +86,16 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/pow_hash/arm8_neon.hpp
+  cryptonote/src/crypto/pow_hash/arm_vfp.hpp
+  cryptonote/src/crypto/pow_hash/aux_hash.c
+  cryptonote/src/crypto/pow_hash/aux_hash.h
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_arm.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_intel.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash.hpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_intel_avx2.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_soft.cpp
+  cryptonote/src/crypto/pow_hash/hw_detect.hpp
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -215,8 +225,8 @@ elseif (UNIX)
 
     include_directories(/usr/include/malloc)
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAG} -maes -std=c++11 -stdlib=libc++")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -maes -D_DARWIN_C_SOURCE")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ARCH_FLAG} -mavx -mavx2 -maes -std=c++11 -stdlib=libc++")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -mavx -mavx2 -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
     set(MACOSX_BUNDLE_ICON_FILE conceal.icns)

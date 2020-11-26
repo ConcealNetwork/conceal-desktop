@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.0.0
+        uses: microsoft/setup-msbuild@v1.0.2
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -30,7 +30,7 @@ jobs:
         shell: powershell
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
 
       - name: Pre-build setup
         shell: powershell
@@ -64,7 +64,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 16 2019" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_69_0}"/include ..
+          cmake -G "Visual Studio 16 2019" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_72_0}"/include ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
@@ -236,8 +236,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost@1.73
-          brew link boost@1.73 --force
+          brew install gcc boost
 
       - name: Clone conceal-core
         run: |
