@@ -134,6 +134,8 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
 
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
+
+  connect(m_ui->m_overviewFrame, &OverviewFrame::notifySignal, this, &MainWindow::notify);
 }
 
 void MainWindow::initUi()
@@ -180,6 +182,7 @@ void MainWindow::initUi()
 #endif
 
   OptimizationManager *optimizationManager = new OptimizationManager(this);
+  notification = new Notification(this);
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
@@ -930,5 +933,9 @@ void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
   }
 }
 #endif
+
+void MainWindow::notify(const QString& message) {
+  notification->notify(message);
+}
 
 } // namespace WalletGui
