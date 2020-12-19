@@ -136,6 +136,8 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_receiveFrame, &ReceiveFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::notifySignal, this, &MainWindow::notify);
 }
 
 void MainWindow::initUi()
