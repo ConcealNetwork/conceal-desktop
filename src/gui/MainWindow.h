@@ -7,9 +7,11 @@
 
 #pragma once
 
-#include <QTranslator>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
+#include <QTranslator>
+
+#include "Notification.h"
 
 class QActionGroup;
 
@@ -41,6 +43,7 @@ private:
   QScopedPointer<Ui::MainWindow> m_ui;
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
+  Notification* notification;
   bool m_isAboutToQuit;
 
   static MainWindow* m_instance;
@@ -79,6 +82,7 @@ private:
   Q_SLOT void setStartOnLogin(bool _on);
   Q_SLOT void setMinimizeToTray(bool _on);
   Q_SLOT void setCloseToTray(bool _on);
+  Q_SLOT void notify(const QString& message);
 
 #ifdef Q_OS_MAC
 public:

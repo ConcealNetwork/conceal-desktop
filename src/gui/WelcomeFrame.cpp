@@ -139,7 +139,7 @@ void WelcomeFrame::selectPathClicked()
 void WelcomeFrame::copySeedClicked()
 {
   QApplication::clipboard()->setText(m_ui->mnemonicSeed->text());
-  QMessageBox::information(&MainWindow::instance(), tr("Seed"), tr("Seed copied to clipboard"));
+  Q_EMIT notifySignal("Seed copied to clipboard");
 }
 
 void WelcomeFrame::nextConfirmSeed()
