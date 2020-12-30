@@ -102,6 +102,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/VisibleMessagesModel.h \
            src/gui/WalletEvents.h \
            src/gui/WelcomeFrame.h \
+           src/gui/Notification.h \
            cryptonote/external/google/type_traits.h \
            cryptonote/external/miniupnpc/bsdqueue.h \
            cryptonote/external/miniupnpc/codelength.h \
@@ -510,6 +511,7 @@ FORMS += src/gui/ui/addressbookdialog.ui \
          src/gui/ui/messagedetailsdialog.ui \
          src/gui/ui/newaddressdialog.ui \
          src/gui/ui/newpassworddialog.ui \
+         src/gui/ui/notification.ui \
          src/gui/ui/overviewframe.ui \
          src/gui/ui/passworddialog.ui \
          src/gui/ui/receiveframe.ui \
@@ -604,6 +606,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/TransactionsModel.cpp \
            src/gui/VisibleMessagesModel.cpp \
            src/gui/WelcomeFrame.cpp \
+           src/gui/Notification.cpp \
            cryptonote/external/miniupnpc/connecthostport.c \
            cryptonote/external/miniupnpc/igd_desc_parse.c \
            cryptonote/external/miniupnpc/minihttptestserver.c \

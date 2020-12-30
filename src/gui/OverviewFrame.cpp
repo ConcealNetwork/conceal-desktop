@@ -221,7 +221,6 @@ namespace WalletGui
     m_ui->m_transactionsView->header()->moveSection(0, 1);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
     m_ui->m_transactionsView->setSortingEnabled(true);
-    m_ui->m_transactionsView->sortByColumn(TransactionsModel::COLUMN_DATE, Qt::DescendingOrder);
 
     m_ui->m_depositView->setModel(m_depositModel.data());
     m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -398,6 +397,18 @@ namespace WalletGui
     reset();
     showCurrentWalletName();
     calculateFee();
+
+    /* Add addresses suggestions from the address book*/
+    QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
+    completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    QTreeView* popup = new QTreeView;
+    completer->setPopup(popup);
+    popup->setStyleSheet("background-color: #282d31; color: #aaa");
+    popup->setIndentation(0);
+    popup->header()->setStretchLastSection(false);
+    popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+    m_ui->m_addressEdit->setCompleter(completer);
   }
 
   OverviewFrame::~OverviewFrame()
@@ -903,7 +914,7 @@ namespace WalletGui
     m_ui->darkness->hide();
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -982,7 +993,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -992,18 +1003,6 @@ namespace WalletGui
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send"));
       m_ui->sendBox->raise();
       OverviewFrame::fromPay = true;
-
-      /* Add addresses suggestions from the address book*/
-      QCompleter* completer = new QCompleter(&AddressBookModel::instance(), this);
-      completer->setCompletionRole(AddressBookModel::ROLE_ADDRESS);
-      completer->setCaseSensitivity(Qt::CaseInsensitive);
-      QTreeView* popup = new QTreeView;
-      completer->setPopup(popup);
-      popup->setStyleSheet("background-color: #282d31; color: #aaa");
-      popup->setIndentation(0);
-      popup->header()->setStretchLastSection(false);
-      popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
-      m_ui->m_addressEdit->setCompleter(completer);
     }
     else
     {
@@ -1023,7 +1022,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -1064,12 +1063,14 @@ namespace WalletGui
   void OverviewFrame::copyClicked()
   {
     QApplication::clipboard()->setText(OverviewFrame::wallet_address);
-    QMessageBox::information(&MainWindow::instance(), tr("Wallet"), "Address copied to clipboard");
+    Q_EMIT notifySignal(tr("Address copied to clipboard"));
   }
 
   void OverviewFrame::syncInProgressMessage()
   {
-    QMessageBox::information(&MainWindow::instance(), tr("Synchronization"), "Synchronization is in progress. This option is not available until your wallet is synchronized with the network.");
+    Q_EMIT notifySignal(
+        tr("Synchronization is in progress.\nThis option is not available "
+           "until your wallet is synchronized with the network."));
   }
 
   // TRANSACTION HISTORY
@@ -1187,7 +1188,7 @@ namespace WalletGui
     /* Check if its a tracking wallet */
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -1292,7 +1293,9 @@ namespace WalletGui
       /* Is it an exchange address? */
       if (!exchangeName.isEmpty())
       {
-        QMessageBox::information(&MainWindow::instance(), tr("Payment ID Required"), "This address belongs to " + exchangeName + " and requires a Payment ID. Please enter the Payment ID provided by the exchange to proceed.");
+        Q_EMIT notifySignal("This address belongs to " + exchangeName +
+                            " and requires a Payment ID.\nPlease enter the "
+                            "Payment ID provided by the exchange to proceed.");
         return;
       }
     }
@@ -1434,9 +1437,7 @@ namespace WalletGui
     {
       m_ui->m_messageTextEdit->setPlainText(m_ui->m_messageTextEdit->toPlainText().left(m_ui->m_messageTextEdit->toPlainText().length() - 1));
       m_ui->m_messageTextEdit->moveCursor(QTextCursor::End);
-      QMessageBox::information(&MainWindow::instance(), QString::fromUtf8("Warning"),
-                               QString::fromUtf8("Warning: you have reached the maximum message size of 260 characters."),
-                               QString::fromUtf8("Ok"));
+      Q_EMIT notifySignal(tr("Warning: you have reached the maximum message size of 260 characters."));
     }
 
     QString messageText = m_ui->m_messageTextEdit->toPlainText();
@@ -1472,7 +1473,7 @@ namespace WalletGui
 
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -1589,7 +1590,7 @@ namespace WalletGui
 
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -1740,7 +1741,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
       return;
     }
 
@@ -1767,7 +1768,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
     }
     else
     {
@@ -1790,7 +1791,7 @@ namespace WalletGui
   {
     if (Settings::instance().isTrackingMode())
     {
-      QMessageBox::information(&MainWindow::instance(), tr("Tracking Wallet"), "This is a tracking wallet. This action is not available.");
+      Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
     }
     else
     {
@@ -1798,19 +1799,15 @@ namespace WalletGui
       {
         Settings::instance().setAutoOptimizationStatus("disabled");
         m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO ENABLE"));
-        QMessageBox::information(&MainWindow::instance(),
-                                 tr("Auto Optimization"),
-                                 tr("Auto Optimization Disabled."),
-                                 QMessageBox::Ok);
+        Q_EMIT notifySignal(tr("Auto optimization disabled"));
       }
       else
       {
         Settings::instance().setAutoOptimizationStatus("enabled");
         m_ui->b2_autoOptimizeButton->setText(tr("CLICK TO DISABLE"));
-        QMessageBox::information(&MainWindow::instance(),
-                                 tr("Auto Optimization"),
-                                 tr("Auto Optimization Enabled. Your wallet will be optimized automatically every 15 minutes."),
-                                 QMessageBox::Ok);
+        Q_EMIT notifySignal(
+            tr("Auto optimization enabled.\nYour wallet will be optimized "
+               "automatically every 15 minutes."));
       }
     }
   }
@@ -2022,13 +2019,13 @@ namespace WalletGui
   void OverviewFrame::copyABClicked()
   {
     QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
-    QMessageBox::information(&MainWindow::instance(), tr("Address Book"), "Address copied to clipboard");
+    Q_EMIT notifySignal(tr("Address copied to clipboard"));
   }
 
   void OverviewFrame::copyABPaymentIdClicked()
   {
     QApplication::clipboard()->setText(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
-    QMessageBox::information(&MainWindow::instance(), tr("Address Book"), "Payment ID copied to clipboard");
+    Q_EMIT notifySignal(tr("Payment ID copied to clipboard"));
   }
 
   void OverviewFrame::deleteABClicked()

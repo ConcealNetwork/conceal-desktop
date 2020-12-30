@@ -50,6 +50,7 @@ namespace WalletGui {
     void importSeedClickedSignal();   
     void importsecretkeysClickedSignal();  
     void importKeyClickedSignal();  
+    void notifySignal(const QString& message);
   };
 
 }

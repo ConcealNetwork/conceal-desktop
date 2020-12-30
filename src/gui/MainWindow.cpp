@@ -110,6 +110,7 @@ void MainWindow::connectToSignals()
 */
 
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
 
@@ -134,6 +135,10 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
 
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
+
+  connect(m_ui->m_overviewFrame, &OverviewFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_receiveFrame, &ReceiveFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::notifySignal, this, &MainWindow::notify);
 }
 
 void MainWindow::initUi()
@@ -180,12 +185,14 @@ void MainWindow::initUi()
 #endif
 
   OptimizationManager *optimizationManager = new OptimizationManager(this);
+  notification = new Notification(this);
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
 void MainWindow::restoreFromTray()
 {
   activateWindow();
+  showNormal();
 }
 
 void MainWindow::minimizeToTray(bool _on)
@@ -661,6 +668,22 @@ void MainWindow::checkTrackingMode()
   }
 }
 
+void MainWindow::payTo(const QModelIndex& _index)
+{
+  if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "")
+  {
+    m_ui->m_overviewFrame->setPaymentId(_index.data(AddressBookModel::ROLE_PAYMENTID).toString());
+  }
+  else
+  {
+    m_ui->m_overviewFrame->setPaymentId("");
+  }
+  m_ui->m_overviewFrame->setAddress(_index.data(AddressBookModel::ROLE_ADDRESS).toString());
+  m_ui->m_overviewFrame->show();
+  m_ui->m_overviewAction->trigger();
+  m_ui->m_overviewFrame->raise();
+}
+
 void MainWindow::dashboardTo()
 {
   m_ui->m_overviewFrame->show();
@@ -930,5 +953,9 @@ void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
   }
 }
 #endif
+
+void MainWindow::notify(const QString& message) {
+  notification->notify(message);
+}
 
 } // namespace WalletGui

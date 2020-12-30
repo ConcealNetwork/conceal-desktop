@@ -46,6 +46,7 @@ private:
 Q_SIGNALS:
   void backSignal();
   void backupSignal();
+  void notifySignal(const QString& message);
 };
 
 }

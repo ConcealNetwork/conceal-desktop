@@ -189,6 +189,7 @@ Q_SIGNALS:
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void payToSignal(const QModelIndex& _index);  
+  void payToSignal(const QModelIndex& _index);
+  void notifySignal(const QString& message);
 };
 } // namespace WalletGui
