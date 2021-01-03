@@ -1615,24 +1615,6 @@ border: none;</string>
           </widget>
          </item>
         </layout>
-        <zorder>horizontalGroupBox</zorder>
-        <zorder>horizontalGroupBox_sendFundsButtons</zorder>
-        <zorder>sendFundsWarningLabel</zorder>
-        <zorder>m_amountEdit</zorder>
-        <zorder>pidLabel</zorder>
-        <zorder>amountLabel_2</zorder>
-        <zorder>amountLabel</zorder>
-        <zorder>m_addressLabel</zorder>
-        <zorder>m_messageEdit</zorder>
-        <zorder>adressLabel</zorder>
-        <zorder>m_paymentIdEdit</zorder>
-        <zorder>m_addressEdit</zorder>
-        <zorder>m_addressBookButton</zorder>
-        <zorder>m_percent100</zorder>
-        <zorder>m_percent50</zorder>
-        <zorder>m_percent25</zorder>
-        <zorder>m_sendFee</zorder>
-        <zorder>m_balanceLabel</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
