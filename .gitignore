@@ -10,3 +10,4 @@ CMakeLists.txt
 *.bin
 *.ipch
 .idea/
+*.user
