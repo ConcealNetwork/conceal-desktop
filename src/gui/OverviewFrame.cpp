@@ -2109,9 +2109,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-CCX", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::qtradeClicked()
+  void OverviewFrame::wikiClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://qtrade.io/market/CCX_BTC", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
   }
 
   void OverviewFrame::helpClicked()
