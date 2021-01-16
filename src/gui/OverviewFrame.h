@@ -106,6 +106,7 @@ private:
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
+  bool askForWalletPassword(bool _error = false);
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
