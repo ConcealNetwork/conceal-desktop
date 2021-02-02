@@ -2272,7 +2272,7 @@ p, li { white-space: pre-wrap; }
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
             <property name="spacing">
              <number>10</number>
             </property>
@@ -4077,7 +4077,7 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="9">
+            <item row="2" column="12">
              <widget class="QLabel" name="hotbitIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
@@ -4271,7 +4271,7 @@ color: orange;
               </property>
              </widget>
             </item>
-            <item row="1" column="10">
+            <item row="2" column="13">
              <widget class="QPushButton" name="sm_hotbitButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
@@ -4362,8 +4362,8 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="13">
-             <widget class="QPushButton" name="sm_qtradeButton">
+            <item row="1" column="10">
+             <widget class="QPushButton" name="sm_wikiButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -4396,7 +4396,7 @@ color: orange;
 }</string>
               </property>
               <property name="text">
-               <string>qTrade</string>
+               <string>Wiki</string>
               </property>
              </widget>
             </item>
@@ -4413,8 +4413,8 @@ color: orange;
               </property>
              </spacer>
             </item>
-            <item row="2" column="12">
-             <widget class="QLabel" name="m_depositsUnlockedTitle_17">
+            <item row="1" column="9">
+             <widget class="QLabel" name="wikiIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -4449,7 +4449,7 @@ border: none;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/qtrade</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/wiki</pixmap>
               </property>
              </widget>
             </item>
@@ -9148,10 +9148,10 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
    </hints>
   </connection>
   <connection>
-   <sender>sm_qtradeButton</sender>
+   <sender>sm_wikiButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>qtradeClicked()</slot>
+   <slot>wikiClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1176</x>
@@ -9407,7 +9407,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>hotbitClicked()</slot>
   <slot>tradeogreClicked()</slot>
   <slot>stexClicked()</slot>
-  <slot>qtradeClicked()</slot>
+  <slot>wikiClicked()</slot>
   <slot>helpClicked()</slot>
   <slot>exportCSV()</slot>
   <slot>startMaximizedClicked()</slot>
