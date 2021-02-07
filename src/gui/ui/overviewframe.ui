@@ -986,7 +986,6 @@ background-color: #333;
          <property name="bottomMargin">
           <number>9</number>
          </property>
-         
          <item row="2" column="0" colspan="4">
           <widget class="QLabel" name="pidLabel">
            <property name="minimumSize">
@@ -1262,7 +1261,6 @@ padding-left: 5px</string>
            </property>
           </widget>
          </item>
-         
          <item row="9" column="0" colspan="8">
           <widget class="QLineEdit" name="m_addressLabel">
            <property name="minimumSize">
@@ -1312,7 +1310,6 @@ padding-left: 5px</string>
            </property>
           </widget>
          </item>
-         
          <item row="1" column="7">
           <widget class="QPushButton" name="m_addressBookButton">
            <property name="minimumSize">
@@ -1578,7 +1575,7 @@ border: none;</string>
             <string notr="true">Fee: 0.001000 CCX</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignRight|Qt::AlignVCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -3810,7 +3807,7 @@ text-align: left;
 </string>
               </property>
               <property name="text">
-               <string>CONTACT US / STAY INFORMED</string>
+               <string>STAY TUNED</string>
               </property>
              </widget>
             </item>
@@ -8175,10 +8172,10 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>statusBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>settingsBox</zorder>
+     <zorder>overviewBox</zorder>
     </widget>
    </item>
   </layout>
@@ -9415,7 +9412,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>minToTrayClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>
