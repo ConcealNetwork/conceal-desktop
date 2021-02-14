@@ -1002,6 +1002,4 @@ RESOURCES += src/resources.qrc
 TRANSLATIONS += src/languages/cn.ts \
                 src/languages/en.ts \
                 src/languages/ru.ts \
-                src/languages/tr.ts \
-                src/languages/qt/qtbase_ru.ts \
-                src/languages/qt/qtbase_zh_TW.ts
+                src/languages/tr.ts
