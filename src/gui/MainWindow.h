@@ -83,6 +83,7 @@ private:
   Q_SLOT void setMinimizeToTray(bool _on);
   Q_SLOT void setCloseToTray(bool _on);
   Q_SLOT void notify(const QString& message);
+  Q_SLOT void welcomeFrame();
 
 #ifdef Q_OS_MAC
 public:

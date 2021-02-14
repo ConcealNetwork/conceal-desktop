@@ -49,6 +49,7 @@ public Q_SLOTS:
   void copyABPaymentIdClicked();
   void deleteABClicked();
   void payToABClicked();
+  void dashboardClicked();
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
@@ -107,11 +108,12 @@ private:
   void delay();
   bool checkWalletPassword(bool _error=false);
   bool askForWalletPassword(bool _error = false);
+  void change();
+  void goToWelcomeFrame();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
   Q_SLOT void transactionHistoryClicked();
-  Q_SLOT void dashboardClicked();
   Q_SLOT void inboxClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
@@ -192,5 +194,6 @@ Q_SIGNALS:
   void encryptWalletSignal();
   void payToSignal(const QModelIndex& _index);
   void notifySignal(const QString& message);
+  void welcomeFrameSignal();
 };
 } // namespace WalletGui
