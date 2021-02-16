@@ -26,12 +26,14 @@ public:
   ~MainPasswordDialog();
   void setStyles(int change);
   QString getPassword() const;
+  Q_SIGNAL void changeSignal();
 
 private:
   QScopedPointer<Ui::MainPasswordDialog> m_ui;
 
   Q_SLOT void helpClicked();
   Q_SLOT void quitClicked();
+  Q_SLOT void changeClicked();
 };
 
 }
