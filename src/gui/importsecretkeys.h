@@ -24,8 +24,6 @@ namespace WalletGui {
         QString getViewKeyString() const;    
         QString getFilePath() const;
         void setStyles(int change);
-    private slots:
-        void on_m_selectPathButton_clicked();
 
     private:
         QScopedPointer<Ui::importSecretKeys> m_ui;

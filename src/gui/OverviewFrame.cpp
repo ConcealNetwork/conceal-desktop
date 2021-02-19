@@ -947,6 +947,13 @@ namespace WalletGui
     m_ui->overviewBox->raise();
     m_ui->lm_newTransferButton->show();
     m_ui->lm_newMessageButton->show();
+    m_ui->leftMenu->raise();
+    m_ui->leftMenu->show();
+    m_ui->statusBox->raise();
+    m_ui->statusBox->show();
+    m_ui->headerBox->raise();
+    m_ui->headerBox->show();
+    setStyles(Settings::instance().getFontSize());
   }
 
   void OverviewFrame::aboutClicked()
@@ -1738,6 +1745,13 @@ namespace WalletGui
     dashboardClicked();
   }
 
+  void OverviewFrame::goToWelcomeFrame(){
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
+    Q_EMIT welcomeFrameSignal();
+    dashboardClicked();
+  }
+
   void OverviewFrame::backupClicked()
   {
     if (Settings::instance().isTrackingMode())
@@ -2169,15 +2183,22 @@ namespace WalletGui
     m_ui->lockBox->raise();
   }
 
+  void OverviewFrame::change() {
+    m_ui->lockBox->hide();
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
+    welcomeFrameSignal();
+  }
+
   bool OverviewFrame::askForWalletPassword(bool _error) {
-    if (!Settings::instance().isEncrypted() &&
-        WalletAdapter::instance().checkWalletPassword(""))
+    if (!Settings::instance().isEncrypted() && WalletAdapter::instance().checkWalletPassword(""))
       return true;
 
     m_ui->darkness->show();
     m_ui->darkness->raise();
 
     MainPasswordDialog dlg(_error, this);
+    connect(&dlg, &MainPasswordDialog::changeSignal, this, &OverviewFrame::change);
     dlg.setModal(true);
     dlg.setWindowFlags(Qt::FramelessWindowHint);
     dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);

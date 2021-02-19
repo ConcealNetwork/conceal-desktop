@@ -113,6 +113,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::welcomeFrameSignal, this, &MainWindow::welcomeFrame);
 
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);
@@ -346,6 +347,12 @@ void MainWindow::createWallet()
   m_ui->m_welcomeFrame->createWallet();
 }
 
+void MainWindow::welcomeFrame() {
+  m_ui->m_overviewFrame->hide();
+  m_ui->m_welcomeFrame->show();
+  m_ui->m_welcomeFrame->nextThree();
+}
+
 void MainWindow::openWallet()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
@@ -387,6 +394,7 @@ void MainWindow::openWallet()
     WalletAdapter::instance().open("");
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
+  m_ui->m_overviewFrame->dashboardClicked();
 }
 
 void MainWindow::closeWallet()
@@ -591,8 +599,7 @@ void MainWindow::showMessage(const QString &_text, QtMsgType _type)
 
 /* ----------------------------- PASSWORD PROMPT ------------------------------------ */
 
-void MainWindow::askForWalletPassword(bool _error)
-{
+void MainWindow::askForWalletPassword(bool _error) {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide();
 
@@ -601,17 +608,11 @@ void MainWindow::askForWalletPassword(bool _error)
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
 
-  if (dlg.exec() == QDialog::Accepted)
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
-  }
-  else
-  {
-
-    m_ui->m_welcomeFrame->raise();
-    m_ui->m_welcomeFrame->show();
+  } else {
+    welcomeFrame();
   }
 }
 
