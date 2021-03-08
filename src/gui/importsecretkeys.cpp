@@ -52,24 +52,6 @@ void importSecretKeys::selectPathClicked() {
   m_ui->m_pathEdit->setText(filePath);
 }
 
-void importSecretKeys::on_m_selectPathButton_clicked()
-{
-    QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
-  #ifdef Q_OS_WIN
-      QApplication::applicationDirPath(),
-  #else
-      QDir::homePath(),
-  #endif
-      tr("Wallets (*.wallet)")
-      );
-
-    if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
-      filePath.append(".wallet");
-    }
-
-    m_ui->m_pathEdit->setText(filePath);
-}
-
 void importSecretKeys::setStyles(int change)
 {
   /** Set the base font sizes */

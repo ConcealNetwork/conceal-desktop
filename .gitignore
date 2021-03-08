@@ -65,3 +65,6 @@ CMakeLists.txt
 *.bin
 *.ipch
 .idea/
+*.pro.user
+*.pro.user*
+*.autosave

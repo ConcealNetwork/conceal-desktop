@@ -49,6 +49,11 @@ void MainPasswordDialog::helpClicked()
   QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
 }
 
+void MainPasswordDialog::changeClicked() {
+  Q_EMIT changeSignal();
+  this->reject();
+}
+
 MainPasswordDialog::~MainPasswordDialog()
 {
 }

@@ -1,7 +1,7 @@
 ![image](https://github.com/ConcealNetwork/conceal-assets/blob/master/splash.png)
 
 # Conceal Desktop (GUI Wallet)
-Latest Release: v6.4.1
+Latest Release: v6.4.4
 
 Maintained by Conceal Devs.
 
@@ -19,7 +19,7 @@ Conceal is open-source, community driven and truly decentralized.
 No one owns Conceal, everyone can take part.
 
 ## Resources
-- Web: [conceal.network](https://conceal.network/)
+- Web: [https://conceal.network/](https://conceal.network/)
 - GitHub: [https://github.com/ConcealNetwork/conceal-core](https://github.com/ConcealNetwork/conceal-core)
 - Discord: [https://discord.gg/YbpHVSd](https://discord.gg/YbpHVSd)
 - Twitter: [https://twitter.com/ConcealNetwork](https://twitter.com/ConcealNetwork)
@@ -34,7 +34,7 @@ No one owns Conceal, everyone can take part.
 
 ### Linux / Ubuntu
 
-##### Prerequisites
+#### Prerequisites
 
 Dependencies: GCC 4.7.3 or later, CMake 2.8.6 or later, Boost 1.55 or later, and Qt 5.9 or later.
 You may download them from:
@@ -44,25 +44,31 @@ You may download them from:
 - http://www.boost.org/
 - https://www.qt.io
 
-Alternatively, it may be possible to install them using a package manager.
+On Ubuntu it is possible to install them using apt:
+
+```bash
+sudo apt install git gcc make cmake libboost-all-dev qt5-default
+```
 
 #### Building
 
 To acquire the source via git and build the release version, run the following commands:
 
-- `cd ~`
-- `git clone https://github.com/ConcealNetwork/conceal-desktop`
-- `cd conceal-desktop`
-- `git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote`
-- `make build-release`
-- `mkdir bin && mv build/release/conceal-desktop bin/`
-- `make clean`
+```bash
+git clone https://github.com/ConcealNetwork/conceal-desktop
+cd conceal-desktop
+rm -rf cryptonote
+git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+make build-release
+mkdir bin && mv build/release/CONCEAL-GUI bin/
+make clean
+```
 
-If the build is successful the binaries will be in the bin folder.
+If the build is successful the binary will be in the `bin` folder.
 
 ### Windows 10
 
-##### Prerequisites
+#### Prerequisites
 
 - Install [Visual Studio 2017 Community Edition](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&page=inlineinstall)
 - When installing Visual Studio, you need to install **Desktop development with C++** and the **VC++ v140 toolchain** components. The option to install the v140 toolchain can be found by expanding the "Desktop development with C++" node on the right. You will need this for the project to build correctly.
@@ -70,7 +76,7 @@ If the build is successful the binaries will be in the bin folder.
 - Install [Boost 1.67.0](https://boost.teeks99.com/bin/1.67.0/), ensuring you download the installer for MSVC 14.1.
 - Install [Qt 5.11.0](https://www.qt.io/download)
 
-##### Building
+#### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
 - Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
@@ -85,5 +91,40 @@ If the build is successful the binaries will be in the bin folder.
 
 If the build is successful the binaries will be in the Release folder.
 
-#### Special Thanks
+### macOS
+
+#### Prerequisites
+
+First, we need to install the same dependencies as [conceal-core](https://github.com/ConcealNetwork/conceal-core#macos).
+
+Once conceal-core dependencies are installed, we need to install Qt5, open a Terminal and run the following commands:
+
+```bash
+brew install qt5
+export PATH="/usr/local/opt/qt/bin:$PATH"
+```
+
+#### Building
+
+When all dependencies are installed, build Conceal Desktop with the following commands: 
+
+```bash
+git clone https://github.com/ConcealNetwork/conceal-desktop
+cd conceal-desktop
+rm -rf cryptonote
+git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+make build-release
+```
+
+If the build is successful the binary will be `build/release/CONCEAL-GUI.app`
+
+It is also possible to deploy the application as a `.dmg` by using these commands after the build:
+
+```bash
+cd build/release
+macdeployqt CONCEAL-GUI.app
+cpack
+```
+
+## Special Thanks
 Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, Forknote, TurtleCoin, and Masari.

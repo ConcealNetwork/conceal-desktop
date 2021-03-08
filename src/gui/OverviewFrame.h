@@ -49,6 +49,7 @@ public Q_SLOTS:
   void copyABPaymentIdClicked();
   void deleteABClicked();
   void payToABClicked();
+  void dashboardClicked();
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
@@ -106,11 +107,13 @@ private:
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
+  bool askForWalletPassword(bool _error = false);
+  void change();
+  void goToWelcomeFrame();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
   Q_SLOT void transactionHistoryClicked();
-  Q_SLOT void dashboardClicked();
   Q_SLOT void inboxClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
@@ -170,7 +173,7 @@ private:
   Q_SLOT void stexClicked();
   Q_SLOT void hotbitClicked();
   Q_SLOT void tradeogreClicked();
-  Q_SLOT void qtradeClicked();
+  Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);
 
@@ -189,6 +192,8 @@ Q_SIGNALS:
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void payToSignal(const QModelIndex& _index);  
+  void payToSignal(const QModelIndex& _index);
+  void notifySignal(const QString& message);
+  void welcomeFrameSignal();
 };
 } // namespace WalletGui
