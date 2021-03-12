@@ -12,6 +12,13 @@
 
 namespace WalletGui
 {
+  EditableStyle::~EditableStyle()
+  {
+    widgets.clear();
+    buttons.clear();
+    labels.clear();
+  }
+
   int EditableStyle::setStyles(int change)
   {
     /** Set the base font sizes */
@@ -89,6 +96,12 @@ namespace WalletGui
               "QPushButton:hover{color: gold;}";
     fontStyle = "font-size:" + QString::number(baseFontSize - 1) + "px;";
 
+    widgets = getWidgets();
+    foreach (QWidget *widget, widgets)
+    {
+      widget->setFont(font);
+    }
+
     buttons = getButtons();
     foreach (QPushButton *button, buttons)
     {
@@ -141,6 +154,8 @@ namespace WalletGui
     applyStyles();
     return id;
   }
+
+  QList<QWidget *> EditableStyle::getWidgets() { return QList<QWidget *>(); }
 
   QList<QPushButton *> EditableStyle::getButtons() { return QList<QPushButton *>(); }
 

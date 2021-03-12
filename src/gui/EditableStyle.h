@@ -15,6 +15,9 @@ namespace WalletGui
 {
   class EditableStyle
   {
+  public:
+    ~EditableStyle();
+
   protected:
     int baseFontSize;
     int baseTitleSize;
@@ -31,10 +34,12 @@ namespace WalletGui
     QString b2Style;
     QString fontStyle;
 
+    QList<QWidget *> widgets;
     QList<QPushButton *> buttons;
     QList<QLabel *> labels;
 
     virtual int setStyles(int change);
+    virtual QList<QWidget *> getWidgets();
     virtual QList<QPushButton *> getButtons();
     virtual QList<QLabel *> getLabels();
     virtual void applyStyles();
