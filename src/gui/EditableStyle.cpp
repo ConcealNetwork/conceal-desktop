@@ -16,7 +16,7 @@ namespace WalletGui
   {
     /** Set the base font sizes */
     baseFontSize = change;
-    baseTitleSize = 7 + change;
+    baseTitleSize = change + 7;
     baseSmallButtonSize = change - 3;
     baseLargeButtonSize = change - 1;
 
@@ -27,27 +27,27 @@ namespace WalletGui
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
     }
-    if (currentFont == "Lekton")
+    else if (currentFont == "Lekton")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Lekton-Regular.ttf");
     }
-    if (currentFont == "Roboto")
+    else if (currentFont == "Roboto")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/RobotoSlab-Regular.ttf");
     }
-    if (currentFont == "Montserrat")
+    else if (currentFont == "Montserrat")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular.ttf");
     }
-    if (currentFont == "Open Sans")
+    else if (currentFont == "Open Sans")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
     }
-    if (currentFont == "Oswald")
+    else if (currentFont == "Oswald")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
     }
-    if (currentFont == "Lato")
+    else
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
     }
@@ -61,14 +61,20 @@ namespace WalletGui
     smallButtonFont.setFamily(currentFont);
     smallButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     smallButtonFont.setPixelSize(baseSmallButtonSize);
+    smallButtonFont.setHintingPreference(QFont::PreferFullHinting);
+    smallButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
     largeButtonFont.setFamily(currentFont);
     largeButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     largeButtonFont.setPixelSize(baseLargeButtonSize);
+    largeButtonFont.setHintingPreference(QFont::PreferFullHinting);
+    largeButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
     titleFont.setFamily(currentFont);
     titleFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     titleFont.setPixelSize(baseTitleSize);
+    titleFont.setHintingPreference(QFont::PreferFullHinting);
+    titleFont.setStyleStrategy(QFont::PreferAntialias);
 
     /* Create our common pool of styles */
     tableStyle =
