@@ -30,6 +30,7 @@ namespace WalletGui
     QString getPassword() const;
 
   protected:
+    QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
     QList<QLabel *> getLabels() override;
     void applyStyles() override;

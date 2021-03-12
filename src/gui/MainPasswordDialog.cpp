@@ -61,9 +61,14 @@ QString MainPasswordDialog::getPassword() const
   return m_ui->m_passwordEdit->text();
 }
 
+QList<QWidget *> MainPasswordDialog::getWidgets()
+{
+  return m_ui->passwordBox->findChildren<QWidget *>();
+}
+
 QList<QPushButton *> MainPasswordDialog::getButtons()
 {
-  return buttons = m_ui->passwordBox->findChildren<QPushButton *>();
+  return m_ui->passwordBox->findChildren<QPushButton *>();
 }
 
 QList<QLabel *> MainPasswordDialog::getLabels()

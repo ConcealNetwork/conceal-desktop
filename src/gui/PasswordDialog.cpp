@@ -36,9 +36,14 @@ namespace WalletGui
 
   QString PasswordDialog::getPassword() const { return m_ui->m_passwordEdit->text(); }
 
+  QList<QWidget *> PasswordDialog::getWidgets()
+  {
+    return m_ui->groupBox->findChildren<QWidget *>();
+  }
+
   QList<QPushButton *> PasswordDialog::getButtons()
   {
-    return buttons = m_ui->groupBox->findChildren<QPushButton *>();
+    return m_ui->groupBox->findChildren<QPushButton *>();
   }
 
   QList<QLabel *> PasswordDialog::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }

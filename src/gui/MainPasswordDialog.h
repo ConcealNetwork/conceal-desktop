@@ -30,6 +30,7 @@ namespace WalletGui
     Q_SIGNAL void changeSignal();
 
   protected:
+    QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
     QList<QLabel *> getLabels() override;
     void applyStyles() override;
