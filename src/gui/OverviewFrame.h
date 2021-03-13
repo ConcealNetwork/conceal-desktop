@@ -1,14 +1,19 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
+#include <IWalletLegacy.h>
+
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-#include <IWalletLegacy.h>
+
+#include "EditableStyle.h"
 
 namespace Ui
 {
@@ -27,7 +32,7 @@ class VisibleMessagesModel;
 class AddressProvider;
 class ExchangeProvider;
 
-class OverviewFrame : public QFrame
+class OverviewFrame : public QFrame, EditableStyle
 {
   Q_OBJECT
   Q_DISABLE_COPY(OverviewFrame)
@@ -53,6 +58,10 @@ public Q_SLOTS:
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
+  QList<QWidget *> getWidgets() override;
+  QList<QPushButton *> getButtons() override;
+  QList<QLabel *> getLabels() override;
+  void applyStyles() override;
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -85,7 +94,6 @@ private:
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStyles(int change);
   void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();

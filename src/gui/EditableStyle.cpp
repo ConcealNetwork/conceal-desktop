@@ -84,17 +84,59 @@ namespace WalletGui
     titleFont.setStyleStrategy(QFont::PreferAntialias);
 
     /* Create our common pool of styles */
-    tableStyle =
-        "QHeaderView::section{font-size:" + QString::number(baseFontSize) +
-        "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid "
-        "#444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) +
-              "px; color:#fff;border:1px solid orange;border-radius:5px;} "
-              "QPushButton:hover{color:orange;}";
-    b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) +
-              "px; color: orange; border:1px solid orange; border-radius: 5px} "
-              "QPushButton:hover{color: gold;}";
-    fontStyle = "font-size:" + QString::number(baseFontSize - 1) + "px;";
+    tableStyle = QString(
+                     "QHeaderView::section"
+                     "{"
+                     "font-size: %1 px;"
+                     "background-color: #282d31;"
+                     "color: #fff;"
+                     "font-weight: bold;"
+                     "height: 37px;"
+                     "border-top: 1px solid #444;"
+                     "border-bottom: 1px solid #444;"
+                     "}"
+                     "QTreeView::item"
+                     "{"
+                     "border-top: none;"
+                     "color: #ccc;"
+                     "height: 37px;"
+                     "outline: none;"
+                     "}"
+                     "QTreeView::item:selected"
+                     "{"
+                     "background-color: orange;"
+                     "color: black;"
+                     "}")
+                     .arg(baseFontSize);
+    b1Style = QString(
+                  "QPushButton"
+                  "{"
+                  "font-size: %1 px;"
+                  "color:#fff;"
+                  "border:1px solid orange;"
+                  "border-radius:5px;"
+                  "}"
+                  "QPushButton:hover"
+                  "{"
+                  "color:orange;"
+                  "}")
+                  .arg(baseLargeButtonSize);
+    b2Style = QString(
+                  "QPushButton"
+                  "{"
+                  "font-size: %1 px;"
+                  "color: orange;"
+                  "border:1px solid orange;"
+                  "border-radius: 5px"
+                  "}"
+                  "QPushButton:hover"
+                  "{"
+                  "color: gold;"
+                  "}")
+                  .arg(baseSmallButtonSize);
+    fontStyle = QString("font-size: %1 px;").arg(baseFontSize);
+    darkFontStyle = QString("font-size: %1 px; color: #999;").arg(baseFontSize);
+    orangeFontStyle = QString("font-size: %1 px; color: orange;").arg(baseFontSize);
 
     widgets = getWidgets();
     foreach (QWidget *widget, widgets)

@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -103,7 +104,7 @@ namespace WalletGui
     Q_OBJECT
 
   public:
-    RecentTransactionsDelegate(QObject *_parent) : QStyledItemDelegate(_parent)
+    explicit RecentTransactionsDelegate(QObject *_parent) : QStyledItemDelegate(_parent)
     {
     }
     ~RecentTransactionsDelegate()
@@ -498,159 +499,38 @@ namespace WalletGui
     }
   }
 
-  void OverviewFrame::setStyles(int change)
+  QList<QWidget *> OverviewFrame::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
+
+  QList<QPushButton *> OverviewFrame::getButtons()
   {
-    /** Set the base font sizes */
-    int baseFontSize = change;
-    int baseTitleSize = 7 + change;
-    int baseSmallButtonSize = change - 3;
-    int baseLargeButtonSize = change - 1;
+    return m_ui->groupBox->findChildren<QPushButton *>();
+  }
 
-    int id;
+  QList<QLabel *> OverviewFrame::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-    QString currentFont = Settings::instance().getFont();
-    if (currentFont == "Poppins")
+  void OverviewFrame::applyStyles()
+  {
+    QList<QLabel *> recentTxLabels = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
+    foreach (QLabel *label, recentTxLabels)
     {
-      id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
-    }
-    if (currentFont == "Lekton")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Lekton-Regular.ttf");
-    }
-    if (currentFont == "Roboto")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/RobotoSlab-Regular.ttf");
-    }
-    if (currentFont == "Montserrat")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular.ttf");
-    }
-    if (currentFont == "Open Sans")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
-    }
-    if (currentFont == "Oswald")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
-    }
-    if (currentFont == "Lato")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
-    }
-
-    QFont font;
-    font.setFamily(currentFont);
-    font.setPixelSize(baseFontSize);
-    font.setHintingPreference(QFont::PreferFullHinting);
-    font.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont smallButtonFont;
-    font.setFamily(currentFont);
-    smallButtonFont.setPixelSize(baseSmallButtonSize);
-    smallButtonFont.setHintingPreference(QFont::PreferFullHinting);
-    smallButtonFont.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont largeButtonFont;
-    font.setFamily(currentFont);
-    largeButtonFont.setPixelSize(baseLargeButtonSize);
-    largeButtonFont.setHintingPreference(QFont::PreferFullHinting);
-    largeButtonFont.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont titleFont;
-    font.setFamily(currentFont);
-    titleFont.setPixelSize(baseTitleSize);
-    titleFont.setHintingPreference(QFont::PreferFullHinting);
-    titleFont.setStyleStrategy(QFont::PreferAntialias);
-
-    /* Create our common pool of styles */
-    QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
-    QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
-    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #ddd;";
-    QString darkFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #999;";
-    QString orangeFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: orange;";
-
-    QList<QPushButton *>
-        buttons = m_ui->groupBox->findChildren<QPushButton *>();
-    foreach (QPushButton *button, buttons)
-    {
-      /* Set the font and styling for b1 styled buttons */
-      if (button->objectName().contains("b1_"))
-      {
-        button->setStyleSheet(b1Style);
-        button->setFont(largeButtonFont);
-      }
-
-      /* Set the font and styling for b2 styled buttons */
-      if (button->objectName().contains("b2_"))
-      {
-        button->setStyleSheet(b2Style);
-        button->setFont(smallButtonFont);
-      }
-
-      /* Set the font and styling for lm styled buttons */
-      if (button->objectName().contains("lm_"))
-      {
-        button->setFont(font);
-      }
-
-      /* Set the font and styling for sm styled buttons */
-      if (button->objectName().contains("sm_"))
-      {
-        button->setFont(font);
-      }
-    }
-
-
-    QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
-    foreach (QLabel *label, labels)
-    {
-      if (label->objectName().contains("title_"))
-      {
-        label->setFont(titleFont);
-      }
-      else
-      {
-        label->setFont(font);
-      }
-    }
-
-    m_ui->m_copyAddressButton_3->setFont(font);
-    m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
-
-    /** Set the font and styles for all the table views */
-    m_ui->m_addressBookView->setStyleSheet(tableStyle);
-    m_ui->m_messagesView->setStyleSheet(tableStyle);
-    m_ui->m_depositView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsDescription->setFont(font);
-    m_ui->m_messagesView->setFont(font);
-    m_ui->m_depositView->setFont(font);
-    m_ui->m_transactionsView->setFont(font);
-    m_ui->m_addressBookView->setFont(font);
-    m_ui->m_recentTransactionsView->setFont(font);
-
-    QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
-    foreach (QLabel *label, labels2)
-    {
-      label->setFont(font);
       label->setStyleSheet(darkFontStyle);
 
       if (label->objectName().contains("icon"))
       {
         label->setStyleSheet(fontStyle);
       }
-
-      if (label->objectName().contains("amount"))
+      else if (label->objectName().contains("amount"))
       {
         label->setStyleSheet(fontStyle);
       }
     }
 
-
-
+    QList<QTreeView *> treeViews = m_ui->groupBox->findChildren<QTreeView *>();
+    foreach (QTreeView *treeView, treeViews)
+    {
+      treeView->setStyleSheet(tableStyle);
+    }
     m_ui->groupBox->update();
-    m_ui->m_recentTransactionsView->update();
   }
 
   /* Load the price chart on the overview screen */
@@ -901,12 +781,11 @@ namespace WalletGui
   void OverviewFrame::updatePortfolio()
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
-
     float total = 0;
     total = ccxfiat * (float)OverviewFrame::totalBalance;
     m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
-    m_ui->fiatLabel->setText("Portfolio (" + Settings::instance().getCurrentCurrency() + ")");
+    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + currentCurrency);
+    m_ui->fiatLabel->setText("Portfolio (" + currentCurrency + ")");
   }
 
   /* Banking menu button clicked */

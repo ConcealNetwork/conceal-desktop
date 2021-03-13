@@ -109,7 +109,7 @@ background-color: #282d31;</string>
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -1832,7 +1832,7 @@ border-radius: 5px;</string>
          </sizepolicy>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true"/>
         </property>
         <property name="title">
          <string/>
@@ -1937,51 +1937,7 @@ text-align: left;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QHeaderView::section {
-    color: white;
-    font-weight: bold;
-    background-color: #282d31;
-    
-    border-top: none;
-    
-     border-bottom: 1px solid #444;
-       height: 37px;
-}
-
-QTreeView {
-    
-border: none;
-    color: #ccc;
-
-    height: 37px;
-background-color: #282d31;
-}
-
-QTreeView::item {
-    
-    color: #ccc;
-    
-    height: 37px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-
-  color: black;
-}
-
-QWidget:item:selected {
-    
-background-color: #555;
-
-  color: #ccc;
-}
-
-border: none;
-
-
-color: #ccc;
-</string>
+            <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -7656,51 +7612,7 @@ text-align: left;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">QHeaderView::section {
-    color: white;
-    font-weight: bold;
-    background-color: #282d31;
-    
-    border-top: none;
-    
-     border-bottom: 1px solid #444;
-       height: 37px;
-}
-
-QTreeView {
-    
-border: none;
-    color: #ccc;
-
-    height: 37px;
-background-color: #282d31;
-}
-
-QTreeView::item {
-    
-    color: #ccc;
-    
-    height: 37px;
-}
-
-QTreeView::branch:selected {
-  background-color: orange;
-
-  color: black;
-}
-
-QWidget:item:selected {
-    
-background-color: #555555;
-
-  color: #ccc;
-}
-
-border: none;
-
-
-color: #ccc;
-</string>
+            <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -8163,19 +8075,19 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
       </item>
      </layout>
      <zorder>darkness</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
-     <zorder>messageBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>messageBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>transactionsBox</zorder>
     </widget>
    </item>
   </layout>

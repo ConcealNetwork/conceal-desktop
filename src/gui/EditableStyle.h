@@ -33,6 +33,8 @@ namespace WalletGui
     QString b1Style;
     QString b2Style;
     QString fontStyle;
+    QString darkFontStyle;
+    QString orangeFontStyle;
 
     QList<QWidget *> widgets;
     QList<QPushButton *> buttons;
