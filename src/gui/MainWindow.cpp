@@ -55,7 +55,7 @@
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include "importsecretkeys.h"
-#include "importtracking.h"
+#include "ImportTracking.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
