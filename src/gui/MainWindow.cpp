@@ -185,8 +185,9 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-  OptimizationManager *optimizationManager = new OptimizationManager(this);
+  // OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
@@ -958,5 +959,16 @@ void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 void MainWindow::notify(const QString& message) {
   notification->notify(message);
 }
+
+QList<QWidget *> MainWindow::getWidgets() { return m_ui->centralwidget->findChildren<QWidget *>(); }
+
+QList<QPushButton *> MainWindow::getButtons()
+{
+  return m_ui->centralwidget->findChildren<QPushButton *>();
+}
+
+QList<QLabel *> MainWindow::getLabels() { return m_ui->centralwidget->findChildren<QLabel *>(); }
+
+void MainWindow::applyStyles() { m_ui->centralwidget->update(); }
 
 } // namespace WalletGui

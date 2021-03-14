@@ -12,6 +12,7 @@
 #include <QTranslator>
 
 #include "Notification.h"
+#include "EditableStyle.h"
 
 class QActionGroup;
 
@@ -21,7 +22,7 @@ class MainWindow;
 
 namespace WalletGui {
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow, EditableStyle {
   Q_OBJECT
   Q_DISABLE_COPY(MainWindow)
 
@@ -33,6 +34,10 @@ public:
 protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
   bool event(QEvent* _event) Q_DECL_OVERRIDE;
+  QList<QWidget*> getWidgets() override;
+  QList<QPushButton*> getButtons() override;
+  QList<QLabel*> getLabels() override;
+  void applyStyles() override;
 
 protected Q_SLOTS:
 #ifndef QT_NO_SYSTEMTRAYICON
