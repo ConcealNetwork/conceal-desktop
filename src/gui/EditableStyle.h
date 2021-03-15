@@ -16,9 +16,8 @@ namespace WalletGui
   class EditableStyle
   {
   public:
-    ~EditableStyle();
-
-  protected:
+    virtual ~EditableStyle();
+    
     int baseFontSize;
     int baseTitleSize;
     int baseSmallButtonSize;

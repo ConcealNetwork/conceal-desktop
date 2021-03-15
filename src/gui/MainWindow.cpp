@@ -54,7 +54,7 @@
 
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "importsecretkeys.h"
+#include "ImportSecretKeys.h"
 #include "ImportTracking.h"
 #include "ui_mainwindow.h"
 
@@ -709,7 +709,7 @@ void MainWindow::importsecretkeys()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  importSecretKeys dlg(this);
+  ImportSecretKeys dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
