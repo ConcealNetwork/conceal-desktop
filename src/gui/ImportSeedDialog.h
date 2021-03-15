@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QDialog>
+
 #include "EditableStyle.h"
 
 namespace Ui

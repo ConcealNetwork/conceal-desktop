@@ -233,7 +233,7 @@ padding: 3px;   </string>
         <x>50</x>
         <y>60</y>
         <width>351</width>
-        <height>21</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -247,6 +247,9 @@ padding: 3px;   </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

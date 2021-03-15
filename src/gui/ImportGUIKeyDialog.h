@@ -28,7 +28,6 @@ namespace WalletGui
     QString getKeyString() const;
     QString getFilePath() const;
 
-  protected:
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
     QList<QLabel *> getLabels() override;

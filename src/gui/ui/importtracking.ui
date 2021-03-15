@@ -37,7 +37,7 @@
       <x>50</x>
       <y>70</y>
       <width>351</width>
-      <height>21</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -53,6 +53,9 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
