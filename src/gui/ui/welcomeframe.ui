@@ -26,8 +26,7 @@
    <string>Welcome</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #ddd;
-border: 0px; background-color: #282d31; font-family: Poppins;</string>
+   <string notr="true">color: #ddd; border: 0px; background-color: #282d31;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -467,7 +466,7 @@ font-size: 20px;</string>
 </string>
               </property>
               <property name="text">
-               <string>advanced users can import using other keys</string>
+               <string>Advanced users can import using other keys</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -865,7 +864,7 @@ font-size: 20px;</string>
               </property>
              </widget>
             </item>
-<item alignment="Qt::AlignTop">
+            <item alignment="Qt::AlignTop">
              <widget class="QGroupBox" name="horizontalGroupBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1504,7 +1503,7 @@ margin-left: 3em;</string>
                <enum>Qt::LeftToRight</enum>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}</string>
+               <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
               </property>
               <property name="text">
                <string>NEXT</string>
@@ -1965,11 +1964,11 @@ margin-left: 3em;</string>
        </spacer>
       </item>
      </layout>
+     <zorder>newWalletBox</zorder>
      <zorder>box1</zorder>
      <zorder>box2</zorder>
      <zorder>box3</zorder>
      <zorder>box4</zorder>
-     <zorder>newWalletBox</zorder>
     </widget>
    </item>
    <item>
