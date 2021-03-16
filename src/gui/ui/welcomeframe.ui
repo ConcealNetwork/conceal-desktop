@@ -144,7 +144,7 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -157,35 +157,13 @@
       </string>
               </property>
               <property name="text">
-               <string>Create a new wallet address along with</string>
+               <string>Create a new wallet address along with a secret seed phrase</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_28">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-      </string>
-              </property>
-              <property name="text">
-               <string>a secret seed phrase</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -239,7 +217,7 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -252,35 +230,13 @@
       </string>
               </property>
               <property name="text">
-               <string>Already have a wallet? open the wallet</string>
+               <string>Already have a wallet? open the wallet and access your assets</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_31">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-      </string>
-              </property>
-              <property name="text">
-               <string>and access your assets</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -334,7 +290,7 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -347,35 +303,13 @@
 </string>
               </property>
               <property name="text">
-               <string>Import an existing wallet with the secret</string>
+               <string>Import an existing wallet with the secret seed phrase and access your CCX</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_30">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-</string>
-              </property>
-              <property name="text">
-               <string>seed phrase and access your CCX</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -447,13 +381,19 @@ font-size: 20px;</string>
          </item>
          <item row="3" column="0" colspan="3" alignment="Qt::AlignHCenter">
           <widget class="QGroupBox" name="groupBox_8">
+           <property name="minimumSize">
+            <size>
+             <width>425</width>
+             <height>0</height>
+            </size>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
              <widget class="QLabel" name="label_32">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -470,6 +410,9 @@ font-size: 20px;</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -496,13 +439,13 @@ font-size: 20px;</string>
                 <widget class="QPushButton" name="b1_spendkeyButton">
                  <property name="minimumSize">
                   <size>
-                   <width>175</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>210</width>
+                   <width>220</width>
                    <height>30</height>
                   </size>
                  </property>
@@ -523,13 +466,13 @@ font-size: 20px;</string>
                 <widget class="QPushButton" name="b1_guikeyButton">
                  <property name="minimumSize">
                   <size>
-                   <width>175</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>210</width>
+                   <width>220</width>
                    <height>30</height>
                   </size>
                  </property>

@@ -173,7 +173,7 @@ padding: 3px;   </string>
        <string>...</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="b2_okButton">
+     <widget class="QPushButton" name="b1_okButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -200,7 +200,7 @@ padding: 3px;   </string>
        <string>IMPORT</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="b2_cancelButton">
+     <widget class="QPushButton" name="b1_cancelButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -259,7 +259,7 @@ padding: 3px;   </string>
  <resources/>
  <connections>
   <connection>
-   <sender>b2_okButton</sender>
+   <sender>b1_okButton</sender>
    <signal>clicked()</signal>
    <receiver>ImportGUIKeyDialog</receiver>
    <slot>accept()</slot>
@@ -275,7 +275,7 @@ padding: 3px;   </string>
    </hints>
   </connection>
   <connection>
-   <sender>b2_cancelButton</sender>
+   <sender>b1_cancelButton</sender>
    <signal>clicked()</signal>
    <receiver>ImportGUIKeyDialog</receiver>
    <slot>reject()</slot>
