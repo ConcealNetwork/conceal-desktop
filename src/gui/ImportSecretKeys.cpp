@@ -22,7 +22,7 @@ namespace WalletGui
   {
     m_ui->setupUi(this);
     int startingFontSize = Settings::instance().getFontSize();
-    setStyles(startingFontSize);
+    EditableStyle::setStyles(startingFontSize);
   }
 
   ImportSecretKeys::~ImportSecretKeys() { }
