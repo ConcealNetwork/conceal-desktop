@@ -20,7 +20,7 @@ namespace WalletGui
   {
     m_ui->setupUi(this);
     int startingFontSize = Settings::instance().getFontSize();
-    setStyles(startingFontSize);
+    EditableStyle::setStyles(startingFontSize);
     QString walletFile = Settings::instance().getWalletName();
     m_ui->m_currentWalletTitle->setText(walletFile.toUpper());
 

@@ -26,10 +26,8 @@ namespace WalletGui
   public:
     PasswordDialog(bool _error, QWidget *_parent);
     ~PasswordDialog();
-    // int setStyles(int change) override;
     QString getPassword() const;
 
-  protected:
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
     QList<QLabel *> getLabels() override;
