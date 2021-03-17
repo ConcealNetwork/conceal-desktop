@@ -187,6 +187,10 @@ namespace WalletGui
       {
         label->setFont(titleFont);
       }
+      else if (label->objectName().contains("o_"))
+      {
+        label->setStyleSheet(orangeFontStyle);
+      }
       else
       {
         label->setFont(font);
