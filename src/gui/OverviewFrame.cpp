@@ -510,21 +510,6 @@ namespace WalletGui
 
   void OverviewFrame::applyStyles()
   {
-    QList<QLabel *> recentTxLabels = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
-    foreach (QLabel *label, recentTxLabels)
-    {
-      label->setStyleSheet(darkFontStyle);
-
-      if (label->objectName().contains("icon"))
-      {
-        label->setStyleSheet(fontStyle);
-      }
-      else if (label->objectName().contains("amount"))
-      {
-        label->setStyleSheet(fontStyle);
-      }
-    }
-
     QList<QTreeView *> treeViews = m_ui->groupBox->findChildren<QTreeView *>();
     foreach (QTreeView *treeView, treeViews)
     {
@@ -675,11 +660,13 @@ namespace WalletGui
     {
       if (unlockedFunds > 0)
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: orange; background: transparent; border: none;");
       }
       else
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: #ddd; background: transparent; border: none;");
       }
     }
   }
@@ -701,11 +688,13 @@ namespace WalletGui
     {
       if (unlockedFunds > 0)
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: orange; background: transparent; border: none;");
       }
       else
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: #ddd; background: transparent; border: none;");
       }
     }
   }
