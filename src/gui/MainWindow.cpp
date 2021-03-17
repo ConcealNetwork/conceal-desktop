@@ -969,6 +969,10 @@ QList<QPushButton *> MainWindow::getButtons()
 
 QList<QLabel *> MainWindow::getLabels() { return m_ui->centralwidget->findChildren<QLabel *>(); }
 
-void MainWindow::applyStyles() { m_ui->centralwidget->update(); }
+void MainWindow::applyStyles()
+{
+  QApplication::setFont(EditableStyle::currentFont);
+  m_ui->centralwidget->update();
+}
 
-} // namespace WalletGui
+}  // namespace WalletGui

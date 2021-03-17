@@ -28,8 +28,7 @@ namespace WalletGui
     Notification& operator=(const Notification& notification);
     ~Notification();
     void notify(const QString& message);
-
-  protected:
+    
     void applyStyles() override;
 
   private:

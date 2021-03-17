@@ -22,7 +22,7 @@ class MainWindow;
 
 namespace WalletGui {
 
-class MainWindow : public QMainWindow, EditableStyle {
+class MainWindow : public QMainWindow, public EditableStyle {
   Q_OBJECT
   Q_DISABLE_COPY(MainWindow)
 

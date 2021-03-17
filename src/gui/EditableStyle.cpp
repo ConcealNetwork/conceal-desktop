@@ -29,28 +29,28 @@ namespace WalletGui
 
     int id = -2;
 
-    QString currentFont = Settings::instance().getFont();
-    if (currentFont == "Poppins")
+    QString fontName = Settings::instance().getFont();
+    if (fontName == "Poppins")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
     }
-    else if (currentFont == "Lekton")
+    else if (fontName == "Lekton")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Lekton-Regular.ttf");
     }
-    else if (currentFont == "Roboto")
+    else if (fontName == "Roboto")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/RobotoSlab-Regular.ttf");
     }
-    else if (currentFont == "Montserrat")
+    else if (fontName == "Montserrat")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular.ttf");
     }
-    else if (currentFont == "Open Sans")
+    else if (fontName == "Open Sans")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
     }
-    else if (currentFont == "Oswald")
+    else if (fontName == "Oswald")
     {
       id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
     }
@@ -59,25 +59,25 @@ namespace WalletGui
       id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
     }
 
-    font.setFamily(currentFont);
-    font.setPixelSize(baseFontSize);
-    font.setLetterSpacing(QFont::PercentageSpacing, 102);
-    font.setHintingPreference(QFont::PreferFullHinting);
-    font.setStyleStrategy(QFont::PreferAntialias);
+    currentFont.setFamily(fontName);
+    currentFont.setPixelSize(baseFontSize);
+    currentFont.setLetterSpacing(QFont::PercentageSpacing, 102);
+    currentFont.setHintingPreference(QFont::PreferFullHinting);
+    currentFont.setStyleStrategy(QFont::PreferAntialias);
 
-    smallButtonFont.setFamily(currentFont);
+    smallButtonFont.setFamily(fontName);
     smallButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     smallButtonFont.setPixelSize(baseSmallButtonSize);
     smallButtonFont.setHintingPreference(QFont::PreferFullHinting);
     smallButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
-    largeButtonFont.setFamily(currentFont);
+    largeButtonFont.setFamily(fontName);
     largeButtonFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     largeButtonFont.setPixelSize(baseLargeButtonSize);
     largeButtonFont.setHintingPreference(QFont::PreferFullHinting);
     largeButtonFont.setStyleStrategy(QFont::PreferAntialias);
 
-    titleFont.setFamily(currentFont);
+    titleFont.setFamily(fontName);
     titleFont.setLetterSpacing(QFont::PercentageSpacing, 102);
     titleFont.setPixelSize(baseTitleSize);
     titleFont.setHintingPreference(QFont::PreferFullHinting);
@@ -141,7 +141,7 @@ namespace WalletGui
     widgets = getWidgets();
     foreach (QWidget *widget, widgets)
     {
-      widget->setFont(font);
+      widget->setFont(currentFont);
     }
 
     buttons = getButtons();
@@ -164,19 +164,19 @@ namespace WalletGui
       /* Set the font and styling for lm styled buttons */
       if (button->objectName().contains("lm_"))
       {
-        button->setFont(font);
+        button->setFont(currentFont);
       }
 
       /* Set the font and styling for sm styled buttons */
       if (button->objectName().contains("sm_"))
       {
-        button->setFont(font);
+        button->setFont(currentFont);
       }
 
       /* Set the font and styling for m styled buttons */
       if (button->objectName().contains("m_"))
       {
-        button->setFont(font);
+        button->setFont(currentFont);
       }
     }
 
@@ -193,7 +193,7 @@ namespace WalletGui
       }
       else
       {
-        label->setFont(font);
+        label->setFont(currentFont);
       }
     }
 

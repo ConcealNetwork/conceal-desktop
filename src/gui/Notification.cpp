@@ -89,5 +89,5 @@ namespace WalletGui
     timer->start(2000 * nLines);
   }
 
-  void Notification::applyStyles() { m_ui->notification->setFont(EditableStyle::font); }
+  void Notification::applyStyles() { m_ui->notification->setFont(EditableStyle::currentFont); }
 }  // namespace WalletGui

@@ -17,13 +17,13 @@ namespace WalletGui
   {
   public:
     virtual ~EditableStyle();
-    
+
     int baseFontSize;
     int baseTitleSize;
     int baseSmallButtonSize;
     int baseLargeButtonSize;
 
-    QFont font;
+    QFont currentFont;
     QFont smallButtonFont;
     QFont largeButtonFont;
     QFont titleFont;
