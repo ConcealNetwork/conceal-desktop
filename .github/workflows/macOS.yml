@@ -17,7 +17,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install gcc boost
+          brew install boost
 
       - name: Clone conceal-core
         run: |
@@ -32,10 +32,8 @@ jobs:
           release_name="ccx-desktop-macOS-v$ccx_ver"
           app_name="CONCEAL-GUI.app"
 
-          mkdir -p "$build_folder"
+          make -j4 build-release
           cd "$build_folder"
-          cmake -DCMAKE_C_FLAGS="-mmacosx-version-min=10.12" -DCMAKE_CXX_FLAGS="-mmacosx-version-min=10.12" -D CMAKE_BUILD_TYPE=Release ../..
-          make -j4
           macdeployqt "$app_name"
           cpack
           mkdir "$release_name"
