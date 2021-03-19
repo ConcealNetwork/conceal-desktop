@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 2.8)
 include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
 
+if(APPLE)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")  
+endif(APPLE)
+
 project(${CN_PROJECT_NAME})
 
 execute_process(COMMAND git log -1 --pretty=format:%h
