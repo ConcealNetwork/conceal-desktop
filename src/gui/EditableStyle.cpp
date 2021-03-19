@@ -152,6 +152,7 @@ namespace WalletGui
       {
         button->setStyleSheet(b1Style);
         button->setFont(largeButtonFont);
+        button->setMinimumHeight(30);
       }
 
       /* Set the font and styling for b2 styled buttons */

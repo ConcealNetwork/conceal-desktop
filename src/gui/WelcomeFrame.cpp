@@ -120,7 +120,7 @@ void WelcomeFrame::nextShowSeed()
   else {
     QMessageBox::warning(
         &MainWindow::instance(), QObject::tr("Error"),
-        tr("Unable to create a new wallet at the path provided. Please select another."));
+        tr("Unable to create a new wallet at the path provided. \nPlease choose another location."));
   }
 }
 
