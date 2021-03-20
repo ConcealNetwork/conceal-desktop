@@ -9,11 +9,21 @@ jobs:
   build-windows:
     name: Windows
     runs-on: windows-2016
+    env:
+      BOOST_ROOT: C:/tools/boost/x86_64
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1.0.2
+
+      - name: Install Boost
+        shell: powershell
+        run: |
+          echo "${env:BOOST_ROOT}"
+          $Url = "https://sourceforge.net/projects/boost/files/boost-binaries/1.72.0/boost_1_72_0-msvc-14.1-64.exe"
+          (New-Object System.Net.WebClient).DownloadFile($Url, "$env:TEMP\boost.exe")
+          Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
@@ -61,7 +71,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_72_0}"/include ..
+          cmake -G "Visual Studio 15 2017 Win64" ..
           msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
