@@ -14,8 +14,7 @@
    <string>Message</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color: #282d31;
+   <string notr="true">background-color: #282d31;
 color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -151,7 +150,7 @@ color: #ddd;</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="m_saveButton">
+      <widget class="QPushButton" name="b1_saveButton">
        <property name="minimumSize">
         <size>
          <width>121</width>
@@ -161,27 +160,10 @@ color: #ddd;</string>
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_saveButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_saveButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+        <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
         <string>SAVE TO FILE</string>
@@ -202,7 +184,7 @@ QPushButton#m_saveButton:hover
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_prevButton">
+      <widget class="QPushButton" name="b1_prevButton">
        <property name="minimumSize">
         <size>
          <width>121</width>
@@ -212,27 +194,10 @@ QPushButton#m_saveButton:hover
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_prevButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_prevButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+        <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
         <string>&lt;&lt;</string>
@@ -240,7 +205,7 @@ QPushButton#m_prevButton:hover
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="m_nextButton">
+      <widget class="QPushButton" name="b1_nextButton">
        <property name="minimumSize">
         <size>
          <width>121</width>
@@ -250,27 +215,10 @@ QPushButton#m_prevButton:hover
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_nextButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_nextButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+        <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
         <string>&gt;&gt;</string>
@@ -278,7 +226,7 @@ QPushButton#m_nextButton:hover
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="m_okButton">
+      <widget class="QPushButton" name="b1_okButton">
        <property name="minimumSize">
         <size>
          <width>121</width>
@@ -288,27 +236,10 @@ QPushButton#m_nextButton:hover
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_okButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_okButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
+        <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
         <string>OK</string>
@@ -328,7 +259,7 @@ QPushButton#m_okButton:hover
  <resources/>
  <connections>
   <connection>
-   <sender>m_okButton</sender>
+   <sender>b1_okButton</sender>
    <signal>clicked()</signal>
    <receiver>MessageDetailsDialog</receiver>
    <slot>reject()</slot>
@@ -344,7 +275,7 @@ QPushButton#m_okButton:hover
    </hints>
   </connection>
   <connection>
-   <sender>m_prevButton</sender>
+   <sender>b1_prevButton</sender>
    <signal>clicked()</signal>
    <receiver>MessageDetailsDialog</receiver>
    <slot>prevClicked()</slot>
@@ -360,7 +291,7 @@ QPushButton#m_okButton:hover
    </hints>
   </connection>
   <connection>
-   <sender>m_nextButton</sender>
+   <sender>b1_nextButton</sender>
    <signal>clicked()</signal>
    <receiver>MessageDetailsDialog</receiver>
    <slot>nextClicked()</slot>
@@ -376,7 +307,7 @@ QPushButton#m_okButton:hover
    </hints>
   </connection>
   <connection>
-   <sender>m_saveButton</sender>
+   <sender>b1_saveButton</sender>
    <signal>clicked()</signal>
    <receiver>MessageDetailsDialog</receiver>
    <slot>saveClicked()</slot>
