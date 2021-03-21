@@ -102,7 +102,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_SECRETKEY).data().toString()).    
     arg(messageList.join("<br><br>=========<br><br>")).
     arg(depositInfo));
-
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
   EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
