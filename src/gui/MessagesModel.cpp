@@ -120,12 +120,6 @@ QVariant MessagesModel::data(const QModelIndex& _index, int _role) const
 
   switch(_role) 
   {
-case Qt::BackgroundRole:
-  if (0 == _index.row() % 2)
-      return QColor(40, 45, 49);
-  else
-      return QColor(33, 37, 41);
-
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);

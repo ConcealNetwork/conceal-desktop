@@ -354,7 +354,7 @@ text-align: left;
             <enum>QAbstractScrollArea::AdjustToContents</enum>
            </property>
            <property name="alternatingRowColors">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="indentation">
             <number>0</number>
@@ -1964,7 +1964,7 @@ text-align: left;
             <set>QAbstractItemView::EditKeyPressed</set>
            </property>
            <property name="alternatingRowColors">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="indentation">
             <number>0</number>
@@ -1979,7 +1979,7 @@ text-align: left;
             <bool>true</bool>
            </property>
            <property name="sortingEnabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="expandsOnDoubleClick">
             <bool>true</bool>
@@ -1988,7 +1988,7 @@ text-align: left;
             <bool>false</bool>
            </attribute>
            <attribute name="headerShowSortIndicator" stdset="0">
-            <bool>false</bool>
+            <bool>true</bool>
            </attribute>
            <attribute name="headerStretchLastSection">
             <bool>true</bool>
@@ -3511,6 +3511,9 @@ font-size: 10pt;</string>
                  <property name="editTriggers">
                   <set>QAbstractItemView::NoEditTriggers</set>
                  </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
                  <property name="selectionMode">
                   <enum>QAbstractItemView::NoSelection</enum>
                  </property>
@@ -4601,6 +4604,9 @@ border: none;</string>
               </property>
               <property name="sizeAdjustPolicy">
                <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>true</bool>
               </property>
               <property name="indentation">
                <number>0</number>
@@ -7715,7 +7721,7 @@ text-align: left;
             <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::CurrentChanged|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
            </property>
            <property name="alternatingRowColors">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="rootIsDecorated">
             <bool>false</bool>

@@ -97,7 +97,6 @@ namespace WalletGui
                      "}"
                      "QTreeView::item"
                      "{"
-                     "border-top: none;"
                      "color: #ccc;"
                      "height: 37px;"
                      "outline: none;"
@@ -106,6 +105,11 @@ namespace WalletGui
                      "{"
                      "background-color: orange;"
                      "color: black;"
+                     "}"
+                     "QTreeView"
+                     "{"
+                     "alternate-background-color: #212529;"
+                     "background: #282d31"
                      "}")
                      .arg(baseFontSize);
     b1Style = QString(

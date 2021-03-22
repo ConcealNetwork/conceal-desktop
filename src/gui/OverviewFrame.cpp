@@ -222,7 +222,6 @@ namespace WalletGui
     m_ui->m_transactionsView->header()->moveSection(3, 5);
     m_ui->m_transactionsView->header()->moveSection(0, 1);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
-    m_ui->m_transactionsView->setSortingEnabled(true);
 
     m_ui->m_depositView->setModel(m_depositModel.data());
     m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
