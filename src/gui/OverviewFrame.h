@@ -9,6 +9,9 @@
 
 #include <IWalletLegacy.h>
 
+#ifdef HAVE_CHART
+#include <QtCharts>
+#endif
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
@@ -85,6 +88,11 @@ private:
   QMenu* contextMenu;
   bool paymentIDRequired = false;
   QString exchangeName = "";
+#ifdef HAVE_CHART
+  QChartView *m_chartView;
+#else
+  QLabel *m_chart;
+#endif
 
 
   void onPriceFound(QJsonObject &result);

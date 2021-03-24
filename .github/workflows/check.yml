@@ -33,7 +33,7 @@ jobs:
         with:
           host: "windows"
           target: "desktop"
-          modules: "qttools5"
+          modules: "qttools5 qtcharts"
           install-deps: "true"
 
       - name: Clone conceal-core
@@ -160,7 +160,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -201,7 +201,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -241,6 +241,8 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
+        with:
+          modules: "qtcharts"
 
       - name: Install dependencies
         run: |
