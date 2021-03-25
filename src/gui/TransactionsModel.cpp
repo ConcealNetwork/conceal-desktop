@@ -479,7 +479,12 @@ namespace WalletGui
       return QByteArray(reinterpret_cast<const char *>(&_transaction.hash), sizeof(_transaction.hash));
 
     case ROLE_SECRETKEY:
-      return QByteArray(reinterpret_cast<const char *>(&_transaction.secretKey), sizeof(_transaction.secretKey));
+      if (_transaction.secretKey) {
+        Crypto::SecretKey txkey = _transaction.secretKey.get();
+        if (txkey != CryptoNote::NULL_SECRET_KEY) {
+          return QByteArray(reinterpret_cast<char*>(&txkey), sizeof(txkey));
+        }
+      }
 
     case ROLE_ADDRESS:
       return QString::fromStdString(_transfer.address);
