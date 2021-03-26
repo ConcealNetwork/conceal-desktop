@@ -82,6 +82,8 @@ namespace WalletGui
   Q_DECL_CONSTEXPR int MIN_TTL = 5 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
   Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
+  Q_DECL_CONSTEXPR int BASE_FEE = 1000;
+  Q_DECL_CONSTEXPR int REMOTE_FEE = 100000;
 
   /* Convert months to the number of blocks */
   QString monthsToBlocks(int _months)
@@ -727,13 +729,13 @@ namespace WalletGui
 
   void OverviewFrame::calculateFee()
   {
-    m_actualFee = 1000;
+    m_actualFee = BASE_FEE;
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        m_actualFee = m_actualFee + 11000;
+        m_actualFee = m_actualFee + REMOTE_FEE;
       }
     }
   }
@@ -1151,9 +1153,12 @@ namespace WalletGui
     {
       OverviewFrame::remote_node_fee_address = _address;
       Settings::instance().setCurrentFeeAddress(_address);
-      m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+      calculateFee();
+      QString fee =
+          QString("Fee: %1 CCX").arg(CurrencyAdapter::instance().formatAmount(m_actualFee));
+      m_ui->m_sendFee->setText(fee);
+      m_ui->m_messageFee->setText(fee);
+      m_ui->m_depositFeeLabel->setText(QString::number(m_actualFee / (double)1000000, 'f', 6) + " CCX");
     }
   }
 
@@ -1315,8 +1320,8 @@ namespace WalletGui
       walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
     }
 
-    quint64 actualFee = 1000;
-    quint64 totalFee = 1000;
+    quint64 actualFee = BASE_FEE;
+    quint64 totalFee = BASE_FEE;
 
     /* Remote node fee */
     QString connection = Settings::instance().getConnection();
@@ -1326,9 +1331,9 @@ namespace WalletGui
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
-        totalFee = totalFee + 11000;
+        totalFee = totalFee + REMOTE_FEE;
       }
     }
 
@@ -1530,7 +1535,7 @@ namespace WalletGui
     messages.append({messageString.toStdString(), address.toStdString()});
 
     /* Set fee */
-    quint64 fee = 1000;
+    quint64 fee = BASE_FEE;
 
     /* Check if this is a self destructive message */
     bool selfDestructiveMessage = false;
@@ -1551,7 +1556,7 @@ namespace WalletGui
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         transfers.push_back(walletTransfer);
       }
     }
@@ -1629,7 +1634,7 @@ namespace WalletGui
     }
 
     /* Initiate the desposit */
-    WalletAdapter::instance().deposit(term, amount, 1000, 4);
+    WalletAdapter::instance().deposit(term, amount, BASE_FEE, 4);
 
     /* Remote node fee */
     QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
@@ -1641,13 +1646,13 @@ namespace WalletGui
         QVector<CryptoNote::TransactionMessage> walletMessages;
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
         /* If the wallet is open we proceed */
         if (WalletAdapter::instance().isOpen())
         {
           /* Send the transaction */
-          WalletAdapter::instance().sendTransaction(walletTransfers, 1000, "", 4, walletMessages);
+          WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", 4, walletMessages);
         }
       }
     }
