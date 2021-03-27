@@ -12,18 +12,28 @@ jobs:
   build-windows:
     name: Windows
     runs-on: windows-2016
+    env:
+      BOOST_ROOT: C:/tools/boost/x86_64
     steps:
       - uses: actions/checkout@v2
 
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1.0.2
 
+      - name: Install Boost
+        shell: powershell
+        run: |
+          echo "${env:BOOST_ROOT}"
+          $Url = "https://sourceforge.net/projects/boost/files/boost-binaries/1.72.0/boost_1_72_0-msvc-14.1-64.exe"
+          (New-Object System.Net.WebClient).DownloadFile($Url, "$env:TEMP\boost.exe")
+          Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
+
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
         with:
           host: "windows"
           target: "desktop"
-          modules: "qttools5"
+          modules: "qttools5 qtcharts"
           install-deps: "true"
 
       - name: Clone conceal-core
@@ -65,7 +75,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" -DBoost_INCLUDE_DIR="${env:BOOST_ROOT_1_72_0}"/include ..
+          cmake -G "Visual Studio 15 2017 Win64" ..
           msbuild CONCEAL-GUI.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
@@ -150,7 +160,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -191,7 +201,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -231,10 +241,12 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v2
+        with:
+          modules: "qtcharts"
 
       - name: Install dependencies
         run: |
-          brew install gcc boost
+          brew install boost
 
       - name: Clone conceal-core
         run: |
@@ -249,10 +261,8 @@ jobs:
           release_name="ccx-desktop-macOS-dev-$ccx_ver"
           app_name="CONCEAL-GUI.app"
 
-          mkdir -p "$build_folder"
+          make -j4 build-release
           cd "$build_folder"
-          cmake -DCMAKE_C_FLAGS="-mmacosx-version-min=10.12" -DCMAKE_CXX_FLAGS="-mmacosx-version-min=10.12" -D CMAKE_BUILD_TYPE=Release ../..
-          make -j4
           macdeployqt "$app_name"
           cpack
           mkdir "$release_name"

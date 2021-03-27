@@ -54,8 +54,8 @@
 
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "importsecretkeys.h"
-#include "importtracking.h"
+#include "ImportSecretKeys.h"
+#include "ImportTracking.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
@@ -185,8 +185,9 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-  OptimizationManager *optimizationManager = new OptimizationManager(this);
+  // OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
@@ -708,7 +709,7 @@ void MainWindow::importsecretkeys()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  importSecretKeys dlg(this);
+  ImportSecretKeys dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
@@ -959,4 +960,19 @@ void MainWindow::notify(const QString& message) {
   notification->notify(message);
 }
 
-} // namespace WalletGui
+QList<QWidget *> MainWindow::getWidgets() { return m_ui->centralwidget->findChildren<QWidget *>(); }
+
+QList<QPushButton *> MainWindow::getButtons()
+{
+  return m_ui->centralwidget->findChildren<QPushButton *>();
+}
+
+QList<QLabel *> MainWindow::getLabels() { return m_ui->centralwidget->findChildren<QLabel *>(); }
+
+void MainWindow::applyStyles()
+{
+  QApplication::setFont(EditableStyle::currentFont);
+  m_ui->centralwidget->update();
+}
+
+}  // namespace WalletGui

@@ -26,8 +26,7 @@
    <string>Welcome</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: #ddd;
-border: 0px; background-color: #282d31; font-family: Poppins;</string>
+   <string notr="true">color: #ddd; border: 0px; background-color: #282d31;</string>
   </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
@@ -145,7 +144,7 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -158,35 +157,13 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
       </string>
               </property>
               <property name="text">
-               <string>Create a new wallet address along with</string>
+               <string>Create a new wallet address along with a secret seed phrase</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_28">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-      </string>
-              </property>
-              <property name="text">
-               <string>a secret seed phrase</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -240,7 +217,7 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -253,35 +230,13 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
       </string>
               </property>
               <property name="text">
-               <string>Already have a wallet? open the wallet</string>
+               <string>Already have a wallet? open the wallet and access your assets</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_31">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-      </string>
-              </property>
-              <property name="text">
-               <string>and access your assets</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -335,7 +290,7 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -348,35 +303,13 @@ border: 0px; background-color: #282d31; font-family: Poppins;</string>
 </string>
               </property>
               <property name="text">
-               <string>Import an existing wallet with the secret</string>
+               <string>Import an existing wallet with the secret seed phrase and access your CCX</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_30">
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-</string>
-              </property>
-              <property name="text">
-               <string>seed phrase and access your CCX</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -448,13 +381,19 @@ font-size: 20px;</string>
          </item>
          <item row="3" column="0" colspan="3" alignment="Qt::AlignHCenter">
           <widget class="QGroupBox" name="groupBox_8">
+           <property name="minimumSize">
+            <size>
+             <width>425</width>
+             <height>0</height>
+            </size>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
              <widget class="QLabel" name="label_32">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>20</height>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -467,10 +406,13 @@ font-size: 20px;</string>
 </string>
               </property>
               <property name="text">
-               <string>advanced users can import using other keys</string>
+               <string>Advanced users can import using other keys</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -497,13 +439,13 @@ font-size: 20px;</string>
                 <widget class="QPushButton" name="b1_spendkeyButton">
                  <property name="minimumSize">
                   <size>
-                   <width>175</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>210</width>
+                   <width>220</width>
                    <height>30</height>
                   </size>
                  </property>
@@ -524,13 +466,13 @@ font-size: 20px;</string>
                 <widget class="QPushButton" name="b1_guikeyButton">
                  <property name="minimumSize">
                   <size>
-                   <width>175</width>
+                   <width>0</width>
                    <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>210</width>
+                   <width>220</width>
                    <height>30</height>
                   </size>
                  </property>
@@ -865,7 +807,7 @@ font-size: 20px;</string>
               </property>
              </widget>
             </item>
-<item alignment="Qt::AlignTop">
+            <item alignment="Qt::AlignTop">
              <widget class="QGroupBox" name="horizontalGroupBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -962,7 +904,38 @@ color: white;
              <widget class="QGroupBox" name="horizontalGroupBox_2">
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
                 <widget class="QPushButton" name="b1_back">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">/* This button style is handled automatically by WelcomeFrame.cpp */</string>
                  </property>
@@ -973,6 +946,24 @@ color: white;
                </item>
                <item>
                 <widget class="QPushButton" name="b1_nextShowSeed">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">/* This button style is handled automatically by WelcomeFrame.cpp */</string>
                  </property>
@@ -980,6 +971,19 @@ color: white;
                   <string>NEXT</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -1109,9 +1113,22 @@ border-radius: 5px;</string>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
                 <widget class="QPushButton" name="b1_copySeedButton">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -1120,6 +1137,12 @@ border-radius: 5px;</string>
                   <size>
                    <width>100</width>
                    <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="baseSize">
@@ -1138,10 +1161,22 @@ border-radius: 5px;</string>
                </item>
                <item>
                 <widget class="QPushButton" name="b1_nextConfirmSeed">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -1151,6 +1186,19 @@ border-radius: 5px;</string>
                   <string>NEXT</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -1292,9 +1340,46 @@ border-radius: 2px;</string>
             </item>
             <item>
              <widget class="QGroupBox" name="horizontalGroupBox_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
+                <spacer name="horizontalSpacer_8">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
                 <widget class="QPushButton" name="b1_backShowSeed">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">/* This button style is handled automatically by WelcomeFrame.cpp */</string>
                  </property>
@@ -1305,6 +1390,18 @@ border-radius: 2px;</string>
                </item>
                <item>
                 <widget class="QPushButton" name="b1_nextValidate">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">/* This button style is handled automatically by WelcomeFrame.cpp */</string>
                  </property>
@@ -1312,6 +1409,19 @@ border-radius: 2px;</string>
                   <string>NEXT</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -1333,9 +1443,6 @@ border-radius: 2px;</string>
           </widget>
          </item>
         </layout>
-        <zorder>confirmSeedBox</zorder>
-        <zorder>showSeedBox</zorder>
-        <zorder>walletPathBox</zorder>
        </widget>
       </item>
       <item row="2" column="1">
@@ -1504,7 +1611,7 @@ margin-left: 3em;</string>
                <enum>Qt::LeftToRight</enum>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton{color:#fff;border:1px solid orange;border-radius:5px;}QPushButton:hover{color:orange;border:1px solid orange;border-radius:5px}</string>
+               <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
               </property>
               <property name="text">
                <string>NEXT</string>
