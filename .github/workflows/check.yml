@@ -92,6 +92,9 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
+          choco install openssl -y
+          cp "C:\Program Files\OpenSSL-Win64\libcrypto*.dll" "Final/"
+          cp "C:\Program Files\OpenSSL-Win64\libssl*.dll" "Final/"
           windeployqt --release CONCEAL-GUI.exe --dir "Final/" --no-translations --no-opengl-sw
           cd ../../
           makensis ConcealWallet.nsi
