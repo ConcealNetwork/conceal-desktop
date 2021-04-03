@@ -640,6 +640,9 @@ namespace WalletGui
 
     QChart *chart = new QChart();
     chart->setBackgroundVisible(false);
+    QMargins margins(0, 0, 0, 0);
+    chart->layout()->setContentsMargins(0, 0, 0, 0);
+    chart->setMargins(margins);
     chart->addSeries(series);
     chart->legend()->hide();
 
