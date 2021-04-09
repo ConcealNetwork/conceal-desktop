@@ -421,6 +421,9 @@ namespace WalletGui
     popup->header()->setStretchLastSection(false);
     popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
     m_ui->m_addressEdit->setCompleter(completer);
+#ifndef Q_OS_WIN
+    m_ui->openSSL_layout->hide();
+#endif
   }
 
   OverviewFrame::~OverviewFrame()
