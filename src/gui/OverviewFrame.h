@@ -192,6 +192,8 @@ private:
   Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);
+  Q_SLOT void qtChartsLicenseClicked();
+  Q_SLOT void openSslLicenseClicked();
 
 Q_SIGNALS:
   void backupSignal();

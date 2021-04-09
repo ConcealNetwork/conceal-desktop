@@ -2254,6 +2254,17 @@ namespace WalletGui
 #endif
   }
 
-} // namespace WalletGui
+  void OverviewFrame::qtChartsLicenseClicked()
+  {
+    QDesktopServices::openUrl(QUrl("https://github.com/qt/qtcharts/blob/dev/LICENSE.GPL3"));
+  }
+
+  void OverviewFrame::openSslLicenseClicked()
+  {
+    QDesktopServices::openUrl(
+        QUrl("https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/LICENSE"));
+  }
+
+}  // namespace WalletGui
 
 #include "OverviewFrame.moc"

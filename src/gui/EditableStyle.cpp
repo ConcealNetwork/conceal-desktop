@@ -119,6 +119,7 @@ namespace WalletGui
                   "color:#fff;"
                   "border:1px solid orange;"
                   "border-radius:5px;"
+                  "padding: 5px;"
                   "}"
                   "QPushButton:hover"
                   "{"
