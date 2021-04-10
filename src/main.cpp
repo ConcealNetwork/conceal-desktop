@@ -49,6 +49,7 @@ inline void newLogString(const QString& _string)
 
 int main(int argc, char* argv[])
 {
+  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
   QApplication app(argc, argv);
   QApplication::setApplicationName("Conceal Desktop");
   QApplication::setApplicationVersion(Settings::instance().getVersion());
