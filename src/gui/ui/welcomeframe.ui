@@ -797,10 +797,20 @@ font-size: 20px;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">font-weight: bold;</string>
               </property>
               <property name="text">
                <string>Wallet Path</string>
+              </property>
+              <property name="indent">
+               <number>12</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Where would you like to save your wallet?</string>
               </property>
               <property name="indent">
                <number>12</number>
@@ -893,7 +903,7 @@ color: white;
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>Choose a path where to save your wallet.</string>
+               <string>Choose a path where you would like to save your wallet.</string>
               </property>
               <property name="indent">
                <number>12</number>
@@ -1067,6 +1077,9 @@ font-size: 20px;</string>
                 <weight>75</weight>
                 <bold>true</bold>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-weight: bold;</string>
               </property>
               <property name="text">
                <string>Don't lose your seed or you might lose your wallet (and funds) forever.</string>
