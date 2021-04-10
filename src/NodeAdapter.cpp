@@ -93,7 +93,7 @@ public:
 
   void stop(Node **_node)
   {
-    Q_CHECK_PTR(*_node);
+    Q_CHECK_PTR(_node);
     (*_node)->deinit();
   }
 };

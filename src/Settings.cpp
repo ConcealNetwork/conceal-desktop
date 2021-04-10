@@ -402,7 +402,7 @@ namespace WalletGui
 
   quint16 Settings::getCurrentLocalDaemonPort() const
   {
-    quint16 port;
+    quint16 port = 15000;
     if (m_settings.contains(OPTION_DAEMON_PORT))
     {
       port = m_settings.value(OPTION_DAEMON_PORT).toVariant().toInt();
