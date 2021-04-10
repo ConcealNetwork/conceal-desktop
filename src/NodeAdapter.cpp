@@ -158,9 +158,9 @@ bool NodeAdapter::init()
   {
     isAutoRemote = true;
     /* Pull a random node from the node pool list */
-    QNetworkAccessManager *nam = new QNetworkAccessManager(this);
+    auto *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
-    const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/pool/random?hasFeeAddr=true&isReachable=true&isSynced=true");
+    const QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/pool/random?hasFeeAddr=true&isReachable=true&isSynced=true");
     QNetworkRequest request(url);
     nam->get(request);
   }

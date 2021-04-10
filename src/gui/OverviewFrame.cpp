@@ -421,6 +421,9 @@ namespace WalletGui
     popup->header()->setStretchLastSection(false);
     popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
     m_ui->m_addressEdit->setCompleter(completer);
+#ifndef Q_OS_WIN
+    m_ui->openSSL_layout->hide();
+#endif
   }
 
   OverviewFrame::~OverviewFrame()
@@ -552,41 +555,41 @@ namespace WalletGui
     int width = size.width();
     int height = size.height();
 
-    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+    link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
            "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
 
     /** 1280 x 720 or smaller is the default */
     if (width < 1363)
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
              "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
     }
 
     /** 1365 x 768 */
     if ((width == 1363) && (height == 750))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
              "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
     }
 
     /** 1440 x 900 */
     if ((width == 1438) && (height == 868))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
              "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
     }
 
     /** 1680 x 1050 */
     if ((width == 1678) && (height == 1008))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
              "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
     }
 
     /** This should cover 1920 and above */
     if (width > 1599)
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
              "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
     }
 #endif
@@ -640,6 +643,9 @@ namespace WalletGui
 
     QChart *chart = new QChart();
     chart->setBackgroundVisible(false);
+    QMargins margins(0, 0, 0, 0);
+    chart->layout()->setContentsMargins(0, 0, 0, 0);
+    chart->setMargins(margins);
     chart->addSeries(series);
     chart->legend()->hide();
 
@@ -651,7 +657,7 @@ namespace WalletGui
     series->attachAxis(axisX);
 
     QValueAxis *axisY = new QValueAxis;
-    axisY->setLabelFormat("%.2f");
+    axisY->setLabelFormat("%.2f " + Settings::instance().getCurrentCurrency());
     axisY->setLabelsFont(currentFont);
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
@@ -2251,6 +2257,17 @@ namespace WalletGui
 #endif
   }
 
-} // namespace WalletGui
+  void OverviewFrame::qtChartsLicenseClicked()
+  {
+    QDesktopServices::openUrl(QUrl("https://github.com/qt/qtcharts/blob/dev/LICENSE.GPL3"));
+  }
+
+  void OverviewFrame::openSslLicenseClicked()
+  {
+    QDesktopServices::openUrl(
+        QUrl("https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/LICENSE"));
+  }
+
+}  // namespace WalletGui
 
 #include "OverviewFrame.moc"
