@@ -14,8 +14,7 @@
    <string>Import GUI key</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border: 0px;
-background-color: #282d31;</string>
+   <string notr="true">border: 0px; background-color: #282d31; color: #ddd;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -174,7 +173,7 @@ padding: 3px;   </string>
        <string>...</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="m_okButton">
+     <widget class="QPushButton" name="b1_okButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -195,28 +194,13 @@ padding: 3px;   </string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_okButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px; 
-}
-
-QPushButton#m_okButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px;
-    
-}</string>
+       <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
       </property>
       <property name="text">
        <string>IMPORT</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="m_cancelButton">
+     <widget class="QPushButton" name="b1_cancelButton">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -237,22 +221,7 @@ QPushButton#m_okButton:hover
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#m_cancelButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px; 
-}
-
-QPushButton#m_cancelButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px;
-    
-}</string>
+       <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
@@ -264,7 +233,7 @@ QPushButton#m_cancelButton:hover
         <x>50</x>
         <y>60</y>
         <width>351</width>
-        <height>21</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -279,6 +248,9 @@ QPushButton#m_cancelButton:hover
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
      </widget>
     </widget>
    </item>
@@ -287,7 +259,7 @@ QPushButton#m_cancelButton:hover
  <resources/>
  <connections>
   <connection>
-   <sender>m_okButton</sender>
+   <sender>b1_okButton</sender>
    <signal>clicked()</signal>
    <receiver>ImportGUIKeyDialog</receiver>
    <slot>accept()</slot>
@@ -303,7 +275,7 @@ QPushButton#m_cancelButton:hover
    </hints>
   </connection>
   <connection>
-   <sender>m_cancelButton</sender>
+   <sender>b1_cancelButton</sender>
    <signal>clicked()</signal>
    <receiver>ImportGUIKeyDialog</receiver>
    <slot>reject()</slot>

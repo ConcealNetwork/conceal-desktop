@@ -26,6 +26,7 @@ include_directories(${CMAKE_BINARY_DIR}
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(Qt5Charts)
 
 set(Boost_NO_BOOST_CMAKE ON)
 set(Boost_USE_STATIC_LIBS ON)
@@ -280,6 +281,10 @@ endif (APPLE)
 target_link_libraries(${PROJECT_NAME} Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} Qt5::Network)
+if(Qt5Charts_FOUND)
+add_definitions(/DHAVE_CHART)
+target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
+endif(Qt5Charts_FOUND)
 
 # Installation
 

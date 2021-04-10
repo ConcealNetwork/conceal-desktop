@@ -1,3 +1,19 @@
-BasedOnStyle: Chromium
+---
+BasedOnStyle: Google
+AccessModifierOffset: -2
+AlignConsecutiveMacros: "true"
+AllowShortCaseLabelsOnASingleLine: "true"
+AllowShortBlocksOnASingleLine: "Empty"
+AllowShortIfStatementsOnASingleLine: "Never"
+AllowShortLoopsOnASingleLine: "false"
+BreakBeforeBraces: Allman
+Cpp11BracedListStyle: "false"
 ColumnLimit: 100
 IndentWidth: 2
+NamespaceIndentation: All
+SpaceAfterTemplateKeyword: "false"
+SpaceBeforeCtorInitializerColon: "true"
+SpaceBeforeInheritanceColon: "true"
+SpaceBeforeRangeBasedForLoopColon: "true"
+SpaceInEmptyBlock: true
+Standard: "Latest"

@@ -26,7 +26,7 @@ ExchangeProvider::~ExchangeProvider()
 
 void ExchangeProvider::getExchange(QString &_address)
 {
-  QString _urlString = "http://walletapi.conceal.network/services/exchanges/list?address=" + _address;
+  QString _urlString = "https://explorer.conceal.network/services/exchanges/list?address=" + _address;
   QUrl url = QUrl::fromUserInput(_urlString);
   if (!url.isValid())
   {
