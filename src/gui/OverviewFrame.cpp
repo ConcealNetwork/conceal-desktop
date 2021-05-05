@@ -475,7 +475,7 @@ namespace WalletGui
     std::string theAddress = _address.toStdString();
     std::string start = theAddress.substr(0, 6);
     std::string end = theAddress.substr(92, 6);
-    m_ui->m_copyAddressButton_3->setText("Wallet Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
+    m_ui->m_copyAddressButton_3->setText("Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
 
     /* Show/hide the encrypt wallet button */
     if (!Settings::instance().isEncrypted())
