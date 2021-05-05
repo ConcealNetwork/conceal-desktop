@@ -13,19 +13,21 @@
 
 namespace Ui
 {
-  class TransactionDetailsDialog;
+  class ImportTracking;
 }
 
 namespace WalletGui
 {
-  class TransactionDetailsDialog : public QDialog, public EditableStyle
+  class ImportTracking : public QDialog, public EditableStyle
   {
     Q_OBJECT
-    Q_DISABLE_COPY(TransactionDetailsDialog)
 
   public:
-    TransactionDetailsDialog(const QModelIndex &_index, QWidget *_parent);
-    ~TransactionDetailsDialog();
+    explicit ImportTracking(QWidget *_parent);
+    ~ImportTracking();
+
+    QString getKeyString() const;
+    QString getFilePath() const;
 
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
@@ -33,8 +35,9 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::TransactionDetailsDialog> m_ui;
-    const QString m_detailsTemplate;
+    QScopedPointer<Ui::ImportTracking> m_ui;
+
+    Q_SLOT void selectPathClicked();
   };
 
 }  // namespace WalletGui

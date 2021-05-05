@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>736</width>
+    <width>800</width>
     <height>500</height>
    </rect>
   </property>
@@ -39,7 +39,13 @@ border: 0px;
     <number>9</number>
    </property>
    <item>
-    <widget class="QTextBrowser" name="m_detailsBrowser">
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>31</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <family>Poppins</family>
@@ -47,10 +53,38 @@ border: 0px;
       </font>
      </property>
      <property name="styleSheet">
+      <string notr="true">color: #ddd;
+   border-right: 0px;
+   font-size: 20px;
+   </string>
+     </property>
+     <property name="text">
+      <string>DEPOSIT DETAILS</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextBrowser" name="m_detailsBrowser">
+     <property name="font">
+      <font>
+       <family>Poppins</family>
+      </font>
+     </property>
+     <property name="styleSheet">
       <string notr="true">
 color: #ddd;
 border: 0px;
 </string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -70,7 +104,7 @@ border: 0px;
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="m_okButton">
+      <widget class="QPushButton" name="b1_okButton">
        <property name="minimumSize">
         <size>
          <width>210</width>
@@ -80,31 +114,28 @@ border: 0px;
        <property name="font">
         <font>
          <family>Poppins</family>
-         <pointsize>-1</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#m_okButton
-{
-    color: orange; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px; 
-}
-
-QPushButton#m_okButton:hover
-{
-    color:#FFD700; ;
-    border: 1px solid orange;
-    
-    border-radius: 5px;
-    
-}</string>
+        <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
         <string>CLOSE</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
@@ -113,7 +144,7 @@ QPushButton#m_okButton:hover
  <resources/>
  <connections>
   <connection>
-   <sender>m_okButton</sender>
+   <sender>b1_okButton</sender>
    <signal>clicked()</signal>
    <receiver>DepositDetailsDialog</receiver>
    <slot>accept()</slot>

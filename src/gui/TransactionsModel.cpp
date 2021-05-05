@@ -186,12 +186,6 @@ namespace WalletGui
 
     switch (_role)
     {
-    case Qt::BackgroundRole:
-      if ((_index.row() % 2) == 0)
-        return QColor(40, 45, 49);
-      else
-        return QColor(33, 37, 41);
-
     case Qt::DisplayRole:
     case Qt::EditRole:
       return getDisplayRole(_index);

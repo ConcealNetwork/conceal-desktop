@@ -189,20 +189,21 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
   return amountString.toULongLong();
 }
 
-bool CurrencyAdapter::validateAddress(const QString& _address) const {
+bool CurrencyAdapter::validateAddress(const QString& _address) const
+{
   CryptoNote::AccountPublicAddress internalAddress;
-  std::string address;
-  
+
   return m_currency.parseAccountAddressString(_address.toStdString(), internalAddress);
 }
 
-bool CurrencyAdapter::isValidOpenAliasAddress(const QString& _address) const {
-	_address == _address.trimmed();
-	int dot = _address.indexOf('.');
-	if (dot > 0) {
-		return true;
-	}
-	return false;
+bool CurrencyAdapter::isValidOpenAliasAddress(const QString& _address) const
+{
+  int dot = _address.indexOf('.');
+  if (dot > 0)
+  {
+    return true;
+  }
+  return false;
 }
 
 bool CurrencyAdapter::processServerAliasResponse(const std::string& s, std::string& address) const {

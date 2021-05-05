@@ -8,7 +8,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QDesktopWidget>
 #include <QLocale>
 #include <QLockFile>
@@ -41,7 +40,8 @@ SplashScreen* splashScreen(nullptr);
 inline void newLogString(const QString& _string)
 {
   QRegularExpressionMatch match = LOG_SPLASH_REG_EXP.match(_string);
-  if (match.hasMatch()) {
+  if (match.hasMatch())
+  {
     QString message = match.captured(0).toUpper();
     splashScreen->showMessage(message, Qt::AlignCenter | Qt::AlignBottom, Qt::darkGray);
   }
@@ -49,10 +49,13 @@ inline void newLogString(const QString& _string)
 
 int main(int argc, char* argv[])
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+  QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
   QApplication app(argc, argv);
-  app.setApplicationName("Conceal Desktop");
-  app.setApplicationVersion(Settings::instance().getVersion());
-  app.setQuitOnLastWindowClosed(false);
+  QApplication::setApplicationName("Conceal Desktop");
+  QApplication::setApplicationVersion(Settings::instance().getVersion());
+  QApplication::setQuitOnLastWindowClosed(false);
 
 #ifndef Q_OS_MAC
   QApplication::setStyle(QStyleFactory::create("Fusion"));
@@ -60,76 +63,80 @@ int main(int argc, char* argv[])
 
   CommandLineParser cmdLineParser(nullptr);
   Settings::instance().setCommandLineParser(&cmdLineParser);
-  bool cmdLineParseResult = cmdLineParser.process(app.arguments());
+  bool cmdLineParseResult = cmdLineParser.process(QApplication::arguments());
   Settings::instance().load();
 
   // Translator must be created before the application's widgets.
-  TranslatorManager* tmanager = TranslatorManager::instance();
-  Q_UNUSED(tmanager)
+  TranslatorManager* tManager = TranslatorManager::instance();
+  Q_UNUSED(tManager)
 
   setlocale(LC_ALL, "");
 
 #ifdef Q_OS_WIN
-  if (!cmdLineParseResult) {
-    QMessageBox::critical(&MainWindow::instance(), QObject::tr("Error"), cmdLineParser.getErrorText());
+  if (!cmdLineParseResult)
+  {
+    QMessageBox::critical(&MainWindow::instance(), QObject::tr("Error"),
+                          cmdLineParser.getErrorText());
     return app.exec();
   }
-  else if (cmdLineParser.hasHelpOption()) {
-    QMessageBox::information(&MainWindow::instance(), QObject::tr("Help"), cmdLineParser.getHelpText());
+  else if (cmdLineParser.hasHelpOption())
+  {
+    QMessageBox::information(&MainWindow::instance(), QObject::tr("Help"),
+                             cmdLineParser.getHelpText());
     return app.exec();
   }
+#else
+  Q_UNUSED(cmdLineParseResult)
 #endif
 
   LoggerAdapter::instance().init();
 
   QString dataDirPath = Settings::instance().getDataDir().absolutePath();
-  if (!QDir().exists(dataDirPath)) {
+  if (!QDir().exists(dataDirPath))
+  {
     QDir().mkpath(dataDirPath);
   }
 
   QLockFile lockFile(Settings::instance().getDataDir().absoluteFilePath(
       QApplication::applicationName() + ".lock"));
-  if (!lockFile.tryLock()) {
-    QMessageBox::warning(
-        nullptr, QObject::tr("Fail"),
-        QString("%1 wallet already running")
-            .arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
+  if (!lockFile.tryLock())
+  {
+    QMessageBox::warning(nullptr, QObject::tr("Fail"),
+                         QString("%1 wallet already running")
+                             .arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
     return 0;
   }
 
   QLocale::setDefault(QLocale::c());
 
   SignalHandler::instance().init();
-  QObject::connect(
-      &SignalHandler::instance(), &SignalHandler::quitSignal, &app, &QApplication::quit);
+  QObject::connect(&SignalHandler::instance(), &SignalHandler::quitSignal, &app,
+                   &QApplication::quit);
 
-  if (splashScreen == nullptr) {
+  if (splashScreen == nullptr)
+  {
     splashScreen = new SplashScreen();
     splashScreen->centerOnScreen(&app);
   }
 
   splashScreen->show();
 
-  LogFileWatcher* logWatcher(nullptr);
-  if (logWatcher == nullptr) {
-    logWatcher = new LogFileWatcher(
-        Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
-    QObject::connect(logWatcher, &LogFileWatcher::newLogStringSignal, &app, &newLogString);
-  }
+  LogFileWatcher* logWatcher = new LogFileWatcher(
+      Settings::instance().getDataDir().absoluteFilePath("Concealwallet.log"), &app);
+  QObject::connect(logWatcher, &LogFileWatcher::newLogStringSignal, &app, &newLogString);
 
-  app.processEvents();
+  QApplication::processEvents();
   qRegisterMetaType<CryptoNote::TransactionId>("CryptoNote::TransactionId");
   qRegisterMetaType<quintptr>("quintptr");
-  if (!NodeAdapter::instance().init()) {
+  if (!NodeAdapter::instance().init())
+  {
     return 0;
   }
 
   splashScreen->finish(&MainWindow::instance());
-  
-  if (logWatcher != nullptr) {
-    logWatcher->deleteLater();
-    logWatcher = nullptr;
-  }
+
+  logWatcher->deleteLater();
+  logWatcher = nullptr;
 
   splashScreen->deleteLater();
   splashScreen = nullptr;
@@ -141,12 +148,13 @@ int main(int argc, char* argv[])
   WalletAdapter::instance().open("");
   QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, []() {
     MainWindow::instance().quit();
-    if (WalletAdapter::instance().isOpen()) {
+    if (WalletAdapter::instance().isOpen())
+    {
       WalletAdapter::instance().close();
     }
 
     NodeAdapter::instance().deinit();
   });
 
-  return app.exec();
+  return QApplication::exec();
 }

@@ -1,8 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -18,11 +16,10 @@ namespace WalletGui
     };
 
     class ShowMessageEvent : public QEvent {
-      Q_DISABLE_COPY(ShowMessageEvent)
 
     public:
         ShowMessageEvent(const QString &_messageText, QtMsgType _messageType) : QEvent(static_cast<QEvent::Type>(WalletEventType::ShowMessage)),
-            m_messageText(_messageText), m_messgaeType(_messageType) {
+            m_messageText(_messageText), m_messageType(_messageType) {
         }
 
         QString messageText() const {
@@ -30,12 +27,12 @@ namespace WalletGui
         }
 
         QtMsgType messageType() const {
-          return m_messgaeType;
+          return m_messageType;
         }
 
     private:
         QString m_messageText;
-        QtMsgType m_messgaeType;
+        QtMsgType m_messageType;
     };
 
 }
