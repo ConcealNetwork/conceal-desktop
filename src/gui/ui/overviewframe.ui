@@ -7632,7 +7632,7 @@ text-align: left;
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>A list of icoming and outgoing messages for this wallet. </string>
+            <string>A list of incoming and outgoing messages for this wallet. </string>
            </property>
           </widget>
          </item>
