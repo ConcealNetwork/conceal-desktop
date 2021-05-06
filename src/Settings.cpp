@@ -653,4 +653,6 @@ namespace WalletGui
     }
   }
 
+  QString Settings::getDefaultWalletPath() const { return QDir::homePath() + "/conceal.wallet"; }
+
 } // namespace WalletGui

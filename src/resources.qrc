@@ -40,6 +40,7 @@
         <file alias="icon-transactions">icons/icon-tx.png</file>
         <!-- Other icons-->
         <file alias="font-size">icons/font-size.png</file>
+        <file alias="folder">icons/folder.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="conceal-logo">images/conceal.png</file>

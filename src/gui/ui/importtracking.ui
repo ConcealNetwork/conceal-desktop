@@ -17,6 +17,21 @@
    <string notr="true">background-color: #282d31; color: #ddd; border: 0px;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>6</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="styleSheet">
@@ -26,6 +41,9 @@
       <string/>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <property name="leftMargin">
        <number>50</number>
       </property>
@@ -174,7 +192,7 @@ font-weight: bold;</string>
        <widget class="QGroupBox" name="horizontalGroupBox_1">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="spacing">
-          <number>4</number>
+          <number>6</number>
          </property>
          <property name="leftMargin">
           <number>0</number>
@@ -223,7 +241,11 @@ font-weight: bold;</string>
             <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true"/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/folder</normaloff>:/icons/folder</iconset>
            </property>
           </widget>
          </item>
@@ -344,7 +366,9 @@ font-weight: bold;</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>b1_okButton</sender>

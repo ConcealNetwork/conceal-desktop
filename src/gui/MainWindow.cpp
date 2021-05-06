@@ -728,8 +728,15 @@ void MainWindow::importsecretkeys()
 
     if (!filePath.endsWith(".wallet"))
     {
-
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     std::string private_spend_key_string = spendKey.toStdString();
@@ -806,6 +813,14 @@ void MainWindow::importSeed()
       return;
     }
 
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
+    }
+
     static std::string languages[] = {"English"};
     static const int num_of_languages = 1;
     static const int mnemonic_phrase_length = 25;
@@ -878,6 +893,14 @@ void MainWindow::importTracking()
     if (!filePath.endsWith(".wallet"))
     {
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     CryptoNote::AccountKeys keys;
