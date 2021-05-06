@@ -403,11 +403,20 @@ text-align: left;
          <string/>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <property name="leftMargin">
           <number>0</number>
          </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
          <property name="rightMargin">
           <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
          </property>
          <item>
           <widget class="QLabel" name="label_42">
@@ -443,16 +452,22 @@ border:none;</string>
          </item>
          <item>
           <widget class="QPushButton" name="lm_dashboardButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -496,16 +511,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_bankingButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -549,16 +570,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_transactionButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -602,16 +629,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_messagesButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -655,16 +688,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_addressBookButton_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -708,16 +747,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_newTransferButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -755,16 +800,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_newMessageButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -815,16 +866,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_newOpenWalletButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>60</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -858,16 +915,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_helpButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>60</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -907,16 +970,22 @@ background-color: #333;
          </item>
          <item>
           <widget class="QPushButton" name="lm_about">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>199</width>
-             <height>31</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>199</width>
-             <height>60</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
