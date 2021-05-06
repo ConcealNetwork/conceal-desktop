@@ -173,6 +173,9 @@ void WelcomeFrame::nextValidate()
       WalletAdapter::instance().close();
     }
     WalletAdapter::instance().open("");
+    m_ui->mnemonicSeedConfirmation->clear();
+    m_ui->lineEdit->clear();
+    m_ui->validationCheckBox->setChecked(false);
   }
   else {
     QMessageBox::warning(
