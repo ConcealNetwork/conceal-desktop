@@ -45,6 +45,7 @@ void WelcomeFrame::createWallet() {
   m_ui->walletPathBox->show();
   m_ui->showSeedBox->hide();
   m_ui->confirmSeedBox->hide();
+  m_ui->lineEdit->setText(Settings::instance().getDefaultWalletPath());
 }
 
 void WelcomeFrame::openWallet() {
@@ -117,18 +118,19 @@ void WelcomeFrame::nextShowSeed()
       nextThree();
     }
   }
-  else {
-    QMessageBox::warning(
-        &MainWindow::instance(), QObject::tr("Error"),
-        tr("Unable to create a new wallet at the path provided. \nPlease choose another location."));
+  else
+  {
+    QMessageBox::warning(&MainWindow::instance(), QObject::tr("Error"),
+                         tr("Unable to create a new wallet at the path provided. \n"
+                            "Please choose another location."));
   }
 }
 
 void WelcomeFrame::selectPathClicked()
 {
-  QString filePath = QFileDialog::getSaveFileName(
-      this, tr("New wallet file"), QDir::homePath(), tr("Wallets (*.wallet)"));
-
+  QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
+                                                  Settings::instance().getDefaultWalletPath(),
+                                                  tr("Wallets (*.wallet)"));
   if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
   {
     filePath.append(".wallet");

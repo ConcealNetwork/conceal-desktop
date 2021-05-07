@@ -21,6 +21,7 @@ namespace WalletGui
       : QDialog(_parent), m_ui(new Ui::ImportSecretKeys)
   {
     m_ui->setupUi(this);
+    m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
     int startingFontSize = Settings::instance().getFontSize();
     EditableStyle::setStyles(startingFontSize);
   }
@@ -36,18 +37,12 @@ namespace WalletGui
   void ImportSecretKeys::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
-#ifdef Q_OS_WIN
-                                                    QApplication::applicationDirPath(),
-#else
-                                                    QDir::homePath(),
-#endif
+                                                    Settings::instance().getDefaultWalletPath(),
                                                     tr("Wallets (*.wallet)"));
-
     if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
     {
       filePath.append(".wallet");
     }
-
     m_ui->m_pathEdit->setText(filePath);
   }
 

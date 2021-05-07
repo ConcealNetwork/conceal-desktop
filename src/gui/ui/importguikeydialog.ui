@@ -22,7 +22,10 @@
   <property name="styleSheet">
    <string notr="true">border: 0px; background-color: #282d31; color: #ddd;</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
+   <property name="spacing">
+    <number>6</number>
+   </property>
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -56,6 +59,9 @@
       <string/>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <property name="leftMargin">
        <number>50</number>
       </property>
@@ -196,9 +202,9 @@ font-weight: bold;</string>
       </item>
       <item>
        <widget class="QGroupBox" name="horizontalGroupBox_1">
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
          <property name="spacing">
-          <number>4</number>
+          <number>6</number>
          </property>
          <property name="leftMargin">
           <number>0</number>
@@ -245,7 +251,11 @@ color: #ddd;
 padding: 3px;   </string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true"/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../resources.qrc">
+             <normaloff>:/icons/folder</normaloff>:/icons/folder</iconset>
            </property>
           </widget>
          </item>
@@ -267,7 +277,7 @@ padding: 3px;   </string>
       </item>
       <item>
        <widget class="QGroupBox" name="horizontalGroupBox_2">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -315,8 +325,11 @@ padding: 3px;   </string>
       </item>
       <item>
        <widget class="QGroupBox" name="horizontalGroupBox_3">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0">
          <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
           <number>0</number>
          </property>
          <property name="topMargin">
@@ -363,7 +376,9 @@ padding: 3px;   </string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>b1_okButton</sender>

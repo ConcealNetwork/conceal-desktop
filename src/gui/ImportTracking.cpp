@@ -20,6 +20,7 @@ namespace WalletGui
   ImportTracking::ImportTracking(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportTracking)
   {
     m_ui->setupUi(this);
+    m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
     EditableStyle::setStyles(Settings::instance().getFontSize());
   }
 
@@ -32,18 +33,12 @@ namespace WalletGui
   void ImportTracking::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
-#ifdef Q_OS_WIN
-                                                    QApplication::applicationDirPath(),
-#else
-                                                    QDir::homePath(),
-#endif
+                                                    Settings::instance().getDefaultWalletPath(),
                                                     tr("Wallets (*.wallet)"));
-
     if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
     {
       filePath.append(".wallet");
     }
-
     m_ui->m_pathEdit->setText(filePath);
   }
 

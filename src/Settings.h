@@ -13,7 +13,6 @@
 
 namespace WalletGui
 {
-
   class CommandLineParser;
 
   class Settings : public QObject
@@ -60,6 +59,7 @@ namespace WalletGui
     QString getFont() const;
     int getFontSize() const;
     bool isStartOnLoginEnabled() const;
+    QString getDefaultWalletPath() const;
 #ifndef QT_NO_SYSTEMTRAYICON
     bool isMinimizeToTrayEnabled() const;
     bool isCloseToTrayEnabled() const;
@@ -105,4 +105,4 @@ namespace WalletGui
     void saveSettings() const;
   };
 
-} // namespace WalletGui
+}  // namespace WalletGui
