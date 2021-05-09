@@ -48,12 +48,6 @@ QVariant AddressBookModel::data(const QModelIndex& _index, int _role) const {
   QJsonObject address = m_addressBook.at(_index.row()).toObject();
 
   switch (_role) {
-case Qt::BackgroundRole:
-  if (0 == _index.row() % 2)
-      return QColor(40, 45, 49);
-  else
-      return QColor(33, 37, 41);
-
   case Qt::DisplayRole:
     switch (_index.column()) {
     case COLUMN_LABEL:

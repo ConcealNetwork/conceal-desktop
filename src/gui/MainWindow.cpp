@@ -54,8 +54,8 @@
 
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "importsecretkeys.h"
-#include "importtracking.h"
+#include "ImportSecretKeys.h"
+#include "ImportTracking.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
@@ -185,8 +185,9 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-  OptimizationManager *optimizationManager = new OptimizationManager(this);
+  // OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
@@ -708,7 +709,7 @@ void MainWindow::importsecretkeys()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  importSecretKeys dlg(this);
+  ImportSecretKeys dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
@@ -727,8 +728,15 @@ void MainWindow::importsecretkeys()
 
     if (!filePath.endsWith(".wallet"))
     {
-
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     std::string private_spend_key_string = spendKey.toStdString();
@@ -805,6 +813,14 @@ void MainWindow::importSeed()
       return;
     }
 
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
+    }
+
     static std::string languages[] = {"English"};
     static const int num_of_languages = 1;
     static const int mnemonic_phrase_length = 25;
@@ -877,6 +893,14 @@ void MainWindow::importTracking()
     if (!filePath.endsWith(".wallet"))
     {
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     CryptoNote::AccountKeys keys;
@@ -959,4 +983,19 @@ void MainWindow::notify(const QString& message) {
   notification->notify(message);
 }
 
-} // namespace WalletGui
+QList<QWidget *> MainWindow::getWidgets() { return m_ui->centralwidget->findChildren<QWidget *>(); }
+
+QList<QPushButton *> MainWindow::getButtons()
+{
+  return m_ui->centralwidget->findChildren<QPushButton *>();
+}
+
+QList<QLabel *> MainWindow::getLabels() { return m_ui->centralwidget->findChildren<QLabel *>(); }
+
+void MainWindow::applyStyles()
+{
+  QApplication::setFont(EditableStyle::currentFont);
+  m_ui->centralwidget->update();
+}
+
+}  // namespace WalletGui

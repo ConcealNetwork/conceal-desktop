@@ -1,7 +1,7 @@
 // Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,6 +23,8 @@ using namespace WalletGui;
 
 Updater::Updater(QObject* parent) : QObject(parent)
 {
+  manager = new QNetworkAccessManager(this);
+  connect(manager, &QNetworkAccessManager::finished, this, &Updater::replyFinished);
 }
 // http://stackoverflow.com/questions/2941491/compare-versions-as-strings/2941895#2941895
 class Version
@@ -31,30 +33,26 @@ class Version
   struct VersionDigit
   {
     int value;
-    operator int() const
-    {
-      return value;
-    }
+    operator int() const { return value; }
   };
   friend std::istream& operator>>(std::istream& str, Version::VersionDigit& digit);
 
 public:
-  Version(std::string const& versionStr)
+  explicit Version(std::string const& versionStr)
   {
     // To Make processing easier in VersionDigit prepend a '.'
     std::stringstream versionStream(std::string(".") + versionStr);
 
     // Copy all parts of the version number into the version Info vector.
-    std::copy(
-        std::istream_iterator<VersionDigit>(versionStream), std::istream_iterator<VersionDigit>(),
-        std::back_inserter(versionInfo));
+    std::copy(std::istream_iterator<VersionDigit>(versionStream),
+              std::istream_iterator<VersionDigit>(), std::back_inserter(versionInfo));
   }
 
   // Test if two version numbers are the same.
   bool operator<(Version const& rhs) const
   {
-    return std::lexicographical_compare(
-        versionInfo.begin(), versionInfo.end(), rhs.versionInfo.begin(), rhs.versionInfo.end());
+    return std::lexicographical_compare(versionInfo.begin(), versionInfo.end(),
+                                        rhs.versionInfo.begin(), rhs.versionInfo.end());
   }
 
 private:
@@ -71,11 +69,9 @@ std::istream& operator>>(std::istream& str, Version::VersionDigit& digit)
 
 void Updater::checkForUpdate()
 {
-  QNetworkAccessManager* nam = new QNetworkAccessManager(this);
-  connect(nam, &QNetworkAccessManager::finished, this, &Updater::replyFinished);
   const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/version.txt");
   QNetworkRequest request(url);
-  nam->get(request);
+  manager->get(request);
 }
 
 void Updater::replyFinished(QNetworkReply* reply)
@@ -88,11 +84,11 @@ void Updater::replyFinished(QNetworkReply* reply)
   }
   else
   {
-    Version ourVersion = Settings::instance().getVersion().split("-")[0].toStdString();
+    Version ourVersion(Settings::instance().getVersion().split("-")[0].toStdString());
 
     QString result = reply->readAll().data();
 
-    Version remoteVersion = result.toStdString();
+    Version remoteVersion(result.toStdString());
 
     if (ourVersion < remoteVersion)
     {

@@ -13,3 +13,4 @@ CMakeLists.txt
 *.pro.user
 *.pro.user*
 *.autosave
+cmake-build*

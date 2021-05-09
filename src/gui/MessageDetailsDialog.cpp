@@ -1,9 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-//  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,8 +28,10 @@ MessageDetailsDialog::MessageDetailsDialog(const QModelIndex& _index, QWidget* _
   m_dataMapper.addMapping(m_ui->m_messageTextEdit, MessagesModel::COLUMN_FULL_MESSAGE, "plainText");
   m_dataMapper.setCurrentModelIndex(modelIndex);
 
-  m_ui->m_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
-  m_ui->m_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
+  m_ui->b1_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
+  m_ui->b1_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
 MessageDetailsDialog::~MessageDetailsDialog() {
@@ -43,14 +43,14 @@ QModelIndex MessageDetailsDialog::getCurrentMessageIndex() const {
 
 void MessageDetailsDialog::prevClicked() {
   m_dataMapper.toPrevious();
-  m_ui->m_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
-  m_ui->m_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
+  m_ui->b1_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
+  m_ui->b1_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
 }
 
 void MessageDetailsDialog::nextClicked() {
   m_dataMapper.toNext();
-  m_ui->m_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
-  m_ui->m_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
+  m_ui->b1_prevButton->setEnabled(m_dataMapper.currentIndex() > 0);
+  m_ui->b1_nextButton->setEnabled(m_dataMapper.currentIndex() < MessagesModel::instance().rowCount() - 1);
 }
 
 void MessageDetailsDialog::saveClicked() {
@@ -75,4 +75,15 @@ void MessageDetailsDialog::saveClicked() {
   }
 }
 
+QList<QWidget *> MessageDetailsDialog::getWidgets() { return this->findChildren<QWidget *>(); }
+
+QList<QPushButton *> MessageDetailsDialog::getButtons()
+{
+  return this->findChildren<QPushButton *>();
 }
+
+QList<QLabel *> MessageDetailsDialog::getLabels() { return this->findChildren<QLabel *>(); }
+
+void MessageDetailsDialog::applyStyles() { this->update(); }
+
+}  // namespace WalletGui

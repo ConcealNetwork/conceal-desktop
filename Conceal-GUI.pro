@@ -72,11 +72,12 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
            src/gui/DepositModel.h \
+           src/gui/EditableStyle.h \
            src/gui/ExitWidget.h \
            src/gui/ImportGUIKeyDialog.h \
-           src/gui/importsecretkeys.h \
+           src/gui/ImportSecretKeys.h \
            src/gui/ImportSeedDialog.h \
-           src/gui/importtracking.h \
+           src/gui/ImportTracking.h \
            src/gui/MainPasswordDialog.h \
            src/gui/MainWindow.h \
            src/gui/Message.h \
@@ -84,6 +85,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/MessagesModel.h \
            src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
+           src/gui/Notification.h \
            src/gui/OverviewFrame.h \
            src/gui/PasswordDialog.h \
            src/gui/QRLabel.h \
@@ -102,7 +104,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/VisibleMessagesModel.h \
            src/gui/WalletEvents.h \
            src/gui/WelcomeFrame.h \
-           src/gui/Notification.h \
            cryptonote/external/google/type_traits.h \
            cryptonote/external/miniupnpc/bsdqueue.h \
            cryptonote/external/miniupnpc/codelength.h \
@@ -283,6 +284,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/P2p/P2pProtocolDefinitions.h \
            cryptonote/src/P2p/P2pProtocolTypes.h \
            cryptonote/src/P2p/PeerListManager.h \
+           cryptonote/src/P2p/PendingLiteBlock.h \
            cryptonote/src/PaymentGate/NodeFactory.h \
            cryptonote/src/PaymentGate/PaymentServiceJsonRpcMessages.h \
            cryptonote/src/PaymentGate/PaymentServiceJsonRpcServer.h \
@@ -577,11 +579,12 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
            src/gui/DepositModel.cpp \
+           src/gui/EditableStyle.cpp \
            src/gui/ExitWidget.cpp \
            src/gui/ImportGUIKeyDialog.cpp \
-           src/gui/importsecretkeys.cpp \
+           src/gui/ImportSecretKeys.cpp \
            src/gui/ImportSeedDialog.cpp \
-           src/gui/importtracking.cpp \
+           src/gui/ImportTracking.cpp \
            src/gui/MainPasswordDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
@@ -589,6 +592,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/MessagesModel.cpp \
            src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
+           src/gui/Notification.cpp \
            src/gui/OverviewFrame.cpp \
            src/gui/PasswordDialog.cpp \
            src/gui/QRLabel.cpp \
@@ -606,7 +610,6 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/TransactionsModel.cpp \
            src/gui/VisibleMessagesModel.cpp \
            src/gui/WelcomeFrame.cpp \
-           src/gui/Notification.cpp \
            cryptonote/external/miniupnpc/connecthostport.c \
            cryptonote/external/miniupnpc/igd_desc_parse.c \
            cryptonote/external/miniupnpc/minihttptestserver.c \

@@ -5,7 +5,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "ImportSeedDialog.h"
+#include "ImportTracking.h"
 
 #include <QApplication>
 #include <QFileDialog>
@@ -13,25 +13,24 @@
 #include <QFontDatabase>
 
 #include "Settings.h"
-#include "ui_importseeddialog.h"
+#include "ui_importtracking.h"
 
 namespace WalletGui
 {
-  ImportSeed::ImportSeed(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportSeed)
+  ImportTracking::ImportTracking(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportTracking)
   {
     m_ui->setupUi(this);
     m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
-    int startingFontSize = Settings::instance().getFontSize();
-    EditableStyle::setStyles(startingFontSize);
+    EditableStyle::setStyles(Settings::instance().getFontSize());
   }
 
-  ImportSeed::~ImportSeed() { }
+  ImportTracking::~ImportTracking() { }
 
-  QString ImportSeed::getKeyString() const { return m_ui->m_seed->text().trimmed(); }
+  QString ImportTracking::getKeyString() const { return m_ui->m_trackingKey->text().trimmed(); }
 
-  QString ImportSeed::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
+  QString ImportTracking::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
-  void ImportSeed::selectPathClicked()
+  void ImportTracking::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
                                                     Settings::instance().getDefaultWalletPath(),
@@ -43,14 +42,17 @@ namespace WalletGui
     m_ui->m_pathEdit->setText(filePath);
   }
 
-  QList<QWidget *> ImportSeed::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
+  QList<QWidget *> ImportTracking::getWidgets()
+  {
+    return m_ui->groupBox->findChildren<QWidget *>();
+  }
 
-  QList<QPushButton *> ImportSeed::getButtons()
+  QList<QPushButton *> ImportTracking::getButtons()
   {
     return m_ui->groupBox->findChildren<QPushButton *>();
   }
 
-  QList<QLabel *> ImportSeed::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
+  QList<QLabel *> ImportTracking::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-  void ImportSeed::applyStyles() { m_ui->groupBox->update(); }
+  void ImportTracking::applyStyles() { m_ui->groupBox->update(); }
 }  // namespace WalletGui

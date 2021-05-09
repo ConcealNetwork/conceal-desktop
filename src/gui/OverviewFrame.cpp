@@ -1,5 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -82,6 +83,8 @@ namespace WalletGui
   Q_DECL_CONSTEXPR int MIN_TTL = 5 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
   Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
+  Q_DECL_CONSTEXPR int BASE_FEE = 1000;
+  Q_DECL_CONSTEXPR int REMOTE_FEE = 100000;
 
   /* Convert months to the number of blocks */
   QString monthsToBlocks(int _months)
@@ -103,7 +106,7 @@ namespace WalletGui
     Q_OBJECT
 
   public:
-    RecentTransactionsDelegate(QObject *_parent) : QStyledItemDelegate(_parent)
+    explicit RecentTransactionsDelegate(QObject *_parent) : QStyledItemDelegate(_parent)
     {
     }
     ~RecentTransactionsDelegate()
@@ -221,7 +224,6 @@ namespace WalletGui
     m_ui->m_transactionsView->header()->moveSection(3, 5);
     m_ui->m_transactionsView->header()->moveSection(0, 1);
     m_ui->m_transactionsView->header()->resizeSection(TransactionsModel::COLUMN_HASH, 300);
-    m_ui->m_transactionsView->setSortingEnabled(true);
 
     m_ui->m_depositView->setModel(m_depositModel.data());
     m_ui->m_messagesView->setModel(m_visibleMessagesModel.data());
@@ -248,6 +250,17 @@ namespace WalletGui
     m_ui->m_depositView->header()->resizeSection(1, 100);
     m_ui->m_depositView->header()->resizeSection(2, 200);
     m_ui->m_depositView->header()->resizeSection(3, 50);
+
+#ifdef HAVE_CHART
+    m_chartView = new QChartView();
+    m_chartView->setRenderHint(QPainter::Antialiasing);
+    m_chartView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+
+    m_ui->verticalLayout_9->addWidget(m_chartView);
+#else
+    m_chart = new QLabel();
+    m_ui->verticalLayout_9->addWidget(m_chart);
+#endif
 
     /* Connect signals */
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
@@ -410,6 +423,9 @@ namespace WalletGui
     popup->header()->setStretchLastSection(false);
     popup->header()->setSectionResizeMode(1, QHeaderView::Stretch);
     m_ui->m_addressEdit->setCompleter(completer);
+#ifndef Q_OS_WIN
+    m_ui->openSSL_layout->hide();
+#endif
   }
 
   OverviewFrame::~OverviewFrame()
@@ -475,7 +491,7 @@ namespace WalletGui
     std::string theAddress = _address.toStdString();
     std::string start = theAddress.substr(0, 6);
     std::string end = theAddress.substr(92, 6);
-    m_ui->m_copyAddressButton_3->setText("Wallet Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
+    m_ui->m_copyAddressButton_3->setText("Address: " + QString::fromStdString(start) + "......" + QString::fromStdString(end));
 
     /* Show/hide the encrypt wallet button */
     if (!Settings::instance().isEncrypted())
@@ -498,159 +514,23 @@ namespace WalletGui
     }
   }
 
-  void OverviewFrame::setStyles(int change)
+  QList<QWidget *> OverviewFrame::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
+
+  QList<QPushButton *> OverviewFrame::getButtons()
   {
-    /** Set the base font sizes */
-    int baseFontSize = change;
-    int baseTitleSize = 7 + change;
-    int baseSmallButtonSize = change - 3;
-    int baseLargeButtonSize = change - 1;
+    return m_ui->groupBox->findChildren<QPushButton *>();
+  }
 
-    int id;
+  QList<QLabel *> OverviewFrame::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-    QString currentFont = Settings::instance().getFont();
-    if (currentFont == "Poppins")
+  void OverviewFrame::applyStyles()
+  {
+    QList<QTreeView *> treeViews = m_ui->groupBox->findChildren<QTreeView *>();
+    foreach (QTreeView *treeView, treeViews)
     {
-      id = QFontDatabase::addApplicationFont(":/fonts/Poppins-Regular.ttf");
+      treeView->setStyleSheet(tableStyle);
     }
-    if (currentFont == "Lekton")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Lekton-Regular.ttf");
-    }
-    if (currentFont == "Roboto")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/RobotoSlab-Regular.ttf");
-    }
-    if (currentFont == "Montserrat")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular.ttf");
-    }
-    if (currentFont == "Open Sans")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/OpenSans-Regular.ttf");
-    }
-    if (currentFont == "Oswald")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Oswald-Regular.ttf");
-    }
-    if (currentFont == "Lato")
-    {
-      id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
-    }
-
-    QFont font;
-    font.setFamily(currentFont);
-    font.setPixelSize(baseFontSize);
-    font.setHintingPreference(QFont::PreferFullHinting);
-    font.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont smallButtonFont;
-    font.setFamily(currentFont);
-    smallButtonFont.setPixelSize(baseSmallButtonSize);
-    smallButtonFont.setHintingPreference(QFont::PreferFullHinting);
-    smallButtonFont.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont largeButtonFont;
-    font.setFamily(currentFont);
-    largeButtonFont.setPixelSize(baseLargeButtonSize);
-    largeButtonFont.setHintingPreference(QFont::PreferFullHinting);
-    largeButtonFont.setStyleStrategy(QFont::PreferAntialias);
-
-    QFont titleFont;
-    font.setFamily(currentFont);
-    titleFont.setPixelSize(baseTitleSize);
-    titleFont.setHintingPreference(QFont::PreferFullHinting);
-    titleFont.setStyleStrategy(QFont::PreferAntialias);
-
-    /* Create our common pool of styles */
-    QString tableStyle = "QHeaderView::section{font-size:" + QString::number(baseFontSize) + "px;background-color:#282d31;color:#fff;font-weight:700;height:37px;border-top:1px solid #444;border-bottom:1px solid #444}QTreeView::item{color:#ccc;height:37px}";
-    QString b1Style = "QPushButton{font-size: " + QString::number(baseLargeButtonSize) + "px; color:#fff;border:1px solid orange;border-radius:5px;} QPushButton:hover{color:orange;}";
-    QString b2Style = "QPushButton{font-size: " + QString::number(baseSmallButtonSize) + "px; color: orange; border:1px solid orange; border-radius: 5px} QPushButton:hover{color: gold;}";
-    QString fontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #ddd;";
-    QString darkFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: #999;";
-    QString orangeFontStyle = "font-size:" + QString::number(baseFontSize) + "px; color: orange;";
-
-    QList<QPushButton *>
-        buttons = m_ui->groupBox->findChildren<QPushButton *>();
-    foreach (QPushButton *button, buttons)
-    {
-      /* Set the font and styling for b1 styled buttons */
-      if (button->objectName().contains("b1_"))
-      {
-        button->setStyleSheet(b1Style);
-        button->setFont(largeButtonFont);
-      }
-
-      /* Set the font and styling for b2 styled buttons */
-      if (button->objectName().contains("b2_"))
-      {
-        button->setStyleSheet(b2Style);
-        button->setFont(smallButtonFont);
-      }
-
-      /* Set the font and styling for lm styled buttons */
-      if (button->objectName().contains("lm_"))
-      {
-        button->setFont(font);
-      }
-
-      /* Set the font and styling for sm styled buttons */
-      if (button->objectName().contains("sm_"))
-      {
-        button->setFont(font);
-      }
-    }
-
-
-    QList<QLabel *> labels = m_ui->groupBox->findChildren<QLabel *>();
-    foreach (QLabel *label, labels)
-    {
-      if (label->objectName().contains("title_"))
-      {
-        label->setFont(titleFont);
-      }
-      else
-      {
-        label->setFont(font);
-      }
-    }
-
-    m_ui->m_copyAddressButton_3->setFont(font);
-    m_ui->title_recent->setStyleSheet("font-size:" + QString::number(baseTitleSize) + "px;color: #fff;background: transparent;border: none;text-align: left;");
-
-    /** Set the font and styles for all the table views */
-    m_ui->m_addressBookView->setStyleSheet(tableStyle);
-    m_ui->m_messagesView->setStyleSheet(tableStyle);
-    m_ui->m_depositView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsView->setStyleSheet(tableStyle);
-    m_ui->m_transactionsDescription->setFont(font);
-    m_ui->m_messagesView->setFont(font);
-    m_ui->m_depositView->setFont(font);
-    m_ui->m_transactionsView->setFont(font);
-    m_ui->m_addressBookView->setFont(font);
-    m_ui->m_recentTransactionsView->setFont(font);
-
-    QList<QLabel *> labels2 = m_ui->m_recentTransactionsView->findChildren<QLabel *>();
-    foreach (QLabel *label, labels2)
-    {
-      label->setFont(font);
-      label->setStyleSheet(darkFontStyle);
-
-      if (label->objectName().contains("icon"))
-      {
-        label->setStyleSheet(fontStyle);
-      }
-
-      if (label->objectName().contains("amount"))
-      {
-        label->setStyleSheet(fontStyle);
-      }
-    }
-
-
-
     m_ui->groupBox->update();
-    m_ui->m_recentTransactionsView->update();
   }
 
   /* Load the price chart on the overview screen */
@@ -664,45 +544,62 @@ namespace WalletGui
     connect(nam, &QNetworkAccessManager::finished, this, &OverviewFrame::downloadFinished);
 
     QUrl url;
-    QString link = "";
+    QString link;
+
+#ifdef HAVE_CHART
+
+    link = QString(
+               "https://api.coingecko.com/api/v3/coins/conceal/market_chart?vs_currency=%1&days=30")
+               .arg(currency);
+#else
+
     QSize size = m_ui->groupBox->size();
     int width = size.width();
     int height = size.height();
 
-    link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
+    link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+           "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
 
     /** 1280 x 720 or smaller is the default */
-    if (width < 1363) {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
+    if (width < 1363)
+    {
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+             "&days=7&priceDecimals=2&xPoints=12&width=526&height=273&dateFormat=MM-DD";
     }
-    
+
     /** 1365 x 768 */
-    if ((width == 1363) && (height == 750) ){
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
+    if ((width == 1363) && (height == 750))
+    {
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+             "&days=7&priceDecimals=2&xPoints=12&width=618&height=297&dateFormat=MM-DD";
     }
 
     /** 1440 x 900 */
     if ((width == 1438) && (height == 868))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+             "&days=7&priceDecimals=2&xPoints=12&width=695&height=416&dateFormat=MM-DD";
     }
 
     /** 1680 x 1050 */
     if ((width == 1678) && (height == 1008))
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+             "&days=14&priceDecimals=2&xPoints=12&width=927&height=555&dateFormat=MM-DD";
     }
 
     /** This should cover 1920 and above */
     if (width > 1599)
     {
-      link = "http://walletapi.conceal.network/services/charts/price.png?vsCurrency=" + currency + "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
+      link = "https://explorer.conceal.network/services/charts/price.png?vsCurrency=" + currency +
+             "&days=30&priceDecimals=2&xPoints=24&width=1170&height=560&dateFormat=MM-DD";
     }
+#endif
+
     url = QUrl::fromUserInput(link);
 
     QNetworkRequest request(url);
     nam->get(request);
-
   }
 
   /* Show the name of the opened wallet */
@@ -716,10 +613,74 @@ namespace WalletGui
   /* Download is done, set the chart as the pixmap */
   void OverviewFrame::downloadFinished(QNetworkReply *reply)
   {
+#ifdef HAVE_CHART
+    QJsonDocument document = QJsonDocument::fromJson(reply->readAll());
+
+    // We need to have the object contained in the document to ensure compatibility with Qt < 5.10
+    QJsonObject documentAsObject = document.object();
+
+    QLineSeries *series = new QLineSeries();
+
+    QPen seriesPen;
+    seriesPen.setWidth(2);
+    seriesPen.setColor("orange");
+    series->setPen(seriesPen);
+
+    if (!documentAsObject["prices"].isArray())
+    {
+      return;
+    }
+
+    QJsonArray priceList = documentAsObject["prices"].toArray();
+
+    foreach (const QJsonValue info, priceList)
+    {
+      if (!info.isArray())
+      {
+        return;
+      }
+      QJsonArray array = info.toArray();
+      series->append(array.at(0).toDouble(), array.at(1).toDouble());
+    }
+
+    QChart *chart = new QChart();
+    chart->setBackgroundVisible(false);
+    QMargins margins(0, 0, 0, 0);
+    chart->layout()->setContentsMargins(0, 0, 0, 0);
+    chart->setMargins(margins);
+    chart->addSeries(series);
+    chart->legend()->hide();
+
+    QDateTimeAxis *axisX = new QDateTimeAxis;
+    axisX->setTickCount(10);
+    axisX->setFormat("MM/dd");
+    axisX->setLabelsFont(currentFont);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
+
+    QValueAxis *axisY = new QValueAxis;
+    axisY->setLabelFormat("%.2f " + Settings::instance().getCurrentCurrency());
+    axisY->setLabelsFont(currentFont);
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+
+    QColor chartColor = QRgb(0x999999);
+
+    axisX->setLabelsColor(chartColor);
+    axisX->setLinePenColor(chartColor);
+    axisX->setGridLineColor(chartColor);
+
+    axisY->setLabelsColor(chartColor);
+    axisY->setLinePenColor(chartColor);
+    axisY->setGridLineColor(chartColor);
+
+    m_chartView->setChart(chart);
+#else
     QPixmap pm;
     pm.loadFromData(reply->readAll());
-    m_ui->m_chart->setPixmap(pm);
-    m_ui->m_chart->setScaledContents(true);
+    m_chart->setPixmap(pm);
+    m_chart->setScaledContents(true);
+#endif
 
     int startingFontSize = Settings::instance().getFontSize();
     setStyles(startingFontSize);
@@ -727,13 +688,13 @@ namespace WalletGui
 
   void OverviewFrame::calculateFee()
   {
-    m_actualFee = 1000;
+    m_actualFee = BASE_FEE;
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        m_actualFee = m_actualFee + 11000;
+        m_actualFee = m_actualFee + REMOTE_FEE;
       }
     }
   }
@@ -795,11 +756,13 @@ namespace WalletGui
     {
       if (unlockedFunds > 0)
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: orange; background: transparent; border: none;");
       }
       else
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: #ddd; background: transparent; border: none;");
       }
     }
   }
@@ -821,11 +784,13 @@ namespace WalletGui
     {
       if (unlockedFunds > 0)
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: orange; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: orange; background: transparent; border: none;");
       }
       else
       {
-        m_ui->m_unlockedDeposits->setStyleSheet("color: #ddd; background: transparent; font-family: Poppins;  border: none;");
+        m_ui->m_unlockedDeposits->setStyleSheet(
+            "color: #ddd; background: transparent; border: none;");
       }
     }
   }
@@ -846,8 +811,9 @@ namespace WalletGui
 
   void OverviewFrame::resizeEvent(QResizeEvent *event)
   {
-    //if (width() > image.width() || height() > image.height())
+#ifndef HAVE_CHART
     loadChart();
+#endif
   }
 
   /* What happens when the locked investment balance changes */
@@ -901,12 +867,11 @@ namespace WalletGui
   void OverviewFrame::updatePortfolio()
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
-
     float total = 0;
     total = ccxfiat * (float)OverviewFrame::totalBalance;
     m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + Settings::instance().getCurrentCurrency());
-    m_ui->fiatLabel->setText("Portfolio (" + Settings::instance().getCurrentCurrency() + ")");
+    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + currentCurrency);
+    m_ui->fiatLabel->setText("Portfolio (" + currentCurrency + ")");
   }
 
   /* Banking menu button clicked */
@@ -1151,9 +1116,12 @@ namespace WalletGui
     {
       OverviewFrame::remote_node_fee_address = _address;
       Settings::instance().setCurrentFeeAddress(_address);
-      m_ui->m_sendFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_messageFee->setText("Fee: 0.011000 CCX");
-      m_ui->m_depositFeeLabel->setText("0.011000 CCX");
+      calculateFee();
+      QString fee =
+          QString("Fee: %1 CCX").arg(CurrencyAdapter::instance().formatAmount(m_actualFee));
+      m_ui->m_sendFee->setText(fee);
+      m_ui->m_messageFee->setText(fee);
+      m_ui->m_depositFeeLabel->setText(QString::number(m_actualFee / (double)1000000, 'f', 6) + " CCX");
     }
   }
 
@@ -1315,8 +1283,8 @@ namespace WalletGui
       walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
     }
 
-    quint64 actualFee = 1000;
-    quint64 totalFee = 1000;
+    quint64 actualFee = BASE_FEE;
+    quint64 totalFee = BASE_FEE;
 
     /* Remote node fee */
     QString connection = Settings::instance().getConnection();
@@ -1326,9 +1294,9 @@ namespace WalletGui
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
-        totalFee = totalFee + 11000;
+        totalFee = totalFee + REMOTE_FEE;
       }
     }
 
@@ -1530,7 +1498,7 @@ namespace WalletGui
     messages.append({messageString.toStdString(), address.toStdString()});
 
     /* Set fee */
-    quint64 fee = 1000;
+    quint64 fee = BASE_FEE;
 
     /* Check if this is a self destructive message */
     bool selfDestructiveMessage = false;
@@ -1551,7 +1519,7 @@ namespace WalletGui
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         transfers.push_back(walletTransfer);
       }
     }
@@ -1629,7 +1597,7 @@ namespace WalletGui
     }
 
     /* Initiate the desposit */
-    WalletAdapter::instance().deposit(term, amount, 1000, 4);
+    WalletAdapter::instance().deposit(term, amount, BASE_FEE, 4);
 
     /* Remote node fee */
     QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
@@ -1641,13 +1609,13 @@ namespace WalletGui
         QVector<CryptoNote::TransactionMessage> walletMessages;
         CryptoNote::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
-        walletTransfer.amount = 10000;
+        walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
         /* If the wallet is open we proceed */
         if (WalletAdapter::instance().isOpen())
         {
           /* Send the transaction */
-          WalletAdapter::instance().sendTransaction(walletTransfers, 1000, "", 4, walletMessages);
+          WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", 4, walletMessages);
         }
       }
     }
@@ -2081,7 +2049,7 @@ namespace WalletGui
 
   void OverviewFrame::discordClicked()
   {
-    QDesktopServices::openUrl(QUrl("http://discord.conceal.network/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://discord.conceal.network/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::twitterClicked()
@@ -2294,6 +2262,17 @@ namespace WalletGui
 #endif
   }
 
-} // namespace WalletGui
+  void OverviewFrame::qtChartsLicenseClicked()
+  {
+    QDesktopServices::openUrl(QUrl("https://github.com/qt/qtcharts/blob/dev/LICENSE.GPL3"));
+  }
+
+  void OverviewFrame::openSslLicenseClicked()
+  {
+    QDesktopServices::openUrl(
+        QUrl("https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/LICENSE"));
+  }
+
+}  // namespace WalletGui
 
 #include "OverviewFrame.moc"

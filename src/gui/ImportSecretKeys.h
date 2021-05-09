@@ -13,19 +13,21 @@
 
 namespace Ui
 {
-  class TransactionDetailsDialog;
+  class ImportSecretKeys;
 }
 
 namespace WalletGui
 {
-  class TransactionDetailsDialog : public QDialog, public EditableStyle
+  class ImportSecretKeys : public QDialog, public EditableStyle
   {
     Q_OBJECT
-    Q_DISABLE_COPY(TransactionDetailsDialog)
 
   public:
-    TransactionDetailsDialog(const QModelIndex &_index, QWidget *_parent);
-    ~TransactionDetailsDialog();
+    explicit ImportSecretKeys(QWidget *_parent);
+    ~ImportSecretKeys();
+    QString getSpendKeyString() const;
+    QString getViewKeyString() const;
+    QString getFilePath() const;
 
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
@@ -33,8 +35,7 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::TransactionDetailsDialog> m_ui;
-    const QString m_detailsTemplate;
+    QScopedPointer<Ui::ImportSecretKeys> m_ui;
+    Q_SLOT void selectPathClicked();
   };
-
 }  // namespace WalletGui

@@ -37,9 +37,7 @@
    <item>
     <widget class="QTreeView" name="m_addressBookView">
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #282d31; color: #ddd; border: 0px;

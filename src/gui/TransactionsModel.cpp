@@ -186,12 +186,6 @@ namespace WalletGui
 
     switch (_role)
     {
-    case Qt::BackgroundRole:
-      if ((_index.row() % 2) == 0)
-        return QColor(40, 45, 49);
-      else
-        return QColor(33, 37, 41);
-
     case Qt::DisplayRole:
     case Qt::EditRole:
       return getDisplayRole(_index);
@@ -479,7 +473,12 @@ namespace WalletGui
       return QByteArray(reinterpret_cast<const char *>(&_transaction.hash), sizeof(_transaction.hash));
 
     case ROLE_SECRETKEY:
-      return QByteArray(reinterpret_cast<const char *>(&_transaction.secretKey), sizeof(_transaction.secretKey));
+      if (_transaction.secretKey) {
+        Crypto::SecretKey txkey = _transaction.secretKey.get();
+        if (txkey != CryptoNote::NULL_SECRET_KEY) {
+          return QByteArray(reinterpret_cast<char*>(&txkey), sizeof(txkey));
+        }
+      }
 
     case ROLE_ADDRESS:
       return QString::fromStdString(_transfer.address);
