@@ -2077,9 +2077,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::hotbitClicked()
+  void OverviewFrame::helpDeskClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.hotbit.io/exchange?symbol=CCX_BTC", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/support/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::stexClicked()
