@@ -40,7 +40,8 @@ public:
   quint64 getActualDepositBalance() const;
   quint64 getActualInvestmentBalance() const;  
   quint64 getPendingDepositBalance() const;
-  quint64 getPendingInvestmentBalance() const;  
+  quint64 getPendingInvestmentBalance() const;
+  quint64 getWalletMaximum() const;
   quint64 getTransactionCount() const;
   quint64 getTransferCount() const;
   quint64 getDepositCount() const;

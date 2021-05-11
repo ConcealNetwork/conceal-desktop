@@ -99,6 +99,19 @@ quint64 WalletAdapter::getActualInvestmentBalance() const {
   }
 }
 
+/* Get the current maximum we can send because of dust outputs without optimizing the wallet */
+quint64 WalletAdapter::getWalletMaximum() const
+{
+  try
+  {
+    return m_wallet == nullptr ? 0 : m_wallet->getWalletMaximum();
+  }
+  catch (std::system_error&)
+  {
+    return 0;
+  }
+}
+
 quint64 WalletAdapter::getPendingInvestmentBalance() const {
   try {
     return m_wallet == nullptr ? 0 : m_wallet->pendingInvestmentBalance();

@@ -1155,7 +1155,8 @@ namespace WalletGui
   void OverviewFrame::setPercentage100()
   {
     calculateFee();
-    uint64_t amount = m_actualBalance - m_actualFee;
+    uint64_t maxAmount = WalletAdapter::instance().getWalletMaximum();    
+    uint64_t amount = maxAmount - m_actualFee;
     m_ui->m_amountEdit->setText(CurrencyAdapter::instance().formatAmount(amount));
   }
 
