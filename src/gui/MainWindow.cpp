@@ -364,21 +364,12 @@ void MainWindow::openWallet()
   QString walletDirectory = "";
   if (!wallet.empty())
   {
-    /* Get current wallet path and use it as a default opening location */
-    const size_t last_slash_idx = wallet.find_last_of("\\/");
-    if (std::string::npos != last_slash_idx)
-    {
-      wallet.erase(last_slash_idx + 1, wallet.length());
-    }
-    walletDirectory = QString::fromStdString(wallet);
+    QFileInfo fileInfo(walletFile);
+    walletDirectory = fileInfo.absolutePath();
   }
   else
   {
-#ifdef Q_OS_WIN
-    walletDirectory = QApplication::applicationDirPath();
-#else
-    walletDirectory = QDir::homePath();
-#endif
+    walletDirectory = Settings::instance().getDefaultWalletDir();
   }
 
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
@@ -487,11 +478,7 @@ void MainWindow::importKey()
 void MainWindow::backupWallet()
 {
   QString filePath = QFileDialog::getSaveFileName(this, tr("Backup wallet to..."),
-#ifdef Q_OS_WIN
-                                                  QApplication::applicationDirPath(),
-#else
-                                                  QDir::homePath(),
-#endif
+                                                  Settings::instance().getDefaultWalletDir(),
                                                   tr("Wallets (*.wallet)"));
   if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
   {

@@ -60,6 +60,7 @@ namespace WalletGui
     int getFontSize() const;
     bool isStartOnLoginEnabled() const;
     QString getDefaultWalletPath() const;
+    QString getDefaultWalletDir() const;
 #ifndef QT_NO_SYSTEMTRAYICON
     bool isMinimizeToTrayEnabled() const;
     bool isCloseToTrayEnabled() const;
