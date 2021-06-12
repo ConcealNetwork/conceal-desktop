@@ -120,9 +120,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get purge '*boost*'
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libboost-all-dev
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -134,7 +133,7 @@ jobs:
         run: |
           ccx_version=${GITHUB_SHA::7}
 
-          make -j4 build-release
+          make -j2 build-release
 
           echo "::set-output name=ccx_version::$ccx_version"
 
@@ -149,7 +148,7 @@ jobs:
           mv Conceal_Desktop*.AppImage ../$appimage_name
           cd ..
           ls -l $appimage_name
-          
+
           echo "::set-output name=artifact_name::${appimage_name}"
 
       - name: Upload To GH Artifacts
@@ -183,7 +182,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1604-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -224,7 +223,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1804-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -265,7 +264,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -312,7 +311,7 @@ jobs:
           release_name="ccx-desktop-macOS-dev-$ccx_ver"
           app_name="CONCEAL-GUI.app"
 
-          make -j4 build-release
+          make -j3 build-release
           cd "$build_folder"
           macdeployqt "$app_name"
           cpack
