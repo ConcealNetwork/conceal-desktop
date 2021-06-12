@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 2.8)
 include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
 
+if(APPLE)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")  
+endif(APPLE)
+
 project(${CN_PROJECT_NAME})
 
 execute_process(COMMAND git log -1 --pretty=format:%h
@@ -22,6 +26,7 @@ include_directories(${CMAKE_BINARY_DIR}
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(Qt5Charts)
 
 set(Boost_NO_BOOST_CMAKE ON)
 set(Boost_USE_STATIC_LIBS ON)
@@ -86,6 +91,16 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/pow_hash/arm8_neon.hpp
+  cryptonote/src/crypto/pow_hash/arm_vfp.hpp
+  cryptonote/src/crypto/pow_hash/aux_hash.c
+  cryptonote/src/crypto/pow_hash/aux_hash.h
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_arm.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_intel.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash.hpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_intel_avx2.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_soft.cpp
+  cryptonote/src/crypto/pow_hash/hw_detect.hpp
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -266,6 +281,10 @@ endif (APPLE)
 target_link_libraries(${PROJECT_NAME} Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} Qt5::Network)
+if(Qt5Charts_FOUND)
+add_definitions(/DHAVE_CHART)
+target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
+endif(Qt5Charts_FOUND)
 
 # Installation
 

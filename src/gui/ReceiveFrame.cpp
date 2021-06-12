@@ -72,22 +72,22 @@ void ReceiveFrame::backClicked() {
 
 void ReceiveFrame::copyGUIClicked() {
     QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
-    QMessageBox::information(&MainWindow::instance(), tr("Tracking Key"), "Tracking key copied to clipboard"); 
+    Q_EMIT notifySignal("Tracking key copied to clipboard"); 
 }
 
 void ReceiveFrame::copySpendKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_spendKey->toPlainText());
-    QMessageBox::information(&MainWindow::instance(), tr("Private Spend-Key"), "Private spend-key copied to clipboard"); 
+    Q_EMIT notifySignal("Private spend-key copied to clipboard");
 }
 
 void ReceiveFrame::copyViewKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_viewKey->toPlainText());
-    QMessageBox::information(&MainWindow::instance(), tr("Private View-Key"), "Private view-key copied to clipboard");    
+    Q_EMIT notifySignal("Private view-key copied to clipboard");    
 }
 
 void ReceiveFrame::copySeedClicked() {
     QApplication::clipboard()->setText(m_ui->m_seed->toPlainText());
-    QMessageBox::information(&MainWindow::instance(), tr("Seed"), "Seed copied to clipboard");
+    Q_EMIT notifySignal("Seed copied to clipboard");
 }
 
 void ReceiveFrame::showSeed() {

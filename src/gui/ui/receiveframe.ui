@@ -675,7 +675,7 @@ QPushButton#m_showGUI:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 19px;font-family: Poppins;</string>
+            <string notr="true">color: #ddd; font-size: 19px;</string>
            </property>
            <property name="text">
             <string>YOUR TRACKING KEY</string>
@@ -857,9 +857,7 @@ QPushButton#m_backButton_3:hover
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 19px;
-font-family: Poppins;</string>
+            <string notr="true">color: #ddd;font-size: 19px;</string>
            </property>
            <property name="text">
             <string>PRIVATE SPEND KEY</string>
@@ -905,9 +903,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 19px;
-font-family: Poppins;</string>
+            <string notr="true">color: #ddd; font-size: 19px;</string>
            </property>
            <property name="text">
             <string>PRIVATE VIEW KEY</string>

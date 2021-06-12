@@ -8,7 +8,7 @@
 !define COMP_NAME "Conceal Network"
 !define WEB_SITE "https://conceal.network"
 !define VERSION "06.01.02.00"
-!define COPYRIGHT "Conceal Network 2019"
+!define COPYRIGHT "Conceal Network 2021"
 !define DESCRIPTION "Conceal Wallet"
 !define MAIN_APP_EXE "CONCEAL-GUI.exe"
 !define INSTALL_TYPE "SetShellVarContext all"

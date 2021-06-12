@@ -99,6 +99,19 @@ quint64 WalletAdapter::getActualInvestmentBalance() const {
   }
 }
 
+/* Get the current maximum we can send because of dust outputs without optimizing the wallet */
+quint64 WalletAdapter::getWalletMaximum() const
+{
+  try
+  {
+    return m_wallet == nullptr ? 0 : m_wallet->getWalletMaximum();
+  }
+  catch (std::system_error&)
+  {
+    return 0;
+  }
+}
+
 quint64 WalletAdapter::getPendingInvestmentBalance() const {
   try {
     return m_wallet == nullptr ? 0 : m_wallet->pendingInvestmentBalance();
@@ -498,7 +511,7 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
     Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(m_wallet->pendingInvestmentBalance());    
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress()));
     Q_EMIT reloadWalletTransactionsSignal();
-    Q_EMIT walletStateChangedSignal(tr("READY"),"");
+    Q_EMIT walletStateChangedSignal(tr("Ready"),"");
     QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
     if (!QFile::exists(Settings::instance().getWalletFile())) {
       save(true, true);
@@ -539,8 +552,8 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
 void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _total) {
   m_isSynchronized = false;
   qreal syncedPercentage = (static_cast<qreal>(_current)) / _total;
-  QString status = QString("Status: %1 (%2%)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2));
-  QString height = QString("Height: %1/%2").arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0));
+  QString status = QString("%1 (%2%)").arg(tr("Synchronizing")).arg(QString::number(syncedPercentage * 100, 'f', 2));
+  QString height = QString("%1/%2").arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0));
   Q_EMIT walletStateChangedSignal(status,height);
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
@@ -680,9 +693,9 @@ void WalletAdapter::updateBlockStatusText() {
   const QDateTime currentTime = QDateTime::currentDateTimeUtc();
   const QDateTime blockTime = NodeAdapter::instance().getLastLocalBlockTimestamp();
   quint64 blockAge = blockTime.msecsTo(currentTime);
-  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "STATUS: " + tr("Synchronized") : tr("WARNING");
+  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("Synchronized") : tr("Warning");
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("%1").arg(tr("There was a problem, please restart your wallet."));
-  const QString blockHeightString = "Height: " + QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0);
+  const QString blockHeightString = QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0);
 
   Q_EMIT walletStateChangedSignal(statusString,blockHeightString);
 

@@ -1,14 +1,22 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
+#include <IWalletLegacy.h>
+
+#ifdef HAVE_CHART
+#include <QtCharts>
+#endif
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-#include <IWalletLegacy.h>
+
+#include "EditableStyle.h"
 
 namespace Ui
 {
@@ -27,7 +35,7 @@ class VisibleMessagesModel;
 class AddressProvider;
 class ExchangeProvider;
 
-class OverviewFrame : public QFrame
+class OverviewFrame : public QFrame, EditableStyle
 {
   Q_OBJECT
   Q_DISABLE_COPY(OverviewFrame)
@@ -49,9 +57,14 @@ public Q_SLOTS:
   void copyABPaymentIdClicked();
   void deleteABClicked();
   void payToABClicked();
+  void dashboardClicked();
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
+  QList<QWidget *> getWidgets() override;
+  QList<QPushButton *> getButtons() override;
+  QList<QLabel *> getLabels() override;
+  void applyStyles() override;
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -75,6 +88,11 @@ private:
   QMenu* contextMenu;
   bool paymentIDRequired = false;
   QString exchangeName = "";
+#ifdef HAVE_CHART
+  QChartView *m_chartView;
+#else
+  QLabel *m_chart;
+#endif
 
 
   void onPriceFound(QJsonObject &result);
@@ -84,7 +102,6 @@ private:
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStyles(int change);
   void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
@@ -106,11 +123,13 @@ private:
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
+  bool askForWalletPassword(bool _error = false);
+  void change();
+  void goToWelcomeFrame();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
   Q_SLOT void transactionHistoryClicked();
-  Q_SLOT void dashboardClicked();
   Q_SLOT void inboxClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
@@ -122,7 +141,6 @@ private:
   Q_SLOT void showMessageDetails(const QModelIndex &_index);
   Q_SLOT void settingsClicked();
   Q_SLOT void addressBookClicked();
-  Q_SLOT void changeFontSize();
   Q_SLOT void sendFundsClicked();
   Q_SLOT void sendMessageClicked();
   Q_SLOT void clearAllClicked();
@@ -148,6 +166,7 @@ private:
   Q_SLOT void closeToTrayClicked();
   Q_SLOT void optimizeClicked();
   Q_SLOT void setPercentage25();
+  Q_SLOT void startMaximizedClicked();
   Q_SLOT void setPercentage50();
   Q_SLOT void setPercentage100();    
   Q_SLOT void autoOptimizeClicked(); 
@@ -170,9 +189,11 @@ private:
   Q_SLOT void stexClicked();
   Q_SLOT void hotbitClicked();
   Q_SLOT void tradeogreClicked();
-  Q_SLOT void qtradeClicked();
+  Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);
+  Q_SLOT void qtChartsLicenseClicked();
+  Q_SLOT void openSslLicenseClicked();
 
 Q_SIGNALS:
   void backupSignal();
@@ -189,6 +210,8 @@ Q_SIGNALS:
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void payToSignal(const QModelIndex& _index);  
+  void payToSignal(const QModelIndex& _index);
+  void notifySignal(const QString& message);
+  void welcomeFrameSignal();
 };
 } // namespace WalletGui

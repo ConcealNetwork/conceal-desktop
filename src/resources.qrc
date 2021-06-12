@@ -8,7 +8,7 @@
         <file alias="github">icons/github.png</file>
         <file alias="reddit">icons/reddit.png</file>
         <file alias="stex">icons/stex.png</file>
-        <file alias="qtrade">icons/qtrade.png</file>
+        <file alias="wiki">icons/wiki.png</file>
         <file alias="tradeogre">icons/tradeogre.png</file>
         <file alias="hotbit">icons/hotbit.png</file>
         <!-- Clock icons -->
@@ -40,6 +40,7 @@
         <file alias="icon-transactions">icons/icon-tx.png</file>
         <!-- Other icons-->
         <file alias="font-size">icons/font-size.png</file>
+        <file alias="folder">icons/folder.png</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="conceal-logo">images/conceal.png</file>
@@ -56,7 +57,12 @@
     </qresource>
     <qresource prefix="/">
         <file>fonts/Poppins-Regular.ttf</file>
-        <file>fonts/Roboto-Regular.ttf</file>
+        <file>fonts/Lekton-Regular.ttf</file>
+        <file>fonts/Montserrat-Regular.ttf</file>
+        <file>fonts/RobotoSlab-Regular.ttf</file>
+        <file>fonts/OpenSans-Regular.ttf</file>
+        <file>fonts/Lato-Regular.ttf</file>
+        <file>fonts/Oswald-Regular.ttf</file>
     </qresource>
     <qresource prefix="/translations">
         <file alias="cn">languages/cn.qm</file>

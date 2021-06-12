@@ -7,9 +7,12 @@
 
 #pragma once
 
-#include <QTranslator>
 #include <QMainWindow>
 #include <QSystemTrayIcon>
+#include <QTranslator>
+
+#include "Notification.h"
+#include "EditableStyle.h"
 
 class QActionGroup;
 
@@ -19,7 +22,7 @@ class MainWindow;
 
 namespace WalletGui {
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow, public EditableStyle {
   Q_OBJECT
   Q_DISABLE_COPY(MainWindow)
 
@@ -31,6 +34,10 @@ public:
 protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
   bool event(QEvent* _event) Q_DECL_OVERRIDE;
+  QList<QWidget*> getWidgets() override;
+  QList<QPushButton*> getButtons() override;
+  QList<QLabel*> getLabels() override;
+  void applyStyles() override;
 
 protected Q_SLOTS:
 #ifndef QT_NO_SYSTEMTRAYICON
@@ -41,6 +48,7 @@ private:
   QScopedPointer<Ui::MainWindow> m_ui;
   QSystemTrayIcon* m_trayIcon;
   QActionGroup* m_tabActionGroup;
+  Notification* notification;
   bool m_isAboutToQuit;
 
   static MainWindow* m_instance;
@@ -56,6 +64,7 @@ private:
   void askForWalletPassword(bool _error);
   void walletOpened(bool _error, const QString& _error_text);
   void walletClosed();
+  void payTo(const QModelIndex& _index);
   void delay();
   void setRemoteWindowTitle();  
   void showQRCode(const QString& _address);
@@ -78,6 +87,8 @@ private:
   Q_SLOT void setStartOnLogin(bool _on);
   Q_SLOT void setMinimizeToTray(bool _on);
   Q_SLOT void setCloseToTray(bool _on);
+  Q_SLOT void notify(const QString& message);
+  Q_SLOT void welcomeFrame();
 
 #ifdef Q_OS_MAC
 public:
