@@ -647,10 +647,19 @@ void WalletAdapter::unlock() {
   m_mutex.unlock();
 }
 
-bool WalletAdapter::openFile(const QString& _file, bool _readOnly) {
+bool WalletAdapter::openFile(const QString& _file, bool _readOnly)
+{
   lock();
-  m_file.open(_file.toStdString(), std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
-  if (!m_file.is_open()) {
+#ifdef Q_OS_WIN
+  const wchar_t* cwc = reinterpret_cast<const wchar_t*>(_file.utf16());
+  m_file.open(cwc,
+              std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
+#else
+  m_file.open(_file.toStdString(),
+              std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
+#endif
+  if (!m_file.is_open())
+  {
     unlock();
   }
 
