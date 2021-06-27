@@ -112,6 +112,53 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  build-appimage:
+    name: AppImage
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
+
+      - name: Clone conceal-core
+        run: |
+          rm -rf cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+
+      - name: Build
+        id: build
+        run: |
+          ccx_version=${GITHUB_SHA::7}
+
+          make -j2 build-release
+
+          echo "::set-output name=ccx_version::$ccx_version"
+
+      - name: Create AppImage
+        id: appimage
+        run: |
+          ccx_version="${{steps.build.outputs.ccx_version}}"
+          appimage_name=Conceal_Desktop-dev-"$ccx_version"-x86_64.AppImage
+
+          cd appimage
+          ./create-appimage.sh
+          mv Conceal_Desktop*.AppImage ../$appimage_name
+          cd ..
+          ls -l $appimage_name
+
+          echo "::set-output name=artifact_name::${appimage_name}"
+
+      - name: Upload To GH Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ steps.appimage.outputs.artifact_name }}
+          path: ${{ steps.appimage.outputs.artifact_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build-ubuntu16:
     name: Ubuntu 16.04
     runs-on: ubuntu-16.04
@@ -135,7 +182,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1604-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -176,7 +223,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1804-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -217,7 +264,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
 
-          make -j4 build-release
+          make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
           mv build/release/CONCEAL-GUI $release_name
@@ -264,7 +311,7 @@ jobs:
           release_name="ccx-desktop-macOS-dev-$ccx_ver"
           app_name="CONCEAL-GUI.app"
 
-          make -j4 build-release
+          make -j3 build-release
           cd "$build_folder"
           macdeployqt "$app_name"
           cpack

@@ -1,0 +1,8 @@
+usr
+apprun-hooks
+AppRun
+AppRun.wrapped
+CONCEAL-GUI
+*.png
+*.AppImage
+.DirIcon
