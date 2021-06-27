@@ -128,134 +128,122 @@ Please wait...</source>
     <name>ImportSecretKeys</name>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="82"/>
         <source>Import Private Keys</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="100"/>
         <source>Recreate your wallet with the secret spend and view keys</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="140"/>
         <source>Private Spend Key</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="189"/>
         <source>Private View Key</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="238"/>
         <source>Wallet Path</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="245"/>
         <source>Where would you like to save your wallet?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="380"/>
         <source>IMPORT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="434"/>
         <source>CANCEL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
-        <source>Import :: Mnemonic Seed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/importseeddialog.ui" line="103"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
+        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
         <location filename="../gui/ui/importseeddialog.ui" line="85"/>
         <source>Import Mnemonic Seed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="140"/>
         <source>Mnemonic Seed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="192"/>
         <source>Wallet Path</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="199"/>
         <source>Where would you like to save your wallet?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="324"/>
         <source>IMPORT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="372"/>
         <source>CANCEL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>ImportTracking</name>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="14"/>
-        <source>Import</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/importtracking.ui" line="94"/>
         <source>Import a tracking wallet (view-only)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
+        <location filename="../gui/ui/importtracking.ui" line="14"/>
         <location filename="../gui/ui/importtracking.ui" line="76"/>
         <source>Import Tracking Key</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="131"/>
         <source>Tracking Key</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="180"/>
         <source>Wallet Path</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="187"/>
         <source>Where would you like to save your wallet?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="357"/>
         <source>CANCEL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="309"/>
         <source>IMPORT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -263,79 +251,64 @@ Please wait...</source>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="38"/>
         <source>Enter password</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="124"/>
         <source>Type your password...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="154"/>
         <source>CONTINUE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="185"/>
         <source>Incorrect Password. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="212"/>
         <source>Welcome Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/mainpassworddialog.ui" line="240"/>
-        <source>currentWallet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="271"/>
         <source>Click CONTINUE or press ENTER to unlock your wallet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
         <source>Conceal Desktop 6.2.1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="337"/>
         <source>HELP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="379"/>
         <source>EXIT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="444"/>
         <source>CHANGE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="478"/>
         <source>Click CHANGE to choose (or create) another wallet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../gui/ui/mainwindow.ui" line="38"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/mainwindow.ui" line="114"/>
-        <source>OVERVIEW</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/mainwindow.ui" line="134"/>
-        <source>KEYS</source>
+        <source>Conceal Desktop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -343,12 +316,8 @@ Please wait...</source>
     <name>MessageDetailsDialog</name>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
-        <source>Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="42"/>
-        <source>MESSAGE DETAILS</source>
+        <source>Message Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -379,16 +348,6 @@ Please wait...</source>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="273"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="231"/>
-        <source>&lt;&lt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="252"/>
-        <source>&gt;&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

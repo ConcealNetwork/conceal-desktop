@@ -133,10 +133,6 @@ Lütfen bekle...</translation>
     <name>ImportSecretKeys</name>
     <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/importsecretkeys.ui" line="82"/>
         <source>Import Private Keys</source>
         <translation type="unfinished"></translation>
@@ -180,9 +176,8 @@ Lütfen bekle...</translation>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
-        <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
+        <translation type="vanished">Mnemonic Seed&apos;I Içe Aktar</translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="103"/>
@@ -190,6 +185,7 @@ Lütfen bekle...</translation>
         <translation>25 kelimelik mnemonic seed ile cüzdanınızı yeniden oluşturun</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
         <location filename="../gui/ui/importseeddialog.ui" line="85"/>
         <source>Import Mnemonic Seed</source>
         <translation>Mnemonic Seed&apos;I Içe Aktar</translation>
@@ -223,9 +219,8 @@ Lütfen bekle...</translation>
 <context>
     <name>ImportTracking</name>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="14"/>
         <source>Import</source>
-        <translation>Içe Aktar</translation>
+        <translation type="vanished">Içe Aktar</translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="94"/>
@@ -233,6 +228,7 @@ Lütfen bekle...</translation>
         <translation>Salt Görüntülenebilir Cüzdani Içe Aktar</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importtracking.ui" line="14"/>
         <location filename="../gui/ui/importtracking.ui" line="76"/>
         <source>Import Tracking Key</source>
         <translation>Salt Görüntüleme Anahtarını İçe Aktar</translation>
@@ -307,11 +303,6 @@ Lütfen bekle...</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/mainpassworddialog.ui" line="240"/>
-        <source>currentWallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="271"/>
         <source>Click CONTINUE or press ENTER to unlock your wallet</source>
         <translation type="unfinished"></translation>
@@ -345,23 +336,16 @@ Lütfen bekle...</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/ui/mainwindow.ui" line="38"/>
-        <source>MainWindow</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/mainwindow.ui" line="114"/>
         <source>OVERVIEW</source>
-        <translation>GENEL BAKIŞ</translation>
+        <translation type="vanished">GENEL BAKIŞ</translation>
     </message>
     <message>
         <source>SEND</source>
         <translation type="vanished">GÖNDER</translation>
     </message>
     <message>
-        <location filename="../gui/ui/mainwindow.ui" line="134"/>
         <source>KEYS</source>
-        <translation>ANAHTARLAR</translation>
+        <translation type="vanished">ANAHTARLAR</translation>
     </message>
     <message>
         <source>TRANSACTIONS</source>
@@ -459,6 +443,11 @@ Lütfen bekle...</translation>
         <source>Import view wallet</source>
         <translation type="vanished">Salt Görüntülenebilir Cüzdani Içe Aktar</translation>
     </message>
+    <message>
+        <location filename="../gui/ui/mainwindow.ui" line="38"/>
+        <source>Conceal Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageAddressFrame</name>
@@ -470,13 +459,13 @@ Lütfen bekle...</translation>
 <context>
     <name>MessageDetailsDialog</name>
     <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
         <source>Message</source>
-        <translation>Mesaj</translation>
+        <translation type="vanished">Mesaj</translation>
     </message>
     <message>
+        <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="42"/>
-        <source>MESSAGE DETAILS</source>
+        <source>Message Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -503,16 +492,6 @@ Lütfen bekle...</translation>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="197"/>
         <source>SAVE TO FILE</source>
         <translation>DOSYAYA KAYDET</translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="231"/>
-        <source>&lt;&lt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="252"/>
-        <source>&gt;&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="273"/>

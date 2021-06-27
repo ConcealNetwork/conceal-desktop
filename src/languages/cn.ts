@@ -139,11 +139,11 @@ Please wait...</source>
 <context>
     <name>ImportSecretKeys</name>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished">对话框</translation>
+        <translation type="obsolete">对话框</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
         <location filename="../gui/ui/importsecretkeys.ui" line="82"/>
         <source>Import Private Keys</source>
         <translation type="unfinished">导入密钥</translation>
@@ -187,9 +187,8 @@ Please wait...</source>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
         <source>Import :: Mnemonic Seed</source>
-        <translation>导入::助记词种子</translation>
+        <translation type="vanished">导入::助记词种子</translation>
     </message>
     <message>
         <location filename="../gui/ui/importseeddialog.ui" line="103"/>
@@ -197,6 +196,7 @@ Please wait...</source>
         <translation>采用25个助记词种子重新创建你的钱包</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
         <location filename="../gui/ui/importseeddialog.ui" line="85"/>
         <source>Import Mnemonic Seed</source>
         <translation>导入助记词种子</translation>
@@ -230,9 +230,8 @@ Please wait...</source>
 <context>
     <name>ImportTracking</name>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="14"/>
         <source>Import</source>
-        <translation>导入</translation>
+        <translation type="vanished">导入</translation>
     </message>
     <message>
         <location filename="../gui/ui/importtracking.ui" line="94"/>
@@ -240,6 +239,7 @@ Please wait...</source>
         <translation>导入仅查看钱包</translation>
     </message>
     <message>
+        <location filename="../gui/ui/importtracking.ui" line="14"/>
         <location filename="../gui/ui/importtracking.ui" line="76"/>
         <source>Import Tracking Key</source>
         <translation>跟踪KEY</translation>
@@ -318,9 +318,8 @@ Please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/mainpassworddialog.ui" line="240"/>
         <source>currentWallet</source>
-        <translation type="unfinished">当前钱包</translation>
+        <translation type="obsolete">当前钱包</translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="271"/>
@@ -356,23 +355,20 @@ Please wait...</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/ui/mainwindow.ui" line="38"/>
         <source>MainWindow</source>
-        <translation>主窗口</translation>
+        <translation type="vanished">主窗口</translation>
     </message>
     <message>
-        <location filename="../gui/ui/mainwindow.ui" line="114"/>
         <source>OVERVIEW</source>
-        <translation>概述</translation>
+        <translation type="vanished">概述</translation>
     </message>
     <message>
         <source>SEND</source>
         <translation type="vanished">发送</translation>
     </message>
     <message>
-        <location filename="../gui/ui/mainwindow.ui" line="134"/>
         <source>KEYS</source>
-        <translation>KEYS</translation>
+        <translation type="vanished">KEYS</translation>
     </message>
     <message>
         <source>TRANSACTIONS</source>
@@ -474,6 +470,11 @@ Please wait...</source>
         <source>Import view wallet</source>
         <translation type="vanished">导入查看钱包</translation>
     </message>
+    <message>
+        <location filename="../gui/ui/mainwindow.ui" line="38"/>
+        <source>Conceal Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageAddressFrame</name>
@@ -489,13 +490,13 @@ Please wait...</source>
 <context>
     <name>MessageDetailsDialog</name>
     <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
         <source>Message</source>
-        <translation>消息</translation>
+        <translation type="vanished">消息</translation>
     </message>
     <message>
+        <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="42"/>
-        <source>MESSAGE DETAILS</source>
+        <source>Message Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -522,16 +523,6 @@ Please wait...</source>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="197"/>
         <source>SAVE TO FILE</source>
         <translation>保存文件</translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="231"/>
-        <source>&lt;&lt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/messagedetailsdialog.ui" line="252"/>
-        <source>&gt;&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="273"/>

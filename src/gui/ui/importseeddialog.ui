@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Import :: Mnemonic Seed</string>
+   <string>Import Mnemonic Seed</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #282d31; color: #ddd; border: 0px;</string>
