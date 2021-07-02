@@ -16,58 +16,97 @@
 
 namespace WalletGui {
 
-typedef QPair<CryptoNote::TransactionId, CryptoNote::TransferId> TransactionTransferId;
-
-class TransactionsModel : public QAbstractItemModel {
-  Q_OBJECT
-  Q_ENUMS(Columns)
-  Q_ENUMS(Roles)
-
-public:
-  enum Columns {
-    COLUMN_STATE = 0, COLUMN_DATE, COLUMN_AMOUNT, COLUMN_CONFIRMATIONS, COLUMN_ADDRESS, COLUMN_MESSAGE, COLUMN_PAYMENT_ID, COLUMN_HASH, COLUMN_SECRETKEY, COLUMN_FEE,
-    COLUMN_HEIGHT, COLUMN_TYPE, 
+  enum class TransactionState : quint8
+  {
+    ACTIVE,
+    DELETED,
+    SENDING,
+    CANCELLED,
+    FAILED
   };
 
-  enum Roles {
-    ROLE_DATE = Qt::UserRole, ROLE_TYPE, ROLE_TXTYPE, ROLE_HASH, ROLE_SECRETKEY, ROLE_ADDRESS, ROLE_AMOUNT, ROLE_PAYMENT_ID, ROLE_ICON,
-    ROLE_TRANSACTION_ID, ROLE_HEIGHT, ROLE_FEE, ROLE_NUMBER_OF_CONFIRMATIONS, ROLE_COLUMN, ROLE_ROW, ROLE_MESSAGE,
-    ROLE_MESSAGES, ROLE_DEPOSIT_ID, ROLE_DEPOSIT_COUNT
-  };
+  typedef QPair<CryptoNote::TransactionId, CryptoNote::TransferId> TransactionTransferId;
 
-  static TransactionsModel& instance();
+  class TransactionsModel : public QAbstractItemModel
+  {
+    Q_OBJECT
+    Q_ENUMS(Columns)
+    Q_ENUMS(Roles)
 
-  Qt::ItemFlags flags(const QModelIndex& _index) const Q_DECL_OVERRIDE;
-  int columnCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
-  int rowCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
+  public:
+    enum Columns
+    {
+      COLUMN_STATE = 0,
+      COLUMN_DATE,
+      COLUMN_AMOUNT,
+      COLUMN_CONFIRMATIONS,
+      COLUMN_ADDRESS,
+      COLUMN_MESSAGE,
+      COLUMN_PAYMENT_ID,
+      COLUMN_HASH,
+      COLUMN_SECRETKEY,
+      COLUMN_FEE,
+      COLUMN_HEIGHT,
+      COLUMN_TYPE,
+    };
 
-  QVariant headerData(int _section, Qt::Orientation _orientation, int _role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-  QVariant data(const QModelIndex& _index, int _role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-  QModelIndex index(int _row, int _column, const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
-  QModelIndex	parent(const QModelIndex& _index) const Q_DECL_OVERRIDE;
+    enum Roles
+    {
+      ROLE_DATE = Qt::UserRole,
+      ROLE_TYPE,
+      ROLE_TXTYPE,
+      ROLE_HASH,
+      ROLE_SECRETKEY,
+      ROLE_ADDRESS,
+      ROLE_AMOUNT,
+      ROLE_PAYMENT_ID,
+      ROLE_ICON,
+      ROLE_TRANSACTION_ID,
+      ROLE_HEIGHT,
+      ROLE_FEE,
+      ROLE_NUMBER_OF_CONFIRMATIONS,
+      ROLE_COLUMN,
+      ROLE_ROW,
+      ROLE_MESSAGE,
+      ROLE_MESSAGES,
+      ROLE_DEPOSIT_ID,
+      ROLE_DEPOSIT_COUNT,
+      ROLE_STATE
+    };
 
-  QByteArray toCsv() const;
+    static TransactionsModel &instance();
 
-private:
-  QVector<TransactionTransferId> m_transfers;
-  QHash<CryptoNote::TransactionId, QPair<quint32, quint32> > m_transactionRow;
+    Qt::ItemFlags flags(const QModelIndex &_index) const Q_DECL_OVERRIDE;
+    int columnCount(const QModelIndex &_parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    int rowCount(const QModelIndex &_parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
-  TransactionsModel();
-  ~TransactionsModel();
+    QVariant headerData(int _section, Qt::Orientation _orientation, int _role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex &_index, int _role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    QModelIndex index(int _row, int _column, const QModelIndex &_parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QModelIndex parent(const QModelIndex &_index) const Q_DECL_OVERRIDE;
 
-  QVariant getDisplayRole(const QModelIndex& _index) const;
-  QVariant getDecorationRole(const QModelIndex& _index) const;
-  QVariant getAlignmentRole(const QModelIndex& _index) const;
-  QVariant getUserRole(const QModelIndex& _index, int _role, CryptoNote::TransactionId _transactionId,
-    const CryptoNote::WalletLegacyTransaction& _transaction, CryptoNote::TransferId _transferId,
-    const CryptoNote::WalletLegacyTransfer& _transfer, CryptoNote::DepositId _depositId, const CryptoNote::Deposit& _deposit) const;
+    QByteArray toCsv() const;
 
-  void reloadWalletTransactions();
-  void appendTransaction(CryptoNote::TransactionId _id, quint32& _row_count);
-  void appendTransaction(CryptoNote::TransactionId _id);
-  void updateWalletTransaction(CryptoNote::TransactionId _id);
-  void lastKnownHeightUpdated(quint64 _height);
-  void reset();
+  private:
+    QVector<TransactionTransferId> m_transfers;
+    QHash<CryptoNote::TransactionId, QPair<quint32, quint32>> m_transactionRow;
+
+    TransactionsModel();
+    ~TransactionsModel();
+
+    QVariant getDisplayRole(const QModelIndex &_index) const;
+    QVariant getDecorationRole(const QModelIndex &_index) const;
+    QVariant getAlignmentRole(const QModelIndex &_index) const;
+    QVariant getUserRole(const QModelIndex &_index, int _role, CryptoNote::TransactionId _transactionId,
+                         const CryptoNote::WalletLegacyTransaction &_transaction, CryptoNote::TransferId _transferId,
+                         const CryptoNote::WalletLegacyTransfer &_transfer, CryptoNote::DepositId _depositId, const CryptoNote::Deposit &_deposit) const;
+
+    void reloadWalletTransactions();
+    void appendTransaction(CryptoNote::TransactionId _id, quint32 &_row_count);
+    void appendTransaction(CryptoNote::TransactionId _id);
+    void updateWalletTransaction(CryptoNote::TransactionId _id);
+    void lastKnownHeightUpdated(quint64 _height);
+    void reset();
 };
 
 }

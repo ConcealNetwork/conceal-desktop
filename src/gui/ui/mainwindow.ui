@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1270</width>
-    <height>700</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>1270</width>
-    <height>700</height>
+    <height>650</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -39,10 +39,10 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../resources.qrc">
-    <normaloff>:/images/cryptonote</normaloff>:/images/cryptonote</iconset>
+    <normaloff>:/images/conceal-logo</normaloff>:/images/conceal-logo</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #111;
+   <string notr="true">background-color: #282d31;
 color: #ccc;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -52,7 +52,10 @@ color: #ccc;</string>
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="styleSheet">
+    <string notr="true">background-color: #111;</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -68,7 +71,7 @@ color: #ccc;</string>
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="WalletGui::WelcomeFrame" name="m_welcomeFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -76,12 +79,9 @@ color: #ccc;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <property name="lineWidth">
-       <number>0</number>
-      </property>
      </widget>
     </item>
-    <item>
+    <item row="0" column="0">
      <widget class="WalletGui::OverviewFrame" name="m_overviewFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -91,7 +91,7 @@ color: #ccc;</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="0" column="0">
      <widget class="WalletGui::ReceiveFrame" name="m_receiveFrame">
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -110,10 +110,6 @@ color: #ccc;</string>
    <property name="enabled">
     <bool>true</bool>
    </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/home-icon.png</normaloff>:/icons/home-icon.png</iconset>
-   </property>
    <property name="text">
     <string>OVERVIEW</string>
    </property>
@@ -127,40 +123,12 @@ color: #ccc;</string>
     <bool>true</bool>
    </property>
   </action>
-  <action name="m_sendAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-send.png</normaloff>:/icons/icon-send.png</iconset>
-   </property>
-   <property name="text">
-    <string>SEND</string>
-   </property>
-   <property name="statusTip">
-    <string/>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
   <action name="m_receiveAction">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="enabled">
     <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-keys.png</normaloff>:/icons/icon-keys.png</iconset>
    </property>
    <property name="text">
     <string>KEYS</string>
@@ -170,252 +138,6 @@ color: #ccc;</string>
      <family>Source Sans Pro</family>
      <pointsize>10</pointsize>
     </font>
-   </property>
-  </action>
-  <action name="m_transactionsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-tx.png</normaloff>:/icons/icon-tx.png</iconset>
-   </property>
-   <property name="text">
-    <string>TRANSACTIONS</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_exitAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Exit</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Q</string>
-   </property>
-  </action>
-  <action name="m_addressBookAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-address.png</normaloff>:/icons/icon-address.png</iconset>
-   </property>
-   <property name="text">
-    <string>ADDRESS BOOK</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_createWalletAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Create wallet</string>
-   </property>
-  </action>
-  <action name="m_openWalletAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Open wallet</string>
-   </property>
-  </action>
-  <action name="m_encryptWalletAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Encrypt wallet</string>
-   </property>
-  </action>
-  <action name="m_changePasswordAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Change password</string>
-   </property>
-   <property name="toolTip">
-    <string>Change password</string>
-   </property>
-  </action>
-  <action name="m_aboutCryptonoteAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
-  <action name="m_aboutQtAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>About Qt</string>
-   </property>
-  </action>
-  <action name="m_backupWalletAction">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Backup wallet</string>
-   </property>
-  </action>
-  <action name="m_startOnLoginAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Start on system login</string>
-   </property>
-  </action>
-  <action name="m_minimizeToTrayAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Minimize to tray</string>
-   </property>
-  </action>
-  <action name="m_closeToTrayAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Close to tray</string>
-   </property>
-  </action>
-  <action name="m_messagesAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-messages.png</normaloff>:/icons/icon-messages.png</iconset>
-   </property>
-   <property name="text">
-    <string>MESSAGES</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_sendMessageAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-sendmsg.png</normaloff>:/icons/icon-sendmsg.png</iconset>
-   </property>
-   <property name="text">
-    <string>SEND MESSAGE</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_importKeyAction">
-   <property name="text">
-    <string>Import GUI key</string>
-   </property>
-  </action>
-  <action name="m_depositsAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
-   </property>
-   <property name="text">
-    <string>DEPOSITS</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_bankingAction">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../resources.qrc">
-     <normaloff>:/icons/icon-deposit.png</normaloff>:/icons/icon-deposit.png</iconset>
-   </property>
-   <property name="text">
-    <string>BANKING</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Source Sans Pro</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="m_resetAction">
-   <property name="text">
-    <string>Reset wallet</string>
-   </property>
-   <property name="toolTip">
-    <string>Reset wallet</string>
-   </property>
-  </action>
-  <action name="m_importSecretKeysAction">
-   <property name="text">
-    <string>Import spend/view key</string>
-   </property>
-  </action>
-  <action name="m_seedAction">
-   <property name="text">
-    <string>Import mnemonic seed</string>
-   </property>
-  </action>
-  <action name="m_ConnectionAction">
-   <property name="text">
-    <string>Connection settings</string>
-   </property>
-  </action>
-  <action name="m_optimizeAction">
-   <property name="text">
-    <string>Optimize wallet</string>
-   </property>
-  </action>
-  <action name="m_viewWalletAction">
-   <property name="text">
-    <string>Import view wallet</string>
    </property>
   </action>
  </widget>
@@ -475,246 +197,6 @@ color: #ccc;</string>
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>m_createWalletAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>createWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_openWalletAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>openWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_encryptWalletAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>encryptWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_changePasswordAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>encryptWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_aboutQtAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>aboutQt()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_backupWalletAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>backupWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>449</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_aboutCryptonoteAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>about()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>459</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_startOnLoginAction</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>setStartOnLogin(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>459</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_minimizeToTrayAction</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>setMinimizeToTray(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>459</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_closeToTrayAction</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>setCloseToTray(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>459</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importKeyAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>importKey()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>459</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_resetAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>resetWallet()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>506</x>
-     <y>301</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_importSecretKeysAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>importsecretkeys()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>399</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_seedAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>importSeed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>399</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_viewWalletAction</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>importTracking()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>599</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
   <slot>createWallet()</slot>
@@ -722,7 +204,6 @@ color: #ccc;</string>
   <slot>encryptWallet()</slot>
   <slot>aboutQt()</slot>
   <slot>backupWallet()</slot>
-  <slot>about()</slot>
   <slot>setStartOnLogin(bool)</slot>
   <slot>setMinimizeToTray(bool)</slot>
   <slot>setCloseToTray(bool)</slot>

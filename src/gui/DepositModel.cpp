@@ -1,9 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-//  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2020 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,12 +10,10 @@
 #include <QSize>
 #include <QDateTime>
 #include <QFont>
-#include <QMetaEnum>
 #include <QPixmap>
 #include <QTextStream>
 
 #include "DepositModel.h"
-
 #include "TransactionsModel.h"
 #include "CurrencyAdapter.h"
 #include "NodeAdapter.h"
@@ -129,12 +124,6 @@ QVariant DepositModel::data(const QModelIndex& _index, int _role) const {
   }
 
   switch(_role) {
-case Qt::BackgroundRole:
-  if (0 == _index.row() % 2)
-      return QColor(40, 45, 49);
-  else
-      return QColor(33, 37, 41);
-
   case Qt::DisplayRole:
   case Qt::EditRole:
     return getDisplayRole(_index);

@@ -4,21 +4,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "WalletAdapter.h"
+
+#include <CryptoNoteCore/Account.h>
+#include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
+#include <Mnemonics/electrum-words.h>
+#include <Wallet/LegacyKeysImporter.h>
+#include <Wallet/WalletErrors.h>
+
 #include <QCoreApplication>
 #include <QDateTime>
-#include <QLocale>
 #include <QVector>
-#include <QMessageBox>
-#include <Common/Base58.h>
-#include <Common/Util.h>
-#include <Wallet/WalletErrors.h>
-#include <Wallet/LegacyKeysImporter.h>
-#include "Common/StringTools.h"
-#include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
+
 #include "NodeAdapter.h"
 #include "Settings.h"
-#include "WalletAdapter.h"
-#include <ITransfersContainer.h>
 
 namespace WalletGui {
 
@@ -100,6 +99,19 @@ quint64 WalletAdapter::getActualInvestmentBalance() const {
   }
 }
 
+/* Get the current maximum we can send because of dust outputs without optimizing the wallet */
+quint64 WalletAdapter::getWalletMaximum() const
+{
+  try
+  {
+    return m_wallet == nullptr ? 0 : m_wallet->getWalletMaximum();
+  }
+  catch (std::system_error&)
+  {
+    return 0;
+  }
+}
+
 quint64 WalletAdapter::getPendingInvestmentBalance() const {
   try {
     return m_wallet == nullptr ? 0 : m_wallet->pendingInvestmentBalance();
@@ -120,7 +132,7 @@ void WalletAdapter::open(const QString& _password) {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(!_password.isEmpty());
-  Q_EMIT walletStateChangedSignal(tr(""));
+  Q_EMIT walletStateChangedSignal(tr(""),"");
 
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
@@ -148,10 +160,9 @@ void WalletAdapter::createWallet() {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(false);
-  Q_EMIT walletStateChangedSignal(tr(""));
+  Q_EMIT walletStateChangedSignal(tr(""), "");
 
   m_wallet = NodeAdapter::instance().createWallet();
-  m_wallet->addObserver(this);
 
   try {
     m_wallet->initAndGenerate("");
@@ -161,11 +172,17 @@ void WalletAdapter::createWallet() {
   }
 }
 
+void WalletAdapter::addObserver()
+{
+  Q_CHECK_PTR(m_wallet);
+  m_wallet->addObserver(this);
+}
+
 void WalletAdapter::createWithKeys(const CryptoNote::AccountKeys& _keys) {
     m_wallet = NodeAdapter::instance().createWallet();
     m_wallet->addObserver(this);
     Settings::instance().setEncrypted(false);
-    Q_EMIT walletStateChangedSignal(tr("Importing keys"));
+    Q_EMIT walletStateChangedSignal(tr("Importing keys"),"");
     m_wallet->initWithKeys(_keys, "");
 }
 
@@ -231,7 +248,7 @@ bool WalletAdapter::save(const QString& _file, bool _details, bool _cache) {
       closeFile();
       return false;
     }
-    Q_EMIT walletStateChangedSignal(tr("Saving data"));
+    Q_EMIT walletStateChangedSignal(tr("Saving data"),"");
   } else {
     return false;
   }
@@ -351,6 +368,29 @@ bool WalletAdapter::getAccountKeys(CryptoNote::AccountKeys& _keys)
   }
 }
 
+bool WalletAdapter::getMnemonicSeed(std::string& _seed)
+{
+  CryptoNote::AccountKeys keys;
+  WalletAdapter::instance().getAccountKeys(keys);
+
+  /* check if the wallet is deterministic
+     generate a view key from the spend key and them compare it to the existing view key */
+  Crypto::PublicKey unused_dummy_variable;
+  Crypto::SecretKey deterministic_private_view_key;
+  CryptoNote::AccountBase::generateViewFromSpend(
+      keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
+  bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
+
+  if (deterministic_private_keys) {
+    crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, _seed, "English");
+    return true;
+  }
+  else {
+    _seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
+    return false;
+  }
+}
+
 void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers,
                                    quint64 _fee, 
                                    const QString& _paymentId, 
@@ -363,7 +403,7 @@ void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
-    Q_EMIT walletStateChangedSignal(tr("SENDING TRANSACTION"));
+    Q_EMIT walletStateChangedSignal(tr("SENDING TRANSACTION"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -387,7 +427,7 @@ void WalletAdapter::optimizeWallet() {
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
-    Q_EMIT walletStateChangedSignal(tr("OPTIMIZING WALLET"));
+    Q_EMIT walletStateChangedSignal(tr("OPTIMIZING WALLET"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -405,7 +445,7 @@ void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _tran
     lock();
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentMessageId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
-    Q_EMIT walletStateChangedSignal(tr("SENDING MESSAGE"));
+    Q_EMIT walletStateChangedSignal(tr("SENDING MESSAGE"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -416,7 +456,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   try {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
-    Q_EMIT walletStateChangedSignal(tr("CREATING DEPOSIT"));
+    Q_EMIT walletStateChangedSignal(tr("CREATING DEPOSIT"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -427,7 +467,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _dep
   try {
     lock();
     m_depositWithdrawalId = m_wallet->withdrawDeposits(_depositIds.toStdVector(), _fee);
-    Q_EMIT walletStateChangedSignal(tr("WITHDRAWING DEPOSIT"));
+    Q_EMIT walletStateChangedSignal(tr("WITHDRAWING DEPOSIT"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -471,7 +511,7 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
     Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(m_wallet->pendingInvestmentBalance());    
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress()));
     Q_EMIT reloadWalletTransactionsSignal();
-    Q_EMIT walletStateChangedSignal(tr("READY"));
+    Q_EMIT walletStateChangedSignal(tr("Ready"),"");
     QTimer::singleShot(5000, this, SLOT(updateBlockStatusText()));
     if (!QFile::exists(Settings::instance().getWalletFile())) {
       save(true, true);
@@ -497,7 +537,7 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
   if (!_error && !m_isBackupInProgress) {
     closeFile();
     renameFile(Settings::instance().getWalletFile() + ".temp", Settings::instance().getWalletFile());
-    Q_EMIT walletStateChangedSignal(tr("READY"));
+    Q_EMIT walletStateChangedSignal(tr("Ready"),"");
     Q_EMIT updateBlockStatusTextWithDelaySignal();
   } else if (m_isBackupInProgress) {
     m_isBackupInProgress = false;
@@ -511,9 +551,10 @@ void WalletAdapter::saveCompleted(std::error_code _error) {
 
 void WalletAdapter::synchronizationProgressUpdated(uint32_t _current, uint32_t _total) {
   m_isSynchronized = false;
-
   qreal syncedPercentage = (static_cast<qreal>(_current)) / _total;
-  Q_EMIT walletStateChangedSignal(QString("%1 %2% (%3/%4)").arg(tr("SYNCHRONIZING")).arg(QString::number(syncedPercentage * 100, 'f', 2)).arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0)));
+  QString status = QString("%1 (%2%)").arg(tr("Synchronizing")).arg(QString::number(syncedPercentage * 100, 'f', 2));
+  QString height = QString("%1/%2").arg(QString::number(_current, 'f', 0)).arg(QString::number(_total, 'f', 0));
+  Q_EMIT walletStateChangedSignal(status,height);
   Q_EMIT walletSynchronizationProgressUpdatedSignal(_current, _total);
 }
 
@@ -652,11 +693,11 @@ void WalletAdapter::updateBlockStatusText() {
   const QDateTime currentTime = QDateTime::currentDateTimeUtc();
   const QDateTime blockTime = NodeAdapter::instance().getLastLocalBlockTimestamp();
   quint64 blockAge = blockTime.msecsTo(currentTime);
-  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("SYNCHRONIZED") : tr("WARNING");
+  const QString statusString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? tr("Synchronized") : tr("Warning");
   const QString warningString = blockTime.msecsTo(currentTime) < LAST_BLOCK_INFO_WARNING_INTERVAL ? "" : QString("%1").arg(tr("There was a problem, please restart your wallet."));
-  const QString blockHeightString = " (" + QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0) + ")";
+  const QString blockHeightString = QString::number(NodeAdapter::instance().getLastLocalBlockHeight(),'f',0);
 
-  Q_EMIT walletStateChangedSignal(QString(statusString + blockHeightString));
+  Q_EMIT walletStateChangedSignal(statusString,blockHeightString);
 
   QTimer::singleShot(LAST_BLOCK_INFO_UPDATING_INTERVAL, this, SLOT(updateBlockStatusText()));
 }

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //  
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -19,8 +19,8 @@ namespace WalletGui {
 TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QWidget* _parent) : QDialog(_parent),
   m_ui(new Ui::TransactionDetailsDialog), m_detailsTemplate(
     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-    "</style></head><body style=\" font-family:'Poppins'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-    "<span style=\" font-weight:600;\">Status: </span>%1<br>\n"
+    "</style></head><body style=\"font-style:normal;\">\n"
+    "<span style=\" font-weight:600;\">Status: </span>%1 confirmations<br>\n"
     "<span style=\" font-weight:600;\">Date: </span>%2<br>\n"
     "<span style=\" font-weight:600;\">To: </span>%4<br>\n"
     "<span style=\" font-weight:600;\">Amount: </span>%5<br>\n"
@@ -29,6 +29,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     "<span style=\" font-weight:600;\">Transaction hash: </span>%9<br><br>\n"
     "<span style=\" font-weight:600;\">Transaction secret key: </span>%10<br><br>\n" 
     "<span style=\" font-weight:600;\">Messages: </span><br>%11<br><br>\n"
+    "<span><br>%12<br>\n"
     "</body></html>") {
   m_ui->setupUi(this);
 
@@ -36,14 +37,13 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     _index.data(TransactionsModel::ROLE_ROW).toInt());
 
   quint64 numberOfConfirmations = transactionIndex.data(TransactionsModel::ROLE_NUMBER_OF_CONFIRMATIONS).value<quint64>();
-  QString amountText = transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_AMOUNT).data().toString() + " " +
-    CurrencyAdapter::instance().getCurrencyTicker().toUpper();
+  QString amountText = transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_AMOUNT).data().toString();
   QString feeText = CurrencyAdapter::instance().formatAmount(transactionIndex.data(TransactionsModel::ROLE_FEE).value<quint64>()) + " " +
     CurrencyAdapter::instance().getCurrencyTicker().toUpper();
   QStringList messageList = _index.data(TransactionsModel::ROLE_MESSAGES).toStringList();
 
   for (quint32 i = 0; i < messageList.size(); ++i) {
-    messageList[i] = messageList[i].toHtmlEscaped().replace("\n", "<br/>");
+    messageList[i] = messageList[i].toHtmlEscaped().replace("\n", "<br>");
   }
 
   CryptoNote::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<CryptoNote::DepositId>();
@@ -59,7 +59,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
       CurrencyAdapter::instance().getCurrencyTicker().toUpper();
     QString depositInfoTemplate =
       "<span style=\" font-weight:600;\">Deposit info: </span></p><br>\n"
-      "<span style=\" font-weight:600;\">Status: </span>%1</p><br>\n"
+      "<span style=\" font-weight:600;\">Status: </span>%1 confirmations</p><br>\n"
       "<span style=\" font-weight:600;\">Amount: </span>%2</p><br>\n"
       "<span style=\" font-weight:600;\">Interest: </span>%3</p><br>\n"
       "<span style=\" font-weight:600;\">Sum: </span>%4</p><br>\n"
@@ -92,8 +92,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   }
 
   m_ui->m_detailsBrowser->setHtml(m_detailsTemplate.
-    arg(QString("%1 confirmations").
-    arg(numberOfConfirmations)).
+    arg(numberOfConfirmations).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_DATE).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_ADDRESS).data().toString()).
     arg(amountText).
@@ -101,11 +100,24 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_PAYMENT_ID).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_HASH).data().toString()).
     arg(transactionIndex.sibling(transactionIndex.row(), TransactionsModel::COLUMN_SECRETKEY).data().toString()).    
-    arg(messageList.join("<br/><br/>=========<br/><br/>")).
+    arg(messageList.join("<br><br>=========<br><br>")).
     arg(depositInfo));
+  setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
 TransactionDetailsDialog::~TransactionDetailsDialog() {
 }
+
+QList<QWidget *> TransactionDetailsDialog::getWidgets() { return this->findChildren<QWidget *>(); }
+
+QList<QPushButton *> TransactionDetailsDialog::getButtons()
+{
+  return this->findChildren<QPushButton *>();
+}
+
+QList<QLabel *> TransactionDetailsDialog::getLabels() { return this->findChildren<QLabel *>(); }
+
+void TransactionDetailsDialog::applyStyles() { this->update(); }
 
 }

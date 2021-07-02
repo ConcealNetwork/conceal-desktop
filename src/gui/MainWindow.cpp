@@ -1,21 +1,27 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2020 Conceal Network & Conceal Devs
 //
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#include "MainWindow.h"
+
+#include <Common/Base58.h>
+#include <CryptoNoteCore/Account.h>
+#include <CryptoNoteCore/CryptoNoteTools.h>
 
 #include <QCloseEvent>
 #include <QFileDialog>
 #include <QInputDialog>
-#include <QMessageBox>
 #include <QLocale>
+#include <QMessageBox>
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
 #include <QTranslator>
+#include <QAction>
+#include <QMenu>
 #include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
@@ -33,25 +39,23 @@
 #include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
 #include "AddressBookModel.h"
-#include "AnimatedLabel.h"
 #include "ChangePasswordDialog.h"
 #include "CurrencyAdapter.h"
 #include "ExitWidget.h"
 #include "ImportGUIKeyDialog.h"
-#include "importsecretkeys.h"
 #include "ImportSeedDialog.h"
-#include "importtracking.h"
-#include "OptimizationManager.h"
-#include "MainWindow.h"
-#include "MessagesModel.h"
 #include "NewPasswordDialog.h"
-#include "NodeAdapter.h"
+#include "OptimizationManager.h"
 #include "PasswordDialog.h"
+#include "MainPasswordDialog.h"
 #include "Settings.h"
+#include "ShowQRCode.h"
 #include "TranslatorManager.h"
+
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-
+#include "ImportSecretKeys.h"
+#include "ImportTracking.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
@@ -105,15 +109,12 @@ void MainWindow::connectToSignals()
 
 */
 
-  connect(m_ui->m_exitAction, &QAction::triggered, qApp, &QApplication::quit);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backupSignal, this, &MainWindow::backupWallet);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::payToSignal, this, &MainWindow::payTo);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::newWalletSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::newTransferSignal, this, &MainWindow::sendTo, Qt::QueuedConnection);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::newMessageSignal, this, &MainWindow::sendMessageTo);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::welcomeFrameSignal, this, &MainWindow::welcomeFrame);
 
-  connect(m_ui->m_welcomeFrame, &WelcomeFrame::createWalletClickedSignal, this, &MainWindow::createWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);
@@ -121,17 +122,10 @@ void MainWindow::connectToSignals()
 
   /* signals from overview frame buttons */
   connect(m_ui->m_overviewFrame, &OverviewFrame::openWalletSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::sendSignal, this, &MainWindow::sendTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::depositSignal, this, &MainWindow::depositTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupSignal, this, &MainWindow::backupTo);
   connect(m_ui->m_overviewFrame, &OverviewFrame::backupFileSignal, this, &MainWindow::backupWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::rescanSignal, this, &MainWindow::rescanTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::transactionSignal, this, &MainWindow::transactionTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::messageSignal, this, &MainWindow::messageTo);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::aboutSignal, this, &MainWindow::about);
   connect(m_ui->m_overviewFrame, &OverviewFrame::aboutQTSignal, this, &MainWindow::aboutQt);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::disclaimerSignal, this, &MainWindow::disclaimer);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::linksSignal, this, &MainWindow::links);
 
   connect(m_ui->m_overviewFrame, &OverviewFrame::qrSignal, this, &MainWindow::showQRCode);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
@@ -140,31 +134,50 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::addressBookSignal, this, &MainWindow::addressBookTo);
 
-  connect(m_ui->m_overviewFrame, &OverviewFrame::settingsSignal, this, &MainWindow::settingsTo);
   connect(m_ui->m_receiveFrame, &ReceiveFrame::backSignal, this, &MainWindow::dashboardTo);
+
+  connect(m_ui->m_overviewFrame, &OverviewFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_receiveFrame, &ReceiveFrame::notifySignal, this, &MainWindow::notify);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::notifySignal, this, &MainWindow::notify);
 }
 
 void MainWindow::initUi()
 {
-  setRemoteWindowTitle();
-
-#ifdef Q_OS_WIN32
+#ifndef QT_NO_SYSTEMTRAYICON32
   if (QSystemTrayIcon::isSystemTrayAvailable())
   {
-    m_trayIcon = new QSystemTrayIcon(QPixmap(":images/cryptonote"), this);
+    QAction* showAction = new QAction(tr("Show"), this);
+    connect(showAction, &QAction::triggered, this, &MainWindow::restoreFromTray);
+
+    QAction* quitAction = new QAction(tr("Quit Conceal Desktop"), this);
+    connect(quitAction, &QAction::triggered, qApp, &QCoreApplication::quit);
+
+    QMenu* trayIconMenu = new QMenu(this);
+    trayIconMenu->addAction(showAction);
+    trayIconMenu->addSeparator();
+    trayIconMenu->addAction(quitAction);
+
+    m_trayIcon = new QSystemTrayIcon(this);
+    m_trayIcon->setIcon(QPixmap(":/images/conceal-logo"));
+    m_trayIcon->setContextMenu(trayIconMenu);
+#ifndef Q_OS_MAC
     connect(m_trayIcon, &QSystemTrayIcon::activated, this, &MainWindow::trayActivated);
+#endif
   }
 #endif
-  m_ui->m_aboutCryptonoteAction->setText(QString(tr("About %1 Wallet")).arg(CurrencyAdapter::instance().getCurrencyDisplayName()));
+
+  if (Settings::instance().getMaximizedStatus() == "enabled") {
+    showMaximized();
+  }
+    
+  setRemoteWindowTitle();
 
   m_ui->m_overviewFrame->hide();
   m_ui->m_receiveFrame->hide();
 
   m_tabActionGroup->addAction(m_ui->m_overviewAction);
   m_tabActionGroup->addAction(m_ui->m_receiveAction);
-  m_tabActionGroup->addAction(m_ui->m_addressBookAction);
 
   m_ui->m_overviewAction->toggle();
 
@@ -172,15 +185,18 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-#ifndef Q_OS_WIN
-  m_ui->m_minimizeToTrayAction->deleteLater();
-  m_ui->m_closeToTrayAction->deleteLater();
-#endif
-
-  OptimizationManager *optimizationManager = new OptimizationManager(this);
+  // OptimizationManager *optimizationManager = new OptimizationManager(this);
+  notification = new Notification(this);
+  EditableStyle::setStyles(Settings::instance().getFontSize());
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
+void MainWindow::restoreFromTray()
+{
+  activateWindow();
+  showNormal();
+}
+
 void MainWindow::minimizeToTray(bool _on)
 {
   if (_on)
@@ -190,8 +206,6 @@ void MainWindow::minimizeToTray(bool _on)
   }
   else
   {
-    showNormal();
-    activateWindow();
     m_trayIcon->hide();
   }
 }
@@ -228,7 +242,7 @@ void MainWindow::restoreFromDock()
 
 void MainWindow::closeEvent(QCloseEvent *_event)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   if (m_isAboutToQuit)
   {
     QMainWindow::closeEvent(_event);
@@ -254,8 +268,8 @@ void MainWindow::closeEvent(QCloseEvent *_event)
   QMainWindow::closeEvent(_event);
 }
 
-#ifdef Q_OS_WIN
-void MainWindow::changeEvent(QEvent *_event)
+#ifndef QT_NO_SYSTEMTRAYICON
+void MainWindow::changeEvent(QEvent* _event)
 {
   QMainWindow::changeEvent(_event);
   if (!QSystemTrayIcon::isSystemTrayAvailable())
@@ -265,24 +279,17 @@ void MainWindow::changeEvent(QEvent *_event)
   }
   switch (_event->type())
   {
-  case QEvent::LocaleChange:
-  {
-    QString locale = QLocale::system().name();
-    locale.truncate(locale.lastIndexOf('_'));
-    loadLanguage(locale);
-  }
-  case QEvent::WindowStateChange:
-  {
-    if (Settings::instance().isMinimizeToTrayEnabled())
+    case QEvent::WindowStateChange:
     {
-      minimizeToTray(isMinimized());
+      if (Settings::instance().isMinimizeToTrayEnabled())
+      {
+        minimizeToTray(isMinimized());
+      }
+      break;
     }
-    break;
+    default:
+      break;
   }
-  default:
-    break;
-  }
-  QMainWindow::changeEvent(_event);
 }
 #endif
 
@@ -332,65 +339,24 @@ void MainWindow::delay()
     QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
 
-void MainWindow::slotLanguageChanged(QAction *action)
-{
-  if (0 != action)
-  {
-    // load the language dependant on the action content
-    QString lang = action->data().toString();
-    loadLanguage(lang);
-    // save is in settings
-    Settings::instance().setLanguage((lang));
-  }
-}
-
-void MainWindow::loadLanguage(const QString &rLanguage)
-{
-  if (m_currLang != rLanguage)
-  {
-    m_currLang = rLanguage;
-    QLocale locale = QLocale(m_currLang);
-    QLocale::setDefault(locale);
-    QString languageName = QLocale::languageToString(locale.language());
-    TranslatorManager::instance()->switchTranslator(m_translator, QString("%1.qm").arg(rLanguage));
-    TranslatorManager::instance()->switchTranslator(m_translatorQt, QString("qt_%1.qm").arg(rLanguage));
-    Settings::instance().setLanguage((m_currLang));
-    QMessageBox::information(this, tr("Language was changed"),
-                             tr("Language changed to %1. The change will take effect after restarting the wallet.").arg(languageName), QMessageBox::Ok);
-  }
-}
-
 /* ----------------------------- CREATE A NEW WALLET ------------------------------------ */
 
 void MainWindow::createWallet()
 {
+  m_ui->m_overviewFrame->hide();
+  m_ui->m_welcomeFrame->show();
+  m_ui->m_welcomeFrame->createWallet();
+}
 
-  QString filePath = QFileDialog::getSaveFileName(this, tr("New wallet file"),
-
-#ifdef Q_OS_WIN
-                                                  QApplication::applicationDirPath(),
-#else
-                                                  QDir::homePath(),
-#endif
-                                                  tr("Wallets (*.wallet)"));
-
-  if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
-  {
-    filePath.append(".wallet");
-  }
-  if (!filePath.isEmpty() && !QFile::exists(filePath))
-  {
-    if (WalletAdapter::instance().isOpen())
-    {
-      WalletAdapter::instance().close();
-    }
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWallet();
-  }
+void MainWindow::welcomeFrame() {
+  m_ui->m_overviewFrame->hide();
+  m_ui->m_welcomeFrame->show();
+  m_ui->m_welcomeFrame->nextThree();
 }
 
 void MainWindow::openWallet()
 {
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
   QString walletFile = Settings::instance().getWalletFile();
   std::string wallet = walletFile.toStdString();
@@ -428,6 +394,8 @@ void MainWindow::openWallet()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().open("");
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
+  m_ui->m_overviewFrame->dashboardClicked();
 }
 
 void MainWindow::closeWallet()
@@ -439,6 +407,8 @@ void MainWindow::closeWallet()
 
 void MainWindow::importKey()
 {
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
   ImportGUIKeyDialog dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -450,6 +420,7 @@ void MainWindow::importKey()
 
     if (keyString.isEmpty() || filePath.isEmpty())
     {
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -510,6 +481,7 @@ void MainWindow::importKey()
       WalletAdapter::instance().createWithKeys(keys);
     }
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::backupWallet()
@@ -595,33 +567,20 @@ void MainWindow::aboutQt()
 void MainWindow::setStartOnLogin(bool _on)
 {
   Settings::instance().setStartOnLoginEnabled(_on);
-  m_ui->m_startOnLoginAction->setChecked(Settings::instance().isStartOnLoginEnabled());
 }
 
 void MainWindow::setMinimizeToTray(bool _on)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   Settings::instance().setMinimizeToTrayEnabled(_on);
 #endif
 }
 
 void MainWindow::setCloseToTray(bool _on)
 {
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
   Settings::instance().setCloseToTrayEnabled(_on);
 #endif
-}
-
-void MainWindow::about()
-{
-}
-
-void MainWindow::disclaimer()
-{
-}
-
-void MainWindow::links()
-{
 }
 
 void MainWindow::showMessage(const QString &_text, QtMsgType _type)
@@ -641,28 +600,20 @@ void MainWindow::showMessage(const QString &_text, QtMsgType _type)
 
 /* ----------------------------- PASSWORD PROMPT ------------------------------------ */
 
-void MainWindow::askForWalletPassword(bool _error)
-{
+void MainWindow::askForWalletPassword(bool _error) {
   /* hide the welcome frame when waiting for the password */
   m_ui->m_welcomeFrame->hide();
 
-  PasswordDialog dlg(_error, this);
-
+  MainPasswordDialog dlg(_error, this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
 
-  if (dlg.exec() == QDialog::Accepted)
-  {
-
+  if (dlg.exec() == QDialog::Accepted) {
     QString password = dlg.getPassword();
     WalletAdapter::instance().open(password);
-  }
-  else
-  {
-
-    m_ui->m_welcomeFrame->raise();
-    m_ui->m_welcomeFrame->show();
+  } else {
+    welcomeFrame();
   }
 }
 
@@ -671,16 +622,11 @@ void MainWindow::walletOpened(bool _error, const QString &_error_text)
   m_ui->m_welcomeFrame->hide();
   if (!_error)
   {
-
-    m_ui->m_backupWalletAction->setEnabled(true);
-    m_ui->m_resetAction->setEnabled(true);
-
     QList<QAction *> tabActions = m_tabActionGroup->actions();
     Q_FOREACH (auto action, tabActions)
     {
       action->setEnabled(true);
     }
-
     m_ui->m_overviewAction->trigger();
     m_ui->m_overviewFrame->show();
     checkTrackingMode();
@@ -698,20 +644,12 @@ void MainWindow::walletOpened(bool _error, const QString &_error_text)
 
 void MainWindow::walletClosed()
 {
-
-  /* actions */
-  m_ui->m_backupWalletAction->setEnabled(false);
-  m_ui->m_encryptWalletAction->setEnabled(false);
-  m_ui->m_changePasswordAction->setEnabled(false);
-  m_ui->m_resetAction->setEnabled(false);
-
   /* frames */
   m_ui->m_overviewFrame->hide();
   m_ui->m_welcomeFrame->show();
 
   /* labels */
   QList<QAction *> tabActions = m_tabActionGroup->actions();
-
   Q_FOREACH (auto action, tabActions)
   {
     action->setEnabled(false);
@@ -732,11 +670,7 @@ void MainWindow::checkTrackingMode()
   }
 }
 
-void MainWindow::replyTo(const QModelIndex &_index)
-{
-}
-
-void MainWindow::payTo(const QModelIndex &_index)
+void MainWindow::payTo(const QModelIndex& _index)
 {
   if (_index.data(AddressBookModel::ROLE_PAYMENTID).toString() != "")
   {
@@ -752,11 +686,6 @@ void MainWindow::payTo(const QModelIndex &_index)
   m_ui->m_overviewFrame->raise();
 }
 
-void MainWindow::sendTo()
-{
-  m_ui->m_sendAction->trigger();
-}
-
 void MainWindow::dashboardTo()
 {
   m_ui->m_overviewFrame->show();
@@ -764,40 +693,9 @@ void MainWindow::dashboardTo()
   m_ui->m_overviewFrame->raise();
 }
 
-void MainWindow::settingsTo()
-{
-  m_ui->m_overviewFrame->hide();
-}
-
-void MainWindow::depositTo()
-{
-  m_ui->m_depositsAction->trigger();
-}
-
 void MainWindow::backupTo()
 {
-
   m_ui->m_receiveAction->trigger();
-}
-
-void MainWindow::transactionTo()
-{
-  m_ui->m_transactionsAction->trigger();
-}
-
-void MainWindow::addressBookTo()
-{
-  m_ui->m_addressBookAction->trigger();
-}
-
-void MainWindow::messageTo()
-{
-  m_ui->m_messagesAction->trigger();
-}
-
-void MainWindow::sendMessageTo()
-{
-  m_ui->m_sendMessageAction->trigger();
 }
 
 void MainWindow::rescanTo()
@@ -809,8 +707,9 @@ void MainWindow::rescanTo()
 
 void MainWindow::importsecretkeys()
 {
-
-  importSecretKeys dlg(this);
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
+  ImportSecretKeys dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
@@ -823,14 +722,21 @@ void MainWindow::importsecretkeys()
 
     if (spendKey.isEmpty() || filePath.isEmpty())
     {
-
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
     if (!filePath.endsWith(".wallet"))
     {
-
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     std::string private_spend_key_string = spendKey.toStdString();
@@ -849,12 +755,13 @@ void MainWindow::importsecretkeys()
                          size) ||
         size != sizeof(private_spend_key_hash))
     {
-
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
     if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash))
     {
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
       return;
     }
 
@@ -884,11 +791,13 @@ void MainWindow::importsecretkeys()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::importSeed()
 {
-
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
   ImportSeed dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
@@ -900,7 +809,15 @@ void MainWindow::importSeed()
     QString filePath = dlg.getFilePath();
     if (seed.isEmpty() || filePath.isEmpty())
     {
+      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
+      return;
+    }
 
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
       return;
     }
 
@@ -950,6 +867,7 @@ void MainWindow::importSeed()
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::importTracking()
@@ -975,6 +893,14 @@ void MainWindow::importTracking()
     if (!filePath.endsWith(".wallet"))
     {
       filePath.append(".wallet");
+    }
+
+    if (QFile::exists(filePath))
+    {
+      QMessageBox::warning(
+          &MainWindow::instance(), QObject::tr("Error"),
+          tr("The wallet file already exists. Please change the wallet name and try again."));
+      return;
     }
 
     CryptoNote::AccountKeys keys;
@@ -1043,12 +969,33 @@ void MainWindow::showQRCode(const QString &_address)
   }
 }
 
-#ifdef Q_OS_WIN
+#ifndef QT_NO_SYSTEMTRAYICON
 void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 {
-  showNormal();
-  m_trayIcon->hide();
+  if (_reason == QSystemTrayIcon::Trigger)
+  {
+    restoreFromTray();
+  }
 }
 #endif
 
-} // namespace WalletGui
+void MainWindow::notify(const QString& message) {
+  notification->notify(message);
+}
+
+QList<QWidget *> MainWindow::getWidgets() { return m_ui->centralwidget->findChildren<QWidget *>(); }
+
+QList<QPushButton *> MainWindow::getButtons()
+{
+  return m_ui->centralwidget->findChildren<QPushButton *>();
+}
+
+QList<QLabel *> MainWindow::getLabels() { return m_ui->centralwidget->findChildren<QLabel *>(); }
+
+void MainWindow::applyStyles()
+{
+  QApplication::setFont(EditableStyle::currentFont);
+  m_ui->centralwidget->update();
+}
+
+}  // namespace WalletGui

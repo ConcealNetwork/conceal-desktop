@@ -2,7 +2,7 @@
  * qrencode - QR Code encoder
  *
  * Header for test use
- * Copyright (C) 2006-2011 Kentaro Fukuchi <kentaro@fukuchi.org>
+ * Copyright (C) 2006-2017 Kentaro Fukuchi <kentaro@fukuchi.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef __QRENCODE_INNER_H__
-#define __QRENCODE_INNER_H__
+#ifndef QRENCODE_INNER_H
+#define QRENCODE_INNER_H
 
 /**
  * This header file includes definitions for test use.
@@ -32,8 +32,8 @@
 
 typedef struct {
 	int dataLength;
-	unsigned char *data;
 	int eccLength;
+	unsigned char *data;
 	unsigned char *ecc;
 } RSblock;
 
@@ -85,4 +85,4 @@ extern QRcode *QRcode_encodeMask(QRinput *input, int mask);
 extern QRcode *QRcode_encodeMaskMQR(QRinput *input, int mask);
 extern QRcode *QRcode_new(int version, int width, unsigned char *data);
 
-#endif /* __QRENCODE_INNER_H__ */
+#endif /* QRENCODE_INNER_H */

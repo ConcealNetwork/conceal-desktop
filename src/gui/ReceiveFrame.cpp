@@ -1,25 +1,21 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
 // Copyright (c) 2018-2019 Conceal Network & Conceal Devs
-//  
-// Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include "ReceiveFrame.h"
+
+#include <Common/StringTools.h>
+
 #include <QClipboard>
 #include <QMessageBox>
+#include <string>
 
-#include <Common/Base58.h>
-#include "Common/StringTools.h"
-#include "ReceiveFrame.h"
-#include "CryptoNoteCore/Account.h"
-#include "Mnemonics/electrum-words.h"
-#include "CurrencyAdapter.h"
 #include "WalletAdapter.h"
 #include "ui_receiveframe.h"
-
-#include <string>
+#include "MainWindow.h"
 
 namespace WalletGui {
 
@@ -44,26 +40,11 @@ void ReceiveFrame::walletOpened(int _error) {
     return;
   }
 
+  std::string mnemonic_seed;
+  WalletAdapter::instance().getMnemonicSeed(mnemonic_seed);
+
   CryptoNote::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
-  std::string secretKeysData = std::string(reinterpret_cast<char*>(&keys.spendSecretKey), sizeof(keys.spendSecretKey)) + std::string(reinterpret_cast<char*>(&keys.viewSecretKey), sizeof(keys.viewSecretKey));
-  QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), std::string(reinterpret_cast<char*>(&keys), sizeof(keys))));
-  //QString privateKeys = QString::fromStdString(Tools::Base58::encode_addr(CurrencyAdapter::instance().getAddressPrefix(), secretKeysData));
-
-  /* check if the wallet is deterministic
-     generate a view key from the spend key and them compare it to the existing view key */
-  Crypto::PublicKey unused_dummy_variable;
-  Crypto::SecretKey deterministic_private_view_key;
-  std::string mnemonic_seed = "";
-  CryptoNote::AccountBase::generateViewFromSpend(keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
-  bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
-  
-  if (deterministic_private_keys) {
-    crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, mnemonic_seed, "English");
-  } else {
-    mnemonic_seed = "Your wallet does not support the use of a mnemonic seed. Please create a new wallet.";
-  }
-
   CryptoNote::AccountKeys trkeys;
   WalletAdapter::instance().getAccountKeys(trkeys);
   trkeys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
@@ -91,22 +72,22 @@ void ReceiveFrame::backClicked() {
 
 void ReceiveFrame::copyGUIClicked() {
     QApplication::clipboard()->setText(m_ui->m_guiKey->toPlainText());
-    QMessageBox::information(this, tr("Tracking Key"), "Tracking key copied to clipboard"); 
+    Q_EMIT notifySignal("Tracking key copied to clipboard"); 
 }
 
 void ReceiveFrame::copySpendKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_spendKey->toPlainText());
-    QMessageBox::information(this, tr("Private Spend-Key"), "Private spend-key copied to clipboard"); 
+    Q_EMIT notifySignal("Private spend-key copied to clipboard");
 }
 
 void ReceiveFrame::copyViewKeyClicked() {
     QApplication::clipboard()->setText(m_ui->m_viewKey->toPlainText());
-    QMessageBox::information(this, tr("Private View-Key"), "Private view-key copied to clipboard");    
+    Q_EMIT notifySignal("Private view-key copied to clipboard");    
 }
 
 void ReceiveFrame::copySeedClicked() {
     QApplication::clipboard()->setText(m_ui->m_seed->toPlainText());
-    QMessageBox::information(this, tr("Seed"), "Seed copied to clipboard");
+    Q_EMIT notifySignal("Seed copied to clipboard");
 }
 
 void ReceiveFrame::showSeed() {

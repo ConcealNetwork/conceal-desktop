@@ -1,14 +1,22 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
+//
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #pragma once
 
+#include <IWalletLegacy.h>
+
+#ifdef HAVE_CHART
+#include <QtCharts>
+#endif
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
-#include <IWalletLegacy.h>
+
+#include "EditableStyle.h"
 
 namespace Ui
 {
@@ -27,7 +35,7 @@ class VisibleMessagesModel;
 class AddressProvider;
 class ExchangeProvider;
 
-class OverviewFrame : public QFrame
+class OverviewFrame : public QFrame, EditableStyle
 {
   Q_OBJECT
   Q_DISABLE_COPY(OverviewFrame)
@@ -42,9 +50,6 @@ public:
   QModelIndex index;
   void scrollToTransaction(const QModelIndex& _index);
 
-public slots:
-  void onCustomContextMenu(const QPoint &point);
-
 public Q_SLOTS:
   void addABClicked();
   void editABClicked();
@@ -52,6 +57,14 @@ public Q_SLOTS:
   void copyABPaymentIdClicked();
   void deleteABClicked();
   void payToABClicked();
+  void dashboardClicked();
+
+protected:
+  void resizeEvent(QResizeEvent *event) override;
+  QList<QWidget *> getWidgets() override;
+  QList<QPushButton *> getButtons() override;
+  QList<QLabel *> getLabels() override;
+  void applyStyles() override;
 
 private:
   QNetworkAccessManager m_networkManager;
@@ -65,8 +78,7 @@ private:
   ExchangeProvider *m_exchangeProvider;
   QString remote_node_fee_address;
   quint64 totalBalance = 0;
-  float ccxusd = 0;
-  float ccxeur = 0;
+  float ccxfiat = 0;
   QString wallet_address;
   quint64 remote_node_fee;
   quint64 m_actualBalance = 0;
@@ -76,16 +88,21 @@ private:
   QMenu* contextMenu;
   bool paymentIDRequired = false;
   QString exchangeName = "";
+#ifdef HAVE_CHART
+  QChartView *m_chartView;
+#else
+  QLabel *m_chart;
+#endif
 
 
-  void onPriceFound(const QString& _btcccx, const QString& _usdccx, const QString& _usdbtc, const QString& _usdmarketcap, const QString& _usdvolume, const QString &_eurccx, const QString &_eurbtc, const QString &_eurmarketcap, const QString &_eurvolume);
+  void onPriceFound(QJsonObject &result);
   void onExchangeFound(QString &_exchange);
   void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
   void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
   void downloadFinished(QNetworkReply *reply);
   void layoutChanged();
   void loadChart();
-  void setStatusBarText(const QString &_text);
+  void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
   void calculateFee();
   void walletSynchronized(int _error, const QString &_error_text);
@@ -105,12 +122,14 @@ private:
   void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
-  bool checkWalletPassword();
+  bool checkWalletPassword(bool _error=false);
+  bool askForWalletPassword(bool _error = false);
+  void change();
+  void goToWelcomeFrame();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
   Q_SLOT void transactionHistoryClicked();
-  Q_SLOT void dashboardClicked();
   Q_SLOT void inboxClicked();
   Q_SLOT void newWalletClicked();
   Q_SLOT void closeWalletClicked();
@@ -147,6 +166,7 @@ private:
   Q_SLOT void closeToTrayClicked();
   Q_SLOT void optimizeClicked();
   Q_SLOT void setPercentage25();
+  Q_SLOT void startMaximizedClicked();
   Q_SLOT void setPercentage50();
   Q_SLOT void setPercentage100();    
   Q_SLOT void autoOptimizeClicked(); 
@@ -169,12 +189,13 @@ private:
   Q_SLOT void stexClicked();
   Q_SLOT void hotbitClicked();
   Q_SLOT void tradeogreClicked();
-  Q_SLOT void qtradeClicked();
+  Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
+  Q_SLOT void addressEditTextChanged(QString text);
+  Q_SLOT void qtChartsLicenseClicked();
+  Q_SLOT void openSslLicenseClicked();
 
 Q_SIGNALS:
-  void sendSignal();
-  void depositSignal();
   void backupSignal();
   void backupFileSignal();  
   void rescanSignal();
@@ -182,26 +203,15 @@ Q_SIGNALS:
   void newWalletSignal();
   void closeWalletSignal();
   void qrSignal(const QString &_address);
-  void newMessageSignal();
-  void newTransferSignal();
-  void transactionSignal();
-  void messageSignal();
-  void optimizeSignal();
   void resetWalletSignal();
-  void importSignal();
-  void aboutSignal();
   void aboutQTSignal();
-  void disclaimerSignal();
-  void settingsSignal();
-  void linksSignal();
   void importSeedSignal();
   void importGUIKeySignal();
   void importTrackingKeySignal();
   void importSecretKeysSignal();
   void encryptWalletSignal();
-  void connectionSettingsSignal();
-  void languageSettingsSignal();
-  void addressBookSignal();
-  void payToSignal(const QModelIndex& _index);  
+  void payToSignal(const QModelIndex& _index);
+  void notifySignal(const QString& message);
+  void welcomeFrameSignal();
 };
 } // namespace WalletGui

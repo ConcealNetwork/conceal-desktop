@@ -8,7 +8,7 @@
 !define COMP_NAME "Conceal Network"
 !define WEB_SITE "https://conceal.network"
 !define VERSION "06.01.02.00"
-!define COPYRIGHT "Conceal Network 2019"
+!define COPYRIGHT "Conceal Network 2021"
 !define DESCRIPTION "Conceal Wallet"
 !define MAIN_APP_EXE "CONCEAL-GUI.exe"
 !define INSTALL_TYPE "SetShellVarContext all"
@@ -46,6 +46,16 @@ InstallDir "$PROGRAMFILES\Conceal Wallet"
 
 !define MUI_ABORTWARNING
 !define MUI_UNABORTWARNING
+
+!define MUI_ICON "src\images\appicon\conceal.ico"
+!define MUI_UNICON "src\images\appicon\conceal.ico"
+
+!define MUI_WELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "src\images\installer\conceal-welcome.bmp"
+
+!define MUI_HEADERIMAGE
+!define MUI_HEADERIMAGE_RIGHT
+!define MUI_HEADERIMAGE_BITMAP "src\images\installer\conceal-header.bmp"
 
 !insertmacro MUI_PAGE_WELCOME
 

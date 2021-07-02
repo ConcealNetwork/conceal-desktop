@@ -27,17 +27,14 @@ int RecentTransactionsModel::columnCount(const QModelIndex& _parent) const {
 }
 
 QVariant RecentTransactionsModel::data(const QModelIndex& _index, int _role) const {
-  if(_role == Qt::DecorationRole) {
+  if(_role == Qt::DecorationRole || _role == Qt::BackgroundRole) {
     return QVariant();
-  }
-  if(_role == Qt::BackgroundRole) {
-    return QColor(40, 45, 49);
   }
   return QSortFilterProxyModel::data(_index, _role);
 }
 
 bool RecentTransactionsModel::filterAcceptsRow(int _sourceRow, const QModelIndex& _sourceParent) const {
-  return _sourceRow < 3;
+  return _sourceRow < 25;
 }
 
 

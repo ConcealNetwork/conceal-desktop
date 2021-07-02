@@ -14,8 +14,8 @@
    <string>Saving data</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #212529;
-color: #e5e5e5;
+   <string notr="true">background-color: #282d31;
+color: #ddd;
 border: 0px;</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">

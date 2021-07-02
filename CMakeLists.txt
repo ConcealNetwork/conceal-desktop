@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 2.8)
 include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
 
+if(APPLE)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")  
+endif(APPLE)
+
 project(${CN_PROJECT_NAME})
 
 execute_process(COMMAND git log -1 --pretty=format:%h
@@ -22,6 +26,7 @@ include_directories(${CMAKE_BINARY_DIR}
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(Qt5Charts)
 
 set(Boost_NO_BOOST_CMAKE ON)
 set(Boost_USE_STATIC_LIBS ON)
@@ -75,7 +80,8 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/StringOutputStream.cpp
   cryptonote/src/Common/StringView.cpp
   cryptonote/src/Common/VectorOutputStream.cpp
-  cryptonote/src/crypto/chacha.c
+  cryptonote/src/crypto/chacha8.c
+  cryptonote/src/crypto/soft_aes.hpp
   cryptonote/src/crypto/crypto-ops-data.c
   cryptonote/src/crypto/crypto-ops.c
   cryptonote/src/crypto/crypto.cpp
@@ -85,6 +91,16 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/tree-hash.c
   cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
+  cryptonote/src/crypto/pow_hash/arm8_neon.hpp
+  cryptonote/src/crypto/pow_hash/arm_vfp.hpp
+  cryptonote/src/crypto/pow_hash/aux_hash.c
+  cryptonote/src/crypto/pow_hash/aux_hash.h
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_arm.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_intel.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash.hpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_intel_avx2.cpp
+  cryptonote/src/crypto/pow_hash/cn_slow_hash_soft.cpp
+  cryptonote/src/crypto/pow_hash/hw_detect.hpp
   cryptonote/src/CryptoNoteCore/BlockchainIndices.cpp
   cryptonote/src/CryptoNoteCore/BlockchainMessages.cpp
   cryptonote/src/CryptoNoteCore/BlockIndex.cpp
@@ -194,7 +210,7 @@ if (WIN32)
 
   set(PLATFORM_DIR Windows)
   set(BUILD_PLATFORM WIN32)
-  set(BUILD_RESOURCES src/cryptonotewallet.rc)
+  set(BUILD_RESOURCES conceal.rc)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
@@ -218,8 +234,8 @@ elseif (UNIX)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 ${ARCH_FLAG} -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
-    set(MACOSX_BUNDLE_ICON_FILE cryptonote.icns)
-    set(APPLICATION_ICON src/images/cryptonote.icns)
+    set(MACOSX_BUNDLE_ICON_FILE conceal.icns)
+    set(APPLICATION_ICON src/images/appicon/conceal.icns)
     set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
 
     set(BUILD_PLATFORM MACOSX_BUNDLE)
@@ -253,8 +269,10 @@ target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${QTMAIN} ${CRYPTONOTE_
 
 if (APPLE)
   qt5_use_modules(${PROJECT_NAME} PrintSupport)
+  add_definitions(/DHAVE_ROTR)
 elseif (UNIX)
   target_link_libraries(${PROJECT_NAME} -lpthread)
+  add_definitions(/DHAVE_ROTR)
 elseif (WIN32)
   target_link_libraries(${PROJECT_NAME} Imm32 Iphlpapi Winmm)
 endif (APPLE)
@@ -263,6 +281,10 @@ endif (APPLE)
 target_link_libraries(${PROJECT_NAME} Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} Qt5::Network)
+if(Qt5Charts_FOUND)
+add_definitions(/DHAVE_CHART)
+target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
+endif(Qt5Charts_FOUND)
 
 # Installation
 
@@ -278,12 +300,12 @@ if (APPLE)
 elseif (UNIX)
     install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
     install(FILES src/concealwallet.desktop DESTINATION share/applications)
-    install(FILES src/images/cryptonote.png DESTINATION share/pixmaps RENAME conceal.png)
-    install(FILES copyright DESTINATION share/doc/concealwallet)
+    install(FILES src/images/conceal.png DESTINATION share/pixmaps)
+    install(FILES COPYRIGHT DESTINATION share/doc/concealwallet)
 
 	SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 	SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
-	SET(CPACK_PACKAGE_ICON src/images/cryptonote.png)
+	SET(CPACK_PACKAGE_ICON src/images/conceal.png)
 	
     if (NOT PACKRPM)
         set(CPACK_GENERATOR DEB)

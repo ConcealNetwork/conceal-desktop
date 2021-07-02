@@ -15,7 +15,7 @@ static const char *AN = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
 
 #define drand(__scale__) ((__scale__) * (double)rand() / ((double)RAND_MAX + 1.0))
 
-int fill8bitString(void)
+static int fill8bitString(void)
 {
 	int len, i;
 
@@ -28,7 +28,7 @@ int fill8bitString(void)
 	return len;
 }
 
-int fill8bitData(void)
+static int fill8bitData(void)
 {
 	int len, i;
 
@@ -41,7 +41,7 @@ int fill8bitData(void)
 	return len;
 }
 
-int fillANData(void)
+static int fillANData(void)
 {
 	int len, i;
 
@@ -54,7 +54,7 @@ int fillANData(void)
 	return len;
 }
 
-void test_encode_an(int num)
+static void test_encode_an(int num)
 {
 	int ret;
 	int len;
@@ -84,7 +84,9 @@ void test_encode_an(int num)
 	ret = memcmp(qrdata->data, data, len);
 	if(ret != 0) {
 		unsigned char *frame, *p;
-		int x,y, c;
+		unsigned int x;
+		int y,c;
+		int dataLength, eccLength;
 		QRinput *input;
 		QRcode *origcode;
 		BitStream *bstream;
@@ -140,7 +142,8 @@ void test_encode_an(int num)
 
 		snprintf(buf, 256, "monkey-orig-bits-%d.dat", num);
 		fp = fopen(buf, "w");
-		bstream = QRinput_mergeBitStream(input);
+		bstream = BitStream_new();
+		QRinput_mergeBitStream(input, bstream);
 		c = 0;
 		for(x=0; x<bstream->length; x++) {
 			fputc((bstream->data[x]&1)?'1':'0', fp);
@@ -158,7 +161,9 @@ void test_encode_an(int num)
 
 		snprintf(buf, 256, "monkey-result-bits-%d.dat", num);
 		fp = fopen(buf, "w");
-		p = QRcode_extractBits(qrcode, &y);
+		bstream = QRcode_extractBits(qrcode, &dataLength, &eccLength);
+		y = bstream->length;
+		p = bstream->data;
 		c = 0;
 		for(x=0; x<y; x++) {
 			fputc((p[x]&1)?'1':'0', fp);
@@ -171,13 +176,13 @@ void test_encode_an(int num)
 			}
 		}
 		fclose(fp);
-		free(p);
+		BitStream_free(bstream);
 	}
 	QRdata_free(qrdata);
 	QRcode_free(qrcode);
 }
 
-void monkey_encode_an(int loop)
+static void monkey_encode_an(int loop)
 {
 	int i;
 
@@ -189,7 +194,7 @@ void monkey_encode_an(int loop)
 }
 
 
-void test_split_an(int num)
+static void test_split_an(int num)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -240,7 +245,7 @@ void test_split_an(int num)
 	QRinput_free(input);
 }
 
-void monkey_split_an(int loop)
+static void monkey_split_an(int loop)
 {
 	int i;
 
@@ -251,7 +256,7 @@ void monkey_split_an(int loop)
 	}
 }
 
-void test_encode_8(int num)
+static void test_encode_8(int num)
 {
 	QRcode *qrcode;
 	QRdata *qrdata;
@@ -282,7 +287,7 @@ void test_encode_8(int num)
 	QRcode_free(qrcode);
 }
 
-void monkey_encode_8(int loop)
+static void monkey_encode_8(int loop)
 {
 	int i;
 
@@ -293,7 +298,7 @@ void monkey_encode_8(int loop)
 	}
 }
 
-void test_split_8(int num)
+static void test_split_8(int num)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -344,7 +349,7 @@ void test_split_8(int num)
 	QRinput_free(input);
 }
 
-void monkey_split_8(int loop)
+static void monkey_split_8(int loop)
 {
 	int i;
 
@@ -355,7 +360,7 @@ void monkey_split_8(int loop)
 	}
 }
 
-void test_encode_kanji(int num)
+static void test_encode_kanji(int num)
 {
 	QRcode *qrcode;
 	QRdata *qrdata;
@@ -386,7 +391,7 @@ void test_encode_kanji(int num)
 	QRcode_free(qrcode);
 }
 
-void monkey_encode_kanji(int loop)
+static void monkey_encode_kanji(int loop)
 {
 	int i;
 
@@ -397,7 +402,7 @@ void monkey_encode_kanji(int loop)
 	}
 }
 
-void test_split_kanji(int num)
+static void test_split_kanji(int num)
 {
 	QRinput *input;
 	QRinput_List *list;
@@ -448,7 +453,7 @@ void test_split_kanji(int num)
 	QRinput_free(input);
 }
 
-void monkey_split_kanji(int loop)
+static void monkey_split_kanji(int loop)
 {
 	int i;
 
@@ -459,7 +464,7 @@ void monkey_split_kanji(int loop)
 	}
 }
 
-void test_split_structure(int num)
+static void test_split_structure(int num)
 {
 	QRinput *input;
 	QRinput_Struct *s;
@@ -536,7 +541,7 @@ void test_split_structure(int num)
 	QRcode_List_free(codes);
 }
 
-void monkey_split_structure(int loop)
+static void monkey_split_structure(int loop)
 {
 	int i;
 
@@ -560,8 +565,6 @@ int main(int argc, char **argv)
 	monkey_split_kanji(loop);
 	monkey_encode_kanji(loop);
 	monkey_split_structure(loop);
-
-	QRcode_clearCache();
 
 	return 0;
 }
