@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string notr="true"/>
   </property>
   <property name="styleSheet">
    <string notr="true">color: #ddd;
@@ -205,7 +205,7 @@ text-align: left;
             <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
            </property>
            <property name="text">
-            <string>COPY PAYMENTID</string>
+            <string>COPY PAYMENT ID</string>
            </property>
           </widget>
          </item>
@@ -1253,7 +1253,7 @@ border-radius: 2px;</string>
             <string notr="true">padding: 3px; border: 1px solid #444; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
-            <string>0.000000</string>
+            <string notr="true">0.000000</string>
            </property>
           </widget>
          </item>
@@ -1751,7 +1751,7 @@ border: none;</string>
     </string>
                </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2021 - Conceal.Network&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+                <string notr="true">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;LEGAL DISCLAIMER&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2021 - Conceal.Network&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;SOFTWARE LICENSES&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;QtCharts&lt;/span&gt;&lt;/p&gt;
@@ -2816,7 +2816,7 @@ font-weight:bold;</string>
                       </sizepolicy>
                      </property>
                      <property name="text">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)</string>
                      </property>
                      <property name="wordWrap">
                       <bool>true</bool>
@@ -3249,7 +3249,7 @@ p, li { white-space: pre-wrap; }
         border: none; margin: 10px;</string>
            </property>
            <property name="text">
-            <string>0</string>
+            <string notr="true">0</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -3385,7 +3385,7 @@ border-radius: 2px;</string>
 border: none;</string>
               </property>
               <property name="text">
-               <string>0</string>
+               <string notr="true">0</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4968,7 +4968,7 @@ color: orange;
 }</string>
               </property>
               <property name="text">
-               <string>Github</string>
+               <string>GitHub</string>
               </property>
              </widget>
             </item>
@@ -6119,7 +6119,7 @@ padding: 5px;</string>
                      <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>0.001000 CCX</string>
+                     <string notr="true">0.001000 CCX</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -6215,7 +6215,7 @@ padding: 5px;</string>
                      <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>interestLabel</string>
+                     <string notr="true">interestLabel</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -6279,7 +6279,7 @@ padding: 5px;</string>
                      <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>21900 blocks</string>
+                     <string notr="true">21900 blocks</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -6317,7 +6317,7 @@ padding: 5px;</string>
                      <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
                     </property>
                     <property name="text">
-                     <string>interestLabel</string>
+                     <string notr="true">interestLabel</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -8859,7 +8859,7 @@ color: orange;
 font-size: 14px;</string>
            </property>
            <property name="text">
-            <string>STATUS</string>
+            <string notr="true">STATUS</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -8935,7 +8935,7 @@ color: orange;
 font-size: 14px;</string>
            </property>
            <property name="text">
-            <string>WALLET NAME</string>
+            <string notr="true">WALLET NAME</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -8969,7 +8969,7 @@ color: orange;
 font-size: 14px;</string>
            </property>
            <property name="text">
-            <string>HEIGHT</string>
+            <string notr="true">HEIGHT</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -9036,7 +9036,7 @@ color: orange;
 font-size: 14px;</string>
            </property>
            <property name="text">
-            <string>FIAT TOTAL</string>
+            <string notr="true">FIAT TOTAL</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -9147,7 +9147,7 @@ font-size: 14px;
 QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
            </property>
            <property name="text">
-            <string>CCX TOTAL</string>
+            <string notr="true">CCX TOTAL</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -9196,15 +9196,15 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>bankingBox</zorder>
-     <zorder>newMessageBox</zorder>
      <zorder>messageBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
-     <zorder>aboutBox</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>sendBox</zorder>
+     <zorder>newMessageBox</zorder>
+     <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>aboutBox</zorder>
     </widget>
    </item>
   </layout>
@@ -10475,7 +10475,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
