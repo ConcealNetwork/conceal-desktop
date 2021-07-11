@@ -57,12 +57,8 @@
     <name>DepositDetailsDialog</name>
     <message>
         <location filename="../gui/ui/depositdetailsdialog.ui" line="20"/>
-        <source>Deposit Details</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/depositdetailsdialog.ui" line="62"/>
-        <source>DEPOSIT DETAILS</source>
+        <source>Deposit Details</source>
         <translation></translation>
     </message>
     <message>
@@ -88,38 +84,38 @@ Please wait...</source>
 <context>
     <name>ImportGUIKeyDialog</name>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="20"/>
-        <location filename="../gui/ui/importguikeydialog.ui" line="92"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="26"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="98"/>
         <source>Import GUI Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="144"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="150"/>
         <source>GUI Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="192"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="198"/>
         <source>Wallet Path</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="199"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="205"/>
         <source>Where would you like to save your wallet?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="319"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="325"/>
         <source>IMPORT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="367"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="373"/>
         <source>CANCEL</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="108"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="114"/>
         <source>Recreate your wallet with the GUI key</source>
         <translation></translation>
     </message>
@@ -127,43 +123,43 @@ Please wait...</source>
 <context>
     <name>ImportSecretKeys</name>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
-        <location filename="../gui/ui/importsecretkeys.ui" line="82"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="20"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="88"/>
         <source>Import Private Keys</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="100"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="106"/>
         <source>Recreate your wallet with the secret spend and view keys</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="140"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="146"/>
         <source>Private Spend Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="189"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="195"/>
         <source>Private View Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="238"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="244"/>
         <source>Wallet Path</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="245"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="251"/>
         <source>Where would you like to save your wallet?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="380"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="386"/>
         <source>IMPORT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="434"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="440"/>
         <source>CANCEL</source>
         <translation></translation>
     </message>
@@ -171,38 +167,38 @@ Please wait...</source>
 <context>
     <name>ImportSeed</name>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="103"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="109"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
-        <location filename="../gui/ui/importseeddialog.ui" line="85"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="20"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="91"/>
         <source>Import Mnemonic Seed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="140"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="146"/>
         <source>Mnemonic Seed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="192"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="198"/>
         <source>Wallet Path</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="199"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="205"/>
         <source>Where would you like to save your wallet?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="324"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="330"/>
         <source>IMPORT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="372"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="378"/>
         <source>CANCEL</source>
         <translation></translation>
     </message>
@@ -210,38 +206,38 @@ Please wait...</source>
 <context>
     <name>ImportTracking</name>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="94"/>
+        <location filename="../gui/ui/importtracking.ui" line="100"/>
         <source>Import a tracking wallet (view-only)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="14"/>
-        <location filename="../gui/ui/importtracking.ui" line="76"/>
+        <location filename="../gui/ui/importtracking.ui" line="20"/>
+        <location filename="../gui/ui/importtracking.ui" line="82"/>
         <source>Import Tracking Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="131"/>
+        <location filename="../gui/ui/importtracking.ui" line="137"/>
         <source>Tracking Key</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="180"/>
+        <location filename="../gui/ui/importtracking.ui" line="186"/>
         <source>Wallet Path</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="187"/>
+        <location filename="../gui/ui/importtracking.ui" line="193"/>
         <source>Where would you like to save your wallet?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="357"/>
+        <location filename="../gui/ui/importtracking.ui" line="363"/>
         <source>CANCEL</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="309"/>
+        <location filename="../gui/ui/importtracking.ui" line="315"/>
         <source>IMPORT</source>
         <translation></translation>
     </message>
@@ -309,7 +305,7 @@ Please wait...</source>
     <message>
         <location filename="../gui/ui/mainwindow.ui" line="38"/>
         <source>Conceal Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -318,104 +314,100 @@ Please wait...</source>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="14"/>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="42"/>
         <source>Message Details</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="70"/>
         <source>Block height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="96"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="135"/>
         <source>Transaction hash</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="148"/>
         <source>Message size (bytes)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="197"/>
         <source>SAVE TO FILE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/messagedetailsdialog.ui" line="273"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>NewAddressDialog</name>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="14"/>
-        <source>New address</source>
-        <translation type="unfinished"></translation>
+        <source>New Address</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="32"/>
         <source>Address:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="48"/>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="77"/>
         <source>Payment ID:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="144"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="109"/>
         <source>CANCEL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>NewPasswordDialog</name>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="20"/>
-        <source>Enter password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="65"/>
-        <location filename="../gui/ui/newpassworddialog.ui" line="101"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="26"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="71"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="107"/>
         <source>New Password</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="167"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="173"/>
         <source>Confirm Password</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="215"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="221"/>
         <source>Password not confirmed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="248"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="254"/>
         <source>SAVE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="278"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="284"/>
         <source>CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1944,34 +1936,25 @@ Public License instead of this License.  But first, please read
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../gui/ui/passworddialog.ui" line="38"/>
-        <source>Enter password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/passworddialog.ui" line="120"/>
         <source>Type your password...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/passworddialog.ui" line="150"/>
         <source>CONTINUE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/passworddialog.ui" line="181"/>
         <source>Incorrect Password</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
+        <location filename="../gui/ui/passworddialog.ui" line="38"/>
         <location filename="../gui/ui/passworddialog.ui" line="208"/>
         <source>Please Enter Your Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/passworddialog.ui" line="233"/>
-        <source>currentWallet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1979,7 +1962,7 @@ Public License instead of this License.  But first, please read
     <message>
         <location filename="../gui/OverviewFrame.cpp" line="99"/>
         <source>blocks</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="724"/>
@@ -1990,38 +1973,38 @@ Public License instead of this License.  But first, please read
         <location filename="../gui/WelcomeFrame.cpp" line="173"/>
         <location filename="../main.cpp" line="78"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="84"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../main.cpp" line="104"/>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../UpdateManager.cpp" line="96"/>
         <source>Conceal Wallet Update</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../UpdateManager.cpp" line="97"/>
         <source>There is an update to the wallet available.
 Would you like to go to the download page?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/SplashScreen.cpp" line="25"/>
         <source>STARTING WALLET</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="191"/>
         <source>Seed confirmation error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2165,52 +2148,31 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ShowQRCode</name>
     <message>
-        <location filename="../gui/ui/showqrcode.ui" line="14"/>
+        <location filename="../gui/ui/showqrcode.ui" line="20"/>
         <source>Wallet Address QR Code</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>TransactionDetailsDialog</name>
     <message>
         <location filename="../gui/ui/transactiondetailsdialog.ui" line="20"/>
-        <source>Transaction details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/ui/transactiondetailsdialog.ui" line="62"/>
-        <source>TRANSACTION DETAILS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/transactiondetailsdialog.ui" line="82"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Transaction Details</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/transactiondetailsdialog.ui" line="125"/>
         <source>CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>TransactionFrame</name>
     <message>
         <location filename="../gui/ui/transactionframe.ui" line="26"/>
-        <source>Frame</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/transactionframe.ui" line="123"/>
-        <location filename="../gui/ui/transactionframe.ui" line="161"/>
-        <location filename="../gui/ui/transactionframe.ui" line="190"/>
-        <location filename="../gui/ui/transactionframe.ui" line="219"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <source>Transaction</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2218,7 +2180,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../UpdateManager.cpp" line="81"/>
         <source>Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2226,17 +2188,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/AddressBookModel.cpp" line="87"/>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/AddressBookModel.cpp" line="89"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/AddressBookModel.cpp" line="91"/>
         <source>Payment ID</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2244,7 +2206,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/ChangePasswordDialog.cpp" line="43"/>
         <source>Password not confirmed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2348,92 +2310,92 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/DepositModel.cpp" line="81"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="83"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="85"/>
         <source>Interest</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="87"/>
         <source>Sum</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="89"/>
         <source>Rate</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="91"/>
         <source>Term</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="93"/>
         <source>Unlock height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="95"/>
         <source>Unlock time</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="97"/>
         <source>Creating transaction</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="99"/>
         <source>Creating height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="101"/>
         <source>Creating time</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="103"/>
         <source>Spending transaction</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="105"/>
         <source>Spending height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="107"/>
         <source>Spending time</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="109"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="169"/>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="171"/>
         <source>Unlocked</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/DepositModel.cpp" line="173"/>
         <source>Spent</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2441,12 +2403,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/ImportGUIKeyDialog.cpp" line="37"/>
         <source>Wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ImportGUIKeyDialog.cpp" line="39"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2454,12 +2416,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/ImportSecretKeys.cpp" line="39"/>
         <source>Wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ImportSecretKeys.cpp" line="41"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2467,12 +2429,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/ImportSeedDialog.cpp" line="36"/>
         <source>Wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ImportSeedDialog.cpp" line="38"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2480,12 +2442,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/ImportTracking.cpp" line="35"/>
         <source>Wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/ImportTracking.cpp" line="37"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2493,7 +2455,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/MainPasswordDialog.cpp" line="24"/>
         <source>Conceal Desktop %1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2501,70 +2463,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/MainWindow.cpp" line="482"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="375"/>
         <source>Open .wallet/.keys file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="150"/>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="153"/>
         <source>Quit Conceal Desktop</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="377"/>
         <source>Wallet (*.wallet *.keys)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="480"/>
         <source>Backup wallet to...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="497"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="497"/>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="578"/>
         <source>Wallet error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="581"/>
         <source>Wallet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="725"/>
         <location filename="../gui/MainWindow.cpp" line="807"/>
         <location filename="../gui/MainWindow.cpp" line="889"/>
         <source>The wallet file already exists. Please change the wallet name and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="876"/>
         <source>Tracking key is not valid</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="876"/>
         <source>The tracking key you entered is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="908"/>
@@ -2572,27 +2534,27 @@ Are you sure?</source>
         <location filename="../gui/MainWindow.cpp" line="918"/>
         <location filename="../gui/MainWindow.cpp" line="923"/>
         <source>Key is not valid</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="908"/>
         <source>The public spend key you entered is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="913"/>
         <source>The public view key you entered is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="918"/>
         <source>The private spend key you entered is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MainWindow.cpp" line="923"/>
         <source>The private view key you entered is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2600,22 +2562,22 @@ Are you sure?</source>
     <message>
         <location filename="../gui/MessageDetailsDialog.cpp" line="57"/>
         <source>Save message</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessageDetailsDialog.cpp" line="61"/>
         <source>File already exists</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessageDetailsDialog.cpp" line="62"/>
         <source>Warning! File already exists and will be overwritten, are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessageDetailsDialog.cpp" line="68"/>
         <source>File error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2623,47 +2585,47 @@ Are you sure?</source>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="78"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="80"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="82"/>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="84"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="86"/>
-        <source>Transaction hash</source>
-        <translation type="unfinished"></translation>
+        <source>Transaction Hash</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/MessagesModel.cpp" line="90"/>
+        <source>Message Size</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="88"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/MessagesModel.cpp" line="90"/>
-        <source>Message size</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="162"/>
         <source>Out</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="164"/>
         <source>In</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2671,7 +2633,7 @@ Are you sure?</source>
     <message>
         <location filename="../gui/NewPasswordDialog.cpp" line="34"/>
         <source>Password not confirmed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2909,27 +2871,27 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     <message>
         <location filename="../gui/TransactionFrame.cpp" line="59"/>
         <source>New Block</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionFrame.cpp" line="56"/>
         <source>Incoming TX</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionFrame.cpp" line="63"/>
         <source>Outgoing TX</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionFrame.cpp" line="67"/>
         <source>Optimization</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionFrame.cpp" line="71"/>
         <source>New Deposit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2937,72 +2899,67 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="122"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="124"/>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="126"/>
         <source>Address</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="128"/>
         <source>Amount</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="130"/>
         <source>Fee</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="132"/>
         <source>Height</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="134"/>
         <source>Payment ID</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="136"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="138"/>
         <source>Transaction Hash</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="229"/>
         <source>unconfirmed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="229"/>
         <source>confirmations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/TransactionsModel.cpp" line="230"/>
-        <source>%1 / %2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="293"/>
         <source>me (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/TransactionsModel.cpp" line="297"/>
         <source>(n/a)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3010,73 +2967,83 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     <message>
         <location filename="../WalletAdapter.cpp" line="185"/>
         <source>Importing keys</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="251"/>
         <source>Saving data</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="135"/>
+        <source>Opening wallet</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="163"/>
+        <source>Creating wallet</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="406"/>
-        <source>SENDING TRANSACTION</source>
-        <translation type="unfinished"></translation>
+        <source>Sending transaction</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="430"/>
+        <source>Optimizing wallet</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="448"/>
-        <source>SENDING MESSAGE</source>
-        <translation type="unfinished"></translation>
+        <source>Sending message</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="459"/>
+        <source>Creating deposit</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="470"/>
+        <source>Withdrawing deposit</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="514"/>
         <location filename="../WalletAdapter.cpp" line="540"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="555"/>
         <source>Synchronizing</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="705"/>
         <source>Synchronized</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="705"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="430"/>
-        <source>OPTIMIZING WALLET</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="459"/>
-        <source>CREATING DEPOSIT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="470"/>
-        <source>WITHDRAWING DEPOSIT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="696"/>
         <source>Unencrypted</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="699"/>
         <source>Encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="706"/>
         <source>There was a problem, please restart your wallet.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3084,33 +3051,33 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="124"/>
         <source>Unable to create the wallet.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="131"/>
         <source>Unable to create a new wallet at the path provided. 
 Please choose another location.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="138"/>
         <source>New wallet file</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="140"/>
         <source>Wallets (*.wallet)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="174"/>
         <source>You must confirm that you have safely stored the mnemonic seed and understand that the Conceal Team cannot restore this wallet and is not responsible for loss of funds.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/WelcomeFrame.cpp" line="192"/>
         <source>The words entered does not match the seed. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>

@@ -64,13 +64,9 @@
     <name>DepositDetailsDialog</name>
     <message>
         <location filename="../gui/ui/depositdetailsdialog.ui" line="20"/>
+        <location filename="../gui/ui/depositdetailsdialog.ui" line="62"/>
         <source>Deposit Details</source>
         <translation>存款明细</translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/depositdetailsdialog.ui" line="62"/>
-        <source>DEPOSIT DETAILS</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/ui/depositdetailsdialog.ui" line="123"/>
@@ -100,38 +96,38 @@ Please wait...</source>
         <translation type="vanished">导入 GUI KEY</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="20"/>
-        <location filename="../gui/ui/importguikeydialog.ui" line="92"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="26"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="98"/>
         <source>Import GUI Key</source>
         <translation>导入 GUI KEY</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="144"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="150"/>
         <source>GUI Key</source>
         <translation>GUI KEY</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="192"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="198"/>
         <source>Wallet Path</source>
         <translation>钱包路径</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="199"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="205"/>
         <source>Where would you like to save your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="319"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="325"/>
         <source>IMPORT</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="367"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="373"/>
         <source>CANCEL</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importguikeydialog.ui" line="108"/>
+        <location filename="../gui/ui/importguikeydialog.ui" line="114"/>
         <source>Recreate your wallet with the GUI key</source>
         <translation>根据GUI KEY重新创建你的钱包</translation>
     </message>
@@ -143,43 +139,43 @@ Please wait...</source>
         <translation type="obsolete">对话框</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="14"/>
-        <location filename="../gui/ui/importsecretkeys.ui" line="82"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="20"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="88"/>
         <source>Import Private Keys</source>
         <translation type="unfinished">导入密钥</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="100"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="106"/>
         <source>Recreate your wallet with the secret spend and view keys</source>
         <translation type="unfinished">根据支出密钥与查看密钥重新创建你的钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="140"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="146"/>
         <source>Private Spend Key</source>
         <translation type="unfinished">支出私钥</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="189"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="195"/>
         <source>Private View Key</source>
         <translation type="unfinished">查看私钥</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="238"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="244"/>
         <source>Wallet Path</source>
         <translation type="unfinished">钱包路径</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="245"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="251"/>
         <source>Where would you like to save your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="380"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="386"/>
         <source>IMPORT</source>
         <translation type="unfinished">导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importsecretkeys.ui" line="434"/>
+        <location filename="../gui/ui/importsecretkeys.ui" line="440"/>
         <source>CANCEL</source>
         <translation type="unfinished">取消</translation>
     </message>
@@ -191,38 +187,38 @@ Please wait...</source>
         <translation type="vanished">导入::助记词种子</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="103"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="109"/>
         <source>Recreate your wallet with the 25 word mnemonic seed</source>
         <translation>采用25个助记词种子重新创建你的钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="14"/>
-        <location filename="../gui/ui/importseeddialog.ui" line="85"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="20"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="91"/>
         <source>Import Mnemonic Seed</source>
         <translation>导入助记词种子</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="140"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="146"/>
         <source>Mnemonic Seed</source>
         <translation>助记词种子</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="192"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="198"/>
         <source>Wallet Path</source>
         <translation>钱包路径</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="199"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="205"/>
         <source>Where would you like to save your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="324"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="330"/>
         <source>IMPORT</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importseeddialog.ui" line="372"/>
+        <location filename="../gui/ui/importseeddialog.ui" line="378"/>
         <source>CANCEL</source>
         <translation>取消</translation>
     </message>
@@ -234,38 +230,38 @@ Please wait...</source>
         <translation type="vanished">导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="94"/>
+        <location filename="../gui/ui/importtracking.ui" line="100"/>
         <source>Import a tracking wallet (view-only)</source>
         <translation>导入仅查看钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="14"/>
-        <location filename="../gui/ui/importtracking.ui" line="76"/>
+        <location filename="../gui/ui/importtracking.ui" line="20"/>
+        <location filename="../gui/ui/importtracking.ui" line="82"/>
         <source>Import Tracking Key</source>
         <translation>跟踪KEY</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="131"/>
+        <location filename="../gui/ui/importtracking.ui" line="137"/>
         <source>Tracking Key</source>
         <translation>跟踪KEY</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="180"/>
+        <location filename="../gui/ui/importtracking.ui" line="186"/>
         <source>Wallet Path</source>
         <translation>钱包路径</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="187"/>
+        <location filename="../gui/ui/importtracking.ui" line="193"/>
         <source>Where would you like to save your wallet?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="309"/>
+        <location filename="../gui/ui/importtracking.ui" line="315"/>
         <source>IMPORT</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/importtracking.ui" line="357"/>
+        <location filename="../gui/ui/importtracking.ui" line="363"/>
         <source>CANCEL</source>
         <translation>取消</translation>
     </message>
@@ -533,9 +529,13 @@ Please wait...</source>
 <context>
     <name>NewAddressDialog</name>
     <message>
-        <location filename="../gui/ui/newaddressdialog.ui" line="14"/>
         <source>New address</source>
-        <translation>新地址</translation>
+        <translation type="vanished">新地址</translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/newaddressdialog.ui" line="14"/>
+        <source>New Address</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/ui/newaddressdialog.ui" line="32"/>
@@ -566,33 +566,33 @@ Please wait...</source>
 <context>
     <name>NewPasswordDialog</name>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="20"/>
         <source>Enter password</source>
-        <translation>输入密码</translation>
+        <translation type="vanished">输入密码</translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="65"/>
-        <location filename="../gui/ui/newpassworddialog.ui" line="101"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="26"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="71"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="107"/>
         <source>New Password</source>
         <translation>新密码</translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="167"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="173"/>
         <source>Confirm Password</source>
         <translation>确认密码</translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="215"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="221"/>
         <source>Password not confirmed</source>
         <translation>密码未确认</translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="248"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="254"/>
         <source>SAVE</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../gui/ui/newpassworddialog.ui" line="278"/>
+        <location filename="../gui/ui/newpassworddialog.ui" line="284"/>
         <source>CLOSE</source>
         <translation>关闭</translation>
     </message>
@@ -2279,9 +2279,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PasswordDialog</name>
     <message>
-        <location filename="../gui/ui/passworddialog.ui" line="38"/>
         <source>Enter password</source>
-        <translation>输入密码</translation>
+        <translation type="vanished">输入密码</translation>
     </message>
     <message>
         <location filename="../gui/ui/passworddialog.ui" line="120"/>
@@ -2299,14 +2298,14 @@ p, li { white-space: pre-wrap; }
         <translation>错误密码</translation>
     </message>
     <message>
+        <location filename="../gui/ui/passworddialog.ui" line="38"/>
         <location filename="../gui/ui/passworddialog.ui" line="208"/>
         <source>Please Enter Your Password</source>
         <translation>输入密码</translation>
     </message>
     <message>
-        <location filename="../gui/ui/passworddialog.ui" line="233"/>
         <source>currentWallet</source>
-        <translation>当前钱包</translation>
+        <translation type="vanished">当前钱包</translation>
     </message>
 </context>
 <context>
@@ -2505,7 +2504,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">钱包地址 :: 二维码</translation>
     </message>
     <message>
-        <location filename="../gui/ui/showqrcode.ui" line="14"/>
+        <location filename="../gui/ui/showqrcode.ui" line="20"/>
         <source>Wallet Address QR Code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2513,22 +2512,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TransactionDetailsDialog</name>
     <message>
-        <location filename="../gui/ui/transactiondetailsdialog.ui" line="20"/>
         <source>Transaction details</source>
-        <translation>交易详细信息</translation>
+        <translation type="vanished">交易详细信息</translation>
     </message>
     <message>
+        <location filename="../gui/ui/transactiondetailsdialog.ui" line="20"/>
         <location filename="../gui/ui/transactiondetailsdialog.ui" line="62"/>
-        <source>TRANSACTION DETAILS</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/transactiondetailsdialog.ui" line="82"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Transaction Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2540,17 +2530,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TransactionFrame</name>
     <message>
-        <location filename="../gui/ui/transactionframe.ui" line="26"/>
         <source>Frame</source>
-        <translation>Frame</translation>
+        <translation type="vanished">Frame</translation>
     </message>
     <message>
-        <location filename="../gui/ui/transactionframe.ui" line="123"/>
-        <location filename="../gui/ui/transactionframe.ui" line="161"/>
-        <location filename="../gui/ui/transactionframe.ui" line="190"/>
-        <location filename="../gui/ui/transactionframe.ui" line="219"/>
         <source>TextLabel</source>
-        <translation>文本标签</translation>
+        <translation type="vanished">文本标签</translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/transactionframe.ui" line="26"/>
+        <source>Transaction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3041,8 +3031,17 @@ Are you sure?</source>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="86"/>
+        <source>Transaction Hash</source>
+        <translation type="unfinished">交易哈希</translation>
+    </message>
+    <message>
+        <location filename="../gui/MessagesModel.cpp" line="90"/>
+        <source>Message Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Transaction hash</source>
-        <translation>交易哈希</translation>
+        <translation type="vanished">交易哈希</translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="88"/>
@@ -3050,9 +3049,8 @@ Are you sure?</source>
         <translation>金额</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="90"/>
         <source>Message size</source>
-        <translation>消息大小</translation>
+        <translation type="vanished">消息大小</translation>
     </message>
     <message>
         <location filename="../gui/MessagesModel.cpp" line="162"/>
@@ -3476,11 +3474,6 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="230"/>
-        <source>%1 / %2</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../gui/TransactionsModel.cpp" line="293"/>
         <source>me (%1)</source>
         <translation>我(%1)</translation>
@@ -3504,9 +3497,43 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation>保存数据</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="406"/>
         <source>SENDING TRANSACTION</source>
-        <translation>发送中</translation>
+        <translation type="vanished">发送中</translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="135"/>
+        <source>Opening wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="163"/>
+        <source>Creating wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="406"/>
+        <source>Sending transaction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="430"/>
+        <source>Optimizing wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="448"/>
+        <source>Sending message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="459"/>
+        <source>Creating deposit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../WalletAdapter.cpp" line="470"/>
+        <source>Withdrawing deposit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="514"/>
@@ -3534,9 +3561,8 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">优化中</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="448"/>
         <source>SENDING MESSAGE</source>
-        <translation>正在发送消息</translation>
+        <translation type="vanished">正在发送消息</translation>
     </message>
     <message>
         <source>Creating</source>
@@ -3545,21 +3571,6 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     <message>
         <source>Withdrawing</source>
         <translation type="vanished">取出中</translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="430"/>
-        <source>OPTIMIZING WALLET</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="459"/>
-        <source>CREATING DEPOSIT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="470"/>
-        <source>WITHDRAWING DEPOSIT</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>READY</source>

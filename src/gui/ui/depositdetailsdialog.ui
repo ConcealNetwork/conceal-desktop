@@ -59,7 +59,7 @@ border: 0px;
    </string>
      </property>
      <property name="text">
-      <string>DEPOSIT DETAILS</string>
+      <string>Deposit Details</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

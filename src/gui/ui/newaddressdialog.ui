@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New address</string>
+   <string>New Address</string>
   </property>
   <property name="styleSheet">
    <string notr="true">color: #ddd; background-color: #282d31; </string>
