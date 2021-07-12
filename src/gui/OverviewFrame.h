@@ -126,6 +126,7 @@ private:
   bool askForWalletPassword(bool _error = false);
   void change();
   void goToWelcomeFrame();
+  void disableAddressBookButtons();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();

@@ -145,7 +145,7 @@ namespace WalletGui
     m_ui->m_addressBookView->setSortingEnabled(true);
     m_ui->m_addressBookView->sortByColumn(0, Qt::AscendingOrder);
 
-    //connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
+    connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
 
     m_ui->m_addressBookView->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -290,6 +290,7 @@ namespace WalletGui
     m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
     m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
     m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
+    disableAddressBookButtons();
 
     walletSynced = false;
 
@@ -2016,7 +2017,6 @@ namespace WalletGui
   {
     int row = m_ui->m_addressBookView->currentIndex().row();
     AddressBookModel::instance().removeAddress(row);
-    m_ui->b1_copyPaymentIdButton->setEnabled(false);
     currentAddressChanged(m_ui->m_addressBookView->currentIndex());
   }
 
@@ -2040,10 +2040,22 @@ namespace WalletGui
   /* Toggle states of buttons in the address book when a user clicks on an address */
   void OverviewFrame::currentAddressChanged(const QModelIndex &_index)
   {
-    m_ui->b1_copyAddressButton_2->setEnabled(_index.isValid());
-    m_ui->b1_deleteAddressButton->setEnabled(_index.isValid());
-    m_ui->b1_editAddressButton->setEnabled(_index.isValid());
-    m_ui->b1_copyPaymentIdButton->setEnabled(!_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
+    m_ui->b1_copyContactAddressButton->setEnabled(_index.isValid());
+    m_ui->b1_copyContactPaymentIdButton->setEnabled(
+        !_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
+    m_ui->b1_payToButton->setEnabled(_index.isValid());
+    m_ui->b1_editContactButton->setEnabled(_index.isValid());
+    m_ui->b1_deleteContactButton->setEnabled(_index.isValid());
+  }
+
+  /* Disable buttons in the address book when no contact is selected */
+  void OverviewFrame::disableAddressBookButtons()
+  {
+    m_ui->b1_copyContactAddressButton->setEnabled(false);
+    m_ui->b1_copyContactPaymentIdButton->setEnabled(false);
+    m_ui->b1_payToButton->setEnabled(false);
+    m_ui->b1_editContactButton->setEnabled(false);
+    m_ui->b1_deleteContactButton->setEnabled(false);
   }
 
   /* Open URL's when contact us / stay informed buttons are clicked */

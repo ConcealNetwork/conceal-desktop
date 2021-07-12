@@ -147,7 +147,7 @@ text-align: left;
           <widget class="QGroupBox" name="addressBookButtons">
            <layout class="QHBoxLayout" name="horizontalLayout_12">
             <item>
-             <widget class="QPushButton" name="b1_copyAddressButton_2">
+             <widget class="QPushButton" name="b1_copyContactAddressButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -180,7 +180,7 @@ text-align: left;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="b1_copyPaymentIdButton">
+             <widget class="QPushButton" name="b1_copyContactPaymentIdButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -279,7 +279,7 @@ text-align: left;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="b1_editAddressButton">
+             <widget class="QPushButton" name="b1_editContactButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -312,7 +312,7 @@ text-align: left;
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="b1_deleteAddressButton">
+             <widget class="QPushButton" name="b1_deleteContactButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -9211,8 +9211,8 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>bankingBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>addressBookBox</zorder>
     </widget>
    </item>
   </layout>
@@ -9702,7 +9702,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
    </hints>
   </connection>
   <connection>
-   <sender>b1_copyAddressButton_2</sender>
+   <sender>b1_copyContactAddressButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>copyABClicked()</slot>
@@ -9718,7 +9718,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
    </hints>
   </connection>
   <connection>
-   <sender>b1_copyPaymentIdButton</sender>
+   <sender>b1_copyContactPaymentIdButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>copyABPaymentIdClicked()</slot>
@@ -9766,7 +9766,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
    </hints>
   </connection>
   <connection>
-   <sender>b1_editAddressButton</sender>
+   <sender>b1_editContactButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>editABClicked()</slot>
@@ -9782,7 +9782,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
    </hints>
   </connection>
   <connection>
-   <sender>b1_deleteAddressButton</sender>
+   <sender>b1_deleteContactButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
    <slot>deleteABClicked()</slot>
@@ -10499,7 +10499,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
