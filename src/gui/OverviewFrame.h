@@ -194,6 +194,7 @@ private:
   Q_SLOT void addressEditTextChanged(QString text);
   Q_SLOT void qtChartsLicenseClicked();
   Q_SLOT void openSslLicenseClicked();
+  Q_SLOT void refreshDataClicked();
 
 Q_SIGNALS:
   void backupSignal();

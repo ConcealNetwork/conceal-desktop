@@ -533,6 +533,13 @@ namespace WalletGui
     m_ui->groupBox->update();
   }
 
+  void OverviewFrame::refreshDataClicked()
+  {
+    m_priceProvider->getPrice();
+    loadChart();
+    Q_EMIT notifySignal(tr("Data updated"));
+  }
+
   /* Load the price chart on the overview screen */
   void OverviewFrame::loadChart()
   {
@@ -673,6 +680,10 @@ namespace WalletGui
     axisY->setLabelsColor(chartColor);
     axisY->setLinePenColor(chartColor);
     axisY->setGridLineColor(chartColor);
+
+    m_ui->m_dataSource->setText(
+        tr("Market data from coingecko.com - Last updated: %2")
+            .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss")));
 
     m_chartView->setChart(chart);
 #else
