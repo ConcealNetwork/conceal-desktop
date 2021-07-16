@@ -358,8 +358,14 @@ text-align: left;
            <property name="styleSheet">
             <string notr="true"/>
            </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
            <property name="sizeAdjustPolicy">
-            <enum>QAbstractScrollArea::AdjustToContents</enum>
+            <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
            </property>
            <property name="alternatingRowColors">
             <bool>true</bool>
@@ -370,14 +376,26 @@ text-align: left;
            <property name="rootIsDecorated">
             <bool>false</bool>
            </property>
+           <property name="uniformRowHeights">
+            <bool>true</bool>
+           </property>
+           <property name="itemsExpandable">
+            <bool>true</bool>
+           </property>
            <property name="sortingEnabled">
             <bool>true</bool>
            </property>
+           <attribute name="headerMinimumSectionSize">
+            <number>60</number>
+           </attribute>
            <attribute name="headerDefaultSectionSize">
             <number>150</number>
            </attribute>
+           <attribute name="headerShowSortIndicator" stdset="0">
+            <bool>true</bool>
+           </attribute>
            <attribute name="headerStretchLastSection">
-            <bool>false</bool>
+            <bool>true</bool>
            </attribute>
           </widget>
          </item>
@@ -2998,6 +3016,9 @@ text-align: left;
            <property name="midLineWidth">
             <number>0</number>
            </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
@@ -3031,8 +3052,11 @@ text-align: left;
            <property name="expandsOnDoubleClick">
             <bool>true</bool>
            </property>
-           <attribute name="headerCascadingSectionResizes">
-            <bool>false</bool>
+           <attribute name="headerMinimumSectionSize">
+            <number>60</number>
+           </attribute>
+           <attribute name="headerDefaultSectionSize">
+            <number>150</number>
            </attribute>
            <attribute name="headerShowSortIndicator" stdset="0">
             <bool>true</bool>
@@ -10499,7 +10523,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

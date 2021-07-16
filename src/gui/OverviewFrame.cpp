@@ -32,7 +32,7 @@
 #include "MainPasswordDialog.h"
 #include "MessageDetailsDialog.h"
 #include "MessagesModel.h"
-#include "NewAddressDialog.h"
+#include "ContactDialog.h"
 #include "NodeAdapter.h"
 #include "OverviewFrame.h"
 #include "PasswordDialog.h"
@@ -140,10 +140,9 @@ namespace WalletGui
     m_ui->setupUi(this);
 
     m_ui->m_addressBookView->setModel(&AddressBookModel::instance());
-    m_ui->m_addressBookView->header()->setStretchLastSection(false);
-    m_ui->m_addressBookView->header()->setSectionResizeMode(1, QHeaderView::Stretch);
-    m_ui->m_addressBookView->setSortingEnabled(true);
-    m_ui->m_addressBookView->sortByColumn(0, Qt::AscendingOrder);
+    m_ui->m_addressBookView->sortByColumn(AddressBookModel::COLUMN_LABEL, Qt::AscendingOrder);
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_ADDRESS, 1000);
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_PAYMENTID, 200);
 
     connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
 
@@ -1259,7 +1258,7 @@ namespace WalletGui
 
     /* Check payment id validity */
     paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-    if (!isValidPaymentId(paymentIdString))
+    if (!WalletAdapter::isValidPaymentId(paymentIdString))
     {
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
       return;
@@ -1348,17 +1347,6 @@ namespace WalletGui
       clearAllClicked();
       dashboardClicked();
     }
-  }
-
-  /* Check if the entered payment ID is valid */
-  bool OverviewFrame::isValidPaymentId(const QByteArray &_paymentIdString)
-  {
-    if (_paymentIdString.isEmpty())
-    {
-      return true;
-    }
-    QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
-    return (paymentId.size() == sizeof(Crypto::Hash)) && (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
   }
 
   /* Open address book */
@@ -1898,104 +1886,21 @@ namespace WalletGui
 
   void OverviewFrame::addABClicked()
   {
-    NewAddressDialog dlg(&MainWindow::instance());
-    if (dlg.exec() == QDialog::Accepted)
-    {
-      QString label = dlg.getLabel();
-      QString address = dlg.getAddress();
-      QByteArray paymentid = dlg.getPaymentID().toUtf8();
-      if (!CurrencyAdapter::instance().validateAddress(address))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-        return;
-      }
-
-      if (!isValidPaymentId(paymentid))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-        return;
-      }
-
-      QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-      QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-      if (label == contactLabel)
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-        //label = QString(label + "%1").arg(label.toInt()+1);
-        NewAddressDialog dlg(&MainWindow::instance());
-        dlg.setEditLabel(label);
-        dlg.setEditAddress(address);
-        dlg.setEditPaymentId(paymentid);
-        if (dlg.exec() == QDialog::Accepted)
-        {
-          QString label = dlg.getLabel();
-          QString address = dlg.getAddress();
-          QByteArray paymentid = dlg.getPaymentID().toUtf8();
-          if (!CurrencyAdapter::instance().validateAddress(address))
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-            return;
-          }
-
-          if (!isValidPaymentId(paymentid))
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-            return;
-          }
-
-          QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-          QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-          if (label == contactLabel)
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-            return;
-          }
-          AddressBookModel::instance().addAddress(label, address, paymentid);
-        }
-        return;
-      }
-
-      AddressBookModel::instance().addAddress(label, address, paymentid);
-    }
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
+    ContactDialog dlg(&MainWindow::instance());
+    dlg.exec();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::editABClicked()
   {
     m_ui->darkness->show();
     m_ui->darkness->raise();
-    NewAddressDialog dlg(&MainWindow::instance());
-    dlg.setWindowTitle(QString(tr("Edit contact")));
-    dlg.setEditLabel(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_LABEL).toString());
-    dlg.setEditAddress(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
-    dlg.setEditPaymentId(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
+    ContactDialog dlg(&MainWindow::instance());
+    dlg.edit(m_ui->m_addressBookView->currentIndex());
     if (dlg.exec() == QDialog::Accepted)
     {
-      QString label = dlg.getLabel();
-      QString address = dlg.getAddress();
-      QByteArray paymentid = dlg.getPaymentID().toUtf8();
-      m_ui->darkness->hide();
-      if (!CurrencyAdapter::instance().validateAddress(address))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-        return;
-      }
-
-      if (!isValidPaymentId(paymentid))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-        return;
-      }
-
-      QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-      QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-      if (label == contactLabel)
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-        return;
-      }
-
-      AddressBookModel::instance().addAddress(label, address, paymentid);
-
       deleteABClicked();
     }
     m_ui->darkness->hide();

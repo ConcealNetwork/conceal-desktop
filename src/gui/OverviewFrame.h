@@ -115,7 +115,6 @@ private:
   void showCurrentWalletName();
   void syncInProgressMessage();
   void walletActualBalanceUpdated(quint64 _balance);
-  static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
   void onAddressFound(const QString &_address);
   void updatePortfolio();
