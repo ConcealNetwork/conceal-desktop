@@ -197,15 +197,15 @@ namespace WalletGui
     labels = getLabels();
     foreach (QLabel *label, labels)
     {
-      if (label->objectName().contains("title_"))
+      if (label->objectName().startsWith("title_"))
       {
         label->setFont(titleFont);
       }
-      else if (label->objectName().contains("o_"))
+      else if (label->objectName().startsWith("o_"))
       {
         label->setStyleSheet(orangeFontStyle);
       }
-      else if (label->objectName().contains("dTitle"))
+      else if (label->objectName().startsWith("dTitle_"))
       {
         label->setFont(dialogTitleFont);
       }
