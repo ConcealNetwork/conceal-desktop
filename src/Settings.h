@@ -65,6 +65,7 @@ namespace WalletGui
     bool isMinimizeToTrayEnabled() const;
     bool isCloseToTrayEnabled() const;
 #endif
+    bool isAutoRefreshData() const;
 
     void setWalletFile(const QString &_file);
     void setEncrypted(bool _encrypted);
@@ -83,6 +84,7 @@ namespace WalletGui
     void setOptimizationInterval(quint64 _interval);
     void setRpcNodesList(const QStringList &_RpcNodesList);
     void setMiningPoolList(const QStringList &_miningPoolList);
+    void setAutoRefreshData(bool autoRefreshData);
 
 #ifndef QT_NO_SYSTEMTRAYICON
     void setMinimizeToTrayEnabled(bool _enable);
