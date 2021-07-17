@@ -132,7 +132,7 @@ void WalletAdapter::open(const QString& _password) {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(!_password.isEmpty());
-  Q_EMIT walletStateChangedSignal(tr(""),"");
+  Q_EMIT walletStateChangedSignal(tr("Opening wallet"),"");
 
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
@@ -160,7 +160,7 @@ void WalletAdapter::createWallet() {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(false);
-  Q_EMIT walletStateChangedSignal(tr(""), "");
+  Q_EMIT walletStateChangedSignal(tr("Creating wallet"), "");
 
   m_wallet = NodeAdapter::instance().createWallet();
 
@@ -403,7 +403,7 @@ void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
-    Q_EMIT walletStateChangedSignal(tr("SENDING TRANSACTION"), "");
+    Q_EMIT walletStateChangedSignal(tr("Sending transaction"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -427,7 +427,7 @@ void WalletAdapter::optimizeWallet() {
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
-    Q_EMIT walletStateChangedSignal(tr("OPTIMIZING WALLET"), "");
+    Q_EMIT walletStateChangedSignal(tr("Optimizing wallet"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -445,7 +445,7 @@ void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _tran
     lock();
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentMessageId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
-    Q_EMIT walletStateChangedSignal(tr("SENDING MESSAGE"), "");
+    Q_EMIT walletStateChangedSignal(tr("Sending message"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -456,7 +456,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   try {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
-    Q_EMIT walletStateChangedSignal(tr("CREATING DEPOSIT"), "");
+    Q_EMIT walletStateChangedSignal(tr("Creating deposit"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -467,7 +467,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _dep
   try {
     lock();
     m_depositWithdrawalId = m_wallet->withdrawDeposits(_depositIds.toStdVector(), _fee);
-    Q_EMIT walletStateChangedSignal(tr("WITHDRAWING DEPOSIT"), "");
+    Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
   } catch (std::system_error&) {
     unlock();
   }

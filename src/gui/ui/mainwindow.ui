@@ -35,7 +35,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Conceal Desktop</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../resources.qrc">
@@ -56,9 +56,6 @@ color: #ccc;</string>
     <string notr="true">background-color: #111;</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -69,6 +66,9 @@ color: #ccc;</string>
      <number>0</number>
     </property>
     <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
      <number>0</number>
     </property>
     <item row="0" column="0">
@@ -111,7 +111,7 @@ color: #ccc;</string>
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>OVERVIEW</string>
+    <string> </string>
    </property>
    <property name="font">
     <font>
@@ -131,7 +131,7 @@ color: #ccc;</string>
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>KEYS</string>
+    <string> </string>
    </property>
    <property name="font">
     <font>

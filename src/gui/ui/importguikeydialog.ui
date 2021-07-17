@@ -10,6 +10,12 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>500</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
@@ -17,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Import GUI key</string>
+   <string>Import GUI Key</string>
   </property>
   <property name="styleSheet">
    <string notr="true">border: 0px; background-color: #282d31; color: #ddd;</string>
