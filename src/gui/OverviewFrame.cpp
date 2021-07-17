@@ -699,7 +699,7 @@ namespace WalletGui
     axisY->setGridLineColor(chartColor);
 
     m_ui->m_dataSource->setText(
-        tr("Market data from coingecko.com - Last updated: %2")
+        tr("Market data from coingecko.com - Last updated: %1")
             .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss")));
 
     m_chartView->setChart(chart);
