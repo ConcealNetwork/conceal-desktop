@@ -280,8 +280,11 @@ namespace WalletGui
     connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
     connect(m_exchangeProvider, &ExchangeProvider::exchangeFoundSignal, this, &OverviewFrame::onExchangeFound);
 
-    connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &OverviewFrame::setStatusBarText);
-    connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this,
+            &OverviewFrame::setStatusBarText);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this,
+            &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
+    connect(&refreshDataTimer, &QTimer::timeout, this, &OverviewFrame::refreshDataClicked);
 
     /* Initialize basic ui elements */
     m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
@@ -406,6 +409,16 @@ namespace WalletGui
     }
 #endif
 
+    /* Set auto refresh data button status */
+    if (!Settings::instance().isAutoRefreshData())
+    {
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO ENABLE"));
+    }
+    else
+    {
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO DISABLE"));
+    }
+
     dashboardClicked();
     depositParamsChanged();
     reset();
@@ -426,6 +439,10 @@ namespace WalletGui
 #ifndef Q_OS_WIN
     m_ui->openSSL_layout->hide();
 #endif
+    if (Settings::instance().isAutoRefreshData())
+    {
+      refreshDataTimer.start(REFRESH_INTERVAL);
+    }
   }
 
   OverviewFrame::~OverviewFrame()
@@ -531,6 +548,13 @@ namespace WalletGui
       treeView->setStyleSheet(tableStyle);
     }
     m_ui->groupBox->update();
+  }
+
+  void OverviewFrame::refreshDataClicked()
+  {
+    m_priceProvider->getPrice();
+    loadChart();
+    Q_EMIT notifySignal(tr("Data updated"));
   }
 
   /* Load the price chart on the overview screen */
@@ -673,6 +697,10 @@ namespace WalletGui
     axisY->setLabelsColor(chartColor);
     axisY->setLinePenColor(chartColor);
     axisY->setGridLineColor(chartColor);
+
+    m_ui->m_dataSource->setText(
+        tr("Market data from coingecko.com - Last updated: %1")
+            .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss")));
 
     m_chartView->setChart(chart);
 #else
@@ -2189,6 +2217,22 @@ namespace WalletGui
   {
     QDesktopServices::openUrl(
         QUrl("https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/LICENSE"));
+  }
+
+  void OverviewFrame::autoRefreshButtonClicked()
+  {
+    if (Settings::instance().isAutoRefreshData())
+    {
+      Settings::instance().setAutoRefreshData(false);
+      refreshDataTimer.stop();
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO ENABLE"));
+    }
+    else
+    {
+      Settings::instance().setAutoRefreshData(true);
+      refreshDataTimer.start(REFRESH_INTERVAL);
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO DISABLE"));
+    }
   }
 
 }  // namespace WalletGui

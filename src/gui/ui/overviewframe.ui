@@ -3654,44 +3654,7 @@ border-left: 1px solid #444;
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_12">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>21</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>21</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
-              </property>
-              <property name="text">
-               <string>PRICE</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
+            <item row="4" column="0">
              <widget class="QLabel" name="label_11">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3728,8 +3691,8 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="3">
-             <widget class="QLabel" name="m_volume">
+            <item row="4" column="2">
+             <widget class="QLabel" name="label_7">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -3761,14 +3724,95 @@ background: transparent;
 border: none;</string>
               </property>
               <property name="text">
-               <string notr="true">00.00</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <string>VOLUME</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="0" column="0" colspan="3">
+             <widget class="QLabel" name="title_marketInformation">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>300</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff;
+background: transparent;
+border: none;
+text-align: left;
+</string>
+              </property>
+              <property name="text">
+               <string>MARKET INFORMATION</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #ddd;
+background: transparent;
+
+
+border: none;</string>
+              </property>
+              <property name="text">
+               <string>PRICE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0" colspan="4">
+             <widget class="QLabel" name="m_dataSource">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border:none;</string>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
              <widget class="QLabel" name="m_ccx">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3808,7 +3852,44 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_9">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>21</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #ddd;
+background: transparent;
+
+
+border: none;</string>
+              </property>
+              <property name="text">
+               <string>MARKETCAP</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
              <widget class="QLabel" name="m_24hChange">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3848,44 +3929,7 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="2">
-             <widget class="QLabel" name="label_7">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>21</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>21</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
-              </property>
-              <property name="text">
-               <string>VOLUME</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="3">
+            <item row="3" column="3">
              <widget class="QLabel" name="m_marketCap">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -3925,39 +3969,8 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QLabel" name="title_marketInformation">
-              <property name="minimumSize">
-               <size>
-                <width>250</width>
-                <height>31</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>300</width>
-                <height>31</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-border: none;
-text-align: left;
-</string>
-              </property>
-              <property name="text">
-               <string>MARKET INFORMATION</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QLabel" name="label_9">
+            <item row="4" column="3">
+             <widget class="QLabel" name="m_volume">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -3989,11 +4002,27 @@ background: transparent;
 border: none;</string>
               </property>
               <property name="text">
-               <string>MARKETCAP</string>
+               <string notr="true">00.00</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item row="3" column="0" rowspan="2" colspan="4">
+            <item row="0" column="3">
+             <widget class="QPushButton" name="b1_refreshData">
+              <property name="maximumSize">
+               <size>
+                <width>150</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Refresh data</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="4">
              <widget class="QGroupBox" name="m_chartContainer">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -7592,8 +7621,302 @@ font-size: 18px;
             <property name="bottomMargin">
              <number>12</number>
             </property>
+            <item row="2" column="4">
+             <widget class="QLabel" name="label_17">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+padding-left: 5px;
+ border: 0px;</string>
+              </property>
+              <property name="text">
+               <string>Font</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_34">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>160</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+border: 0px;
+background: transparent;</string>
+              </property>
+              <property name="text">
+               <string>Language</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_44">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+border: 0px;
+background: transparent;</string>
+              </property>
+              <property name="text">
+               <string>Minimize to tray</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="label_10">
+              <property name="maximumSize">
+               <size>
+                <width>200</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+padding-left: 5px;
+ border: 0px;</string>
+              </property>
+              <property name="text">
+               <string>Font Size</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_35">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+border: 0px;
+</string>
+              </property>
+              <property name="text">
+               <string>Currency</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_30">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="sizeIncrement">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>-1</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+font-size: 18px;
+ border: 0px;</string>
+              </property>
+              <property name="text">
+               <string>Preferences</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" colspan="6">
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <spacer name="horizontalSpacer_12">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>32</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="b1_saveLanguageButton">
+                <property name="minimumSize">
+                 <size>
+                  <width>150</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>31</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Poppins</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
+                </property>
+                <property name="text">
+                 <string>SAVE</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
             <item row="3" column="5">
              <widget class="QPushButton" name="b2_startMaximized">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>220</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>ENABLE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QComboBox" name="m_size">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid #444;
+border-radius: 5px;
+
+
+color: #aaa;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_45">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -7609,11 +7932,153 @@ font-size: 18px;
               <property name="maximumSize">
                <size>
                 <width>220</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+padding-left: 5px;
+ border: 0px;</string>
+              </property>
+              <property name="text">
+               <string>Close to tray</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QPushButton" name="b2_minToTrayButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
                 <height>25</height>
                </size>
               </property>
+              <property name="maximumSize">
+               <size>
+                <width>220</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
+              </property>
               <property name="text">
                <string>ENABLE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="m_language">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid #444;
+border-radius: 5px;
+
+
+color: #aaa;</string>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <property name="currentIndex">
+               <number>-1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QPushButton" name="b2_closeToTrayButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>220</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
+              </property>
+              <property name="text">
+               <string>ENABLE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="5">
+             <widget class="QComboBox" name="m_font">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 1px solid #444;
+border-radius: 5px;
+
+
+color: #aaa;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="4">
+             <widget class="QLabel" name="label_18">
+              <property name="minimumSize">
+               <size>
+                <width>150</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff; 
+padding-left: 5px;
+ border: 0px;</string>
+              </property>
+              <property name="text">
+               <string>Start Maximized</string>
               </property>
              </widget>
             </item>
@@ -7814,8 +8279,8 @@ font-size: 18px;
               </item>
              </layout>
             </item>
-            <item row="1" column="0">
-             <widget class="QLabel" name="label_34">
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_31">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -7824,7 +8289,7 @@ font-size: 18px;
               </property>
               <property name="minimumSize">
                <size>
-                <width>160</width>
+                <width>0</width>
                 <height>25</height>
                </size>
               </property>
@@ -7833,11 +8298,6 @@ font-size: 18px;
                 <width>180</width>
                 <height>25</height>
                </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff; 
@@ -7845,15 +8305,12 @@ border: 0px;
 background: transparent;</string>
               </property>
               <property name="text">
-               <string>Language</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <string>Auto refresh data</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
-             <widget class="QPushButton" name="b2_minToTrayButton">
+            <item row="4" column="1">
+             <widget class="QPushButton" name="b2_autoRefreshDataButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -7863,7 +8320,7 @@ background: transparent;</string>
               <property name="minimumSize">
                <size>
                 <width>150</width>
-                <height>20</height>
+                <height>25</height>
                </size>
               </property>
               <property name="maximumSize">
@@ -7871,384 +8328,11 @@ background: transparent;</string>
                 <width>220</width>
                 <height>25</height>
                </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
               </property>
               <property name="text">
                <string>ENABLE</string>
               </property>
              </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QLabel" name="label_35">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>180</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-border: 0px;
-</string>
-              </property>
-              <property name="text">
-               <string>Currency</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="3">
-             <widget class="QPushButton" name="b2_closeToTrayButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>220</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
-              </property>
-              <property name="text">
-               <string>ENABLE</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3">
-             <widget class="QComboBox" name="m_size">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #444;
-border-radius: 5px;
-
-
-color: #aaa;</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="5">
-             <widget class="QComboBox" name="m_font">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #444;
-border-radius: 5px;
-
-
-color: #aaa;</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4">
-             <widget class="QLabel" name="label_17">
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-padding-left: 5px;
- border: 0px;</string>
-              </property>
-              <property name="text">
-               <string>Font</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QLabel" name="label_44">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>180</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-border: 0px;
-background: transparent;</string>
-              </property>
-              <property name="text">
-               <string>Minimize to tray</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QComboBox" name="m_language">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #444;
-border-radius: 5px;
-
-
-color: #aaa;</string>
-              </property>
-              <property name="editable">
-               <bool>false</bool>
-              </property>
-              <property name="currentIndex">
-               <number>-1</number>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_30">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>180</width>
-                <height>32</height>
-               </size>
-              </property>
-              <property name="sizeIncrement">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-font-size: 18px;
- border: 0px;</string>
-              </property>
-              <property name="text">
-               <string>Preferences</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="4">
-             <widget class="QLabel" name="label_18">
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-padding-left: 5px;
- border: 0px;</string>
-              </property>
-              <property name="text">
-               <string>Start Maximized</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QLabel" name="label_10">
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-padding-left: 5px;
- border: 0px;</string>
-              </property>
-              <property name="text">
-               <string>Font Size</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="2">
-             <widget class="QLabel" name="label_45">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>220</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff; 
-padding-left: 5px;
- border: 0px;</string>
-              </property>
-              <property name="text">
-               <string>Close to tray</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" colspan="6">
-             <layout class="QHBoxLayout" name="horizontalLayout_9">
-              <item>
-               <spacer name="horizontalSpacer_12">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>32</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item>
-               <widget class="QPushButton" name="b1_saveLanguageButton">
-                <property name="minimumSize">
-                 <size>
-                  <width>150</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>31</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Poppins</family>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
-                </property>
-                <property name="text">
-                 <string>SAVE</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
             </item>
            </layout>
           </widget>
@@ -9230,13 +9314,13 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>statusBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>settingsBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>addressBookBox</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
@@ -10445,6 +10529,38 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>b1_refreshData</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>refreshDataClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1064</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>b2_autoRefreshDataButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>autoRefreshButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>465</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>newTransferClicked()</slot>
@@ -10523,7 +10639,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

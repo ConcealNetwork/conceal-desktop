@@ -15,6 +15,7 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
+#include <QTimer>
 
 #include "EditableStyle.h"
 
@@ -88,6 +89,8 @@ private:
   QMenu* contextMenu;
   bool paymentIDRequired = false;
   QString exchangeName = "";
+  QTimer refreshDataTimer;
+  const int REFRESH_INTERVAL = 15 * 60 * 1000;  // refresh interval set to 15 min (in ms)
 #ifdef HAVE_CHART
   QChartView *m_chartView;
 #else
@@ -194,6 +197,8 @@ private:
   Q_SLOT void addressEditTextChanged(QString text);
   Q_SLOT void qtChartsLicenseClicked();
   Q_SLOT void openSslLicenseClicked();
+  Q_SLOT void refreshDataClicked();
+  Q_SLOT void autoRefreshButtonClicked();
 
 Q_SIGNALS:
   void backupSignal();

@@ -668,4 +668,19 @@ namespace WalletGui
     return QDir::homePath();
   }
 
+  bool Settings::isAutoRefreshData() const
+  {
+    return m_settings.contains("autoRefreshData") ? m_settings.value("autoRefreshData").toBool()
+                                                  : false;
+  }
+
+  void Settings::setAutoRefreshData(bool autoRefresh)
+  {
+    if (isAutoRefreshData() != autoRefresh)
+    {
+      m_settings.insert("autoRefreshData", autoRefresh);
+      saveSettings();
+    }
+  }
+
 }  // namespace WalletGui
