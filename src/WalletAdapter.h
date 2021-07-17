@@ -77,6 +77,7 @@ public:
   void transactionUpdated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
   void depositsUpdated(const std::vector<CryptoNote::DepositId>& _depositIds) Q_DECL_OVERRIDE;
   bool checkWalletPassword(const QString& _password);
+  static bool isValidPaymentId(const QByteArray &_paymentIdString);
   
 private:
   std::fstream m_file;

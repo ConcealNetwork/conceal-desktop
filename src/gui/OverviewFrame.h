@@ -115,7 +115,6 @@ private:
   void showCurrentWalletName();
   void syncInProgressMessage();
   void walletActualBalanceUpdated(quint64 _balance);
-  static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
   void onAddressFound(const QString &_address);
   void updatePortfolio();
@@ -126,6 +125,7 @@ private:
   bool askForWalletPassword(bool _error = false);
   void change();
   void goToWelcomeFrame();
+  void disableAddressBookButtons();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();

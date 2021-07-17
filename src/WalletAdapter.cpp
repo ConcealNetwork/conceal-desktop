@@ -738,4 +738,16 @@ bool WalletAdapter::checkWalletPassword(const QString& _password) {
   return false;
 }
 
+/* Check if the entered payment ID is valid */
+bool WalletAdapter::isValidPaymentId(const QByteArray& _paymentIdString)
+{
+  if (_paymentIdString.isEmpty())
+  {
+    return true;
+  }
+  QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
+  return (paymentId.size() == sizeof(Crypto::Hash)) &&
+         (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
 }
+
+}  // namespace WalletGui
