@@ -729,7 +729,7 @@ namespace WalletGui
 
   void OverviewFrame::layoutChanged()
   {
-    for (quint32 i = 0; i <= m_transactionModel->rowCount(); ++i)
+    for (int i = 0; i <= m_transactionModel->rowCount(); ++i)
     {
       QModelIndex recent_index = m_transactionModel->index(i, 0);
       m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
@@ -738,124 +738,28 @@ namespace WalletGui
   }
 
   /* What happens when the available balance changes */
-  void OverviewFrame::actualBalanceUpdated(quint64 _balance)
-  {
-    m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));                   // Overview screen
-    m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX"); // Send funds screen
-    m_actualBalance = _balance;
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    updatePortfolio();
-  }
+  void OverviewFrame::actualBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the pending(locked) balance changes */
-  void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
-  {
-    m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    updatePortfolio();
-  }
+  void OverviewFrame::pendingBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the unlocked deposit balance changes */
-  void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
-    updatePortfolio();
-    quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-    if (walletSynced == true)
-    {
-      if (unlockedFunds > 0)
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: orange; background: transparent; border: none;");
-      }
-      else
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: #ddd; background: transparent; border: none;");
-      }
-    }
-  }
+  void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the unlocked investment balance changes */
-  void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
-    updatePortfolio();
-    quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-    if (walletSynced == true)
-    {
-      if (unlockedFunds > 0)
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: orange; background: transparent; border: none;");
-      }
-      else
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: #ddd; background: transparent; border: none;");
-      }
-    }
-  }
+  void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the locked deposit balance changes */
-  void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
-    updatePortfolio();
-  }
+  void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) { updatePortfolio(); }
+
+  /* What happens when the locked investment balance changes */
+  void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _ba) { updatePortfolio(); }
 
   void OverviewFrame::resizeEvent(QResizeEvent *event)
   {
 #ifndef HAVE_CHART
     loadChart();
 #endif
-  }
-
-  /* What happens when the locked investment balance changes */
-  void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
-    updatePortfolio();
   }
 
   /* Price data download complete */
@@ -891,15 +795,57 @@ namespace WalletGui
     exchangeName = _exchange;
   }
 
-  /* Update the total portfolio in CCX and Fiat on the top left hand corner */
+  /* Update the total portfolio (CCX and Fiat) on the top left hand corner and on the bottom status bar */
   void OverviewFrame::updatePortfolio()
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
-    float total = 0;
-    total = ccxfiat * (float)OverviewFrame::totalBalance;
-    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + currentCurrency);
-    m_ui->fiatLabel->setText("Portfolio (" + currentCurrency + ")");
+
+    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
+    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
+    quint64 unlockedDeposits = actualDepositBalance + actualInvestmentBalance;
+    quint64 lockedDeposits = pendingDepositBalance + pendingInvestmentBalance;
+
+    totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance +
+                   pendingInvestmentBalance + actualInvestmentBalance;
+    m_actualBalance = actualBalance;
+
+    // Update the top left hand corner
+    m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(actualBalance));
+    m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(pendingBalance));
+    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(unlockedDeposits));
+    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(lockedDeposits));
+
+    // Update the bottom status bar
+    float fiatTotal = ccxfiat * (float)totalBalance;
+    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
+    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
+                             " " + currentCurrency);
+    m_ui->fiatLabel->setText(tr("Portfolio (") + currentCurrency + ")");
+
+    // Update other labels
+    m_ui->m_balanceLabel->setText(tr("Available Balance: ") +
+                                  CurrencyAdapter::instance().formatAmount(actualBalance) +
+                                  " CCX");  // Send funds screen
+
+    // Update styles
+    if (walletSynced)
+    {
+      QString styleSheet;
+      if (unlockedDeposits > 0)
+      {
+        styleSheet = "color: orange; background: transparent; border: none;";
+      }
+      else
+      {
+        styleSheet = "color: #ddd; background: transparent; border: none;";
+      }
+      m_ui->m_unlockedDeposits->setStyleSheet(styleSheet);
+      m_ui->m_tickerLabel4->setStyleSheet(styleSheet);
+    }
   }
 
   /* Banking menu button clicked */
@@ -1042,13 +988,9 @@ namespace WalletGui
 
   void OverviewFrame::reset()
   {
-    actualBalanceUpdated(0);
-    pendingBalanceUpdated(0);
-    actualDepositBalanceUpdated(0);
-    pendingDepositBalanceUpdated(0);
-    actualInvestmentBalanceUpdated(0);
-    pendingInvestmentBalanceUpdated(0);
+    walletSynced = false;
     layoutChanged();
+    updatePortfolio();
     m_priceProvider->getPrice();
     m_addressProvider->getAddress();
     Q_EMIT resetWalletSignal();
@@ -1682,13 +1624,9 @@ namespace WalletGui
       depositIds.append(index.row());
     }
 
-    WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
-    actualBalanceUpdated(0);
-    pendingBalanceUpdated(0);
-    actualDepositBalanceUpdated(0);
-    pendingDepositBalanceUpdated(0);
-    actualInvestmentBalanceUpdated(0);
-    pendingInvestmentBalanceUpdated(0);
+    WalletAdapter::instance().withdrawUnlockedDeposits(
+        depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
+    updatePortfolio();
   }
 
   void OverviewFrame::importSeedButtonClicked()
