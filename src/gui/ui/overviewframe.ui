@@ -8985,7 +8985,7 @@ font-size: 14px;</string>
          <item row="3" column="5">
           <widget class="QLabel" name="fiatLabel">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9061,7 +9061,7 @@ font-size: 14px;</string>
          <item row="4" column="1">
           <widget class="QLabel" name="statusHeight">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9095,7 +9095,7 @@ font-size: 14px;</string>
          <item row="3" column="1">
           <widget class="QLabel" name="label_15">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9162,7 +9162,7 @@ font-size: 14px;</string>
          <item row="3" column="2">
           <widget class="QLabel" name="label_16">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9195,7 +9195,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
          <item row="3" column="4">
           <widget class="QLabel" name="label_13">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9273,7 +9273,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
          <item row="3" column="0">
           <widget class="QLabel" name="label_14">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -9281,7 +9281,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="minimumSize">
             <size>
              <width>200</width>
-             <height>15</height>
+             <height>20</height>
             </size>
            </property>
            <property name="maximumSize">
