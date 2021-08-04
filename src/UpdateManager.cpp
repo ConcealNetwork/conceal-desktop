@@ -1,6 +1,6 @@
 // Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -69,7 +69,8 @@ std::istream& operator>>(std::istream& str, Version::VersionDigit& digit)
 
 void Updater::checkForUpdate()
 {
-  const QUrl url = QUrl::fromUserInput("http://walletapi.conceal.network/version.txt");
+  const QUrl url = QUrl::fromUserInput(
+      "https://raw.githubusercontent.com/ConcealNetwork/conceal-desktop/master/version.txt");
   QNetworkRequest request(url);
   manager->get(request);
 }
