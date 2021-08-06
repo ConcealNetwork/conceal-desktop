@@ -3612,6 +3612,9 @@ border: none;</string>
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
         <layout class="QGridLayout" name="gridLayout_9">
          <property name="leftMargin">
           <number>6</number>
@@ -4105,6 +4108,9 @@ border: none;</string>
            <property name="styleSheet">
             <string notr="true">color: #fff;</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <property name="spacing">
              <number>6</number>
@@ -4134,6 +4140,9 @@ border: none;</string>
               </property>
               <property name="title">
                <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
                <property name="leftMargin">
@@ -5561,10 +5570,13 @@ font-size: 18px;
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="bankingBox">
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">color: #fff;</string>
         </property>
         <property name="title">
          <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
         <layout class="QGridLayout" name="gridLayout_8">
          <property name="leftMargin">
@@ -5790,33 +5802,51 @@ border: none;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-right: 1px solid #444;
-</string>
+            <string notr="true"/>
            </property>
            <property name="title">
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>12</number>
+            </property>
             <property name="topMargin">
-             <number>9</number>
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>12</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
             </property>
             <item>
              <widget class="QLabel" name="title_newDeposit">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>Poppins</family>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-
-border: none;
-text-align: left;
-</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>NEW DEPOSIT</string>
@@ -9372,9 +9402,9 @@ color: orange;
      <zorder>newMessageBox</zorder>
      <zorder>addressBookBox</zorder>
      <zorder>settingsBox</zorder>
-     <zorder>bankingBox</zorder>
-     <zorder>overviewBox</zorder>
      <zorder>horizontalLine</zorder>
+     <zorder>overviewBox</zorder>
+     <zorder>bankingBox</zorder>
     </widget>
    </item>
   </layout>
