@@ -531,6 +531,23 @@ namespace WalletGui
     }
   }
 
+  int OverviewFrame::setStyles(int change)
+  {
+    int id = EditableStyle::setStyles(change);
+    QFont statusBoxValueFont = EditableStyle::currentFont;
+    statusBoxValueFont.setPixelSize(statusBoxValueFont.pixelSize() - 2);
+    QList<QLabel *> labels =
+        m_ui->groupBox->findChild<QWidget *>("statusBox")->findChildren<QLabel *>();
+    foreach (QLabel *label, labels)
+    {
+      if (label->objectName().startsWith("m_"))
+      {
+        label->setFont(statusBoxValueFont);
+      }
+    }
+    return id;
+  }
+
   QList<QWidget *> OverviewFrame::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
 
   QList<QPushButton *> OverviewFrame::getButtons()
@@ -631,7 +648,7 @@ namespace WalletGui
   {
 
     QString walletFile = Settings::instance().getWalletName();
-    m_ui->m_currentWalletTitle->setText(walletFile);
+    m_ui->m_currentWalletNameValue->setText(walletFile);
   }
 
   /* Download is done, set the chart as the pixmap */
@@ -821,10 +838,10 @@ namespace WalletGui
 
     // Update the bottom status bar
     float fiatTotal = ccxfiat * (float)totalBalance;
-    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
+    m_ui->m_portfolioCCXValue->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
+    m_ui->m_portfolioFiatValue->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
                              " " + currentCurrency);
-    m_ui->fiatLabel->setText(tr("Portfolio (") + currentCurrency + ")");
+    m_ui->sb_portfolioFiatTitle->setText(tr("Portfolio (") + currentCurrency + ")");
 
     // Update other labels
     m_ui->m_balanceLabel->setText(tr("Available Balance: ") +
@@ -998,8 +1015,8 @@ namespace WalletGui
 
   void OverviewFrame::setStatusBarText(const QString& _text, const QString& _height)
   {
-    m_ui->m_statusBox->setText(_text);
-    m_ui->statusHeight->setText(_height);
+    m_ui->m_statusValue->setText(_text);
+    m_ui->m_heightValue->setText(_height);
     showCurrentWalletName();
   }
 

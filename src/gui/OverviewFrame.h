@@ -62,6 +62,7 @@ public Q_SLOTS:
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
+  int setStyles(int change) override;
   QList<QWidget *> getWidgets() override;
   QList<QPushButton *> getButtons() override;
   QList<QLabel *> getLabels() override;

@@ -8900,6 +8900,16 @@ text-align: left;
        </widget>
       </item>
       <item row="5" column="0" colspan="2">
+       <widget class="Line" name="horizontalLine">
+        <property name="styleSheet">
+         <string notr="true">border-top: 1px solid #444;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
        <widget class="QGroupBox" name="statusBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -8923,20 +8933,35 @@ text-align: left;
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true">QLabel[type=&quot;title&quot;]{
+color: #fff;
+}
+
+QLabel[type=&quot;value&quot;]{
+color: orange;
+}</string>
         </property>
         <property name="title">
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_22">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
          <property name="topMargin">
-          <number>16</number>
+          <number>18</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
          </property>
          <property name="bottomMargin">
-          <number>20</number>
+          <number>18</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
          </property>
          <item row="4" column="0">
-          <widget class="QLabel" name="m_statusBox">
+          <widget class="QLabel" name="m_statusValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -8955,10 +8980,13 @@ text-align: left;
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border:none;
-color: orange;
-font-size: 14px;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string notr="true">STATUS</string>
@@ -8966,10 +8994,13 @@ font-size: 14px;</string>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
          <item row="3" column="5">
-          <widget class="QLabel" name="fiatLabel">
+          <widget class="QLabel" name="sb_portfolioFiatTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -8988,10 +9019,13 @@ font-size: 14px;</string>
              <height>20</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Portfolio (USD)</string>
@@ -8999,10 +9033,13 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="2">
-          <widget class="QLabel" name="m_currentWalletTitle">
+          <widget class="QLabel" name="m_currentWalletNameValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9024,17 +9061,13 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="contextMenuPolicy">
             <enum>Qt::CustomContextMenu</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string notr="true">WALLET NAME</string>
@@ -9042,177 +9075,13 @@ font-size: 14px;</string>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="1">
-          <widget class="QLabel" name="statusHeight">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
-           </property>
-           <property name="text">
-            <string notr="true">HEIGHT</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLabel" name="label_15">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Current Height</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="5">
-          <widget class="QLabel" name="fiatTotal">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
-           </property>
-           <property name="text">
-            <string notr="true">FIAT TOTAL</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QLabel" name="label_16">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Current Wallet</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="4">
-          <widget class="QLabel" name="label_13">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Portfolio (CCX)</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="4">
-          <widget class="QLabel" name="ccxTotal">
+          <widget class="QLabel" name="m_heightValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9234,30 +9103,24 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
            <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;
-
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
            </property>
            <property name="text">
-            <string notr="true">CCX TOTAL</string>
+            <string notr="true">HEIGHT</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_14">
+         <item row="3" column="1">
+          <widget class="QLabel" name="sb_heightTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9276,16 +9139,220 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
              <height>20</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Current Height</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLabel" name="m_portfolioFiatValue">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string notr="true">FIAT TOTAL</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="sb_currentWalletNameTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Current Wallet</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLabel" name="sb_portfolioCCXTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Portfolio (CCX)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="m_portfolioCCXValue">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string notr="true">CCX TOTAL</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="sb_statusTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Status</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
            </property>
           </widget>
          </item>
@@ -9307,6 +9374,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>settingsBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>horizontalLine</zorder>
     </widget>
    </item>
   </layout>
