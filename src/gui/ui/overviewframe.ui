@@ -3625,11 +3625,8 @@ border: none;</string>
          <property name="bottomMargin">
           <number>6</number>
          </property>
-         <property name="horizontalSpacing">
+         <property name="spacing">
           <number>6</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>0</number>
          </property>
          <item row="0" column="2" rowspan="2">
           <widget class="QGroupBox" name="ov_marketBox">
@@ -4645,10 +4642,16 @@ font-size: 10pt;</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>160</height>
+             <height>140</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -4668,7 +4671,7 @@ color: orange;
              <number>12</number>
             </property>
             <property name="topMargin">
-             <number>6</number>
+             <number>0</number>
             </property>
             <property name="rightMargin">
              <number>12</number>
@@ -4784,6 +4787,11 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -4814,6 +4822,11 @@ color: orange;
                 <width>16777215</width>
                 <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -4858,6 +4871,11 @@ color: orange;
                 <width>16777215</width>
                 <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -4926,6 +4944,11 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -4993,6 +5016,11 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -5024,6 +5052,11 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -5054,6 +5087,11 @@ color: orange;
                 <width>16777215</width>
                 <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -5218,6 +5256,11 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true"/>
               </property>
@@ -5248,6 +5291,11 @@ color: orange;
                 <width>16777215</width>
                 <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -5400,6 +5448,11 @@ color: orange;
                 <width>16777215</width>
                 <height>40</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
               </property>
               <property name="styleSheet">
                <string notr="true"/>
@@ -10572,7 +10625,7 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>
