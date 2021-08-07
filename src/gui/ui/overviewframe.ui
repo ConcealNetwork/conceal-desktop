@@ -3651,6 +3651,9 @@ border: none;</string>
            <property name="title">
             <string/>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
            <layout class="QGridLayout" name="gridLayout_14">
             <property name="leftMargin">
              <number>12</number>
@@ -3989,14 +3992,14 @@ border: none;</string>
                 <widget class="QLabel" name="title_marketInformation">
                  <property name="minimumSize">
                   <size>
-                   <width>200</width>
-                   <height>31</height>
+                   <width>250</width>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>300</width>
-                   <height>31</height>
+                   <width>250</width>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="font">
@@ -4246,13 +4249,13 @@ border: none;</string>
                  <property name="minimumSize">
                   <size>
                    <width>250</width>
-                   <height>0</height>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>250</width>
-                   <height>16777215</height>
+                   <height>25</height>
                   </size>
                  </property>
                  <property name="font">
@@ -5594,7 +5597,7 @@ font-size: 18px;
          <property name="spacing">
           <number>6</number>
          </property>
-         <item row="0" column="1">
+         <item row="0" column="2">
           <widget class="QGroupBox" name="groupBox_5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -5608,14 +5611,44 @@ font-size: 18px;
            <property name="title">
             <string/>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>12</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>12</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QLabel" name="title_depositHistory">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>25</height>
+               </size>
               </property>
               <property name="font">
                <font>
@@ -5623,13 +5656,7 @@ font-size: 18px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>DEPOSIT HISTORY</string>
@@ -5638,12 +5665,19 @@ text-align: left;
             </item>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;  
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string>A complete history of all your deposits. Double-click an individual deposit for a more detailed view.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -5715,7 +5749,25 @@ border: none;</string>
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_1">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="b1_withdrawButton">
                  <property name="sizePolicy">
@@ -5749,44 +5801,6 @@ border: none;</string>
                  </property>
                 </widget>
                </item>
-               <item>
-                <widget class="QLabel" name="empty_align_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="empty_align_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
@@ -5796,10 +5810,22 @@ border: none;</string>
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_6">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>500</width>
+             <height>16777215</height>
+            </size>
            </property>
            <property name="styleSheet">
             <string notr="true"/>
@@ -5828,16 +5854,22 @@ border: none;</string>
             </property>
             <item>
              <widget class="QLabel" name="title_newDeposit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>250</width>
-                <height>0</height>
+                <height>25</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>250</width>
-                <height>16777215</height>
+                <height>25</height>
                </size>
               </property>
               <property name="font">
@@ -5864,9 +5896,27 @@ border: none;</string>
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QFormLayout" name="formLayout">
+               <property name="horizontalSpacing">
+                <number>6</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>6</number>
+               </property>
                <property name="leftMargin">
                 <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>12</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>12</number>
                </property>
                <item row="0" column="0">
                 <widget class="QLabel" name="label">
@@ -5896,8 +5946,7 @@ border: none;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;  
-border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string>How much do you want to deposit?</string>
@@ -5981,9 +6030,7 @@ border-radius: 5px;
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;  
-
-border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string>How long should your deposit last?</string>
@@ -6155,7 +6202,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Fees for this deposit:</string>
@@ -6193,7 +6240,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">0.001000 CCX</string>
@@ -6225,7 +6272,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Interest rate:</string>
@@ -6257,7 +6304,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Length on the blockchain:</string>
@@ -6289,7 +6336,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">interestLabel</string>
@@ -6321,7 +6368,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Rewards you will earn:</string>
@@ -6353,7 +6400,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">21900 blocks</string>
@@ -6391,7 +6438,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">interestLabel</string>
@@ -6423,13 +6470,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Deposit Details</string>
@@ -6465,23 +6506,17 @@ text-align: left;
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="empty_align_6">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
               </property>
-              <property name="styleSheet">
-               <string notr="true">border: none;</string>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
               </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
+             </spacer>
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_11">
@@ -6494,7 +6529,25 @@ text-align: left;
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="b1_depositButton_2">
                  <property name="sizePolicy">
@@ -6528,48 +6581,20 @@ text-align: left;
                  </property>
                 </widget>
                </item>
-               <item>
-                <widget class="QLabel" name="empty_align_7">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="empty_align_8">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
            </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="Line" name="banking_verticalLine">
+           <property name="styleSheet">
+            <string notr="true">border-left: 1px solid #444;</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
           </widget>
          </item>
         </layout>
@@ -8901,7 +8926,7 @@ text-align: left;
         </layout>
        </widget>
       </item>
-      <item row="0" column="0" rowspan="6" colspan="4">
+      <item row="0" column="0" rowspan="7" colspan="4">
        <widget class="QGroupBox" name="darkness">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
