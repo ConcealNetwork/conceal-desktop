@@ -118,12 +118,30 @@ background-color: #282d31;</string>
          <property name="leftMargin">
           <number>18</number>
          </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <item row="0" column="0" colspan="2">
           <widget class="QLabel" name="title_addressBook">
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>35</height>
+             <width>250</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>250</width>
+             <height>32</height>
             </size>
            </property>
            <property name="font">
@@ -133,9 +151,6 @@ background-color: #282d31;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">color: #fff;
-background: transparent;
-border: none;
-text-align: left;
 </string>
            </property>
            <property name="text">
@@ -146,6 +161,21 @@ text-align: left;
          <item row="1" column="0">
           <widget class="QGroupBox" name="addressBookButtons">
            <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QPushButton" name="b1_copyContactAddressButton">
               <property name="sizePolicy">
@@ -1073,13 +1103,19 @@ background-color: #333;
         </property>
         <layout class="QGridLayout" name="gridLayout_12">
          <property name="leftMargin">
-          <number>9</number>
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
          </property>
          <property name="rightMargin">
-          <number>9</number>
+          <number>18</number>
          </property>
          <property name="bottomMargin">
-          <number>9</number>
+          <number>12</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
          </property>
          <item row="2" column="0" colspan="4">
           <widget class="QLabel" name="pidLabel">
@@ -1162,7 +1198,7 @@ padding-left: 5px</string>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <property name="spacing">
-             <number>10</number>
+             <number>6</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -1391,6 +1427,11 @@ padding-left: 5px</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">border: none;</string>
            </property>
@@ -1515,6 +1556,21 @@ padding-left: 5px</string>
          <item row="13" column="0" colspan="8">
           <widget class="QGroupBox" name="horizontalGroupBox_sendFundsButtons">
            <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QPushButton" name="b1_sendFundsButton">
               <property name="sizePolicy">
@@ -1659,7 +1715,6 @@ padding-left: 5px</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>10</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -1691,7 +1746,6 @@ border: none;</string>
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>10</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -1756,7 +1810,7 @@ border: none;</string>
                  <x>0</x>
                  <y>0</y>
                  <width>722</width>
-                 <height>15026</height>
+                 <height>15164</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2635,7 +2689,7 @@ Public License instead of this License.  But first, please read
                  <x>0</x>
                  <y>0</y>
                  <width>473</width>
-                 <height>245</height>
+                 <height>299</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2890,89 +2944,134 @@ font-weight:bold;</string>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="transactionsBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="title">
          <string/>
         </property>
-        <layout class="QGridLayout" name="gridLayout_16">
-         <item row="0" column="1">
-          <widget class="QPushButton" name="b1_exportCSVButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>35</height>
-            </size>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox">
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
-           </property>
-           <property name="text">
-            <string>EXPORT CSV</string>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="title_transactions">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff;</string>
+              </property>
+              <property name="text">
+               <string>HISTORICAL DATA</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_14">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="b1_exportCSVButton">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
+              </property>
+              <property name="text">
+               <string>EXPORT CSV</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="title_transactions">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
-           </property>
-           <property name="text">
-            <string>HISTORICAL DATA</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
+         <item>
           <widget class="QLabel" name="m_transactionsDescription">
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrepancies, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entries to get a more detailed view.</string>
@@ -2982,7 +3081,7 @@ text-align: left;
            </property>
           </widget>
          </item>
-         <item row="2" column="0" colspan="2">
+         <item>
           <widget class="QTreeView" name="m_transactionsView">
            <property name="minimumSize">
             <size>
@@ -3078,6 +3177,21 @@ text-align: left;
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_10">
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
          <item row="0" column="0" colspan="2">
           <widget class="QLabel" name="adressLabel_2">
            <property name="minimumSize">
@@ -3298,7 +3412,7 @@ p, li { white-space: pre-wrap; }
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <property name="spacing">
-             <number>10</number>
+             <number>6</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -3476,6 +3590,21 @@ QSlider::sub-page:horizontal#m_ttlSlider {
          <item row="10" column="0" colspan="5">
           <widget class="QGroupBox" name="horizontalGroupBox_sendMessageButtons">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QPushButton" name="b1_sendMessageButton">
               <property name="minimumSize">
@@ -3607,22 +3736,31 @@ border: none;</string>
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="overviewBox">
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">color: #fff;</string>
         </property>
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
         <layout class="QGridLayout" name="gridLayout_9">
          <property name="leftMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
          <property name="topMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
          <property name="rightMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
-         <item row="0" column="1" rowspan="2">
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <item row="0" column="2" rowspan="2">
           <widget class="QGroupBox" name="ov_marketBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -3637,22 +3775,29 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-border-left: 1px solid #444;
-</string>
+            <string notr="true">color: #fff;</string>
            </property>
            <property name="title">
             <string/>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
            <layout class="QGridLayout" name="gridLayout_14">
             <property name="leftMargin">
-             <number>18</number>
+             <number>12</number>
             </property>
             <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
              <number>12</number>
             </property>
             <property name="bottomMargin">
-             <number>0</number>
+             <number>6</number>
+            </property>
+            <property name="spacing">
+             <number>6</number>
             </property>
             <item row="4" column="0">
              <widget class="QLabel" name="label_11">
@@ -3680,11 +3825,7 @@ border-left: 1px solid #444;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>24 HOUR CHANGE</string>
@@ -3717,45 +3858,10 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>VOLUME</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="3">
-             <widget class="QLabel" name="title_marketInformation">
-              <property name="minimumSize">
-               <size>
-                <width>250</width>
-                <height>31</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>300</width>
-                <height>31</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-border: none;
-text-align: left;
-</string>
-              </property>
-              <property name="text">
-               <string>MARKET INFORMATION</string>
               </property>
              </widget>
             </item>
@@ -3785,11 +3891,7 @@ text-align: left;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>PRICE</string>
@@ -3804,6 +3906,11 @@ border: none;</string>
                 <height>30</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">border:none;</string>
               </property>
@@ -3815,7 +3922,7 @@ border: none;</string>
             <item row="3" column="1">
              <widget class="QLabel" name="m_ccx">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3838,11 +3945,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string notr="true">00.00</string>
@@ -3878,11 +3981,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>MARKETCAP</string>
@@ -3892,7 +3991,7 @@ border: none;</string>
             <item row="4" column="1">
              <widget class="QLabel" name="m_24hChange">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3915,11 +4014,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string notr="true">00.00</string>
@@ -3932,7 +4027,7 @@ border: none;</string>
             <item row="3" column="3">
              <widget class="QLabel" name="m_marketCap">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3955,11 +4050,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string notr="true">00.00</string>
@@ -3972,7 +4063,7 @@ border: none;</string>
             <item row="4" column="3">
              <widget class="QLabel" name="m_volume">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -3995,11 +4086,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string notr="true">00.00</string>
@@ -4009,17 +4096,92 @@ border: none;</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="3">
-             <widget class="QPushButton" name="b1_refreshData">
-              <property name="maximumSize">
-               <size>
-                <width>150</width>
-                <height>16777215</height>
-               </size>
+            <item row="0" column="0" colspan="4">
+             <widget class="QGroupBox" name="ov_title_horizontalGroupBox">
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
-              <property name="text">
-               <string>Refresh data</string>
-              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_13">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="title_marketInformation">
+                 <property name="minimumSize">
+                  <size>
+                   <width>250</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>MARKET INFORMATION</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_13">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="b1_refreshData">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>150</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Refresh data</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
             <item row="5" column="0" colspan="4">
@@ -4056,7 +4218,7 @@ border: none;</string>
           </widget>
          </item>
          <item row="0" column="0" rowspan="2">
-          <widget class="QGroupBox" name="groupBox_1">
+          <widget class="QGroupBox" name="ov_leftBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -4076,15 +4238,23 @@ border: none;</string>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-padding: 0px;</string>
+            <string notr="true">color: #fff;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
-            <property name="leftMargin">
+            <property name="spacing">
              <number>6</number>
             </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
             <property name="topMargin">
-             <number>6</number>
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
@@ -4098,12 +4268,30 @@ padding: 0px;</string>
                </sizepolicy>
               </property>
               <property name="styleSheet">
-               <string notr="true">border-bottom: 1px solid #444;</string>
+               <string notr="true"/>
               </property>
               <property name="title">
                <string/>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
               <layout class="QGridLayout" name="gridLayout_4">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>12</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
+               <property name="spacing">
+                <number>6</number>
+               </property>
                <item row="3" column="0">
                 <widget class="QLabel" name="label_pending">
                  <property name="sizePolicy">
@@ -4124,12 +4312,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Pending</string>
@@ -4156,11 +4339,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">CCX</string>
@@ -4187,12 +4366,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Available</string>
@@ -4204,13 +4378,13 @@ padding: 0px;</string>
                  <property name="minimumSize">
                   <size>
                    <width>250</width>
-                   <height>0</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>250</width>
-                   <height>16777215</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="font">
@@ -4219,13 +4393,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-            text-align: left;
-            </string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>TOTAL BALANCE</string>
@@ -4246,11 +4414,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">0.000000</string>
@@ -4280,11 +4444,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">CCX</string>
@@ -4305,11 +4465,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">0.000000</string>
@@ -4339,11 +4495,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">CCX</string>
@@ -4370,12 +4522,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Withdrawable</string>
@@ -4402,11 +4549,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">CCX</string>
@@ -4427,11 +4570,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">0.000000</string>
@@ -4461,12 +4600,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Locked Deposits</string>
@@ -4487,11 +4621,7 @@ padding: 0px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;
-            background: transparent;
-            
-            
-            border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string notr="true">0.000000</string>
@@ -4502,6 +4632,16 @@ padding: 0px;</string>
                 </widget>
                </item>
               </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="ov_line1">
+              <property name="styleSheet">
+               <string notr="true">border-top: 1px solid #444;</string>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
              </widget>
             </item>
             <item>
@@ -4525,19 +4665,30 @@ padding: 0px;</string>
                <string/>
               </property>
               <layout class="QGridLayout" name="gridLayout_13">
+               <property name="leftMargin">
+                <number>12</number>
+               </property>
                <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>12</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
+               <property name="spacing">
                 <number>6</number>
                </property>
                <item row="0" column="0">
                 <widget class="QLabel" name="title_recent">
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #fff;
-            background: transparent;
-            
-            
-            border: none;
-            text-align: left;
-            </string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>RECENT ACTIVITY</string>
@@ -4624,7 +4775,7 @@ font-size: 10pt;</string>
            </layout>
           </widget>
          </item>
-         <item row="2" column="0" colspan="2">
+         <item row="3" column="0" colspan="3">
           <widget class="QGroupBox" name="ov_contactBox">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -4632,28 +4783,45 @@ font-size: 10pt;</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>130</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>160</height>
+             <height>140</height>
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">border-top: 1px solid #444;
-</string>
+            <string notr="true">QPushButton[type=&quot;sm&quot;]{
+color: #ddd;
+}
+
+QPushButton:hover[type=&quot;sm&quot;]{
+color: orange;
+}</string>
            </property>
            <property name="title">
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
             <property name="leftMargin">
-             <number>18</number>
+             <number>12</number>
             </property>
             <property name="topMargin">
-             <number>6</number>
+             <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>0</number>
+             <number>12</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <property name="spacing">
+             <number>6</number>
             </property>
             <item row="1" column="3">
              <widget class="QLabel" name="m_twitterIcon">
@@ -4681,11 +4849,7 @@ font-size: 10pt;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -4734,12 +4898,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;
-margin-left: 10px;</string>
+               <string notr="true">margin-left: 10px;</string>
               </property>
               <property name="text">
                <string/>
@@ -4769,21 +4928,19 @@ margin-left: 10px;</string>
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Medium</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -4807,21 +4964,19 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Twitter</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -4858,21 +5013,19 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Wiki</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -4902,12 +5055,7 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;
-margin-left: 10px;</string>
+               <string notr="true">margin-left: 10px;</string>
               </property>
               <property name="text">
                <string/>
@@ -4937,21 +5085,19 @@ margin-left: 10px;</string>
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Help Desk</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -4981,11 +5127,7 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5015,21 +5157,19 @@ border: none;</string>
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>GitHub</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -5053,21 +5193,19 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Telegram</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -5091,21 +5229,19 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Discord</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">sm</string>
               </property>
              </widget>
             </item>
@@ -5148,11 +5284,7 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5189,11 +5321,6 @@ border: none;</string>
               </property>
               <property name="styleSheet">
                <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
 </string>
               </property>
               <property name="text">
@@ -5240,11 +5367,7 @@ text-align: left;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5274,21 +5397,19 @@ border: none;</string>
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>STEX</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -5312,21 +5433,19 @@ color: orange;
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>Reddit</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -5356,11 +5475,7 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5396,11 +5511,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5449,11 +5560,7 @@ border: none;</string>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5483,21 +5590,19 @@ border: none;</string>
                 <height>40</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton {
-color: #ddd;
-background: transparent;
-
-border: none;
-text-align: left;
-}
-
-QPushButton:hover{
-color: orange;
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>TradeOgre</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -5527,11 +5632,7 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;
-background: transparent;
-
-
-border: none;</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -5575,28 +5676,57 @@ font-size: 18px;
            </widget>
           </widget>
          </item>
+         <item row="0" column="1" rowspan="2">
+          <widget class="Line" name="ov_verticalLine">
+           <property name="styleSheet">
+            <string notr="true">border-left: 1px solid #444;</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="3">
+          <widget class="Line" name="ov_horizontalLine">
+           <property name="styleSheet">
+            <string notr="true">border-top: 1px solid #444;</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
         </layout>
-        <zorder>groupBox_1</zorder>
-        <zorder>ov_marketBox</zorder>
-        <zorder>ov_contactBox</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="bankingBox">
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">color: #fff;</string>
         </property>
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
         <layout class="QGridLayout" name="gridLayout_8">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
          <property name="topMargin">
-          <number>0</number>
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
          </property>
          <property name="bottomMargin">
-          <number>0</number>
+          <number>6</number>
          </property>
-         <item row="0" column="1">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <item row="0" column="2">
           <widget class="QGroupBox" name="groupBox_5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -5610,14 +5740,44 @@ font-size: 18px;
            <property name="title">
             <string/>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>12</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>12</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
             <item>
              <widget class="QLabel" name="title_depositHistory">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
               </property>
               <property name="font">
                <font>
@@ -5625,13 +5785,7 @@ font-size: 18px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>DEPOSIT HISTORY</string>
@@ -5640,12 +5794,19 @@ text-align: left;
             </item>
             <item>
              <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
               <property name="styleSheet">
-               <string notr="true">color: #ddd;  
-border: none;</string>
+               <string notr="true">color: #ddd;</string>
               </property>
               <property name="text">
                <string>A complete history of all your deposits. Double-click an individual deposit for a more detailed view.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -5717,7 +5878,25 @@ border: none;</string>
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_1">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="b1_withdrawButton">
                  <property name="sizePolicy">
@@ -5751,44 +5930,6 @@ border: none;</string>
                  </property>
                 </widget>
                </item>
-               <item>
-                <widget class="QLabel" name="empty_align_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="empty_align_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
@@ -5798,39 +5939,75 @@ border: none;</string>
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_6">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>500</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border-right: 1px solid #444;
-</string>
+            <string notr="true"/>
            </property>
            <property name="title">
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignCenter</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>12</number>
+            </property>
             <property name="topMargin">
-             <number>9</number>
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>12</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
             </property>
             <item>
              <widget class="QLabel" name="title_newDeposit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
               <property name="font">
                <font>
                 <family>Poppins</family>
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #fff;
-background: transparent;
-
-border: none;
-text-align: left;
-</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>NEW DEPOSIT</string>
@@ -5848,9 +6025,27 @@ text-align: left;
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QFormLayout" name="formLayout">
+               <property name="horizontalSpacing">
+                <number>6</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>6</number>
+               </property>
                <property name="leftMargin">
                 <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>12</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>12</number>
                </property>
                <item row="0" column="0">
                 <widget class="QLabel" name="label">
@@ -5880,8 +6075,7 @@ text-align: left;
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;  
-border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string>How much do you want to deposit?</string>
@@ -5965,9 +6159,7 @@ border-radius: 5px;
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color: #ddd;  
-
-border: none;</string>
+                  <string notr="true">color: #ddd;</string>
                  </property>
                  <property name="text">
                   <string>How long should your deposit last?</string>
@@ -6139,7 +6331,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Fees for this deposit:</string>
@@ -6177,7 +6369,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">0.001000 CCX</string>
@@ -6209,7 +6401,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Interest rate:</string>
@@ -6241,7 +6433,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Length on the blockchain:</string>
@@ -6273,7 +6465,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">interestLabel</string>
@@ -6305,7 +6497,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;  font-weight: normal; border: none; </string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Rewards you will earn:</string>
@@ -6337,7 +6529,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">21900 blocks</string>
@@ -6375,7 +6567,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #ccc;  font-weight: normal; border: none; </string>
+                     <string notr="true">color: #ddd;</string>
                     </property>
                     <property name="text">
                      <string notr="true">interestLabel</string>
@@ -6407,13 +6599,7 @@ padding: 5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+                     <string notr="true"/>
                     </property>
                     <property name="text">
                      <string>Deposit Details</string>
@@ -6449,23 +6635,17 @@ text-align: left;
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="empty_align_6">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
               </property>
-              <property name="styleSheet">
-               <string notr="true">border: none;</string>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
               </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
+             </spacer>
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_11">
@@ -6478,7 +6658,25 @@ text-align: left;
               <property name="styleSheet">
                <string notr="true">border: none;</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="topMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="b1_depositButton_2">
                  <property name="sizePolicy">
@@ -6512,48 +6710,20 @@ text-align: left;
                  </property>
                 </widget>
                </item>
-               <item>
-                <widget class="QLabel" name="empty_align_7">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="empty_align_8">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">border: none;</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
               </layout>
              </widget>
             </item>
            </layout>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="Line" name="banking_verticalLine">
+           <property name="styleSheet">
+            <string notr="true">border-left: 1px solid #444;</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
           </widget>
          </item>
         </layout>
@@ -8781,19 +8951,37 @@ border: 0px;
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
          <item>
           <widget class="QLabel" name="title_messageOverview">
            <property name="minimumSize">
             <size>
-             <width>300</width>
-             <height>35</height>
+             <width>250</width>
+             <height>32</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>300</width>
-             <height>35</height>
+             <width>250</width>
+             <height>32</height>
             </size>
            </property>
            <property name="font">
@@ -8802,13 +8990,7 @@ border: 0px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+            <string notr="true">color: #fff;</string>
            </property>
            <property name="text">
             <string>MESSAGE OVERVIEW</string>
@@ -8820,6 +9002,11 @@ text-align: left;
          </item>
          <item>
           <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="text">
             <string>A list of incoming and outgoing messages for this wallet. </string>
            </property>
@@ -8885,7 +9072,7 @@ text-align: left;
         </layout>
        </widget>
       </item>
-      <item row="0" column="0" rowspan="6" colspan="4">
+      <item row="0" column="0" rowspan="7" colspan="4">
        <widget class="QGroupBox" name="darkness">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -8914,6 +9101,16 @@ text-align: left;
        </widget>
       </item>
       <item row="5" column="0" colspan="2">
+       <widget class="Line" name="horizontalLine">
+        <property name="styleSheet">
+         <string notr="true">border-top: 1px solid #444;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
        <widget class="QGroupBox" name="statusBox">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -8937,20 +9134,35 @@ text-align: left;
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-top: 1px solid #444;</string>
+         <string notr="true">QLabel[type=&quot;title&quot;]{
+color: #fff;
+}
+
+QLabel[type=&quot;value&quot;]{
+color: orange;
+}</string>
         </property>
         <property name="title">
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_22">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
          <property name="topMargin">
-          <number>16</number>
+          <number>18</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
          </property>
          <property name="bottomMargin">
-          <number>20</number>
+          <number>18</number>
+         </property>
+         <property name="spacing">
+          <number>6</number>
          </property>
          <item row="4" column="0">
-          <widget class="QLabel" name="m_statusBox">
+          <widget class="QLabel" name="m_statusValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -8969,10 +9181,13 @@ text-align: left;
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border:none;
-color: orange;
-font-size: 14px;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string notr="true">STATUS</string>
@@ -8980,10 +9195,13 @@ font-size: 14px;</string>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
          <item row="3" column="5">
-          <widget class="QLabel" name="fiatLabel">
+          <widget class="QLabel" name="sb_portfolioFiatTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9002,10 +9220,13 @@ font-size: 14px;</string>
              <height>20</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Portfolio (USD)</string>
@@ -9013,10 +9234,13 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="2">
-          <widget class="QLabel" name="m_currentWalletTitle">
+          <widget class="QLabel" name="m_currentWalletNameValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9038,17 +9262,13 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
            <property name="contextMenuPolicy">
             <enum>Qt::CustomContextMenu</enum>
            </property>
            <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string notr="true">WALLET NAME</string>
@@ -9056,177 +9276,13 @@ font-size: 14px;</string>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
          <item row="4" column="1">
-          <widget class="QLabel" name="statusHeight">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
-           </property>
-           <property name="text">
-            <string notr="true">HEIGHT</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLabel" name="label_15">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Current Height</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="5">
-          <widget class="QLabel" name="fiatTotal">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;</string>
-           </property>
-           <property name="text">
-            <string notr="true">FIAT TOTAL</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="2">
-          <widget class="QLabel" name="label_16">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Current Wallet</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="4">
-          <widget class="QLabel" name="label_13">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>200</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>20</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
-           </property>
-           <property name="text">
-            <string>Portfolio (CCX)</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="4">
-          <widget class="QLabel" name="ccxTotal">
+          <widget class="QLabel" name="m_heightValue">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9248,30 +9304,24 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
            <property name="font">
             <font>
              <family>Poppins</family>
-             <pointsize>-1</pointsize>
             </font>
            </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
            <property name="styleSheet">
-            <string notr="true">
-border:none;
-color: orange;
-font-size: 14px;
-
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
            </property>
            <property name="text">
-            <string notr="true">CCX TOTAL</string>
+            <string notr="true">HEIGHT</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_14">
+         <item row="3" column="1">
+          <widget class="QLabel" name="sb_heightTitle">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -9290,16 +9340,220 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
              <height>20</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;
-color: white;
-QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;}</string>
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Current Height</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLabel" name="m_portfolioFiatValue">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string notr="true">FIAT TOTAL</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLabel" name="sb_currentWalletNameTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Current Wallet</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="QLabel" name="sb_portfolioCCXTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Portfolio (CCX)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="QLabel" name="m_portfolioCCXValue">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string notr="true">CCX TOTAL</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">value</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="sb_statusTitle">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Status</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
+           </property>
+           <property name="type" stdset="0">
+            <string notr="true">title</string>
            </property>
           </widget>
          </item>
@@ -9311,16 +9565,17 @@ QToolTip { color: #eeeeee; background-color: #000000; border: 0px; padding: 8px;
      <zorder>lockBox</zorder>
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
+     <zorder>aboutBox</zorder>
+     <zorder>horizontalLine</zorder>
+     <zorder>addressBookBox</zorder>
+     <zorder>bankingBox</zorder>
+     <zorder>newMessageBox</zorder>
+     <zorder>sendBox</zorder>
+     <zorder>settingsBox</zorder>
      <zorder>statusBox</zorder>
      <zorder>messageBox</zorder>
      <zorder>transactionsBox</zorder>
-     <zorder>sendBox</zorder>
-     <zorder>bankingBox</zorder>
-     <zorder>aboutBox</zorder>
-     <zorder>newMessageBox</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>overviewBox</zorder>
-     <zorder>settingsBox</zorder>
     </widget>
    </item>
   </layout>
