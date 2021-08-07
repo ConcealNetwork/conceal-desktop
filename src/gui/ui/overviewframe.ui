@@ -2890,89 +2890,134 @@ font-weight:bold;</string>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
        <widget class="QGroupBox" name="transactionsBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="title">
          <string/>
         </property>
-        <layout class="QGridLayout" name="gridLayout_16">
-         <item row="0" column="1">
-          <widget class="QPushButton" name="b1_exportCSVButton">
-           <property name="minimumSize">
-            <size>
-             <width>180</width>
-             <height>35</height>
-            </size>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox">
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>180</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
-           </property>
-           <property name="text">
-            <string>EXPORT CSV</string>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="title_transactions">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff;</string>
+              </property>
+              <property name="text">
+               <string>HISTORICAL DATA</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_14">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="b1_exportCSVButton">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">/* This button style is handled automatically by OverviewFrame:setStyles() (in OverviewFrame.cpp) */</string>
+              </property>
+              <property name="text">
+               <string>EXPORT CSV</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="title_transactions">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>100</width>
-             <height>25</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
-           </property>
-           <property name="text">
-            <string>HISTORICAL DATA</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="2">
+         <item>
           <widget class="QLabel" name="m_transactionsDescription">
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">border: none;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrepancies, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entries to get a more detailed view.</string>
@@ -2982,7 +3027,7 @@ text-align: left;
            </property>
           </widget>
          </item>
-         <item row="2" column="0" colspan="2">
+         <item>
           <widget class="QTreeView" name="m_transactionsView">
            <property name="minimumSize">
             <size>
@@ -3993,13 +4038,13 @@ border: none;</string>
                  <property name="minimumSize">
                   <size>
                    <width>250</width>
-                   <height>25</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>250</width>
-                   <height>25</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="font">
@@ -4033,13 +4078,13 @@ border: none;</string>
                  <property name="minimumSize">
                   <size>
                    <width>150</width>
-                   <height>0</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>150</width>
-                   <height>16777215</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="font">
@@ -4249,13 +4294,13 @@ border: none;</string>
                  <property name="minimumSize">
                   <size>
                    <width>250</width>
-                   <height>25</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
                    <width>250</width>
-                   <height>25</height>
+                   <height>32</height>
                   </size>
                  </property>
                  <property name="font">
@@ -5641,13 +5686,13 @@ font-size: 18px;
               <property name="minimumSize">
                <size>
                 <width>250</width>
-                <height>25</height>
+                <height>32</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>250</width>
-                <height>25</height>
+                <height>32</height>
                </size>
               </property>
               <property name="font">
@@ -5863,13 +5908,13 @@ font-size: 18px;
               <property name="minimumSize">
                <size>
                 <width>250</width>
-                <height>25</height>
+                <height>32</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>250</width>
-                <height>25</height>
+                <height>32</height>
                </size>
               </property>
               <property name="font">
@@ -8822,19 +8867,37 @@ border: 0px;
         <property name="title">
          <string/>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>18</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>18</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
          <item>
           <widget class="QLabel" name="title_messageOverview">
            <property name="minimumSize">
             <size>
-             <width>300</width>
-             <height>35</height>
+             <width>250</width>
+             <height>32</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>300</width>
-             <height>35</height>
+             <width>250</width>
+             <height>32</height>
             </size>
            </property>
            <property name="font">
@@ -8843,13 +8906,7 @@ border: 0px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #fff;
-background: transparent;
-
-
-border: none;
-text-align: left;
-</string>
+            <string notr="true">color: #fff;</string>
            </property>
            <property name="text">
             <string>MESSAGE OVERVIEW</string>
@@ -8861,6 +8918,11 @@ text-align: left;
          </item>
          <item>
           <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
            <property name="text">
             <string>A list of incoming and outgoing messages for this wallet. </string>
            </property>
@@ -9420,8 +9482,6 @@ color: orange;
      <zorder>leftMenu</zorder>
      <zorder>headerBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>messageBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>sendBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>newMessageBox</zorder>
@@ -9430,6 +9490,8 @@ color: orange;
      <zorder>horizontalLine</zorder>
      <zorder>overviewBox</zorder>
      <zorder>bankingBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>
