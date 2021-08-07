@@ -27,7 +27,7 @@ namespace WalletGui
 
   ImportSeed::~ImportSeed() { }
 
-  QString ImportSeed::getKeyString() const { return m_ui->m_seed->text().trimmed(); }
+  QString ImportSeed::getKeyString() const { return m_ui->m_seed->toPlainText().trimmed(); }
 
   QString ImportSeed::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
