@@ -54,7 +54,7 @@
 
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "ImportSecretKeys.h"
+#include "ImportSecretKeysDialog.h"
 #include "ImportTracking.h"
 #include "ui_mainwindow.h"
 

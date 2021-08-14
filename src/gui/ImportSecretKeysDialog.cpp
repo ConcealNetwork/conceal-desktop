@@ -5,7 +5,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "ImportSecretKeys.h"
+#include "ImportSecretKeysDialog.h"
 
 #include <QApplication>
 #include <QFileDialog>
@@ -13,12 +13,12 @@
 #include <QFontDatabase>
 
 #include "Settings.h"
-#include "ui_importsecretkeys.h"
+#include "ui_importsecretkeysdialog.h"
 
 namespace WalletGui
 {
   ImportSecretKeysDialog::ImportSecretKeysDialog(QWidget *_parent)
-      : QDialog(_parent), m_ui(new Ui::ImportSecretKeys)
+      : QDialog(_parent), m_ui(new Ui::ImportSecretKeysDialog)
   {
     m_ui->setupUi(this);
     m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());

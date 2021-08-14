@@ -13,7 +13,7 @@
 
 namespace Ui
 {
-  class ImportSecretKeys;
+  class ImportSecretKeysDialog;
 }
 
 namespace WalletGui
@@ -35,7 +35,7 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::ImportSecretKeys> m_ui;
+    QScopedPointer<Ui::ImportSecretKeysDialog> m_ui;
     Q_SLOT void selectPathClicked();
   };
 }  // namespace WalletGui
