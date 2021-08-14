@@ -859,7 +859,7 @@ void MainWindow::importSeed()
 
 void MainWindow::importTracking()
 {
-  ImportTracking dlg(this);
+  ImportTrackingDialog dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);

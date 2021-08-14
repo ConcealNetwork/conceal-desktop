@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ImportTracking</class>
- <widget class="QDialog" name="ImportTracking">
+ <class>ImportTrackingDialog</class>
+ <widget class="QDialog" name="ImportTrackingDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -378,7 +378,7 @@ font-weight: bold;</string>
   <connection>
    <sender>b1_okButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportTracking</receiver>
+   <receiver>ImportTrackingDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -394,7 +394,7 @@ font-weight: bold;</string>
   <connection>
    <sender>b1_cancelButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportTracking</receiver>
+   <receiver>ImportTrackingDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -410,7 +410,7 @@ font-weight: bold;</string>
   <connection>
    <sender>m_selectPathButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportTracking</receiver>
+   <receiver>ImportTrackingDialog</receiver>
    <slot>selectPathClicked()</slot>
    <hints>
     <hint type="sourcelabel">

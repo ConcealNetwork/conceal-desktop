@@ -17,20 +17,20 @@
 
 namespace WalletGui
 {
-  ImportTracking::ImportTracking(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportTracking)
+  ImportTrackingDialog::ImportTrackingDialog(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportTrackingDialog)
   {
     m_ui->setupUi(this);
     m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
     EditableStyle::setStyles(Settings::instance().getFontSize());
   }
 
-  ImportTracking::~ImportTracking() { }
+  ImportTrackingDialog::~ImportTrackingDialog() { }
 
-  QString ImportTracking::getKeyString() const { return m_ui->m_trackingKey->text().trimmed(); }
+  QString ImportTrackingDialog::getKeyString() const { return m_ui->m_trackingKey->text().trimmed(); }
 
-  QString ImportTracking::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
+  QString ImportTrackingDialog::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
-  void ImportTracking::selectPathClicked()
+  void ImportTrackingDialog::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
                                                     Settings::instance().getDefaultWalletPath(),
@@ -42,17 +42,17 @@ namespace WalletGui
     m_ui->m_pathEdit->setText(filePath);
   }
 
-  QList<QWidget *> ImportTracking::getWidgets()
+  QList<QWidget *> ImportTrackingDialog::getWidgets()
   {
     return m_ui->groupBox->findChildren<QWidget *>();
   }
 
-  QList<QPushButton *> ImportTracking::getButtons()
+  QList<QPushButton *> ImportTrackingDialog::getButtons()
   {
     return m_ui->groupBox->findChildren<QPushButton *>();
   }
 
-  QList<QLabel *> ImportTracking::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
+  QList<QLabel *> ImportTrackingDialog::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-  void ImportTracking::applyStyles() { m_ui->groupBox->update(); }
+  void ImportTrackingDialog::applyStyles() { m_ui->groupBox->update(); }
 }  // namespace WalletGui
