@@ -17,7 +17,7 @@
 
 namespace WalletGui
 {
-  ImportSeed::ImportSeed(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportSeed)
+  ImportSeedDialog::ImportSeedDialog(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportSeedDialog)
   {
     m_ui->setupUi(this);
     m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
@@ -25,13 +25,13 @@ namespace WalletGui
     EditableStyle::setStyles(startingFontSize);
   }
 
-  ImportSeed::~ImportSeed() { }
+  ImportSeedDialog::~ImportSeedDialog() { }
 
-  QString ImportSeed::getKeyString() const { return m_ui->m_seed->toPlainText().trimmed(); }
+  QString ImportSeedDialog::getKeyString() const { return m_ui->m_seed->toPlainText().trimmed(); }
 
-  QString ImportSeed::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
+  QString ImportSeedDialog::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
-  void ImportSeed::selectPathClicked()
+  void ImportSeedDialog::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
                                                     Settings::instance().getDefaultWalletPath(),
@@ -43,14 +43,14 @@ namespace WalletGui
     m_ui->m_pathEdit->setText(filePath);
   }
 
-  QList<QWidget *> ImportSeed::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
+  QList<QWidget *> ImportSeedDialog::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
 
-  QList<QPushButton *> ImportSeed::getButtons()
+  QList<QPushButton *> ImportSeedDialog::getButtons()
   {
     return m_ui->groupBox->findChildren<QPushButton *>();
   }
 
-  QList<QLabel *> ImportSeed::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
+  QList<QLabel *> ImportSeedDialog::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-  void ImportSeed::applyStyles() { m_ui->groupBox->update(); }
+  void ImportSeedDialog::applyStyles() { m_ui->groupBox->update(); }
 }  // namespace WalletGui

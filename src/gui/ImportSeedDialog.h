@@ -13,18 +13,18 @@
 
 namespace Ui
 {
-  class ImportSeed;
+  class ImportSeedDialog;
 }
 
 namespace WalletGui
 {
-  class ImportSeed : public QDialog, public EditableStyle
+  class ImportSeedDialog : public QDialog, public EditableStyle
   {
     Q_OBJECT
 
   public:
-    explicit ImportSeed(QWidget *_parent);
-    ~ImportSeed();
+    explicit ImportSeedDialog(QWidget *_parent);
+    ~ImportSeedDialog();
     QString getKeyString() const;
     QString getFilePath() const;
 
@@ -34,7 +34,7 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::ImportSeed> m_ui;
+    QScopedPointer<Ui::ImportSeedDialog> m_ui;
     Q_SLOT void selectPathClicked();
   };
 }  // namespace WalletGui

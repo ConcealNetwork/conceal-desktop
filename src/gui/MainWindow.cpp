@@ -785,7 +785,7 @@ void MainWindow::importSeed()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  ImportSeed dlg(this);
+  ImportSeedDialog dlg(this);
   dlg.setModal(true);
   dlg.setWindowFlags(Qt::FramelessWindowHint);
   dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);

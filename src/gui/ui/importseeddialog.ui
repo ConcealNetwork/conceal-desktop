@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ImportSeed</class>
- <widget class="QDialog" name="ImportSeed">
+ <class>ImportSeedDialog</class>
+ <widget class="QDialog" name="ImportSeedDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -397,7 +397,7 @@ font-weight: bold;</string>
   <connection>
    <sender>b1_okButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSeed</receiver>
+   <receiver>ImportSeedDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -413,7 +413,7 @@ font-weight: bold;</string>
   <connection>
    <sender>b1_cancelButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSeed</receiver>
+   <receiver>ImportSeedDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -429,7 +429,7 @@ font-weight: bold;</string>
   <connection>
    <sender>m_selectPathButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSeed</receiver>
+   <receiver>ImportSeedDialog</receiver>
    <slot>selectPathClicked()</slot>
    <hints>
     <hint type="sourcelabel">
