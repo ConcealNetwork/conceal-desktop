@@ -18,13 +18,13 @@ namespace Ui
 
 namespace WalletGui
 {
-  class ImportSecretKeys : public QDialog, public EditableStyle
+  class ImportSecretKeysDialog : public QDialog, public EditableStyle
   {
     Q_OBJECT
 
   public:
-    explicit ImportSecretKeys(QWidget *_parent);
-    ~ImportSecretKeys();
+    explicit ImportSecretKeysDialog(QWidget *_parent);
+    ~ImportSecretKeysDialog();
     QString getSpendKeyString() const;
     QString getViewKeyString() const;
     QString getFilePath() const;

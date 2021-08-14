@@ -17,7 +17,7 @@
 
 namespace WalletGui
 {
-  ImportSecretKeys::ImportSecretKeys(QWidget *_parent)
+  ImportSecretKeysDialog::ImportSecretKeysDialog(QWidget *_parent)
       : QDialog(_parent), m_ui(new Ui::ImportSecretKeys)
   {
     m_ui->setupUi(this);
@@ -26,15 +26,15 @@ namespace WalletGui
     EditableStyle::setStyles(startingFontSize);
   }
 
-  ImportSecretKeys::~ImportSecretKeys() { }
+  ImportSecretKeysDialog::~ImportSecretKeysDialog() { }
 
-  QString ImportSecretKeys::getSpendKeyString() const { return m_ui->m_spendKey->text().trimmed(); }
+  QString ImportSecretKeysDialog::getSpendKeyString() const { return m_ui->m_spendKey->text().trimmed(); }
 
-  QString ImportSecretKeys::getViewKeyString() const { return m_ui->m_viewKey->text().trimmed(); }
+  QString ImportSecretKeysDialog::getViewKeyString() const { return m_ui->m_viewKey->text().trimmed(); }
 
-  QString ImportSecretKeys::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
+  QString ImportSecretKeysDialog::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
-  void ImportSecretKeys::selectPathClicked()
+  void ImportSecretKeysDialog::selectPathClicked()
   {
     QString filePath = QFileDialog::getSaveFileName(this, tr("Wallet file"),
                                                     Settings::instance().getDefaultWalletPath(),
@@ -46,17 +46,17 @@ namespace WalletGui
     m_ui->m_pathEdit->setText(filePath);
   }
 
-  QList<QWidget *> ImportSecretKeys::getWidgets()
+  QList<QWidget *> ImportSecretKeysDialog::getWidgets()
   {
     return m_ui->groupBox->findChildren<QWidget *>();
   }
 
-  QList<QPushButton *> ImportSecretKeys::getButtons()
+  QList<QPushButton *> ImportSecretKeysDialog::getButtons()
   {
     return m_ui->groupBox->findChildren<QPushButton *>();
   }
 
-  QList<QLabel *> ImportSecretKeys::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
+  QList<QLabel *> ImportSecretKeysDialog::getLabels() { return m_ui->groupBox->findChildren<QLabel *>(); }
 
-  void ImportSecretKeys::applyStyles() { m_ui->groupBox->update(); }
+  void ImportSecretKeysDialog::applyStyles() { m_ui->groupBox->update(); }
 }  // namespace WalletGui
