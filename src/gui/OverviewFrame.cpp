@@ -1978,9 +1978,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::helpDeskClicked()
+  void OverviewFrame::websiteClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://conceal.network/support/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
   void OverviewFrame::stexClicked()
@@ -2000,7 +2000,7 @@ namespace WalletGui
 
   void OverviewFrame::helpClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/support/", QUrl::TolerantMode));
   }
 
   /* Initiate a password prompt meant for critical tasks like sending funds etc */

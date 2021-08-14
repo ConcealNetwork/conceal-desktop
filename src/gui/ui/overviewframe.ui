@@ -1014,7 +1014,7 @@ background-color: #333;
 }</string>
            </property>
            <property name="text">
-            <string>HELP</string>
+            <string>HELP DESK</string>
            </property>
            <property name="iconSize">
             <size>
@@ -1810,7 +1810,7 @@ border: none;</string>
                  <x>0</x>
                  <y>0</y>
                  <width>722</width>
-                 <height>15164</height>
+                 <height>15026</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2689,7 +2689,7 @@ Public License instead of this License.  But first, please read
                  <x>0</x>
                  <y>0</y>
                  <width>473</width>
-                 <height>299</height>
+                 <height>245</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -5066,7 +5066,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="11">
-             <widget class="QPushButton" name="sm_helpDeskButton">
+             <widget class="QPushButton" name="sm_websiteButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5094,7 +5094,7 @@ color: orange;
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Help Desk</string>
+               <string>Website</string>
               </property>
               <property name="type" stdset="0">
                <string>sm</string>
@@ -5607,7 +5607,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="9">
-             <widget class="QLabel" name="helpDeskIcon">
+             <widget class="QLabel" name="websiteIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -10513,10 +10513,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_helpDeskButton</sender>
+   <sender>sm_websiteButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>helpDeskClicked()</slot>
+   <slot>websiteClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>976</x>
@@ -10881,7 +10881,7 @@ color: orange;
   <slot>unlockWallet()</slot>
   <slot>encryptWalletClicked()</slot>
   <slot>addressChanged(QString)</slot>
-  <slot>helpDeskClicked()</slot>
+  <slot>websiteClicked()</slot>
   <slot>tradeogreClicked()</slot>
   <slot>stexClicked()</slot>
   <slot>wikiClicked()</slot>

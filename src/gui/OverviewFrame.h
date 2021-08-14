@@ -191,7 +191,7 @@ private:
   Q_SLOT void unlockWallet();
   Q_SLOT void encryptWalletClicked();
   Q_SLOT void stexClicked();
-  Q_SLOT void helpDeskClicked();
+  Q_SLOT void websiteClicked();
   Q_SLOT void tradeogreClicked();
   Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
