@@ -79,7 +79,7 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/ImportGUIKeyDialog.h \
            src/gui/ImportSecretKeysDialog.h \
            src/gui/ImportSeedDialog.h \
-           src/gui/ImportTracking.h \
+           src/gui/ImportTrackingDialog.h \
            src/gui/MainPasswordDialog.h \
            src/gui/MainWindow.h \
            src/gui/Message.h \
@@ -511,7 +511,7 @@ FORMS += src/gui/ui/addressbookdialog.ui \
          src/gui/ui/importguikeydialog.ui \
          src/gui/ui/importsecretkeysdialog.ui \
          src/gui/ui/importseeddialog.ui \
-         src/gui/ui/importtracking.ui \
+         src/gui/ui/importtrackingdialog.ui \
          src/gui/ui/mainpassworddialog.ui \
          src/gui/ui/mainwindow.ui \
          src/gui/ui/messagedetailsdialog.ui \
@@ -588,7 +588,7 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/ImportGUIKeyDialog.cpp \
            src/gui/ImportSecretKeysDialog.cpp \
            src/gui/ImportSeedDialog.cpp \
-           src/gui/ImportTracking.cpp \
+           src/gui/ImportTrackingDialog.cpp \
            src/gui/MainPasswordDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \

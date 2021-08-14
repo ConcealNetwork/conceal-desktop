@@ -5,7 +5,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "ImportTracking.h"
+#include "ImportTrackingDialog.h"
 
 #include <QApplication>
 #include <QFileDialog>
@@ -13,7 +13,7 @@
 #include <QFontDatabase>
 
 #include "Settings.h"
-#include "ui_importtracking.h"
+#include "ui_importtrackingdialog.h"
 
 namespace WalletGui
 {
