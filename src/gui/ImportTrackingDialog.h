@@ -28,6 +28,8 @@ namespace WalletGui
 
     QString getKeyString() const;
     QString getFilePath() const;
+    void setErrorMessage(QString message);
+    void clearErrorMessage();
 
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
@@ -36,8 +38,7 @@ namespace WalletGui
 
   private:
     QScopedPointer<Ui::ImportTrackingDialog> m_ui;
-
     Q_SLOT void selectPathClicked();
+    Q_SLOT void importButtonClicked();
   };
-
 }  // namespace WalletGui

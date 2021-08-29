@@ -1665,7 +1665,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
     Q_EMIT importTrackingKeySignal();
-    dashboardClicked();
+     m_ui->darkness->hide();
   }
 
   void OverviewFrame::importPrivateKeysButtonClicked()
