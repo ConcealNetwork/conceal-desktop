@@ -117,7 +117,7 @@ void MainWindow::connectToSignals()
 
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);
-  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importSecretkeys, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importKeyClickedSignal, this, &MainWindow::importKey, Qt::QueuedConnection);
 
   /* signals from overview frame buttons */
@@ -131,7 +131,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importSecretkeys);
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
 
@@ -692,91 +692,14 @@ void MainWindow::rescanTo()
 
 /* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 
-void MainWindow::importsecretkeys()
+void MainWindow::importSecretkeys()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
   ImportSecretKeysDialog dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
-
-    QString spendKey = dlg.getSpendKeyString().trimmed();
-    QString viewKey = dlg.getViewKeyString().trimmed();
-    QString filePath = dlg.getFilePath();
-
-    if (spendKey.isEmpty() || filePath.isEmpty())
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (!filePath.endsWith(".wallet"))
-    {
-      filePath.append(".wallet");
-    }
-
-    if (QFile::exists(filePath))
-    {
-      QMessageBox::warning(
-          &MainWindow::instance(), QObject::tr("Error"),
-          tr("The wallet file already exists. Please change the wallet name and try again."));
-      return;
-    }
-
-    std::string private_spend_key_string = spendKey.toStdString();
-    std::string private_view_key_string = viewKey.toStdString();
-
-    Crypto::SecretKey private_spend_key;
-    Crypto::SecretKey private_view_key;
-
-    Crypto::Hash private_spend_key_hash;
-    Crypto::Hash private_view_key_hash;
-
-    size_t size;
-    if (!Common::fromHex(private_spend_key_string,
-                         &private_spend_key_hash,
-                         sizeof(private_spend_key_hash),
-                         size) ||
-        size != sizeof(private_spend_key_hash))
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash))
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    private_spend_key = *(struct Crypto::SecretKey *)&private_spend_key_hash;
-    private_view_key = *(struct Crypto::SecretKey *)&private_view_key_hash;
-
-    Crypto::PublicKey spendPublicKey;
-    Crypto::PublicKey viewPublicKey;
-    Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
-    Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
-
-    CryptoNote::AccountPublicAddress publicKeys;
-    publicKeys.spendPublicKey = spendPublicKey;
-    publicKeys.viewPublicKey = viewPublicKey;
-
-    CryptoNote::AccountKeys keys;
-    keys.address = publicKeys;
-    keys.spendSecretKey = private_spend_key;
-    keys.viewSecretKey = private_view_key;
-
-    if (WalletAdapter::instance().isOpen())
-    {
-
-      WalletAdapter::instance().close();
-    }
-
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys);
+    m_ui->m_overviewFrame->dashboardClicked();
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
