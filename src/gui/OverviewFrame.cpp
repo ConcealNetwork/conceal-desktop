@@ -849,20 +849,17 @@ namespace WalletGui
                                   " CCX");  // Send funds screen
 
     // Update styles
-    if (walletSynced)
+    QString styleSheet;
+    if (unlockedDeposits > 0)
     {
-      QString styleSheet;
-      if (unlockedDeposits > 0)
-      {
-        styleSheet = "color: orange; background: transparent; border: none;";
-      }
-      else
-      {
-        styleSheet = "color: #ddd; background: transparent; border: none;";
-      }
-      m_ui->m_unlockedDeposits->setStyleSheet(styleSheet);
-      m_ui->m_tickerLabel4->setStyleSheet(styleSheet);
+      styleSheet = "color: orange; background: transparent; border: none;";
     }
+    else
+    {
+      styleSheet = "color: #ddd; background: transparent; border: none;";
+    }
+    m_ui->m_unlockedDeposits->setStyleSheet(styleSheet);
+    m_ui->m_tickerLabel4->setStyleSheet(styleSheet);
   }
 
   /* Banking menu button clicked */
@@ -898,6 +895,7 @@ namespace WalletGui
   void OverviewFrame::dashboardClicked()
   {
     m_ui->darkness->hide();
+    updatePortfolio();
     m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-home"));
     m_ui->overviewBox->raise();
@@ -1651,7 +1649,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
     Q_EMIT importSeedSignal();
-    dashboardClicked();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::openWalletButtonClicked()

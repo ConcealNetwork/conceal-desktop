@@ -786,73 +786,9 @@ void MainWindow::importSeed()
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
   ImportSeedDialog dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
   if (dlg.exec() == QDialog::Accepted)
   {
-
-    QString seed = dlg.getKeyString().trimmed();
-    QString filePath = dlg.getFilePath();
-    if (seed.isEmpty() || filePath.isEmpty())
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (QFile::exists(filePath))
-    {
-      QMessageBox::warning(
-          &MainWindow::instance(), QObject::tr("Error"),
-          tr("The wallet file already exists. Please change the wallet name and try again."));
-      return;
-    }
-
-    static std::string languages[] = {"English"};
-    static const int num_of_languages = 1;
-    static const int mnemonic_phrase_length = 25;
-
-    std::string mnemonic_phrase = seed.toStdString();
-
-    std::vector<std::string> words;
-
-    words = boost::split(words, mnemonic_phrase, ::isspace);
-
-    Crypto::SecretKey private_spend_key;
-    Crypto::SecretKey private_view_key;
-
-    crypto::ElectrumWords::words_to_bytes(mnemonic_phrase,
-                                          private_spend_key,
-                                          languages[0]);
-
-    Crypto::PublicKey unused_dummy_variable;
-
-    CryptoNote::AccountBase::generateViewFromSpend(private_spend_key,
-                                                   private_view_key,
-                                                   unused_dummy_variable);
-
-    Crypto::PublicKey spendPublicKey;
-    Crypto::PublicKey viewPublicKey;
-    Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
-    Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
-
-    CryptoNote::AccountPublicAddress publicKeys;
-    publicKeys.spendPublicKey = spendPublicKey;
-    publicKeys.viewPublicKey = viewPublicKey;
-
-    CryptoNote::AccountKeys keys;
-    keys.address = publicKeys;
-    keys.spendSecretKey = private_spend_key;
-    keys.viewSecretKey = private_view_key;
-
-    if (WalletAdapter::instance().isOpen())
-    {
-
-      WalletAdapter::instance().close();
-    }
-
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys);
+    m_ui->m_overviewFrame->dashboardClicked();
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }

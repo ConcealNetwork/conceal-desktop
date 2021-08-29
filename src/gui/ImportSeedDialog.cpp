@@ -7,27 +7,38 @@
 
 #include "ImportSeedDialog.h"
 
+#include <CryptoNoteCore/Account.h>
+#include <Mnemonics/electrum-words.h>
+
 #include <QApplication>
 #include <QFileDialog>
 #include <QFont>
 #include <QFontDatabase>
+#include <boost/algorithm/string.hpp>
 
 #include "Settings.h"
+#include "WalletAdapter.h"
 #include "ui_importseeddialog.h"
 
 namespace WalletGui
 {
-  ImportSeedDialog::ImportSeedDialog(QWidget *_parent) : QDialog(_parent), m_ui(new Ui::ImportSeedDialog)
+  ImportSeedDialog::ImportSeedDialog(QWidget *_parent)
+      : QDialog(_parent), m_ui(new Ui::ImportSeedDialog)
   {
     m_ui->setupUi(this);
+    setModal(true);
+    setWindowFlags(Qt::FramelessWindowHint);
+    if (_parent != nullptr)
+    {
+      move((_parent->width() - width()) / 2, (_parent->height() - height()) / 2);
+    }
     m_ui->m_pathEdit->setText(Settings::instance().getDefaultWalletPath());
-    int startingFontSize = Settings::instance().getFontSize();
-    EditableStyle::setStyles(startingFontSize);
+    EditableStyle::setStyles(Settings::instance().getFontSize());
   }
 
   ImportSeedDialog::~ImportSeedDialog() { }
 
-  QString ImportSeedDialog::getKeyString() const { return m_ui->m_seed->toPlainText().trimmed(); }
+  QString ImportSeedDialog::getSeed() const { return m_ui->m_seed->toPlainText().simplified(); }
 
   QString ImportSeedDialog::getFilePath() const { return m_ui->m_pathEdit->text().trimmed(); }
 
@@ -43,7 +54,72 @@ namespace WalletGui
     m_ui->m_pathEdit->setText(filePath);
   }
 
-  QList<QWidget *> ImportSeedDialog::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
+  void ImportSeedDialog::setErrorMessage(QString message) { m_ui->m_errorLabel->setText(message); }
+
+  void ImportSeedDialog::clearErrorMessage() { m_ui->m_errorLabel->setText(""); }
+
+  void ImportSeedDialog::importButtonClicked()
+  {
+    static std::string language = "English";
+    static const int mnemonicPhraseLength = 25;
+    QString seed = getSeed();
+    QString filePath = getFilePath();
+    int wordCount = seed.split(" ").size();
+    if (wordCount != mnemonicPhraseLength)
+    {
+      setErrorMessage(tr("Invalid seed. Seed phrase is not 25 words! Please try again."));
+      return;
+    }
+
+    if (QFile::exists(filePath))
+    {
+      setErrorMessage(
+          tr("The wallet file already exists. Please change the wallet path and try again."));
+      return;
+    }
+
+    std::string mnemonicPhrase = seed.toStdString();
+
+    std::vector<std::string> words;
+    boost::split(words, mnemonicPhrase, ::isspace);
+
+    Crypto::SecretKey privateSpendKey;
+    Crypto::SecretKey privateViewKey;
+
+    crypto::ElectrumWords::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
+
+    Crypto::PublicKey unused;
+
+    CryptoNote::AccountBase::generateViewFromSpend(privateSpendKey, privateViewKey, unused);
+
+    Crypto::PublicKey spendPublicKey;
+    Crypto::PublicKey viewPublicKey;
+    Crypto::secret_key_to_public_key(privateSpendKey, spendPublicKey);
+    Crypto::secret_key_to_public_key(privateViewKey, viewPublicKey);
+
+    CryptoNote::AccountPublicAddress publicKeys;
+    publicKeys.spendPublicKey = spendPublicKey;
+    publicKeys.viewPublicKey = viewPublicKey;
+
+    CryptoNote::AccountKeys keys;
+    keys.address = publicKeys;
+    keys.spendSecretKey = privateSpendKey;
+    keys.viewSecretKey = privateViewKey;
+
+    if (WalletAdapter::instance().isOpen())
+    {
+      WalletAdapter::instance().close();
+    }
+
+    WalletAdapter::instance().setWalletFile(filePath);
+    WalletAdapter::instance().createWithKeys(keys);
+    accept();
+  }
+
+  QList<QWidget *> ImportSeedDialog::getWidgets()
+  {
+    return m_ui->groupBox->findChildren<QWidget *>();
+  }
 
   QList<QPushButton *> ImportSeedDialog::getButtons()
   {
