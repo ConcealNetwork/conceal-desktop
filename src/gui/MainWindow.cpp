@@ -54,8 +54,8 @@
 
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "ImportSecretKeys.h"
-#include "ImportTracking.h"
+#include "ImportSecretKeysDialog.h"
+#include "ImportTrackingDialog.h"
 #include "ui_mainwindow.h"
 
 namespace WalletGui
@@ -117,7 +117,7 @@ void MainWindow::connectToSignals()
 
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::openWalletClickedSignal, this, &MainWindow::openWallet, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importSeedClickedSignal, this, &MainWindow::importSeed, Qt::QueuedConnection);
-  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importsecretkeys, Qt::QueuedConnection);
+  connect(m_ui->m_welcomeFrame, &WelcomeFrame::importsecretkeysClickedSignal, this, &MainWindow::importSecretkeys, Qt::QueuedConnection);
   connect(m_ui->m_welcomeFrame, &WelcomeFrame::importKeyClickedSignal, this, &MainWindow::importKey, Qt::QueuedConnection);
 
   /* signals from overview frame buttons */
@@ -131,7 +131,7 @@ void MainWindow::connectToSignals()
   connect(m_ui->m_overviewFrame, &OverviewFrame::importSeedSignal, this, &MainWindow::importSeed);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importGUIKeySignal, this, &MainWindow::importKey);
   connect(m_ui->m_overviewFrame, &OverviewFrame::importTrackingKeySignal, this, &MainWindow::importTracking);
-  connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importsecretkeys);
+  connect(m_ui->m_overviewFrame, &OverviewFrame::importSecretKeysSignal, this, &MainWindow::importSecretkeys);
   connect(m_ui->m_overviewFrame, &OverviewFrame::encryptWalletSignal, this, &MainWindow::encryptWallet);
   connect(m_ui->m_overviewFrame, &OverviewFrame::closeWalletSignal, this, &MainWindow::closeWallet);
 
@@ -692,91 +692,14 @@ void MainWindow::rescanTo()
 
 /* --------------------------- IMPORT SECRET KEYS --------------------------------------- */
 
-void MainWindow::importsecretkeys()
+void MainWindow::importSecretkeys()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  ImportSecretKeys dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  ImportSecretKeysDialog dlg(this);
   if (dlg.exec() == QDialog::Accepted)
   {
-
-    QString spendKey = dlg.getSpendKeyString().trimmed();
-    QString viewKey = dlg.getViewKeyString().trimmed();
-    QString filePath = dlg.getFilePath();
-
-    if (spendKey.isEmpty() || filePath.isEmpty())
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (!filePath.endsWith(".wallet"))
-    {
-      filePath.append(".wallet");
-    }
-
-    if (QFile::exists(filePath))
-    {
-      QMessageBox::warning(
-          &MainWindow::instance(), QObject::tr("Error"),
-          tr("The wallet file already exists. Please change the wallet name and try again."));
-      return;
-    }
-
-    std::string private_spend_key_string = spendKey.toStdString();
-    std::string private_view_key_string = viewKey.toStdString();
-
-    Crypto::SecretKey private_spend_key;
-    Crypto::SecretKey private_view_key;
-
-    Crypto::Hash private_spend_key_hash;
-    Crypto::Hash private_view_key_hash;
-
-    size_t size;
-    if (!Common::fromHex(private_spend_key_string,
-                         &private_spend_key_hash,
-                         sizeof(private_spend_key_hash),
-                         size) ||
-        size != sizeof(private_spend_key_hash))
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_spend_key_hash))
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    private_spend_key = *(struct Crypto::SecretKey *)&private_spend_key_hash;
-    private_view_key = *(struct Crypto::SecretKey *)&private_view_key_hash;
-
-    Crypto::PublicKey spendPublicKey;
-    Crypto::PublicKey viewPublicKey;
-    Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
-    Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
-
-    CryptoNote::AccountPublicAddress publicKeys;
-    publicKeys.spendPublicKey = spendPublicKey;
-    publicKeys.viewPublicKey = viewPublicKey;
-
-    CryptoNote::AccountKeys keys;
-    keys.address = publicKeys;
-    keys.spendSecretKey = private_spend_key;
-    keys.viewSecretKey = private_view_key;
-
-    if (WalletAdapter::instance().isOpen())
-    {
-
-      WalletAdapter::instance().close();
-    }
-
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys);
+    m_ui->m_overviewFrame->dashboardClicked();
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
@@ -785,175 +708,31 @@ void MainWindow::importSeed()
 {
   bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
   m_ui->m_welcomeFrame->hide();
-  ImportSeed dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  ImportSeedDialog dlg(this);
   if (dlg.exec() == QDialog::Accepted)
   {
-
-    QString seed = dlg.getKeyString().trimmed();
-    QString filePath = dlg.getFilePath();
-    if (seed.isEmpty() || filePath.isEmpty())
-    {
-      m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
-      return;
-    }
-
-    if (QFile::exists(filePath))
-    {
-      QMessageBox::warning(
-          &MainWindow::instance(), QObject::tr("Error"),
-          tr("The wallet file already exists. Please change the wallet name and try again."));
-      return;
-    }
-
-    static std::string languages[] = {"English"};
-    static const int num_of_languages = 1;
-    static const int mnemonic_phrase_length = 25;
-
-    std::string mnemonic_phrase = seed.toStdString();
-
-    std::vector<std::string> words;
-
-    words = boost::split(words, mnemonic_phrase, ::isspace);
-
-    Crypto::SecretKey private_spend_key;
-    Crypto::SecretKey private_view_key;
-
-    crypto::ElectrumWords::words_to_bytes(mnemonic_phrase,
-                                          private_spend_key,
-                                          languages[0]);
-
-    Crypto::PublicKey unused_dummy_variable;
-
-    CryptoNote::AccountBase::generateViewFromSpend(private_spend_key,
-                                                   private_view_key,
-                                                   unused_dummy_variable);
-
-    Crypto::PublicKey spendPublicKey;
-    Crypto::PublicKey viewPublicKey;
-    Crypto::secret_key_to_public_key(private_spend_key, spendPublicKey);
-    Crypto::secret_key_to_public_key(private_view_key, viewPublicKey);
-
-    CryptoNote::AccountPublicAddress publicKeys;
-    publicKeys.spendPublicKey = spendPublicKey;
-    publicKeys.viewPublicKey = viewPublicKey;
-
-    CryptoNote::AccountKeys keys;
-    keys.address = publicKeys;
-    keys.spendSecretKey = private_spend_key;
-    keys.viewSecretKey = private_view_key;
-
-    if (WalletAdapter::instance().isOpen())
-    {
-
-      WalletAdapter::instance().close();
-    }
-
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys);
+    m_ui->m_overviewFrame->dashboardClicked();
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::importTracking()
 {
-  ImportTracking dlg(this);
-  dlg.setModal(true);
-  dlg.setWindowFlags(Qt::FramelessWindowHint);
-  dlg.move((this->width() - dlg.width()) / 2, (height() - dlg.height()) / 2);
+  bool welcomeFrameVisible = m_ui->m_welcomeFrame->isVisible();
+  m_ui->m_welcomeFrame->hide();
+  ImportTrackingDialog dlg(this);
   if (dlg.exec() == QDialog::Accepted)
   {
-    QString keyString = dlg.getKeyString().trimmed();
-    QString filePath = dlg.getFilePath();
-    if (keyString.isEmpty() || filePath.isEmpty())
-    {
-      return;
-    }
-    if (keyString.size() != 256)
-    {
-      QMessageBox::warning(this, tr("Tracking key is not valid"), tr("The tracking key you entered is not valid."), QMessageBox::Ok);
-      return;
-    }
-
-    if (!filePath.endsWith(".wallet"))
-    {
-      filePath.append(".wallet");
-    }
-
-    if (QFile::exists(filePath))
-    {
-      QMessageBox::warning(
-          &MainWindow::instance(), QObject::tr("Error"),
-          tr("The wallet file already exists. Please change the wallet name and try again."));
-      return;
-    }
-
-    CryptoNote::AccountKeys keys;
-
-    std::string public_spend_key_string = keyString.mid(0, 64).toStdString();
-    std::string public_view_key_string = keyString.mid(64, 64).toStdString();
-    std::string private_spend_key_string = keyString.mid(128, 64).toStdString();
-    std::string private_view_key_string = keyString.mid(192, 64).toStdString();
-
-    Crypto::Hash public_spend_key_hash;
-    Crypto::Hash public_view_key_hash;
-    Crypto::Hash private_spend_key_hash;
-    Crypto::Hash private_view_key_hash;
-
-    size_t size;
-    if (!Common::fromHex(public_spend_key_string, &public_spend_key_hash, sizeof(public_spend_key_hash), size) || size != sizeof(public_spend_key_hash))
-    {
-      QMessageBox::warning(this, tr("Key is not valid"), tr("The public spend key you entered is not valid."), QMessageBox::Ok);
-      return;
-    }
-    if (!Common::fromHex(public_view_key_string, &public_view_key_hash, sizeof(public_view_key_hash), size) || size != sizeof(public_view_key_hash))
-    {
-      QMessageBox::warning(this, tr("Key is not valid"), tr("The public view key you entered is not valid."), QMessageBox::Ok);
-      return;
-    }
-    if (!Common::fromHex(private_spend_key_string, &private_spend_key_hash, sizeof(private_spend_key_hash), size) || size != sizeof(private_spend_key_hash))
-    {
-      QMessageBox::warning(this, tr("Key is not valid"), tr("The private spend key you entered is not valid."), QMessageBox::Ok);
-      return;
-    }
-    if (!Common::fromHex(private_view_key_string, &private_view_key_hash, sizeof(private_view_key_hash), size) || size != sizeof(private_view_key_hash))
-    {
-      QMessageBox::warning(this, tr("Key is not valid"), tr("The private view key you entered is not valid."), QMessageBox::Ok);
-      return;
-    }
-
-    Crypto::PublicKey public_spend_key = *(struct Crypto::PublicKey *)&public_spend_key_hash;
-    Crypto::PublicKey public_view_key = *(struct Crypto::PublicKey *)&public_view_key_hash;
-    Crypto::SecretKey private_spend_key = *(struct Crypto::SecretKey *)&private_spend_key_hash;
-    Crypto::SecretKey private_view_key = *(struct Crypto::SecretKey *)&private_view_key_hash;
-
-    keys.address.spendPublicKey = public_spend_key;
-    keys.address.viewPublicKey = public_view_key;
-    keys.spendSecretKey = private_spend_key;
-    keys.viewSecretKey = private_view_key;
-
-    if (WalletAdapter::instance().isOpen())
-    {
-      WalletAdapter::instance().close();
-    }
-    Settings::instance().setTrackingMode(true);
-    WalletAdapter::instance().setWalletFile(filePath);
-    WalletAdapter::instance().createWithKeys(keys);
-    // }
+    m_ui->m_overviewFrame->dashboardClicked();
   }
+  m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
 }
 
 void MainWindow::showQRCode(const QString &_address)
 {
-
   ShowQRCode dlg(this);
   dlg.showQR(_address);
-
-  if (dlg.exec() == QDialog::Accepted)
-  {
-  }
+  dlg.exec();
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON

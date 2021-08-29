@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
+    <width>1100</width>
     <height>500</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>480</width>
-    <height>500</height>
-   </size>
   </property>
   <property name="maximumSize">
    <size>
@@ -105,7 +99,9 @@ font-weight: bold;</string>
       <item>
        <widget class="QLabel" name="label_4">
         <property name="font">
-         <font/>
+         <font>
+          <family>Poppins</family>
+         </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;border-right: 0px;</string>
@@ -138,6 +134,7 @@ font-weight: bold;</string>
        <widget class="QLabel" name="label">
         <property name="font">
          <font>
+          <family>Poppins</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -186,6 +183,7 @@ font-weight: bold;</string>
        <widget class="QLabel" name="label_2">
         <property name="font">
          <font>
+          <family>Poppins</family>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -201,6 +199,11 @@ font-weight: bold;</string>
       </item>
       <item>
        <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+         </font>
+        </property>
         <property name="text">
          <string>Where would you like to save your wallet?</string>
         </property>
