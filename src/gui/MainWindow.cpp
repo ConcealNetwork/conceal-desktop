@@ -730,13 +730,9 @@ void MainWindow::importTracking()
 
 void MainWindow::showQRCode(const QString &_address)
 {
-
   ShowQRCode dlg(this);
   dlg.showQR(_address);
-
-  if (dlg.exec() == QDialog::Accepted)
-  {
-  }
+  dlg.exec();
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
