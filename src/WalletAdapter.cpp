@@ -5,6 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "WalletAdapter.h"
+#include "LoggerAdapter.h"
 
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
@@ -398,14 +399,19 @@ void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _
                                    const QVector<CryptoNote::TransactionMessage>& _messages) {
   Q_CHECK_PTR(m_wallet);
   try {
+    LoggerAdapter::instance().log("lock");
     lock();
+    LoggerAdapter::instance().log("locked");
     Crypto::SecretKey _transactionsk;
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
+    LoggerAdapter::instance().log("Sending transaction to WalletLegacy");
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
     Q_EMIT walletStateChangedSignal(tr("Sending transaction"), "");
+    LoggerAdapter::instance().log("Transaction sent by WalletLegacy");
   } catch (std::system_error&) {
     unlock();
+    LoggerAdapter::instance().log("unlocked");
   }
 }
 

@@ -50,6 +50,7 @@
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include "WalletLegacy/WalletHelper.h"
+#include "LoggerAdapter.h"
 
 #include <QAction>
 #include <QApplication>
@@ -1147,6 +1148,8 @@ namespace WalletGui
 
   void OverviewFrame::sendFundsClicked()
   {
+    LoggerAdapter& logger = LoggerAdapter::instance();
+    logger.log("Sending funds");
     /* Check if its a tracking wallet */
     if (Settings::instance().isTrackingMode())
     {
@@ -1170,6 +1173,7 @@ namespace WalletGui
     /* Is it an Integrated address? */
     if (address.toStdString().length() == 186)
     {
+      logger.log("Address in integrated");
       isIntegrated = true;
       const uint64_t paymentIDLen = 64;
 
@@ -1179,6 +1183,7 @@ namespace WalletGui
       if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded))
       {
         paymentID = decoded.substr(0, paymentIDLen);
+        logger.log("Payment id decoded");
       }
 
       /* Create the address from the public keys */
@@ -1207,6 +1212,7 @@ namespace WalletGui
         std::vector<std::string> records;
         if (!Common::fetch_dns_txt(address.toStdString(), records))
         {
+          logger.log("Failed to lookup Conceal ID");
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
         }
         std::string realAddress;
@@ -1220,9 +1226,9 @@ namespace WalletGui
         }
       }
     }
-
     catch (std::exception &)
     {
+      logger.log("Could not check Conceal ID");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
       return;
     }
@@ -1230,24 +1236,30 @@ namespace WalletGui
     /* Check address validity */
     if (!CurrencyAdapter::instance().validateAddress(address))
     {
+      logger.log("Invalid recipient address");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
       return;
     }
 
+    logger.log("Start building the transaction");
     /* Start building the transaction */
     walletTransfer.address = address.toStdString();
     uint64_t amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountEdit->text());
     walletTransfer.amount = amount;
     walletTransfers.push_back(walletTransfer);
+    logger.log("End building the transaction");
     QString label = m_ui->m_addressLabel->text();
 
     /* Check payment id validity */
+    logger.log("Checking payment id");
     paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
     if (!WalletAdapter::isValidPaymentId(paymentIdString))
     {
+      logger.log("Invalid payment ID");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
       return;
     }
+    logger.log("Payment id checked");
 
     /* Warn the user if there is no payment id */
     if (paymentIdString.toStdString().length() < 64)
@@ -1276,6 +1288,7 @@ namespace WalletGui
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
+      logger.log("Using remote node");
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
@@ -1289,21 +1302,27 @@ namespace WalletGui
     /* Check if there are enough funds for the amount plus total fees */
     if (m_actualBalance < (amount + totalFee))
     {
+      logger.log("Insufficient funds");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
       return;
     }
 
     if (!checkWalletPassword())
     {
+      logger.log("Error while checking wallet password");
       return;
     }
+    logger.log("Start delay");
     delay();
+    logger.log("End delay");
 
     /* If the wallet is open we proceed */
     if (WalletAdapter::instance().isOpen())
     {
+      logger.log("Sending transaction to WalletAdapter");
       /* Send the transaction */
       WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
+      logger.log("Transaction sent by WalletAdapter");
       /* Add to the address book if a label is given */
       if ((!label.isEmpty()) && (m_ui->m_saveAddress->isChecked()))
       {
@@ -1317,6 +1336,7 @@ namespace WalletGui
         }
       }
     }
+    logger.log("OK");
   }
 
   /* Once we complete a transaction, we either show the error or clear all fields and move back to the dashboard */
