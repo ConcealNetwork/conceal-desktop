@@ -86,7 +86,13 @@ namespace WalletGui
     Crypto::SecretKey privateSpendKey;
     Crypto::SecretKey privateViewKey;
 
-    crypto::ElectrumWords::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
+    bool created = crypto::ElectrumWords::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
+
+    if (!created)
+    {
+      setErrorMessage(tr("Invalid seed. Please check your seed and try again."));
+      return;
+    }
 
     Crypto::PublicKey unused;
 
