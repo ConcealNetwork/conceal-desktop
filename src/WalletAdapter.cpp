@@ -5,6 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "WalletAdapter.h"
+#include "LoggerAdapter.h"
 
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
@@ -132,7 +133,7 @@ void WalletAdapter::open(const QString& _password) {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(!_password.isEmpty());
-  Q_EMIT walletStateChangedSignal(tr(""),"");
+  Q_EMIT walletStateChangedSignal(tr("Opening wallet"),"");
 
   m_wallet = NodeAdapter::instance().createWallet();
   m_wallet->addObserver(this);
@@ -160,7 +161,7 @@ void WalletAdapter::createWallet() {
 
   Q_ASSERT(m_wallet == nullptr);
   Settings::instance().setEncrypted(false);
-  Q_EMIT walletStateChangedSignal(tr(""), "");
+  Q_EMIT walletStateChangedSignal(tr("Creating wallet"), "");
 
   m_wallet = NodeAdapter::instance().createWallet();
 
@@ -398,14 +399,19 @@ void WalletAdapter::sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _
                                    const QVector<CryptoNote::TransactionMessage>& _messages) {
   Q_CHECK_PTR(m_wallet);
   try {
+    LoggerAdapter::instance().log("lock");
     lock();
+    LoggerAdapter::instance().log("locked");
     Crypto::SecretKey _transactionsk;
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
+    LoggerAdapter::instance().log("Sending transaction to WalletLegacy");
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
       _messages.toStdVector());
-    Q_EMIT walletStateChangedSignal(tr("SENDING TRANSACTION"), "");
+    Q_EMIT walletStateChangedSignal(tr("Sending transaction"), "");
+    LoggerAdapter::instance().log("Transaction sent by WalletLegacy");
   } catch (std::system_error&) {
     unlock();
+    LoggerAdapter::instance().log("unlocked");
   }
 }
 
@@ -427,7 +433,7 @@ void WalletAdapter::optimizeWallet() {
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
-    Q_EMIT walletStateChangedSignal(tr("OPTIMIZING WALLET"), "");
+    Q_EMIT walletStateChangedSignal(tr("Optimizing wallet"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -445,7 +451,7 @@ void WalletAdapter::sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _tran
     lock();
     std::vector<CryptoNote::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     m_sentMessageId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
-    Q_EMIT walletStateChangedSignal(tr("SENDING MESSAGE"), "");
+    Q_EMIT walletStateChangedSignal(tr("Sending message"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -456,7 +462,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   try {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
-    Q_EMIT walletStateChangedSignal(tr("CREATING DEPOSIT"), "");
+    Q_EMIT walletStateChangedSignal(tr("Creating deposit"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -467,7 +473,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _dep
   try {
     lock();
     m_depositWithdrawalId = m_wallet->withdrawDeposits(_depositIds.toStdVector(), _fee);
-    Q_EMIT walletStateChangedSignal(tr("WITHDRAWING DEPOSIT"), "");
+    Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
   } catch (std::system_error&) {
     unlock();
   }
@@ -647,10 +653,19 @@ void WalletAdapter::unlock() {
   m_mutex.unlock();
 }
 
-bool WalletAdapter::openFile(const QString& _file, bool _readOnly) {
+bool WalletAdapter::openFile(const QString& _file, bool _readOnly)
+{
   lock();
-  m_file.open(_file.toStdString(), std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
-  if (!m_file.is_open()) {
+#ifdef Q_OS_WIN
+  const wchar_t* cwc = reinterpret_cast<const wchar_t*>(_file.utf16());
+  m_file.open(cwc,
+              std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
+#else
+  m_file.open(_file.toStdString(),
+              std::ios::binary | (_readOnly ? std::ios::in : (std::ios::out | std::ios::trunc)));
+#endif
+  if (!m_file.is_open())
+  {
     unlock();
   }
 
@@ -729,4 +744,16 @@ bool WalletAdapter::checkWalletPassword(const QString& _password) {
   return false;
 }
 
+/* Check if the entered payment ID is valid */
+bool WalletAdapter::isValidPaymentId(const QByteArray& _paymentIdString)
+{
+  if (_paymentIdString.isEmpty())
+  {
+    return true;
+  }
+  QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
+  return (paymentId.size() == sizeof(Crypto::Hash)) &&
+         (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
 }
+
+}  // namespace WalletGui

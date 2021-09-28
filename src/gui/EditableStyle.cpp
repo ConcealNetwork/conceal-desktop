@@ -26,6 +26,7 @@ namespace WalletGui
     baseTitleSize = change + 7;
     baseSmallButtonSize = change - 3;
     baseLargeButtonSize = change - 1;
+    dialogTitleSize = change + 5;
 
     int id = -2;
 
@@ -82,6 +83,13 @@ namespace WalletGui
     titleFont.setPixelSize(baseTitleSize);
     titleFont.setHintingPreference(QFont::PreferFullHinting);
     titleFont.setStyleStrategy(QFont::PreferAntialias);
+
+    dialogTitleFont.setFamily(fontName);
+    dialogTitleFont.setLetterSpacing(QFont::PercentageSpacing, 102);
+    dialogTitleFont.setPixelSize(dialogTitleSize);
+    dialogTitleFont.setHintingPreference(QFont::PreferFullHinting);
+    dialogTitleFont.setStyleStrategy(QFont::PreferAntialias);
+    dialogTitleFont.setBold(true);
 
     /* Create our common pool of styles */
     tableStyle = QString(
@@ -189,13 +197,17 @@ namespace WalletGui
     labels = getLabels();
     foreach (QLabel *label, labels)
     {
-      if (label->objectName().contains("title_"))
+      if (label->objectName().startsWith("title_"))
       {
         label->setFont(titleFont);
       }
-      else if (label->objectName().contains("o_"))
+      else if (label->objectName().startsWith("o_"))
       {
         label->setStyleSheet(orangeFontStyle);
+      }
+      else if (label->objectName().startsWith("dTitle_"))
+      {
+        label->setFont(dialogTitleFont);
       }
       else
       {

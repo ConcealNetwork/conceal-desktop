@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Frame</string>
+   <string>Transaction</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -82,7 +82,7 @@
 border-bottom: none;</string>
      </property>
      <property name="text">
-      <string/>
+      <string notr="true">type</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -120,7 +120,7 @@ border-bottom: none;</string>
 border-bottom: none;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string notr="true">amount</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -158,7 +158,7 @@ border-bottom: none;</string>
 border-bottom: none;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string notr="true">time</string>
      </property>
     </widget>
    </item>
@@ -187,7 +187,7 @@ border-bottom: none;</string>
 border-bottom: none;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string notr="true">confirmation</string>
      </property>
     </widget>
    </item>
@@ -216,7 +216,7 @@ border-bottom: none;</string>
 border-bottom: none;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string notr="true">hash</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

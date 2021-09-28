@@ -32,7 +32,7 @@
 #include "MainPasswordDialog.h"
 #include "MessageDetailsDialog.h"
 #include "MessagesModel.h"
-#include "NewAddressDialog.h"
+#include "ContactDialog.h"
 #include "NodeAdapter.h"
 #include "OverviewFrame.h"
 #include "PasswordDialog.h"
@@ -50,6 +50,7 @@
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
 #include "WalletLegacy/WalletHelper.h"
+#include "LoggerAdapter.h"
 
 #include <QAction>
 #include <QApplication>
@@ -140,12 +141,11 @@ namespace WalletGui
     m_ui->setupUi(this);
 
     m_ui->m_addressBookView->setModel(&AddressBookModel::instance());
-    m_ui->m_addressBookView->header()->setStretchLastSection(false);
-    m_ui->m_addressBookView->header()->setSectionResizeMode(1, QHeaderView::Stretch);
-    m_ui->m_addressBookView->setSortingEnabled(true);
-    m_ui->m_addressBookView->sortByColumn(0, Qt::AscendingOrder);
+    m_ui->m_addressBookView->sortByColumn(AddressBookModel::COLUMN_LABEL, Qt::AscendingOrder);
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_ADDRESS, 1000);
+    m_ui->m_addressBookView->header()->resizeSection(AddressBookModel::COLUMN_PAYMENTID, 200);
 
-    //connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
+    connect(m_ui->m_addressBookView->selectionModel(), &QItemSelectionModel::currentChanged, this, &OverviewFrame::currentAddressChanged);
 
     m_ui->m_addressBookView->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -281,8 +281,11 @@ namespace WalletGui
     connect(m_addressProvider, &AddressProvider::addressFoundSignal, this, &OverviewFrame::onAddressFound, Qt::QueuedConnection);
     connect(m_exchangeProvider, &ExchangeProvider::exchangeFoundSignal, this, &OverviewFrame::onExchangeFound);
 
-    connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this, &OverviewFrame::setStatusBarText);
-    connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this, &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletStateChangedSignal, this,
+            &OverviewFrame::setStatusBarText);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationCompletedSignal, this,
+            &OverviewFrame::walletSynchronized, Qt::QueuedConnection);
+    connect(&refreshDataTimer, &QTimer::timeout, this, &OverviewFrame::refreshDataClicked);
 
     /* Initialize basic ui elements */
     m_ui->m_tickerLabel1->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
@@ -290,6 +293,7 @@ namespace WalletGui
     m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
     m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
     m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
+    disableAddressBookButtons();
 
     walletSynced = false;
 
@@ -406,6 +410,16 @@ namespace WalletGui
     }
 #endif
 
+    /* Set auto refresh data button status */
+    if (!Settings::instance().isAutoRefreshData())
+    {
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO ENABLE"));
+    }
+    else
+    {
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO DISABLE"));
+    }
+
     dashboardClicked();
     depositParamsChanged();
     reset();
@@ -426,6 +440,10 @@ namespace WalletGui
 #ifndef Q_OS_WIN
     m_ui->openSSL_layout->hide();
 #endif
+    if (Settings::instance().isAutoRefreshData())
+    {
+      refreshDataTimer.start(REFRESH_INTERVAL);
+    }
   }
 
   OverviewFrame::~OverviewFrame()
@@ -514,6 +532,23 @@ namespace WalletGui
     }
   }
 
+  int OverviewFrame::setStyles(int change)
+  {
+    int id = EditableStyle::setStyles(change);
+    QFont statusBoxValueFont = EditableStyle::currentFont;
+    statusBoxValueFont.setPixelSize(statusBoxValueFont.pixelSize() - 2);
+    QList<QLabel *> labels =
+        m_ui->groupBox->findChild<QWidget *>("statusBox")->findChildren<QLabel *>();
+    foreach (QLabel *label, labels)
+    {
+      if (label->objectName().startsWith("m_"))
+      {
+        label->setFont(statusBoxValueFont);
+      }
+    }
+    return id;
+  }
+
   QList<QWidget *> OverviewFrame::getWidgets() { return m_ui->groupBox->findChildren<QWidget *>(); }
 
   QList<QPushButton *> OverviewFrame::getButtons()
@@ -531,6 +566,13 @@ namespace WalletGui
       treeView->setStyleSheet(tableStyle);
     }
     m_ui->groupBox->update();
+  }
+
+  void OverviewFrame::refreshDataClicked()
+  {
+    m_priceProvider->getPrice();
+    loadChart();
+    Q_EMIT notifySignal(tr("Data updated"));
   }
 
   /* Load the price chart on the overview screen */
@@ -607,7 +649,7 @@ namespace WalletGui
   {
 
     QString walletFile = Settings::instance().getWalletName();
-    m_ui->m_currentWalletTitle->setText(walletFile);
+    m_ui->m_currentWalletNameValue->setText(walletFile);
   }
 
   /* Download is done, set the chart as the pixmap */
@@ -674,6 +716,10 @@ namespace WalletGui
     axisY->setLinePenColor(chartColor);
     axisY->setGridLineColor(chartColor);
 
+    m_ui->m_dataSource->setText(
+        tr("Market data from coingecko.com - Last updated: %1")
+            .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss")));
+
     m_chartView->setChart(chart);
 #else
     QPixmap pm;
@@ -701,7 +747,7 @@ namespace WalletGui
 
   void OverviewFrame::layoutChanged()
   {
-    for (quint32 i = 0; i <= m_transactionModel->rowCount(); ++i)
+    for (int i = 0; i <= m_transactionModel->rowCount(); ++i)
     {
       QModelIndex recent_index = m_transactionModel->index(i, 0);
       m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
@@ -710,124 +756,28 @@ namespace WalletGui
   }
 
   /* What happens when the available balance changes */
-  void OverviewFrame::actualBalanceUpdated(quint64 _balance)
-  {
-    m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(_balance));                   // Overview screen
-    m_ui->m_balanceLabel->setText("Available Balance: " + CurrencyAdapter::instance().formatAmount(_balance) + " CCX"); // Send funds screen
-    m_actualBalance = _balance;
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    updatePortfolio();
-  }
+  void OverviewFrame::actualBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the pending(locked) balance changes */
-  void OverviewFrame::pendingBalanceUpdated(quint64 _balance)
-  {
-    m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(_balance));
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    updatePortfolio();
-  }
+  void OverviewFrame::pendingBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the unlocked deposit balance changes */
-  void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
-    updatePortfolio();
-    quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-    if (walletSynced == true)
-    {
-      if (unlockedFunds > 0)
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: orange; background: transparent; border: none;");
-      }
-      else
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: #ddd; background: transparent; border: none;");
-      }
-    }
-  }
+  void OverviewFrame::actualDepositBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the unlocked investment balance changes */
-  void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(actualDepositBalance + actualInvestmentBalance));
-    updatePortfolio();
-    quint64 unlockedFunds = actualDepositBalance + actualInvestmentBalance;
-    if (walletSynced == true)
-    {
-      if (unlockedFunds > 0)
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: orange; background: transparent; border: none;");
-      }
-      else
-      {
-        m_ui->m_unlockedDeposits->setStyleSheet(
-            "color: #ddd; background: transparent; border: none;");
-      }
-    }
-  }
+  void OverviewFrame::actualInvestmentBalanceUpdated(quint64 _balance) { updatePortfolio(); }
 
   /* What happens when the locked deposit balance changes */
-  void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
-    updatePortfolio();
-  }
+  void OverviewFrame::pendingDepositBalanceUpdated(quint64 _balance) { updatePortfolio(); }
+
+  /* What happens when the locked investment balance changes */
+  void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _ba) { updatePortfolio(); }
 
   void OverviewFrame::resizeEvent(QResizeEvent *event)
   {
 #ifndef HAVE_CHART
     loadChart();
 #endif
-  }
-
-  /* What happens when the locked investment balance changes */
-  void OverviewFrame::pendingInvestmentBalanceUpdated(quint64 _balance)
-  {
-    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
-    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
-    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
-    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
-    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
-    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
-    OverviewFrame::totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance + pendingInvestmentBalance + actualInvestmentBalance;
-    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(pendingDepositBalance + pendingInvestmentBalance));
-    updatePortfolio();
   }
 
   /* Price data download complete */
@@ -863,15 +813,54 @@ namespace WalletGui
     exchangeName = _exchange;
   }
 
-  /* Update the total portfolio in CCX and Fiat on the top left hand corner */
+  /* Update the total portfolio (CCX and Fiat) on the top left hand corner and on the bottom status bar */
   void OverviewFrame::updatePortfolio()
   {
     QString currentCurrency = Settings::instance().getCurrentCurrency();
-    float total = 0;
-    total = ccxfiat * (float)OverviewFrame::totalBalance;
-    m_ui->ccxTotal->setText(CurrencyAdapter::instance().formatAmount(OverviewFrame::totalBalance) + " CCX ");
-    m_ui->fiatTotal->setText(CurrencyAdapter::instance().formatCurrencyAmount(total / 10000) + " " + currentCurrency);
-    m_ui->fiatLabel->setText("Portfolio (" + currentCurrency + ")");
+
+    quint64 actualBalance = WalletAdapter::instance().getActualBalance();
+    quint64 pendingBalance = WalletAdapter::instance().getPendingBalance();
+    quint64 actualDepositBalance = WalletAdapter::instance().getActualDepositBalance();
+    quint64 pendingDepositBalance = WalletAdapter::instance().getPendingDepositBalance();
+    quint64 actualInvestmentBalance = WalletAdapter::instance().getActualInvestmentBalance();
+    quint64 pendingInvestmentBalance = WalletAdapter::instance().getPendingInvestmentBalance();
+    quint64 unlockedDeposits = actualDepositBalance + actualInvestmentBalance;
+    quint64 lockedDeposits = pendingDepositBalance + pendingInvestmentBalance;
+
+    totalBalance = pendingDepositBalance + actualDepositBalance + actualBalance + pendingBalance +
+                   pendingInvestmentBalance + actualInvestmentBalance;
+    m_actualBalance = actualBalance;
+
+    // Update the top left hand corner
+    m_ui->m_actualBalanceLabel->setText(CurrencyAdapter::instance().formatAmount(actualBalance));
+    m_ui->m_lockedBalance->setText(CurrencyAdapter::instance().formatAmount(pendingBalance));
+    m_ui->m_unlockedDeposits->setText(CurrencyAdapter::instance().formatAmount(unlockedDeposits));
+    m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(lockedDeposits));
+
+    // Update the bottom status bar
+    float fiatTotal = ccxfiat * (float)totalBalance;
+    m_ui->m_portfolioCCXValue->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
+    m_ui->m_portfolioFiatValue->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
+                             " " + currentCurrency);
+    m_ui->sb_portfolioFiatTitle->setText(tr("Portfolio (") + currentCurrency + ")");
+
+    // Update other labels
+    m_ui->m_balanceLabel->setText(tr("Available Balance: ") +
+                                  CurrencyAdapter::instance().formatAmount(actualBalance) +
+                                  " CCX");  // Send funds screen
+
+    // Update styles
+    QString styleSheet;
+    if (unlockedDeposits > 0)
+    {
+      styleSheet = "color: orange; background: transparent; border: none;";
+    }
+    else
+    {
+      styleSheet = "color: #ddd; background: transparent; border: none;";
+    }
+    m_ui->m_unlockedDeposits->setStyleSheet(styleSheet);
+    m_ui->m_tickerLabel4->setStyleSheet(styleSheet);
   }
 
   /* Banking menu button clicked */
@@ -907,6 +896,7 @@ namespace WalletGui
   void OverviewFrame::dashboardClicked()
   {
     m_ui->darkness->hide();
+    updatePortfolio();
     m_ui->m_myConcealWalletTitle->setText(tr("CONCEAL.NETWORK"));
     m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-home"));
     m_ui->overviewBox->raise();
@@ -1014,13 +1004,9 @@ namespace WalletGui
 
   void OverviewFrame::reset()
   {
-    actualBalanceUpdated(0);
-    pendingBalanceUpdated(0);
-    actualDepositBalanceUpdated(0);
-    pendingDepositBalanceUpdated(0);
-    actualInvestmentBalanceUpdated(0);
-    pendingInvestmentBalanceUpdated(0);
+    walletSynced = false;
     layoutChanged();
+    updatePortfolio();
     m_priceProvider->getPrice();
     m_addressProvider->getAddress();
     Q_EMIT resetWalletSignal();
@@ -1028,8 +1014,8 @@ namespace WalletGui
 
   void OverviewFrame::setStatusBarText(const QString& _text, const QString& _height)
   {
-    m_ui->m_statusBox->setText(_text);
-    m_ui->statusHeight->setText(_height);
+    m_ui->m_statusValue->setText(_text);
+    m_ui->m_heightValue->setText(_height);
     showCurrentWalletName();
   }
 
@@ -1162,6 +1148,8 @@ namespace WalletGui
 
   void OverviewFrame::sendFundsClicked()
   {
+    LoggerAdapter& logger = LoggerAdapter::instance();
+    logger.log("Sending funds");
     /* Check if its a tracking wallet */
     if (Settings::instance().isTrackingMode())
     {
@@ -1185,6 +1173,7 @@ namespace WalletGui
     /* Is it an Integrated address? */
     if (address.toStdString().length() == 186)
     {
+      logger.log("Address in integrated");
       isIntegrated = true;
       const uint64_t paymentIDLen = 64;
 
@@ -1194,6 +1183,7 @@ namespace WalletGui
       if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded))
       {
         paymentID = decoded.substr(0, paymentIDLen);
+        logger.log("Payment id decoded");
       }
 
       /* Create the address from the public keys */
@@ -1222,6 +1212,7 @@ namespace WalletGui
         std::vector<std::string> records;
         if (!Common::fetch_dns_txt(address.toStdString(), records))
         {
+          logger.log("Failed to lookup Conceal ID");
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
         }
         std::string realAddress;
@@ -1235,9 +1226,9 @@ namespace WalletGui
         }
       }
     }
-
     catch (std::exception &)
     {
+      logger.log("Could not check Conceal ID");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Could not check Conceal ID"), QtCriticalMsg));
       return;
     }
@@ -1245,24 +1236,30 @@ namespace WalletGui
     /* Check address validity */
     if (!CurrencyAdapter::instance().validateAddress(address))
     {
+      logger.log("Invalid recipient address");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid recipient address"), QtCriticalMsg));
       return;
     }
 
+    logger.log("Start building the transaction");
     /* Start building the transaction */
     walletTransfer.address = address.toStdString();
     uint64_t amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountEdit->text());
     walletTransfer.amount = amount;
     walletTransfers.push_back(walletTransfer);
+    logger.log("End building the transaction");
     QString label = m_ui->m_addressLabel->text();
 
     /* Check payment id validity */
+    logger.log("Checking payment id");
     paymentIdString = m_ui->m_paymentIdEdit->text().toUtf8();
-    if (!isValidPaymentId(paymentIdString))
+    if (!WalletAdapter::isValidPaymentId(paymentIdString))
     {
+      logger.log("Invalid payment ID");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
       return;
     }
+    logger.log("Payment id checked");
 
     /* Warn the user if there is no payment id */
     if (paymentIdString.toStdString().length() < 64)
@@ -1291,6 +1288,7 @@ namespace WalletGui
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
+      logger.log("Using remote node");
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
         CryptoNote::WalletLegacyTransfer walletTransfer;
@@ -1304,21 +1302,27 @@ namespace WalletGui
     /* Check if there are enough funds for the amount plus total fees */
     if (m_actualBalance < (amount + totalFee))
     {
+      logger.log("Insufficient funds");
       QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Insufficient funds. Please ensure that you have enough funds for the amount plus fees."), QtCriticalMsg));
       return;
     }
 
     if (!checkWalletPassword())
     {
+      logger.log("Error while checking wallet password");
       return;
     }
+    logger.log("Start delay");
     delay();
+    logger.log("End delay");
 
     /* If the wallet is open we proceed */
     if (WalletAdapter::instance().isOpen())
     {
+      logger.log("Sending transaction to WalletAdapter");
       /* Send the transaction */
       WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
+      logger.log("Transaction sent by WalletAdapter");
       /* Add to the address book if a label is given */
       if ((!label.isEmpty()) && (m_ui->m_saveAddress->isChecked()))
       {
@@ -1332,6 +1336,7 @@ namespace WalletGui
         }
       }
     }
+    logger.log("OK");
   }
 
   /* Once we complete a transaction, we either show the error or clear all fields and move back to the dashboard */
@@ -1347,17 +1352,6 @@ namespace WalletGui
       clearAllClicked();
       dashboardClicked();
     }
-  }
-
-  /* Check if the entered payment ID is valid */
-  bool OverviewFrame::isValidPaymentId(const QByteArray &_paymentIdString)
-  {
-    if (_paymentIdString.isEmpty())
-    {
-      return true;
-    }
-    QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
-    return (paymentId.size() == sizeof(Crypto::Hash)) && (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
   }
 
   /* Open address book */
@@ -1665,13 +1659,9 @@ namespace WalletGui
       depositIds.append(index.row());
     }
 
-    WalletAdapter::instance().withdrawUnlockedDeposits(depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
-    actualBalanceUpdated(0);
-    pendingBalanceUpdated(0);
-    actualDepositBalanceUpdated(0);
-    pendingDepositBalanceUpdated(0);
-    actualInvestmentBalanceUpdated(0);
-    pendingInvestmentBalanceUpdated(0);
+    WalletAdapter::instance().withdrawUnlockedDeposits(
+        depositIds, CurrencyAdapter::instance().getMinimumFeeBanking());
+    updatePortfolio();
   }
 
   void OverviewFrame::importSeedButtonClicked()
@@ -1679,7 +1669,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
     Q_EMIT importSeedSignal();
-    dashboardClicked();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::openWalletButtonClicked()
@@ -1695,7 +1685,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
     Q_EMIT importTrackingKeySignal();
-    dashboardClicked();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::importPrivateKeysButtonClicked()
@@ -1703,7 +1693,7 @@ namespace WalletGui
     m_ui->darkness->show();
     m_ui->darkness->raise();
     Q_EMIT importSecretKeysSignal();
-    dashboardClicked();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::createNewWalletButtonClicked()
@@ -1897,104 +1887,21 @@ namespace WalletGui
 
   void OverviewFrame::addABClicked()
   {
-    NewAddressDialog dlg(&MainWindow::instance());
-    if (dlg.exec() == QDialog::Accepted)
-    {
-      QString label = dlg.getLabel();
-      QString address = dlg.getAddress();
-      QByteArray paymentid = dlg.getPaymentID().toUtf8();
-      if (!CurrencyAdapter::instance().validateAddress(address))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-        return;
-      }
-
-      if (!isValidPaymentId(paymentid))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-        return;
-      }
-
-      QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-      QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-      if (label == contactLabel)
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-        //label = QString(label + "%1").arg(label.toInt()+1);
-        NewAddressDialog dlg(&MainWindow::instance());
-        dlg.setEditLabel(label);
-        dlg.setEditAddress(address);
-        dlg.setEditPaymentId(paymentid);
-        if (dlg.exec() == QDialog::Accepted)
-        {
-          QString label = dlg.getLabel();
-          QString address = dlg.getAddress();
-          QByteArray paymentid = dlg.getPaymentID().toUtf8();
-          if (!CurrencyAdapter::instance().validateAddress(address))
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-            return;
-          }
-
-          if (!isValidPaymentId(paymentid))
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-            return;
-          }
-
-          QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-          QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-          if (label == contactLabel)
-          {
-            QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-            return;
-          }
-          AddressBookModel::instance().addAddress(label, address, paymentid);
-        }
-        return;
-      }
-
-      AddressBookModel::instance().addAddress(label, address, paymentid);
-    }
+    m_ui->darkness->show();
+    m_ui->darkness->raise();
+    ContactDialog dlg(&MainWindow::instance());
+    dlg.exec();
+    m_ui->darkness->hide();
   }
 
   void OverviewFrame::editABClicked()
   {
     m_ui->darkness->show();
     m_ui->darkness->raise();
-    NewAddressDialog dlg(&MainWindow::instance());
-    dlg.setWindowTitle(QString(tr("Edit contact")));
-    dlg.setEditLabel(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_LABEL).toString());
-    dlg.setEditAddress(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_ADDRESS).toString());
-    dlg.setEditPaymentId(m_ui->m_addressBookView->currentIndex().data(AddressBookModel::ROLE_PAYMENTID).toString());
+    ContactDialog dlg(&MainWindow::instance());
+    dlg.edit(m_ui->m_addressBookView->currentIndex());
     if (dlg.exec() == QDialog::Accepted)
     {
-      QString label = dlg.getLabel();
-      QString address = dlg.getAddress();
-      QByteArray paymentid = dlg.getPaymentID().toUtf8();
-      m_ui->darkness->hide();
-      if (!CurrencyAdapter::instance().validateAddress(address))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid address"), QtCriticalMsg));
-        return;
-      }
-
-      if (!isValidPaymentId(paymentid))
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Invalid payment ID"), QtCriticalMsg));
-        return;
-      }
-
-      QModelIndex contactIndex = AddressBookModel::instance().indexFromContact(label, 0);
-      QString contactLabel = contactIndex.data(AddressBookModel::ROLE_LABEL).toString();
-      if (label == contactLabel)
-      {
-        QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Contact with such label already exists."), QtCriticalMsg));
-        return;
-      }
-
-      AddressBookModel::instance().addAddress(label, address, paymentid);
-
       deleteABClicked();
     }
     m_ui->darkness->hide();
@@ -2016,7 +1923,6 @@ namespace WalletGui
   {
     int row = m_ui->m_addressBookView->currentIndex().row();
     AddressBookModel::instance().removeAddress(row);
-    m_ui->b1_copyPaymentIdButton->setEnabled(false);
     currentAddressChanged(m_ui->m_addressBookView->currentIndex());
   }
 
@@ -2040,10 +1946,22 @@ namespace WalletGui
   /* Toggle states of buttons in the address book when a user clicks on an address */
   void OverviewFrame::currentAddressChanged(const QModelIndex &_index)
   {
-    m_ui->b1_copyAddressButton_2->setEnabled(_index.isValid());
-    m_ui->b1_deleteAddressButton->setEnabled(_index.isValid());
-    m_ui->b1_editAddressButton->setEnabled(_index.isValid());
-    m_ui->b1_copyPaymentIdButton->setEnabled(!_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
+    m_ui->b1_copyContactAddressButton->setEnabled(_index.isValid());
+    m_ui->b1_copyContactPaymentIdButton->setEnabled(
+        !_index.data(AddressBookModel::ROLE_PAYMENTID).toString().isEmpty());
+    m_ui->b1_payToButton->setEnabled(_index.isValid());
+    m_ui->b1_editContactButton->setEnabled(_index.isValid());
+    m_ui->b1_deleteContactButton->setEnabled(_index.isValid());
+  }
+
+  /* Disable buttons in the address book when no contact is selected */
+  void OverviewFrame::disableAddressBookButtons()
+  {
+    m_ui->b1_copyContactAddressButton->setEnabled(false);
+    m_ui->b1_copyContactPaymentIdButton->setEnabled(false);
+    m_ui->b1_payToButton->setEnabled(false);
+    m_ui->b1_editContactButton->setEnabled(false);
+    m_ui->b1_deleteContactButton->setEnabled(false);
   }
 
   /* Open URL's when contact us / stay informed buttons are clicked */
@@ -2078,9 +1996,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::hotbitClicked()
+  void OverviewFrame::websiteClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.hotbit.io/exchange?symbol=CCX_BTC", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
   void OverviewFrame::stexClicked()
@@ -2100,7 +2018,7 @@ namespace WalletGui
 
   void OverviewFrame::helpClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://conceal.network/wiki/doku.php?id=start", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/support/", QUrl::TolerantMode));
   }
 
   /* Initiate a password prompt meant for critical tasks like sending funds etc */
@@ -2272,6 +2190,22 @@ namespace WalletGui
   {
     QDesktopServices::openUrl(
         QUrl("https://github.com/openssl/openssl/blob/OpenSSL_1_1_1-stable/LICENSE"));
+  }
+
+  void OverviewFrame::autoRefreshButtonClicked()
+  {
+    if (Settings::instance().isAutoRefreshData())
+    {
+      Settings::instance().setAutoRefreshData(false);
+      refreshDataTimer.stop();
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO ENABLE"));
+    }
+    else
+    {
+      Settings::instance().setAutoRefreshData(true);
+      refreshDataTimer.start(REFRESH_INTERVAL);
+      m_ui->b2_autoRefreshDataButton->setText(tr("CLICK TO DISABLE"));
+    }
   }
 
 }  // namespace WalletGui

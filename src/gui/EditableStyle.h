@@ -22,11 +22,13 @@ namespace WalletGui
     int baseTitleSize;
     int baseSmallButtonSize;
     int baseLargeButtonSize;
+    int dialogTitleSize;
 
     QFont currentFont;
     QFont smallButtonFont;
     QFont largeButtonFont;
     QFont titleFont;
+    QFont dialogTitleFont;
 
     QString tableStyle;
     QString b1Style;

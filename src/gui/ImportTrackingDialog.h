@@ -13,21 +13,23 @@
 
 namespace Ui
 {
-  class ImportTracking;
+  class ImportTrackingDialog;
 }
 
 namespace WalletGui
 {
-  class ImportTracking : public QDialog, public EditableStyle
+  class ImportTrackingDialog : public QDialog, public EditableStyle
   {
     Q_OBJECT
 
   public:
-    explicit ImportTracking(QWidget *_parent);
-    ~ImportTracking();
+    explicit ImportTrackingDialog(QWidget *_parent);
+    ~ImportTrackingDialog();
 
     QString getKeyString() const;
     QString getFilePath() const;
+    void setErrorMessage(QString message);
+    void clearErrorMessage();
 
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
@@ -35,9 +37,8 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::ImportTracking> m_ui;
-
+    QScopedPointer<Ui::ImportTrackingDialog> m_ui;
     Q_SLOT void selectPathClicked();
+    Q_SLOT void importButtonClicked();
   };
-
 }  // namespace WalletGui
