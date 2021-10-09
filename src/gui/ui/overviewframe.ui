@@ -1810,7 +1810,7 @@ border: none;</string>
                  <x>0</x>
                  <y>0</y>
                  <width>722</width>
-                 <height>15026</height>
+                 <height>15164</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -2689,7 +2689,7 @@ Public License instead of this License.  But first, please read
                  <x>0</x>
                  <y>0</y>
                  <width>473</width>
-                 <height>245</height>
+                 <height>299</height>
                 </rect>
                </property>
                <property name="sizePolicy">
@@ -4127,7 +4127,7 @@ border: none;</string>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>250</width>
+                   <width>300</width>
                    <height>32</height>
                   </size>
                  </property>
@@ -10894,7 +10894,7 @@ color: orange;
   <slot>openSslLicenseClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

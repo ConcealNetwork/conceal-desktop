@@ -36,6 +36,7 @@ namespace WalletGui
     QString fontStyle;
     QString darkFontStyle;
     QString orangeFontStyle;
+    QString dialogTitleFontStyle;
 
     QList<QWidget *> widgets;
     QList<QPushButton *> buttons;
