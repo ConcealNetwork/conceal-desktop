@@ -160,6 +160,18 @@ background-color: #282d31;</string>
          </item>
          <item row="1" column="0">
           <widget class="QGroupBox" name="addressBookButtons">
+           <property name="styleSheet">
+            <string notr="true">QPushButton[type=&quot;b1&quot;]{
+color: #fff;
+border: 1px solid orange;
+border-radius: 5px;
+padding: 5px;
+}
+
+QPushButton:hover[type=&quot;b1&quot;]{
+color: orange;
+}</string>
+           </property>
            <layout class="QHBoxLayout" name="horizontalLayout_12">
             <property name="spacing">
              <number>6</number>
@@ -207,6 +219,9 @@ background-color: #282d31;</string>
               <property name="text">
                <string>COPY ADDRESS</string>
               </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -239,6 +254,9 @@ background-color: #282d31;</string>
               </property>
               <property name="text">
                <string>COPY PAYMENT ID</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
               </property>
              </widget>
             </item>
@@ -273,6 +291,42 @@ background-color: #282d31;</string>
               <property name="text">
                <string>PAY TO</string>
               </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="b1_messageToButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>141</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="text">
+               <string>NEW MESSAGE</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -305,6 +359,9 @@ background-color: #282d31;</string>
               </property>
               <property name="text">
                <string>NEW CONTACT</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
               </property>
              </widget>
             </item>
@@ -339,6 +396,9 @@ background-color: #282d31;</string>
               <property name="text">
                <string>EDIT CONTACT</string>
               </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -371,6 +431,9 @@ background-color: #282d31;</string>
               </property>
               <property name="text">
                <string>DELETE CONTACT</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
               </property>
              </widget>
             </item>
@@ -9567,7 +9630,6 @@ color: orange;
      <zorder>headerBox</zorder>
      <zorder>aboutBox</zorder>
      <zorder>horizontalLine</zorder>
-     <zorder>addressBookBox</zorder>
      <zorder>bankingBox</zorder>
      <zorder>newMessageBox</zorder>
      <zorder>sendBox</zorder>
@@ -9576,6 +9638,7 @@ color: orange;
      <zorder>messageBox</zorder>
      <zorder>transactionsBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>addressBookBox</zorder>
     </widget>
    </item>
   </layout>
@@ -10816,6 +10879,22 @@ color: orange;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>b1_messageToButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>messageToABClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>722</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>newTransferClicked()</slot>
@@ -10892,9 +10971,10 @@ color: orange;
   <slot>minToTrayClicked()</slot>
   <slot>qtChartsLicenseClicked()</slot>
   <slot>openSslLicenseClicked()</slot>
+  <slot>messageToABClicked()</slot>
  </slots>
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

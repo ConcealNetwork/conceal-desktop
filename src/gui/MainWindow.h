@@ -72,6 +72,7 @@ private:
   void rescanTo();
   void dashboardTo();
   void checkTrackingMode();
+  void messageTo(const QModelIndex& _index);
   
   Q_SLOT void createWallet();
   Q_SLOT void openWallet();

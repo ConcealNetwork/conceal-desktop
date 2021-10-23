@@ -991,7 +991,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
@@ -1929,6 +1929,12 @@ namespace WalletGui
   void OverviewFrame::payToABClicked()
   {
     Q_EMIT payToSignal(m_ui->m_addressBookView->currentIndex());
+  }
+
+  void OverviewFrame::messageToABClicked()
+  {
+    fromPay = false;
+    Q_EMIT messageToSignal(m_ui->m_addressBookView->currentIndex());
   }
 
   /* Send the address from the address book when double clicked to either a new transfer or new message */

@@ -59,6 +59,7 @@ public Q_SLOTS:
   void deleteABClicked();
   void payToABClicked();
   void dashboardClicked();
+  void messageToABClicked();
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
@@ -219,5 +220,6 @@ Q_SIGNALS:
   void payToSignal(const QModelIndex& _index);
   void notifySignal(const QString& message);
   void welcomeFrameSignal();
+  void messageToSignal(const QModelIndex& _index);
 };
 } // namespace WalletGui
