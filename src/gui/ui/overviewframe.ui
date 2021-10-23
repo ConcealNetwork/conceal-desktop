@@ -75,8 +75,22 @@ border: none;</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 0px; color: #aaa; 
-background-color: #282d31;</string>
+      <string notr="true">* {
+border: 0px; 
+color: #aaa; 
+background-color: #282d31;
+}
+
+QPushButton[type=&quot;b1&quot;]{
+color: #fff;
+border: 1px solid orange;
+border-radius: 5px;
+padding: 5px;
+}
+
+QPushButton:hover[type=&quot;b1&quot;]{
+color: orange;
+}</string>
      </property>
      <property name="title">
       <string/>
@@ -161,16 +175,7 @@ background-color: #282d31;</string>
          <item row="1" column="0">
           <widget class="QGroupBox" name="addressBookButtons">
            <property name="styleSheet">
-            <string notr="true">QPushButton[type=&quot;b1&quot;]{
-color: #fff;
-border: 1px solid orange;
-border-radius: 5px;
-padding: 5px;
-}
-
-QPushButton:hover[type=&quot;b1&quot;]{
-color: orange;
-}</string>
+            <string notr="true"/>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_12">
             <property name="spacing">
@@ -3033,7 +3038,7 @@ font-weight:bold;</string>
           <number>12</number>
          </property>
          <item>
-          <widget class="QGroupBox" name="horizontalGroupBox">
+          <widget class="QGroupBox" name="horizontalGroupBox_4">
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
@@ -9034,33 +9039,97 @@ border: 0px;
           <number>12</number>
          </property>
          <item>
-          <widget class="QLabel" name="title_messageOverview">
-           <property name="minimumSize">
-            <size>
-             <width>250</width>
-             <height>32</height>
-            </size>
+          <widget class="QGroupBox" name="horizontalGroupBox_5">
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>250</width>
-             <height>32</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #fff;</string>
-           </property>
-           <property name="text">
-            <string>MESSAGE OVERVIEW</string>
-           </property>
-           <property name="textFormat">
-            <enum>Qt::AutoText</enum>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="title_messageOverview">
+              <property name="minimumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>250</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fff;</string>
+              </property>
+              <property name="text">
+               <string>MESSAGE OVERVIEW</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_15">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="b1_newMessageButton">
+              <property name="minimumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>180</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="text">
+               <string>NEW MESSAGE</string>
+              </property>
+              <property name="type" stdset="0">
+               <string notr="true">b1</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
          <item>
@@ -9632,13 +9701,13 @@ color: orange;
      <zorder>horizontalLine</zorder>
      <zorder>bankingBox</zorder>
      <zorder>newMessageBox</zorder>
-     <zorder>sendBox</zorder>
      <zorder>settingsBox</zorder>
      <zorder>statusBox</zorder>
-     <zorder>messageBox</zorder>
-     <zorder>transactionsBox</zorder>
      <zorder>overviewBox</zorder>
+     <zorder>sendBox</zorder>
      <zorder>addressBookBox</zorder>
+     <zorder>transactionsBox</zorder>
+     <zorder>messageBox</zorder>
     </widget>
    </item>
   </layout>
@@ -10888,6 +10957,22 @@ color: orange;
     <hint type="sourcelabel">
      <x>722</x>
      <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>b1_newMessageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>newMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1180</x>
+     <y>140</y>
     </hint>
     <hint type="destinationlabel">
      <x>634</x>
