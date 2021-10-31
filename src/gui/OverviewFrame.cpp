@@ -216,6 +216,15 @@ namespace WalletGui
     m_ui->m_language->addItem("MYR");
     m_ui->m_language->addItem("RON");
     m_ui->m_language->addItem("MXN");
+    m_ui->m_language->addItem("BTC");
+    m_ui->m_language->addItem("ETH");
+    m_ui->m_language->addItem("BNB");
+    m_ui->m_language->addItem("XRP");
+    m_ui->m_language->addItem("DOT");
+    m_ui->m_language->addItem("LINK");
+    m_ui->m_language->addItem("LTC");
+    m_ui->m_language->addItem("BCH");
+    m_ui->m_language->addItem("XLM");
 
     m_ui->m_transactionsView->setModel(m_transactionsModel.data());
     m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
@@ -792,7 +801,13 @@ namespace WalletGui
 
     double currency = result[selectedCurrency].toDouble();
     ccxfiat = (float)currency;
-    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
+    int precision = 2;
+    if (currentCurrency == "BTC" || currentCurrency == "ETH" || currentCurrency == "BNB" ||
+        currentCurrency == "LTC" || currentCurrency == "BCH")
+    {
+      precision = 8;
+    }
+    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', precision);
     double market_cap = result[marketCapCurrency].toDouble();
     QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
     double c24h_volume = result[volumeCurrency].toDouble();
