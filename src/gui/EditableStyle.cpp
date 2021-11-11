@@ -150,6 +150,11 @@ namespace WalletGui
     fontStyle = QString("font-size: %1 px;").arg(baseFontSize);
     darkFontStyle = QString("font-size: %1 px; color: #999;").arg(baseFontSize);
     orangeFontStyle = QString("font-size: %1 px; color: orange;").arg(baseFontSize);
+    dialogTitleFontStyle = QString(
+                               "font-size: %1 px;"
+                               "color: #fff;"
+                               "font-weight: bold;")
+                               .arg(dialogTitleSize);
 
     widgets = getWidgets();
     foreach (QWidget *widget, widgets)
@@ -208,6 +213,7 @@ namespace WalletGui
       else if (label->objectName().startsWith("dTitle_"))
       {
         label->setFont(dialogTitleFont);
+        label->setStyleSheet(dialogTitleFontStyle);
       }
       else
       {

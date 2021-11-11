@@ -11,6 +11,8 @@
         <file alias="wiki">icons/wiki.png</file>
         <file alias="tradeogre">icons/tradeogre.png</file>
         <file alias="hotbit">icons/hotbit.png</file>
+        <file alias="conceal">icons/conceal.png</file>
+        <file alias="bitmart">icons/bitmart.png</file>
         <!-- Clock icons -->
         <file alias="clock1">icons/clock1.png</file>
         <file alias="clock2">icons/clock2.png</file>

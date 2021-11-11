@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016 The Karbowanec developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -130,6 +130,13 @@ int main(int argc, char* argv[])
   qRegisterMetaType<quintptr>("quintptr");
   if (!NodeAdapter::instance().init())
   {
+    splashScreen->hide();
+    NodeAdapter::instance().deinit();
+    QMessageBox::warning(
+        nullptr, QObject::tr("Fail"),
+        QObject::tr("%1 Wallet failed to start.\nCheck that port %2 is not already in use.")
+            .arg(CurrencyAdapter::instance().getCurrencyDisplayName())
+            .arg(Settings::instance().getP2pBindPort()));
     return 0;
   }
 
