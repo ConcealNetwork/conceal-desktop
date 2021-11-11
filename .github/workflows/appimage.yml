@@ -48,13 +48,15 @@ jobs:
 
           echo "::set-output name=sha256::${sha256}"
 
+      # since https://github.com/softprops/action-gh-release/pull/145 body is replaced instead of being appended
+      # use v0.1.12 for now
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v0.1.12
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
           body: |
-            <img src="https://image.flaticon.com/icons/svg/25/25719.svg" width="16"> [Download AppImage](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
+            [Download AppImage](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
             `SHA256 : ${{ steps.appimage.outputs.sha256 }}`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

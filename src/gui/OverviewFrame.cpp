@@ -216,6 +216,15 @@ namespace WalletGui
     m_ui->m_language->addItem("MYR");
     m_ui->m_language->addItem("RON");
     m_ui->m_language->addItem("MXN");
+    m_ui->m_language->addItem("BTC");
+    m_ui->m_language->addItem("ETH");
+    m_ui->m_language->addItem("BNB");
+    m_ui->m_language->addItem("XRP");
+    m_ui->m_language->addItem("DOT");
+    m_ui->m_language->addItem("LINK");
+    m_ui->m_language->addItem("LTC");
+    m_ui->m_language->addItem("BCH");
+    m_ui->m_language->addItem("XLM");
 
     m_ui->m_transactionsView->setModel(m_transactionsModel.data());
     m_ui->m_transactionsView->header()->setSectionResizeMode(TransactionsModel::COLUMN_STATE, QHeaderView::Fixed);
@@ -792,7 +801,8 @@ namespace WalletGui
 
     double currency = result[selectedCurrency].toDouble();
     ccxfiat = (float)currency;
-    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', 2);
+
+    QString ccx = CurrencyAdapter::instance().formatCurrencyAmount(ccxfiat, currentCurrency);
     double market_cap = result[marketCapCurrency].toDouble();
     QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
     double c24h_volume = result[volumeCurrency].toDouble();
@@ -838,10 +848,11 @@ namespace WalletGui
     m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(lockedDeposits));
 
     // Update the bottom status bar
-    float fiatTotal = ccxfiat * (float)totalBalance;
+    float fiatTotal = ccxfiat * ((float)totalBalance / 1000000);
     m_ui->m_portfolioCCXValue->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
-    m_ui->m_portfolioFiatValue->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
-                             " " + currentCurrency);
+    m_ui->m_portfolioFiatValue->setText(
+        CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal, currentCurrency) + " " +
+        currentCurrency);
     m_ui->sb_portfolioFiatTitle->setText(tr("Portfolio (") + currentCurrency + ")");
 
     // Update other labels
@@ -991,7 +1002,7 @@ namespace WalletGui
 
     if (walletSynced == true)
     {
-      m_ui->m_myConcealWalletTitle->setText(tr("NEW MESSAGE"));
+      m_ui->m_myConcealWalletTitle->setText(tr("SEND MESSAGE"));
       m_ui->m_titleIcon->setPixmap(QPixmap(":/icons/icon-send-message"));
       m_ui->newMessageBox->raise();
       OverviewFrame::fromPay = false;
@@ -1931,6 +1942,12 @@ namespace WalletGui
     Q_EMIT payToSignal(m_ui->m_addressBookView->currentIndex());
   }
 
+  void OverviewFrame::messageToABClicked()
+  {
+    fromPay = false;
+    Q_EMIT messageToSignal(m_ui->m_addressBookView->currentIndex());
+  }
+
   /* Send the address from the address book when double clicked to either a new transfer or new message */
   void OverviewFrame::addressDoubleClicked(const QModelIndex &_index)
   {
@@ -2001,9 +2018,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::stexClicked()
+  void OverviewFrame::bitmartClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://app.stex.com/en/basic-trade/pair/BTC/CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://www.bitmart.com/trade/en?symbol=CCX_USDT&layout=basic", QUrl::TolerantMode));
   }
 
   void OverviewFrame::tradeogreClicked()

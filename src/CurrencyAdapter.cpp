@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2019 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,6 +10,7 @@
 #include "CryptoNoteWalletConfig.h"
 #include "LoggerAdapter.h"
 #include "Settings.h"
+#include <QLocale>
 
 namespace WalletGui {
 
@@ -130,31 +131,16 @@ QString CurrencyAdapter::formatAmountThreeDecimals(quint64 _amount) const {
   return result;
 }
 
-QString CurrencyAdapter::formatCurrencyAmount(quint64 _amount) const {
-  QString result = QString::number(_amount);
-  if (result.length() < 2 + 1) {
-    result = result.rightJustified(2 + 1, '0');
+QString CurrencyAdapter::formatCurrencyAmount(float amount, const QString& currency) const
+{
+  int precision = 2;
+  if (currency == "BTC" || currency == "ETH" || currency == "BNB" ||
+      currency == "LTC" || currency == "BCH")
+  {
+    precision = 8;
   }
-
-  quint32 dot_pos = result.length() - 2;
-  for (quint32 pos = result.length() - 1; pos > dot_pos + 1; --pos) {
-    if (result[pos] == '0') {
-      result.remove(pos, 1);
-    } else {
-      break;
-    }
-  }
-
-  result.insert(dot_pos, ".");
-  for (qint32 pos = dot_pos - 3; pos > 0; pos -= 3) {
-    if (result[pos - 1].isDigit()) {
-      result.insert(pos, ',');
-    }
-  }
-
-  return result;
+  return QLocale(QLocale::system()).toString(amount, 'f', precision);
 }
-
 
 quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
   QString amountString = _amountString.trimmed();

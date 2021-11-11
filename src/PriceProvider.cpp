@@ -1,9 +1,12 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2018 The Circle Foundation
+// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
 //
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#include "PriceProvider.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -12,22 +15,19 @@
 #include <QStringList>
 #include <QUrl>
 
-#include "PriceProvider.h"
+#include "Settings.h"
 
 namespace WalletGui
 {
+  PriceProvider::PriceProvider(QObject *parent) : QObject(parent), m_networkManager() { }
 
-  PriceProvider::PriceProvider(QObject *parent) : QObject(parent), m_networkManager()
-  {
-  }
-
-  PriceProvider::~PriceProvider()
-  {
-  }
+  PriceProvider::~PriceProvider() { }
 
   void PriceProvider::getPrice()
   {
-    QUrl url = QUrl::fromUserInput("https://explorer.conceal.network/services/market/info?vsCurrencies=usd,eur,gbp,rub,try,cny,aud,nzd,sgd,lkr,vnd,isk,inr,idr,isk,hkd,pab,zar,krw,brl,byn,vef,mur,irr,sar,aed,pkr,egp,ils,nok,lsl,uah,ron,kzt,myr,ron,mxn");
+    QUrl url = QUrl::fromUserInput(
+        QString("https://explorer.conceal.network/services/market/info?vsCurrencies=%1")
+            .arg(Settings::instance().getCurrentCurrency()));
 
     QNetworkRequest request(url);
     QNetworkReply *reply = m_networkManager.get(request);
@@ -51,4 +51,4 @@ namespace WalletGui
     Q_EMIT priceFoundSignal(result);
   }
 
-} // namespace WalletGui
+}  // namespace WalletGui
