@@ -2022,9 +2022,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::stexClicked()
+  void OverviewFrame::bitmartClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://app.stex.com/en/basic-trade/pair/BTC/CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://www.bitmart.com/trade/en?symbol=CCX_USDT&layout=basic", QUrl::TolerantMode));
   }
 
   void OverviewFrame::tradeogreClicked()
