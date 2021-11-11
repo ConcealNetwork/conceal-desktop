@@ -801,13 +801,8 @@ namespace WalletGui
 
     double currency = result[selectedCurrency].toDouble();
     ccxfiat = (float)currency;
-    int precision = 2;
-    if (currentCurrency == "BTC" || currentCurrency == "ETH" || currentCurrency == "BNB" ||
-        currentCurrency == "LTC" || currentCurrency == "BCH")
-    {
-      precision = 8;
-    }
-    QString ccx = QLocale(QLocale::system()).toString(currency, 'f', precision);
+
+    QString ccx = CurrencyAdapter::instance().formatCurrencyAmount(ccxfiat, currentCurrency);
     double market_cap = result[marketCapCurrency].toDouble();
     QString ccx_market_cap = QLocale(QLocale::system()).toString(market_cap, 'f', 2);
     double c24h_volume = result[volumeCurrency].toDouble();
@@ -853,10 +848,11 @@ namespace WalletGui
     m_ui->m_lockedDeposits->setText(CurrencyAdapter::instance().formatAmount(lockedDeposits));
 
     // Update the bottom status bar
-    float fiatTotal = ccxfiat * (float)totalBalance;
+    float fiatTotal = ccxfiat * ((float)totalBalance / 1000000);
     m_ui->m_portfolioCCXValue->setText(CurrencyAdapter::instance().formatAmount(totalBalance) + " CCX ");
-    m_ui->m_portfolioFiatValue->setText(CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal / 10000) +
-                             " " + currentCurrency);
+    m_ui->m_portfolioFiatValue->setText(
+        CurrencyAdapter::instance().formatCurrencyAmount(fiatTotal, currentCurrency) + " " +
+        currentCurrency);
     m_ui->sb_portfolioFiatTitle->setText(tr("Portfolio (") + currentCurrency + ")");
 
     // Update other labels
