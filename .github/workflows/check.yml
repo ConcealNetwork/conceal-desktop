@@ -265,8 +265,8 @@ jobs:
         id: build
         run: |
           build_folder="build/release"
-          ccx_ver=${GITHUB_SHA::7}
-          release_name="ccx-desktop-macOS-dev-$ccx_ver"
+          ccx_version=${GITHUB_SHA::7}
+          release_name="ccx-desktop-macOS-dev-$ccx_version"
           app_name="CONCEAL-GUI.app"
 
           make -j3 build-release
