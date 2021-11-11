@@ -13,21 +13,23 @@
 
 namespace Ui
 {
-  class ImportSecretKeys;
+  class ImportSecretKeysDialog;
 }
 
 namespace WalletGui
 {
-  class ImportSecretKeys : public QDialog, public EditableStyle
+  class ImportSecretKeysDialog : public QDialog, public EditableStyle
   {
     Q_OBJECT
 
   public:
-    explicit ImportSecretKeys(QWidget *_parent);
-    ~ImportSecretKeys();
+    explicit ImportSecretKeysDialog(QWidget *_parent);
+    ~ImportSecretKeysDialog();
     QString getSpendKeyString() const;
     QString getViewKeyString() const;
     QString getFilePath() const;
+    void setErrorMessage(QString message);
+    void clearErrorMessage();
 
     QList<QWidget *> getWidgets() override;
     QList<QPushButton *> getButtons() override;
@@ -35,7 +37,8 @@ namespace WalletGui
     void applyStyles() override;
 
   private:
-    QScopedPointer<Ui::ImportSecretKeys> m_ui;
+    QScopedPointer<Ui::ImportSecretKeysDialog> m_ui;
     Q_SLOT void selectPathClicked();
+    Q_SLOT void importButtonClicked();
   };
 }  // namespace WalletGui

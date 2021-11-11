@@ -653,6 +653,34 @@ namespace WalletGui
     }
   }
 
-  QString Settings::getDefaultWalletPath() const { return QDir::homePath() + "/conceal.wallet"; }
+  QString Settings::getDefaultWalletPath() const
+  {
+    return getDefaultWalletDir() + "/conceal.wallet";
+  }
 
-} // namespace WalletGui
+  QString Settings::getDefaultWalletDir() const
+  {
+    QString documentsPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+    if (!documentsPath.isEmpty())
+    {
+      return documentsPath;
+    }
+    return QDir::homePath();
+  }
+
+  bool Settings::isAutoRefreshData() const
+  {
+    return m_settings.contains("autoRefreshData") ? m_settings.value("autoRefreshData").toBool()
+                                                  : false;
+  }
+
+  void Settings::setAutoRefreshData(bool autoRefresh)
+  {
+    if (isAutoRefreshData() != autoRefresh)
+    {
+      m_settings.insert("autoRefreshData", autoRefresh);
+      saveSettings();
+    }
+  }
+
+}  // namespace WalletGui

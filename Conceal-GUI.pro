@@ -45,6 +45,7 @@ HEADERS += libqrencode/bitstream.h \
            src/TranslatorManager.h \
            src/UpdateManager.h \
            src/WalletAdapter.h \
+           cryptonote/include/BinaryArray.hpp \
            cryptonote/include/BlockchainExplorerData.h \
            cryptonote/include/CryptoNote.h \
            cryptonote/include/CryptoTypes.h \
@@ -69,21 +70,21 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/AddressListModel.h \
            src/gui/AnimatedLabel.h \
            src/gui/ChangePasswordDialog.h \
+           src/gui/ContactDialog.h \
            src/gui/DepositDetailsDialog.h \
            src/gui/DepositListModel.h \
            src/gui/DepositModel.h \
            src/gui/EditableStyle.h \
            src/gui/ExitWidget.h \
            src/gui/ImportGUIKeyDialog.h \
-           src/gui/ImportSecretKeys.h \
+           src/gui/ImportSecretKeysDialog.h \
            src/gui/ImportSeedDialog.h \
-           src/gui/ImportTracking.h \
+           src/gui/ImportTrackingDialog.h \
            src/gui/MainPasswordDialog.h \
            src/gui/MainWindow.h \
            src/gui/Message.h \
            src/gui/MessageDetailsDialog.h \
            src/gui/MessagesModel.h \
-           src/gui/NewAddressDialog.h \
            src/gui/NewPasswordDialog.h \
            src/gui/Notification.h \
            src/gui/OverviewFrame.h \
@@ -137,6 +138,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/ArrayView.h \
            cryptonote/src/Common/Base58.h \
            cryptonote/src/Common/Base64.h \
+           cryptonote/src/Common/BinaryArray.hpp \
            cryptonote/src/Common/BlockingQueue.h \
            cryptonote/src/Common/CommandLine.h \
            cryptonote/src/Common/ConsoleHandler.h \
@@ -172,6 +174,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/crypto/cn_aux.hpp \
            cryptonote/src/crypto/coin_algos.hpp \
            cryptonote/src/crypto/crypto-ops.h \
+           cryptonote/src/crypto/crypto-util.h \
            cryptonote/src/crypto/crypto.h \
            cryptonote/src/crypto/cryptonight.hpp \
            cryptonote/src/crypto/generic-ops.h \
@@ -502,16 +505,16 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/external/gtest/include/gtest/internal/custom/gtest.h
 FORMS += src/gui/ui/addressbookdialog.ui \
          src/gui/ui/changepassworddialog.ui \
+         src/gui/ui/contactdialog.ui \
          src/gui/ui/depositdetailsdialog.ui \
          src/gui/ui/exitwidget.ui \
          src/gui/ui/importguikeydialog.ui \
-         src/gui/ui/importsecretkeys.ui \
+         src/gui/ui/importsecretkeysdialog.ui \
          src/gui/ui/importseeddialog.ui \
-         src/gui/ui/importtracking.ui \
+         src/gui/ui/importtrackingdialog.ui \
          src/gui/ui/mainpassworddialog.ui \
          src/gui/ui/mainwindow.ui \
          src/gui/ui/messagedetailsdialog.ui \
-         src/gui/ui/newaddressdialog.ui \
          src/gui/ui/newpassworddialog.ui \
          src/gui/ui/notification.ui \
          src/gui/ui/overviewframe.ui \
@@ -576,21 +579,21 @@ SOURCES += libqrencode/bitstream.c \
            src/gui/AddressListModel.cpp \
            src/gui/AnimatedLabel.cpp \
            src/gui/ChangePasswordDialog.cpp \
+           src/gui/ContactDialog.cpp \
            src/gui/DepositDetailsDialog.cpp \
            src/gui/DepositListModel.cpp \
            src/gui/DepositModel.cpp \
            src/gui/EditableStyle.cpp \
            src/gui/ExitWidget.cpp \
            src/gui/ImportGUIKeyDialog.cpp \
-           src/gui/ImportSecretKeys.cpp \
+           src/gui/ImportSecretKeysDialog.cpp \
            src/gui/ImportSeedDialog.cpp \
-           src/gui/ImportTracking.cpp \
+           src/gui/ImportTrackingDialog.cpp \
            src/gui/MainPasswordDialog.cpp \
            src/gui/MainWindow.cpp \
            src/gui/Message.cpp \
            src/gui/MessageDetailsDialog.cpp \
            src/gui/MessagesModel.cpp \
-           src/gui/NewAddressDialog.cpp \
            src/gui/NewPasswordDialog.cpp \
            src/gui/Notification.cpp \
            src/gui/OverviewFrame.cpp \

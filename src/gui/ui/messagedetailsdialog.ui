@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Message</string>
+   <string>Message Details</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #282d31;
@@ -39,7 +39,7 @@ color: #ddd;</string>
   </string>
      </property>
      <property name="text">
-      <string>MESSAGE DETAILS</string>
+      <string>Message Details</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -228,7 +228,7 @@ color: #ddd;</string>
         <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
-        <string>&lt;&lt;</string>
+        <string notr="true">&lt;&lt;</string>
        </property>
       </widget>
      </item>
@@ -249,7 +249,7 @@ color: #ddd;</string>
         <string notr="true">/* This style is handled automatically by EditableStyle.cpp */</string>
        </property>
        <property name="text">
-        <string>&gt;&gt;</string>
+        <string notr="true">&gt;&gt;</string>
        </property>
       </widget>
      </item>

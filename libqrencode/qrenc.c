@@ -46,6 +46,7 @@ static int rle = 0;
 static int svg_path = 0;
 static int micro = 0;
 static int inline_svg = 0;
+static int strict_versioning = 0;
 static QRecLevel level = QR_ECLEVEL_L;
 static QRencodeMode hint = QR_MODE_8;
 static unsigned char fg_color[4] = {0, 0, 0, 255};
@@ -73,28 +74,29 @@ enum imageType {
 static enum imageType image_type = PNG_TYPE;
 
 static const struct option options[] = {
-	{"help"         , no_argument      , NULL, 'h'},
-	{"output"       , required_argument, NULL, 'o'},
-	{"read-from"    , required_argument, NULL, 'r'},
-	{"level"        , required_argument, NULL, 'l'},
-	{"size"         , required_argument, NULL, 's'},
-	{"symversion"   , required_argument, NULL, 'v'},
-	{"margin"       , required_argument, NULL, 'm'},
-	{"dpi"          , required_argument, NULL, 'd'},
-	{"type"         , required_argument, NULL, 't'},
-	{"structured"   , no_argument      , NULL, 'S'},
-	{"kanji"        , no_argument      , NULL, 'k'},
-	{"casesensitive", no_argument      , NULL, 'c'},
-	{"ignorecase"   , no_argument      , NULL, 'i'},
-	{"8bit"         , no_argument      , NULL, '8'},
-	{"rle"          , no_argument      , &rle,   1},
-	{"svg-path"     , no_argument      , &svg_path, 1},
-	{"inline"       , no_argument      , &inline_svg, 1},
-	{"micro"        , no_argument      , NULL, 'M'},
-	{"foreground"   , required_argument, NULL, 'f'},
-	{"background"   , required_argument, NULL, 'b'},
-	{"version"      , no_argument      , NULL, 'V'},
-	{"verbose"      , no_argument      , &verbose, 1},
+	{"help"          , no_argument      , NULL, 'h'},
+	{"output"        , required_argument, NULL, 'o'},
+	{"read-from"     , required_argument, NULL, 'r'},
+	{"level"         , required_argument, NULL, 'l'},
+	{"size"          , required_argument, NULL, 's'},
+	{"symversion"    , required_argument, NULL, 'v'},
+	{"margin"        , required_argument, NULL, 'm'},
+	{"dpi"           , required_argument, NULL, 'd'},
+	{"type"          , required_argument, NULL, 't'},
+	{"structured"    , no_argument      , NULL, 'S'},
+	{"kanji"         , no_argument      , NULL, 'k'},
+	{"casesensitive" , no_argument      , NULL, 'c'},
+	{"ignorecase"    , no_argument      , NULL, 'i'},
+	{"8bit"          , no_argument      , NULL, '8'},
+	{"micro"         , no_argument      , NULL, 'M'},
+	{"rle"           , no_argument      , &rle,   1},
+	{"svg-path"      , no_argument      , &svg_path, 1},
+	{"inline"        , no_argument      , &inline_svg, 1},
+	{"strict-version", no_argument      , &strict_versioning, 1},
+	{"foreground"    , required_argument, NULL, 'f'},
+	{"background"    , required_argument, NULL, 'b'},
+	{"version"       , no_argument      , NULL, 'V'},
+	{"verbose"       , no_argument      , &verbose, 1},
 	{NULL, 0, NULL, 0}
 };
 
@@ -109,7 +111,7 @@ static void usage(int help, int longopt, int status)
 	if(help) {
 		if(longopt) {
 			fprintf(out,
-"Usage: qrencode [OPTION]... [STRING]\n"
+"Usage: qrencode [-o FILENAME] [OPTION]... [STRING]\n"
 "Encode input data in a QR Code and save as a PNG or EPS image.\n\n"
 "  -h, --help   display the help message. -h displays only the help of short\n"
 "               options.\n\n"
@@ -132,27 +134,31 @@ static void usage(int help, int longopt, int status)
 "               specify the width of the margins. (default=4 (2 for Micro QR)))\n\n"
 "  -d NUMBER, --dpi=NUMBER\n"
 "               specify the DPI of the generated PNG. (default=72)\n\n"
-"  -t {PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8,ANSI256UTF8},\n"
-"  --type={PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8,ANSI256UTF8}\n"
+"  -t {PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,UTF8i,ANSIUTF8,ANSIUTF8i,ANSI256UTF8},\n"
+"  --type={PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,UTF8i,ANSIUTF8,ANSIUTF8i,ANSI256UTF8}\n"
 "               specify the type of the generated image. (default=PNG)\n\n"
 "  -S, --structured\n"
-"               make structured symbols. Version must be specified.\n\n"
+"               make structured symbols. Version must be specified with '-v'.\n\n"
 "  -k, --kanji  assume that the input text contains kanji (shift-jis).\n\n"
 "  -c, --casesensitive\n"
 "               encode lower-case alphabet characters in 8-bit mode. (default)\n\n"
 "  -i, --ignorecase\n"
 "               ignore case distinctions and use only upper-case characters.\n\n"
 "  -8, --8bit   encode entire data in 8-bit mode. -k, -c and -i will be ignored.\n\n"
+"  -M, --micro  encode in a Micro QR Code.\n\n"
 "      --rle    enable run-length encoding for SVG.\n\n"
 "      --svg-path\n"
 "               use single path to draw modules for SVG.\n\n"
-"      --inline only useful for SVG output, generates an SVG without the XML tag.\n"
-"  -M, --micro  encode in a Micro QR Code. (experimental)\n\n"
+"      --inline only useful for SVG output, generates an SVG without the XML tag.\n\n"
 "      --foreground=RRGGBB[AA]\n"
 "      --background=RRGGBB[AA]\n"
 "               specify foreground/background color in hexadecimal notation.\n"
 "               6-digit (RGB) or 8-digit (RGBA) form are supported.\n"
 "               Color output support available only in PNG, EPS and SVG.\n\n"
+"      --strict-version\n"
+"               disable automatic version number adjustment. If the input data is\n"
+"               too large for the specified version, the program exits with the\n"
+"               code of 1.\n\n"
 "  -V, --version\n"
 "               display the version number and copyrights of the qrencode.\n\n"
 "      --verbose\n"
@@ -171,7 +177,7 @@ static void usage(int help, int longopt, int status)
 			);
 		} else {
 			fprintf(out,
-"Usage: qrencode [OPTION]... [STRING]\n"
+"Usage: qrencode [-o FILENAME] [OPTION]... [STRING]\n"
 "Encode input data in a QR Code and save as a PNG or EPS image.\n\n"
 "  -h           display this message.\n"
 "  --help       display the usage of long options.\n"
@@ -186,9 +192,9 @@ static void usage(int help, int longopt, int status)
 "  -v NUMBER    specify the minimum version of the symbol. (default=auto)\n"
 "  -m NUMBER    specify the width of the margins. (default=4 (2 for Micro))\n"
 "  -d NUMBER    specify the DPI of the generated PNG. (default=72)\n"
-"  -t {PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8,ANSI256UTF8}\n"
+"  -t {PNG,PNG32,EPS,SVG,XPM,ANSI,ANSI256,ASCII,ASCIIi,UTF8,UTF8i,ANSIUTF8,ANSIUTF8i,ANSI256UTF8}\n"
 "               specify the type of the generated image. (default=PNG)\n"
-"  -S           make structured symbols. Version must be specified.\n"
+"  -S           make structured symbols. Version number must be specified with '-v'.\n"
 "  -k           assume that the input text contains kanji (shift-jis).\n"
 "  -c           encode lower-case alphabet characters in 8-bit mode. (default)\n"
 "  -i           ignore case distinctions and use only upper-case characters.\n"
@@ -1034,6 +1040,10 @@ static void qrencode(const unsigned char *intext, int length, const char *outfil
 		}
 		exit(EXIT_FAILURE);
 	}
+	if(strict_versioning && version > 0 && qrcode->version != version) {
+		fprintf(stderr, "Failed to encode the input data: Input data too large\n");
+		exit(EXIT_FAILURE);
+	}
 
 	if(verbose) {
 		fprintf(stderr, "File: %s, Version: %d\n", (outfile!=NULL)?outfile:"(stdout)", qrcode->version);
@@ -1399,7 +1409,7 @@ int main(int argc, char **argv)
 	if(intext == NULL) {
 		fp = infile == NULL ? stdin : fopen(infile,"r");
 		if(fp == 0) {
-			fprintf(stderr, "Can not read input file %s.\n", infile);
+			fprintf(stderr, "Cannot read input file %s.\n", infile);
 			exit(EXIT_FAILURE);
 		}
 		intext = readFile(fp,&length);
@@ -1407,10 +1417,10 @@ int main(int argc, char **argv)
 	}
 
 	if(micro && version > MQRSPEC_VERSION_MAX) {
-		fprintf(stderr, "Version should be less or equal to %d.\n", MQRSPEC_VERSION_MAX);
+		fprintf(stderr, "Version number should be less or equal to %d.\n", MQRSPEC_VERSION_MAX);
 		exit(EXIT_FAILURE);
 	} else if(!micro && version > QRSPEC_VERSION_MAX) {
-		fprintf(stderr, "Version should be less or equal to %d.\n", QRSPEC_VERSION_MAX);
+		fprintf(stderr, "Version number should be less or equal to %d.\n", QRSPEC_VERSION_MAX);
 		exit(EXIT_FAILURE);
 	}
 
@@ -1423,10 +1433,6 @@ int main(int argc, char **argv)
 	}
 
 	if(micro) {
-		if(version == 0) {
-			fprintf(stderr, "Version must be specified to encode a Micro QR Code symbol.\n");
-			exit(EXIT_FAILURE);
-		}
 		if(structured) {
 			fprintf(stderr, "Micro QR Code does not support structured symbols.\n");
 			exit(EXIT_FAILURE);
@@ -1435,7 +1441,7 @@ int main(int argc, char **argv)
 
 	if(structured) {
 		if(version == 0) {
-			fprintf(stderr, "Version must be specified to encode structured symbols.\n");
+			fprintf(stderr, "Version number must be specified to encode structured symbols.\n");
 			exit(EXIT_FAILURE);
 		}
 		qrencodeStructured(intext, length, outfile);

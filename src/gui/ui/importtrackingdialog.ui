@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ImportSecretKeys</class>
- <widget class="QDialog" name="ImportSecretKeys">
+ <class>ImportTrackingDialog</class>
+ <widget class="QDialog" name="ImportTrackingDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
-    <height>550</height>
+    <width>1100</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Import Tracking Key</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #282d31; color: #ddd; border: 0px;</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>6</number>
    </property>
@@ -34,22 +34,16 @@
    </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>
      <property name="title">
       <string/>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-     </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <property name="leftMargin">
        <number>50</number>
       </property>
@@ -63,7 +57,7 @@
        <number>20</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_3">
         <property name="font">
          <font>
           <family>Poppins</family>
@@ -79,7 +73,7 @@ font-size: 20px;
 font-weight: bold;</string>
         </property>
         <property name="text">
-         <string>Import Private Keys</string>
+         <string>Import Tracking Key</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -87,7 +81,7 @@ font-weight: bold;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
           <family>Poppins</family>
@@ -97,10 +91,7 @@ font-weight: bold;</string>
          <string notr="true">color: #ddd;border-right: 0px;</string>
         </property>
         <property name="text">
-         <string>Recreate your wallet with the secret spend and view keys</string>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
+         <string>Import a tracking wallet (view-only)</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -118,7 +109,33 @@ font-weight: bold;</string>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>40</height>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="m_errorLabel">
+        <property name="styleSheet">
+         <string notr="true">color: orange;</string>
+        </property>
+        <property name="text">
+         <string notr="true"/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
          </size>
         </property>
        </spacer>
@@ -134,64 +151,15 @@ font-weight: bold;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;border-right: 0px;
-font-weight:bold;</string>
+font-weight: bold;</string>
         </property>
         <property name="text">
-         <string>Private Spend Key</string>
+         <string>Tracking Key</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="m_spendKey">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Poppins</family>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa; padding: 5px;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="font">
-         <font>
-          <family>Poppins</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #ddd;border-right: 0px;
-font-weight:bold;</string>
-        </property>
-        <property name="text">
-         <string>Private View Key</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="m_viewKey">
+       <widget class="QLineEdit" name="m_trackingKey">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -232,7 +200,7 @@ font-weight:bold;</string>
         </property>
         <property name="styleSheet">
          <string notr="true">color: #ddd;border-right: 0px;
-font-weight:bold;</string>
+font-weight: bold;</string>
         </property>
         <property name="text">
          <string>Wallet Path</string>
@@ -241,6 +209,11 @@ font-weight:bold;</string>
       </item>
       <item>
        <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Poppins</family>
+         </font>
+        </property>
         <property name="text">
          <string>Where would you like to save your wallet?</string>
         </property>
@@ -266,15 +239,27 @@ font-weight:bold;</string>
          </property>
          <item>
           <widget class="QLineEdit" name="m_pathEdit">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
            <property name="minimumSize">
             <size>
-             <width>300</width>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa; padding: 5px;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="m_selectPathButton">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
              <height>40</height>
             </size>
            </property>
@@ -285,25 +270,6 @@ font-weight:bold;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">padding: 3px; border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QToolButton" name="m_selectPathButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>40</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">border: 1px solid #555; border-radius: 5px;   color: #aaa;</string>
            </property>
            <property name="text">
             <string notr="true"/>
@@ -318,7 +284,7 @@ font-weight:bold;</string>
        </widget>
       </item>
       <item>
-       <spacer name="verticalSpacer">
+       <spacer name="verticalSpacer_3">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -350,16 +316,10 @@ font-weight:bold;</string>
          </property>
          <item>
           <widget class="QPushButton" name="b1_okButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
            <property name="minimumSize">
             <size>
-             <width>131</width>
-             <height>50</height>
+             <width>125</width>
+             <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -403,17 +363,11 @@ font-weight:bold;</string>
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="b1_backButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+          <widget class="QPushButton" name="b1_cancelButton">
            <property name="minimumSize">
             <size>
-             <width>131</width>
-             <height>50</height>
+             <width>125</width>
+             <height>31</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -448,46 +402,14 @@ font-weight:bold;</string>
  </resources>
  <connections>
   <connection>
-   <sender>b1_backButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ImportSecretKeys</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>439</x>
-     <y>133</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>324</x>
-     <y>79</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>b1_okButton</sender>
    <signal>clicked()</signal>
-   <receiver>ImportSecretKeys</receiver>
-   <slot>accept()</slot>
+   <receiver>ImportTrackingDialog</receiver>
+   <slot>importButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>570</x>
-     <y>133</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>324</x>
-     <y>79</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>m_selectPathButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ImportSecretKeys</receiver>
-   <slot>selectPathClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>620</x>
-     <y>54</y>
+     <y>103</y>
     </hint>
     <hint type="destinationlabel">
      <x>323</x>
@@ -495,5 +417,41 @@ font-weight:bold;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>b1_cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImportTrackingDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_selectPathButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ImportTrackingDialog</receiver>
+   <slot>selectPathClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>selectPathClicked()</slot>
+  <slot>importButtonClicked()</slot>
+ </slots>
 </ui>

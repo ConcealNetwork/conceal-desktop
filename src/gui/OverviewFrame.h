@@ -15,6 +15,7 @@
 #include <QFrame>
 #include <QNetworkAccessManager>
 #include <QStyledItemDelegate>
+#include <QTimer>
 
 #include "EditableStyle.h"
 
@@ -58,9 +59,11 @@ public Q_SLOTS:
   void deleteABClicked();
   void payToABClicked();
   void dashboardClicked();
+  void messageToABClicked();
 
 protected:
   void resizeEvent(QResizeEvent *event) override;
+  int setStyles(int change) override;
   QList<QWidget *> getWidgets() override;
   QList<QPushButton *> getButtons() override;
   QList<QLabel *> getLabels() override;
@@ -88,6 +91,8 @@ private:
   QMenu* contextMenu;
   bool paymentIDRequired = false;
   QString exchangeName = "";
+  QTimer refreshDataTimer;
+  const int REFRESH_INTERVAL = 15 * 60 * 1000;  // refresh interval set to 15 min (in ms)
 #ifdef HAVE_CHART
   QChartView *m_chartView;
 #else
@@ -115,7 +120,6 @@ private:
   void showCurrentWalletName();
   void syncInProgressMessage();
   void walletActualBalanceUpdated(quint64 _balance);
-  static bool isValidPaymentId(const QByteArray &_paymentIdString);
   void reset();
   void onAddressFound(const QString &_address);
   void updatePortfolio();
@@ -126,6 +130,7 @@ private:
   bool askForWalletPassword(bool _error = false);
   void change();
   void goToWelcomeFrame();
+  void disableAddressBookButtons();
 
   Q_SLOT void copyClicked();
   Q_SLOT void bankingClicked();
@@ -186,14 +191,16 @@ private:
   Q_SLOT void exportCSV();
   Q_SLOT void unlockWallet();
   Q_SLOT void encryptWalletClicked();
-  Q_SLOT void stexClicked();
-  Q_SLOT void hotbitClicked();
+  Q_SLOT void bitmartClicked();
+  Q_SLOT void websiteClicked();
   Q_SLOT void tradeogreClicked();
   Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);
   Q_SLOT void qtChartsLicenseClicked();
   Q_SLOT void openSslLicenseClicked();
+  Q_SLOT void refreshDataClicked();
+  Q_SLOT void autoRefreshButtonClicked();
 
 Q_SIGNALS:
   void backupSignal();
@@ -213,5 +220,6 @@ Q_SIGNALS:
   void payToSignal(const QModelIndex& _index);
   void notifySignal(const QString& message);
   void welcomeFrameSignal();
+  void messageToSignal(const QModelIndex& _index);
 };
 } // namespace WalletGui

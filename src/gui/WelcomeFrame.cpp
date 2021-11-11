@@ -93,12 +93,16 @@ void WelcomeFrame::nextShowSeed()
 {
   QString filePath = m_ui->lineEdit->text();
 
-  if (!filePath.isEmpty() && !filePath.endsWith(".wallet")) {
+  if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
+  {
     filePath.append(".wallet");
   }
 
-  if (!filePath.isEmpty() && !QFile::exists(filePath)) {
-    if (WalletAdapter::instance().isOpen()) {
+  QFileInfo fileInfo(filePath);
+  if (!filePath.isEmpty() && !QFile::exists(filePath) && fileInfo.isAbsolute())
+  {
+    if (WalletAdapter::instance().isOpen())
+    {
       WalletAdapter::instance().close();
     }
     m_ui->walletPathBox->hide();
@@ -110,11 +114,14 @@ void WelcomeFrame::nextShowSeed()
     // and jumping directly to the dashboard)
     WalletAdapter::instance().addObserver();
     std::string seed;
-    if (WalletAdapter::instance().getMnemonicSeed(seed)) {
+    if (WalletAdapter::instance().getMnemonicSeed(seed))
+    {
       m_ui->mnemonicSeed->setText(QString::fromStdString(seed));
     }
-    else {
-      QMessageBox::warning(&MainWindow::instance(), QObject::tr("Error"), tr("Unable to create the wallet."));
+    else
+    {
+      QMessageBox::warning(&MainWindow::instance(), QObject::tr("Error"),
+                           tr("Unable to create the wallet."));
       nextThree();
     }
   }

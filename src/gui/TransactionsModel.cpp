@@ -227,7 +227,7 @@ namespace WalletGui
       QModelIndex ind = index(row, COLUMN_STATE);
       quint64 numberOfConfirmations = ind.data(ROLE_NUMBER_OF_CONFIRMATIONS).value<quint64>();
       QString text = (numberOfConfirmations == 0 ? tr("unconfirmed") : tr("confirmations"));
-      res.append("\"").append(tr("%1 / %2").arg(numberOfConfirmations).arg(text).toUtf8()).append("\",");
+      res.append("\"").append(QString("%1 / %2").arg(numberOfConfirmations).arg(text).toUtf8()).append("\",");
       res.append("\"").append(ind.sibling(row, COLUMN_DATE).data().toString().toUtf8()).append("\",");
       res.append("\"").append(ind.sibling(row, COLUMN_AMOUNT).data().toString().toUtf8()).append("\",");
       res.append("\"").append(ind.sibling(row, COLUMN_FEE).data().toString().toUtf8()).append("\",");

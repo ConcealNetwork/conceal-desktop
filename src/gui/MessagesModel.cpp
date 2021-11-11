@@ -83,11 +83,11 @@ QVariant MessagesModel::headerData(int _section, Qt::Orientation _orientation, i
     case COLUMN_MESSAGE:
       return tr("Message");
     case COLUMN_HASH:
-      return tr("Transaction hash");
+      return tr("Transaction Hash");
     case COLUMN_AMOUNT:
       return tr("Amount");
     case COLUMN_MESSAGE_SIZE:
-      return tr("Message size");
+      return tr("Message Size");
     default:
       break;
     }

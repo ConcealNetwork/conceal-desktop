@@ -1,8 +1,0 @@
-[submodule "cryptonote"]
-	path = cryptonote
-	url = https://github.com/ConcealNetwork/conceal-core
-	branch = master
-[submodule "libqrencode"]
-	path = libqrencode
-	url = https://github.com/fukuchi/libqrencode
-	branch = master
