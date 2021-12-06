@@ -81,16 +81,16 @@ If the build is successful the binary will be in the `bin` folder.
 
 #### Building
 
--   From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsMSBuildCmd.bat" from any command prompt.
--   Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
--   `git clone https://github.com/ConcealNetwork/conceal-core`
--   `git clone https://github.com/ConcealNetwork/conceal-desktop`
--   Copy the contents of the conceal-core folder into conceal-wallet\\cryptonote
--   `cd conceal-desktop`
--   `mkdir build`
--   `cd build`
--   `cmake -G "Visual Studio 15 2017 Win64" -DBOOST_LIBRARYDIR:PATH=c:/local/boost_1_67_0 ..` (Or your boost installed dir.)
--   `msbuild CONCEAL-GUI.sln /p:Configuration=Release`
+- From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsMSBuildCmd.bat" from any command prompt.
+- Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
+- `git clone https://github.com/ConcealNetwork/conceal-core`
+- `git clone https://github.com/ConcealNetwork/conceal-desktop`
+- Copy the contents of the conceal-core folder into conceal-wallet\cryptonote
+- `cd conceal-desktop`
+- `mkdir build`
+- `cd build`
+- `cmake -G "Visual Studio 15 2017 Win64" -DBOOST_LIBRARYDIR:PATH=c:/local/boost_1_67_0 ..` (Or your boost installed dir.)
+- `msbuild conceal-desktop.sln /p:Configuration=Release`
 
 If the build is successful the binaries will be in the `Release` folder.
 
