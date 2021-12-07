@@ -11,7 +11,7 @@ on:
 jobs:
   build-windows:
     name: Windows
-    runs-on: windows-2016
+    runs-on: windows-2019
     env:
       BOOST_ROOT: C:/tools/boost/x86_64
     steps:
@@ -24,7 +24,7 @@ jobs:
         shell: powershell
         run: |
           echo "${env:BOOST_ROOT}"
-          $Url = "https://sourceforge.net/projects/boost/files/boost-binaries/1.72.0/boost_1_72_0-msvc-14.1-64.exe"
+          $Url = "https://sourceforge.net/projects/boost/files/boost-binaries/1.72.0/boost_1_72_0-msvc-14.2-64.exe"
           (New-Object System.Net.WebClient).DownloadFile($Url, "$env:TEMP\boost.exe")
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
@@ -74,7 +74,7 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
-          cmake -G "Visual Studio 15 2017 Win64" ..
+          cmake -G "Visual Studio 16 2019" ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
           echo "::set-output name=build_folder::${build_folder}"
