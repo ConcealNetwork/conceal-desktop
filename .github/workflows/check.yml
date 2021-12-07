@@ -100,17 +100,15 @@ jobs:
           mv conceal-desktop.exe ../../installer/windows/build/
           cd ../../installer/windows/
           iscc setup.iss
-          cd bin
-          Compress-Archive -Path Conceal*.exe -DestinationPath "$release_name.zip"
-
-          $artifact_path = "installer/windows/bin/$release_name.zip"
-          echo "::set-output name=artifact_path::${artifact_path}"
+          cd ../..
+          mkdir $release_name
+          mv installer/windows/bin/Conceal*.exe $release_name/
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build.outputs.release_name }}
-          path: ${{ steps.pack.outputs.artifact_path }}
+          path: ${{ steps.build.outputs.release_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -143,21 +141,22 @@ jobs:
         id: appimage
         run: |
           ccx_version="${{steps.build.outputs.ccx_version}}"
+          release_name=ccx-desktop-appimage-dev-"$ccx_version"
           appimage_name=Conceal_Desktop-dev-"$ccx_version"-x86_64.AppImage
 
+          mkdir $release_name
           cd appimage
           ./create-appimage.sh
-          mv Conceal_Desktop*.AppImage ../$appimage_name
+          mv Conceal_Desktop*.AppImage ../$release_name/$appimage_name
           cd ..
-          ls -l $appimage_name
 
-          echo "::set-output name=artifact_name::${appimage_name}"
+          echo "::set-output name=release_name::${release_name}"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.appimage.outputs.artifact_name }}
-          path: ${{ steps.appimage.outputs.artifact_name }}
+          name: ${{ steps.appimage.outputs.release_name }}
+          path: ${{ steps.appimage.outputs.release_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -189,16 +188,14 @@ jobs:
           mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
-          tar -czf "$release_name".tar.gz "$release_name"
 
           echo "::set-output name=release_name::${release_name}"
-          echo "::set-output name=artifact_path::$release_name.tar.gz"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build.outputs.release_name }}
-          path: ${{ steps.build.outputs.artifact_path }}
+          path: ${{ steps.build.outputs.release_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -230,16 +227,14 @@ jobs:
           mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
-          tar -czf "$release_name".tar.gz "$release_name"
 
           echo "::set-output name=release_name::${release_name}"
-          echo "::set-output name=artifact_path::$release_name.tar.gz"
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build.outputs.release_name }}
-          path: ${{ steps.build.outputs.artifact_path }}
+          path: ${{ steps.build.outputs.release_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
