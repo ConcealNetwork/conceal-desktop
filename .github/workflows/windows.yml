@@ -52,8 +52,8 @@ jobs:
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
 
-          # Update installer/windows/setup.iss with the current version
-          $file = "installer/windows/setup.iss"
+          # Update installer/windows/installer.iss with the current version
+          $file = "installer/windows/installer.iss"
           $find = "^#define AppVersion.+"
           $replace = "#define AppVersion '$ccx_version'"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
@@ -96,7 +96,7 @@ jobs:
           mv Final ../../installer/windows/build
           mv conceal-desktop.exe ../../installer/windows/build/
           cd ../../installer/windows/
-          iscc setup.iss
+          iscc installer.iss
           cd bin
           Compress-Archive -Path Conceal*.exe -DestinationPath "$release_name.zip"
 
