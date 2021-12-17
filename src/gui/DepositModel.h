@@ -53,7 +53,7 @@ public:
 
 private:
   quint32 m_depositCount;
-  QHash<CryptoNote::TransactionId, QList<CryptoNote::DepositId> > m_spendingTransactions;
+  QHash<cn::TransactionId, QList<cn::DepositId> > m_spendingTransactions;
 
   DepositModel();
   ~DepositModel();
@@ -64,11 +64,11 @@ private:
   QVariant getUserRole(const QModelIndex& _index, int _role) const;
 
   void reloadWalletDeposits();
-  void appendDeposit(CryptoNote::DepositId _depositId);
-  void transactionCreated(CryptoNote::TransactionId _transactionId);
+  void appendDeposit(cn::DepositId _depositId);
+  void transactionCreated(cn::TransactionId _transactionId);
   void reset();
-  void depositsUpdated(const QVector<CryptoNote::DepositId>& _depositIds);
-  void transactionUpdated(CryptoNote::TransactionId _transactionId);
+  void depositsUpdated(const QVector<cn::DepositId>& _depositIds);
+  void transactionUpdated(cn::TransactionId _transactionId);
 };
 
 }

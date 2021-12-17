@@ -100,7 +100,7 @@ void MainWindow::connectToSignals()
   connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &MainWindow::dashboardTo);
 
   /* This is the previous method that sent the user to the transaction history screen everytime a transaction was sent
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, [this](CryptoNote::TransactionId _transactionId, int _error, const QString &_errorString) {
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, [this](cn::TransactionId _transactionId, int _error, const QString &_errorString) {
     if (_error == 0)
     {
       m_ui->m_transactionsAction->setChecked(true);
@@ -423,7 +423,7 @@ void MainWindow::importKey()
 
     uint64_t addressPrefix;
     std::string data;
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
 
     if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
         data.size() == sizeof(keys))
@@ -442,8 +442,8 @@ void MainWindow::importKey()
     {
 
       //serialize as public keys then convert to secret keys
-      CryptoNote::AccountPublicAddress decodedKeys;
-      CryptoNote::fromBinaryArray(decodedKeys, Common::asBinaryArray(data));
+      cn::AccountPublicAddress decodedKeys;
+      cn::fromBinaryArray(decodedKeys, Common::asBinaryArray(data));
 
       // convert to secret key then get real public keys
       Crypto::SecretKey spendSecretKey = reinterpret_cast<Crypto::SecretKey &>(decodedKeys.spendPublicKey);
@@ -454,11 +454,11 @@ void MainWindow::importKey()
       Crypto::PublicKey viewPublicKey;
       Crypto::secret_key_to_public_key(viewSecretKey, viewPublicKey);
 
-      CryptoNote::AccountPublicAddress publicKeys;
+      cn::AccountPublicAddress publicKeys;
       publicKeys.spendPublicKey = spendPublicKey;
       publicKeys.viewPublicKey = viewPublicKey;
 
-      CryptoNote::AccountKeys keys;
+      cn::AccountKeys keys;
       keys.address = publicKeys;
       keys.spendSecretKey = spendSecretKey;
       keys.viewSecretKey = viewSecretKey;
@@ -646,7 +646,7 @@ void MainWindow::walletClosed()
 
 void MainWindow::checkTrackingMode()
 {
-  CryptoNote::AccountKeys keys;
+  cn::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
   if (keys.spendSecretKey == boost::value_initialized<Crypto::SecretKey>())
   {

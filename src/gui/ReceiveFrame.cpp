@@ -43,9 +43,9 @@ void ReceiveFrame::walletOpened(int _error) {
   std::string mnemonic_seed;
   WalletAdapter::instance().getMnemonicSeed(mnemonic_seed);
 
-  CryptoNote::AccountKeys keys;
+  cn::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
-  CryptoNote::AccountKeys trkeys;
+  cn::AccountKeys trkeys;
   WalletAdapter::instance().getAccountKeys(trkeys);
   trkeys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
   QString trackingWalletKeys = QString::fromStdString(Common::podToHex(trkeys));

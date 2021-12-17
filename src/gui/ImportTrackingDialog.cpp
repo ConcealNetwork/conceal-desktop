@@ -83,7 +83,7 @@ namespace WalletGui
       return;
     }
 
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
 
     std::string publicSpendKeyString = keyString.mid(0, 64).toStdString();
     std::string publicViewKeyString = keyString.mid(64, 64).toStdString();

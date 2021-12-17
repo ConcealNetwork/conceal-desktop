@@ -127,11 +127,11 @@ namespace WalletGui
     Crypto::secret_key_to_public_key(privateSpendKey, publicSpendKey);
     Crypto::secret_key_to_public_key(privateViewKey, publicViewKey);
 
-    CryptoNote::AccountPublicAddress publicKeys;
+    cn::AccountPublicAddress publicKeys;
     publicKeys.spendPublicKey = publicSpendKey;
     publicKeys.viewPublicKey = publicViewKey;
 
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
     keys.address = publicKeys;
     keys.spendSecretKey = privateSpendKey;
     keys.viewSecretKey = privateViewKey;

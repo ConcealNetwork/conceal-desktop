@@ -19,13 +19,13 @@ CurrencyAdapter& CurrencyAdapter::instance() {
   return inst;
 }
 
-CurrencyAdapter::CurrencyAdapter() : m_currency(CryptoNote::CurrencyBuilder(LoggerAdapter::instance().getLoggerManager()).testnet(Settings::instance().isTestnet()).currency()) {
+CurrencyAdapter::CurrencyAdapter() : m_currency(cn::CurrencyBuilder(LoggerAdapter::instance().getLoggerManager()).testnet(Settings::instance().isTestnet()).currency()) {
 }
 
 CurrencyAdapter::~CurrencyAdapter() {
 }
 
-const CryptoNote::Currency& CurrencyAdapter::getCurrency() {
+const cn::Currency& CurrencyAdapter::getCurrency() {
   return m_currency;
 }
 
@@ -38,7 +38,7 @@ QString CurrencyAdapter::getCurrencyDisplayName() const {
 }
 
 QString CurrencyAdapter::getCurrencyName() const {
-  return CryptoNote::CRYPTONOTE_NAME;
+  return cn::CRYPTONOTE_NAME;
 }
 
 QString CurrencyAdapter::getCurrencyTicker() const {
@@ -177,7 +177,7 @@ quint64 CurrencyAdapter::parseAmount(const QString& _amountString) const {
 
 bool CurrencyAdapter::validateAddress(const QString& _address) const
 {
-  CryptoNote::AccountPublicAddress internalAddress;
+  cn::AccountPublicAddress internalAddress;
 
   return m_currency.parseAccountAddressString(_address.toStdString(), internalAddress);
 }

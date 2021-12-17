@@ -96,18 +96,18 @@ namespace WalletGui
 
     Crypto::PublicKey unused;
 
-    CryptoNote::AccountBase::generateViewFromSpend(privateSpendKey, privateViewKey, unused);
+    cn::AccountBase::generateViewFromSpend(privateSpendKey, privateViewKey, unused);
 
     Crypto::PublicKey spendPublicKey;
     Crypto::PublicKey viewPublicKey;
     Crypto::secret_key_to_public_key(privateSpendKey, spendPublicKey);
     Crypto::secret_key_to_public_key(privateViewKey, viewPublicKey);
 
-    CryptoNote::AccountPublicAddress publicKeys;
+    cn::AccountPublicAddress publicKeys;
     publicKeys.spendPublicKey = spendPublicKey;
     publicKeys.viewPublicKey = viewPublicKey;
 
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
     keys.address = publicKeys;
     keys.spendSecretKey = privateSpendKey;
     keys.viewSecretKey = privateViewKey;
