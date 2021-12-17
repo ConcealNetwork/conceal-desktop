@@ -61,7 +61,7 @@ public:
   {
   }
 
-  void start(Node **_node, const cn::Currency *currency, INodeCallback *_callback, Logging::LoggerManager *_loggerManager,
+  void start(Node **_node, const cn::Currency *currency, INodeCallback *_callback, logging::LoggerManager *_loggerManager,
              const cn::CoreConfig &_coreConfig, const cn::NetNodeConfig &_netNodeConfig)
   {
     (*_node) = createInprocessNode(*currency, *_loggerManager, _coreConfig, _netNodeConfig, *_callback);

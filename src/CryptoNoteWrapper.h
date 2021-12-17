@@ -23,7 +23,7 @@ class NetNodeConfig;
 
 }
 
-namespace Logging {
+namespace logging {
   class LoggerManager;
 }
 
@@ -52,8 +52,8 @@ public:
   virtual void lastKnownBlockHeightUpdated(Node& node, uint64_t height) = 0;
 };
 
-Node* createRpcNode(const cn::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort);
-Node* createInprocessNode(const cn::Currency& currency, Logging::LoggerManager& logManager,
+Node* createRpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort);
+Node* createInprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager,
   const cn::CoreConfig& coreConfig, const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback);
 
 }

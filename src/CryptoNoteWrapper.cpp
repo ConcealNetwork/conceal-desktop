@@ -86,7 +86,7 @@ Node::~Node() {
 
 class RpcNode : cn::INodeObserver, public Node {
 public:
-  RpcNode(const cn::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
+  RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
     m_callback(callback),
     m_currency(currency),
     m_logger(logManager),
@@ -137,7 +137,7 @@ private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
   cn::NodeRpcProxy m_node;
-  Logging::LoggerManager& m_logger;
+  logging::LoggerManager& m_logger;
 
   void peerCountUpdated(size_t count) {
     m_callback.peerCountUpdated(*this, count);
@@ -154,7 +154,7 @@ private:
 
 class InprocessNode : cn::INodeObserver, public Node {
 public:
-  InprocessNode(const cn::Currency& currency, Logging::LoggerManager& logManager, const cn::CoreConfig& coreConfig,
+  InprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager, const cn::CoreConfig& coreConfig,
     const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
     m_currency(currency), 
     m_dispatcher(),
@@ -242,7 +242,7 @@ private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
   System::Dispatcher m_dispatcher;
-  Logging::LoggerManager& m_loggerManager;
+  logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
   cn::core m_core;
@@ -265,11 +265,11 @@ private:
   }
 };
 
-Node* createRpcNode(const cn::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) {
+Node* createRpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) {
   return new RpcNode(currency, logManager, callback, nodeHost, nodePort);
 }
 
-Node* createInprocessNode(const cn::Currency& currency, Logging::LoggerManager& logManager,
+Node* createInprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager,
   const cn::CoreConfig& coreConfig, const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) {
   return new InprocessNode(currency, logManager, coreConfig, netNodeConfig, callback);
 }

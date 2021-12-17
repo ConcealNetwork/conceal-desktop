@@ -21,7 +21,7 @@ class Currency;
 
 }
 
-namespace Logging {
+namespace logging {
   class LoggerManager;
 }
 
@@ -68,7 +68,7 @@ Q_SIGNALS:
   void lastKnownBlockHeightUpdatedSignal(quint64 _height);
   void nodeInitCompletedSignal();
   void peerCountUpdatedSignal(quintptr _count);
-  void initNodeSignal(Node** _node, const cn::Currency* currency, INodeCallback* _callback, Logging::LoggerManager* _loggerManager,
+  void initNodeSignal(Node** _node, const cn::Currency* currency, INodeCallback* _callback, logging::LoggerManager* _loggerManager,
     const cn::CoreConfig& _coreConfig, const cn::NetNodeConfig& _netNodeConfig);
   void deinitNodeSignal(Node** _node);
 };
