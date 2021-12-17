@@ -1200,7 +1200,7 @@ namespace WalletGui
       /* Create the address from the public keys */
       std::string keys = decoded.substr(paymentIDLen, std::string::npos);
       cn::AccountPublicAddress addr;
-      cn::BinaryArray ba = Common::asBinaryArray(keys);
+      cn::BinaryArray ba = common::asBinaryArray(keys);
 
       cn::fromBinaryArray(addr, ba);
 
@@ -1221,7 +1221,7 @@ namespace WalletGui
       {
         /* Parse the record and set address to the actual CCX address */
         std::vector<std::string> records;
-        if (!Common::fetch_dns_txt(address.toStdString(), records))
+        if (!common::fetch_dns_txt(address.toStdString(), records))
         {
           logger.log("Failed to lookup Conceal ID");
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
@@ -1474,7 +1474,7 @@ namespace WalletGui
       {
         /* Parse the record and set address to the actual CCX address */
         std::vector<std::string> records;
-        if (!Common::fetch_dns_txt(address.toStdString(), records))
+        if (!common::fetch_dns_txt(address.toStdString(), records))
         {
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
         }

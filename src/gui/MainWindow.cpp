@@ -443,7 +443,7 @@ void MainWindow::importKey()
 
       //serialize as public keys then convert to secret keys
       cn::AccountPublicAddress decodedKeys;
-      cn::fromBinaryArray(decodedKeys, Common::asBinaryArray(data));
+      cn::fromBinaryArray(decodedKeys, common::asBinaryArray(data));
 
       // convert to secret key then get real public keys
       crypto::SecretKey spendSecretKey = reinterpret_cast<crypto::SecretKey &>(decodedKeys.spendPublicKey);

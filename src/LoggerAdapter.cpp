@@ -21,7 +21,7 @@ namespace WalletGui
 
   void LoggerAdapter::init()
   {
-    Common::JsonValue loggerConfiguration(Common::JsonValue::OBJECT);
+    common::JsonValue loggerConfiguration(common::JsonValue::OBJECT);
     int64_t logLevel =
 #ifdef DEBUG
         Logging::TRACE
@@ -30,8 +30,8 @@ namespace WalletGui
 #endif
         ;
     loggerConfiguration.insert("globalLevel", logLevel);
-    Common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", Common::JsonValue::ARRAY);
-    Common::JsonValue& fileLogger = cfgLoggers.pushBack(Common::JsonValue::OBJECT);
+    common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", common::JsonValue::ARRAY);
+    common::JsonValue& fileLogger = cfgLoggers.pushBack(common::JsonValue::OBJECT);
     fileLogger.insert("type", "file");
     fileLogger.insert(
         "filename",

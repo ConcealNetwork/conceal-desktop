@@ -105,14 +105,14 @@ namespace WalletGui
     crypto::Hash privateViewKeyHash;
 
     size_t size;
-    if (!Common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
+    if (!common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
                          size) ||
         size != sizeof(privateSpendKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The private spend key you entered is not valid."));
       return;
     }
-    if (!Common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
+    if (!common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
                          size) ||
         size != sizeof(privateViewKeyHash))
     {

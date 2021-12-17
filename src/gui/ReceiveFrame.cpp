@@ -48,11 +48,11 @@ void ReceiveFrame::walletOpened(int _error) {
   cn::AccountKeys trkeys;
   WalletAdapter::instance().getAccountKeys(trkeys);
   trkeys.spendSecretKey = boost::value_initialized<crypto::SecretKey>();
-  QString trackingWalletKeys = QString::fromStdString(Common::podToHex(trkeys));
+  QString trackingWalletKeys = QString::fromStdString(common::podToHex(trkeys));
   m_ui->m_guiKey->setText(trackingWalletKeys);
 
-  m_ui->m_spendKey->setText(QString::fromStdString(Common::podToHex(keys.spendSecretKey)));
-  m_ui->m_viewKey->setText(QString::fromStdString(Common::podToHex(keys.viewSecretKey)));
+  m_ui->m_spendKey->setText(QString::fromStdString(common::podToHex(keys.spendSecretKey)));
+  m_ui->m_viewKey->setText(QString::fromStdString(common::podToHex(keys.viewSecretKey)));
   m_ui->m_seed->setText(QString::fromStdString(mnemonic_seed));  
 
   m_ui->seedBox->hide();
