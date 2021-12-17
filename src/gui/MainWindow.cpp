@@ -425,7 +425,7 @@ void MainWindow::importKey()
     std::string data;
     cn::AccountKeys keys;
 
-    if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
+    if (tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix() &&
         data.size() == sizeof(keys))
     {
       std::memcpy(&keys, data.data(), sizeof(keys));
@@ -438,7 +438,7 @@ void MainWindow::importKey()
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
     }
-    else if (Tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix())
+    else if (tools::Base58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix())
     {
 
       //serialize as public keys then convert to secret keys

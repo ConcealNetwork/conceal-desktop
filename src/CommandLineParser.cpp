@@ -29,7 +29,7 @@ CommandLineParser::CommandLineParser(QObject* _parent) : QObject(_parent), m_par
     "add-priority-node and seed-node are ignored"), tr("node")),
   m_seedNodeOption("seed-node", tr("Connect to a node to retrieve peer addresses, and disconnect"), tr("node")),
   m_hideMyPortOption("hide-my-port", tr("Do not announce yourself as peerlist candidate")),
-  m_dataDirOption("data-dir", tr("Specify data directory"), tr("directory"), QString::fromStdString(Tools::getDefaultDataDirectory())),
+  m_dataDirOption("data-dir", tr("Specify data directory"), tr("directory"), QString::fromStdString(tools::getDefaultDataDirectory())),
   m_minimized("minimized", tr("Run application in minimized mode")) {
   m_parser.setApplicationDescription(tr("Conceal Desktop"));
   m_parser.addHelpOption();
