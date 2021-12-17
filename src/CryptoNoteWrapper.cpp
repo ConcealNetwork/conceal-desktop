@@ -241,7 +241,7 @@ public:
 private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
-  System::Dispatcher m_dispatcher;
+  platform_system::Dispatcher m_dispatcher;
   logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
