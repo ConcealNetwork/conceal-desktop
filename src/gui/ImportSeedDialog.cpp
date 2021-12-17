@@ -86,7 +86,7 @@ namespace WalletGui
     crypto::SecretKey privateSpendKey;
     crypto::SecretKey privateViewKey;
 
-    bool created = crypto::ElectrumWords::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
+    bool created = crypto::electrum_words::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
 
     if (!created)
     {

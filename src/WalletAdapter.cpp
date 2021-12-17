@@ -383,7 +383,7 @@ bool WalletAdapter::getMnemonicSeed(std::string& _seed)
   bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
 
   if (deterministic_private_keys) {
-    crypto::ElectrumWords::bytes_to_words(keys.spendSecretKey, _seed, "English");
+    crypto::electrum_words::bytes_to_words(keys.spendSecretKey, _seed, "English");
     return true;
   }
   else {
