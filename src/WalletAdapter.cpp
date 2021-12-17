@@ -376,8 +376,8 @@ bool WalletAdapter::getMnemonicSeed(std::string& _seed)
 
   /* check if the wallet is deterministic
      generate a view key from the spend key and them compare it to the existing view key */
-  Crypto::PublicKey unused_dummy_variable;
-  Crypto::SecretKey deterministic_private_view_key;
+  crypto::PublicKey unused_dummy_variable;
+  crypto::SecretKey deterministic_private_view_key;
   cn::AccountBase::generateViewFromSpend(
       keys.spendSecretKey, deterministic_private_view_key, unused_dummy_variable);
   bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
@@ -402,7 +402,7 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfer
     LoggerAdapter::instance().log("lock");
     lock();
     LoggerAdapter::instance().log("locked");
-    Crypto::SecretKey _transactionsk;
+    crypto::SecretKey _transactionsk;
     std::vector<cn::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     LoggerAdapter::instance().log("Sending transaction to WalletLegacy");
     m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
@@ -429,7 +429,7 @@ void WalletAdapter::optimizeWallet() {
   uint64_t mixIn = 0;
   uint64_t unlockTimestamp = 0;
   uint64_t ttl = 0;
-  Crypto::SecretKey transactionSK;
+  crypto::SecretKey transactionSK;
   try {
     lock();
     m_sentTransactionId = m_wallet->sendTransaction(transactionSK, transfers, fee, extraString, mixIn, unlockTimestamp, messages, ttl);
@@ -446,7 +446,7 @@ void WalletAdapter::sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers,
                                 quint64 _ttl) {
                                   
   Q_CHECK_PTR(m_wallet);
-  Crypto::SecretKey _transactionsk;
+  crypto::SecretKey _transactionsk;
   try {
     lock();
     std::vector<cn::WalletLegacyTransfer> transfers = _transfers.toStdVector();
@@ -752,7 +752,7 @@ bool WalletAdapter::isValidPaymentId(const QByteArray& _paymentIdString)
     return true;
   }
   QByteArray paymentId = QByteArray::fromHex(_paymentIdString);
-  return (paymentId.size() == sizeof(Crypto::Hash)) &&
+  return (paymentId.size() == sizeof(crypto::Hash)) &&
          (_paymentIdString.toUpper() == paymentId.toHex().toUpper());
 }
 

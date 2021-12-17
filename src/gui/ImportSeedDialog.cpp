@@ -83,8 +83,8 @@ namespace WalletGui
     std::vector<std::string> words;
     boost::split(words, mnemonicPhrase, ::isspace);
 
-    Crypto::SecretKey privateSpendKey;
-    Crypto::SecretKey privateViewKey;
+    crypto::SecretKey privateSpendKey;
+    crypto::SecretKey privateViewKey;
 
     bool created = crypto::ElectrumWords::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
 
@@ -94,14 +94,14 @@ namespace WalletGui
       return;
     }
 
-    Crypto::PublicKey unused;
+    crypto::PublicKey unused;
 
     cn::AccountBase::generateViewFromSpend(privateSpendKey, privateViewKey, unused);
 
-    Crypto::PublicKey spendPublicKey;
-    Crypto::PublicKey viewPublicKey;
-    Crypto::secret_key_to_public_key(privateSpendKey, spendPublicKey);
-    Crypto::secret_key_to_public_key(privateViewKey, viewPublicKey);
+    crypto::PublicKey spendPublicKey;
+    crypto::PublicKey viewPublicKey;
+    crypto::secret_key_to_public_key(privateSpendKey, spendPublicKey);
+    crypto::secret_key_to_public_key(privateViewKey, viewPublicKey);
 
     cn::AccountPublicAddress publicKeys;
     publicKeys.spendPublicKey = spendPublicKey;

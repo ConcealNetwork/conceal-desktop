@@ -446,13 +446,13 @@ void MainWindow::importKey()
       cn::fromBinaryArray(decodedKeys, Common::asBinaryArray(data));
 
       // convert to secret key then get real public keys
-      Crypto::SecretKey spendSecretKey = reinterpret_cast<Crypto::SecretKey &>(decodedKeys.spendPublicKey);
-      Crypto::PublicKey spendPublicKey;
-      Crypto::secret_key_to_public_key(spendSecretKey, spendPublicKey);
+      crypto::SecretKey spendSecretKey = reinterpret_cast<crypto::SecretKey &>(decodedKeys.spendPublicKey);
+      crypto::PublicKey spendPublicKey;
+      crypto::secret_key_to_public_key(spendSecretKey, spendPublicKey);
 
-      Crypto::SecretKey viewSecretKey = reinterpret_cast<Crypto::SecretKey &>(decodedKeys.viewPublicKey);
-      Crypto::PublicKey viewPublicKey;
-      Crypto::secret_key_to_public_key(viewSecretKey, viewPublicKey);
+      crypto::SecretKey viewSecretKey = reinterpret_cast<crypto::SecretKey &>(decodedKeys.viewPublicKey);
+      crypto::PublicKey viewPublicKey;
+      crypto::secret_key_to_public_key(viewSecretKey, viewPublicKey);
 
       cn::AccountPublicAddress publicKeys;
       publicKeys.spendPublicKey = spendPublicKey;
@@ -648,7 +648,7 @@ void MainWindow::checkTrackingMode()
 {
   cn::AccountKeys keys;
   WalletAdapter::instance().getAccountKeys(keys);
-  if (keys.spendSecretKey == boost::value_initialized<Crypto::SecretKey>())
+  if (keys.spendSecretKey == boost::value_initialized<crypto::SecretKey>())
   {
     Settings::instance().setTrackingMode(true);
   }

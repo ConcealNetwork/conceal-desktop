@@ -47,7 +47,7 @@ void ReceiveFrame::walletOpened(int _error) {
   WalletAdapter::instance().getAccountKeys(keys);
   cn::AccountKeys trkeys;
   WalletAdapter::instance().getAccountKeys(trkeys);
-  trkeys.spendSecretKey = boost::value_initialized<Crypto::SecretKey>();
+  trkeys.spendSecretKey = boost::value_initialized<crypto::SecretKey>();
   QString trackingWalletKeys = QString::fromStdString(Common::podToHex(trkeys));
   m_ui->m_guiKey->setText(trackingWalletKeys);
 

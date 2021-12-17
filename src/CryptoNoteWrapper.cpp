@@ -25,7 +25,7 @@ namespace WalletGui {
 
 namespace {
 
-bool parsePaymentId(const std::string& payment_id_str, Crypto::Hash& payment_id) {
+bool parsePaymentId(const std::string& payment_id_str, crypto::Hash& payment_id) {
   return cn::parsePaymentId(payment_id_str, payment_id);
 }
 
@@ -34,7 +34,7 @@ std::string convertPaymentId(const std::string& paymentIdString) {
     return "";
   }
 
-  Crypto::Hash paymentId;
+  crypto::Hash paymentId;
   if (!parsePaymentId(paymentIdString, paymentId)) {
     std::stringstream errorStr;
     errorStr << "Payment id has invalid format: \"" + paymentIdString + "\", expected 64-character string";
@@ -65,7 +65,7 @@ std::string extractPaymentId(const std::string& extra) {
   std::string result;
   cn::TransactionExtraNonce extraNonce;
   if (cn::findTransactionExtraFieldByType(extraFields, extraNonce)) {
-    Crypto::Hash paymentIdHash;
+    crypto::Hash paymentIdHash;
     if (cn::getPaymentIdFromTransactionExtraNonce(extraNonce.nonce, paymentIdHash)) {
       unsigned char* buff = reinterpret_cast<unsigned char *>(&paymentIdHash);
       for (size_t i = 0; i < sizeof(paymentIdHash); ++i) {

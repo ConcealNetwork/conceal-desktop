@@ -474,7 +474,7 @@ namespace WalletGui
 
     case ROLE_SECRETKEY:
       if (_transaction.secretKey) {
-        Crypto::SecretKey txkey = _transaction.secretKey.get();
+        crypto::SecretKey txkey = _transaction.secretKey.get();
         if (txkey != cn::NULL_SECRET_KEY) {
           return QByteArray(reinterpret_cast<char*>(&txkey), sizeof(txkey));
         }

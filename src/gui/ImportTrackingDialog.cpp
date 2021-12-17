@@ -90,10 +90,10 @@ namespace WalletGui
     std::string privateSpendKeyString = keyString.mid(128, 64).toStdString();
     std::string privateViewKeyString = keyString.mid(192, 64).toStdString();
 
-    Crypto::Hash publicSpendKeyHash;
-    Crypto::Hash publicViewKeyHash;
-    Crypto::Hash privateSpendKeyHash;
-    Crypto::Hash privateViewKeyHash;
+    crypto::Hash publicSpendKeyHash;
+    crypto::Hash publicViewKeyHash;
+    crypto::Hash privateSpendKeyHash;
+    crypto::Hash privateViewKeyHash;
 
     size_t size;
     if (!Common::fromHex(publicSpendKeyString, &publicSpendKeyHash, sizeof(publicSpendKeyHash),
@@ -125,10 +125,10 @@ namespace WalletGui
       return;
     }
 
-    Crypto::PublicKey publicSpendKey = *(struct Crypto::PublicKey *)&publicSpendKeyHash;
-    Crypto::PublicKey publicViewKey = *(struct Crypto::PublicKey *)&publicViewKeyHash;
-    Crypto::SecretKey privateSpendKey = *(struct Crypto::SecretKey *)&privateSpendKeyHash;
-    Crypto::SecretKey privateViewKey = *(struct Crypto::SecretKey *)&privateViewKeyHash;
+    crypto::PublicKey publicSpendKey = *(struct crypto::PublicKey *)&publicSpendKeyHash;
+    crypto::PublicKey publicViewKey = *(struct crypto::PublicKey *)&publicViewKeyHash;
+    crypto::SecretKey privateSpendKey = *(struct crypto::SecretKey *)&privateSpendKeyHash;
+    crypto::SecretKey privateViewKey = *(struct crypto::SecretKey *)&privateViewKeyHash;
 
     keys.address.spendPublicKey = publicSpendKey;
     keys.address.viewPublicKey = publicViewKey;
