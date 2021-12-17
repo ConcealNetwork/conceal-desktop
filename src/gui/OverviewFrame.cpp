@@ -1191,7 +1191,7 @@ namespace WalletGui
       /* Extract and commit the payment id to extra */
       std::string decoded;
       uint64_t prefix;
-      if (tools::Base58::decode_addr(address.toStdString(), prefix, decoded))
+      if (tools::base_58::decode_addr(address.toStdString(), prefix, decoded))
       {
         paymentID = decoded.substr(0, paymentIDLen);
         logger.log("Payment id decoded");
