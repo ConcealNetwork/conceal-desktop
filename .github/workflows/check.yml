@@ -127,6 +127,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          ./.github/checkout.sh
 
       - name: Build
         id: build
@@ -174,6 +175,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          ./.github/checkout.sh
 
       - name: Build
         id: build
@@ -215,6 +217,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          ./.github/checkout.sh
 
       - name: Build
         id: build
@@ -260,6 +263,7 @@ jobs:
         run: |
           rm -rf cryptonote
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          ./.github/checkout.sh
 
       - name: Build
         id: build
