@@ -65,7 +65,7 @@ cd conceal-desktop
 rm -rf cryptonote
 git clone https://github.com/ConcealNetwork/conceal-core cryptonote
 make build-release
-mkdir bin && mv build/release/CONCEAL-GUI bin/
+mkdir bin && mv build/release/conceal-desktop bin/
 make clean
 ```
 
@@ -97,7 +97,7 @@ git clone https://github.com/ConcealNetwork/conceal-core cryptonote
 mkdir build
 cd build
 cmake .. -G "Visual Studio 16 2019" -A x64 -DBOOST_ROOT="c:\local\boost_1_78_0"
-msbuild CONCEAL-GUI.sln /p:Configuration=Release /m
+msbuild conceal-desktop.sln /p:Configuration=Release /m
 ```
 
 If the build is successful the binaries will be in the `Release` folder.
@@ -127,13 +127,13 @@ git clone https://github.com/ConcealNetwork/conceal-core cryptonote
 make build-release
 ```
 
-If the build is successful the binary will be `build/release/CONCEAL-GUI.app`
+If the build is successful the binary will be `build/release/conceal-desktop.app`
 
 It is also possible to deploy the application as a `.dmg` by using these commands after the build:
 
 ```bash
 cd build/release
-macdeployqt CONCEAL-GUI.app
+macdeployqt conceal-desktop.app
 cpack
 ```
 

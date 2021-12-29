@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Conceal Desktop
 Comment=Conceal Desktop (GUI Wallet)
-Exec=CONCEAL-GUI
+Exec=conceal-desktop
 Terminal=false
 Type=Application
 Icon=conceal
