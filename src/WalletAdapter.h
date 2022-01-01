@@ -52,12 +52,21 @@ public:
   bool getAccountKeys(cn::AccountKeys& _keys);
   bool getMnemonicSeed(std::string& _seed);
   bool isOpen() const;
-  void sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
-    const QVector<cn::TransactionMessage>& _messages);
+  void sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfers,
+                       quint64 _fee,
+                       const QString& _payment_id,
+                       const QVector<cn::TransactionMessage>& _messages,
+                       quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
   void optimizeWallet();
-  void sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
-    const QVector<cn::TransactionMessage>& _messages, quint64 _ttl);
-  void deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn);
+  void sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers,
+                   quint64 _fee,
+                   const QVector<cn::TransactionMessage>& _messages,
+                   quint64 _ttl,
+                   quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
+  void deposit(quint32 _term,
+               quint64 _amount,
+               quint64 _fee,
+               quint64 _mixIn = cn::parameters::MINIMUM_MIXIN);
   void withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds, quint64 _fee);
   bool changePassword(const QString& _old_pass, const QString& _new_pass);
   void setWalletFile(const QString& _path);
