@@ -41,6 +41,7 @@ jobs:
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
           git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+          ./.github/checkout.bat
 
       - name: Pre-build setup
         shell: powershell
