@@ -46,10 +46,10 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
     messageList[i] = messageList[i].toHtmlEscaped().replace("\n", "<br>");
   }
 
-  CryptoNote::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<CryptoNote::DepositId>();
+  cn::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<cn::DepositId>();
 
   QString depositInfo;
-  if (depositId != CryptoNote::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+  if (depositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
     QModelIndex depositIndex = DepositModel::instance().index(depositId, 0);
     QString depositAmount = depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_AMOUNT).data().toString() + " " +
       CurrencyAdapter::instance().getCurrencyTicker().toUpper();

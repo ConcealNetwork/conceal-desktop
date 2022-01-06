@@ -123,8 +123,8 @@ private:
   void reset();
   void onAddressFound(const QString &_address);
   void updatePortfolio();
-  void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
-  void sendMessageCompleted(CryptoNote::TransactionId _transactionId, bool _error, const QString &_errorText);
+  void sendTransactionCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
+  void sendMessageCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
   bool askForWalletPassword(bool _error = false);

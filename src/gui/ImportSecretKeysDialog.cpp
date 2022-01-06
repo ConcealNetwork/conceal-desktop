@@ -101,37 +101,37 @@ namespace WalletGui
     std::string privateSpendKeyString = spendKey.toStdString();
     std::string privateViewKeyString = viewKey.toStdString();
 
-    Crypto::Hash privateSpendKeyHash;
-    Crypto::Hash privateViewKeyHash;
+    crypto::Hash privateSpendKeyHash;
+    crypto::Hash privateViewKeyHash;
 
     size_t size;
-    if (!Common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
+    if (!common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
                          size) ||
         size != sizeof(privateSpendKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The private spend key you entered is not valid."));
       return;
     }
-    if (!Common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
+    if (!common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
                          size) ||
         size != sizeof(privateViewKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The private view key you entered is not valid."));
       return;
     }
-    Crypto::PublicKey publicSpendKey;
-    Crypto::PublicKey publicViewKey;
-    Crypto::SecretKey privateSpendKey = *(struct Crypto::SecretKey *)&privateSpendKeyHash;
-    Crypto::SecretKey privateViewKey = *(struct Crypto::SecretKey *)&privateViewKeyHash;
+    crypto::PublicKey publicSpendKey;
+    crypto::PublicKey publicViewKey;
+    crypto::SecretKey privateSpendKey = *(struct crypto::SecretKey *)&privateSpendKeyHash;
+    crypto::SecretKey privateViewKey = *(struct crypto::SecretKey *)&privateViewKeyHash;
 
-    Crypto::secret_key_to_public_key(privateSpendKey, publicSpendKey);
-    Crypto::secret_key_to_public_key(privateViewKey, publicViewKey);
+    crypto::secret_key_to_public_key(privateSpendKey, publicSpendKey);
+    crypto::secret_key_to_public_key(privateViewKey, publicViewKey);
 
-    CryptoNote::AccountPublicAddress publicKeys;
+    cn::AccountPublicAddress publicKeys;
     publicKeys.spendPublicKey = publicSpendKey;
     publicKeys.viewPublicKey = publicViewKey;
 
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
     keys.address = publicKeys;
     keys.spendSecretKey = privateSpendKey;
     keys.viewSecretKey = privateViewKey;

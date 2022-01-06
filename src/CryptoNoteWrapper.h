@@ -13,7 +13,7 @@
 #include <string>
 #include <system_error>
 
-namespace CryptoNote {
+namespace cn {
 
 class INode;
 class IWalletLegacy;
@@ -23,7 +23,7 @@ class NetNodeConfig;
 
 }
 
-namespace Logging {
+namespace logging {
   class LoggerManager;
 }
 
@@ -42,7 +42,7 @@ public:
   virtual uint64_t getLastLocalBlockTimestamp() const = 0;
   virtual uint64_t getPeerCount() const = 0;
 
-  virtual CryptoNote::IWalletLegacy* createWallet() = 0;
+  virtual cn::IWalletLegacy* createWallet() = 0;
 };
 
 class INodeCallback {
@@ -52,8 +52,8 @@ public:
   virtual void lastKnownBlockHeightUpdated(Node& node, uint64_t height) = 0;
 };
 
-Node* createRpcNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort);
-Node* createInprocessNode(const CryptoNote::Currency& currency, Logging::LoggerManager& logManager,
-  const CryptoNote::CoreConfig& coreConfig, const CryptoNote::NetNodeConfig& netNodeConfig, INodeCallback& callback);
+Node* createRpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort);
+Node* createInprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager,
+  const cn::CoreConfig& coreConfig, const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback);
 
 }

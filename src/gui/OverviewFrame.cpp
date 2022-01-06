@@ -1169,9 +1169,9 @@ namespace WalletGui
     }
 
     /* Prepare the transfers */
-    QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
-    CryptoNote::WalletLegacyTransfer walletTransfer;
-    QVector<CryptoNote::TransactionMessage> walletMessages;
+    QVector<cn::WalletLegacyTransfer> walletTransfers;
+    cn::WalletLegacyTransfer walletTransfer;
+    QVector<cn::TransactionMessage> walletMessages;
     bool isIntegrated = false;
     std::string paymentID;
     std::string spendPublicKey;
@@ -1191,7 +1191,7 @@ namespace WalletGui
       /* Extract and commit the payment id to extra */
       std::string decoded;
       uint64_t prefix;
-      if (Tools::Base58::decode_addr(address.toStdString(), prefix, decoded))
+      if (tools::base_58::decode_addr(address.toStdString(), prefix, decoded))
       {
         paymentID = decoded.substr(0, paymentIDLen);
         logger.log("Payment id decoded");
@@ -1199,12 +1199,12 @@ namespace WalletGui
 
       /* Create the address from the public keys */
       std::string keys = decoded.substr(paymentIDLen, std::string::npos);
-      CryptoNote::AccountPublicAddress addr;
-      CryptoNote::BinaryArray ba = Common::asBinaryArray(keys);
+      cn::AccountPublicAddress addr;
+      cn::BinaryArray ba = common::asBinaryArray(keys);
 
-      CryptoNote::fromBinaryArray(addr, ba);
+      cn::fromBinaryArray(addr, ba);
 
-      std::string address_string = CryptoNote::getAccountAddressAsStr(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, addr);
+      std::string address_string = cn::getAccountAddressAsStr(cn::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX, addr);
       address = QString::fromStdString(address_string);
     }
 
@@ -1221,7 +1221,7 @@ namespace WalletGui
       {
         /* Parse the record and set address to the actual CCX address */
         std::vector<std::string> records;
-        if (!Common::fetch_dns_txt(address.toStdString(), records))
+        if (!common::fetch_dns_txt(address.toStdString(), records))
         {
           logger.log("Failed to lookup Conceal ID");
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
@@ -1289,7 +1289,7 @@ namespace WalletGui
     QString comment = m_ui->m_messageEdit->text();
     if (!comment.isEmpty())
     {
-      walletMessages.append(CryptoNote::TransactionMessage{comment.toStdString(), address.toStdString()});
+      walletMessages.append(cn::TransactionMessage{comment.toStdString(), address.toStdString()});
     }
 
     quint64 actualFee = BASE_FEE;
@@ -1302,7 +1302,7 @@ namespace WalletGui
       logger.log("Using remote node");
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        CryptoNote::WalletLegacyTransfer walletTransfer;
+        cn::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
@@ -1351,7 +1351,7 @@ namespace WalletGui
   }
 
   /* Once we complete a transaction, we either show the error or clear all fields and move back to the dashboard */
-  void OverviewFrame::sendTransactionCompleted(CryptoNote::TransactionId _id, bool _error, const QString &_errorText)
+  void OverviewFrame::sendTransactionCompleted(cn::TransactionId _id, bool _error, const QString &_errorText)
   {
     Q_UNUSED(_id);
     if (_error)
@@ -1374,7 +1374,7 @@ namespace WalletGui
   }
 
   /* Once we send a message, we either show the error or clear all fields and move back to the dashboard */
-  void OverviewFrame::sendMessageCompleted(CryptoNote::TransactionId _id, bool _error, const QString &_errorText)
+  void OverviewFrame::sendMessageCompleted(cn::TransactionId _id, bool _error, const QString &_errorText)
   {
     Q_UNUSED(_id);
     if (_error)
@@ -1459,11 +1459,11 @@ namespace WalletGui
       return;
     }
 
-    QVector<CryptoNote::WalletLegacyTransfer> transfers;
-    QVector<CryptoNote::WalletLegacyTransfer> feeTransfer;
-    CryptoNote::WalletLegacyTransfer walletTransfer;
-    QVector<CryptoNote::TransactionMessage> messages;
-    QVector<CryptoNote::TransactionMessage> feeMessage;
+    QVector<cn::WalletLegacyTransfer> transfers;
+    QVector<cn::WalletLegacyTransfer> feeTransfer;
+    cn::WalletLegacyTransfer walletTransfer;
+    QVector<cn::TransactionMessage> messages;
+    QVector<cn::TransactionMessage> feeMessage;
     QString address = m_ui->m_addressMessageEdit->text().toUtf8();
     QString messageString = m_ui->m_messageTextEdit->toPlainText();
 
@@ -1474,7 +1474,7 @@ namespace WalletGui
       {
         /* Parse the record and set address to the actual CCX address */
         std::vector<std::string> records;
-        if (!Common::fetch_dns_txt(address.toStdString(), records))
+        if (!common::fetch_dns_txt(address.toStdString(), records))
         {
           QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("Failed to lookup Conceal ID"), QtCriticalMsg));
         }
@@ -1523,7 +1523,7 @@ namespace WalletGui
       QString connection = Settings::instance().getConnection();
       if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
       {
-        CryptoNote::WalletLegacyTransfer walletTransfer;
+        cn::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         transfers.push_back(walletTransfer);
@@ -1606,14 +1606,14 @@ namespace WalletGui
     WalletAdapter::instance().deposit(term, amount, BASE_FEE, 4);
 
     /* Remote node fee */
-    QVector<CryptoNote::WalletLegacyTransfer> walletTransfers;
+    QVector<cn::WalletLegacyTransfer> walletTransfers;
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        QVector<CryptoNote::TransactionMessage> walletMessages;
-        CryptoNote::WalletLegacyTransfer walletTransfer;
+        QVector<cn::TransactionMessage> walletMessages;
+        cn::WalletLegacyTransfer walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
@@ -1664,7 +1664,7 @@ namespace WalletGui
       return;
     }
 
-    QVector<CryptoNote::DepositId> depositIds;
+    QVector<cn::DepositId> depositIds;
     Q_FOREACH (const QModelIndex &index, unlockedDepositIndexList)
     {
       depositIds.append(index.row());
