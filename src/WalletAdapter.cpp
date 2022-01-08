@@ -393,23 +393,33 @@ bool WalletAdapter::getMnemonicSeed(std::string& _seed)
 }
 
 void WalletAdapter::sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfers,
-                                   quint64 _fee, 
-                                   const QString& _paymentId, 
-                                   quint64 _mixin,
-                                   const QVector<cn::TransactionMessage>& _messages) {
+                                    quint64 _fee,
+                                    const QString& _paymentId,
+                                    const QVector<cn::TransactionMessage>& _messages,
+                                    quint64 _mixin)
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try
+  {
     LoggerAdapter::instance().log("lock");
     lock();
     LoggerAdapter::instance().log("locked");
     crypto::SecretKey _transactionsk;
     std::vector<cn::WalletLegacyTransfer> transfers = _transfers.toStdVector();
     LoggerAdapter::instance().log("Sending transaction to WalletLegacy");
-    m_sentTransactionId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, NodeAdapter::instance().convertPaymentId(_paymentId), _mixin, 0,
-      _messages.toStdVector());
+    m_sentTransactionId =
+        m_wallet->sendTransaction(_transactionsk,
+                                  transfers,
+                                  _fee,
+                                  NodeAdapter::instance().convertPaymentId(_paymentId),
+                                  _mixin,
+                                  0,
+                                  _messages.toStdVector());
     Q_EMIT walletStateChangedSignal(tr("Sending transaction"), "");
     LoggerAdapter::instance().log("Transaction sent by WalletLegacy");
-  } catch (std::system_error&) {
+  }
+  catch (std::system_error&)
+  {
     unlock();
     LoggerAdapter::instance().log("unlocked");
   }
@@ -439,31 +449,39 @@ void WalletAdapter::optimizeWallet() {
   }
 }
 
-void WalletAdapter::sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers, 
-                                quint64 _fee, 
-                                quint64 _mixin,
+void WalletAdapter::sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers,
+                                quint64 _fee,
                                 const QVector<cn::TransactionMessage>& _messages,
-                                quint64 _ttl) {
-                                  
+                                quint64 _ttl,
+                                quint64 _mixin)
+{
   Q_CHECK_PTR(m_wallet);
   crypto::SecretKey _transactionsk;
-  try {
+  try
+  {
     lock();
     std::vector<cn::WalletLegacyTransfer> transfers = _transfers.toStdVector();
-    m_sentMessageId = m_wallet->sendTransaction(_transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
+    m_sentMessageId = m_wallet->sendTransaction(
+        _transactionsk, transfers, _fee, "", _mixin, 0, _messages.toStdVector(), _ttl);
     Q_EMIT walletStateChangedSignal(tr("Sending message"), "");
-  } catch (std::system_error&) {
+  }
+  catch (std::system_error&)
+  {
     unlock();
   }
 }
 
-void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn) {
+void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
+{
   Q_CHECK_PTR(m_wallet);
-  try {
+  try
+  {
     lock();
     m_depositId = m_wallet->deposit(_term, _amount, _fee, _mixIn);
     Q_EMIT walletStateChangedSignal(tr("Creating deposit"), "");
-  } catch (std::system_error&) {
+  }
+  catch (std::system_error&)
+  {
     unlock();
   }
 }

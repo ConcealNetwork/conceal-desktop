@@ -78,7 +78,6 @@ namespace WalletGui
   Q_DECL_CONSTEXPR quint64 MESSAGE_AMOUNT = 100;
   Q_DECL_CONSTEXPR quint64 MESSAGE_CHAR_PRICE = 10;
   Q_DECL_CONSTEXPR quint64 MINIMAL_MESSAGE_FEE = 10;
-  Q_DECL_CONSTEXPR int DEFAULT_MESSAGE_MIXIN = 4;
   Q_DECL_CONSTEXPR quint32 MINUTE_SECONDS = 60;
   Q_DECL_CONSTEXPR quint32 HOUR_SECONDS = 60 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int MIN_TTL = 5 * MINUTE_SECONDS;
@@ -1332,7 +1331,8 @@ namespace WalletGui
     {
       logger.log("Sending transaction to WalletAdapter");
       /* Send the transaction */
-      WalletAdapter::instance().sendTransaction(walletTransfers, actualFee, paymentIdString, 4, walletMessages);
+      WalletAdapter::instance().sendTransaction(
+          walletTransfers, actualFee, paymentIdString, walletMessages);
       logger.log("Transaction sent by WalletAdapter");
       /* Add to the address book if a label is given */
       if ((!label.isEmpty()) && (m_ui->m_saveAddress->isChecked()))
@@ -1546,7 +1546,7 @@ namespace WalletGui
     /* Send the message. If it is a self-destructive message, send the fee transaction */
     if (WalletAdapter::instance().isOpen())
     {
-      WalletAdapter::instance().sendMessage(transfers, fee, 4, messages, ttl);
+      WalletAdapter::instance().sendMessage(transfers, fee, messages, ttl);
     }
   }
 
@@ -1603,7 +1603,7 @@ namespace WalletGui
     }
 
     /* Initiate the desposit */
-    WalletAdapter::instance().deposit(term, amount, BASE_FEE, 4);
+    WalletAdapter::instance().deposit(term, amount, BASE_FEE);
 
     /* Remote node fee */
     QVector<cn::WalletLegacyTransfer> walletTransfers;
@@ -1621,7 +1621,7 @@ namespace WalletGui
         if (WalletAdapter::instance().isOpen())
         {
           /* Send the transaction */
-          WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", 4, walletMessages);
+          WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", walletMessages);
         }
       }
     }
