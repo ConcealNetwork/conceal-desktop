@@ -61,8 +61,8 @@ public:
   {
   }
 
-  void start(Node **_node, const CryptoNote::Currency *currency, INodeCallback *_callback, Logging::LoggerManager *_loggerManager,
-             const CryptoNote::CoreConfig &_coreConfig, const CryptoNote::NetNodeConfig &_netNodeConfig)
+  void start(Node **_node, const cn::Currency *currency, INodeCallback *_callback, logging::LoggerManager *_loggerManager,
+             const cn::CoreConfig &_coreConfig, const cn::NetNodeConfig &_netNodeConfig)
   {
     (*_node) = createInprocessNode(*currency, *_loggerManager, _coreConfig, _netNodeConfig, *_callback);
     try
@@ -81,7 +81,7 @@ public:
     }
     catch (std::exception)
     {
-      Q_EMIT nodeInitFailedSignal(CryptoNote::error::INTERNAL_WALLET_ERROR);
+      Q_EMIT nodeInitFailedSignal(cn::error::INTERNAL_WALLET_ERROR);
       QCoreApplication::processEvents();
       return;
     }
@@ -108,8 +108,8 @@ NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread
 {
   m_nodeInitializer->moveToThread(&m_nodeInitializerThread);
 
-  qRegisterMetaType<CryptoNote::CoreConfig>("CryptoNote::CoreConfig");
-  qRegisterMetaType<CryptoNote::NetNodeConfig>("CryptoNote::NetNodeConfig");
+  qRegisterMetaType<cn::CoreConfig>("cn::CoreConfig");
+  qRegisterMetaType<cn::NetNodeConfig>("cn::NetNodeConfig");
 
   connect(m_nodeInitializer, &InProcessNodeInitializer::nodeInitCompletedSignal, this, &NodeAdapter::nodeInitCompletedSignal, Qt::QueuedConnection);
   connect(this, &NodeAdapter::initNodeSignal, m_nodeInitializer, &InProcessNodeInitializer::start, Qt::QueuedConnection);
@@ -138,7 +138,7 @@ QString NodeAdapter::extractPaymentId(const std::string &_extra) const
   return QString::fromStdString(m_node->extractPaymentId(_extra));
 }
 
-CryptoNote::IWalletLegacy *NodeAdapter::createWallet() const
+cn::IWalletLegacy *NodeAdapter::createWallet() const
 {
   Q_CHECK_PTR(m_node);
   return m_node->createWallet();
@@ -169,7 +169,7 @@ bool NodeAdapter::init()
      the wallet creates a local node and starts the sync process. */
   if (connection.compare("embedded") == 0 || Settings::instance().getCurrentRemoteNode() == "")
   {
-    QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(CryptoNote::RPC_DEFAULT_PORT));
+    QUrl localNodeUrl = QUrl::fromUserInput(QString("127.0.0.1:%1").arg(cn::RPC_DEFAULT_PORT));
     m_node = createRpcNode(CurrencyAdapter::instance().getCurrency(), LoggerAdapter::instance().getLoggerManager(), *this, localNodeUrl.host().toStdString(), localNodeUrl.port());
 
     QTimer initTimer;
@@ -300,8 +300,8 @@ bool NodeAdapter::initInProcessNode()
 {
   Q_ASSERT(m_node == nullptr);
   m_nodeInitializerThread.start();
-  CryptoNote::CoreConfig coreConfig = makeCoreConfig();
-  CryptoNote::NetNodeConfig netNodeConfig = makeNetNodeConfig();
+  cn::CoreConfig coreConfig = makeCoreConfig();
+  cn::NetNodeConfig netNodeConfig = makeNetNodeConfig();
   Q_EMIT initNodeSignal(&m_node, &CurrencyAdapter::instance().getCurrency(), this, &LoggerAdapter::instance().getLoggerManager(), coreConfig, netNodeConfig);
   QEventLoop waitLoop;
   bool initCompleted = false;
@@ -345,9 +345,9 @@ void NodeAdapter::deinit()
   }
 }
 
-CryptoNote::CoreConfig NodeAdapter::makeCoreConfig() const
+cn::CoreConfig NodeAdapter::makeCoreConfig() const
 {
-  CryptoNote::CoreConfig config;
+  cn::CoreConfig config;
   boost::program_options::variables_map options;
   boost::any dataDir = Settings::instance().getDataDir().absolutePath().toStdString();
   options.insert(std::make_pair("data-dir", boost::program_options::variable_value(dataDir, false)));
@@ -355,9 +355,9 @@ CryptoNote::CoreConfig NodeAdapter::makeCoreConfig() const
   return config;
 }
 
-CryptoNote::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
+cn::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
 {
-  CryptoNote::NetNodeConfig config;
+  cn::NetNodeConfig config;
   boost::program_options::variables_map options;
   boost::any p2pBindIp = Settings::instance().getP2pBindIp().toStdString();
   boost::any p2pBindPort = static_cast<uint16_t>(Settings::instance().getP2pBindPort());

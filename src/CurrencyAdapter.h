@@ -19,7 +19,7 @@ class CurrencyAdapter {
 public:
   static CurrencyAdapter& instance();
 
-  const CryptoNote::Currency& getCurrency();
+  const cn::Currency& getCurrency();
   QString getCurrencyDisplayName() const;
   QString getCurrencyName() const;
   QString getCurrencyTicker() const;
@@ -42,7 +42,7 @@ public:
   bool processServerAliasResponse(const std::string& s, std::string& address) const;
 
 private:
-  CryptoNote::Currency m_currency;
+  cn::Currency m_currency;
 
   CurrencyAdapter();
   ~CurrencyAdapter();

@@ -83,41 +83,41 @@ namespace WalletGui
       return;
     }
 
-    CryptoNote::AccountKeys keys;
+    cn::AccountKeys keys;
 
     std::string publicSpendKeyString = keyString.mid(0, 64).toStdString();
     std::string publicViewKeyString = keyString.mid(64, 64).toStdString();
     std::string privateSpendKeyString = keyString.mid(128, 64).toStdString();
     std::string privateViewKeyString = keyString.mid(192, 64).toStdString();
 
-    Crypto::Hash publicSpendKeyHash;
-    Crypto::Hash publicViewKeyHash;
-    Crypto::Hash privateSpendKeyHash;
-    Crypto::Hash privateViewKeyHash;
+    crypto::Hash publicSpendKeyHash;
+    crypto::Hash publicViewKeyHash;
+    crypto::Hash privateSpendKeyHash;
+    crypto::Hash privateViewKeyHash;
 
     size_t size;
-    if (!Common::fromHex(publicSpendKeyString, &publicSpendKeyHash, sizeof(publicSpendKeyHash),
+    if (!common::fromHex(publicSpendKeyString, &publicSpendKeyHash, sizeof(publicSpendKeyHash),
                          size) ||
         size != sizeof(publicSpendKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The public spend key you entered is not valid."));
       return;
     }
-    if (!Common::fromHex(publicViewKeyString, &publicViewKeyHash, sizeof(publicViewKeyHash),
+    if (!common::fromHex(publicViewKeyString, &publicViewKeyHash, sizeof(publicViewKeyHash),
                          size) ||
         size != sizeof(publicViewKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The public view key you entered is not valid."));
       return;
     }
-    if (!Common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
+    if (!common::fromHex(privateSpendKeyString, &privateSpendKeyHash, sizeof(privateSpendKeyHash),
                          size) ||
         size != sizeof(privateSpendKeyHash))
     {
       setErrorMessage(tr("Key is not valid. The private spend key you entered is not valid."));
       return;
     }
-    if (!Common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
+    if (!common::fromHex(privateViewKeyString, &privateViewKeyHash, sizeof(privateViewKeyHash),
                          size) ||
         size != sizeof(privateViewKeyHash))
     {
@@ -125,10 +125,10 @@ namespace WalletGui
       return;
     }
 
-    Crypto::PublicKey publicSpendKey = *(struct Crypto::PublicKey *)&publicSpendKeyHash;
-    Crypto::PublicKey publicViewKey = *(struct Crypto::PublicKey *)&publicViewKeyHash;
-    Crypto::SecretKey privateSpendKey = *(struct Crypto::SecretKey *)&privateSpendKeyHash;
-    Crypto::SecretKey privateViewKey = *(struct Crypto::SecretKey *)&privateViewKeyHash;
+    crypto::PublicKey publicSpendKey = *(struct crypto::PublicKey *)&publicSpendKeyHash;
+    crypto::PublicKey publicViewKey = *(struct crypto::PublicKey *)&publicViewKeyHash;
+    crypto::SecretKey privateSpendKey = *(struct crypto::SecretKey *)&privateSpendKeyHash;
+    crypto::SecretKey privateViewKey = *(struct crypto::SecretKey *)&privateViewKeyHash;
 
     keys.address.spendPublicKey = publicSpendKey;
     keys.address.viewPublicKey = publicViewKey;

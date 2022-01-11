@@ -21,17 +21,17 @@ namespace WalletGui
 
   void LoggerAdapter::init()
   {
-    Common::JsonValue loggerConfiguration(Common::JsonValue::OBJECT);
+    common::JsonValue loggerConfiguration(common::JsonValue::OBJECT);
     int64_t logLevel =
 #ifdef DEBUG
-        Logging::TRACE
+        logging::TRACE
 #else
-        Logging::INFO
+        logging::INFO
 #endif
         ;
     loggerConfiguration.insert("globalLevel", logLevel);
-    Common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", Common::JsonValue::ARRAY);
-    Common::JsonValue& fileLogger = cfgLoggers.pushBack(Common::JsonValue::OBJECT);
+    common::JsonValue& cfgLoggers = loggerConfiguration.insert("loggers", common::JsonValue::ARRAY);
+    common::JsonValue& fileLogger = cfgLoggers.pushBack(common::JsonValue::OBJECT);
     fileLogger.insert("type", "file");
     fileLogger.insert(
         "filename",
@@ -44,12 +44,12 @@ namespace WalletGui
 
   LoggerAdapter::~LoggerAdapter() { }
 
-  Logging::LoggerManager& LoggerAdapter::getLoggerManager() { return m_logManager; }
+  logging::LoggerManager& LoggerAdapter::getLoggerManager() { return m_logManager; }
 
   void LoggerAdapter::log(std::string message)
   {
-    Logging::LoggerRef logger(m_logManager, "desktop");
-    logger(Logging::INFO) << message;
+    logging::LoggerRef logger(m_logManager, "desktop");
+    logger(logging::INFO) << message;
   }
 
 }  // namespace WalletGui

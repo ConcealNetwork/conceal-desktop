@@ -18,7 +18,7 @@
 
 namespace WalletGui {
 
-class WalletAdapter : public QObject, public CryptoNote::IWalletLegacyObserver {
+class WalletAdapter : public QObject, public cn::IWalletLegacyObserver {
   Q_OBJECT
   Q_DISABLE_COPY(WalletAdapter)
 
@@ -26,7 +26,7 @@ public:
   static WalletAdapter& instance();
 
   void open(const QString& _password);
-  void createWithKeys(const CryptoNote::AccountKeys& _keys);
+  void createWithKeys(const cn::AccountKeys& _keys);
   void close();
   bool save(bool _details, bool _cache);
   void backup(const QString& _file);
@@ -46,19 +46,28 @@ public:
   quint64 getTransferCount() const;
   quint64 getDepositCount() const;
   quint64 getNumUnlockedOutputs() const;
-  bool getTransaction(CryptoNote::TransactionId _id, CryptoNote::WalletLegacyTransaction& _transaction);
-  bool getTransfer(CryptoNote::TransferId _id, CryptoNote::WalletLegacyTransfer& _transfer);
-  bool getDeposit(CryptoNote::DepositId _id, CryptoNote::Deposit& _deposit);
-  bool getAccountKeys(CryptoNote::AccountKeys& _keys);
+  bool getTransaction(cn::TransactionId _id, cn::WalletLegacyTransaction& _transaction);
+  bool getTransfer(cn::TransferId _id, cn::WalletLegacyTransfer& _transfer);
+  bool getDeposit(cn::DepositId _id, cn::Deposit& _deposit);
+  bool getAccountKeys(cn::AccountKeys& _keys);
   bool getMnemonicSeed(std::string& _seed);
   bool isOpen() const;
-  void sendTransaction(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, const QString& _payment_id, quint64 _mixin,
-    const QVector<CryptoNote::TransactionMessage>& _messages);
+  void sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfers,
+                       quint64 _fee,
+                       const QString& _payment_id,
+                       const QVector<cn::TransactionMessage>& _messages,
+                       quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
   void optimizeWallet();
-  void sendMessage(QVector<CryptoNote::WalletLegacyTransfer>& _transfers, quint64 _fee, quint64 _mixin,
-    const QVector<CryptoNote::TransactionMessage>& _messages, quint64 _ttl);
-  void deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn);
-  void withdrawUnlockedDeposits(QVector<CryptoNote::DepositId> _depositIds, quint64 _fee);
+  void sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers,
+                   quint64 _fee,
+                   const QVector<cn::TransactionMessage>& _messages,
+                   quint64 _ttl,
+                   quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
+  void deposit(quint32 _term,
+               quint64 _amount,
+               quint64 _fee,
+               quint64 _mixIn = cn::parameters::MINIMUM_MIXIN);
+  void withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds, quint64 _fee);
   bool changePassword(const QString& _old_pass, const QString& _new_pass);
   void setWalletFile(const QString& _path);
 
@@ -72,32 +81,32 @@ public:
   void pendingDepositBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;
   void actualInvestmentBalanceUpdated(uint64_t _actualDepositBalance) Q_DECL_OVERRIDE;
   void pendingInvestmentBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;  
-  void externalTransactionCreated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
-  void sendTransactionCompleted(CryptoNote::TransactionId _transactionId, std::error_code _result) Q_DECL_OVERRIDE;
-  void transactionUpdated(CryptoNote::TransactionId _transactionId) Q_DECL_OVERRIDE;
-  void depositsUpdated(const std::vector<CryptoNote::DepositId>& _depositIds) Q_DECL_OVERRIDE;
+  void externalTransactionCreated(cn::TransactionId _transactionId) Q_DECL_OVERRIDE;
+  void sendTransactionCompleted(cn::TransactionId _transactionId, std::error_code _result) Q_DECL_OVERRIDE;
+  void transactionUpdated(cn::TransactionId _transactionId) Q_DECL_OVERRIDE;
+  void depositsUpdated(const std::vector<cn::DepositId>& _depositIds) Q_DECL_OVERRIDE;
   bool checkWalletPassword(const QString& _password);
   static bool isValidPaymentId(const QByteArray &_paymentIdString);
   
 private:
   std::fstream m_file;
-  CryptoNote::IWalletLegacy* m_wallet;
+  cn::IWalletLegacy* m_wallet;
   QMutex m_mutex;
   std::atomic<bool> m_isBackupInProgress;
   std::atomic<bool> m_isSynchronized;
   std::atomic<quint64> m_lastWalletTransactionId;
   QTimer m_newTransactionsNotificationTimer;
-  std::atomic<CryptoNote::TransactionId> m_sentTransactionId;
-  std::atomic<CryptoNote::TransactionId> m_sentMessageId;
-  std::atomic<CryptoNote::TransactionId> m_depositId;
-  std::atomic<CryptoNote::TransactionId> m_depositWithdrawalId;
+  std::atomic<cn::TransactionId> m_sentTransactionId;
+  std::atomic<cn::TransactionId> m_sentMessageId;
+  std::atomic<cn::TransactionId> m_depositId;
+  std::atomic<cn::TransactionId> m_depositWithdrawalId;
 
 
   WalletAdapter();
   ~WalletAdapter();
 
   void onWalletInitCompleted(int _error, const QString& _error_text);
-  void onWalletSendTransactionCompleted(CryptoNote::TransactionId _transaction_id, int _error, const QString& _error_text);
+  void onWalletSendTransactionCompleted(cn::TransactionId _transaction_id, int _error, const QString& _error_text);
 
   bool importLegacyWallet(const QString &_password);
   bool save(const QString& _file, bool _details, bool _cache);
@@ -123,13 +132,13 @@ Q_SIGNALS:
   void walletPendingDepositBalanceUpdatedSignal(quint64 _pendingDepositBalance);
   void walletActualInvestmentBalanceUpdatedSignal(quint64 _actualInvestmentBalance);
   void walletPendingInvestmentBalanceUpdatedSignal(quint64 _pendingInvestmentBalance);  
-  void walletTransactionCreatedSignal(CryptoNote::TransactionId _transactionId);
-  void walletSendTransactionCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);
-  void walletSendMessageCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);
-  void walletCreateDepositCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);
-  void walletWithdrawDepositCompletedSignal(CryptoNote::TransactionId _transactionId, int _error, const QString& _errorText);
-  void walletTransactionUpdatedSignal(CryptoNote::TransactionId _transactionId);
-  void walletDepositsUpdatedSignal(const QVector<CryptoNote::DepositId>& _depositIds);
+  void walletTransactionCreatedSignal(cn::TransactionId _transactionId);
+  void walletSendTransactionCompletedSignal(cn::TransactionId _transactionId, int _error, const QString& _errorText);
+  void walletSendMessageCompletedSignal(cn::TransactionId _transactionId, int _error, const QString& _errorText);
+  void walletCreateDepositCompletedSignal(cn::TransactionId _transactionId, int _error, const QString& _errorText);
+  void walletWithdrawDepositCompletedSignal(cn::TransactionId _transactionId, int _error, const QString& _errorText);
+  void walletTransactionUpdatedSignal(cn::TransactionId _transactionId);
+  void walletDepositsUpdatedSignal(const QVector<cn::DepositId>& _depositIds);
   void walletStateChangedSignal(const QString &_stateText, const QString &height);
 
   void openWalletWithPasswordSignal(bool _error);

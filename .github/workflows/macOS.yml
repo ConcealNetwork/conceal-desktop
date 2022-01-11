@@ -32,7 +32,7 @@ jobs:
           build_folder="build/release"
           ccx_version=$(echo ${{ github.ref }} | sed 's|refs/tags/||')
           release_name="ccx-desktop-macOS-v$ccx_version"
-          app_name="CONCEAL-GUI.app"
+          app_name="conceal-desktop.app"
 
           make -j4 build-release
           cd "$build_folder"
