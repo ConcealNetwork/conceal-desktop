@@ -251,8 +251,6 @@ jobs:
       - name: Install dependencies
         run: |
           brew install boost qt@5
-          echo 'export PATH="/usr/local/opt/qt@5/bin:$PATH"' >> /Users/runner/.bash_profile
-          source /Users/runner/.bash_profile
 
       - name: Clone conceal-core
         run: |
@@ -263,6 +261,8 @@ jobs:
       - name: Build
         id: build
         run: |
+          export PATH="/usr/local/opt/qt@5/bin:$PATH"
+          qmake -v
           build_folder="build/release"
           ccx_version=${GITHUB_SHA::7}
           release_name="ccx-desktop-macOS-dev-$ccx_version"
