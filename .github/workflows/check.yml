@@ -244,18 +244,13 @@ jobs:
 
   build-macos:
     name: macOS
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v2
-        with:
-          modules: "qtcharts"
-
       - name: Install dependencies
         run: |
-          brew install boost
+          brew install boost qt@5
 
       - name: Clone conceal-core
         run: |
@@ -266,6 +261,7 @@ jobs:
       - name: Build
         id: build
         run: |
+          export PATH="/usr/local/opt/qt@5/bin:$PATH"
           build_folder="build/release"
           ccx_version=${GITHUB_SHA::7}
           release_name="ccx-desktop-macOS-dev-$ccx_version"
