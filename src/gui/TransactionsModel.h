@@ -25,7 +25,7 @@ namespace WalletGui {
     FAILED
   };
 
-  typedef QPair<CryptoNote::TransactionId, CryptoNote::TransferId> TransactionTransferId;
+  typedef QPair<cn::TransactionId, cn::TransferId> TransactionTransferId;
 
   class TransactionsModel : public QAbstractItemModel
   {
@@ -89,7 +89,7 @@ namespace WalletGui {
 
   private:
     QVector<TransactionTransferId> m_transfers;
-    QHash<CryptoNote::TransactionId, QPair<quint32, quint32>> m_transactionRow;
+    QHash<cn::TransactionId, QPair<quint32, quint32>> m_transactionRow;
 
     TransactionsModel();
     ~TransactionsModel();
@@ -97,14 +97,14 @@ namespace WalletGui {
     QVariant getDisplayRole(const QModelIndex &_index) const;
     QVariant getDecorationRole(const QModelIndex &_index) const;
     QVariant getAlignmentRole(const QModelIndex &_index) const;
-    QVariant getUserRole(const QModelIndex &_index, int _role, CryptoNote::TransactionId _transactionId,
-                         const CryptoNote::WalletLegacyTransaction &_transaction, CryptoNote::TransferId _transferId,
-                         const CryptoNote::WalletLegacyTransfer &_transfer, CryptoNote::DepositId _depositId, const CryptoNote::Deposit &_deposit) const;
+    QVariant getUserRole(const QModelIndex &_index, int _role, cn::TransactionId _transactionId,
+                         const cn::WalletLegacyTransaction &_transaction, cn::TransferId _transferId,
+                         const cn::WalletLegacyTransfer &_transfer, cn::DepositId _depositId, const cn::Deposit &_deposit) const;
 
     void reloadWalletTransactions();
-    void appendTransaction(CryptoNote::TransactionId _id, quint32 &_row_count);
-    void appendTransaction(CryptoNote::TransactionId _id);
-    void updateWalletTransaction(CryptoNote::TransactionId _id);
+    void appendTransaction(cn::TransactionId _id, quint32 &_row_count);
+    void appendTransaction(cn::TransactionId _id);
+    void updateWalletTransaction(cn::TransactionId _id);
     void lastKnownHeightUpdated(quint64 _height);
     void reset();
 };

@@ -12,14 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v2
-        with:
-          modules: "qtcharts"
-
       - name: Install dependencies
         run: |
-          brew install boost
+          brew install boost qt@5
 
       - name: Clone conceal-core
         run: |
@@ -29,10 +24,11 @@ jobs:
       - name: Build
         id: build
         run: |
+          export PATH="/usr/local/opt/qt@5/bin:$PATH"
           build_folder="build/release"
           ccx_version=$(echo ${{ github.ref }} | sed 's|refs/tags/||')
           release_name="ccx-desktop-macOS-v$ccx_version"
-          app_name="CONCEAL-GUI.app"
+          app_name="conceal-desktop.app"
 
           make -j4 build-release
           cd "$build_folder"

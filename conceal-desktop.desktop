@@ -7,8 +7,8 @@
 Encoding=UTF-8
 Name=Conceal Desktop
 Comment=Conceal Desktop
-# Change the Exec value to match CONCEAL-GUI path
-# example : Exec=/home/conceal/apps/conceal/CONCEAL-GUI
+# Change the Exec value to match conceal-desktop path
+# example : Exec=/home/conceal/apps/conceal/conceal-desktop
 Exec=<change-this-value>
 Terminal=false
 Type=Application

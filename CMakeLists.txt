@@ -4,7 +4,7 @@ include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
 
 if(APPLE)
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")  
+  set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")  
 endif(APPLE)
 
 project(${CN_PROJECT_NAME})
@@ -196,10 +196,12 @@ qt5_wrap_ui(UIS ${FORMS})
 qt5_add_resources(RCC ${QRC})
 
 if("${ARCH}" STREQUAL "default")
-    set(ARCH_FLAG "")
-  else()
-    set(ARCH_FLAG "-march=x86-64")
-  endif()
+  set(ARCH_FLAG "")
+else()
+  set(ARCH_FLAG "-march=x86-64")
+endif()
+
+include(cryptonote/arm.cmake)
 
 if (WIN32)
   if (NOT MSVC)
@@ -245,8 +247,13 @@ elseif (UNIX)
     GET_FILENAME_COMPONENT(QT_LIB_DIR "${QT_LIB_DIR}" PATH)
   else(APPLE)
     set(PLATFORM_DIR Linux)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes -std=c++11")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -maes -std=c11")
+    if(NOT ARM)
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes -std=c++11")
+      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -maes -std=c11")
+    else()
+      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
+    endif(NOT ARM)
   endif (APPLE)
 endif ()
 
@@ -256,9 +263,9 @@ set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})
 if (APPLE OR ${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES} -lresolv)
+  target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES} -lresolv)
 else ()
-target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
+  target_link_libraries(${CRYPTONOTE_LIB} ${Boost_LIBRARIES})
 endif ()
 set_target_properties(${CRYPTONOTE_LIB} PROPERTIES COMPILE_DEFINITIONS _GNU_SOURCE)
 
@@ -282,8 +289,8 @@ target_link_libraries(${PROJECT_NAME} Qt5::Gui)
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
 target_link_libraries(${PROJECT_NAME} Qt5::Network)
 if(Qt5Charts_FOUND)
-add_definitions(/DHAVE_CHART)
-target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
+  add_definitions(/DHAVE_CHART)
+  target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
 endif(Qt5Charts_FOUND)
 
 # Installation
@@ -314,8 +321,8 @@ elseif (UNIX)
         set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${CPACK_PACKAGE_VENDOR} <krypt0x@gmx.com>")
         set(CPACK_DEBIAN_PACKAGE_SECTION Office)
         set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Conceal GUI Wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+        set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Conceal Desktop (GUI Wallet)
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.
@@ -338,9 +345,9 @@ set(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}-${CPACK_PACKAGE_VERSIO
         set(CPACK_RPM_PACKAGE_LICENSE "GPL3")
         set(CPACK_RPM_PACKAGE_GROUP Office)
         set(CPACK_RPM_PACKAGE_REQUIRES "qt5-qtbase >= 5.3.2, qt5-qtbase-gui >= 5.3.2")
-        set(CPACK_RPM_PACKAGE_SUMMARY "Conceal GUI Wallet")
-        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Conceal GUI wallet
- Conceal is a decentrilized privacy protected peer-to-peer
+        set(CPACK_RPM_PACKAGE_SUMMARY "Conceal Desktop (GUI Wallet)")
+        set(CPACK_RPM_PACKAGE_DESCRIPTION "Open-source Conceal Desktop (GUI Wallet)
+ Conceal is a decentralized privacy protected peer-to-peer
  cryptocurrency and untraceable encrypted messaging system. Conceal is
  open-source; its design is public, nobody owns or controls Conceal and
  everyone can take part.

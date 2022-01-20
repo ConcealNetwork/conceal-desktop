@@ -2,7 +2,7 @@ usr
 apprun-hooks
 AppRun
 AppRun.wrapped
-CONCEAL-GUI
+conceal-desktop
 *.png
 *.AppImage
 .DirIcon

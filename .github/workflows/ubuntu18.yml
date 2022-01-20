@@ -32,7 +32,7 @@ jobs:
           make -j4 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
-          mv $build_folder/CONCEAL-GUI $release_name
+          mv $build_folder/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
           tar -czf "$release_name".tar.gz "$release_name"

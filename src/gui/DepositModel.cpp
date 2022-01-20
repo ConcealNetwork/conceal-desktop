@@ -19,7 +19,7 @@
 #include "NodeAdapter.h"
 #include "WalletAdapter.h"
 
-Q_DECLARE_METATYPE(CryptoNote::TransactionId)
+Q_DECLARE_METATYPE(cn::TransactionId)
 
 namespace WalletGui {
 
@@ -47,7 +47,7 @@ DepositModel& DepositModel::instance() {
 
 DepositModel::DepositModel() : QAbstractItemModel(), m_depositCount(0) {
   connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this, &DepositModel::reloadWalletDeposits, Qt::QueuedConnection);
-  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, static_cast<void(DepositModel::*)(CryptoNote::TransactionId)>(&DepositModel::transactionCreated), Qt::QueuedConnection);
+  connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionCreatedSignal, this, static_cast<void(DepositModel::*)(cn::TransactionId)>(&DepositModel::transactionCreated), Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this, &DepositModel::transactionUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &DepositModel::reset, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletDepositsUpdatedSignal, this, &DepositModel::depositsUpdated, Qt::QueuedConnection);
@@ -191,7 +191,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     return _index.data(ROLE_DEPOSIT_TERM);
   case COLUMN_UNLOCK_HEIGHT: {
     quint64 unlockHeight = _index.data(ROLE_UNLOCK_HEIGHT).value<quint64>();
-    if (unlockHeight == CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+    if (unlockHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
       return "-";
     }
 
@@ -215,7 +215,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     DepositState depositState = static_cast<DepositState>(_index.data(ROLE_STATE).toInt());
     if (depositState == STATE_LOCKED) {
       quint64 unlockHeight = _index.data(ROLE_UNLOCK_HEIGHT).value<quint64>();
-      if (unlockHeight == CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      if (unlockHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
         return "-";
       }
 
@@ -226,13 +226,13 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_CREATRING_TRANSACTION_HASH: {
-    CryptoNote::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
+    cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
     return TransactionsModel::instance().index(creatingTransactionId, TransactionsModel::COLUMN_HASH).data();
   }
 
   case COLUMN_CREATING_HEIGHT: {
-    CryptoNote::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
-    if (creatingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
+    if (creatingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -240,8 +240,8 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_CREATING_TIME: {
-    CryptoNote::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
-    if (creatingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
+    if (creatingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -249,8 +249,8 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_SPENDING_TRANSACTION_HASH: {
-    CryptoNote::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
-    if (spendingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
+    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -258,8 +258,8 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_SPENDING_HEIGHT: {
-    CryptoNote::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
-    if (spendingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
+    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -267,8 +267,8 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_SPENDING_TIME: {
-    CryptoNote::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
-    if (spendingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
+    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -291,7 +291,7 @@ QVariant DepositModel::getAlignmentRole(const QModelIndex& _index) const {
 }
 
 QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
-  CryptoNote::Deposit deposit;
+  cn::Deposit deposit;
 
   if(!WalletAdapter::instance().getDeposit(_index.row(), deposit)) {
     return QVariant();
@@ -311,7 +311,7 @@ QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
   case ROLE_STATE:
     if (deposit.locked) {
       return static_cast<int>(STATE_LOCKED);
-    } else if (deposit.spendingTransactionId == CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    } else if (deposit.spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
       return static_cast<int>(STATE_UNLOCKED);
     } else {
       return static_cast<int>(STATE_SPENT);
@@ -326,11 +326,11 @@ QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
     return static_cast<quintptr>(deposit.spendingTransactionId);
 
   case ROLE_UNLOCK_HEIGHT: {
-    CryptoNote::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<CryptoNote::TransactionId>();
+    cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
     quint64 creatingHeight = TransactionsModel::instance().index(creatingTransactionId, 0).
       data(TransactionsModel::ROLE_HEIGHT).value<quint64>();
-    if (creatingHeight == CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
-      return static_cast<const quint64>(CryptoNote::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT);
+    if (creatingHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      return static_cast<const quint64>(cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT);
     }
 
     return creatingHeight + _index.data(ROLE_DEPOSIT_TERM).value<quint32>();
@@ -359,19 +359,19 @@ void DepositModel::reloadWalletDeposits() {
   endInsertRows();
 }
 
-void DepositModel::appendDeposit(CryptoNote::DepositId _depositId) {
+void DepositModel::appendDeposit(cn::DepositId _depositId) {
   if (_depositId < m_depositCount) {
     return;
   }
 
-  CryptoNote::Deposit deposit;
+  cn::Deposit deposit;
 
   if(!WalletAdapter::instance().getDeposit(_depositId, deposit)) {
     return;
   }
 
   if (!deposit.locked) {
-    if (deposit.spendingTransactionId != CryptoNote::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (deposit.spendingTransactionId != cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
    return;
     }
   }  
@@ -383,7 +383,7 @@ void DepositModel::appendDeposit(CryptoNote::DepositId _depositId) {
   endInsertRows();
 }
 
-void DepositModel::transactionCreated(CryptoNote::TransactionId _transactionId) {
+void DepositModel::transactionCreated(cn::TransactionId _transactionId) {
   if (m_depositCount < WalletAdapter::instance().getDepositCount()) {
     appendDeposit(WalletAdapter::instance().getDepositCount() - 1);
   }
@@ -395,13 +395,13 @@ void DepositModel::reset() {
   endResetModel();
 }
 
-void DepositModel::depositsUpdated(const QVector<CryptoNote::DepositId>& _depositIds) {
+void DepositModel::depositsUpdated(const QVector<cn::DepositId>& _depositIds) {
   Q_FOREACH (const auto& depositId, _depositIds) {
     Q_EMIT dataChanged(index(depositId, 0), index(depositId, columnCount() - 1));
   }
 }
 
-void DepositModel::transactionUpdated(CryptoNote::TransactionId _transactionId) {
+void DepositModel::transactionUpdated(cn::TransactionId _transactionId) {
   QModelIndex transactionIndex = TransactionsModel::instance().index(_transactionId, 0);
   if (!transactionIndex.isValid()) {
     return;
