@@ -126,7 +126,7 @@ int main(int argc, char* argv[])
   QObject::connect(logWatcher, &LogFileWatcher::newLogStringSignal, &app, &newLogString);
 
   QApplication::processEvents();
-  qRegisterMetaType<CryptoNote::TransactionId>("CryptoNote::TransactionId");
+  qRegisterMetaType<cn::TransactionId>("cn::TransactionId");
   qRegisterMetaType<quintptr>("quintptr");
   if (!NodeAdapter::instance().init())
   {

@@ -2,7 +2,7 @@
 
 # Conceal Desktop (GUI Wallet)
 
-Latest Release: v6.5.1
+Latest Release: v6.6.0
 
 Maintained by Conceal Devs.
 
@@ -23,7 +23,9 @@ No one owns Conceal, everyone can take part.
 ## Resources
 
 -   Web: <https://conceal.network>
--   GitHub: <https://github.com/ConcealNetwork/conceal-core>
+-   GitHub: <https://github.com/ConcealNetwork>
+-   Wiki: <https://conceal.network/wiki>
+-   Explorer: <https://explorer.conceal.network>
 -   Discord: <https://discord.gg/YbpHVSd>
 -   Twitter: <https://twitter.com/ConcealNetwork>
 -   Telegram Official (News Feed): <https://t.me/concealnetwork>
@@ -35,7 +37,7 @@ No one owns Conceal, everyone can take part.
 
 ## Compiling Conceal from source
 
-### Linux / Ubuntu
+### Linux / Ubuntu / Debian
 
 #### Prerequisites
 
@@ -63,7 +65,7 @@ cd conceal-desktop
 rm -rf cryptonote
 git clone https://github.com/ConcealNetwork/conceal-core cryptonote
 make build-release
-mkdir bin && mv build/release/CONCEAL-GUI bin/
+mkdir bin && mv build/release/conceal-desktop bin/
 make clean
 ```
 
@@ -73,24 +75,30 @@ If the build is successful the binary will be in the `bin` folder.
 
 #### Prerequisites
 
--   Install [Visual Studio 2017 Community Edition](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&page=inlineinstall)
--   When installing Visual Studio, you need to install **Desktop development with C++** and the **VC++ v140 toolchain** components. The option to install the v140 toolchain can be found by expanding the "Desktop development with C++" node on the right. You will need this for the project to build correctly.
+-   Install [Visual Studio 2019 Community Edition](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+    > When installing Visual Studio, you need to install **Desktop development with C++** and the **MSVC v142 - VS 2019 C++ x64/x86 build tools** components. The option to install the v142 build tools can be found by expanding the "**Desktop development with C++**" node on the right. You will need this for the project to build correctly.
 -   Install [CMake](https://cmake.org/download/)
--   Install [Boost 1.67.0](https://boost.teeks99.com/bin/1.67.0/), ensuring you download the installer for MSVC 14.1.
--   Install [Qt 5.11.0](https://www.qt.io/download)
+-   Install [Boost](https://sourceforge.net/projects/boost/files/boost-binaries/1.78.0/boost_1_78_0-msvc-14.2-64.exe/download), **ensuring** you download the installer for **MSVC 14.2**. 
+    > The instructions will be given for Boost 1.78.0. Using a different version should be supported but you will have to change the version where required.
+-   Install [Qt 5](https://www.qt.io/download)
+    > The instructions will be given for Qt 5.15.2. Using a different version should be supported but you will have to change the version where required.
 
 #### Building
 
--   From the start menu, open 'x64 Native Tools Command Prompt for vs2017' or run "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsMSBuildCmd.bat" from any command prompt.
--   Edit the CMakeLists.txt file and set the path to QT cmake folder. For example: set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\").
--   `git clone https://github.com/ConcealNetwork/conceal-core`
--   `git clone https://github.com/ConcealNetwork/conceal-desktop`
--   Copy the contents of the conceal-core folder into conceal-wallet\\cryptonote
--   `cd conceal-desktop`
--   `mkdir build`
--   `cd build`
--   `cmake -G "Visual Studio 15 2017 Win64" -DBOOST_LIBRARYDIR:PATH=c:/local/boost_1_67_0 ..` (Or your boost installed dir.)
--   `msbuild CONCEAL-GUI.sln /p:Configuration=Release`
+-   From the start menu, open 'x64 Native Tools Command Prompt for vs2019' or run "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\Tools\\VsMSBuildCmd.bat" from any command prompt.
+-   Edit the CMakeLists.txt file and set the path to QT cmake folder.
+    Change the line `set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\")` to `set(CMAKE_PREFIX_PATH "C:\\Qt\\5.15.2\\msvc2019_64\\lib\\cmake\\")`
+
+```ps
+git clone https://github.com/ConcealNetwork/conceal-desktop
+cd conceal-desktop
+rmdir /S /Q cryptonote
+git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+mkdir build
+cd build
+cmake .. -G "Visual Studio 16 2019" -A x64 -DBOOST_ROOT="c:\local\boost_1_78_0"
+msbuild conceal-desktop.sln /p:Configuration=Release /m
+```
 
 If the build is successful the binaries will be in the `Release` folder.
 
@@ -119,13 +127,13 @@ git clone https://github.com/ConcealNetwork/conceal-core cryptonote
 make build-release
 ```
 
-If the build is successful the binary will be `build/release/CONCEAL-GUI.app`
+If the build is successful the binary will be `build/release/conceal-desktop.app`
 
 It is also possible to deploy the application as a `.dmg` by using these commands after the build:
 
 ```bash
 cd build/release
-macdeployqt CONCEAL-GUI.app
+macdeployqt conceal-desktop.app
 cpack
 ```
 
