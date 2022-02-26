@@ -38,7 +38,7 @@ QString CurrencyAdapter::getCurrencyDisplayName() const {
 }
 
 QString CurrencyAdapter::getCurrencyName() const {
-  return cn::CRYPTONOTE_NAME;
+  return "conceal";
 }
 
 QString CurrencyAdapter::getCurrencyTicker() const {
