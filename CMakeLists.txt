@@ -59,7 +59,6 @@ set(CRYPTONOTE_SOURCES
   cryptonote/external/miniupnpc/src/connecthostport.c
   cryptonote/external/miniupnpc/src/igd_desc_parse.c
   cryptonote/external/miniupnpc/src/minisoap.c
-  cryptonote/external/miniupnpc/src/minissdpc.c
   cryptonote/external/miniupnpc/src/miniupnpc.c
   cryptonote/external/miniupnpc/src/miniwget.c
   cryptonote/external/miniupnpc/src/minixml.c
@@ -220,6 +219,7 @@ if (WIN32)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
+  set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} cryptonote/external/miniupnpc/src/minissdpc.c)
   if (APPLE)
     enable_language(ASM)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)
