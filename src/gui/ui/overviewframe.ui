@@ -546,22 +546,19 @@ color: orange;
           <widget class="QLabel" name="label_42">
            <property name="minimumSize">
             <size>
-             <width>175</width>
-             <height>175</height>
+             <width>170</width>
+             <height>170</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>175</width>
-             <height>175</height>
+             <width>170</width>
+             <height>170</height>
             </size>
            </property>
            <property name="styleSheet">
             <string notr="true">padding: 40px;
 border:none;</string>
-           </property>
-           <property name="text">
-            <string/>
            </property>
            <property name="pixmap">
             <pixmap resource="../../resources.qrc">:/images/conceal-logo</pixmap>
@@ -1147,6 +1144,48 @@ background-color: #333;
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="lm_donationButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>199</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>190</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+text-align: left; 
+color: #fff; 
+padding-left: 20px;
+font-weight: normal;
+border: none;
+
+}
+
+QPushButton:hover {
+text-align: left; color: orange; 
+padding-left: 20px;
+border: none;
+background-color: #333;
+}</string>
+           </property>
+           <property name="text">
+            <string>DONATION</string>
+           </property>
+          </widget>
+         </item>
         </layout>
         <zorder>lm_dashboardButton</zorder>
         <zorder>lm_bankingButton</zorder>
@@ -1159,6 +1198,7 @@ background-color: #333;
         <zorder>lm_about</zorder>
         <zorder>label_42</zorder>
         <zorder>lm_newOpenWalletButton</zorder>
+        <zorder>lm_donationButton</zorder>
        </widget>
       </item>
       <item row="1" column="1" rowspan="4" colspan="3">
@@ -10977,6 +11017,22 @@ color: orange;
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>lm_donationButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OverviewFrame</receiver>
+   <slot>donationClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>newTransferClicked()</slot>
@@ -11054,6 +11110,7 @@ color: orange;
   <slot>qtChartsLicenseClicked()</slot>
   <slot>openSslLicenseClicked()</slot>
   <slot>messageToABClicked()</slot>
+  <slot>donationClicked()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
