@@ -7,5 +7,5 @@ cd cryptonote || exit
 if git show-ref --verify --quiet refs/heads/"$desktop_branch"; then
    git checkout "$desktop_branch"
 else
-    git checkout development
+    git checkout master
 fi
