@@ -18,4 +18,4 @@ Then follow these steps:
 - When the compilation is finished, the installer will be in the `bin` directory.
 
 ## Credits
-Special thanks to DomGho who created [InnoDependencyInstaller](https://github.com/domgho/innodependencyinstaller) which is the base of the Conceal Desktop installer.
+Special thanks to DomGries who created [InnoDependencyInstaller](https://github.com/DomGries/InnoDependencyInstaller) which is the base of the Conceal Desktop installer.
