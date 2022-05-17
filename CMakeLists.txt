@@ -20,6 +20,7 @@ include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     src
     cryptonote/external
+    cryptonote/external/miniupnpc/include
     cryptonote/include
     cryptonote/src)
 
@@ -54,16 +55,19 @@ add_definitions(-DGIT_REVISION=\"${GIT_REVISION}\")
 set(CMAKE_AUTOMOC ON)
 
 set(CRYPTONOTE_SOURCES
-  cryptonote/external/miniupnpc/connecthostport.c
-  cryptonote/external/miniupnpc/igd_desc_parse.c
-  cryptonote/external/miniupnpc/minisoap.c
-  cryptonote/external/miniupnpc/miniupnpc.c
-  cryptonote/external/miniupnpc/miniwget.c
-  cryptonote/external/miniupnpc/minixml.c
-  cryptonote/external/miniupnpc/portlistingparse.c
-  cryptonote/external/miniupnpc/receivedata.c
-  cryptonote/external/miniupnpc/upnpcommands.c
-  cryptonote/external/miniupnpc/upnpreplyparse.c
+  cryptonote/external/miniupnpc/src/addr_is_reserved.c
+  cryptonote/external/miniupnpc/src/connecthostport.c
+  cryptonote/external/miniupnpc/src/igd_desc_parse.c
+  cryptonote/external/miniupnpc/src/minisoap.c
+  cryptonote/external/miniupnpc/src/minissdpc.c
+  cryptonote/external/miniupnpc/src/miniupnpc.c
+  cryptonote/external/miniupnpc/src/miniwget.c
+  cryptonote/external/miniupnpc/src/minixml.c
+  cryptonote/external/miniupnpc/src/portlistingparse.c
+  cryptonote/external/miniupnpc/src/receivedata.c
+  cryptonote/external/miniupnpc/src/upnpcommands.c
+  cryptonote/external/miniupnpc/src/upnpdev.c
+  cryptonote/external/miniupnpc/src/upnpreplyparse.c
   cryptonote/src/Common/Base58.cpp
   cryptonote/src/Common/Base64.cpp  
   cryptonote/src/Common/CommandLine.cpp
@@ -207,7 +211,7 @@ if (WIN32)
   if (NOT MSVC)
 	message(FATAL_ERROR "Only MSVC is supported on this platform")
   endif ()
-  add_definitions(/D_CRT_SECURE_NO_WARNINGS /D_WIN32_WINNT=0x0600 /DSTATICLIB)
+  add_definitions(/D_CRT_SECURE_NO_WARNINGS /D_WIN32_WINNT=0x0600 /DMINIUPNP_STATICLIB)
   include_directories(cryptonote/src/platform/msc)
 
   set(PLATFORM_DIR Windows)
@@ -216,7 +220,6 @@ if (WIN32)
   set(QTMAIN Qt5::WinMain)
 
 elseif (UNIX)
-  set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} cryptonote/external/miniupnpc/minissdpc.c)
   if (APPLE)
     enable_language(ASM)
     file(GLOB_RECURSE OBJC_SOURCES src/*.mm)

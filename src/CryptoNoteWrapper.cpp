@@ -167,12 +167,12 @@ public:
     m_nodeServer(m_dispatcher, m_protocolHandler, logManager),
     m_node(m_core, m_protocolHandler) {
 
+    cn::Checkpoints checkpoints(logManager);
+    checkpoints.load_checkpoints();
+    checkpoints.load_checkpoints_from_dns();
+    m_core.set_checkpoints(std::move(checkpoints));
     m_core.set_cryptonote_protocol(&m_protocolHandler);
     m_protocolHandler.set_p2p_endpoint(&m_nodeServer);
-    cn::Checkpoints checkpoints(logManager);
-    for (const cn::CheckpointData& checkpoint : cn::CHECKPOINTS) {
-      checkpoints.add_checkpoint(checkpoint.height, checkpoint.blockId);
-    }
   }
 
   ~InprocessNode() override {
