@@ -72,12 +72,12 @@ jobs:
           $ccx_version = $sha.SubString(0,7)
           $release_name = "ccx-desktop-win64-dev-$ccx_version"
 
-          New-Item "$build_folder\$release_folder" -ItemType Directory
-          cd "$build_folder"
-
           lrelease src/languages/cn.ts
           lrelease src/languages/ru.ts
           lrelease src/languages/tr.ts
+          New-Item "$build_folder\$release_folder" -ItemType Directory
+          cd "$build_folder"
+
           cmake -G "Visual Studio 16 2019" ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
