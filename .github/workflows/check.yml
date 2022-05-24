@@ -75,6 +75,9 @@ jobs:
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
+          lrelease src/languages/cn.ts
+          lrelease src/languages/ru.ts
+          lrelease src/languages/tr.ts
           cmake -G "Visual Studio 16 2019" ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
@@ -135,6 +138,7 @@ jobs:
         run: |
           ccx_version=${GITHUB_SHA::7}
 
+          lrelease src/languages/*.ts
           make -j2 build-release
 
           echo "::set-output name=ccx_version::$ccx_version"
@@ -185,6 +189,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-1804-dev-"$ccx_version"
 
+          lrelease src/languages/*.ts
           make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
@@ -225,6 +230,7 @@ jobs:
           ccx_version=${GITHUB_SHA::7}
           release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
 
+          lrelease src/languages/*.ts
           make -j2 build-release
           mkdir $release_name
           mkdir -p $release_name/icon
@@ -267,6 +273,7 @@ jobs:
           release_name="ccx-desktop-macOS-dev-$ccx_version"
           app_name="conceal-desktop.app"
 
+          lrelease src/languages/*.ts
           make -j3 build-release
           cd "$build_folder"
           macdeployqt "$app_name"

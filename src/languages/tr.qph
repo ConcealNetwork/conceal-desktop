@@ -1512,10 +1512,6 @@ p, li { white-space: pre-wrap; }
     <target></target>
 </phrase>
 <phrase>
-    <source>Bytecoin wallet</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>Status</source>
     <target>Durum</target>
 </phrase>

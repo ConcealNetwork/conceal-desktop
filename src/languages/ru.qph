@@ -1516,10 +1516,6 @@ p, li { white-space: pre-wrap; }
     <target>Запустить приложение в свернутом режиме</target>
 </phrase>
 <phrase>
-    <source>Bytecoin wallet</source>
-    <target>Кошелек Bytecoin</target>
-</phrase>
-<phrase>
     <source>Status</source>
     <target>Статус</target>
 </phrase>
