@@ -9,7 +9,7 @@
 
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
-#include <Mnemonics/electrum-words.h>
+#include <Mnemonics/Mnemonics.h>
 #include <Wallet/LegacyKeysImporter.h>
 #include <Wallet/WalletErrors.h>
 
@@ -383,7 +383,7 @@ bool WalletAdapter::getMnemonicSeed(std::string& _seed)
   bool deterministic_private_keys = deterministic_private_view_key == keys.viewSecretKey;
 
   if (deterministic_private_keys) {
-    crypto::electrum_words::bytes_to_words(keys.spendSecretKey, _seed, "English");
+    _seed = mnemonics::privateKeyToMnemonic(keys.spendSecretKey);
     return true;
   }
   else {
