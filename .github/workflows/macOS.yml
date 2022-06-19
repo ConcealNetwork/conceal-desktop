@@ -30,6 +30,7 @@ jobs:
           release_name="ccx-desktop-macOS-v$ccx_version"
           app_name="conceal-desktop.app"
 
+          lrelease src/languages/*.ts
           make -j4 build-release
           cd "$build_folder"
           macdeployqt "$app_name"
