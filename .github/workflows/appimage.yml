@@ -28,6 +28,7 @@ jobs:
           ccx_version=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
           release_name=Conceal_Desktop-v"$ccx_version"-x86_64.AppImage
 
+          lrelease src/languages/*.ts
           make -j2 build-release
 
           echo "::set-output name=ccx_version::$ccx_version"
