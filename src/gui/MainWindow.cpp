@@ -36,7 +36,6 @@
 #include "CryptoNoteCore/Account.cpp"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
-#include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
 #include "AddressBookModel.h"
 #include "ChangePasswordDialog.h"
