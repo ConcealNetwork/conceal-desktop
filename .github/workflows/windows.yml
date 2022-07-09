@@ -52,8 +52,8 @@ jobs:
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
 
-          # Update installer/windows/installer.iss with the current version
-          $file = "installer/windows/installer.iss"
+          # Update installer/windows/ConcealInstaller.iss with the current version
+          $file = "installer/windows/ConcealInstaller.iss"
           $find = "^#define AppVersion.+"
           $replace = "#define AppVersion '$ccx_version'"
           (Get-Content $file) | %{$_ -replace $find, $replace} | Set-Content $file
@@ -67,6 +67,9 @@ jobs:
           $ccx_version = "${{ github.ref }}" -replace 'refs/tags/'
           $release_name = "ccx-desktop-win64-v$ccx_version"
 
+          lrelease src/languages/cn.ts
+          lrelease src/languages/ru.ts
+          lrelease src/languages/tr.ts
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 
@@ -96,7 +99,7 @@ jobs:
           mv Final ../../installer/windows/build
           mv conceal-desktop.exe ../../installer/windows/build/
           cd ../../installer/windows/
-          iscc installer.iss
+          iscc ConcealInstaller.iss
           cd bin
           Compress-Archive -Path Conceal*.exe -DestinationPath "$release_name.zip"
 
