@@ -7,5 +7,5 @@ cd cryptonote || exit
 if git checkout "$desktop_branch"; then
    git checkout "$desktop_branch"
 else
-    git checkout master
+    git checkout development
 fi

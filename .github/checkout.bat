@@ -10,4 +10,4 @@ cd cryptonote
 
 git checkout %desktop_branch%
 
-git show-ref --verify --quiet refs/heads/%desktop_branch% || git checkout master
+git show-ref --verify --quiet refs/heads/%desktop_branch% || git checkout development
