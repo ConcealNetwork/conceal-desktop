@@ -92,6 +92,10 @@ namespace WalletGui
 
     int maxPeriod = 13;
     uint32_t blocksPerDeposit = 21900;
+    if (Settings::instance().isTestnet())
+    {
+      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
+    }
 
     QString resTempate("%1 %2");
     if (_months < maxPeriod)
@@ -1591,6 +1595,10 @@ namespace WalletGui
     }
 
     uint32_t blocksPerDeposit = 21900;
+    if (Settings::instance().isTestnet())
+    {
+      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
+    }
     quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
 
     /* Warn the user */
@@ -1643,6 +1651,10 @@ namespace WalletGui
   void OverviewFrame::depositParamsChanged()
   {
     uint32_t blocksPerDeposit = 21900;
+    if (Settings::instance().isTestnet())
+    {
+      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
+    }
     quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
     quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
     quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
