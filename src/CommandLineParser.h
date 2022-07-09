@@ -37,7 +37,7 @@ public:
   QStringList getPiorityNodes() const;
   QStringList getExclusiveNodes() const;
   QStringList getSeedNodes() const;
-  QString getDataDir() const;
+  QString getDataDir(bool testnet) const;
 
 private:
   QCommandLineParser m_parser;

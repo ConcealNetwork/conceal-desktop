@@ -413,7 +413,7 @@ namespace WalletGui
   QDir Settings::getDataDir() const
   {
     Q_CHECK_PTR(m_cmdLineParser);
-    return QDir(m_cmdLineParser->getDataDir());
+    return QDir(m_cmdLineParser->getDataDir(isTestnet()));
   }
 
   QString Settings::getWalletFile() const
