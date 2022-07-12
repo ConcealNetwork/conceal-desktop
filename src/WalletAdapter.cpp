@@ -762,6 +762,12 @@ bool WalletAdapter::checkWalletPassword(const QString& _password) {
   return false;
 }
 
+crypto::SecretKey WalletAdapter::getTxKey(crypto::Hash& txid)
+{
+  Q_ASSERT(m_wallet != nullptr);
+  return m_wallet->getTxKey(txid);
+}
+
 /* Check if the entered payment ID is valid */
 bool WalletAdapter::isValidPaymentId(const QByteArray& _paymentIdString)
 {

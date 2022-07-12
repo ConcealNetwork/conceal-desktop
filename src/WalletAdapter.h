@@ -86,6 +86,7 @@ public:
   void transactionUpdated(cn::TransactionId _transactionId) Q_DECL_OVERRIDE;
   void depositsUpdated(const std::vector<cn::DepositId>& _depositIds) Q_DECL_OVERRIDE;
   bool checkWalletPassword(const QString& _password);
+  crypto::SecretKey getTxKey(crypto::Hash &txid);
   static bool isValidPaymentId(const QByteArray &_paymentIdString);
   
 private:
