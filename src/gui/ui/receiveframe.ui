@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1270</width>
-    <height>700</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1270</width>
-    <height>700</height>
+    <height>650</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -71,7 +71,7 @@ font-size: 22px;</string>
      <property name="minimumSize">
       <size>
        <width>1200</width>
-       <height>560</height>
+       <height>550</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -85,16 +85,31 @@ font-size: 22px;</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QGroupBox" name="seedBox">
+       <widget class="QGroupBox" name="privateKeyBox">
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="title">
          <string/>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
          <item>
-          <widget class="QLabel" name="label_7">
+          <widget class="QLabel" name="label_5">
            <property name="font">
             <font>
              <family>Poppins</family>
@@ -102,12 +117,10 @@ font-size: 22px;</string>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 19px;
-</string>
+            <string notr="true">color: #ddd;font-size: 19px;</string>
            </property>
            <property name="text">
-            <string>YOUR 25 WORD MNEMONIC SEED</string>
+            <string>PRIVATE SPEND KEY</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -115,23 +128,69 @@ font-size: 19px;
           </widget>
          </item>
          <item>
-          <widget class="Line" name="line">
-           <property name="styleSheet">
-            <string notr="true">background-color: #333;</string>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
+          <widget class="QGroupBox" name="horizontalGroupBox2">
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="m_spendKey">
+              <property name="styleSheet">
+               <string notr="true">background-color: #202427;
+border: 1px solid grey;
+border-radius: 20px;
+font-family: monospace;
+padding: 10px;</string>
+              </property>
+              <property name="text">
+               <string>private spend key goes here</string>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
          </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QTextBrowser" name="m_seed">
-           <property name="minimumSize">
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>800</width>
-             <height>0</height>
+             <width>20</width>
+             <height>40</height>
             </size>
            </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
            <property name="font">
             <font>
              <family>Poppins</family>
@@ -139,23 +198,95 @@ font-size: 19px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 16px;</string>
+            <string notr="true">color: #ddd; font-size: 19px;</string>
            </property>
-           <property name="html">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="text">
+            <string>PRIVATE VIEW KEY</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QGroupBox" name="groupBox_6">
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox3">
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
+            <property name="topMargin">
+             <number>9</number>
+            </property>
+            <property name="rightMargin">
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>9</number>
+            </property>
             <item>
-             <widget class="QPushButton" name="m_copySeedButton">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="m_viewKey">
+              <property name="styleSheet">
+               <string notr="true">background-color: #202427;
+border: 1px solid grey;
+border-radius: 20px;
+font-family: monospace;
+padding: 10px;</string>
+              </property>
+              <property name="text">
+               <string>private view key goes here</string>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QGroupBox" name="groupBox_5">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QPushButton" name="m_copySpendKeyButton">
               <property name="minimumSize">
                <size>
                 <width>210</width>
@@ -175,7 +306,7 @@ p, li { white-space: pre-wrap; }
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_copySeedButton
+               <string notr="true">QPushButton#m_copySpendKeyButton
 {
     color: #fff;
     border: 1px solid orange;
@@ -184,7 +315,7 @@ p, li { white-space: pre-wrap; }
     
 }
 
-QPushButton#m_copySeedButton:hover
+QPushButton#m_copySpendKeyButton:hover
 {
     color: orange;
     border: 1px solid orange;
@@ -194,12 +325,12 @@ QPushButton#m_copySeedButton:hover
 }</string>
               </property>
               <property name="text">
-               <string>COPY</string>
+               <string>COPY SPEND KEY</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="m_backButton_2">
+             <widget class="QPushButton" name="m_copyViewKeyButton">
               <property name="minimumSize">
                <size>
                 <width>210</width>
@@ -219,7 +350,7 @@ QPushButton#m_copySeedButton:hover
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QPushButton#m_backButton_2
+               <string notr="true">QPushButton#m_copyViewKeyButton
 {
     color: #fff;
     border: 1px solid orange;
@@ -228,7 +359,51 @@ QPushButton#m_copySeedButton:hover
     
 }
 
-QPushButton#m_backButton_2:hover
+QPushButton#m_copyViewKeyButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}</string>
+              </property>
+              <property name="text">
+               <string>COPY VIEW KEY</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="m_backButton_4">
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>210</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>-1</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton#m_backButton_4
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}
+
+QPushButton#m_backButton_4:hover
 {
     color: orange;
     border: 1px solid orange;
@@ -244,6 +419,22 @@ QPushButton#m_backButton_2:hover
             </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>
@@ -428,12 +619,6 @@ margin-left: 3em;</string>
                 <height>30</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
               <property name="font">
                <font>
                 <family>Poppins</family>
@@ -467,12 +652,6 @@ QPushButton#m_showSeed:hover
             <item>
              <widget class="QPushButton" name="m_backButton">
               <property name="minimumSize">
-               <size>
-                <width>210</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
                <size>
                 <width>210</width>
                 <height>30</height>
@@ -536,14 +715,8 @@ QPushButton#m_backButton:hover
              <widget class="QPushButton" name="m_showPrivate">
               <property name="minimumSize">
                <size>
-                <width>200</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>25</height>
+                <width>210</width>
+                <height>30</height>
                </size>
               </property>
               <property name="font">
@@ -580,14 +753,8 @@ QPushButton#m_showPrivate:hover
              <widget class="QPushButton" name="m_showGUI">
               <property name="minimumSize">
                <size>
-                <width>200</width>
-                <height>25</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>25</height>
+                <width>210</width>
+                <height>30</height>
                </size>
               </property>
               <property name="font">
@@ -624,35 +791,244 @@ QPushButton#m_showGUI:hover
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="emptyLabelForAlignmentTop">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="minimumSize">
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>0</width>
-             <height>0</height>
+             <width>20</width>
+             <height>40</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="sizeIncrement">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="seedBox">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <family>Poppins</family>
+             <pointsize>-1</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">border: none;</string>
+            <string notr="true">color: #ddd;
+font-size: 19px;
+</string>
+           </property>
+           <property name="text">
+            <string>YOUR 25 WORD MNEMONIC SEED</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="m_seed">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>800</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: #202427;
+border: 1px solid grey;
+border-radius: 20px;
+font-family: monospace;
+padding: 10px;</string>
+              </property>
+              <property name="text">
+               <string>Your wallet is an older format that does not support mnemonic seeds.
+Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="textInteractionFlags">
+               <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QGroupBox" name="groupBox_6">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="m_copySeedButton">
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>-1</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton#m_copySeedButton
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}
+
+QPushButton#m_copySeedButton:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}</string>
+              </property>
+              <property name="text">
+               <string>COPY</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="m_backButton_2">
+              <property name="minimumSize">
+               <size>
+                <width>210</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>-1</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton#m_backButton_2
+{
+    color: #fff;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}
+
+QPushButton#m_backButton_2:hover
+{
+    color: orange;
+    border: 1px solid orange;
+    font-size: 12px;
+    border-radius: 5px;
+    
+}</string>
+              </property>
+              <property name="text">
+               <string>BACK</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>
@@ -666,6 +1042,21 @@ QPushButton#m_showGUI:hover
          <string/>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>9</number>
+         </property>
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_2">
            <property name="font">
@@ -686,49 +1077,102 @@ QPushButton#m_showGUI:hover
           </widget>
          </item>
          <item>
-          <widget class="Line" name="line_3">
-           <property name="styleSheet">
-            <string notr="true">background-color: #333;</string>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QGroupBox" name="groupBox_9">
            <property name="title">
             <string/>
            </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="horizontalGroupBox1">
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
+            <property name="topMargin">
+             <number>9</number>
+            </property>
+            <property name="rightMargin">
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>9</number>
+            </property>
             <item>
-             <widget class="QTextBrowser" name="m_guiKey">
-              <property name="maximumSize">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
                <size>
-                <width>800</width>
-                <height>16777215</height>
+                <width>40</width>
+                <height>10</height>
                </size>
               </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QTextBrowser" name="m_guiKey">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>800</width>
+                <height>0</height>
+               </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">font-size: 17px;</string>
+               <string notr="true">background-color: #202427;
+border: 1px solid grey;
+border-radius: 20px;
+font-family: monospace;
+padding: 10px;</string>
               </property>
               <property name="html">
-               <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Tracking key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'monospace'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tracking key goes here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>10</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item alignment="Qt::AlignHCenter">
           <widget class="QGroupBox" name="groupBox_2">
@@ -742,12 +1186,6 @@ p, li { white-space: pre-wrap; }
                </sizepolicy>
               </property>
               <property name="minimumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
                <size>
                 <width>210</width>
                 <height>30</height>
@@ -797,12 +1235,6 @@ QPushButton#m_copyGUIKeyButton:hover
                 <height>30</height>
                </size>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
               <property name="font">
                <font>
                 <family>Poppins</family>
@@ -836,252 +1268,30 @@ QPushButton#m_backButton_3:hover
            </layout>
           </widget>
          </item>
-        </layout>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QGroupBox" name="privateKeyBox">
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
-           <property name="styleSheet">
-            <string notr="true">color: #ddd;font-size: 19px;</string>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
            </property>
-           <property name="text">
-            <string>PRIVATE SPEND KEY</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QTextBrowser" name="m_spendKey">
-           <property name="minimumSize">
+           <property name="sizeHint" stdset="0">
             <size>
-             <width>800</width>
-             <height>0</height>
+             <width>20</width>
+             <height>40</height>
             </size>
            </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 16px;</string>
-           </property>
-           <property name="html">
-            <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;private spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #ddd; font-size: 19px;</string>
-           </property>
-           <property name="text">
-            <string>PRIVATE VIEW KEY</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QTextBrowser" name="m_viewKey">
-           <property name="minimumSize">
-            <size>
-             <width>800</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Poppins</family>
-             <pointsize>-1</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: #ddd;
-font-size: 16px;</string>
-           </property>
-           <property name="html">
-            <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Poppins'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier'; font-size:10pt;&quot;&gt;private view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QGroupBox" name="groupBox_5">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <widget class="QPushButton" name="m_copySpendKeyButton">
-              <property name="minimumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton#m_copySpendKeyButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_copySpendKeyButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
-              </property>
-              <property name="text">
-               <string>COPY SPEND KEY</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="m_copyViewKeyButton">
-              <property name="minimumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton#m_copyViewKeyButton
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_copyViewKeyButton:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
-              </property>
-              <property name="text">
-               <string>COPY VIEW KEY</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="m_backButton_4">
-              <property name="minimumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>210</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-                <pointsize>-1</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton#m_backButton_4
-{
-    color: #fff;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}
-
-QPushButton#m_backButton_4:hover
-{
-    color: orange;
-    border: 1px solid orange;
-    font-size: 12px;
-    border-radius: 5px;
-    
-}</string>
-              </property>
-              <property name="text">
-               <string>BACK</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+          </spacer>
          </item>
         </layout>
        </widget>
       </item>
      </layout>
+     <zorder>introBox</zorder>
+     <zorder>privateKeyBox</zorder>
+     <zorder>seedBox</zorder>
+     <zorder>guiKeyBox</zorder>
     </widget>
    </item>
   </layout>

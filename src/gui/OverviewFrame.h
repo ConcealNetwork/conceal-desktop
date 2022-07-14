@@ -201,6 +201,7 @@ private:
   Q_SLOT void openSslLicenseClicked();
   Q_SLOT void refreshDataClicked();
   Q_SLOT void autoRefreshButtonClicked();
+  Q_SLOT void donationClicked();
 
 Q_SIGNALS:
   void backupSignal();

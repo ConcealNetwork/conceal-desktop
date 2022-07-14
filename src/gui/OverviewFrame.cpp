@@ -2038,6 +2038,11 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network/support/", QUrl::TolerantMode));
   }
 
+  void OverviewFrame::donationClicked()
+  {
+    QDesktopServices::openUrl(QUrl("https://conceal.network/donate", QUrl::TolerantMode));
+  }
+
   /* Initiate a password prompt meant for critical tasks like sending funds etc */
   bool OverviewFrame::checkWalletPassword(bool _error)
   {
