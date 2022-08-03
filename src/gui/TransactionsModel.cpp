@@ -473,12 +473,14 @@ namespace WalletGui
       return QByteArray(reinterpret_cast<const char *>(&_transaction.hash), sizeof(_transaction.hash));
 
     case ROLE_SECRETKEY:
-      if (_transaction.secretKey) {
-        crypto::SecretKey txkey = _transaction.secretKey.get();
-        if (txkey != cn::NULL_SECRET_KEY) {
-          return QByteArray(reinterpret_cast<char*>(&txkey), sizeof(txkey));
-        }
+    {
+      crypto::Hash txHash = _transaction.hash;
+      crypto::SecretKey txkey = WalletAdapter::instance().getTxKey(txHash);
+      if (txkey != cn::NULL_SECRET_KEY)
+      {
+        return QByteArray(reinterpret_cast<char *>(&txkey), sizeof(txkey));
       }
+    }
 
     case ROLE_ADDRESS:
       return QString::fromStdString(_transfer.address);

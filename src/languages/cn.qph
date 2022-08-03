@@ -1513,10 +1513,6 @@ p, li { white-space: pre-wrap; }
     <target>以最小化模式运行应用程序</target>
 </phrase>
 <phrase>
-    <source>Bytecoin wallet</source>
-    <target>字节币钱包</target>
-</phrase>
-<phrase>
     <source>Status</source>
     <target>状态</target>
 </phrase>

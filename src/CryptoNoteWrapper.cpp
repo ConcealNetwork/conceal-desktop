@@ -20,6 +20,7 @@
 #include "WalletLegacy/WalletLegacy.h"
 #include "Logging/LoggerManager.h"
 #include "System/Dispatcher.h"
+#include "Settings.h"
 
 namespace WalletGui {
 
@@ -130,7 +131,7 @@ public:
   }
 
   cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_logger);
+    return new cn::WalletLegacy(m_currency, m_node, m_logger, Settings::instance().isTestnet());
   }
 
 private:
@@ -168,6 +169,7 @@ public:
     m_node(m_core, m_protocolHandler) {
 
     cn::Checkpoints checkpoints(logManager);
+    checkpoints.set_testnet(Settings::instance().isTestnet());
     checkpoints.load_checkpoints();
     checkpoints.load_checkpoints_from_dns();
     m_core.set_checkpoints(std::move(checkpoints));
@@ -235,7 +237,7 @@ public:
   }
 
   cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_loggerManager);
+    return new cn::WalletLegacy(m_currency, m_node, m_loggerManager, Settings::instance().isTestnet());
   }
 
 private:

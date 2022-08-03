@@ -70,7 +70,7 @@ std::istream& operator>>(std::istream& str, Version::VersionDigit& digit)
 void Updater::checkForUpdate()
 {
   const QUrl url = QUrl::fromUserInput(
-      "https://raw.githubusercontent.com/ConcealNetwork/conceal-desktop/master/version.txt");
+      "https://github.com/ConcealNetwork/conceal-desktop/raw/master/version.txt");
   QNetworkRequest request(url);
   manager->get(request);
 }

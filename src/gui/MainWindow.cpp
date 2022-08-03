@@ -36,7 +36,6 @@
 #include "CryptoNoteCore/Account.cpp"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
-#include "Mnemonics/electrum-words.cpp"
 #include "ShowQRCode.h"
 #include "AddressBookModel.h"
 #include "ChangePasswordDialog.h"
@@ -309,28 +308,26 @@ bool MainWindow::event(QEvent *_event)
 void MainWindow::setRemoteWindowTitle()
 {
   QString connection = Settings::instance().getConnection();
+  QString title = QString("%1 Wallet %2")
+                      .arg(CurrencyAdapter::instance().getCurrencyDisplayName())
+                      .arg(Settings::instance().getVersion());
   if ((connection == "remote") || (connection == "autoremote"))
   {
-    if (Settings::instance().isTrackingMode())
-    {
-      setWindowTitle(QString("%1 Wallet %2 connected to remote node %3 [Tracking Wallet]").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
-    }
-    else
-    {
-      setWindowTitle(QString("%1 Wallet %2 connected to remote node %3").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()).arg(Settings::instance().getCurrentRemoteNode()));
-    }
+    title.append(
+        QString(" connected to remote node %1").arg(Settings::instance().getCurrentRemoteNode()));
   }
-  else
+
+  if (Settings::instance().isTrackingMode())
   {
-    if (Settings::instance().isTrackingMode())
-    {
-      setWindowTitle(QString("%1 Wallet %2 [Tracking Wallet]").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
-    }
-    else
-    {
-      setWindowTitle(QString("%1 Wallet %2").arg(CurrencyAdapter::instance().getCurrencyDisplayName()).arg(Settings::instance().getVersion()));
-    }
+    title.append(QString(" [Tracking Wallet]"));
   }
+
+  if (Settings::instance().isTestnet())
+  {
+    title.append("    /!\\ testnet /!\\");
+  }
+
+  setWindowTitle(title);
 }
 
 void MainWindow::delay()
