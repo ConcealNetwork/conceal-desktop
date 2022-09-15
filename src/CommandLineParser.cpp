@@ -120,8 +120,8 @@ QStringList CommandLineParser::getSeedNodes() const {
   return m_parser.values(m_seedNodeOption);
 }
 
-QString CommandLineParser::getDataDir() const {
-  return m_parser.value(m_dataDirOption);
+QString CommandLineParser::getDataDir(bool testnet) const {
+  return QString::fromStdString(tools::getDefaultDataDirectory(testnet));
 }
 
 }

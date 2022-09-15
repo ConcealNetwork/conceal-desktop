@@ -8,7 +8,7 @@ on:
 jobs:
   build-macos:
     name: macOS
-    runs-on: macos-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
 
@@ -30,6 +30,7 @@ jobs:
           release_name="ccx-desktop-macOS-v$ccx_version"
           app_name="conceal-desktop.app"
 
+          lrelease src/languages/*.ts
           make -j4 build-release
           cd "$build_folder"
           macdeployqt "$app_name"

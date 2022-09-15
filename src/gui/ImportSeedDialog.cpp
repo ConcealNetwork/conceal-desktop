@@ -8,7 +8,7 @@
 #include "ImportSeedDialog.h"
 
 #include <CryptoNoteCore/Account.h>
-#include <Mnemonics/electrum-words.h>
+#include <Mnemonics/Mnemonics.h>
 
 #include <QApplication>
 #include <QFileDialog>
@@ -83,12 +83,12 @@ namespace WalletGui
     std::vector<std::string> words;
     boost::split(words, mnemonicPhrase, ::isspace);
 
-    crypto::SecretKey privateSpendKey;
+    crypto::SecretKey privateSpendKey = mnemonics::mnemonicToPrivateKey(words);
     crypto::SecretKey privateViewKey;
 
-    bool created = crypto::electrum_words::words_to_bytes(mnemonicPhrase, privateSpendKey, language);
+    bool created = mnemonics::hasValidChecksum(words);
 
-    if (!created)
+    if (!created || privateSpendKey == boost::value_initialized<crypto::SecretKey>())
     {
       setErrorMessage(tr("Invalid seed. Please check your seed and try again."));
       return;

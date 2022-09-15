@@ -350,7 +350,9 @@ cn::CoreConfig NodeAdapter::makeCoreConfig() const
   cn::CoreConfig config;
   boost::program_options::variables_map options;
   boost::any dataDir = Settings::instance().getDataDir().absolutePath().toStdString();
+  boost::any testnet = Settings::instance().isTestnet();
   options.insert(std::make_pair("data-dir", boost::program_options::variable_value(dataDir, false)));
+  options.insert(std::make_pair("testnet", boost::program_options::variable_value(testnet, false)));
   config.init(options);
   return config;
 }
@@ -365,10 +367,12 @@ cn::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
   boost::any p2pAllowLocalIp = Settings::instance().hasAllowLocalIpOption();
   boost::any dataDir = Settings::instance().getDataDir().absolutePath().toStdString();
   boost::any hideMyPort = Settings::instance().hasHideMyPortOption();
+  boost::any testnet = Settings::instance().isTestnet();
   options.insert(std::make_pair("p2p-bind-ip", boost::program_options::variable_value(p2pBindIp, false)));
   options.insert(std::make_pair("p2p-bind-port", boost::program_options::variable_value(p2pBindPort, false)));
   options.insert(std::make_pair("p2p-external-port", boost::program_options::variable_value(p2pExternalPort, false)));
   options.insert(std::make_pair("allow-local-ip", boost::program_options::variable_value(p2pAllowLocalIp, false)));
+  options.insert(std::make_pair("testnet", boost::program_options::variable_value(testnet, false)));
   std::vector<std::string> peerList = convertStringListToVector(Settings::instance().getPeers());
   if (!peerList.empty())
   {

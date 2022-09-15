@@ -1,0 +1,26 @@
+dist: focal
+language: cpp
+
+branches:
+  only:
+    - master
+    - travis
+
+addons:
+  apt:
+    update: true
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libboost-all-dev
+      - g++
+      - qt5-default
+      - libqt5charts5-dev
+
+script:
+  - rm -rf cryptonote
+  - git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release ..
+  - make -j2

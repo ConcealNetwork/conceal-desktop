@@ -188,6 +188,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/BlockchainExplorer/BlockchainExplorer.cpp
   cryptonote/src/BlockchainExplorer/BlockchainExplorerDataBuilder.cpp
   cryptonote/src/BlockchainExplorer/BlockchainExplorerErrors.cpp
+  cryptonote/src/Mnemonics/Mnemonics.cpp
 )
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
