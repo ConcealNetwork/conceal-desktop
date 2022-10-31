@@ -5050,42 +5050,6 @@ color: orange;
               </property>
              </widget>
             </item>
-            <item row="1" column="17">
-             <widget class="QPushButton" name="sm_bitmartButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string>BitMart</string>
-              </property>
-              <property name="type" stdset="0">
-               <string>sm</string>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="6">
              <widget class="QLabel" name="m_twitterIcon">
               <property name="sizePolicy">
@@ -5170,42 +5134,6 @@ color: orange;
                </size>
               </property>
              </spacer>
-            </item>
-            <item row="2" column="17">
-             <widget class="QPushButton" name="sm_tradeogreButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string>TradeOgre</string>
-              </property>
-              <property name="type" stdset="0">
-               <string>sm</string>
-              </property>
-             </widget>
             </item>
             <item row="1" column="10">
              <widget class="QPushButton" name="sm_githubButton">
@@ -5459,42 +5387,6 @@ color: orange;
               </property>
              </widget>
             </item>
-            <item row="1" column="16">
-             <widget class="QLabel" name="m_bitmartIcon">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/bitmart</pixmap>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="11">
              <spacer name="horizontalSpacer_3">
               <property name="orientation">
@@ -5533,42 +5425,6 @@ color: orange;
                </size>
               </property>
              </spacer>
-            </item>
-            <item row="2" column="16">
-             <widget class="QLabel" name="m_depositsUnlockedTitle_18">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
-              </property>
-             </widget>
             </item>
             <item row="1" column="3">
              <widget class="QLabel" name="m_depositsUnlockedTitle_9">
@@ -5747,6 +5603,150 @@ color: orange;
               </property>
               <property name="pixmap">
                <pixmap resource="../../resources.qrc">:/icons/conceal</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="12">
+             <widget class="QLabel" name="m_tradeogreIcon">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="12">
+             <widget class="QLabel" name="m_webwalletIcon">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="../../resources.qrc">:/icons/conceal</pixmap>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="13">
+             <widget class="QPushButton" name="sm_tradeogreButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>TradeOgre</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="13">
+             <widget class="QPushButton" name="sm_webwalletButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>Web Wallet</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
               </property>
              </widget>
             </item>
@@ -10698,10 +10698,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_bitmartButton</sender>
+   <sender>sm_webwalletButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>bitmartClicked()</slot>
+   <slot>webwalletClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1176</x>
@@ -11100,7 +11100,7 @@ color: orange;
   <slot>addressChanged(QString)</slot>
   <slot>websiteClicked()</slot>
   <slot>tradeogreClicked()</slot>
-  <slot>bitmartClicked()</slot>
+  <slot>webwalletClicked()</slot>
   <slot>wikiClicked()</slot>
   <slot>helpClicked()</slot>
   <slot>exportCSV()</slot>

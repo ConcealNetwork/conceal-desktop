@@ -2030,9 +2030,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::bitmartClicked()
+  void OverviewFrame::webwalletClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.bitmart.com/trade/en?symbol=CCX_USDT&layout=basic", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://wallet.conceal.network", QUrl::TolerantMode));
   }
 
   void OverviewFrame::tradeogreClicked()
