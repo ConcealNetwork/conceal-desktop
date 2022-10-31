@@ -47,7 +47,7 @@ QString CurrencyAdapter::getCurrencyTicker() const {
 }
 
 quint64 CurrencyAdapter::calculateInterest(quint64 _amount, quint32 _term, uint32_t height) const {
-  return m_currency.calculateInterest(_amount, _term, height);
+  return m_currency.calculateInterest(_amount, _term, height - _term);
 }
 
 quint64 CurrencyAdapter::getMinimumFee() const {

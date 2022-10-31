@@ -204,8 +204,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     if (term % 64800 == 0) {
       return QString("Investment");
     }
-    if (term % 21900 == 0 || (Settings::instance().isTestnet() &&
-                              term % cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3 == 0)) {
+    if (term % CurrencyAdapter::instance().getCurrency().depositMinTermV3() == 0) {
       return QString("Deposit");
     }
     if (term % 5040 == 0) {
