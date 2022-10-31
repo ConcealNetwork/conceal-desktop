@@ -1,7 +1,7 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
-// Copyright (c) 2018 The Circle Foundation
-// Copyright (c) 2018-2021 Conceal Network & Conceal Devs
-//
+// Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
+// Copyright (c) 2018-2022 Conceal Network & Conceal Devs
+
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -91,11 +91,7 @@ namespace WalletGui
   {
 
     int maxPeriod = 13;
-    uint32_t blocksPerDeposit = 21900;
-    if (Settings::instance().isTestnet())
-    {
-      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
-    }
+    uint32_t blocksPerDeposit = CurrencyAdapter::instance().getCurrency().depositMinTermV3();
 
     QString resTempate("%1 %2");
     if (_months < maxPeriod)
@@ -1594,11 +1590,7 @@ namespace WalletGui
       return;
     }
 
-    uint32_t blocksPerDeposit = 21900;
-    if (Settings::instance().isTestnet())
-    {
-      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
-    }
+    uint32_t blocksPerDeposit = CurrencyAdapter::instance().getCurrency().depositMinTermV3();
     quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
 
     /* Warn the user */
@@ -1650,11 +1642,7 @@ namespace WalletGui
 
   void OverviewFrame::depositParamsChanged()
   {
-    uint32_t blocksPerDeposit = 21900;
-    if (Settings::instance().isTestnet())
-    {
-      blocksPerDeposit = cn::parameters::TESTNET_DEPOSIT_MIN_TERM_V3;
-    }
+    uint32_t blocksPerDeposit = CurrencyAdapter::instance().getCurrency().depositMinTermV3();
     quint64 amount = CurrencyAdapter::instance().parseAmount(m_ui->m_amountSpin->cleanText());
     quint32 term = m_ui->m_timeSpin->value() * blocksPerDeposit;
     quint64 interest = CurrencyAdapter::instance().calculateInterest(amount, term, NodeAdapter::instance().getLastKnownBlockHeight());
@@ -2030,9 +2018,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::bitmartClicked()
+  void OverviewFrame::webwalletClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.bitmart.com/trade/en?symbol=CCX_USDT&layout=basic", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://wallet.conceal.network", QUrl::TolerantMode));
   }
 
   void OverviewFrame::tradeogreClicked()
