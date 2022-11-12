@@ -70,6 +70,7 @@ void Updater::checkForUpdate()
   const QUrl url = QUrl::fromUserInput(
       "https://github.com/ConcealNetwork/conceal-desktop/raw/master/version.txt");
   QNetworkRequest request(url);
+  request.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
   manager->get(request);
 }
 
