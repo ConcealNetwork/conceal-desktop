@@ -26,11 +26,11 @@ jobs:
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           host: "windows"
           target: "desktop"
-          modules: "qttools5 qtcharts"
+          modules: "qtcharts"
           install-deps: "true"
 
       - name: Clone conceal-core
@@ -46,7 +46,7 @@ jobs:
           $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
 
           # Update "CMakeLists.txt" with cmake dir
-          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
+          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[\\]', '\\' -replace '[/]', '\\'
           $file = "CMakeLists.txt"
           $find = '^set\(CMAKE_PREFIX_PATH.+'
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
