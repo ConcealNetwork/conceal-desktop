@@ -81,9 +81,9 @@ jobs:
           cmake -G "Visual Studio 16 2019" ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
-          echo "::set-output name=build_folder::${build_folder}"
-          echo "::set-output name=release_folder::${release_folder}"
-          echo "::set-output name=release_name::${release_name}"
+          echo "build_folder=${build_folder}" >> $env:GITHUB_OUTPUT
+          echo "release_folder=${release_folder}" >> $env:GITHUB_OUTPUT
+          echo "release_name=${release_name}" >> $env:GITHUB_OUTPUT
 
       - name: Pack
         shell: powershell
@@ -141,7 +141,7 @@ jobs:
           lrelease src/languages/*.ts
           make -j2 build-release
 
-          echo "::set-output name=ccx_version::$ccx_version"
+          echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
       - name: Create AppImage
         id: appimage
@@ -156,7 +156,7 @@ jobs:
           mv Conceal_Desktop*.AppImage ../$release_name/$appimage_name
           cd ..
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v3
@@ -197,7 +197,7 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v3
@@ -238,7 +238,7 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v3
@@ -279,7 +279,7 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v3
@@ -323,8 +323,8 @@ jobs:
           mv *.dmg "$release_name".dmg
           mv "$release_name".dmg "$release_name"
 
-          echo "::set-output name=release_name::${release_name}"
-          echo "::set-output name=artifact_path::$build_folder/$release_name"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
+          echo "artifact_path=${build_folder}/${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v3
