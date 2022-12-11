@@ -12,7 +12,7 @@ jobs:
     env:
       BOOST_ROOT: C:/tools/boost/x86_64
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1.0.2
