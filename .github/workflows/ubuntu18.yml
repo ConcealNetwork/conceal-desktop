@@ -10,7 +10,7 @@ jobs:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -39,19 +39,18 @@ jobs:
           tar -czf "$release_name".tar.gz "$release_name"
           sha256=$(shasum -a 256 "$release_name".tar.gz | awk '{print toupper($1)}')
 
-          echo "::set-output name=sha256::${sha256}"
-          echo "::set-output name=release_name::${release_name}.tar.gz"
-          echo "::set-output name=ccx_version::${ccx_version}"
+          echo "sha256=${sha256}" >> $GITHUB_OUTPUT
+          echo "release_name=${release_name}.tar.gz" >> $GITHUB_OUTPUT
+          echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
-      # since https://github.com/softprops/action-gh-release/pull/145 body is replaced instead of being appended
-      # use v0.1.12 for now
       - name: Create Release
-        uses: softprops/action-gh-release@v0.1.12
+        uses: softprops/action-gh-release@v0.1.15
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
           body: |
             [Download for Ubuntu 18.04](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
             `SHA256 : ${{ steps.build.outputs.sha256 }}`
+          append_body: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
