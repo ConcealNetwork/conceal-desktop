@@ -93,7 +93,6 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/crypto/keccak.c
   cryptonote/src/crypto/random.c
   cryptonote/src/crypto/tree-hash.c
-  cryptonote/src/crypto/aux_hash.c 
   cryptonote/src/crypto/cryptonight.cpp 
   cryptonote/src/crypto/pow_hash/arm8_neon.hpp
   cryptonote/src/crypto/pow_hash/arm_vfp.hpp
