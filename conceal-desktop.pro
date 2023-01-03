@@ -169,7 +169,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Common/Util.h \
            cryptonote/src/Common/Varint.h \
            cryptonote/src/Common/VectorOutputStream.h \
-           cryptonote/src/crypto/aux_hash.h \
            cryptonote/src/crypto/chacha8.h \
            cryptonote/src/crypto/cn_aux.hpp \
            cryptonote/src/crypto/coin_algos.hpp \
@@ -343,7 +342,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Transfers/TypeHelpers.h \
            cryptonote/src/Wallet/IFusionManager.h \
            cryptonote/src/Wallet/LegacyKeysImporter.h \
-           cryptonote/src/Wallet/PoolRpcServer.h \
            cryptonote/src/Wallet/WalletAsyncContextCounter.h \
            cryptonote/src/Wallet/WalletErrors.h \
            cryptonote/src/Wallet/WalletGreen.h \
@@ -663,7 +661,6 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Common/Util.cpp \
            cryptonote/src/Common/VectorOutputStream.cpp \
            cryptonote/src/ConnectivityTool/ConnectivityTool.cpp \
-           cryptonote/src/crypto/aux_hash.c \
            cryptonote/src/crypto/chacha8.c \
            cryptonote/src/crypto/crypto-ops-data.c \
            cryptonote/src/crypto/crypto-ops.c \
@@ -782,7 +779,6 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Transfers/TransfersSubscription.cpp \
            cryptonote/src/Transfers/TransfersSynchronizer.cpp \
            cryptonote/src/Wallet/LegacyKeysImporter.cpp \
-           cryptonote/src/Wallet/PoolRpcServer.cpp \
            cryptonote/src/Wallet/WalletAsyncContextCounter.cpp \
            cryptonote/src/Wallet/WalletErrors.cpp \
            cryptonote/src/Wallet/WalletGreen.cpp \

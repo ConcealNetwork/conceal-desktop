@@ -15,10 +15,10 @@ jobs:
     env:
       BOOST_ROOT: C:/tools/boost/x86_64
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.0.2
+        uses: microsoft/setup-msbuild@v1.1.3
 
       - name: Install Boost
         shell: powershell
@@ -29,11 +29,11 @@ jobs:
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v2
+        uses: jurplel/install-qt-action@v3
         with:
           host: "windows"
           target: "desktop"
-          modules: "qttools5 qtcharts"
+          modules: "qtcharts"
           install-deps: "true"
 
       - name: Clone conceal-core
@@ -50,7 +50,7 @@ jobs:
           $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
 
           # Update "CMakeLists.txt" with cmake dir
-          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[/]', '\\'
+          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[\\]', '\\' -replace '[/]', '\\'
           $file = "CMakeLists.txt"
           $find = '^set\(CMAKE_PREFIX_PATH.+'
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
@@ -81,9 +81,9 @@ jobs:
           cmake -G "Visual Studio 16 2019" ..
           msbuild conceal-desktop.sln /p:Configuration=Release /m:2
 
-          echo "::set-output name=build_folder::${build_folder}"
-          echo "::set-output name=release_folder::${release_folder}"
-          echo "::set-output name=release_name::${release_name}"
+          echo "build_folder=${build_folder}" >> $env:GITHUB_OUTPUT
+          echo "release_folder=${release_folder}" >> $env:GITHUB_OUTPUT
+          echo "release_name=${release_name}" >> $env:GITHUB_OUTPUT
 
       - name: Pack
         shell: powershell
@@ -109,7 +109,7 @@ jobs:
           mv installer/windows/bin/Conceal*.exe $release_name/
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -120,7 +120,7 @@ jobs:
     name: AppImage
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -141,7 +141,7 @@ jobs:
           lrelease src/languages/*.ts
           make -j2 build-release
 
-          echo "::set-output name=ccx_version::$ccx_version"
+          echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
       - name: Create AppImage
         id: appimage
@@ -156,10 +156,10 @@ jobs:
           mv Conceal_Desktop*.AppImage ../$release_name/$appimage_name
           cd ..
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.appimage.outputs.release_name }}
           path: ${{ steps.appimage.outputs.release_name }}
@@ -170,7 +170,7 @@ jobs:
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -197,10 +197,10 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -211,7 +211,7 @@ jobs:
     name: Ubuntu 20.04
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -238,10 +238,10 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -252,7 +252,7 @@ jobs:
     name: Ubuntu 22.04
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -279,10 +279,10 @@ jobs:
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
 
-          echo "::set-output name=release_name::${release_name}"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -293,7 +293,7 @@ jobs:
     name: macOS
     runs-on: macos-11
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
@@ -323,11 +323,11 @@ jobs:
           mv *.dmg "$release_name".dmg
           mv "$release_name".dmg "$release_name"
 
-          echo "::set-output name=release_name::${release_name}"
-          echo "::set-output name=artifact_path::$build_folder/$release_name"
+          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
+          echo "artifact_path=${build_folder}/${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.artifact_path }}
