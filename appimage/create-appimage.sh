@@ -11,4 +11,6 @@ cp ../build/release/conceal-desktop .
 mkdir -p usr/share/icons
 mkdir -p usr/lib
 cp ../src/images/conceal.png usr/share/icons
+cp /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 usr/lib
+cp /usr/lib/x86_64-linux-gnu/libssl.so.1.1 usr/lib
 ./linuxdeploy-x86_64.AppImage --executable ./conceal-desktop --desktop-file conceal-desktop.desktop --appdir . --output appimage --plugin qt
