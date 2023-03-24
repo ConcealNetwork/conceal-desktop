@@ -140,3 +140,9 @@ cpack
 ## Special Thanks
 
 Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, Forknote, TurtleCoin, and Masari.
+
+## Copyright
+
+© 2018-2023 Conceal Network & Conceal Devs
+© 2017-2018 The Circle Foundation & Conceal Devs
+© 2011-2017 The Cryptonote developers
