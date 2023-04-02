@@ -83,21 +83,18 @@ std::string extractPaymentId(const std::string& extra) {
 
 }
 
-Node::~Node() {
-}
-
-class RpcNode : cn::INodeObserver, public Node {
+class RpcNode : public cn::INodeObserver, public Node {
 public:
-  RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
-    m_callback(callback),
-    m_currency(currency),
-    m_logger(logManager),
-    m_node(nodeHost, nodePort) {
+  RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback,
+          const std::string& nodeHost, unsigned short nodePort)
+      : m_callback(callback),
+        m_currency(currency),
+        m_node(nodeHost, nodePort),
+        m_logger(logManager) {
     m_node.addObserver(this);
   }
 
-  ~RpcNode() override {
-  }
+  ~RpcNode() override = default;
 
   void init(const std::function<void(std::error_code)>& callback) override {
     m_node.init(callback);
@@ -141,27 +138,26 @@ private:
   cn::NodeRpcProxy m_node;
   logging::LoggerManager& m_logger;
 
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
   }
 
-  void localBlockchainUpdated(uint64_t height) {
+  void localBlockchainUpdated(uint32_t height) override {
     m_callback.localBlockchainUpdated(*this, height);
   }
 
-  void lastKnownBlockHeightUpdated(uint64_t height) {
+  void lastKnownBlockHeightUpdated(uint32_t height) override {
     m_callback.lastKnownBlockHeightUpdated(*this, height);
   }
 };
 
-class InprocessNode : cn::INodeObserver, public Node {
+class InprocessNode : public cn::INodeObserver, public Node {
 public:
   InprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager, const cn::CoreConfig& coreConfig,
     const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
-    m_currency(currency), 
-    m_dispatcher(),
-    m_loggerManager(logManager),
     m_callback(callback),
+    m_currency(currency), 
+    m_loggerManager(logManager),
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
     m_protocolHandler(currency, m_dispatcher, m_core, nullptr, logManager),
@@ -178,9 +174,7 @@ public:
     m_protocolHandler.set_p2p_endpoint(&m_nodeServer);
   }
 
-  ~InprocessNode() override {
-
-  }
+  ~InprocessNode() override = default;
 
   void init(const std::function<void(std::error_code)>& callback) override {
     try {
@@ -248,22 +242,21 @@ private:
   logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
-  cn::core m_core;
   cn::CryptoNoteProtocolHandler m_protocolHandler;
+  cn::core m_core;
   cn::NodeServer m_nodeServer;
   cn::InProcessNode m_node;
   std::future<bool> m_nodeServerFuture;
 
-
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
   }
 
-  void localBlockchainUpdated(uint64_t height) {
+  void localBlockchainUpdated(uint32_t height) override {
     m_callback.localBlockchainUpdated(*this, height);
   }
 
-  void lastKnownBlockHeightUpdated(uint64_t height) {
+  void lastKnownBlockHeightUpdated(uint32_t height) override {
     m_callback.lastKnownBlockHeightUpdated(*this, height);
   }
 };

@@ -32,7 +32,7 @@ namespace WalletGui {
 
 class Node {
 public:
-  virtual ~Node() = 0;
+  virtual ~Node() = default;
   virtual void init(const std::function<void(std::error_code)>& callback) = 0;
   virtual void deinit() = 0;
   
@@ -48,6 +48,7 @@ public:
 
 class INodeCallback {
 public:
+  virtual ~INodeCallback() = default;
   virtual void peerCountUpdated(Node& node, size_t count) = 0;
   virtual void localBlockchainUpdated(Node& node, uint64_t height) = 0;
   virtual void lastKnownBlockHeightUpdated(Node& node, uint64_t height) = 0;
