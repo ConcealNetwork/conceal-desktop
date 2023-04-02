@@ -59,7 +59,7 @@ private:
   void downloadFinished(QNetworkReply *reply);
 
   NodeAdapter();
-  ~NodeAdapter();
+  ~NodeAdapter() override = default;
 
   bool initInProcessNode();
   cn::CoreConfig makeCoreConfig() const;

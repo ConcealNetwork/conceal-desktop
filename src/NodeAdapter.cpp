@@ -59,9 +59,7 @@ public:
   {
   }
 
-  ~InProcessNodeInitializer()
-  {
-  }
+  ~InProcessNodeInitializer() override = default;
 
   void start(Node **_node, const cn::Currency *currency, INodeCallback *_callback, logging::LoggerManager *_loggerManager,
              const cn::CoreConfig &_coreConfig, const cn::NetNodeConfig &_netNodeConfig)
@@ -81,7 +79,7 @@ public:
         QCoreApplication::processEvents();
       });
     }
-    catch (std::exception)
+    catch (std::exception&)
     {
       Q_EMIT nodeInitFailedSignal(cn::error::INTERNAL_WALLET_ERROR);
       QCoreApplication::processEvents();
@@ -93,7 +91,7 @@ public:
     Q_EMIT nodeDeinitCompletedSignal();
   }
 
-  void stop(Node **_node)
+  void stop(Node **_node) const
   {
     Q_CHECK_PTR(_node);
     (*_node)->deinit();
@@ -106,7 +104,7 @@ NodeAdapter &NodeAdapter::instance()
   return inst;
 }
 
-NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread(), m_nodeInitializer(new InProcessNodeInitializer)
+NodeAdapter::NodeAdapter() : QObject(), m_nodeInitializer(new InProcessNodeInitializer)
 {
   m_nodeInitializer->moveToThread(&m_nodeInitializerThread);
 
@@ -116,10 +114,6 @@ NodeAdapter::NodeAdapter() : QObject(), m_node(nullptr), m_nodeInitializerThread
   connect(m_nodeInitializer, &InProcessNodeInitializer::nodeInitCompletedSignal, this, &NodeAdapter::nodeInitCompletedSignal, Qt::QueuedConnection);
   connect(this, &NodeAdapter::initNodeSignal, m_nodeInitializer, &InProcessNodeInitializer::start, Qt::QueuedConnection);
   connect(this, &NodeAdapter::deinitNodeSignal, m_nodeInitializer, &InProcessNodeInitializer::stop, Qt::QueuedConnection);
-}
-
-NodeAdapter::~NodeAdapter()
-{
 }
 
 quintptr NodeAdapter::getPeerCount() const
@@ -149,7 +143,6 @@ std::unique_ptr<cn::IWalletLegacy> NodeAdapter::createWallet() const
 bool NodeAdapter::init()
 {
   Q_ASSERT(m_node == nullptr);
-  bool isAutoRemote = false;
 
   /* First get the connection type */
   QString connection = Settings::instance().getConnection();
@@ -158,7 +151,6 @@ bool NodeAdapter::init()
      from the node pool on the explorer. */
   if (connection.compare("autoremote") == 0)
   {
-    isAutoRemote = true;
     /* Pull a random node from the node pool list */
     auto *nam = new QNetworkAccessManager(this);
     connect(nam, &QNetworkAccessManager::finished, this, &NodeAdapter::downloadFinished);
@@ -364,8 +356,8 @@ cn::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
   cn::NetNodeConfig config;
   boost::program_options::variables_map options;
   boost::any p2pBindIp = Settings::instance().getP2pBindIp().toStdString();
-  boost::any p2pBindPort = static_cast<uint16_t>(Settings::instance().getP2pBindPort());
-  boost::any p2pExternalPort = static_cast<uint16_t>(Settings::instance().getP2pExternalPort());
+  boost::any p2pBindPort = Settings::instance().getP2pBindPort();
+  boost::any p2pExternalPort = Settings::instance().getP2pExternalPort();
   boost::any p2pAllowLocalIp = Settings::instance().hasAllowLocalIpOption();
   boost::any dataDir = Settings::instance().getDataDir().absolutePath().toStdString();
   boost::any hideMyPort = Settings::instance().hasHideMyPortOption();
@@ -401,7 +393,6 @@ cn::NetNodeConfig NodeAdapter::makeNetNodeConfig() const
 
   options.insert(std::make_pair("hide-my-port", boost::program_options::variable_value(hideMyPort, false)));
   options.insert(std::make_pair("data-dir", boost::program_options::variable_value(dataDir, false)));
-  int size = (int)options.size();
   config.init(options);
   config.setTestnet(Settings::instance().isTestnet());
   return config;
