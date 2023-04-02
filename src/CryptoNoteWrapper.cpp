@@ -128,8 +128,9 @@ public:
     return m_node.getPeerCount();
   }
 
-  cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_logger, Settings::instance().isTestnet());
+  std::unique_ptr<cn::IWalletLegacy> createWallet() override {
+    return std::unique_ptr<cn::IWalletLegacy>(new cn::WalletLegacy(
+        m_currency, m_node, m_logger, Settings::instance().isTestnet()));
   }
 
 private:
@@ -231,8 +232,9 @@ public:
     return m_node.getPeerCount();
   }
 
-  cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_loggerManager, Settings::instance().isTestnet());
+  std::unique_ptr<cn::IWalletLegacy> createWallet() override {
+    return std::unique_ptr<cn::IWalletLegacy>(new cn::WalletLegacy(
+        m_currency, m_node, m_loggerManager, Settings::instance().isTestnet()));
   }
 
 private:

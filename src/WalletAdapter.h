@@ -92,7 +92,7 @@ public:
   
 private:
   std::fstream m_file;
-  cn::IWalletLegacy* m_wallet;
+  std::unique_ptr<cn::IWalletLegacy> m_wallet;
   QMutex m_mutex;
   std::atomic<bool> m_isBackupInProgress;
   std::atomic<bool> m_isSynchronized;

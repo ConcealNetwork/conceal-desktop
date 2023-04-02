@@ -140,7 +140,7 @@ QString NodeAdapter::extractPaymentId(const std::string &_extra) const
   return QString::fromStdString(m_node->extractPaymentId(_extra));
 }
 
-cn::IWalletLegacy *NodeAdapter::createWallet() const
+std::unique_ptr<cn::IWalletLegacy> NodeAdapter::createWallet() const
 {
   Q_CHECK_PTR(m_node);
   return m_node->createWallet();

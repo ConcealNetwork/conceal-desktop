@@ -43,7 +43,7 @@ public:
   virtual uint64_t getLastLocalBlockTimestamp() const = 0;
   virtual uint64_t getPeerCount() const = 0;
 
-  virtual cn::IWalletLegacy* createWallet() = 0;
+  virtual std::unique_ptr<cn::IWalletLegacy> createWallet() = 0;
 };
 
 class INodeCallback {

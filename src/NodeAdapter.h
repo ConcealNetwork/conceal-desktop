@@ -41,7 +41,7 @@ public:
   quintptr getPeerCount() const;
   std::string convertPaymentId(const QString& _payment_id_string) const;
   QString extractPaymentId(const std::string& _extra) const;
-  cn::IWalletLegacy* createWallet() const;
+  std::unique_ptr<cn::IWalletLegacy> createWallet() const;
 
   bool init();
   void deinit();
