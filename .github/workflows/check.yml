@@ -95,9 +95,8 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
-          choco install openssl -y
-          cp "C:\Program Files\OpenSSL-Win64\libcrypto*.dll" "Final/"
-          cp "C:\Program Files\OpenSSL-Win64\libssl*.dll" "Final/"
+          cp "C:\Program Files\OpenSSL\libcrypto*.dll" "Final/"
+          cp "C:\Program Files\OpenSSL\libssl*.dll" "Final/"
           windeployqt --release conceal-desktop.exe --dir "Final/" --no-translations --no-opengl-sw
 
           mv Final ../../installer/windows/build
