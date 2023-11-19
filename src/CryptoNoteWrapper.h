@@ -17,7 +17,7 @@
 namespace cn {
 
 class INode;
-class IWalletLegacy;
+class IWallet;
 class Currency;
 class CoreConfig;
 class NetNodeConfig;
@@ -43,7 +43,7 @@ public:
   virtual uint64_t getLastLocalBlockTimestamp() const = 0;
   virtual uint64_t getPeerCount() const = 0;
 
-  virtual std::unique_ptr<cn::IWalletLegacy> createWallet() = 0;
+  virtual std::unique_ptr<cn::IWallet> createWallet() = 0;
 };
 
 class INodeCallback {

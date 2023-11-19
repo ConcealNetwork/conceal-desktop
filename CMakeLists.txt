@@ -78,6 +78,7 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Common/MemoryInputStream.cpp
   cryptonote/src/Common/PathTools.cpp
   cryptonote/src/Common/DnsTools.cpp
+  cryptonote/src/Common/ScopeExit.cpp
   cryptonote/src/Common/StdInputStream.cpp
   cryptonote/src/Common/StdOutputStream.cpp
   cryptonote/src/Common/StreamTools.cpp
@@ -150,12 +151,13 @@ set(CRYPTONOTE_SOURCES
   cryptonote/src/Wallet/LegacyKeysImporter.cpp
   cryptonote/src/Wallet/WalletAsyncContextCounter.cpp
   cryptonote/src/Wallet/WalletErrors.cpp
+  cryptonote/src/Wallet/WalletGreen.cpp
+  cryptonote/src/Wallet/WalletSerializationV1.cpp
+  cryptonote/src/Wallet/WalletSerializationV2.cpp
+  cryptonote/src/Wallet/WalletUtils.cpp
   cryptonote/src/WalletLegacy/KeysStorage.cpp
-  cryptonote/src/WalletLegacy/WalletLegacy.cpp
-  cryptonote/src/WalletLegacy/WalletHelper.cpp
   cryptonote/src/WalletLegacy/WalletLegacySerializer.cpp
   cryptonote/src/WalletLegacy/WalletLegacySerialization.cpp
-  cryptonote/src/WalletLegacy/WalletTransactionSender.cpp
   cryptonote/src/WalletLegacy/WalletUnconfirmedTransactions.cpp
   cryptonote/src/WalletLegacy/WalletUserTransactionsCache.cpp
   cryptonote/src/System/ContextGroup.cpp

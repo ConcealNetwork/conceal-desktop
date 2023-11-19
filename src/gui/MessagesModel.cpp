@@ -41,12 +41,6 @@ MessagesModel::MessagesModel() : QAbstractItemModel() {
   connect(&WalletAdapter::instance(), &WalletAdapter::walletTransactionUpdatedSignal, this, &MessagesModel::updateWalletTransaction, Qt::QueuedConnection);
   connect(&NodeAdapter::instance(), &NodeAdapter::lastKnownBlockHeightUpdatedSignal, this, &MessagesModel::lastKnownHeightUpdated, Qt::QueuedConnection);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &MessagesModel::reset, Qt::QueuedConnection);
-
-  quint64 dayPoolAmount = 0;
-  quint64 totalPoolAmount = 0;
-}
-
-MessagesModel::~MessagesModel() {
 }
 
 Qt::ItemFlags MessagesModel::flags(const QModelIndex& _index) const {
@@ -109,7 +103,7 @@ QVariant MessagesModel::data(const QModelIndex& _index, int _role) const
     return QVariant();
   }
 
-  cn::WalletLegacyTransaction transaction;
+  cn::WalletTransaction transaction;
   cn::TransactionId transactionId = m_messages.value(_index.row()).first;
   Message message = m_messages.value(_index.row()).second;
 
@@ -158,7 +152,7 @@ QVariant MessagesModel::getDisplayRole(const QModelIndex& _index) const {
   }
 
   case COLUMN_TYPE: {
-    MessageType messageType = static_cast<MessageType>(_index.data(ROLE_TYPE).value<quint8>());
+    auto messageType = static_cast<MessageType>(_index.data(ROLE_TYPE).value<quint8>());
     if (messageType == MessageType::OUTPUT) {
       return tr("Out");
     } else if(messageType == MessageType::INPUT) {
@@ -170,7 +164,7 @@ QVariant MessagesModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_HEIGHT: {
     quint64 height = _index.data(ROLE_HEIGHT).value<quint64>();
-    return (height == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT ? "-" : QString::number(height));
+    return (height == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT ? "-" : QString::number(height));
   }
 
   case COLUMN_MESSAGE: {
@@ -208,7 +202,7 @@ QVariant MessagesModel::getDisplayRole(const QModelIndex& _index) const {
   return QVariant();
 }
 
-QVariant MessagesModel::getDecorationRole(const QModelIndex& _index) const {
+QVariant MessagesModel::getDecorationRole(const QModelIndex&) const {
   return QVariant();
 }
 
@@ -216,8 +210,8 @@ QVariant MessagesModel::getAlignmentRole(const QModelIndex& _index) const {
   return headerData(_index.column(), Qt::Horizontal, Qt::TextAlignmentRole);
 }
 
-QVariant MessagesModel::getUserRole(const QModelIndex& _index, int _role, cn::TransactionId _transactionId,
-  cn::WalletLegacyTransaction& _transaction, const Message& _message) const {
+QVariant MessagesModel::getUserRole(const QModelIndex& _index, int _role, cn::TransactionId,
+  cn::WalletTransaction& _transaction, const Message& _message) const {
   switch(_role) {
   case ROLE_DATE:
     return (_transaction.timestamp > 0 ? QDateTime::fromTime_t(_transaction.timestamp) : QDateTime());
@@ -275,51 +269,24 @@ void MessagesModel::reloadWalletTransactions() {
   }
 }
 
-void MessagesModel::appendTransaction(cn::TransactionId _transactionId, quint32& _insertedRowCount) 
-{
-
-  cn::WalletLegacyTransaction transaction;
-  if (!WalletAdapter::instance().getTransaction(_transactionId, transaction)) 
-  {
-
+void MessagesModel::appendTransaction(cn::TransactionId _transactionId,
+                                      quint32& _insertedRowCount) {
+  cn::WalletTransaction transaction;
+  if (!WalletAdapter::instance().getTransaction(_transactionId, transaction)) {
     return;
   }
 
-  m_transactionRow.insert(_transactionId, qMakePair(std::numeric_limits<quint32>::max(), std::numeric_limits<quint32>::max()));
-  if (transaction.messages.empty()) 
-  {
-
-    return;
-  }
-
-  /* ignore any transaction with the message P01 (for pool earnings), and I01 (for interest earnings) */
-  if ((transaction.messages[0] == "P01") || (transaction.messages[0] == "I01"))
-  {
-
-    /* if its an incoming transfer, add amount to the total */
-    if (transaction.totalAmount > 0)
-    {
-
-        totalPoolAmount = totalPoolAmount + transaction.totalAmount;
-
-        if (transaction.blockHeight > (NodeAdapter::instance().getLastKnownBlockHeight() - 720)) 
-        {
-
-          dayPoolAmount = dayPoolAmount + transaction.totalAmount;
-        }      
-    }
-
-    Q_EMIT poolEarningsSignal(dayPoolAmount, totalPoolAmount);
+  m_transactionRow.insert(_transactionId, qMakePair(std::numeric_limits<quint32>::max(),
+                                                    std::numeric_limits<quint32>::max()));
+  if (transaction.messages.empty()) {
     return;
   }
 
   m_transactionRow[_transactionId] = qMakePair(m_messages.size(), transaction.messages.size());
 
-  for (quint32 i = 0; i < transaction.messages.size(); ++i) 
-  {
-    
-    Message message(QString::fromStdString(transaction.messages[i]));
-    m_messages.append(TransactionMessageId(_transactionId, std::move(message)));
+  for (const auto& txMessage : transaction.messages) {
+    Message message(QString::fromStdString(txMessage));
+    m_messages.append(TransactionMessageId(_transactionId, message));
     ++_insertedRowCount;
   }
 }
@@ -343,7 +310,6 @@ void MessagesModel::appendTransaction(cn::TransactionId _transactionId)
 
   if (insertedRowCount > 0) 
   {
-
     beginInsertRows(QModelIndex(), oldRowCount, oldRowCount + insertedRowCount - 1);
     endInsertRows();
   }
@@ -351,13 +317,12 @@ void MessagesModel::appendTransaction(cn::TransactionId _transactionId)
 
 void MessagesModel::updateWalletTransaction(cn::TransactionId _id) 
 {
-
   quint32 firstRow = m_transactionRow.value(_id).first;
   quint32 lastRow = firstRow + m_transactionRow.value(_id).second - 1;
   Q_EMIT dataChanged(index(firstRow, COLUMN_DATE), index(lastRow, COLUMN_HEIGHT));
 }
 
-void MessagesModel::lastKnownHeightUpdated(quint64 _height) 
+void MessagesModel::lastKnownHeightUpdated(quint64) 
 {
 
   if(rowCount() > 0) {
@@ -365,22 +330,10 @@ void MessagesModel::lastKnownHeightUpdated(quint64 _height)
   }
 }
 
-void MessagesModel::reset() 
-{
-
-  /* reset pool transaction totals */
-  dayPoolAmount = 0;
-  totalPoolAmount = 0;
-
-  Q_EMIT poolEarningsSignal(dayPoolAmount, totalPoolAmount);  
-
-  /* reset everything else */
+void MessagesModel::reset() {
   beginResetModel();
   m_messages.clear();
   m_transactionRow.clear();
   endResetModel();
-
-
 }
-
 }

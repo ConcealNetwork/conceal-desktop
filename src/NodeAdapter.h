@@ -13,7 +13,7 @@
 #include <QThread>
 #include <QNetworkAccessManager>
 #include <INode.h>
-#include <IWalletLegacy.h>
+#include <IWallet.h>
 
 #include "CryptoNoteWrapper.h"
 
@@ -41,7 +41,7 @@ public:
   quintptr getPeerCount() const;
   std::string convertPaymentId(const QString& _payment_id_string) const;
   QString extractPaymentId(const std::string& _extra) const;
-  std::unique_ptr<cn::IWalletLegacy> createWallet() const;
+  std::unique_ptr<cn::IWallet> createWallet() const;
 
   bool init();
   void deinit();

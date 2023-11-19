@@ -49,7 +49,6 @@
 #include "VisibleMessagesModel.h"
 #include "WalletAdapter.h"
 #include "WalletEvents.h"
-#include "WalletLegacy/WalletHelper.h"
 #include "LoggerAdapter.h"
 
 #include <QAction>
@@ -1168,9 +1167,9 @@ namespace WalletGui
     }
 
     /* Prepare the transfers */
-    QVector<cn::WalletLegacyTransfer> walletTransfers;
-    cn::WalletLegacyTransfer walletTransfer;
-    QVector<cn::TransactionMessage> walletMessages;
+    QVector<cn::WalletOrder> walletTransfers;
+    cn::WalletOrder walletTransfer;
+    QVector<cn::WalletMessage> walletMessages;
     bool isIntegrated = false;
     std::string paymentID;
     std::string spendPublicKey;
@@ -1288,7 +1287,7 @@ namespace WalletGui
     QString comment = m_ui->m_messageEdit->text();
     if (!comment.isEmpty())
     {
-      walletMessages.append(cn::TransactionMessage{comment.toStdString(), address.toStdString()});
+      walletMessages.append(cn::WalletMessage{ address.toStdString(), comment.toStdString() });
     }
 
     quint64 actualFee = BASE_FEE;
@@ -1301,7 +1300,7 @@ namespace WalletGui
       logger.log("Using remote node");
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        cn::WalletLegacyTransfer walletTransfer;
+        cn::WalletOrder walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
@@ -1459,11 +1458,11 @@ namespace WalletGui
       return;
     }
 
-    QVector<cn::WalletLegacyTransfer> transfers;
-    QVector<cn::WalletLegacyTransfer> feeTransfer;
-    cn::WalletLegacyTransfer walletTransfer;
-    QVector<cn::TransactionMessage> messages;
-    QVector<cn::TransactionMessage> feeMessage;
+    QVector<cn::WalletOrder> transfers;
+    QVector<cn::WalletOrder> feeTransfer;
+    cn::WalletOrder walletTransfer;
+    QVector<cn::WalletMessage> messages;
+    QVector<cn::WalletMessage> feeMessage;
     QString address = m_ui->m_addressMessageEdit->text().toUtf8();
     QString messageString = m_ui->m_messageTextEdit->toPlainText();
 
@@ -1501,7 +1500,7 @@ namespace WalletGui
     uint64_t amount = 100;
     walletTransfer.amount = amount;
     transfers.push_back(walletTransfer);
-    messages.append({messageString.toStdString(), address.toStdString()});
+    messages.append({ address.toStdString(), messageString.toStdString() });
 
     /* Set fee */
     quint64 fee = BASE_FEE;
@@ -1523,7 +1522,7 @@ namespace WalletGui
       QString connection = Settings::instance().getConnection();
       if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
       {
-        cn::WalletLegacyTransfer walletTransfer;
+        cn::WalletOrder walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         transfers.push_back(walletTransfer);
@@ -1606,14 +1605,14 @@ namespace WalletGui
     WalletAdapter::instance().deposit(term, amount, BASE_FEE);
 
     /* Remote node fee */
-    QVector<cn::WalletLegacyTransfer> walletTransfers;
+    QVector<cn::WalletOrder> walletTransfers;
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
       if (!OverviewFrame::remote_node_fee_address.isEmpty())
       {
-        QVector<cn::TransactionMessage> walletMessages;
-        cn::WalletLegacyTransfer walletTransfer;
+        QVector<cn::WalletMessage> walletMessages;
+        cn::WalletOrder walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
@@ -1754,20 +1753,9 @@ namespace WalletGui
     if (Settings::instance().isTrackingMode())
     {
       Q_EMIT notifySignal(tr("This is a tracking wallet.\nThis action is not available."));
-    }
-    else
-    {
-      quint64 numUnlockedOutputs;
-      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+    } else {
       WalletAdapter::instance().optimizeWallet();
-      while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
-      {
-        numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-        if (numUnlockedOutputs == 0)
-          break;
-        WalletAdapter::instance().optimizeWallet();
-        delay();
-      }
+      delay();
       dashboardClicked();
     }
   }

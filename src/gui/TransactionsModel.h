@@ -10,18 +10,13 @@
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
 
-#include <IWalletLegacy.h>
+#include <IWallet.h>
+
+namespace cn {
+  using TransferId = size_t;
+}
 
 namespace WalletGui {
-
-  enum class TransactionState : quint8
-  {
-    ACTIVE,
-    DELETED,
-    SENDING,
-    CANCELLED,
-    FAILED
-  };
 
   typedef QPair<cn::TransactionId, cn::TransferId> TransactionTransferId;
 
@@ -72,6 +67,16 @@ namespace WalletGui {
       ROLE_STATE
     };
 
+    enum class TransactionType : quint8
+    {
+      MINED,
+      INPUT,
+      OUTPUT,
+      INOUT,
+      DEPOSIT,
+      DEPOSIT_UNLOCK
+    };
+
     static TransactionsModel &instance();
 
     Qt::ItemFlags flags(const QModelIndex &_index) const Q_DECL_OVERRIDE;
@@ -96,8 +101,8 @@ namespace WalletGui {
     QVariant getDecorationRole(const QModelIndex &_index) const;
     QVariant getAlignmentRole(const QModelIndex &_index) const;
     QVariant getUserRole(const QModelIndex &_index, int _role, cn::TransactionId _transactionId,
-                         const cn::WalletLegacyTransaction &_transaction, cn::TransferId _transferId,
-                         const cn::WalletLegacyTransfer &_transfer, cn::DepositId _depositId, const cn::Deposit &_deposit) const;
+                         const cn::WalletTransaction &_transaction, cn::TransferId _transferId,
+                         const cn::WalletTransfer &_transfer, cn::DepositId _depositId, const cn::Deposit &_deposit) const;
 
     void reloadWalletTransactions();
     void appendTransaction(cn::TransactionId _id, quint32 &_row_count);

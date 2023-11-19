@@ -7,6 +7,7 @@
 
 #include "ReceiveFrame.h"
 
+#include <boost/utility/value_init.hpp>
 #include <Common/StringTools.h>
 
 #include <QClipboard>

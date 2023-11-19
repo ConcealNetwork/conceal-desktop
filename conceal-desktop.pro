@@ -57,9 +57,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/include/ITransfersContainer.h \
            cryptonote/include/ITransfersSynchronizer.h \
            cryptonote/include/IWallet.h \
-           cryptonote/include/IWalletLegacy.h \
            cryptonote/src/CryptoNoteConfig.h \
-           cryptonote/tests/Io.h \
            libqrencode/tests/common.h \
            libqrencode/tests/datachunk.h \
            libqrencode/tests/decoder.h \
@@ -105,7 +103,6 @@ HEADERS += libqrencode/bitstream.h \
            src/gui/VisibleMessagesModel.h \
            src/gui/WalletEvents.h \
            src/gui/WelcomeFrame.h \
-           cryptonote/external/google/type_traits.h \
            cryptonote/external/miniupnpc/bsdqueue.h \
            cryptonote/external/miniupnpc/codelength.h \
            cryptonote/external/miniupnpc/connecthostport.h \
@@ -352,93 +349,8 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Wallet/WalletSerializationV1.h \
            cryptonote/src/Wallet/WalletSerializationV2.h \
            cryptonote/src/Wallet/WalletUtils.h \
-           cryptonote/src/WalletLegacy/KeysStorage.h \
-           cryptonote/src/WalletLegacy/WalletDepositInfo.h \
-           cryptonote/src/WalletLegacy/WalletHelper.h \
-           cryptonote/src/WalletLegacy/WalletLegacy.h \
-           cryptonote/src/WalletLegacy/WalletLegacyEvent.h \
            cryptonote/src/WalletLegacy/WalletLegacySerialization.h \
            cryptonote/src/WalletLegacy/WalletLegacySerializer.h \
-           cryptonote/src/WalletLegacy/WalletRequest.h \
-           cryptonote/src/WalletLegacy/WalletSendTransactionContext.h \
-           cryptonote/src/WalletLegacy/WalletTransactionSender.h \
-           cryptonote/src/WalletLegacy/WalletUnconfirmedTransactions.h \
-           cryptonote/src/WalletLegacy/WalletUserTransactionsCache.h \
-           cryptonote/src/WalletLegacy/WalletUtils.h \
-           cryptonote/tests/CoreTests/AccountBoostSerialization.h \
-           cryptonote/tests/CoreTests/BlockReward.h \
-           cryptonote/tests/CoreTests/BlockValidation.h \
-           cryptonote/tests/CoreTests/BoostSerializationHelper.h \
-           cryptonote/tests/CoreTests/Chaingen.h \
-           cryptonote/tests/CoreTests/Chaingen001.h \
-           cryptonote/tests/CoreTests/ChainSplit1.h \
-           cryptonote/tests/CoreTests/ChainSwitch1.h \
-           cryptonote/tests/CoreTests/CryptoNoteBoostSerialization.h \
-           cryptonote/tests/CoreTests/Deposit.h \
-           cryptonote/tests/CoreTests/DoubleSpend.h \
-           cryptonote/tests/CoreTests/IntegerOverflow.h \
-           cryptonote/tests/CoreTests/RandomOuts.h \
-           cryptonote/tests/CoreTests/RingSignature.h \
-           cryptonote/tests/CoreTests/TestGenerator.h \
-           cryptonote/tests/CoreTests/TransactionBuilder.h \
-           cryptonote/tests/CoreTests/TransactionTests.h \
-           cryptonote/tests/CoreTests/TransactionValidation.h \
-           cryptonote/tests/CoreTests/UnorderedContainersBoostSerialization.h \
-           cryptonote/tests/CoreTests/Upgrade.h \
-           cryptonote/tests/crypto/crypto-tests.h \
-           cryptonote/tests/IntegrationTestLib/BaseFunctionalTests.h \
-           cryptonote/tests/IntegrationTestLib/InProcTestNode.h \
-           cryptonote/tests/IntegrationTestLib/Logger.h \
-           cryptonote/tests/IntegrationTestLib/NetworkConfiguration.h \
-           cryptonote/tests/IntegrationTestLib/NodeCallback.h \
-           cryptonote/tests/IntegrationTestLib/NodeObserver.h \
-           cryptonote/tests/IntegrationTestLib/ObservableValue.h \
-           cryptonote/tests/IntegrationTestLib/Process.h \
-           cryptonote/tests/IntegrationTestLib/RPCTestNode.h \
-           cryptonote/tests/IntegrationTestLib/TestNetwork.h \
-           cryptonote/tests/IntegrationTestLib/TestNode.h \
-           cryptonote/tests/IntegrationTestLib/TestWalletLegacy.h \
-           cryptonote/tests/IntegrationTests/BaseTests.h \
-           cryptonote/tests/IntegrationTests/WalletLegacyObserver.h \
-           cryptonote/tests/PerformanceTests/CheckRingSignature.h \
-           cryptonote/tests/PerformanceTests/ConstructTransaction.h \
-           cryptonote/tests/PerformanceTests/CryptoNoteSlowHash.h \
-           cryptonote/tests/PerformanceTests/DerivePublicKey.h \
-           cryptonote/tests/PerformanceTests/DeriveSecretKey.h \
-           cryptonote/tests/PerformanceTests/GenerateKeyDerivation.h \
-           cryptonote/tests/PerformanceTests/GenerateKeyImage.h \
-           cryptonote/tests/PerformanceTests/GenerateKeyImageHelper.h \
-           cryptonote/tests/PerformanceTests/IsOutToAccount.h \
-           cryptonote/tests/PerformanceTests/MultiTransactionTestBase.h \
-           cryptonote/tests/PerformanceTests/PerformanceTests.h \
-           cryptonote/tests/PerformanceTests/PerformanceUtils.h \
-           cryptonote/tests/PerformanceTests/SingleTransactionTestBase.h \
-           cryptonote/tests/TestGenerator/TestGenerator.h \
-           cryptonote/tests/TransfersTests/Globals.h \
-           cryptonote/tests/UnitTests/EventWaiter.h \
-           cryptonote/tests/UnitTests/ICoreStub.h \
-           cryptonote/tests/UnitTests/ICryptoNoteProtocolQueryStub.h \
-           cryptonote/tests/UnitTests/INodeStubs.h \
-           cryptonote/tests/UnitTests/TestBlockchainGenerator.h \
-           cryptonote/tests/UnitTests/TransactionApiHelpers.h \
-           cryptonote/tests/UnitTests/TransfersObserver.h \
-           cryptonote/tests/UnitTests/UnitTestsUtils.h \
-           cryptonote/external/google/sparsehash/densehashtable.h \
-           cryptonote/external/google/sparsehash/hashtable-common.h \
-           cryptonote/external/google/sparsehash/libc_allocator_with_realloc.h \
-           cryptonote/external/google/sparsehash/os_config.h \
-           cryptonote/external/google/sparsehash/sparseconfig.h \
-           cryptonote/external/google/sparsehash/sparseconfig_win.h \
-           cryptonote/external/google/sparsehash/sparsehashtable.h \
-           cryptonote/external/gtest/samples/prime_tables.h \
-           cryptonote/external/gtest/samples/sample1.h \
-           cryptonote/external/gtest/samples/sample2.h \
-           cryptonote/external/gtest/samples/sample3-inl.h \
-           cryptonote/external/gtest/samples/sample4.h \
-           cryptonote/external/gtest/src/gtest-internal-inl.h \
-           cryptonote/external/gtest/test/gtest-param-test_test.h \
-           cryptonote/external/gtest/test/gtest-typed-test_test.h \
-           cryptonote/external/gtest/test/production.h \
            cryptonote/src/crypto/pow_hash/arm8_neon.hpp \
            cryptonote/src/crypto/pow_hash/arm_vfp.hpp \
            cryptonote/src/crypto/pow_hash/aux_hash.h \
@@ -447,16 +359,6 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Platform/mingw/alloca.h \
            cryptonote/src/Platform/msc/alloca.h \
            cryptonote/src/Platform/msc/stdbool.h \
-           cryptonote/external/gtest/include/gtest/gtest-death-test.h \
-           cryptonote/external/gtest/include/gtest/gtest-message.h \
-           cryptonote/external/gtest/include/gtest/gtest-param-test.h \
-           cryptonote/external/gtest/include/gtest/gtest-printers.h \
-           cryptonote/external/gtest/include/gtest/gtest-spi.h \
-           cryptonote/external/gtest/include/gtest/gtest-test-part.h \
-           cryptonote/external/gtest/include/gtest/gtest-typed-test.h \
-           cryptonote/external/gtest/include/gtest/gtest.h \
-           cryptonote/external/gtest/include/gtest/gtest_pred_impl.h \
-           cryptonote/external/gtest/include/gtest/gtest_prod.h \
            cryptonote/src/Platform/Linux/System/Dispatcher.h \
            cryptonote/src/Platform/Linux/System/ErrorMessage.h \
            cryptonote/src/Platform/Linux/System/Future.h \
@@ -485,22 +387,7 @@ HEADERS += libqrencode/bitstream.h \
            cryptonote/src/Platform/Windows/System/TcpConnection.h \
            cryptonote/src/Platform/Windows/System/TcpConnector.h \
            cryptonote/src/Platform/Windows/System/TcpListener.h \
-           cryptonote/src/Platform/Windows/System/Timer.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-death-test-internal.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-filepath.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-internal.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-linked_ptr.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-param-util-generated.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-param-util.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-port-arch.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-port.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-string.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-tuple.h \
-           cryptonote/external/gtest/include/gtest/internal/gtest-type-util.h \
-           cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.h \
-           cryptonote/external/gtest/include/gtest/internal/custom/gtest-port.h \
-           cryptonote/external/gtest/include/gtest/internal/custom/gtest-printers.h \
-           cryptonote/external/gtest/include/gtest/internal/custom/gtest.h
+           cryptonote/src/Platform/Windows/System/Timer.h
 FORMS += src/gui/ui/addressbookdialog.ui \
          src/gui/ui/changepassworddialog.ui \
          src/gui/ui/contactdialog.ui \
@@ -549,7 +436,6 @@ SOURCES += libqrencode/bitstream.c \
            src/TranslatorManager.cpp \
            src/UpdateManager.cpp \
            src/WalletAdapter.cpp \
-           cryptonote/tests/HashTarget.cpp \
            libqrencode/tests/common.c \
            libqrencode/tests/create_frame_pattern.c \
            libqrencode/tests/create_mqr_frame_pattern.c \
@@ -786,188 +672,8 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Wallet/WalletSerializationV1.cpp \
            cryptonote/src/Wallet/WalletSerializationV2.cpp \
            cryptonote/src/Wallet/WalletUtils.cpp \
-           cryptonote/src/WalletLegacy/KeysStorage.cpp \
-           cryptonote/src/WalletLegacy/WalletHelper.cpp \
-           cryptonote/src/WalletLegacy/WalletLegacy.cpp \
            cryptonote/src/WalletLegacy/WalletLegacySerialization.cpp \
            cryptonote/src/WalletLegacy/WalletLegacySerializer.cpp \
-           cryptonote/src/WalletLegacy/WalletTransactionSender.cpp \
-           cryptonote/src/WalletLegacy/WalletUnconfirmedTransactions.cpp \
-           cryptonote/src/WalletLegacy/WalletUserTransactionsCache.cpp \
-           cryptonote/tests/CoreTests/BlockReward.cpp \
-           cryptonote/tests/CoreTests/BlockValidation.cpp \
-           cryptonote/tests/CoreTests/Chaingen.cpp \
-           cryptonote/tests/CoreTests/Chaingen001.cpp \
-           cryptonote/tests/CoreTests/ChaingenMain.cpp \
-           cryptonote/tests/CoreTests/ChainSplit1.cpp \
-           cryptonote/tests/CoreTests/ChainSwitch1.cpp \
-           cryptonote/tests/CoreTests/Deposit.cpp \
-           cryptonote/tests/CoreTests/DoubleSpend.cpp \
-           cryptonote/tests/CoreTests/IntegerOverflow.cpp \
-           cryptonote/tests/CoreTests/RandomOuts.cpp \
-           cryptonote/tests/CoreTests/RingSignature.cpp \
-           cryptonote/tests/CoreTests/TransactionBuilder.cpp \
-           cryptonote/tests/CoreTests/TransactionTests.cpp \
-           cryptonote/tests/CoreTests/TransactionValidation.cpp \
-           cryptonote/tests/CoreTests/Upgrade.cpp \
-           cryptonote/tests/crypto/crypto-ops-data.c \
-           cryptonote/tests/crypto/crypto-ops.c \
-           cryptonote/tests/crypto/crypto.cpp \
-           cryptonote/tests/crypto/hash.c \
-           cryptonote/tests/crypto/main.cpp \
-           cryptonote/tests/crypto/random.c \
-           cryptonote/tests/Difficulty/Difficulty.cpp \
-           cryptonote/tests/Hash/main.cpp \
-           cryptonote/tests/IntegrationTestLib/BaseFunctionalTests.cpp \
-           cryptonote/tests/IntegrationTestLib/InProcTestNode.cpp \
-           cryptonote/tests/IntegrationTestLib/Logger.cpp \
-           cryptonote/tests/IntegrationTestLib/Process.cpp \
-           cryptonote/tests/IntegrationTestLib/RPCTestNode.cpp \
-           cryptonote/tests/IntegrationTestLib/TestNetwork.cpp \
-           cryptonote/tests/IntegrationTestLib/TestWalletLegacy.cpp \
-           cryptonote/tests/IntegrationTests/IntegrationTests.cpp \
-           cryptonote/tests/IntegrationTests/main.cpp \
-           cryptonote/tests/IntegrationTests/MultiVersion.cpp \
-           cryptonote/tests/IntegrationTests/Node.cpp \
-           cryptonote/tests/IntegrationTests/WalletLegacyTests.cpp \
-           cryptonote/tests/NodeRpcProxyTests/NodeRpcProxyTests.cpp \
-           cryptonote/tests/PerformanceTests/main.cpp \
-           cryptonote/tests/System/ContextGroupTests.cpp \
-           cryptonote/tests/System/ContextGroupTimeoutTests.cpp \
-           cryptonote/tests/System/ContextTests.cpp \
-           cryptonote/tests/System/DispatcherTests.cpp \
-           cryptonote/tests/System/ErrorMessageTests.cpp \
-           cryptonote/tests/System/EventLockTests.cpp \
-           cryptonote/tests/System/EventTests.cpp \
-           cryptonote/tests/System/Ipv4AddressTests.cpp \
-           cryptonote/tests/System/Ipv4ResolverTests.cpp \
-           cryptonote/tests/System/main.cpp \
-           cryptonote/tests/System/OperationTimeoutTests.cpp \
-           cryptonote/tests/System/RemoteContextTests.cpp \
-           cryptonote/tests/System/TcpConnectionTests.cpp \
-           cryptonote/tests/System/TcpConnectorTests.cpp \
-           cryptonote/tests/System/TcpListenerTests.cpp \
-           cryptonote/tests/System/TimerTests.cpp \
-           cryptonote/tests/TestGenerator/TestGenerator.cpp \
-           cryptonote/tests/TransfersTests/main.cpp \
-           cryptonote/tests/TransfersTests/TestNodeRpcProxy.cpp \
-           cryptonote/tests/TransfersTests/Tests.cpp \
-           cryptonote/tests/TransfersTests/TestTxPoolSync.cpp \
-           cryptonote/tests/UnitTests/ArrayRefTests.cpp \
-           cryptonote/tests/UnitTests/ArrayViewTests.cpp \
-           cryptonote/tests/UnitTests/Base58.cpp \
-           cryptonote/tests/UnitTests/BlockingQueue.cpp \
-           cryptonote/tests/UnitTests/BlockReward.cpp \
-           cryptonote/tests/UnitTests/Chacha8.cpp \
-           cryptonote/tests/UnitTests/Checkpoints.cpp \
-           cryptonote/tests/UnitTests/DecomposeAmountIntoDigits.cpp \
-           cryptonote/tests/UnitTests/EventWaiter.cpp \
-           cryptonote/tests/UnitTests/ICoreStub.cpp \
-           cryptonote/tests/UnitTests/ICryptoNoteProtocolQueryStub.cpp \
-           cryptonote/tests/UnitTests/INodeStubs.cpp \
-           cryptonote/tests/UnitTests/main.cpp \
-           cryptonote/tests/UnitTests/MulDiv.cpp \
-           cryptonote/tests/UnitTests/ParseAmount.cpp \
-           cryptonote/tests/UnitTests/PaymentGateTests.cpp \
-           cryptonote/tests/UnitTests/Serialization.cpp \
-           cryptonote/tests/UnitTests/SerializationKV.cpp \
-           cryptonote/tests/UnitTests/Shuffle.cpp \
-           cryptonote/tests/UnitTests/StringBufferTests.cpp \
-           cryptonote/tests/UnitTests/StringViewTests.cpp \
-           cryptonote/tests/UnitTests/TestBcS.cpp \
-           cryptonote/tests/UnitTests/TestBlockchainExplorer.cpp \
-           cryptonote/tests/UnitTests/TestBlockchainGenerator.cpp \
-           cryptonote/tests/UnitTests/TestCryptonoteBasic.cpp \
-           cryptonote/tests/UnitTests/TestCurrency.cpp \
-           cryptonote/tests/UnitTests/TestDepositIndex.cpp \
-           cryptonote/tests/UnitTests/TestFormatUtils.cpp \
-           cryptonote/tests/UnitTests/TestInprocessNode.cpp \
-           cryptonote/tests/UnitTests/TestJsonValue.cpp \
-           cryptonote/tests/UnitTests/TestMessageQueue.cpp \
-           cryptonote/tests/UnitTests/TestPath.cpp \
-           cryptonote/tests/UnitTests/TestPeerlist.cpp \
-           cryptonote/tests/UnitTests/TestProtocolPack.cpp \
-           cryptonote/tests/UnitTests/TestTransactionPoolDetach.cpp \
-           cryptonote/tests/UnitTests/TestTransfers.cpp \
-           cryptonote/tests/UnitTests/TestTransfersConsumer.cpp \
-           cryptonote/tests/UnitTests/TestTransfersContainer.cpp \
-           cryptonote/tests/UnitTests/TestTransfersContainerKeyImage.cpp \
-           cryptonote/tests/UnitTests/TestTransfersSubscription.cpp \
-           cryptonote/tests/UnitTests/TestUpgradeDetector.cpp \
-           cryptonote/tests/UnitTests/TestWallet.cpp \
-           cryptonote/tests/UnitTests/TestWalletLegacy.cpp \
-           cryptonote/tests/UnitTests/TestWalletService.cpp \
-           cryptonote/tests/UnitTests/TestWalletUserTransactionsCache.cpp \
-           cryptonote/tests/UnitTests/TransactionApi.cpp \
-           cryptonote/tests/UnitTests/TransactionApiHelpers.cpp \
-           cryptonote/tests/UnitTests/TransactionPool.cpp \
-           cryptonote/external/gtest/codegear/gtest_all.cc \
-           cryptonote/external/gtest/codegear/gtest_link.cc \
-           cryptonote/external/gtest/samples/sample1.cc \
-           cryptonote/external/gtest/samples/sample10_unittest.cc \
-           cryptonote/external/gtest/samples/sample1_unittest.cc \
-           cryptonote/external/gtest/samples/sample2.cc \
-           cryptonote/external/gtest/samples/sample2_unittest.cc \
-           cryptonote/external/gtest/samples/sample3_unittest.cc \
-           cryptonote/external/gtest/samples/sample4.cc \
-           cryptonote/external/gtest/samples/sample4_unittest.cc \
-           cryptonote/external/gtest/samples/sample5_unittest.cc \
-           cryptonote/external/gtest/samples/sample6_unittest.cc \
-           cryptonote/external/gtest/samples/sample7_unittest.cc \
-           cryptonote/external/gtest/samples/sample8_unittest.cc \
-           cryptonote/external/gtest/samples/sample9_unittest.cc \
-           cryptonote/external/gtest/src/gtest-all.cc \
-           cryptonote/external/gtest/src/gtest-death-test.cc \
-           cryptonote/external/gtest/src/gtest-filepath.cc \
-           cryptonote/external/gtest/src/gtest-port.cc \
-           cryptonote/external/gtest/src/gtest-printers.cc \
-           cryptonote/external/gtest/src/gtest-test-part.cc \
-           cryptonote/external/gtest/src/gtest-typed-test.cc \
-           cryptonote/external/gtest/src/gtest.cc \
-           cryptonote/external/gtest/src/gtest_main.cc \
-           cryptonote/external/gtest/test/gtest-death-test_ex_test.cc \
-           cryptonote/external/gtest/test/gtest-death-test_test.cc \
-           cryptonote/external/gtest/test/gtest-filepath_test.cc \
-           cryptonote/external/gtest/test/gtest-linked_ptr_test.cc \
-           cryptonote/external/gtest/test/gtest-listener_test.cc \
-           cryptonote/external/gtest/test/gtest-message_test.cc \
-           cryptonote/external/gtest/test/gtest-options_test.cc \
-           cryptonote/external/gtest/test/gtest-param-test2_test.cc \
-           cryptonote/external/gtest/test/gtest-param-test_test.cc \
-           cryptonote/external/gtest/test/gtest-port_test.cc \
-           cryptonote/external/gtest/test/gtest-printers_test.cc \
-           cryptonote/external/gtest/test/gtest-test-part_test.cc \
-           cryptonote/external/gtest/test/gtest-tuple_test.cc \
-           cryptonote/external/gtest/test/gtest-typed-test2_test.cc \
-           cryptonote/external/gtest/test/gtest-typed-test_test.cc \
-           cryptonote/external/gtest/test/gtest-unittest-api_test.cc \
-           cryptonote/external/gtest/test/gtest_all_test.cc \
-           cryptonote/external/gtest/test/gtest_break_on_failure_unittest_.cc \
-           cryptonote/external/gtest/test/gtest_catch_exceptions_test_.cc \
-           cryptonote/external/gtest/test/gtest_color_test_.cc \
-           cryptonote/external/gtest/test/gtest_env_var_test_.cc \
-           cryptonote/external/gtest/test/gtest_environment_test.cc \
-           cryptonote/external/gtest/test/gtest_filter_unittest_.cc \
-           cryptonote/external/gtest/test/gtest_help_test_.cc \
-           cryptonote/external/gtest/test/gtest_list_tests_unittest_.cc \
-           cryptonote/external/gtest/test/gtest_main_unittest.cc \
-           cryptonote/external/gtest/test/gtest_no_test_unittest.cc \
-           cryptonote/external/gtest/test/gtest_output_test_.cc \
-           cryptonote/external/gtest/test/gtest_pred_impl_unittest.cc \
-           cryptonote/external/gtest/test/gtest_premature_exit_test.cc \
-           cryptonote/external/gtest/test/gtest_prod_test.cc \
-           cryptonote/external/gtest/test/gtest_repeat_test.cc \
-           cryptonote/external/gtest/test/gtest_shuffle_test_.cc \
-           cryptonote/external/gtest/test/gtest_sole_header_test.cc \
-           cryptonote/external/gtest/test/gtest_stress_test.cc \
-           cryptonote/external/gtest/test/gtest_throw_on_failure_ex_test.cc \
-           cryptonote/external/gtest/test/gtest_throw_on_failure_test_.cc \
-           cryptonote/external/gtest/test/gtest_uninitialized_test_.cc \
-           cryptonote/external/gtest/test/gtest_unittest.cc \
-           cryptonote/external/gtest/test/gtest_xml_outfile1_test_.cc \
-           cryptonote/external/gtest/test/gtest_xml_outfile2_test_.cc \
-           cryptonote/external/gtest/test/gtest_xml_output_unittest_.cc \
-           cryptonote/external/gtest/test/production.cc \
            cryptonote/src/crypto/pow_hash/aux_hash.c \
            cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_arm.cpp \
            cryptonote/src/crypto/pow_hash/cn_slow_hash_hard_intel.cpp \
@@ -997,9 +703,7 @@ SOURCES += libqrencode/bitstream.c \
            cryptonote/src/Platform/Windows/System/TcpConnection.cpp \
            cryptonote/src/Platform/Windows/System/TcpConnector.cpp \
            cryptonote/src/Platform/Windows/System/TcpListener.cpp \
-           cryptonote/src/Platform/Windows/System/Timer.cpp \
-           cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget.cc \
-           cryptonote/external/gtest/xcode/Samples/FrameworkSample/widget_test.cc
+           cryptonote/src/Platform/Windows/System/Timer.cpp
 RESOURCES += src/resources.qrc
 TRANSLATIONS += src/languages/cn.ts \
                 src/languages/en.ts \

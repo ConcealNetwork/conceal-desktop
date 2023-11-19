@@ -48,7 +48,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   cn::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<cn::DepositId>();
 
   QString depositInfo;
-  if (depositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+  if (depositId != cn::WALLET_INVALID_DEPOSIT_ID) {
     QModelIndex depositIndex = DepositModel::instance().index(depositId, 0);
     QString depositAmount = depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_AMOUNT).data().toString() + " " +
       CurrencyAdapter::instance().getCurrencyTicker().toUpper();

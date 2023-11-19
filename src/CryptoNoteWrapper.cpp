@@ -11,17 +11,22 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/Currency.h"
+#include "CryptoNoteCore/TransactionExtra.h"
 #include "NodeRpcProxy/NodeRpcProxy.h"
 #include "CryptoNoteCore/CoreConfig.h"
 #include "P2p/NetNodeConfig.h"
 #include "CryptoNoteCore/Core.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "InProcessNode/InProcessNode.h"
+#include "InProcessNode/InProcessNodeErrors.h"
 #include "P2p/NetNode.h"
-#include "WalletLegacy/WalletLegacy.h"
+#include "Wallet/WalletGreen.h"
 #include "Logging/LoggerManager.h"
 #include "System/Dispatcher.h"
 #include "Settings.h"
+
+#include <QTimer>
+#include <QThread>
 
 namespace WalletGui {
 
@@ -83,15 +88,29 @@ std::string extractPaymentId(const std::string& extra) {
 
 }
 
+class BackgroundTask : public QThread {
+public:
+    explicit BackgroundTask(platform_system::Event& event): m_event(std::move(event)){}
+    void run() override {
+        m_event.wait();
+    }
+
+private:
+    platform_system::Event m_event;
+};
+
 class RpcNode : public cn::INodeObserver, public Node {
 public:
   RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback,
           const std::string& nodeHost, unsigned short nodePort)
       : m_callback(callback),
         m_currency(currency),
+        m_stopEvent(m_dispatcher),
         m_node(nodeHost, nodePort),
-        m_logger(logManager) {
+        m_logger(logManager),
+        backgroundTask(new BackgroundTask(m_stopEvent)) {
     m_node.addObserver(this);
+    backgroundTask->start();
   }
 
   ~RpcNode() override = default;
@@ -128,16 +147,19 @@ public:
     return m_node.getPeerCount();
   }
 
-  std::unique_ptr<cn::IWalletLegacy> createWallet() override {
-    return std::unique_ptr<cn::IWalletLegacy>(new cn::WalletLegacy(
-        m_currency, m_node, m_logger, Settings::instance().isTestnet()));
+  std::unique_ptr<cn::IWallet> createWallet() override {
+    return std::unique_ptr<cn::IWallet>(
+        new cn::WalletGreen(m_dispatcher, m_currency, m_node, m_logger));
   }
 
 private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
+  platform_system::Dispatcher m_dispatcher;
+  platform_system::Event m_stopEvent;
   cn::NodeRpcProxy m_node;
   logging::LoggerManager& m_logger;
+  BackgroundTask* backgroundTask;
 
   void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
@@ -157,7 +179,8 @@ public:
   InprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager, const cn::CoreConfig& coreConfig,
     const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
     m_callback(callback),
-    m_currency(currency), 
+    m_currency(currency),
+    m_stopEvent(m_dispatcher),
     m_loggerManager(logManager),
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
@@ -232,15 +255,16 @@ public:
     return m_node.getPeerCount();
   }
 
-  std::unique_ptr<cn::IWalletLegacy> createWallet() override {
-    return std::unique_ptr<cn::IWalletLegacy>(new cn::WalletLegacy(
-        m_currency, m_node, m_loggerManager, Settings::instance().isTestnet()));
+  std::unique_ptr<cn::IWallet> createWallet() override {
+    return std::unique_ptr<cn::IWallet>(
+        new cn::WalletGreen(m_dispatcher, m_currency, m_node, m_loggerManager));
   }
 
 private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
   platform_system::Dispatcher m_dispatcher;
+  platform_system::Event m_stopEvent;
   logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
