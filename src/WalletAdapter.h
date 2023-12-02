@@ -18,6 +18,7 @@
 #include <QTimer>
 #include <atomic>
 #include <fstream>
+#include <memory>
 
 namespace WalletGui {
 
