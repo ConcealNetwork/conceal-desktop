@@ -65,11 +65,16 @@ std::string extractPaymentId(const std::string& extra) {
   std::vector<uint8_t> extraVector;
   std::copy(extra.begin(), extra.end(), std::back_inserter(extraVector));
 
-  if (!cn::parseTransactionExtra(extraVector, extraFields)) {
-    throw std::runtime_error("Can't parse extra");
+  std::string result;
+
+  try {
+    if (!cn::parseTransactionExtra(extraVector, extraFields)) {
+      throw std::runtime_error("Can't parse extra");
+    }
+  } catch (...){
+    return result;
   }
 
-  std::string result;
   cn::TransactionExtraNonce extraNonce;
   if (cn::findTransactionExtraFieldByType(extraFields, extraNonce)) {
     crypto::Hash paymentIdHash;
