@@ -40,8 +40,9 @@ namespace WalletGui
       case TransactionsModel::TransactionType::INOUT:
         return QPixmap(":icons/tx-inout");
       case TransactionsModel::TransactionType::DEPOSIT:
-      case TransactionsModel::TransactionType::DEPOSIT_UNLOCK:
         return QPixmap(":icons/tx-deposit");
+      case TransactionsModel::TransactionType::DEPOSIT_UNLOCK:
+        return QPixmap(":icons/tx-withdraw");
       default:
         break;
       }
@@ -370,8 +371,6 @@ namespace WalletGui
         return QPixmap(":icons/clock5");
       default:
         QPixmap icon = _index.data(ROLE_ICON).value<QPixmap>();
-        QPainter painter(&icon);
-        painter.drawPixmap(0, 0, QPixmap(":icons/transaction"));
         return icon;
       }
     }
