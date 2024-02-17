@@ -93,16 +93,6 @@ std::string extractPaymentId(const std::string& extra) {
 
 }
 
-class BackgroundTask : public QThread {
-public:
-    explicit BackgroundTask(platform_system::Event& event): m_event(std::move(event)){}
-    void run() override {
-        m_event.wait();
-    }
-
-private:
-    platform_system::Event m_event;
-};
 
 class RpcNode : public cn::INodeObserver, public Node {
 public:
@@ -112,20 +102,21 @@ public:
         m_currency(currency),
         m_stopEvent(m_dispatcher),
         m_node(nodeHost, nodePort),
-        m_logger(logManager),
-        backgroundTask(new BackgroundTask(m_stopEvent)) {
+        m_logger(logManager) {
     m_node.addObserver(this);
-    backgroundTask->start();
   }
 
   ~RpcNode() override = default;
 
   void init(const std::function<void(std::error_code)>& callback) override {
     m_node.init(callback);
+    m_stopEvent.wait();
   }
 
   void deinit() override {
-    /* nothing to be done here */
+    m_dispatcher.remoteSpawn([this] {
+      m_stopEvent.set();
+    });
   }
 
   std::string convertPaymentId(const std::string& paymentIdString) override {
@@ -164,7 +155,6 @@ private:
   platform_system::Event m_stopEvent;
   cn::NodeRpcProxy m_node;
   logging::LoggerManager& m_logger;
-  BackgroundTask* backgroundTask;
 
   void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);

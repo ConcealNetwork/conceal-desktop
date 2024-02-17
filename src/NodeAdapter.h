@@ -30,6 +30,7 @@ namespace logging {
 namespace WalletGui {
 
 class InProcessNodeInitializer;
+class RpcNodeInitializer;
 
 class NodeAdapter : public QObject, public INodeCallback {
   Q_OBJECT
@@ -54,14 +55,17 @@ public:
 
 private:
   Node* m_node;
-  QThread m_nodeInitializerThread;
-  InProcessNodeInitializer* m_nodeInitializer;
+  QThread m_inProcessNodeInitializerThread;
+  QThread m_rpcNodeInitializerThread;
+  InProcessNodeInitializer* m_inProcessNodeInitializer;
+  RpcNodeInitializer* m_rpcNodeInitializer;
   void downloadFinished(QNetworkReply *reply);
 
   NodeAdapter();
   ~NodeAdapter() override = default;
 
   bool initInProcessNode();
+  bool initRpcNode();
   cn::CoreConfig makeCoreConfig() const;
   cn::NetNodeConfig makeNetNodeConfig() const;
 
@@ -70,9 +74,13 @@ Q_SIGNALS:
   void lastKnownBlockHeightUpdatedSignal(quint64 _height);
   void nodeInitCompletedSignal();
   void peerCountUpdatedSignal(quintptr _count);
-  void initNodeSignal(Node** _node, const cn::Currency* currency, INodeCallback* _callback, logging::LoggerManager* _loggerManager,
+  void initInProcessNodeSignal(Node** _node, const cn::Currency* currency, INodeCallback* _callback, logging::LoggerManager* _loggerManager,
     const cn::CoreConfig& _coreConfig, const cn::NetNodeConfig& _netNodeConfig);
-  void deinitNodeSignal(Node** _node);
+  void deinitInProcessNodeSignal(Node** _node);
+  void initRpcNodeSignal(Node** _node, const cn::Currency* currency, INodeCallback* _callback,
+                         logging::LoggerManager* _loggerManager, const std::string& _nodeHost,
+                         const unsigned short& _nodePort);
+  void deinitRpcNodeSignal(Node** _node);
 };
 
 }
