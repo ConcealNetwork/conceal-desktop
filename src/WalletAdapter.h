@@ -118,8 +118,6 @@ private:
 
   bool importLegacyWallet(const QString &_password);
   bool save(const QString& _file, bool _details, bool _cache);
-  void lock();
-  void unlock();
   void notifyAboutLastTransaction();
 
   static void renameFile(const QString& _old_name, const QString& _new_name);

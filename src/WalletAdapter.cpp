@@ -218,8 +218,8 @@ bool WalletAdapter::importLegacyWallet(const QString &_password) {
 }
 
 void WalletAdapter::close() {
+  QMutexLocker locker(&m_mutex);
   save(true, true);
-  lock();
   m_wallet->removeObserver(this);
   m_isSynchronized = false;
   m_newTransactionsNotificationTimer.stop();
@@ -227,7 +227,6 @@ void WalletAdapter::close() {
   Q_EMIT walletCloseCompletedSignal();
   QCoreApplication::processEvents();
   m_wallet.reset();
-  unlock();
 }
 
 bool WalletAdapter::save(bool _details, bool _cache) {
@@ -251,9 +250,8 @@ void WalletAdapter::backup(const QString& _file) {
 }
 
 void WalletAdapter::reset() {
-  lock();
+  QMutexLocker locker(&m_mutex);
   m_wallet->reset(0);
-  unlock();
 }
 
 quint64 WalletAdapter::getTransactionCount() const 
@@ -377,11 +375,9 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
                                     const QVector<cn::WalletMessage>& _messages,
                                     quint64 _mixin)
 {
+  QMutexLocker locker(&m_mutex);
   try
   {
-    LoggerAdapter::instance().log("lock");
-    lock();
-    LoggerAdapter::instance().log("locked");
     crypto::SecretKey _transactionsk;
     std::vector<cn::WalletOrder> transfers = _transfers.toStdVector();
     LoggerAdapter::instance().log("Sending transaction to WalletGreen");
@@ -401,8 +397,6 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
   }
   catch (std::system_error&)
   {
-    unlock();
-    LoggerAdapter::instance().log("unlocked");
   }
 }
 
@@ -415,12 +409,11 @@ quint64 WalletAdapter::getTransferCount(cn::TransactionId id) const {
 }
 
 void WalletAdapter::optimizeWallet() {
+  QMutexLocker locker(&m_mutex);
   try {
-    lock();
     m_sentTransactionId = m_wallet->createOptimizationTransaction(m_wallet->getAddress(0));
     Q_EMIT walletStateChangedSignal(tr("Optimizing wallet"), "");
   } catch (std::system_error&) {
-    unlock();
   }
 }
 
@@ -430,10 +423,10 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
                                 quint64 _ttl,
                                 quint64 _mixin)
 {
+  QMutexLocker locker(&m_mutex);
   crypto::SecretKey _transactionsk;
   try
   {
-    lock();
     std::vector<cn::WalletOrder> transfers = _transfers.toStdVector();
     cn::TransactionParameters sendParams;
     sendParams.destinations = transfers;
@@ -445,15 +438,14 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
   }
   catch (std::system_error&)
   {
-    unlock();
   }
 }
 
 void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
 {
+  QMutexLocker locker(&m_mutex);
   try
   {
-    lock();
     std::string address = m_wallet->getAddress(0);
     std::string tx_hash;
     m_wallet->createDeposit(_amount, _term, address, address, tx_hash);
@@ -461,18 +453,16 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
   }
   catch (std::system_error&)
   {
-    unlock();
   }
 }
 
 void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds, quint64 _fee) {
+  QMutexLocker locker(&m_mutex);
   try {
-    lock();
     std::string tx_hash;
     m_wallet->withdrawDeposit(_depositIds.toStdVector()[0], tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
   } catch (std::system_error&) {
-    unlock();
   }
 }
 
@@ -591,7 +581,6 @@ void WalletAdapter::externalTransactionCreated(cn::TransactionId _transactionId)
 void WalletAdapter::sendTransactionCompleted(cn::TransactionId _transactionId, std::error_code _error) {
   Q_ASSERT(_transactionId == m_sentTransactionId || _transactionId == m_sentMessageId ||
     _transactionId == m_depositId || _transactionId == m_depositWithdrawalId);
-  unlock();
   Q_EMIT walletSendTransactionCompletedSignal(_transactionId, _error.value(), QString::fromStdString(_error.message()));
   if (_transactionId == m_sentTransactionId) {
     m_sentTransactionId = cn::WALLET_INVALID_TRANSACTION_ID;
@@ -630,14 +619,6 @@ void WalletAdapter::depositUpdated(cn::DepositId depositId) {
 
 void WalletAdapter::depositsUpdated(const std::vector<cn::DepositId>& _depositIds) {
   Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>::fromStdVector(_depositIds));
-}
-
-void WalletAdapter::lock() {
-  m_mutex.lock();
-}
-
-void WalletAdapter::unlock() {
-  m_mutex.unlock();
 }
 
 void WalletAdapter::notifyAboutLastTransaction() {
