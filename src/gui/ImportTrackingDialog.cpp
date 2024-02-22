@@ -142,6 +142,7 @@ namespace WalletGui
     Settings::instance().setTrackingMode(true);
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
+    WalletAdapter::instance().open("");
     accept();
   }
 

@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include <IWalletLegacy.h>
+#include <IWallet.h>
 
 #ifdef HAVE_CHART
 #include <QtCharts>

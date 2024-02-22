@@ -9,9 +9,13 @@
 
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
-#include <IWalletLegacy.h>
+#include <IWallet.h>
 
 #include "Message.h"
+
+namespace cn {
+  using TransactionId = size_t;
+}
 
 namespace WalletGui {
 
@@ -35,8 +39,6 @@ public:
 
   static const QString HEADER_REPLY_TO_KEY;
   static MessagesModel& instance();
-  quint64 dayPoolAmount;
-  quint64 totalPoolAmount;
 
   Qt::ItemFlags flags(const QModelIndex& _index) const Q_DECL_OVERRIDE;
   int columnCount(const QModelIndex& _parent = QModelIndex()) const Q_DECL_OVERRIDE;
@@ -52,12 +54,12 @@ private:
   QHash<cn::TransactionId, QPair<quint32, quint32> > m_transactionRow;
 
   MessagesModel();
-  ~MessagesModel();
+  ~MessagesModel() override = default;
 
   QVariant getDisplayRole(const QModelIndex& _index) const;
   QVariant getDecorationRole(const QModelIndex& _index) const;
   QVariant getAlignmentRole(const QModelIndex& _index) const;
-  QVariant getUserRole(const QModelIndex& _index, int _role, cn::TransactionId _transactionId, cn::WalletLegacyTransaction& _transaction,
+  QVariant getUserRole(const QModelIndex& _index, int _role, cn::TransactionId _transactionId, cn::WalletTransaction& _transaction,
     const Message& _message) const;
 
   void reloadWalletTransactions();
@@ -67,10 +69,6 @@ private:
   void updateWalletTransaction(cn::TransactionId _id);
   void lastKnownHeightUpdated(quint64 _height);
   void reset();
-
-Q_SIGNALS:
-  void poolEarningsSignal(quint64 _dayPoolAmount, quint64 _totalPoolAmount);
-
 };
 
 }

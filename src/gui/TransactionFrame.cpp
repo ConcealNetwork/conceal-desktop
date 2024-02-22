@@ -56,23 +56,27 @@ namespace WalletGui
 
         case TransactionsModel::COLUMN_TYPE:
         {
-          QString txtype = _index.data(TransactionsModel::ROLE_TYPE).toString();
-          QString txtext = tr("Incoming TX");
-          if (txtype == "0")
-          {
-            txtext = tr("New Block");
-          }
-          else if (txtype == "2")
-          {
-            txtext = tr("Outgoing TX");
-          }
-          else if (txtype == "3")
-          {
-            txtext = tr("Optimization");
-          }
-          else if (txtype == "4")
-          {
-            txtext = tr("New Deposit");
+          auto txType = static_cast<TransactionsModel::TransactionType>(_index.data(TransactionsModel::ROLE_TYPE).value<quint8>());
+          QString txtext;
+          switch (txType) {
+            case TransactionsModel::TransactionType::MINED:
+              txtext = tr("New Block");
+              break;
+            case TransactionsModel::TransactionType::OUTPUT:
+              txtext = tr("Outgoing TX");
+              break;
+            case TransactionsModel::TransactionType::INOUT:
+              txtext = tr("Optimization");
+              break;
+            case TransactionsModel::TransactionType::DEPOSIT:
+              txtext = tr("New Deposit");
+              break;
+            case TransactionsModel::TransactionType::DEPOSIT_UNLOCK:
+              txtext = tr("Deposit Unlock");
+              break;
+            default:
+              txtext = tr("Incoming TX");
+              break;
           }
           static_cast<QLabel *>(_editor)->setText(txtext);
           return;

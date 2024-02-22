@@ -119,6 +119,7 @@ namespace WalletGui
 
     WalletAdapter::instance().setWalletFile(filePath);
     WalletAdapter::instance().createWithKeys(keys);
+    WalletAdapter::instance().open("");
     accept();
   }
 

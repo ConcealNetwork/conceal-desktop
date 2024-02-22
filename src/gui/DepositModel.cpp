@@ -192,7 +192,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     return _index.data(ROLE_DEPOSIT_TERM);
   case COLUMN_UNLOCK_HEIGHT: {
     quint64 unlockHeight = _index.data(ROLE_UNLOCK_HEIGHT).value<quint64>();
-    if (unlockHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+    if (unlockHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT) {
       return "-";
     }
 
@@ -216,7 +216,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
     DepositState depositState = static_cast<DepositState>(_index.data(ROLE_STATE).toInt());
     if (depositState == STATE_LOCKED) {
       quint64 unlockHeight = _index.data(ROLE_UNLOCK_HEIGHT).value<quint64>();
-      if (unlockHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      if (unlockHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT) {
         return "-";
       }
 
@@ -233,7 +233,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_CREATING_HEIGHT: {
     cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
-    if (creatingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (creatingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -242,7 +242,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_CREATING_TIME: {
     cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
-    if (creatingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (creatingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -251,7 +251,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_SPENDING_TRANSACTION_HASH: {
     cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
-    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (spendingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -260,7 +260,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_SPENDING_HEIGHT: {
     cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
-    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (spendingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -269,7 +269,7 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
 
   case COLUMN_SPENDING_TIME: {
     cn::TransactionId spendingTransactionId = _index.data(ROLE_SPENDING_TRANSACTION_ID).value<cn::TransactionId>();
-    if (spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (spendingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return "-";
     }
 
@@ -312,7 +312,7 @@ QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
   case ROLE_STATE:
     if (deposit.locked) {
       return static_cast<int>(STATE_LOCKED);
-    } else if (deposit.spendingTransactionId == cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    } else if (deposit.spendingTransactionId == cn::WALLET_INVALID_TRANSACTION_ID) {
       return static_cast<int>(STATE_UNLOCKED);
     } else {
       return static_cast<int>(STATE_SPENT);
@@ -330,8 +330,8 @@ QVariant DepositModel::getUserRole(const QModelIndex& _index, int _role) const {
     cn::TransactionId creatingTransactionId = _index.data(ROLE_CREATING_TRANSACTION_ID).value<cn::TransactionId>();
     quint64 creatingHeight = TransactionsModel::instance().index(creatingTransactionId, 0).
       data(TransactionsModel::ROLE_HEIGHT).value<quint64>();
-    if (creatingHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT) {
-      return static_cast<const quint64>(cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT);
+    if (creatingHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT) {
+      return static_cast<const quint64>(cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT);
     }
 
     return creatingHeight + _index.data(ROLE_DEPOSIT_TERM).value<quint32>();
@@ -372,7 +372,7 @@ void DepositModel::appendDeposit(cn::DepositId _depositId) {
   }
 
   if (!deposit.locked) {
-    if (deposit.spendingTransactionId != cn::WALLET_LEGACY_INVALID_TRANSACTION_ID) {
+    if (deposit.spendingTransactionId != cn::WALLET_INVALID_TRANSACTION_ID) {
    return;
     }
   }  

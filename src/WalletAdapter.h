@@ -9,17 +9,20 @@
 
 #pragma once
 
-#include <IWalletLegacy.h>
+#include <IWallet.h>
+#include <System/Event.h>
+#include <System/EventLock.h>
 
 #include <QMutex>
 #include <QObject>
 #include <QTimer>
 #include <atomic>
 #include <fstream>
+#include <memory>
 
 namespace WalletGui {
 
-class WalletAdapter : public QObject, public cn::IWalletLegacyObserver {
+class WalletAdapter : public QObject, public cn::IWalletObserver {
   Q_OBJECT
   Q_DISABLE_COPY(WalletAdapter)
 
@@ -47,21 +50,22 @@ public:
   quint64 getTransferCount() const;
   quint64 getDepositCount() const;
   quint64 getNumUnlockedOutputs() const;
-  bool getTransaction(cn::TransactionId _id, cn::WalletLegacyTransaction& _transaction);
-  bool getTransfer(cn::TransferId _id, cn::WalletLegacyTransfer& _transfer);
+  quint64 getTransferCount(cn::TransactionId id) const;
+  bool getTransaction(cn::TransactionId _id, cn::WalletTransaction& _transaction) const;
+  bool getTransfer(size_t transactionIndex, size_t transferIndex, cn::WalletTransfer& transfer) const;
   bool getDeposit(cn::DepositId _id, cn::Deposit& _deposit);
   bool getAccountKeys(cn::AccountKeys& _keys);
   bool getMnemonicSeed(std::string& _seed);
   bool isOpen() const;
-  void sendTransaction(QVector<cn::WalletLegacyTransfer>& _transfers,
+  void sendTransaction(QVector<cn::WalletOrder>& _transfers,
                        quint64 _fee,
                        const QString& _payment_id,
-                       const QVector<cn::TransactionMessage>& _messages,
+                       const QVector<cn::WalletMessage>& _messages,
                        quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
   void optimizeWallet();
-  void sendMessage(QVector<cn::WalletLegacyTransfer>& _transfers,
+  void sendMessage(QVector<cn::WalletOrder>& _transfers,
                    quint64 _fee,
-                   const QVector<cn::TransactionMessage>& _messages,
+                   const QVector<cn::WalletMessage>& _messages,
                    quint64 _ttl,
                    quint64 _mixin = cn::parameters::MINIMUM_MIXIN);
   void deposit(quint32 _term,
@@ -72,27 +76,29 @@ public:
   bool changePassword(const QString& _old_pass, const QString& _new_pass);
   void setWalletFile(const QString& _path);
 
-  void initCompleted(std::error_code _result) Q_DECL_OVERRIDE;
-  void saveCompleted(std::error_code _result) Q_DECL_OVERRIDE;
-  void synchronizationProgressUpdated(uint32_t _current, uint32_t _total) Q_DECL_OVERRIDE;
-  void synchronizationCompleted(std::error_code _error) Q_DECL_OVERRIDE;
-  void actualBalanceUpdated(uint64_t _actualBalance) Q_DECL_OVERRIDE;
-  void pendingBalanceUpdated(uint64_t _pendingBalance) Q_DECL_OVERRIDE;
-  void actualDepositBalanceUpdated(uint64_t _actualDepositBalance) Q_DECL_OVERRIDE;
-  void pendingDepositBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;
-  void actualInvestmentBalanceUpdated(uint64_t _actualDepositBalance) Q_DECL_OVERRIDE;
-  void pendingInvestmentBalanceUpdated(uint64_t _pendingDepositBalance) Q_DECL_OVERRIDE;  
-  void externalTransactionCreated(cn::TransactionId _transactionId) Q_DECL_OVERRIDE;
-  void sendTransactionCompleted(cn::TransactionId _transactionId, std::error_code _result) Q_DECL_OVERRIDE;
-  void transactionUpdated(cn::TransactionId _transactionId) Q_DECL_OVERRIDE;
-  void depositsUpdated(const std::vector<cn::DepositId>& _depositIds) Q_DECL_OVERRIDE;
+  void initCompleted(std::error_code _result) override;
+  void saveCompleted(std::error_code _result) override;
+  void synchronizationProgressUpdated(uint32_t _current, uint32_t _total) override;
+  void synchronizationCompleted(std::error_code _error) override;
+  void actualBalanceUpdated(uint64_t _actualBalance) override;
+  void pendingBalanceUpdated(uint64_t _pendingBalance) override;
+  void actualDepositBalanceUpdated(uint64_t _actualDepositBalance) override;
+  void pendingDepositBalanceUpdated(uint64_t _pendingDepositBalance) override;
+  void actualInvestmentBalanceUpdated(uint64_t _actualDepositBalance) override;
+  void pendingInvestmentBalanceUpdated(uint64_t _pendingDepositBalance) override;  
+  void externalTransactionCreated(cn::TransactionId _transactionId) override;
+  void sendTransactionCompleted(cn::TransactionId _transactionId, std::error_code _result) override;
+  void transactionUpdated(cn::TransactionId _transactionId) override;
+  void depositUpdated(cn::DepositId depositId) override;
+  void depositsUpdated(const std::vector<cn::DepositId>& _depositIds) override;
   bool checkWalletPassword(const QString& _password);
   crypto::SecretKey getTxKey(crypto::Hash &txid);
   static bool isValidPaymentId(const QByteArray &_paymentIdString);
   
 private:
   std::fstream m_file;
-  cn::IWalletLegacy* m_wallet;
+  std::unique_ptr<cn::IWallet> m_wallet;
+  platform_system::Event m_readyEvent;
   QMutex m_mutex;
   std::atomic<bool> m_isBackupInProgress;
   std::atomic<bool> m_isSynchronized;
@@ -105,17 +111,13 @@ private:
 
 
   WalletAdapter();
-  ~WalletAdapter();
+  ~WalletAdapter() override;
 
   void onWalletInitCompleted(int _error, const QString& _error_text);
   void onWalletSendTransactionCompleted(cn::TransactionId _transaction_id, int _error, const QString& _error_text);
 
   bool importLegacyWallet(const QString &_password);
   bool save(const QString& _file, bool _details, bool _cache);
-  void lock();
-  void unlock();
-  bool openFile(const QString& _file, bool _read_only);
-  void closeFile();
   void notifyAboutLastTransaction();
 
   static void renameFile(const QString& _old_name, const QString& _new_name);

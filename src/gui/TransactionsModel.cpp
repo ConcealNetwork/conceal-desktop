@@ -17,18 +17,9 @@
 #include "NodeAdapter.h"
 #include "TransactionsModel.h"
 #include "WalletAdapter.h"
-
+#include <Common/StringTools.h>
 namespace WalletGui
 {
-
-  enum class TransactionType : quint8
-  {
-    MINED,
-    INPUT,
-    OUTPUT,
-    INOUT,
-    DEPOSIT
-  };
 
   const int TRANSACTIONS_MODEL_COLUMN_COUNT =
       TransactionsModel::staticMetaObject.enumerator(TransactionsModel::staticMetaObject.indexOfEnumerator("Columns")).keyCount();
@@ -36,20 +27,22 @@ namespace WalletGui
   namespace
   {
 
-    QPixmap getTransactionIcon(TransactionType _transactionType)
+    QPixmap getTransactionIcon(TransactionsModel::TransactionType _transactionType)
     {
       switch (_transactionType)
       {
-      case TransactionType::MINED:
+      case TransactionsModel::TransactionType::MINED:
         return QPixmap(":icons/tx-mined");
-      case TransactionType::INPUT:
+      case TransactionsModel::TransactionType::INPUT:
         return QPixmap(":icons/tx-input");
-      case TransactionType::OUTPUT:
+      case TransactionsModel::TransactionType::OUTPUT:
         return QPixmap(":icons/tx-output");
-      case TransactionType::INOUT:
+      case TransactionsModel::TransactionType::INOUT:
         return QPixmap(":icons/tx-inout");
-      case TransactionType::DEPOSIT:
+      case TransactionsModel::TransactionType::DEPOSIT:
         return QPixmap(":icons/tx-deposit");
+      case TransactionsModel::TransactionType::DEPOSIT_UNLOCK:
+        return QPixmap(":icons/tx-withdraw");
       default:
         break;
       }
@@ -162,21 +155,19 @@ namespace WalletGui
       return QVariant();
     }
 
-    cn::WalletLegacyTransaction transaction;
-    cn::WalletLegacyTransfer transfer;
+    cn::WalletTransaction transaction;
+    cn::WalletTransfer transfer;
     cn::Deposit deposit;
-    cn::TransactionId transactionId = m_transfers.value(_index.row()).first;
-    cn::TransferId transferId = m_transfers.value(_index.row()).second;
-
-    if (!WalletAdapter::instance().getTransaction(transactionId, transaction) ||
-        (m_transfers.value(_index.row()).second != cn::WALLET_LEGACY_INVALID_TRANSFER_ID &&
-         !WalletAdapter::instance().getTransfer(transferId, transfer)))
+    size_t transactionIndex = m_transfers.value(_index.row()).first;
+    size_t transferIndex = m_transfers.value(_index.row()).second;
+    if (!WalletAdapter::instance().getTransaction(transactionIndex, transaction) ||
+        (m_transfers.value(_index.row()).second != cn::WALLET_INVALID_TRANSFER_ID &&
+         !WalletAdapter::instance().getTransfer(transactionIndex, transferIndex, transfer)))
     {
       return QVariant();
     }
-
     cn::DepositId depositId = transaction.firstDepositId;
-    if (depositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID)
+    if (depositId != cn::WALLET_INVALID_DEPOSIT_ID)
     {
       if (!WalletAdapter::instance().getDeposit(depositId, deposit))
       {
@@ -197,7 +188,7 @@ namespace WalletGui
       return getAlignmentRole(_index);
 
     default:
-      return getUserRole(_index, _role, transactionId, transaction, transferId, transfer, depositId, deposit);
+      return getUserRole(_index, _role, transactionIndex, transaction, transferIndex, transfer, depositId, deposit);
     }
 
     return QVariant();
@@ -264,21 +255,19 @@ namespace WalletGui
       if (transactionType == TransactionType::INPUT || transactionType == TransactionType::MINED ||
           transactionType == TransactionType::INOUT)
       {
-
         return "not applicable";
       }
       else
       {
         /* existing outbound transactions not in the same sessions should be empty */
-        if (_index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper() == "0000000000000000000000000000000000000000000000000000000000000000")
+        if (_index.data(ROLE_SECRETKEY) == "0000000000000000000000000000000000000000000000000000000000000000")
         {
-
           return "expired";
         }
         else
         {
           /* return the proper transaction secret key */
-          return _index.data(ROLE_SECRETKEY).toByteArray().toHex().toUpper();
+          return _index.data(ROLE_SECRETKEY);
         }
       }
     }
@@ -310,17 +299,16 @@ namespace WalletGui
     case COLUMN_CONFIRMATIONS:
     {
       quint64 transactionHeight = _index.data(ROLE_HEIGHT).value<quint64>();
-      if (transactionHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT)
+      if (transactionHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT)
       {
-        return "Unconfirmed";
+        return tr("Unconfirmed");
       }
 
       quint64 confirmations = NodeAdapter::instance().getLastKnownBlockHeight() - transactionHeight + 1;
 
       if (confirmations >= 10)
       {
-        //return NodeAdapter::instance().getLastKnownBlockHeight();
-        return "Confirmed";
+        return tr("Confirmed");
       }
     }
 
@@ -336,7 +324,7 @@ namespace WalletGui
     case COLUMN_HEIGHT:
     {
       quint64 transactionHeight = _index.data(ROLE_HEIGHT).value<quint64>();
-      if (transactionHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT)
+      if (transactionHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT)
       {
         return QVariant();
       }
@@ -383,8 +371,6 @@ namespace WalletGui
         return QPixmap(":icons/clock5");
       default:
         QPixmap icon = _index.data(ROLE_ICON).value<QPixmap>();
-        QPainter painter(&icon);
-        painter.drawPixmap(0, 0, QPixmap(":icons/transaction"));
         return icon;
       }
     }
@@ -402,7 +388,7 @@ namespace WalletGui
   }
 
   QVariant TransactionsModel::getUserRole(const QModelIndex &_index, int _role, cn::TransactionId _transactionId,
-                                          const cn::WalletLegacyTransaction &_transaction, cn::TransferId _transferId, const cn::WalletLegacyTransfer &_transfer,
+                                          const cn::WalletTransaction &_transaction, cn::TransferId _transferId, const cn::WalletTransfer &_transfer,
                                           cn::DepositId _depositId, const cn::Deposit &_deposit) const
 
   {
@@ -416,26 +402,25 @@ namespace WalletGui
     case ROLE_DATE:
       return (_transaction.timestamp > 0 ? QDateTime::fromTime_t(_transaction.timestamp) : QDateTime());
 
-    case ROLE_TYPE:
-    {
+    case ROLE_TYPE: {
       QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
-      if (_transaction.isCoinbase)
-      {
+      if (_transaction.isBase) {
         return static_cast<quint8>(TransactionType::MINED);
-      }
-      else if (_transaction.firstDepositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID)
-      {
+      } else if (_transaction.firstDepositId != cn::WALLET_INVALID_DEPOSIT_ID) {
         return static_cast<quint8>(TransactionType::DEPOSIT);
-      }
-      else if (!transactionAddress.compare(WalletAdapter::instance().getAddress()))
-      {
+      } else if (transactionAddress == WalletAdapter::instance().getAddress()) {
+        if (_transaction.fee == cn::parameters::MINIMUM_FEE) {
+          return static_cast<quint8>(TransactionType::DEPOSIT_UNLOCK);
+        } else if (_transaction.totalAmount == -1000) {
+          return static_cast<quint8>(TransactionType::INOUT);
+        } else if (_transaction.totalAmount < 0) {
+          return static_cast<quint8>(TransactionType::OUTPUT);
+        }
+      } else if (_transaction.totalAmount == -1000) {
         return static_cast<quint8>(TransactionType::INOUT);
-      }
-      else if (_transaction.totalAmount < 0)
-      {
+      } else if (_transaction.totalAmount < 0) {
         return static_cast<quint8>(TransactionType::OUTPUT);
       }
-
       return static_cast<quint8>(TransactionType::INPUT);
     }
 
@@ -443,17 +428,17 @@ namespace WalletGui
     {
       QString transactionAddress = _index.data(ROLE_ADDRESS).toString();
 
-      TransactionState transactionState = static_cast<TransactionState>(_index.data(ROLE_STATE).value<quint8>());
-      if (transactionState != TransactionState::ACTIVE && transactionState != TransactionState::SENDING)
+      auto transactionState = static_cast<cn::WalletTransactionState>(_index.data(ROLE_STATE).value<quint8>());
+      if (transactionState == cn::WalletTransactionState::FAILED)
       {
         return "Failed";
       }
 
-      if (_transaction.isCoinbase)
+      if (_transaction.isBase)
       {
         return "New Block";
       }
-      else if (_transaction.firstDepositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID)
+      else if (_transaction.firstDepositId != cn::WALLET_INVALID_DEPOSIT_ID)
       {
         return "New Deposit";
       }
@@ -478,7 +463,9 @@ namespace WalletGui
       crypto::SecretKey txkey = WalletAdapter::instance().getTxKey(txHash);
       if (txkey != cn::NULL_SECRET_KEY)
       {
-        return QByteArray(reinterpret_cast<char *>(&txkey), sizeof(txkey));
+        return QString::fromStdString(common::podToHex(txkey));
+      } else {
+        return tr("not found");
       }
     }
 
@@ -487,23 +474,20 @@ namespace WalletGui
 
     case ROLE_AMOUNT:
     {
-      TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
+      auto transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
       if (transactionType == TransactionType::INPUT || transactionType == TransactionType::MINED)
       {
         return static_cast<qint64>(_transaction.totalAmount);
       }
       else if (transactionType == TransactionType::OUTPUT || transactionType == TransactionType::INOUT)
       {
-        if (_transferId == cn::WALLET_LEGACY_INVALID_TRANSFER_ID)
-        {
-          return static_cast<qint64>(_transaction.totalAmount);
-        }
-
-        return static_cast<qint64>(-_transfer.amount);
+        return static_cast<qint64>(_transaction.totalAmount);
       }
       else if (transactionType == TransactionType::DEPOSIT)
       {
-        return static_cast<qint64>(_transaction.fee + _deposit.amount);
+        return static_cast<qint64>(_deposit.amount);
+      } else if (transactionType == TransactionType::DEPOSIT_UNLOCK){
+        return static_cast<qint64>(_transaction.totalAmount);
       }
 
       return QVariant();
@@ -514,7 +498,7 @@ namespace WalletGui
 
     case ROLE_ICON:
     {
-      TransactionType transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
+      auto transactionType = static_cast<TransactionType>(_index.data(ROLE_TYPE).value<quint8>());
       return getTransactionIcon(transactionType);
     }
 
@@ -528,7 +512,7 @@ namespace WalletGui
       return static_cast<quint64>(_transaction.fee);
 
     case ROLE_NUMBER_OF_CONFIRMATIONS:
-      return (_transaction.blockHeight == cn::WALLET_LEGACY_UNCONFIRMED_TRANSACTION_HEIGHT ? 0 : NodeAdapter::instance().getLastKnownBlockHeight() - _transaction.blockHeight + 1);
+      return (_transaction.blockHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT ? 0 : NodeAdapter::instance().getLastKnownBlockHeight() - _transaction.blockHeight + 1);
 
     case ROLE_COLUMN:
       return headerData(_index.column(), Qt::Horizontal, ROLE_COLUMN);
@@ -538,7 +522,7 @@ namespace WalletGui
 
     case ROLE_MESSAGE:
     {
-      if (_transaction.messages.size() == 0)
+      if (_transaction.messages.empty())
       {
         return QVariant();
       }
@@ -592,25 +576,19 @@ namespace WalletGui
 
   void TransactionsModel::appendTransaction(cn::TransactionId _transactionId, quint32 &_insertedRowCount)
   {
-    cn::WalletLegacyTransaction transaction;
-    if (!WalletAdapter::instance().getTransaction(_transactionId, transaction))
-    {
+    cn::WalletTransaction transaction;
+    const auto &wallet = WalletAdapter::instance();
+    if (!wallet.getTransaction(_transactionId, transaction)) {
       return;
     }
 
-    if (transaction.transferCount)
-    {
-      m_transactionRow[_transactionId] = qMakePair(m_transfers.size(), transaction.transferCount);
-      for (cn::TransferId transfer_id = transaction.firstTransferId;
-           transfer_id < transaction.firstTransferId + transaction.transferCount; ++transfer_id)
-      {
-        m_transfers.append(TransactionTransferId(_transactionId, transfer_id));
+    quint64 transferCount = wallet.getTransferCount(_transactionId);
+    if (transferCount) {
+      m_transactionRow[_transactionId] = qMakePair(m_transfers.size(), transferCount);
+        m_transfers.append(TransactionTransferId(_transactionId, 0));
         ++_insertedRowCount;
-      }
-    }
-    else
-    {
-      m_transfers.append(TransactionTransferId(_transactionId, cn::WALLET_LEGACY_INVALID_TRANSFER_ID));
+    } else {
+      m_transfers.append(TransactionTransferId(_transactionId, cn::WALLET_INVALID_TRANSFER_ID));
       m_transactionRow[_transactionId] = qMakePair(m_transfers.size() - 1, 1);
       ++_insertedRowCount;
     }

@@ -17,7 +17,7 @@
 namespace cn {
 
 class INode;
-class IWalletLegacy;
+class IWallet;
 class Currency;
 class CoreConfig;
 class NetNodeConfig;
@@ -32,7 +32,7 @@ namespace WalletGui {
 
 class Node {
 public:
-  virtual ~Node() = 0;
+  virtual ~Node() = default;
   virtual void init(const std::function<void(std::error_code)>& callback) = 0;
   virtual void deinit() = 0;
   
@@ -43,11 +43,12 @@ public:
   virtual uint64_t getLastLocalBlockTimestamp() const = 0;
   virtual uint64_t getPeerCount() const = 0;
 
-  virtual cn::IWalletLegacy* createWallet() = 0;
+  virtual std::unique_ptr<cn::IWallet> createWallet() = 0;
 };
 
 class INodeCallback {
 public:
+  virtual ~INodeCallback() = default;
   virtual void peerCountUpdated(Node& node, size_t count) = 0;
   virtual void localBlockchainUpdated(Node& node, uint64_t height) = 0;
   virtual void lastKnownBlockHeightUpdated(Node& node, uint64_t height) = 0;
