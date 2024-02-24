@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2022 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -48,7 +48,7 @@ TransactionDetailsDialog::TransactionDetailsDialog(const QModelIndex& _index, QW
   cn::DepositId depositId = transactionIndex.data(TransactionsModel::ROLE_DEPOSIT_ID).value<cn::DepositId>();
 
   QString depositInfo;
-  if (depositId != cn::WALLET_LEGACY_INVALID_DEPOSIT_ID) {
+  if (depositId != cn::WALLET_INVALID_DEPOSIT_ID) {
     QModelIndex depositIndex = DepositModel::instance().index(depositId, 0);
     QString depositAmount = depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_AMOUNT).data().toString() + " " +
       CurrencyAdapter::instance().getCurrencyTicker().toUpper();

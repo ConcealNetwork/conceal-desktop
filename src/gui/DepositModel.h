@@ -12,7 +12,7 @@
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
 
-#include <IWalletLegacy.h>
+#include <IWallet.h>
 
 namespace WalletGui {
 

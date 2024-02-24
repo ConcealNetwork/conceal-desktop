@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2017 Karbowanec developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2022 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -11,17 +11,22 @@
 #include "CryptoNoteCore/CryptoNoteBasicImpl.h"
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 #include "CryptoNoteCore/Currency.h"
+#include "CryptoNoteCore/TransactionExtra.h"
 #include "NodeRpcProxy/NodeRpcProxy.h"
 #include "CryptoNoteCore/CoreConfig.h"
 #include "P2p/NetNodeConfig.h"
 #include "CryptoNoteCore/Core.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolHandler.h"
 #include "InProcessNode/InProcessNode.h"
+#include "InProcessNode/InProcessNodeErrors.h"
 #include "P2p/NetNode.h"
-#include "WalletLegacy/WalletLegacy.h"
+#include "Wallet/WalletGreen.h"
 #include "Logging/LoggerManager.h"
 #include "System/Dispatcher.h"
 #include "Settings.h"
+
+#include <QTimer>
+#include <QThread>
 
 namespace WalletGui {
 
@@ -60,11 +65,16 @@ std::string extractPaymentId(const std::string& extra) {
   std::vector<uint8_t> extraVector;
   std::copy(extra.begin(), extra.end(), std::back_inserter(extraVector));
 
-  if (!cn::parseTransactionExtra(extraVector, extraFields)) {
-    throw std::runtime_error("Can't parse extra");
+  std::string result;
+
+  try {
+    if (!cn::parseTransactionExtra(extraVector, extraFields)) {
+      throw std::runtime_error("Can't parse extra");
+    }
+  } catch (...){
+    return result;
   }
 
-  std::string result;
   cn::TransactionExtraNonce extraNonce;
   if (cn::findTransactionExtraFieldByType(extraFields, extraNonce)) {
     crypto::Hash paymentIdHash;
@@ -83,28 +93,30 @@ std::string extractPaymentId(const std::string& extra) {
 
 }
 
-Node::~Node() {
-}
 
-class RpcNode : cn::INodeObserver, public Node {
+class RpcNode : public cn::INodeObserver, public Node {
 public:
-  RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback, const std::string& nodeHost, unsigned short nodePort) :
-    m_callback(callback),
-    m_currency(currency),
-    m_logger(logManager),
-    m_node(nodeHost, nodePort) {
+  RpcNode(const cn::Currency& currency, logging::LoggerManager& logManager, INodeCallback& callback,
+          const std::string& nodeHost, unsigned short nodePort)
+      : m_callback(callback),
+        m_currency(currency),
+        m_stopEvent(m_dispatcher),
+        m_node(nodeHost, nodePort),
+        m_logger(logManager) {
     m_node.addObserver(this);
   }
 
-  ~RpcNode() override {
-  }
+  ~RpcNode() override = default;
 
   void init(const std::function<void(std::error_code)>& callback) override {
     m_node.init(callback);
+    m_stopEvent.wait();
   }
 
   void deinit() override {
-    /* nothing to be done here */
+    m_dispatcher.remoteSpawn([this] {
+      m_stopEvent.set();
+    });
   }
 
   std::string convertPaymentId(const std::string& paymentIdString) override {
@@ -131,37 +143,40 @@ public:
     return m_node.getPeerCount();
   }
 
-  cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_logger, Settings::instance().isTestnet());
+  std::unique_ptr<cn::IWallet> createWallet() override {
+    return std::unique_ptr<cn::IWallet>(
+        new cn::WalletGreen(m_dispatcher, m_currency, m_node, m_logger));
   }
 
 private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
+  platform_system::Dispatcher m_dispatcher;
+  platform_system::Event m_stopEvent;
   cn::NodeRpcProxy m_node;
   logging::LoggerManager& m_logger;
 
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
   }
 
-  void localBlockchainUpdated(uint64_t height) {
+  void localBlockchainUpdated(uint32_t height) override {
     m_callback.localBlockchainUpdated(*this, height);
   }
 
-  void lastKnownBlockHeightUpdated(uint64_t height) {
+  void lastKnownBlockHeightUpdated(uint32_t height) override {
     m_callback.lastKnownBlockHeightUpdated(*this, height);
   }
 };
 
-class InprocessNode : cn::INodeObserver, public Node {
+class InprocessNode : public cn::INodeObserver, public Node {
 public:
   InprocessNode(const cn::Currency& currency, logging::LoggerManager& logManager, const cn::CoreConfig& coreConfig,
     const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
-    m_currency(currency), 
-    m_dispatcher(),
-    m_loggerManager(logManager),
     m_callback(callback),
+    m_currency(currency),
+    m_stopEvent(m_dispatcher),
+    m_loggerManager(logManager),
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
     m_protocolHandler(currency, m_dispatcher, m_core, nullptr, logManager),
@@ -178,9 +193,7 @@ public:
     m_protocolHandler.set_p2p_endpoint(&m_nodeServer);
   }
 
-  ~InprocessNode() override {
-
-  }
+  ~InprocessNode() override = default;
 
   void init(const std::function<void(std::error_code)>& callback) override {
     try {
@@ -237,33 +250,34 @@ public:
     return m_node.getPeerCount();
   }
 
-  cn::IWalletLegacy* createWallet() override {
-    return new cn::WalletLegacy(m_currency, m_node, m_loggerManager, Settings::instance().isTestnet());
+  std::unique_ptr<cn::IWallet> createWallet() override {
+    return std::unique_ptr<cn::IWallet>(
+        new cn::WalletGreen(m_dispatcher, m_currency, m_node, m_loggerManager));
   }
 
 private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
   platform_system::Dispatcher m_dispatcher;
+  platform_system::Event m_stopEvent;
   logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
-  cn::core m_core;
   cn::CryptoNoteProtocolHandler m_protocolHandler;
+  cn::core m_core;
   cn::NodeServer m_nodeServer;
   cn::InProcessNode m_node;
   std::future<bool> m_nodeServerFuture;
 
-
-  void peerCountUpdated(size_t count) {
+  void peerCountUpdated(size_t count) override {
     m_callback.peerCountUpdated(*this, count);
   }
 
-  void localBlockchainUpdated(uint64_t height) {
+  void localBlockchainUpdated(uint32_t height) override {
     m_callback.localBlockchainUpdated(*this, height);
   }
 
-  void lastKnownBlockHeightUpdated(uint64_t height) {
+  void lastKnownBlockHeightUpdated(uint32_t height) override {
     m_callback.lastKnownBlockHeightUpdated(*this, height);
   }
 };

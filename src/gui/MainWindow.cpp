@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2022 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -373,7 +373,7 @@ void MainWindow::openWallet()
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
                                                   walletDirectory,
                                                   tr("Wallet (*.wallet *.keys)"));
-
+  
   if (!filePath.isEmpty())
   {
     if (WalletAdapter::instance().isOpen())
@@ -434,6 +434,7 @@ void MainWindow::importKey()
 
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
+      WalletAdapter::instance().open("");
     }
     else if (tools::base_58::decode_addr(keyString.toStdString(), addressPrefix, data) && addressPrefix == CurrencyAdapter::instance().getAddressPrefix())
     {
@@ -468,6 +469,7 @@ void MainWindow::importKey()
 
       WalletAdapter::instance().setWalletFile(filePath);
       WalletAdapter::instance().createWithKeys(keys);
+      WalletAdapter::instance().open("");
     }
   }
   m_ui->m_welcomeFrame->setVisible(welcomeFrameVisible);
@@ -497,7 +499,6 @@ void MainWindow::resetWallet()
                            QMessageBox::Ok, QMessageBox::Cancel) == QMessageBox::Ok)
   {
     WalletAdapter::instance().reset();
-    WalletAdapter::instance().open("");
   }
 }
 

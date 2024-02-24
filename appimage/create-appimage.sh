@@ -8,7 +8,7 @@ if ! test -f "linuxdeploy-plugin-qt-x86_64.AppImage"; then
 fi
 chmod u+x ./*.AppImage
 cp ../build/release/conceal-desktop .
-mkdir -p usr/share/icons
 mkdir -p usr/lib
-cp ../src/images/conceal.png usr/share/icons
-./linuxdeploy-x86_64.AppImage --executable ./conceal-desktop --desktop-file conceal-desktop.desktop --appdir . --output appimage --plugin qt
+cp /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 usr/lib
+cp /usr/lib/x86_64-linux-gnu/libssl.so.1.1 usr/lib
+./linuxdeploy-x86_64.AppImage --executable ./conceal-desktop --desktop-file conceal-desktop.desktop --appdir . --output appimage --plugin qt --icon-file ../src/images/conceal.png

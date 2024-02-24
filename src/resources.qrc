@@ -31,6 +31,7 @@
         <file alias="tx-output">icons/tx_output.png</file>
         <file alias="tx-inout">icons/tx_inout.png</file>
         <file alias="tx-deposit">icons/tx_deposit.png</file>
+        <file alias="tx-withdraw">icons/tx_withdraw.png</file>
         <!-- Title icons -->
         <file alias="icon-address">icons/icon-address.png</file>
         <file alias="icon-banking">icons/icon-banking.png</file>
