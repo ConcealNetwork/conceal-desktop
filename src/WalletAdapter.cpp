@@ -388,7 +388,7 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
     sendParams.changeDestination = m_wallet->getAddress(0);
 
     if (!_paymentId.isEmpty()) {
-      cn::addPaymentIdToExtra(NodeAdapter::instance().convertPaymentId(_paymentId), sendParams.extra);
+      cn::addPaymentIdToExtra(_paymentId.toStdString(), sendParams.extra);
     }
 
     m_sentTransactionId = m_wallet->transfer(sendParams, _transactionsk);
