@@ -175,7 +175,6 @@ public:
     const cn::NetNodeConfig& netNodeConfig, INodeCallback& callback) :
     m_callback(callback),
     m_currency(currency),
-    m_stopEvent(m_dispatcher),
     m_loggerManager(logManager),
     m_coreConfig(coreConfig),
     m_netNodeConfig(netNodeConfig),
@@ -259,7 +258,6 @@ private:
   INodeCallback& m_callback;
   const cn::Currency& m_currency;
   platform_system::Dispatcher m_dispatcher;
-  platform_system::Event m_stopEvent;
   logging::LoggerManager& m_loggerManager;
   cn::CoreConfig m_coreConfig;
   cn::NetNodeConfig m_netNodeConfig;
