@@ -605,8 +605,6 @@ void WalletAdapter::onWalletSendTransactionCompleted(cn::TransactionId _transact
   }
 
   Q_EMIT walletTransactionCreatedSignal(_transactionId);
-
-  save(true, true);
 }
 
 void WalletAdapter::transactionUpdated(cn::TransactionId _transactionId) {
