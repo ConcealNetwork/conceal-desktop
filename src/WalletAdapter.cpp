@@ -379,11 +379,9 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
   try
   {
     crypto::SecretKey _transactionsk;
-    std::vector<cn::WalletOrder> transfers = _transfers.toStdVector();
-    LoggerAdapter::instance().log("Sending transaction to WalletGreen");
     cn::TransactionParameters sendParams;
-    sendParams.destinations = transfers;
-    sendParams.messages = _messages.toStdVector();
+    sendParams.destinations = std::vector<cn::WalletOrder>(_transfers.begin(), _transfers.end());
+    sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
     sendParams.changeDestination = m_wallet->getAddress(0);
 
@@ -427,10 +425,9 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
   crypto::SecretKey _transactionsk;
   try
   {
-    std::vector<cn::WalletOrder> transfers = _transfers.toStdVector();
     cn::TransactionParameters sendParams;
-    sendParams.destinations = transfers;
-    sendParams.messages = _messages.toStdVector();
+    sendParams.destinations = std::vector<cn::WalletOrder>(_transfers.begin(), _transfers.end());
+    sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
     sendParams.changeDestination = m_wallet->getAddress(0);
     m_sentMessageId = m_wallet->transfer(sendParams, _transactionsk);
@@ -460,7 +457,7 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds,
   QMutexLocker locker(&m_mutex);
   try {
     std::string tx_hash;
-    m_wallet->withdrawDeposit(_depositIds.toStdVector()[0], tx_hash);
+    m_wallet->withdrawDeposit(_depositIds[0], tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
   } catch (std::system_error&) {
   }
@@ -616,7 +613,7 @@ void WalletAdapter::depositUpdated(cn::DepositId depositId) {
 }
 
 void WalletAdapter::depositsUpdated(const std::vector<cn::DepositId>& _depositIds) {
-  Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>::fromStdVector(_depositIds));
+  Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>(_depositIds.begin(), _depositIds.end()));
 }
 
 void WalletAdapter::notifyAboutLastTransaction() {
