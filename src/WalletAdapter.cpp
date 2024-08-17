@@ -613,7 +613,11 @@ void WalletAdapter::depositUpdated(cn::DepositId depositId) {
 }
 
 void WalletAdapter::depositsUpdated(const std::vector<cn::DepositId>& _depositIds) {
-  Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>(_depositIds.begin(), _depositIds.end()));
+  #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+    Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>(_depositIds.begin(), _depositIds.end()));
+  #else
+    Q_EMIT walletDepositsUpdatedSignal(QVector<cn::DepositId>::fromStdVector(_depositIds));
+  #endif
 }
 
 void WalletAdapter::notifyAboutLastTransaction() {
