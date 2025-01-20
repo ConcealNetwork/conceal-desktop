@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
+
+cmake_policy(SET CMP0020 NEW)  # Qt linking policy
 
 include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
@@ -14,7 +16,7 @@ WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 OUTPUT_VARIABLE GIT_REVISION)
 
 set(CRYPTONOTE_LIB cryptonote)
-set(CMAKE_PREFIX_PATH "C:\\Qt\\5.11.0\\msvc2017_64\\lib\\cmake\\")
+set(CMAKE_PREFIX_PATH "C:\\Qt\\5.15.2\\msvc2019_64\\lib\\cmake\\")
 
 include_directories(${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -24,10 +26,21 @@ include_directories(${CMAKE_BINARY_DIR}
     cryptonote/include
     cryptonote/src)
 
-find_package(Qt5Gui REQUIRED)
+find_package(Qt5 COMPONENTS Core Gui Network Widgets Charts REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5Charts)
+
+if(WIN32)
+    set(Boost_DEBUG ON)  # This will show detailed Boost discovery info
+    set(Boost_NO_SYSTEM_PATHS ON)  # Don't search system paths
+    set(BOOST_ROOT "C:/local/boost_1_78_0")
+    set(BOOST_INCLUDEDIR "${BOOST_ROOT}")
+    set(BOOST_LIBRARYDIR "${BOOST_ROOT}/lib64-msvc-14.2")  # Changed to 14.2 for VC142
+else()
+    set(Boost_DEBUG ON)  # Keep debug info for troubleshooting
+    set(Boost_NO_SYSTEM_PATHS OFF)  # Allow system paths on Unix-like systems
+endif()
 
 set(Boost_NO_BOOST_CMAKE ON)
 set(Boost_USE_STATIC_LIBS ON)
@@ -37,7 +50,16 @@ else(WIN32)
   set(Boost_USE_STATIC_RUNTIME ON)
 endif(WIN32)
 
-find_package(Boost 1.55 REQUIRED COMPONENTS date_time filesystem program_options regex serialization system thread chrono)
+find_package(Boost 1.55 REQUIRED COMPONENTS 
+    date_time 
+    filesystem 
+    program_options 
+    regex 
+    serialization 
+    system 
+    thread 
+    chrono
+)
 if ((${Boost_MAJOR_VERSION} EQUAL 1) AND (${Boost_MINOR_VERSION} EQUAL 54))
 	message(SEND_ERROR "Boost version 1.54 is unsupported, more details are available here http://goo.gl/RrCFmA")
 endif ()
@@ -221,6 +243,11 @@ if (WIN32)
   set(BUILD_RESOURCES conceal.rc)
   set(QTMAIN Qt5::WinMain)
 
+  add_definitions(
+    -D_CRT_SECURE_NO_WARNINGS
+    -D_WINSOCK_DEPRECATED_NO_WARNINGS
+  )
+
 elseif (UNIX)
   if (APPLE)
     enable_language(ASM)
@@ -290,9 +317,12 @@ elseif (WIN32)
 endif (APPLE)
 
 # qt5_use_modules(${PROJECT_NAME} Widgets Gui Network)
-target_link_libraries(${PROJECT_NAME} Qt5::Gui)
-target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
-target_link_libraries(${PROJECT_NAME} Qt5::Network)
+target_link_libraries(${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Network
+)
 if(Qt5Charts_FOUND)
   add_definitions(/DHAVE_CHART)
   target_link_libraries(${PROJECT_NAME} Qt5::Charts)  
@@ -375,3 +405,46 @@ elseif (WIN32)
 endif (APPLE)
 
 include(CPack)
+
+if(WIN32)
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E echo "Running windeployqt..."
+        COMMAND "${_qt5Core_install_prefix}/bin/windeployqt.exe" --no-compiler-runtime \"$<TARGET_FILE:${PROJECT_NAME}>\"
+        COMMENT "Deploying Qt dependencies..."
+    )
+endif()
+
+# Find required packages
+find_package(OpenSSL REQUIRED)
+
+target_link_libraries(${PROJECT_NAME}
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets
+    Qt5::Network
+    Qt5::Charts
+    OpenSSL::SSL
+    OpenSSL::Crypto
+)
+
+# Ensure OpenSSL DLLs are copied to build directory
+if(WIN32)
+  # OpenSSL v3 from command line path
+  file(COPY 
+    "${OPENSSL_ROOT_DIR}/bin/libssl-3-x64.dll"
+    "${OPENSSL_ROOT_DIR}/bin/libcrypto-3-x64.dll"
+    DESTINATION ${CMAKE_BINARY_DIR}/Release
+  )
+
+  # OpenSSL v1.1 from Qt directory
+  get_filename_component(QT_ROOT "${CMAKE_PREFIX_PATH}" PATH)  # Go up to lib
+  get_filename_component(QT_ROOT "${QT_ROOT}" PATH)           # Go up to msvc2019_64
+  get_filename_component(QT_ROOT "${QT_ROOT}" PATH)           # Go up to 5.15.2
+  get_filename_component(QT_ROOT "${QT_ROOT}" PATH)           # Go up to Qt root
+  
+  file(COPY 
+    "${QT_ROOT}/Tools/mingw1120_64/opt/bin/libssl-1_1-x64.dll"
+    "${QT_ROOT}/Tools/mingw1120_64/opt/bin/libcrypto-1_1-x64.dll"
+    DESTINATION ${CMAKE_BINARY_DIR}/Release
+  )
+endif()

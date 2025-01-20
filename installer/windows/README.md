@@ -19,7 +19,7 @@ Then follow these steps:
 
 from within installer/windows , run:
 ```
-.\deploy.bat
+./deploy.bat
 ```
 
 ## Credits
