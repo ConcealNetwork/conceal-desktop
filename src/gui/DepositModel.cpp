@@ -379,7 +379,7 @@ void DepositModel::appendDeposit(cn::DepositId _depositId) {
 
 
 
-  beginInsertRows(QModelIndex(), m_depositCount, _depositId);
+  beginInsertRows(QModelIndex(), static_cast<int>(m_depositCount), static_cast<int>(_depositId));
   m_depositCount = _depositId + 1;
   endInsertRows();
 }
