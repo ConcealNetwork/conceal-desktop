@@ -1,0 +1,25 @@
+services:
+  conceal-desktop:
+    build: .
+    image: conceal-desktop:ubuntu
+    volumes:
+      - conceal-data:/home/conceal/.conceal
+      - conceal-cache:/home/conceal/.cache
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - runtime-dir:/tmp/runtime-root
+      - wallet-files:/home/conceal/wallets
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - QT_X11_NO_MITSHM=1
+      - HOME=/home/conceal
+      - XDG_RUNTIME_DIR=/tmp/runtime-root
+      - QT_QPA_PLATFORM=xcb
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    user: "1000:1000"
+
+volumes:
+  conceal-data:
+  conceal-cache:
+  runtime-dir:
+  wallet-files:
