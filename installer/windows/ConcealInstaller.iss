@@ -7,8 +7,8 @@
 
 #define Dependency_NoExampleSetup
 
-#define AppSetupName 'Conceal Desktop'
-#define AppVersion '6.6.2'
+#define AppSetupName 'Conceal-Desktop'
+#define AppVersion '6.7.3'
 #define AppPublisher 'Conceal Network'
 #define AppCopyright 'Copyright (C) Conceal Network 2020'
 #define AppURL 'https://conceal.network'
@@ -52,8 +52,6 @@ ArchitecturesInstallIn64BitMode=x64
 
 LicenseFile={#LicenseFile}
 
-#define UseVC2015To2022
-
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"
 
@@ -64,16 +62,29 @@ Root: HKLM; Subkey: "Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Unins
 
 [Files]
 Source: "{#LicenseFile}"; DestDir: "{app}";
-Source: "build\{#AppExe}"; DestDir: "{app}"; DestName: "{#AppExe}";
-Source: "build\Qt5Core.dll"; DestDir: "{app}";
-Source: "build\Qt5Gui.dll"; DestDir: "{app}";
-Source: "build\Qt5Network.dll"; DestDir: "{app}";
-Source: "build\Qt5Widgets.dll"; DestDir: "{app}";
-Source: "build\Qt5Charts.dll"; DestDir: "{app}";
-Source: "build\libcrypto*.dll"; DestDir: "{app}";
-Source: "build\libssl*.dll"; DestDir: "{app}";
-Source: "build\platforms\qwindows.dll"; DestDir: "{app}/platforms";
+Source: "..\..\build\Release\{#AppExe}"; DestDir: "{app}"; DestName: "{#AppExe}";
+Source: "..\..\build\Release\Qt5Core.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\Qt5Gui.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\Qt5Network.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\Qt5Widgets.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\Qt5Charts.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\Qt5Svg.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\libcrypto*.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\libssl*.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\libGLESv2.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\libEGL.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\D3Dcompiler_47.dll"; DestDir: "{app}";
+Source: "..\..\build\Release\opengl32sw.dll"; DestDir: "{app}";
 
+; Qt plugins
+Source: "..\..\build\Release\bearer\*"; DestDir: "{app}\bearer"; Flags: recursesubdirs
+Source: "..\..\build\Release\iconengines\*"; DestDir: "{app}\iconengines"; Flags: recursesubdirs
+Source: "..\..\build\Release\imageformats\*"; DestDir: "{app}\imageformats"; Flags: recursesubdirs
+Source: "..\..\build\Release\platforms\*"; DestDir: "{app}\platforms"; Flags: recursesubdirs
+Source: "..\..\build\Release\styles\*"; DestDir: "{app}\styles"; Flags: recursesubdirs
+
+; Qt translations
+Source: "..\..\build\Release\translations\*.qm"; DestDir: "{app}\translations";
 
 [Icons]
 Name: "{group}\{#AppSetupName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
@@ -784,10 +795,14 @@ UninstallDisplayIcon={app}\MyProgram.exe
 SourceDir=src
 OutputDir={#SourcePath}\bin
 AllowNoIcons=yes
-PrivilegesRequired=admin
+WizardImageFile=Image.bmp
+WizardSmallImageFile=SmallImage.bmp
 
-; remove next line if you only deploy 32-bit binaries and dependencies
+PrivilegesRequired=admin
+ArchitecturesAllowed=x86 x64
 ArchitecturesInstallIn64BitMode=x64
+
+LicenseFile={#LicenseFile}
 
 [Languages]
 Name: en; MessagesFile: "compiler:Default.isl"

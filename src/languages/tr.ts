@@ -2776,17 +2776,17 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="418"/>
+        <location filename="../WalletAdapter.cpp" line="407"/>
         <source>Sending transaction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="446"/>
+        <location filename="../WalletAdapter.cpp" line="428"/>
         <source>Optimizing wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="466"/>
+        <location filename="../WalletAdapter.cpp" line="449"/>
         <source>Sending message</source>
         <translation type="unfinished"></translation>
     </message>

@@ -76,6 +76,7 @@
         "sparse_hash_set": "cpp",
         "sparsetable": "cpp",
         "locale": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "format": "cpp"
     }
 }
