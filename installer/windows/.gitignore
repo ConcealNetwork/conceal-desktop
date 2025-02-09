@@ -1,1 +1,3 @@
 bin/*.exe
+bin/*.zip
+bin/*.sha256

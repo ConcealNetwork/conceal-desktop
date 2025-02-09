@@ -68,4 +68,5 @@ CMakeLists.txt
 *.pro.user
 *.pro.user*
 *.autosave
+qt_path.ini
 cmake-build*
