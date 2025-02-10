@@ -23,15 +23,15 @@ No one owns Conceal, everyone can take part.
 ## Resources
 
 -   Web: <https://conceal.network>
+-   Market Place: <https://conceal.network/marketplace>
 -   GitHub: <https://github.com/ConcealNetwork>
 -   Wiki: <https://conceal.network/wiki>
 -   Explorer: <https://explorer.conceal.network>
 -   Discord: <https://discord.gg/YbpHVSd>
 -   Twitter: <https://twitter.com/ConcealNetwork>
--   Telegram Official (News Feed): <https://t.me/concealnetwork>
--   Telegram User Group (Chat Group): <https://t.me/concealnetworkusers>
+-   Telegram Official (News Feed): <https://t.me/concealcommunity>
+-   Telegram User Group (Chat Group): <https://t.me/concealcommunity>
 -   Medium: <https://medium.com/@ConcealNetwork>
--   Reddit: <https://www.reddit.com/r/ConcealNetwork>
 -   Bitcoin Talk: <https://bitcointalk.org/index.php?topic=4515873>
 -   Paperwallet: <https://conceal.network/paperwallet>
 

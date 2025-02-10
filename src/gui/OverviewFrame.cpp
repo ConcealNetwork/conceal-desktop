@@ -1983,7 +1983,7 @@ namespace WalletGui
 
   void OverviewFrame::telegramClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://t.co/55klBHKGUR", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://t.me/concealcommunity", QUrl::TolerantMode));
   }
 
   void OverviewFrame::githubClicked()
@@ -1991,9 +1991,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://github.com/ConcealNetwork", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::redditClicked()
+  void OverviewFrame::marketplaceClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.reddit.com/r/ConcealNetwork/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/marketplace/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::mediumClicked()

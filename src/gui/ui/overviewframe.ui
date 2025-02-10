@@ -4957,11 +4957,76 @@ color: orange;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #fff;
-</string>
+               <string notr="true">color: #fafafa;</string>
               </property>
               <property name="text">
-               <string>STAY TUNED</string>
+               <string>COMMUNITY</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="9" colspan="2">
+             <widget class="QLabel" name="title_markets">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fafafa;</string>
+              </property>
+              <property name="text">
+               <string>BUY/MARKETS</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="12" colspan="2">
+             <widget class="QLabel" name="title_tools">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: #fafafa;</string>
+              </property>
+              <property name="text">
+               <string>TOOLS</string>
               </property>
              </widget>
             </item>
@@ -5087,91 +5152,6 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="7">
-             <widget class="QPushButton" name="sm_redditButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string>Reddit</string>
-              </property>
-              <property name="type" stdset="0">
-               <string>sm</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="1" column="10">
-             <widget class="QPushButton" name="sm_githubButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string>GitHub</string>
-              </property>
-              <property name="type" stdset="0">
-               <string>sm</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="10">
              <widget class="QPushButton" name="sm_mediumButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
@@ -5207,8 +5187,93 @@ color: orange;
               </property>
              </widget>
             </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="10">
+             <widget class="QPushButton" name="sm_marketplaceButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>Market Place</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="10">
+             <widget class="QPushButton" name="sm_tradeogreButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>TradeOgre</string>
+              </property>          
+              <property name="type" stdset="0">
+               <string>sm</string>
+              </property>
+             </widget>
+            </item>
             <item row="1" column="9">
-             <widget class="QLabel" name="githubIcon">
+             <widget class="QLabel" name="m_marketplaceIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5239,7 +5304,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/github</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/marketplace</pixmap>
               </property>
              </widget>
             </item>
@@ -5280,7 +5345,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="6">
-             <widget class="QLabel" name="m_redditIcon">
+             <widget class="QLabel" name="m_mediumIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5311,7 +5376,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/reddit</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
               </property>
              </widget>
             </item>
@@ -5352,7 +5417,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="9">
-             <widget class="QLabel" name="mediumIcon">
+             <widget class="QLabel" name="m_tradeogreIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5383,7 +5448,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
               </property>
              </widget>
             </item>
@@ -5606,8 +5671,8 @@ color: orange;
               </property>
              </widget>
             </item>
-            <item row="1" column="12">
-             <widget class="QLabel" name="m_tradeogreIcon">
+            <item row="2" column="12">
+             <widget class="QLabel" name="m_githubIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5638,11 +5703,11 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/github</pixmap>
               </property>
              </widget>
             </item>
-            <item row="2" column="12">
+            <item row="1" column="12">
              <widget class="QLabel" name="m_webwalletIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
@@ -5679,42 +5744,6 @@ color: orange;
              </widget>
             </item>
             <item row="1" column="13">
-             <widget class="QPushButton" name="sm_tradeogreButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Poppins</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string>TradeOgre</string>
-              </property>
-              <property name="type" stdset="0">
-               <string>sm</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="13">
              <widget class="QPushButton" name="sm_webwalletButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
@@ -5744,6 +5773,42 @@ color: orange;
               </property>
               <property name="text">
                <string>Web Wallet</string>
+              </property>
+              <property name="type" stdset="0">
+               <string>sm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="13">
+             <widget class="QPushButton" name="sm_githubButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>GitHub</string>
               </property>
               <property name="type" stdset="0">
                <string>sm</string>
@@ -10442,10 +10507,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_redditButton</sender>
+   <sender>sm_marketplaceButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>redditClicked()</slot>
+   <slot>marketplaceClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>706</x>
@@ -11087,7 +11152,7 @@ color: orange;
   <slot>aboutQTClicked()</slot>
   <slot>discordClicked()</slot>
   <slot>githubClicked()</slot>
-  <slot>redditClicked()</slot>
+  <slot>marketplaceClicked()</slot>
   <slot>telegramClicked()</slot>
   <slot>twitterClicked()</slot>
   <slot>setPercentage25()</slot>
