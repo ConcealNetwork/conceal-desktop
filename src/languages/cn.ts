@@ -1330,7 +1330,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="4964"/>
-        <source>STAY TUNED</source>
+        <source>COMMUNITY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1511,14 +1511,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5154"/>
-        <source>Reddit</source>
+        <location filename="../gui/ui/overviewframe.ui" line="5118"/>
+        <source>Market Place</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5203"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5710"/>
         <source>TradeOgre</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+    <location filename="../gui/ui/overviewframe.ui" line="5203"/>
+    <source>Medium</source>
+    <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5911"/>
@@ -2007,7 +2012,7 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
     <message>
         <location filename="../CommandLineParser.cpp" line="28"/>
         <source>Specify list of peers to connect to only. If this option is given the options add-priority-node and seed-node are ignored</source>
-        <translation>指定仅连接到的对等方列表。如果给定此选项，则忽略“添加优先级节点”和“种子节点”选项</translation>
+        <translation>指定仅连接到的对等方列表。如果给定此选项，则忽略"添加优先级节点"和"种子节点"选项</translation>
     </message>
     <message>
         <location filename="../CommandLineParser.cpp" line="30"/>
@@ -2936,12 +2941,12 @@ Your wallet will be optimized automatically every 15 minutes.</source>
 <context>
     <name>WalletGui::WalletAdapter</name>
     <message>
-        <location filename="../WalletAdapter.cpp" line="186"/>
+        <location filename="../WalletAdapter.cpp" line="183"/>
         <source>Importing keys</source>
         <translation>导入keys</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="252"/>
+        <location filename="../WalletAdapter.cpp" line="241"/>
         <source>Saving data</source>
         <translation>保存数据</translation>
     </message>
@@ -2950,60 +2955,60 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">发送中</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="136"/>
+        <location filename="../WalletAdapter.cpp" line="130"/>
         <source>Opening wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>正在打开钱包</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="164"/>
+        <location filename="../WalletAdapter.cpp" line="153"/>
         <source>Creating wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>正在创建钱包</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="407"/>
+        <location filename="../WalletAdapter.cpp" line="391"/>
         <source>Sending transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>正在发送交易</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="428"/>
+        <location filename="../WalletAdapter.cpp" line="413"/>
         <source>Optimizing wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>正在优化钱包</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="449"/>
+        <location filename="../WalletAdapter.cpp" line="435"/>
         <source>Sending message</source>
-        <translation type="unfinished"></translation>
+        <translation>正在发送消息</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="481"/>
+        <location filename="../WalletAdapter.cpp" line="450"/>
         <source>Creating deposit</source>
-        <translation type="unfinished"></translation>
+        <translation>正在创建存款</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="494"/>
+        <location filename="../WalletAdapter.cpp" line="462"/>
         <source>Withdrawing deposit</source>
-        <translation type="unfinished"></translation>
+        <translation>正在提取存款</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="538"/>
-        <location filename="../WalletAdapter.cpp" line="564"/>
+        <location filename="../WalletAdapter.cpp" line="498"/>
+        <location filename="../WalletAdapter.cpp" line="520"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>准备就绪</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="579"/>
+        <location filename="../WalletAdapter.cpp" line="532"/>
         <source>Synchronizing</source>
-        <translation type="unfinished"></translation>
+        <translation>正在同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Synchronized</source>
-        <translation type="unfinished"></translation>
+        <translation>已同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Optimizing</source>

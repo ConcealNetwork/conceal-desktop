@@ -763,17 +763,17 @@ Lütfen bekle...</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5154"/>
-        <source>Reddit</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5275"/>
-        <source>Medium</source>
+        <location filename="../gui/ui/overviewframe.ui" line="5118"/>
+        <source>Market Place</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5203"/>
+        <source>Medium</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/overviewframe.ui" line="5710"/>
         <source>TradeOgre</source>
         <translation></translation>
     </message>
@@ -1253,7 +1253,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="4964"/>
-        <source>STAY TUNED</source>
+        <source>COMMUNITY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2752,12 +2752,12 @@ Your wallet will be optimized automatically every 15 minutes.</source>
 <context>
     <name>WalletGui::WalletAdapter</name>
     <message>
-        <location filename="../WalletAdapter.cpp" line="186"/>
+        <location filename="../WalletAdapter.cpp" line="183"/>
         <source>Importing keys</source>
         <translation>Anahtarlar içe aktarılıyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="252"/>
+        <location filename="../WalletAdapter.cpp" line="241"/>
         <source>Saving data</source>
         <translation>Veriler kaydediliyor</translation>
     </message>
@@ -2766,60 +2766,60 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">Gönderiliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="136"/>
+        <location filename="../WalletAdapter.cpp" line="130"/>
         <source>Opening wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Cüzdan açılıyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="164"/>
+        <location filename="../WalletAdapter.cpp" line="153"/>
         <source>Creating wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Cüzdan oluşturuluyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="407"/>
+        <location filename="../WalletAdapter.cpp" line="391"/>
         <source>Sending transaction</source>
-        <translation type="unfinished"></translation>
+        <translation>İşlem gönderiliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="428"/>
+        <location filename="../WalletAdapter.cpp" line="413"/>
         <source>Optimizing wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Cüzdan optimize ediliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="449"/>
+        <location filename="../WalletAdapter.cpp" line="435"/>
         <source>Sending message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesaj gönderiliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="481"/>
+        <location filename="../WalletAdapter.cpp" line="450"/>
         <source>Creating deposit</source>
-        <translation type="unfinished"></translation>
+        <translation>Mevduat oluşturuluyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="494"/>
+        <location filename="../WalletAdapter.cpp" line="462"/>
         <source>Withdrawing deposit</source>
-        <translation type="unfinished"></translation>
+        <translation>Mevduat çekiliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="538"/>
-        <location filename="../WalletAdapter.cpp" line="564"/>
+        <location filename="../WalletAdapter.cpp" line="498"/>
+        <location filename="../WalletAdapter.cpp" line="520"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazır</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="579"/>
+        <location filename="../WalletAdapter.cpp" line="532"/>
         <source>Synchronizing</source>
-        <translation type="unfinished"></translation>
+        <translation>Senkronize ediliyor</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Synchronized</source>
-        <translation type="unfinished"></translation>
+        <translation>Senkronize edildi</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Optimizing</source>

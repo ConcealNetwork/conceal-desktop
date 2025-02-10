@@ -606,8 +606,8 @@ Please wait...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5154"/>
-        <source>Reddit</source>
+        <location filename="../gui/ui/overviewframe.ui" line="5118"/>
+        <source>Market Place</source>
         <translation></translation>
     </message>
     <message>
@@ -919,7 +919,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="4964"/>
-        <source>STAY TUNED</source>
+        <source>COMMUNITY</source>
         <translation></translation>
     </message>
     <message>
@@ -2184,68 +2184,68 @@ Your wallet will be optimized automatically every 15 minutes.</source>
 <context>
     <name>WalletGui::WalletAdapter</name>
     <message>
-        <location filename="../WalletAdapter.cpp" line="186"/>
+        <location filename="../WalletAdapter.cpp" line="183"/>
         <source>Importing keys</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="252"/>
+        <location filename="../WalletAdapter.cpp" line="241"/>
         <source>Saving data</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="136"/>
+        <location filename="../WalletAdapter.cpp" line="130"/>
         <source>Opening wallet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="164"/>
+        <location filename="../WalletAdapter.cpp" line="153"/>
         <source>Creating wallet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="407"/>
+        <location filename="../WalletAdapter.cpp" line="391"/>
         <source>Sending transaction</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="426"/>
+        <location filename="../WalletAdapter.cpp" line="413"/>
         <source>Optimizing wallet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="447"/>
+        <location filename="../WalletAdapter.cpp" line="435"/>
         <source>Sending message</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="481"/>
+        <location filename="../WalletAdapter.cpp" line="450"/>
         <source>Creating deposit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="494"/>
+        <location filename="../WalletAdapter.cpp" line="462"/>
         <source>Withdrawing deposit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="538"/>
-        <location filename="../WalletAdapter.cpp" line="564"/>
+        <location filename="../WalletAdapter.cpp" line="498"/>
+        <location filename="../WalletAdapter.cpp" line="520"/>
         <source>Ready</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="579"/>
+        <location filename="../WalletAdapter.cpp" line="532"/>
         <source>Synchronizing</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Synchronized</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
+        <location filename="../WalletAdapter.cpp" line="655"/>
         <source>Warning</source>
         <translation></translation>
     </message>

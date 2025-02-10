@@ -803,7 +803,7 @@ Please wait...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5275"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5203"/>
         <source>Medium</source>
         <translation></translation>
     </message>
@@ -1290,7 +1290,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="4964"/>
-        <source>STAY TUNED</source>
+        <source>COMMUNITY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1459,12 +1459,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5154"/>
-        <source>Reddit</source>
+        <location filename="../gui/ui/overviewframe.ui" line="5118"/>
+        <source>Market Place</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5203"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5710"/>
         <source>TradeOgre</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2848,12 +2848,12 @@ Your wallet will be optimized automatically every 15 minutes.</source>
 <context>
     <name>WalletGui::WalletAdapter</name>
     <message>
-        <location filename="../WalletAdapter.cpp" line="186"/>
+        <location filename="../WalletAdapter.cpp" line="183"/>
         <source>Importing keys</source>
         <translation>Импортирование ключей</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="252"/>
+        <location filename="../WalletAdapter.cpp" line="241"/>
         <source>Saving data</source>
         <translation>Сохранение данных</translation>
     </message>
@@ -2862,61 +2862,61 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">Идет отправка</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="136"/>
-        <source>Opening wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="164"/>
-        <source>Creating wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="407"/>
-        <source>Sending transaction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="428"/>
-        <source>Optimizing wallet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="449"/>
-        <source>Sending message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="481"/>
-        <source>Creating deposit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="494"/>
-        <source>Withdrawing deposit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="538"/>
-        <location filename="../WalletAdapter.cpp" line="564"/>
-        <source>Ready</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="579"/>
-        <source>Synchronizing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
-        <source>Synchronized</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WalletAdapter.cpp" line="729"/>
-        <source>Warning</source>
-        <translation type="unfinished">Внимание</translation>
-    </message>
+    <location filename="../WalletAdapter.cpp" line="130"/>
+    <source>Opening wallet</source>
+    <translation>Открытие кошелька</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="153"/>
+    <source>Creating wallet</source>
+    <translation>Создание кошелька</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="391"/>
+    <source>Sending transaction</source>
+    <translation>Отправка транзакции</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="413"/>
+    <source>Optimizing wallet</source>
+    <translation>Оптимизация кошелька</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="435"/>
+    <source>Sending message</source>
+    <translation>Отправка сообщения</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="450"/>
+    <source>Creating deposit</source>
+    <translation>Создание депозита</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="462"/>
+    <source>Withdrawing deposit</source>
+    <translation>Вывод депозита</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="498"/>
+    <location filename="../WalletAdapter.cpp" line="520"/>
+    <source>Ready</source>
+    <translation>Готово</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="532"/>
+    <source>Synchronizing</source>
+    <translation>Синхронизация</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="655"/>
+    <source>Synchronized</source>
+    <translation>Синхронизировано</translation>
+</message>
+<message>
+    <location filename="../WalletAdapter.cpp" line="655"/>
+    <source>Warning</source>
+    <translation>Внимание</translation>
+</message>
     <message>
         <source>Optimizing</source>
         <translation type="vanished">Оптимизация</translation>
