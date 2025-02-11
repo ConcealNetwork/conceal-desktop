@@ -1,176 +1,12 @@
 <!DOCTYPE QPH>
 <QPH language="ru">
 <phrase>
-    <source>About %1</source>
-    <target>О %1</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Version %1&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;http://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
-</phrase>
-<phrase>
-    <source>The Conceal Wallet</source>
-    <target>Кошелек Conceal</target>
-</phrase>
-<phrase>
     <source>Select address</source>
     <target>Выберите адрес</target>
 </phrase>
 <phrase>
     <source>CHOOSE</source>
     <target>ВЫБРАТЬ</target>
-</phrase>
-<phrase>
-    <source>Address Book</source>
-    <target>Адресная книга</target>
-</phrase>
-<phrase>
-    <source>ADDRESS BOOK</source>
-    <target>АДРЕСНАЯ КНИГА</target>
-</phrase>
-<phrase>
-    <source>COPY ADDRESS</source>
-    <target>КОПИРОВАТЬ АДРЕС</target>
-</phrase>
-<phrase>
-    <source>REMOVE ADDRESS</source>
-    <target>УДАЛИТЬ АДРЕС</target>
-</phrase>
-<phrase>
-    <source>ADD NEW ADDRESS</source>
-    <target>ДОБАВИТЬ НОВЫЙ АДРЕС</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Settings</source>
-    <target>Настройки</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>OPTIMIZE NOW</source>
-    <target>ОПТИМИЗИРОВАТЬ</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>Этот процесс оптимизирует ваш кошелек для крупных транзакций. Оптимизация займет около 22 минут. Обратите внимание, что вы не сможете тратить свои деньги, пока не завершите процесс оптимизации. В некоторых случаях кошелек может потребоваться оптимизировать более одного раза.</target>
-</phrase>
-<phrase>
-    <source>Optimization recommended for this wallet</source>
-    <target>Для данного кошелька рекомендуется оптимизация</target>
-</phrase>
-<phrase>
-    <source>Optimize Wallet</source>
-    <target>Оптимизировать кошелек</target>
-</phrase>
-<phrase>
-    <source>Auto Optimization</source>
-    <target>Авто Оптимизация</target>
-</phrase>
-<phrase>
-    <source>ENABLE</source>
-    <target>Включи</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Enable auto-optimize and the wallet will automatically optimize your wallet in the background while your wallet is open. The operation will only run if the wallet requires optimization . The process will check every 15 minutes. Auto optimization is disbaled by default.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>Включите автоматическую оптимизацию, и кошелек автоматически оптимизирует ваш кошелек в фоновом режиме, пока ваш кошелек открыт. Операция будет выполнена только в том случае, если кошелек требует оптимизации. Процесс будет проверять каждые 15 минут. Автоматическая оптимизация по умолчанию отключена.</target>
-</phrase>
-<phrase>
-    <source>Rescan Wallet</source>
-    <target>Сбросить кошелек</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;When you rescan, the wallet scans the blockchain again to refresh your wallet and transaction details.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>При повторном сканировании кошелек снова сканирует блокчейн, чтобы обновить ваш кошелек и детали транзакции.</target>
-</phrase>
-<phrase>
-    <source>RESCAN NOW</source>
-    <target>Сбросить кошелек</target>
-</phrase>
-<phrase>
-    <source>Close to Tray</source>
-    <target>Закрывать в трей</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray</source>
-    <target>Сворачивать в трей</target>
-</phrase>
-<phrase>
-    <source>Built-in Node</source>
-    <target>Локальная нода</target>
-</phrase>
-<phrase>
-    <source>Custom Remote Node</source>
-    <target>Пользовательская удаленная нода</target>
-</phrase>
-<phrase>
-    <source>Automatic Remote Node</source>
-    <target>Автоматическая удаленная нода</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>По умолчанию ваш кошелек будет подключаться с помощью встроенного узла, что поможет в децентрализации. Вы также можете использовать удаленный узел, если вы не хотите загружать весь блокчейн. Обратите внимание, что некоторые удаленные узлы будут платить за отправку транзакций.</target>
-</phrase>
-<phrase>
-    <source>Set Connection Type</source>
-    <target>Настройки подключения</target>
-</phrase>
-<phrase>
-    <source>Russian</source>
-    <target>Русский</target>
-</phrase>
-<phrase>
-    <source>Turkish</source>
-    <target>Турецкий</target>
-</phrase>
-<phrase>
-    <source>English</source>
-    <target>Английский</target>
-</phrase>
-<phrase>
-    <source>Select Language</source>
-    <target>Выбеите ваш язык</target>
-</phrase>
-<phrase>
-    <source>Other</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>SAVE</source>
-    <target>СОХРАНИТЬ</target>
-</phrase>
-<phrase>
-    <source>Chinese</source>
-    <target>китайский язык</target>
 </phrase>
 <phrase>
     <source>Change Password</source>
@@ -201,160 +37,32 @@ p, li { white-space: pre-wrap; }
     <target>ОТМЕНИТЬ</target>
 </phrase>
 <phrase>
+    <source>Contact</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Label</source>
+    <target>Ярлык</target>
+</phrase>
+<phrase>
+    <source>Address</source>
+    <target>Адрес</target>
+</phrase>
+<phrase>
+    <source>Payment ID</source>
+    <target>Идентификатор транзакции</target>
+</phrase>
+<phrase>
+    <source>OK</source>
+    <target>ОК</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
     <source>Deposit Details</source>
     <target>Информация о депозите</target>
-</phrase>
-<phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
-</phrase>
-<phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>BANKING</source>
-    <target>БАНКОВСКИЕ ОПЕРАЦИИ</target>
-</phrase>
-<phrase>
-    <source>CREATE</source>
-    <target>СОЗДАТЬ</target>
-</phrase>
-<phrase>
-    <source>Select the length of your deposit</source>
-    <target>Выберите время вашего депозита</target>
-</phrase>
-<phrase>
-    <source>The fee for this deposit:</source>
-    <target>Комиссия для данного депозита:</target>
-</phrase>
-<phrase>
-    <source>How much would you like to deposit?</source>
-    <target>Какую сумму вы бы хотели внести в депозит?</target>
-</phrase>
-<phrase>
-    <source>5040 blocks</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Interest earned at the end of your deposit:</source>
-    <target>Процентные начисления, которые вы получите по завершению вашего депозита:</target>
-</phrase>
-<phrase>
-    <source>0.001000</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>interestLabel</source>
-    <target>Ярлык инвестиции</target>
-</phrase>
-<phrase>
-    <source>(minimum of 1 CCX)</source>
-    <target>(минимальная сумма - 1 CCX)</target>
-</phrase>
-<phrase>
-    <source>(minimum term of 1 week, maximum 52 weeks)</source>
-    <target>(минимальный срок - 1 неделя, макимальный - 52 недели)</target>
-</phrase>
-<phrase>
-    <source>Length in blocks:</source>
-    <target>Длина в блоках:</target>
-</phrase>
-<phrase>
-    <source>ADD ALL</source>
-    <target>ДОБАВИТЬ ВСЕ</target>
-</phrase>
-<phrase>
-    <source>Unlocked Investments</source>
-    <target>Разблокированные инвестиции</target>
-</phrase>
-<phrase>
-    <source>WITHDRAW</source>
-    <target>ВЫВЕСТИ СРЕДСТВА</target>
-</phrase>
-<phrase>
-    <source>Withdraw</source>
-    <target>Вывести Средства</target>
-</phrase>
-<phrase>
-    <source>Unlocked Deposits</source>
-    <target>Разблокированные депозиты</target>
-</phrase>
-<phrase>
-    <source>Total Unlocked</source>
-    <target>Всего разблокировано</target>
-</phrase>
-<phrase>
-    <source>INTEREST % PER WEEK</source>
-    <target>ПРОЦЕНТЫ ЗА НЕДЕЛЮ</target>
-</phrase>
-<phrase>
-    <source>Weeks</source>
-    <target>Недели</target>
-</phrase>
-<phrase>
-    <source>Interest</source>
-    <target>Проценты</target>
-</phrase>
-<phrase>
-    <source>NEW DEPOSIT</source>
-    <target>НОВЫЙ ДЕПОЗИТ</target>
-</phrase>
-<phrase>
-    <source>NEW INVESTMENT</source>
-    <target>НОВАЯ ИНВЕСТИЦИЯ</target>
-</phrase>
-<phrase>
-    <source>Select the length of your investment</source>
-    <target>Выберите время вашей инвестиции</target>
-</phrase>
-<phrase>
-    <source>Fee</source>
-    <target>Комиссия</target>
-</phrase>
-<phrase>
-    <source> Quarters</source>
-    <target>Кварталы</target>
-</phrase>
-<phrase>
-    <source>How much would you like to invest?</source>
-    <target>На какую сумму вы бы хотели сделать инвестицию?</target>
-</phrase>
-<phrase>
-    <source>68400 blocks</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source> CCX</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>investmentInterest</source>
-    <target>Процент инвестиции</target>
-</phrase>
-<phrase>
-    <source>(minimum of 50,000 CCX)</source>
-    <target>(минимальная сумма - 50,000 CCX)</target>
-</phrase>
-<phrase>
-    <source>(minimum term of 1 quarter, maximum 20 quarters)</source>
-    <target>(минимальный срок - 1 квартал, максимальный - 20 кварталов)</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Legal Disclaimer</source>
-    <target>Правовое уведомление</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conceal is an open source experimental project, which means that there is no company behind it. This project is supported by the community, meaning there is no stable, full-time team and no physical headquarters from which the projects runs its operations. &lt;/p&gt;&lt;p&gt;Conceal is distributed in the hope that it will be useful to mankind, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANT ABILITY or FITNESS FOR A PARTICULAR PURPOSE.&lt;/p&gt;&lt;p&gt;Copyright Notice &lt;/p&gt;&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;quot;Software&amp;quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: &lt;/p&gt;&lt;p&gt;The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. &lt;/p&gt;&lt;p&gt;THE SOFTWARE IS PROVIDED &amp;quot;AS IS&amp;quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p&gt;&lt;p&gt;Copyright 2018-2019 - Conceal.Network&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
 </phrase>
 <phrase>
     <source>CLOSE</source>
@@ -367,7 +75,7 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>%1 wallet is saving data.
 Please wait...</source>
-    <target>Кошелек %1 сохраняет данные.</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>Import GUI key</source>
@@ -386,7 +94,7 @@ Please wait...</source>
     <target>Путь к файлу кошелька</target>
 </phrase>
 <phrase>
-    <source>...</source>
+    <source>Where would you like to save your wallet?</source>
     <target></target>
 </phrase>
 <phrase>
@@ -400,6 +108,70 @@ Please wait...</source>
 <phrase>
     <source>Recreate your wallet with the GUI key</source>
     <target>Пересоздайте ваш кошелек с помощью ключа GUI</target>
+</phrase>
+<phrase>
+    <source>Dialog</source>
+    <target>Диалог</target>
+</phrase>
+<phrase>
+    <source>Import Private Keys</source>
+    <target>Импортировать секретные ключи</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the secret spend and view keys</source>
+    <target>Пересоздайте ваш кошелек с помощью ключа для трат (Spend Key) и ключа для просмотра (View Key)</target>
+</phrase>
+<phrase>
+    <source>Private Spend Key</source>
+    <target>Приватный ключ для трат (Private Spend Key)</target>
+</phrase>
+<phrase>
+    <source>Private View Key</source>
+    <target>Приватный ключ для просмотра (Private View Key)</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Import Private Keys</source>
+    <target>Импортировать секретные ключи</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the secret spend and view keys</source>
+    <target>Пересоздайте ваш кошелек с помощью ключа для трат (Spend Key) и ключа для просмотра (View Key)</target>
+</phrase>
+<phrase>
+    <source>Private Spend Key</source>
+    <target>Приватный ключ для трат (Private Spend Key)</target>
+</phrase>
+<phrase>
+    <source>Private View Key</source>
+    <target>Приватный ключ для просмотра (Private View Key)</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
+</phrase>
+<phrase>
+    <source>Where would you like to save your wallet?</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
 </phrase>
 <phrase>
     <source>Import :: Mnemonic Seed</source>
@@ -430,8 +202,60 @@ Please wait...</source>
     <target>ОТМЕНИТЬ</target>
 </phrase>
 <phrase>
-    <source>...</source>
+    <source>Import Mnemonic Seed</source>
+    <target>Импортировать мнемоническую фразу</target>
+</phrase>
+<phrase>
+    <source>Recreate your wallet with the 25 word mnemonic seed</source>
+    <target>Пересоздайте ваш кошелек с помощью 25-составной мнемонической фразы</target>
+</phrase>
+<phrase>
+    <source>Mnemonic Seed</source>
+    <target>Мнемоническая фраза</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
+</phrase>
+<phrase>
+    <source>Where would you like to save your wallet?</source>
     <target></target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Import</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>Import a tracking wallet (view-only)</source>
+    <target>ИМПОРТИРОВАТЬ VIEW-ONLY КОШЕЛЕК</target>
+</phrase>
+<phrase>
+    <source>Import Tracking Key</source>
+    <target>Ключ для отслеживания транзакции (Tracking Key)</target>
+</phrase>
+<phrase>
+    <source>Tracking Key</source>
+    <target>Ключ для отслеживания транзакции (Tracking Key)</target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
+</phrase>
+<phrase>
+    <source>IMPORT</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
 </phrase>
 <phrase>
     <source>Dialog</source>
@@ -442,16 +266,8 @@ Please wait...</source>
     <target>Путь к файлу кошелька:</target>
 </phrase>
 <phrase>
-    <source>...</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>Tracking key</source>
     <target>Ключ для отслеживания транзакции (Tracking Key)</target>
-</phrase>
-<phrase>
-    <source>IMPORT</source>
-    <target>ИМПОРТИРОВАТЬ</target>
 </phrase>
 <phrase>
     <source>EXIT</source>
@@ -462,48 +278,80 @@ Please wait...</source>
     <target>ИМПОРТИРОВАТЬ VIEW-ONLY КОШЕЛЕК</target>
 </phrase>
 <phrase>
-    <source>Connection Settings</source>
-    <target>Настройки подключения</target>
+    <source>Import Tracking Key</source>
+    <target>Ключ для отслеживания транзакции (Tracking Key)</target>
 </phrase>
 <phrase>
-    <source>Select Your Language</source>
-    <target>Выбеите ваш язык</target>
+    <source>Import a tracking wallet (view-only)</source>
+    <target>ИМПОРТИРОВАТЬ VIEW-ONLY КОШЕЛЕК</target>
 </phrase>
 <phrase>
-    <source>English</source>
-    <target>Английский</target>
+    <source>Tracking Key</source>
+    <target>Ключ для отслеживания транзакции (Tracking Key)</target>
 </phrase>
 <phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
 </phrase>
 <phrase>
-    <source>SAVE</source>
-    <target>СОХРАНИТЬ</target>
-</phrase>
-<phrase>
-    <source>Russian</source>
-    <target>Русский</target>
-</phrase>
-<phrase>
-    <source>Turkish</source>
-    <target>Турецкий</target>
-</phrase>
-<phrase>
-    <source>Chinese</source>
-    <target>китайский язык</target>
-</phrase>
-<phrase>
-    <source>Links</source>
-    <target>Ссылки</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Website&lt;br/&gt;&lt;a href=&quot;https://conceal.network&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Discord&lt;br/&gt;&lt;a href=&quot;https://discord.conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://discord.conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Telegram&lt;br/&gt;&lt;a href=&quot;https://t.co/55klBHKGUR&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://t.co/55klBHKGUR&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Twitter&lt;br/&gt;&lt;a href=&quot;https://twitter.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://twitter.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Reddit&lt;br/&gt;&lt;a href=&quot;https://www.reddit.com/r/ConcealNetwork/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://www.reddit.com/r/ConcealNetwork/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Medium&lt;br/&gt;&lt;a href=&quot;https://medium.com/@ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://medium.com/@ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Github&lt;br/&gt;&lt;a href=&quot;https://github.com/ConcealNetwork&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://github.com/ConcealNetwork&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bitcointalk&lt;br/&gt;&lt;a href=&quot;https://bitcointalk.org/index.php?topic=5086106&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://bitcointalk.org/index.php?topic=5086106&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>Where would you like to save your wallet?</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
+    <source>IMPORT</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Enter password</source>
+    <target>Введите пароль</target>
+</phrase>
+<phrase>
+    <source>Type your password...</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>CONTINUE</source>
+    <target>ПРОДОЛЖИТЬ</target>
+</phrase>
+<phrase>
+    <source>Incorrect Password. Please try again.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Welcome Back</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>currentWallet</source>
+    <target>СИНХРОНИЗАЦИЯ</target>
+</phrase>
+<phrase>
+    <source>Click CONTINUE or press ENTER to unlock your wallet</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Conceal Desktop 6.2.1</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>HELP</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>EXIT</source>
+    <target>ВЫХОД</target>
+</phrase>
+<phrase>
+    <source>CHANGE</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Click CHANGE to choose (or create) another wallet</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>MainWindow</source>
@@ -622,7 +470,7 @@ Please wait...</source>
     <target>Импортировать view-only кошелек</target>
 </phrase>
 <phrase>
-    <source>Frame</source>
+    <source>Conceal Desktop</source>
     <target></target>
 </phrase>
 <phrase>
@@ -630,12 +478,12 @@ Please wait...</source>
     <target>Получатель:</target>
 </phrase>
 <phrase>
-    <source>...</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>Message</source>
     <target>Сообщение</target>
+</phrase>
+<phrase>
+    <source>Message Details</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>Block height</source>
@@ -654,132 +502,36 @@ Please wait...</source>
     <target>Размер сообщения (в битах)</target>
 </phrase>
 <phrase>
-    <source>Reply</source>
-    <target>Ответить</target>
-</phrase>
-<phrase>
-    <source>Save to file</source>
+    <source>SAVE TO FILE</source>
     <target>Сохранить в файл</target>
-</phrase>
-<phrase>
-    <source>&lt;&lt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>&gt;&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Ok</source>
-    <target>Ок</target>
-</phrase>
-<phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>   MESSAGES</source>
-    <target>СООБЩЕНИЯ</target>
-</phrase>
-<phrase>
-    <source>NEW MESSAGE</source>
-    <target>НОВОЕ СООБЩЕНИЕ</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>MINING</source>
-    <target>МАЙНИНГ</target>
-</phrase>
-<phrase>
-    <source>Select a mining pool</source>
-    <target>Выберите пул для майнинга</target>
-</phrase>
-<phrase>
-    <source>Number of CPU cores</source>
-    <target>Количество процессорных ядер</target>
-</phrase>
-<phrase>
-    <source>ADD MINING POOL</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Mining status :</source>
-    <target>Статус майнинга :</target>
-</phrase>
-<phrase>
-    <source>Stopped</source>
-    <target>Остановлен</target>
-</phrase>
-<phrase>
-    <source>START MINING</source>
-    <target>НАЧАТЬ МАЙНИНГ</target>
-</phrase>
-<phrase>
-    <source>PAUSE MINING</source>
-    <target>ПРИОСТАНОВИТЬ МАЙНИНГ</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>New address</source>
-    <target>Новый адрес</target>
-</phrase>
-<phrase>
-    <source>NEW ADDRESS BOOK ENTRY</source>
-    <target>ДОБАВИТЬ В АДРЕСНУЮ КНИГУ</target>
-</phrase>
-<phrase>
-    <source>LABEL</source>
-    <target>ЯРЛЫК</target>
-</phrase>
-<phrase>
-    <source>ADDRESS</source>
-    <target>АДРЕС</target>
-</phrase>
-<phrase>
-    <source>PAYMENT ID</source>
-    <target>ИДЕНТИФИКАТОР ТРАНЗАКЦИИ</target>
-</phrase>
-<phrase>
-    <source>ADD</source>
-    <target>ДОБАВИТЬ</target>
-</phrase>
-<phrase>
-    <source>CANCEL</source>
-    <target>ОТМЕНИТЬ</target>
-</phrase>
-<phrase>
-    <source>New remote node</source>
-    <target>Новая удаленная нода</target>
-</phrase>
-<phrase>
-    <source>Host</source>
-    <target>Хост</target>
 </phrase>
 <phrase>
     <source>OK</source>
     <target>ОК</target>
 </phrase>
 <phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
+    <source>New address</source>
+    <target>Новый адрес</target>
 </phrase>
 <phrase>
-    <source>Add Remote Node</source>
-    <target>Добавить удаленную ноду</target>
+    <source>Address:</source>
+    <target>Адрес:</target>
+</phrase>
+<phrase>
+    <source>Label:</source>
+    <target>Ярлык:</target>
+</phrase>
+<phrase>
+    <source>Payment ID:</source>
+    <target>Идентификатор транзакции:</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>OK</source>
+    <target>ОК</target>
 </phrase>
 <phrase>
     <source>Enter password</source>
@@ -806,136 +558,44 @@ Please wait...</source>
     <target>ЗАКРЫТЬ</target>
 </phrase>
 <phrase>
-    <source>New pool</source>
-    <target>Новый пул</target>
+    <source>BANKING</source>
+    <target>БАНКОВСКИЕ ОПЕРАЦИИ</target>
 </phrase>
 <phrase>
-    <source>Host:</source>
-    <target>Хост:</target>
-</phrase>
-<phrase>
-    <source>Port:</source>
-    <target>Порт:</target>
-</phrase>
-<phrase>
-    <source>CANCEL</source>
-    <target>ОТМЕНИТЬ</target>
-</phrase>
-<phrase>
-    <source>OK</source>
-    <target>ОК</target>
-</phrase>
-<phrase>
-    <source>Connection Settings</source>
-    <target>Настройки подключения</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;By default your wallet will connect using the built-in node, helping with decentralisation. You can also use a remote node if you dont want to download the entire blockchain.Please note that some remote nodes will have fees when sending transactions.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>INBOX</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>Custom Remote Node</source>
-    <target>Пользовательская удаленная нода</target>
+    <source>ABOUT</source>
+    <target>ОКОЛО</target>
 </phrase>
 <phrase>
-    <source>Built-in Node</source>
-    <target>Локальная нода</target>
+    <source>TRANSACTIONS</source>
+    <target>ТРАНЗАКЦИИ</target>
 </phrase>
 <phrase>
-    <source>CLOSE</source>
-    <target>ЗАКРЫТЬ</target>
+    <source>SETTINGS</source>
+    <target>НАСТРОЙКИ</target>
 </phrase>
 <phrase>
-    <source>SAVE</source>
-    <target>СОХРАНИТЬ</target>
+    <source>WALLET</source>
+    <target>КОШЕЛЕК</target>
 </phrase>
 <phrase>
-    <source>Automatic Remote Node</source>
-    <target>Автоматическая удаленная нода</target>
+    <source>DASHBOARD</source>
+    <target>ПРИБОРНАЯ ДОСКА</target>
 </phrase>
 <phrase>
-    <source>Frame</source>
-    <target></target>
+    <source>ADDRESS BOOK</source>
+    <target>АДРЕСНАЯ КНИГА</target>
 </phrase>
 <phrase>
-    <source>Banking</source>
-    <target>Банк</target>
+    <source>ABOUT QT</source>
+    <target>О QT</target>
 </phrase>
 <phrase>
-    <source>Messages</source>
-    <target>Сообщение</target>
-</phrase>
-<phrase>
-    <source>About</source>
-    <target>Информация</target>
-</phrase>
-<phrase>
-    <source>Transactions</source>
-    <target>Транзакции</target>
-</phrase>
-<phrase>
-    <source>Settings</source>
-    <target>Настройки</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:12px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:160%;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;statusBox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Wallet</source>
-    <target>Кошелек</target>
-</phrase>
-<phrase>
-    <source>First</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Second</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Third</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Fourth</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Fifth</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Sixth</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>RECENT TRANSACTIONS</source>
-    <target>ПОСЛЕДНИЕ ТРАНЗАКЦИИ</target>
-</phrase>
-<phrase>
-    <source>Pending</source>
-    <target>Ожидание</target>
-</phrase>
-<phrase>
-    <source>Available</source>
-    <target>Доступно</target>
-</phrase>
-<phrase>
-    <source>FUNDS</source>
-    <target>СРЕДСТВА</target>
+    <source>LOCK</source>
+    <target>ЗАМОК</target>
 </phrase>
 <phrase>
     <source>DEPOSITS</source>
@@ -946,64 +606,644 @@ p, li { white-space: pre-wrap; }
     <target>Заблокировано</target>
 </phrase>
 <phrase>
+    <source>DEPOSIT</source>
+    <target>ДЕПОЗИТЫ</target>
+</phrase>
+<phrase>
     <source>Withdrawable</source>
     <target>Доступно к выводу</target>
-</phrase>
-<phrase>
-    <source>CONCEAL.NETWORK</source>
-    <target>МОЙ КОШЕЛЕК CONCEAL</target>
-</phrase>
-<phrase>
-    <source>currentWallet</source>
-    <target>СИНХРОНИЗАЦИЯ</target>
-</phrase>
-<phrase>
-    <source>SEND</source>
-    <target>ОТПРАВИТЬ</target>
-</phrase>
-<phrase>
-    <source>BANKING</source>
-    <target>БАНКОВСКИЕ ОПЕРАЦИИ</target>
-</phrase>
-<phrase>
-    <source>MESSAGE</source>
-    <target>СООБЩЕНИЕ</target>
 </phrase>
 <phrase>
     <source>INVESTMENTS</source>
     <target>ИНВЕСТИЦИИ</target>
 </phrase>
 <phrase>
-    <source>CCX</source>
+    <source>COPY WALLET ADDRESS</source>
+    <target>АДРЕС КОШЕЛЬКА</target>
+</phrase>
+<phrase>
+    <source>currentWallet</source>
+    <target>СИНХРОНИЗАЦИЯ</target>
+</phrase>
+<phrase>
+    <source>SEND FUNDS</source>
+    <target>ОТПРАВИТЬ СРЕДСТВА</target>
+</phrase>
+<phrase>
+    <source>NEW MESSAGE</source>
+    <target>НОВОЕ СООБЩЕНИЕ</target>
+</phrase>
+<phrase>
+    <source>CONTACT US / STAY INFORMED</source>
+    <target>СВЯЗАТЬСЯ С НАМИ</target>
+</phrase>
+<phrase>
+    <source>Discord</source>
     <target></target>
 </phrase>
 <phrase>
+    <source>Telegram</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Twitter</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Medium</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Locked Deposits</source>
+    <target>Закрытые вклады</target>
+</phrase>
+<phrase>
+    <source>Available</source>
+    <target>Доступно</target>
+</phrase>
+<phrase>
+    <source>TOTAL BALANCE</source>
+    <target>ИТОГОВЫЙ БАЛАНС</target>
+</phrase>
+<phrase>
+    <source>Portfolio</source>
+    <target>портфолио</target>
+</phrase>
+<phrase>
+    <source>RECENT ACTIVITY</source>
+    <target>ПОСЛЕДНЕЕ</target>
+</phrase>
+<phrase>
     <source>VOLUME</source>
-    <target>ОБЪЕМ</target>
+    <target></target>
 </phrase>
 <phrase>
     <source>MARKETCAP</source>
     <target>КАПИТАЛИЗАЦИЯ</target>
 </phrase>
 <phrase>
-    <source>BTC</source>
-    <target>BTC</target>
-</phrase>
-<phrase>
-    <source>WALLET ADDRESS</source>
-    <target>АДРЕС КОШЕЛЬКА</target>
-</phrase>
-<phrase>
-    <source>ccx7VYYGA65jUCfVaeiaHeSN5cmZZcLbhMm1FbpLYpnPVuDKKpH3n3hMiosUCs7LiT1WLrGx8nfZkeETox622EGt4ky2GihVZ8</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>MARKET INFORMATION</source>
     <target>РЫНОЧНАЯ ИНФОРМАЦИЯ</target>
 </phrase>
 <phrase>
+    <source>HISTORICAL DATA</source>
+    <target>ИСТОРИЧЕСКИЕ ДАННЫЕ</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrpencises, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entires to get a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Это ваша история транзакций. Это список всех входящих и исходящих транзакций, депозитов и оптимизаций. Если есть какие-либо неточности, пожалуйста, сделайте повторную проверку вашего кошелька, чтобы удалить все неудачные транзакции из списка. Дважды щелкните отдельные объекты, чтобы получить более подробный вид.</target>
+</phrase>
+<phrase>
+    <source>MESSAGE OVERVIEW</source>
+    <target>ОБЗОР СООБЩЕНИЯ</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A list of icoming and outgoing messages for this wallet. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Список исходящих и исходящих сообщений для этого кошелька.</target>
+</phrase>
+<phrase>
+    <source>Connection</source>
+    <target>соединение</target>
+</phrase>
+<phrase>
+    <source>Custom Remote Node</source>
+    <target>Пользовательская удаленная нода</target>
+</phrase>
+<phrase>
+    <source>Built-in Node</source>
+    <target>Локальная нода</target>
+</phrase>
+<phrase>
+    <source>Automatic Remote Node</source>
+    <target>Автоматическая удаленная нода</target>
+</phrase>
+<phrase>
+    <source>Set connection type</source>
+    <target>Настройки подключения</target>
+</phrase>
+<phrase>
+    <source>SAVE</source>
+    <target>СОХРАНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Optimization</source>
+    <target>Оптимизация</target>
+</phrase>
+<phrase>
+    <source>Auto optimization</source>
+    <target>Авто Оптимизация</target>
+</phrase>
+<phrase>
+    <source>Website</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Web Wallet</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Click to Copy</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Settings</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Show QR Code</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Lock Wallet</source>
+    <target>Замок кошелек</target>
+</phrase>
+<phrase>
+    <source>Large transactions</source>
+    <target>Большие транзакции</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE</source>
+    <target>ОПТИМИЗИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>START</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Rescan wallet</source>
+    <target>Сбросить кошелек</target>
+</phrase>
+<phrase>
+    <source>ENABLE</source>
+    <target>Включи</target>
+</phrase>
+<phrase>
+    <source>OPTIMIZE NOW</source>
+    <target>ОПТИМИЗИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>START RESCAN</source>
+    <target>Сбросить кошелек</target>
+</phrase>
+<phrase>
+    <source>(Optimization not required)</source>
+    <target>(Оптимизация не требуется)</target>
+</phrase>
+<phrase>
+    <source>Font</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Preferences</source>
+    <target>предпочтения</target>
+</phrase>
+<phrase>
+    <source>Start Maximized</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Font Size</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Close to tray</source>
+    <target>Закрывать в трей</target>
+</phrase>
+<phrase>
+    <source>Language</source>
+    <target>язык</target>
+</phrase>
+<phrase>
+    <source>Currency</source>
+    <target>валюта</target>
+</phrase>
+<phrase>
+    <source>Chinese</source>
+    <target>китайский язык</target>
+</phrase>
+<phrase>
+    <source>English</source>
+    <target>Английский</target>
+</phrase>
+<phrase>
+    <source>Russian</source>
+    <target>Русский</target>
+</phrase>
+<phrase>
+    <source>Turkish</source>
+    <target>Турецкий</target>
+</phrase>
+<phrase>
+    <source>French</source>
+    <target>Французский</target>
+</phrase>
+<phrase>
+    <source>Import Wallet</source>
+    <target>Импортировать кошелек</target>
+</phrase>
+<phrase>
+    <source>IMPORT TRACKING WALLET</source>
+    <target>ИМПОРТ СМОТРЕТЬ КОШЕЛЕК</target>
+</phrase>
+<phrase>
+    <source>IMPORT PRIVATE KEYS</source>
+    <target>ИМПОРТИРОВАТЬ СЕКРЕТНЫЕ КЛЮЧИ</target>
+</phrase>
+<phrase>
+    <source>Minimize to tray</source>
+    <target>Сворачивать в трей</target>
+</phrase>
+<phrase>
+    <source>Wallet Operations</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>New/Existing</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>NEW WALLET</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Import</source>
+    <target>ИМПОРТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>IMPORT SEED</source>
+    <target>ИМПОРТИРОВАТЬ МНЕМОНИЧЕСКУЮ ФРАЗУ</target>
+</phrase>
+<phrase>
+    <source>New or Existing Wallet</source>
+    <target>Новый или существующий кошелек</target>
+</phrase>
+<phrase>
+    <source>CREATE NEW WALLET</source>
+    <target>НОВЫЙ КОШЕЛЕК</target>
+</phrase>
+<phrase>
+    <source>OPEN EXISTING WALLET</source>
+    <target>ОТКРЫТЬ СУЩЕСТВУЮЩИЙ КОШЕЛЕК</target>
+</phrase>
+<phrase>
+    <source>ENCRYPT WALLET</source>
+    <target>ЗАШИФРОВАТЬ КОШЕЛЕК</target>
+</phrase>
+<phrase>
+    <source>Backup</source>
+    <target>копия</target>
+</phrase>
+<phrase>
+    <source>BACKUP KEYS</source>
+    <target>РЕЗЕРВНЫЕ КЛЮЧИ</target>
+</phrase>
+<phrase>
+    <source>BACKUP WALLET FILE</source>
+    <target>СДЕЛАТЬ ЗАПАСНУЮ КОПИЮ КОШЕЛЬКА</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Пожалуйста, убедитесь, что адрес и идентификатор платежа (если включены) верны перед отправкой. Средства, отправленные не по адресу, будут потеряны.</target>
+</phrase>
+<phrase>
+    <source>Payment ID (Optional) - Required at some Exchanges</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Message (Optional)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Save to Address Book</source>
+    <target>Сохранить в адресной книге</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Сумма</target>
+</phrase>
+<phrase>
+    <source>Address</source>
+    <target>Адрес</target>
+</phrase>
+<phrase>
+    <source>SEND</source>
+    <target>ОТПРАВИТЬ</target>
+</phrase>
+<phrase>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>CLEAR</source>
+    <target>ЧИСТО</target>
+</phrase>
+<phrase>
+    <source>Do not include message in blockchain</source>
+    <target>Не включайте сообщение в блокчейн</target>
+</phrase>
+<phrase>
+    <source>Set self destruct time</source>
+    <target>Установить время на автоуничтожение</target>
+</phrase>
+<phrase>
+    <source>COPY PAYMENT ID</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>NEW CONTACT</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>HELP DESK</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>DONATION</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Quarter</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Half</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>All</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Send</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Cancel</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Clear All</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ABOUT CONCEAL&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Conceal.Network is a decentralized blockchain bank, with deposits and investments paying interest rates, without involvement of financial institutions, powered by 100% open source code. Conceal.Network enables untraceable and anonymous messaging, and a secure way to transfer funds. Using a distributed public ledger, the sender and receiver are kept anonymous.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://opensource.org/licenses/MIT&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://conceal.network/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#ffa500;&quot;&gt;https://conceal.network/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>ABOUT CONCEAL DESKTOP</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This software is using Qt</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This software is using QtCharts</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>LICENSE AND SOURCE CODE</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This is your transaction history. It is a list of all incoming and outgoing transactions, deposits, and optimizations. If there are any discrepancies, please do a rescan of your wallet to purge any failed transactions from the list. Double-click individual entries to get a more detailed view.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Clear</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Note: Maximum message size is 260 characters.</source>
+    <target>Примечание. Максимальный размер сообщения составляет 260 символов.</target>
+</phrase>
+<phrase>
+    <source>Refresh data</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>BUY/MARKETS</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>TOOLS</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>sm</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wiki</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>COMMUNITY</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Withdraw Deposit</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>NEW DEPOSIT</source>
+    <target>НОВЫЙ ДЕПОЗИТ</target>
+</phrase>
+<phrase>
+    <source>How long should your deposit last?</source>
+    <target>Как долго должен длиться ваш депозит?</target>
+</phrase>
+<phrase>
+    <source>Auto refresh data</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Status</source>
+    <target>Статус</target>
+</phrase>
+<phrase>
+    <source>How much do you want to deposit?</source>
+    <target>Сколько вы хотите внести?</target>
+</phrase>
+<phrase>
+    <source>Deposit Details</source>
+    <target>Информация о депозите</target>
+</phrase>
+<phrase>
+    <source>interestLabel</source>
+    <target>Ярлык инвестиции</target>
+</phrase>
+<phrase>
+    <source>Interest rate:</source>
+    <target>Проценты:</target>
+</phrase>
+<phrase>
+    <source>Rewards you will earn:</source>
+    <target>Награды вы заработаете:</target>
+</phrase>
+<phrase>
+    <source>Fees for this deposit:</source>
+    <target>Плата за этот депозит:</target>
+</phrase>
+<phrase>
+    <source>Length on the blockchain:</source>
+    <target>Длина на блокчейне:</target>
+</phrase>
+<phrase>
+    <source>MAKE DEPOSIT</source>
+    <target>НОВЫЙ ДЕПОЗИТ</target>
+</phrase>
+<phrase>
+    <source>DEPOSIT HISTORY</source>
+    <target>ИСТОРИЧЕСКИЕ ДАННЫЕ</target>
+</phrase>
+<phrase>
+    <source>WITHDRAW</source>
+    <target>ВЫВЕСТИ СРЕДСТВА</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Poppins&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;A complete history of all your deposits. Double-click an individual deposit for a more detailed view.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target>Полная история всех ваших депозитов. Дважды щелкните отдельный депозит для более подробного просмотра.</target>
+</phrase>
+<phrase>
+    <source>CONCEAL.NETWORK</source>
+    <target>МОЙ КОШЕЛЕК CONCEAL</target>
+</phrase>
+<phrase>
+    <source>YOUR CONTACT LIST</source>
+    <target>ВАШ КОНТАКТНЫЙ СПИСОК</target>
+</phrase>
+<phrase>
+    <source>COPY ADDRESS</source>
+    <target>КОПИРОВАТЬ АДРЕС</target>
+</phrase>
+<phrase>
+    <source>COPY PAYMENTID</source>
+    <target>КОПИРОВАТЬ PAYMENT ID</target>
+</phrase>
+<phrase>
+    <source>PAY TO</source>
+    <target>ПОЛУЧАТЕЛЬ СРЕДСТВ</target>
+</phrase>
+<phrase>
+    <source>EDIT CONTACT</source>
+    <target>РЕДАКТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>DELETE CONTACT</source>
+    <target>УДАЛЯТЬ</target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>ОТПРАВИТЬ СООБЩЕНИЕ</target>
+</phrase>
+<phrase>
+    <source>OPEN WALLET</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>EXPORT CSV</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>Сообщение</target>
+</phrase>
+<phrase>
+    <source>PRICE</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>24 HOUR CHANGE</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Pending</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>GitHub</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Market Place</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>TradeOgre</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>A complete history of all your deposits. Double-click an individual deposit for a more detailed view.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Make Deposit</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This wallet is locked. Please click below to unlock your wallet.</source>
+    <target>Этот кошелек заблокирован. Пожалуйста, нажмите ниже, чтобы разблокировать ваш кошелек.</target>
+</phrase>
+<phrase>
+    <source>UNLOCK WALLET</source>
+    <target>ОТКРЫТЬ</target>
+</phrase>
+<phrase>
+    <source>Current Wallet</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Portfolio (CCX)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>HEIGHT</source>
+    <target>Высота</target>
+</phrase>
+<phrase>
+    <source>A list of incoming and outgoing messages for this wallet. </source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Portfolio (USD)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Current Height</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>Enter password</source>
     <target>Введите пароль</target>
+</phrase>
+<phrase>
+    <source>Type your password...</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>CONTINUE</source>
@@ -1014,8 +1254,12 @@ p, li { white-space: pre-wrap; }
     <target>Неверный пароль</target>
 </phrase>
 <phrase>
-    <source>Please Enter Your Password For Wallet</source>
-    <target>Пожалуйста, введите пароль от кошелька</target>
+    <source>CANCEL</source>
+    <target>ОТМЕНИТЬ</target>
+</phrase>
+<phrase>
+    <source>Please Enter Your Password</source>
+    <target>Введите пароль</target>
 </phrase>
 <phrase>
     <source>currentWallet</source>
@@ -1038,6 +1282,11 @@ p, li { white-space: pre-wrap; }
     <target>Ошибка</target>
 </phrase>
 <phrase>
+    <source>%1 Wallet failed to start.
+Check that port %2 is not already in use.</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>STARTING WALLET</source>
     <target>ЗАГРУЗКА КОШЕЛЬКА</target>
 </phrase>
@@ -1052,24 +1301,25 @@ Would you like to go to the download page?</source>
 Хотите перейти на страницу загрузки?</target>
 </phrase>
 <phrase>
-    <source>Frame</source>
+    <source>Seed confirmation error</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>WALLET SEED AND KEYS</source>
-    <target>КЛЮЧИ И МНЕМОНИЧЕСКАЯ ФРАЗА КОШЕЛЬКА</target>
+    <source>Conceal Desktop Update</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>There is an update available.
+Would you like to go to the download page?</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>WALLET KEY BACKUP</source>
+    <target>РЕЗЕРВНЫЕ КЛЮЧИ</target>
 </phrase>
 <phrase>
     <source>YOUR 25 WORD MNEMONIC SEED</source>
     <target>ВАША 25-СОСТАВНАЯ МНЕМОНИЧЕСКАЯ ФРАЗА</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;Your wallet is an older format that does not support mnemonic seeds. Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
 </phrase>
 <phrase>
     <source>COPY</source>
@@ -1088,23 +1338,15 @@ p, li { white-space: pre-wrap; }
     <target>ПРИВАТНЫЙ КЛЮЧ ДЛЯ ТРАТ</target>
 </phrase>
 <phrase>
+    <source>private spend key goes here</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>PRIVATE VIEW KEY</source>
     <target>ПРИВАТНЫЙ КЛЮЧ ДЛЯ ПРОСМОТРА (PRIVATE VIEW KEY)</target>
 </phrase>
 <phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private spend key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier&apos;; font-size:10pt;&quot;&gt;private view key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>private view key goes here</source>
     <target></target>
 </phrase>
 <phrase>
@@ -1114,6 +1356,18 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>■  Keep your seed and password safe</source>
     <target>■  Убедитесь, что вашу мнемоническую фразу и пароль знаете только вы</target>
+</phrase>
+<phrase>
+    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;monospace&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tracking key goes here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wallet Key Backup</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>■  Make a backup of your wallet file</source>
@@ -1136,199 +1390,44 @@ p, li { white-space: pre-wrap; }
     <target>ПОКАЗАТЬ МНЕМОНИЧЕСКУЮ ФРАЗУ</target>
 </phrase>
 <phrase>
-    <source>private keys</source>
-    <target>приватные ключи</target>
-</phrase>
-<phrase>
-    <source>gui key</source>
-    <target>ключ GUI</target>
-</phrase>
-<phrase>
-    <source>advanced users:</source>
-    <target>продвинутые пользователи:</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>PRIVATE KEYS</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>YOUR GUI KEY</source>
-    <target>ВАШ КЛЮЧ GUI</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:17px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:11pt;&quot;&gt;gui key goes here&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>TRACKING KEY</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>Frame</source>
+    <source>Advanced Users:</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>SEND FUNDS</source>
-    <target>ОТПРАВИТЬ СРЕДСТВА</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>PAYMENT ID (OPTIONAL)</source>
-    <target>ИДЕНТИФИКАТОР ТРАНЗАКЦИИ (НЕ ОБЯЗАТЕЛЬНО)</target>
-</phrase>
-<phrase>
-    <source>ADDRESS</source>
-    <target>АДРЕС</target>
-</phrase>
-<phrase>
-    <source>LABEL</source>
-    <target>ЯРЛЫК</target>
-</phrase>
-<phrase>
-    <source>0.000000</source>
+    <source>Your wallet is an older format that does not support mnemonic seeds.
+Please generate a new wallet in order to get the 25 word Mnemonic seed and transfer your existing funds to your new wallet.</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>AMOUNT</source>
-    <target>СУММА</target>
-</phrase>
-<phrase>
-    <source>AVAILABLE BALANCE</source>
-    <target>ДОСТУПНАЯ СУММА</target>
-</phrase>
-<phrase>
-    <source>CLEAR ALL</source>
-    <target>ОЧИСТИТЬ ВСЕ</target>
-</phrase>
-<phrase>
-    <source>FEE</source>
-    <target>КОМИССИЯ</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Please ensure that the Address and the Payment ID (if included) are correct before sending. Funds sent to the wrong address will be lost.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:9pt;&quot;&gt;Пожалуйста, перед отправкой убедитесь в том, что адрес и идентификатор транзакции верны. В противном случае, средства будут утеряны..&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</target>
-</phrase>
-<phrase>
-    <source>ADDRESS BOOK</source>
-    <target>АДРЕСНАЯ КНИГА</target>
-</phrase>
-<phrase>
-    <source>NODE FEE</source>
-    <target>КОМИССИЯ НА ИСПОЛЬЗОВАНИЕ НОДЫ</target>
-</phrase>
-<phrase>
-    <source>CRYPTO MESSAGE (OPTIONAL)</source>
-    <target>СООБЩЕНИЕ (ПО ВЫБОРУ)</target>
-</phrase>
-<phrase>
-    <source>You can send an optional message along with your transfer. There is a 0.000010 CCX fee per character.</source>
-    <target>Вы можете отослать дополнительное сообщение вместе с вашим переводом. За каждый символ сообщения выплачивается комиссия в 0.000010 CCX.</target>
-</phrase>
-<phrase>
-    <source>Some exchanges and other services require that a Payment ID is included when sending funds.</source>
-    <target>Некоторые виды транзакций и иных услуг требуют наличия идентификатора транзакции при переводе средств.</target>
-</phrase>
-<phrase>
-    <source>Include a label if you want to save the recepient in your Address Book</source>
-    <target>Если вы хотите сохранить получателя в адресной книге, придумайте для него ярлык</target>
-</phrase>
-<phrase>
-    <source>Please enter the receivers address</source>
-    <target>Пожалуйста, введите адрес получателя</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>YOUR TRACKING KEY</source>
     <target></target>
-</phrase>
-<phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Add &quot;Reply To&quot;</source>
-    <target>Добавить иной обратный адрес</target>
-</phrase>
-<phrase>
-    <source>Do not include message in blockchain</source>
-    <target>Не включайте сообщение в блокчейн</target>
-</phrase>
-<phrase>
-    <source>Set self destruct time</source>
-    <target>Установить время на автоуничтожение</target>
-</phrase>
-<phrase>
-    <source>ttl</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>FEE</source>
-    <target>КОМИССИЯ</target>
-</phrase>
-<phrase>
-    <source>SEND MESSAGE</source>
-    <target>ОТПРАВИТЬ СООБЩЕНИЕ</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>Please enter the receivers address</source>
-    <target>Пожалуйста, введите адрес получателя</target>
-</phrase>
-<phrase>
-    <source>ADDRESS</source>
-    <target>АДРЕС</target>
-</phrase>
-<phrase>
-    <source>Enter your encrypted message</source>
-    <target>Введите ваше зашифрованное сообщение</target>
-</phrase>
-<phrase>
-    <source>MESSAGE</source>
-    <target>СООБЩЕНИЕ</target>
-</phrase>
-<phrase>
-    <source>ADDRESS BOOK</source>
-    <target>АДРЕСНАЯ КНИГА</target>
-</phrase>
-<phrase>
-    <source>NODE FEE</source>
-    <target>КОМИССИЯ НА ИСПОЛЬЗОВАНИЕ НОДЫ</target>
 </phrase>
 <phrase>
     <source>Walllet Address :: QR Code</source>
     <target>Адрес кошелька: QR-код</target>
 </phrase>
 <phrase>
+    <source>Wallet Address QR Code</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>Transaction details</source>
     <target>Детали транзакции</target>
 </phrase>
 <phrase>
-    <source>Transaction Details</source>
-    <target>Детали транзакции</target>
+    <source>TRANSACTION DETAILS</source>
+    <target>ДЕТАЛИ ТРАНЗАКЦИИ</target>
 </phrase>
 <phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Lato&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>Transaction Details</source>
     <target></target>
 </phrase>
 <phrase>
@@ -1336,35 +1435,11 @@ p, li { white-space: pre-wrap; }
     <target>ЗАКРЫТЬ</target>
 </phrase>
 <phrase>
-    <source>Frame</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>TextLabel</source>
     <target>Текстовый ярлык</target>
 </phrase>
 <phrase>
-    <source>Transaction History</source>
-    <target>История транзакций</target>
-</phrase>
-<phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
-</phrase>
-<phrase>
-    <source>   TRANSACTION HISTORY</source>
-    <target>ИСТОРИЯ ТРАНЗАКЦИЙ</target>
-</phrase>
-<phrase>
-    <source>EXPORT TO CSV</source>
-    <target>ПЕРЕВЕСТИ В CSV</target>
-</phrase>
-<phrase>
-    <source>BACK</source>
-    <target>НАЗАД</target>
-</phrase>
-<phrase>
-    <source>Frame</source>
+    <source>Transaction</source>
     <target></target>
 </phrase>
 <phrase>
@@ -1374,10 +1449,6 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>Enter a label for this address to add it to your address book</source>
     <target>Введите ярлык для этого адреса, чтобы добавить его в свою адресную книгу</target>
-</phrase>
-<phrase>
-    <source>...</source>
-    <target></target>
 </phrase>
 <phrase>
     <source>Label</source>
@@ -1400,16 +1471,12 @@ p, li { white-space: pre-wrap; }
     <target>Сервер обновлений недоступен</target>
 </phrase>
 <phrase>
-    <source>The Conceal Wallet</source>
-    <target>Кошелек Conceal</target>
-</phrase>
-<phrase>
     <source>Invalid address</source>
     <target>Неверный адрес</target>
 </phrase>
 <phrase>
-    <source>Empty label</source>
-    <target>Пустой ярлык</target>
+    <source>Invalid payment ID</source>
+    <target>Неверный идентификатор транзакции</target>
 </phrase>
 <phrase>
     <source>Label</source>
@@ -1424,32 +1491,12 @@ p, li { white-space: pre-wrap; }
     <target>Идентификатор транзакции</target>
 </phrase>
 <phrase>
-    <source>ENABLE</source>
-    <target>Включи</target>
-</phrase>
-<phrase>
-    <source>DISABLE</source>
-    <target>ВЫКЛЮЧИ</target>
-</phrase>
-<phrase>
-    <source>Language settings saved</source>
-    <target>Язык сохранен</target>
-</phrase>
-<phrase>
-    <source>Please restart the wallet for the new settings to take effect.</source>
-    <target>Для вступления в силу изменений пожалуйста перезапустите кошелек.</target>
-</phrase>
-<phrase>
-    <source>Connection settings saved</source>
-    <target>Настойки подключения сохранены</target>
-</phrase>
-<phrase>
     <source>Password not confirmed</source>
     <target>Пароль не подтвержден</target>
 </phrase>
 <phrase>
     <source>Used to deploy test nets. Checkpoints and hardcoded seeds are ignored, network id is changed. Use it with –data-dir flag. The wallet must be launched with –testnet flag</source>
-    <target>Используется для запуска тестировочных сетей. Чекпоинты и жестко запрограмированные сид-фразы игнорируются, ID сети меняется. Используйте данную опцию с параметром –data-dir. Кошелек должен запускаться с параметром –testnet.</target>
+    <target>Используется для запуска тестировочных сетей. Чекпоинты и жестко запрограмированные сид-фразы игнорируются, ID сети меняется. Используйте данную опцию с параметром –data-dir. Кошелек должен запускаться с параметром –testnet</target>
 </phrase>
 <phrase>
     <source>Interface for p2p network protocol</source>
@@ -1470,6 +1517,10 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>xternal port for p2p network protocol (if port forwarding used with NAT)</source>
     <target>Внешний порт для протокола P2P-сети (если вы используете переадресацию портов с NAT)</target>
+</phrase>
+<phrase>
+    <source>External port for p2p network protocol (if port forwarding used with NAT)</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>Allow local ip add to peer list, mostly in debug purposes</source>
@@ -1514,6 +1565,30 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>Run application in minimized mode</source>
     <target>Запустить приложение в свернутом режиме</target>
+</phrase>
+<phrase>
+    <source>Conceal Desktop</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>New Contact</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Edit Contact</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Invalid address</source>
+    <target>Неверный адрес</target>
+</phrase>
+<phrase>
+    <source>Invalid payment ID</source>
+    <target>Неверный идентификатор транзакции</target>
+</phrase>
+<phrase>
+    <source>Contact with such label already exists.</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>Status</source>
@@ -1588,48 +1663,48 @@ p, li { white-space: pre-wrap; }
     <target>Потрачено</target>
 </phrase>
 <phrase>
-    <source>Weeks</source>
-    <target>Недели</target>
+    <source>Wallet file</source>
+    <target>Файл кошелька</target>
 </phrase>
 <phrase>
-    <source>Quarters</source>
-    <target>Кварталы</target>
+    <source>Wallets (*.wallet)</source>
+    <target>Кошельки (*.wallet)</target>
 </phrase>
 <phrase>
-    <source>%1 %2</source>
+    <source>Wallet file</source>
+    <target>Файл кошелька</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>Кошельки (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Файл кошелька</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>Кошельки (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Private Spend Key is not valid. The private spend key you entered is not valid.</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>%1 + 0.001 (Node Fee) %2</source>
+    <source>Private View Key is not valid. The private view key you entered is not valid.</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>New deposits only work after height 108,000</source>
-    <target>Новые депозиты работают только после высоты блока 108,000</target>
+    <source>The wallet file already exists. Please change the wallet path and try again.</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>You don&apos;t have enough balance in your account!</source>
-    <target>На вашем аккаунте недостаточно средств!</target>
+    <source>Key is not valid. The private spend key you entered is not valid.</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>Deposit Confirmation</source>
-    <target>Подтверждение депозита</target>
-</phrase>
-<phrase>
-    <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
-    <target>Пожалуйста, учтите, что после того, как средства были внесены на депозит, у вас не будет к ним доступа до истечения срока депозита. Вы уверены, что хотите продолжить?</target>
-</phrase>
-<phrase>
-    <source>New investments only work after height 108,000</source>
-    <target>Новые инвестиции работают только после высоты блока 108,000</target>
-</phrase>
-<phrase>
-    <source>Investment Confirmation</source>
-    <target>Подтверждение инвестиции</target>
-</phrase>
-<phrase>
-    <source>Please note that once funds are locked in an investment, you will not have access to those funds until maturity. Are you sure you want to proceed?</source>
-    <target>Пожалуйста, учтите, что после того, как средства были инвестированы, у вас не будет к ним доступа до истечения срока инвестиции. Вы уверены, что хотите продолжить?</target>
+    <source>Key is not valid. The private view key you entered is not valid.</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>Wallet file</source>
@@ -1648,12 +1723,60 @@ p, li { white-space: pre-wrap; }
     <target>Кошельки (*.wallet)</target>
 </phrase>
 <phrase>
+    <source>Invalid seed. Seed phrase is not 25 words! Please try again.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>The wallet file already exists. Please change the wallet path and try again.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Invalid seed. Please check your seed and try again.</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>Wallet file</source>
     <target>Файл кошелька</target>
 </phrase>
 <phrase>
     <source>Wallets (*.wallet)</source>
     <target>Кошельки (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Wallet file</source>
+    <target>Файл кошелька</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>Кошельки (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>Tracking key is not valid. The tracking key you entered is not valid.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>The wallet file already exists. Please change the wallet path and try again.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Key is not valid. The public spend key you entered is not valid.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Key is not valid. The public view key you entered is not valid.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Key is not valid. The private spend key you entered is not valid.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Key is not valid. The private view key you entered is not valid.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Conceal Desktop %1</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>About %1 Wallet</source>
@@ -1680,6 +1803,14 @@ p, li { white-space: pre-wrap; }
     <target>Открыть файлы .wallet/.keys</target>
 </phrase>
 <phrase>
+    <source>Show</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Quit Conceal Desktop</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>Wallet (*.wallet *.keys)</source>
     <target>Кошелек (*.wallet *.keys)</target>
 </phrase>
@@ -1694,7 +1825,8 @@ p, li { white-space: pre-wrap; }
 <phrase>
     <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
-    <target>Ваш кошелек будет сброшен и восстановлен из блокчейна. Вы уверены?</target>
+    <target>Ваш кошелек будет сброшен и восстановлен из блокчейна.
+Вы уверены?</target>
 </phrase>
 <phrase>
     <source>Wallet error</source>
@@ -1733,18 +1865,6 @@ Are you sure?</source>
     <target>Введенный вами приватный ключ для просмотра (Private View Key) неверен.</target>
 </phrase>
 <phrase>
-    <source>Conection settings saved</source>
-    <target>Настойки подключения сохранены</target>
-</phrase>
-<phrase>
-    <source>Please restart the wallet for the new settings to take effect.</source>
-    <target>Для вступления в силу изменений пожалуйста перезапустите кошелек.</target>
-</phrase>
-<phrase>
-    <source>Language settings saved</source>
-    <target>Язык сохранен</target>
-</phrase>
-<phrase>
     <source>Save message</source>
     <target>Сохранить сообщение</target>
 </phrase>
@@ -1777,6 +1897,14 @@ Are you sure?</source>
     <target>Сообщение</target>
 </phrase>
 <phrase>
+    <source>Transaction Hash</source>
+    <target>Хэш транзакции</target>
+</phrase>
+<phrase>
+    <source>Message Size</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>Transaction hash</source>
     <target>Хэш транзакции</target>
 </phrase>
@@ -1801,84 +1929,40 @@ Are you sure?</source>
     <target>Пароль не подтвержден</target>
 </phrase>
 <phrase>
-    <source>Node URL</source>
-    <target>URL-адрес ноды</target>
+    <source>&amp;Pay to</source>
+    <target>Получатель средств</target>
 </phrase>
 <phrase>
-    <source>SYNCHRONIZING</source>
-    <target>СИНХРОНИЗАЦИЯ</target>
+    <source>Copy &amp;address</source>
+    <target>Скопировать адрес</target>
 </phrase>
 <phrase>
-    <source>About Conceal</source>
+    <source>Copy Payment &amp;ID</source>
+    <target>Скопировать paymentID</target>
+</phrase>
+<phrase>
+    <source>&amp;Edit</source>
+    <target>редактировать</target>
+</phrase>
+<phrase>
+    <source>&amp;Delete</source>
+    <target>удалять</target>
+</phrase>
+<phrase>
+    <source>Month(s)</source>
     <target></target>
 </phrase>
 <phrase>
-    <source>About QT</source>
-    <target></target>
+    <source>CLICK TO DISABLE</source>
+    <target>DISABLE</target>
 </phrase>
 <phrase>
-    <source>Disclaimer</source>
-    <target>Правовое уведомление</target>
+    <source>CLICK TO ENABLE</source>
+    <target>ВКЛЮЧИТЬ</target>
 </phrase>
 <phrase>
-    <source>Links</source>
-    <target>Ссылки</target>
-</phrase>
-<phrase>
-    <source>Import Seed</source>
-    <target>Импортировать Мнемоническую Фразу</target>
-</phrase>
-<phrase>
-    <source>Import Secret Keys</source>
-    <target>Импортировать секретные ключи</target>
-</phrase>
-<phrase>
-    <source>Import GUI Key</source>
-    <target>Импортировать ключ GUI</target>
-</phrase>
-<phrase>
-    <source>Open Wallet</source>
-    <target>Открыть кошелек</target>
-</phrase>
-<phrase>
-    <source>Create Wallet</source>
-    <target>Создать кошелек</target>
-</phrase>
-<phrase>
-    <source>Backup Wallet</source>
-    <target>Сделать запасную копию кошелька</target>
-</phrase>
-<phrase>
-    <source>Import Wallet</source>
-    <target>Импортировать кошелек</target>
-</phrase>
-<phrase>
-    <source>Close Wallet</source>
-    <target>Закрыть Кошелек</target>
-</phrase>
-<phrase>
-    <source>Encrypt Wallet</source>
-    <target>Зашифровать кошелек</target>
-</phrase>
-<phrase>
-    <source>Change Password</source>
-    <target>Сменить пароль</target>
-</phrase>
-<phrase>
-    <source>Close to Tray On</source>
-    <target>Закрывать в трей - On</target>
-</phrase>
-<phrase>
-    <source>Close to Tray Off</source>
-    <target>Закрывать в трей - Off</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray On</source>
-    <target>Сворачивать в трей - On</target>
-</phrase>
-<phrase>
-    <source>Minimize to Tray Off</source>
-    <target>Сворачивать в трей - Off</target>
+    <source>Tracking Wallet</source>
+    <target>Смотреть Кошелек</target>
 </phrase>
 <phrase>
     <source>Wallet</source>
@@ -1889,28 +1973,12 @@ Are you sure?</source>
     <target>Синхронизация</target>
 </phrase>
 <phrase>
-    <source>Pool URL</source>
-    <target>URL пула</target>
-</phrase>
-<phrase>
-    <source>GUI Key</source>
-    <target>Ключ GUI</target>
-</phrase>
-<phrase>
-    <source>Private Spend-Key</source>
-    <target>Приватный ключ для трат (Private Spend Key)</target>
-</phrase>
-<phrase>
-    <source>Private View-Key</source>
-    <target>Приватный ключ для просмотра (Private View Key)</target>
-</phrase>
-<phrase>
-    <source>Seed</source>
-    <target>Мнемоническая фраза</target>
-</phrase>
-<phrase>
     <source>Failed to lookup Conceal ID</source>
     <target>Поиск не удался</target>
+</phrase>
+<phrase>
+    <source>Could not check Conceal ID</source>
+    <target></target>
 </phrase>
 <phrase>
     <source>Invalid recipient address</source>
@@ -1929,52 +1997,235 @@ Are you sure?</source>
     <target>Отсутствует идентификатор транзакции, вы уверены, что хотите продолжить?</target>
 </phrase>
 <phrase>
-    <source>Incorrect fee value</source>
-    <target>Некорректная сумма комиссии</target>
+    <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
+    <target>Недостаточно средств. Пожалуйста, убедитесь, что у вас достаточно средств на сумму плюс сборы.</target>
 </phrase>
 <phrase>
-    <source>Incorrect fee</source>
-    <target>Некорректная комиссия</target>
+    <source>Message too long. Please ensure that the message is less than 260 characters.</source>
+    <target>Сообщение слишком длинное. Пожалуйста, убедитесь, что сообщение содержит не более 260 символов.</target>
+</phrase>
+<phrase>
+    <source>You don&apos;t have enough balance in your account!</source>
+    <target>На вашем аккаунте недостаточно средств!</target>
+</phrase>
+<phrase>
+    <source>Deposit Confirmation</source>
+    <target>Подтверждение депозита</target>
+</phrase>
+<phrase>
+    <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
+    <target>Пожалуйста, учтите, что после того, как средства были внесены на депозит, у вас не будет к ним доступа до истечения срока депозита. Вы уверены, что хотите продолжить?</target>
+</phrase>
+<phrase>
+    <source>Auto Optimization</source>
+    <target>Авто Оптимизация</target>
+</phrase>
+<phrase>
+    <source>Data updated</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Market data from coingecko.com - Last updated: %1</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Portfolio (</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Available Balance: </source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>This is a tracking wallet.
+This action is not available.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>BANKING</source>
+    <target>БАНКОВСКИЕ ОПЕРАЦИИ</target>
+</phrase>
+<phrase>
+    <source>TRANSACTIONS</source>
+    <target>ТРАНЗАКЦИИ</target>
+</phrase>
+<phrase>
+    <source>CONCEAL.NETWORK</source>
+    <target>МОЙ КОШЕЛЕК CONCEAL</target>
+</phrase>
+<phrase>
+    <source>ABOUT</source>
+    <target>ОКОЛО</target>
+</phrase>
+<phrase>
+    <source>WALLET SETTINGS</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>INBOX</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>SEND FUNDS</source>
+    <target>ОТПРАВИТЬ СРЕДСТВА</target>
+</phrase>
+<phrase>
+    <source>NEW MESSAGE</source>
+    <target>НОВОЕ СООБЩЕНИЕ</target>
+</phrase>
+<phrase>
+    <source>Address copied to clipboard</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Synchronization is in progress.
+This option is not available until your wallet is synchronized with the network.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>SEND MESSAGE</source>
+    <target>ОТПРАВИТЬ СООБЩЕНИЕ</target>
+</phrase>
+<phrase>
+    <source>ADDRESS BOOK</source>
+    <target>АДРЕСНАЯ КНИГА</target>
+</phrase>
+<phrase>
+    <source>Warning: you have reached the maximum message size of 260 characters.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Auto optimization disabled</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Auto optimization enabled.
+Your wallet will be optimized automatically every 15 minutes.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Language and Currency settings saved</source>
+    <target>Настройки языка и валюты сохранены</target>
+</phrase>
+<phrase>
+    <source>Please restart the wallet for the new settings to take effect.</source>
+    <target>Для вступления в силу изменений пожалуйста перезапустите кошелек.</target>
+</phrase>
+<phrase>
+    <source>Connection settings saved</source>
+    <target>Настойки подключения сохранены</target>
+</phrase>
+<phrase>
+    <source>Invalid address</source>
+    <target>Неверный адрес</target>
+</phrase>
+<phrase>
+    <source>Edit contact</source>
+    <target>РЕДАКТИРОВАТЬ</target>
+</phrase>
+<phrase>
+    <source>Payment ID copied to clipboard</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Address Book</source>
+    <target>Адресная книга</target>
+</phrase>
+<phrase>
+    <source>Incorrect password</source>
+    <target>Неверный пароль</target>
+</phrase>
+<phrase>
+    <source>Wrong password.</source>
+    <target>Неверный пароль.</target>
+</phrase>
+<phrase>
+    <source>Lock Wallet</source>
+    <target>Замок кошелек</target>
+</phrase>
+<phrase>
+    <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
+    <target>Хотите заблокировать свой кошелек? Пока ваш кошелек заблокирован, он продолжит синхронизацию с сетью. Вам нужно будет ввести пароль своего кошелька, чтобы разблокировать его.</target>
 </phrase>
 <phrase>
     <source>Select CSV file</source>
-    <target>Выберите файл CSV</target>
+    <target></target>
 </phrase>
 <phrase>
-    <source>DATE</source>
-    <target>ДАТА</target>
+    <source>Tracking Key</source>
+    <target>Ключ для отслеживания транзакции (Tracking Key)</target>
 </phrase>
 <phrase>
-    <source>TYPE</source>
-    <target>ТИП</target>
+    <source>Private Spend-Key</source>
+    <target>Приватный ключ для трат (Private Spend Key)</target>
 </phrase>
 <phrase>
-    <source>ADDRESS</source>
-    <target>АДРЕС</target>
+    <source>Private View-Key</source>
+    <target>Приватный ключ для просмотра (Private View Key)</target>
 </phrase>
 <phrase>
-    <source>AMOUNT</source>
-    <target>СУММА</target>
+    <source>Seed</source>
+    <target>Мнемоническая фраза</target>
 </phrase>
 <phrase>
-    <source>FEE</source>
-    <target>КОМИССИЯ</target>
+    <source>New Block</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>HEIGHT</source>
-    <target>ВЫСОТА</target>
+    <source>Deposit Unlock</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>PAYMENT ID</source>
-    <target>ИДЕНТИФИКАТОР ТРАНЗАКЦИИ</target>
+    <source>Incoming TX</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>MESSAGE</source>
-    <target>СООБЩЕНИЕ</target>
+    <source>Outgoing TX</source>
+    <target></target>
 </phrase>
 <phrase>
-    <source>HASH</source>
-    <target>ХЭШ</target>
+    <source>Optimization</source>
+    <target>Оптимизация</target>
+</phrase>
+<phrase>
+    <source>New Deposit</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Date</source>
+    <target>Дата</target>
+</phrase>
+<phrase>
+    <source>Type</source>
+    <target>Тип</target>
+</phrase>
+<phrase>
+    <source>Address</source>
+    <target>Адрес</target>
+</phrase>
+<phrase>
+    <source>Amount</source>
+    <target>Сумма</target>
+</phrase>
+<phrase>
+    <source>Fee</source>
+    <target>Комиссия</target>
+</phrase>
+<phrase>
+    <source>Height</source>
+    <target>Высота</target>
+</phrase>
+<phrase>
+    <source>Payment ID</source>
+    <target>Идентификатор транзакции</target>
+</phrase>
+<phrase>
+    <source>Message</source>
+    <target>Сообщение</target>
+</phrase>
+<phrase>
+    <source>Transaction Hash</source>
+    <target>Хэш транзакции</target>
 </phrase>
 <phrase>
     <source>unconfirmed</source>
@@ -1985,15 +2236,23 @@ Are you sure?</source>
     <target>подтверждения</target>
 </phrase>
 <phrase>
-    <source>%1 / %2</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>me (%1)</source>
     <target>я (%1)</target>
 </phrase>
 <phrase>
     <source>(n/a)</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Unconfirmed</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Confirmed</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>not found</source>
     <target></target>
 </phrase>
 <phrase>
@@ -2007,6 +2266,50 @@ Are you sure?</source>
 <phrase>
     <source>SENDING TRANSACTION</source>
     <target>Идет отправка</target>
+</phrase>
+<phrase>
+    <source>Opening wallet</source>
+    <target>Открытие кошелька</target>
+</phrase>
+<phrase>
+    <source>Creating wallet</source>
+    <target>Создание кошелька</target>
+</phrase>
+<phrase>
+    <source>Sending transaction</source>
+    <target>Отправка транзакции</target>
+</phrase>
+<phrase>
+    <source>Optimizing wallet</source>
+    <target>Оптимизация кошелька</target>
+</phrase>
+<phrase>
+    <source>Sending message</source>
+    <target>Отправка сообщения</target>
+</phrase>
+<phrase>
+    <source>Creating deposit</source>
+    <target>Создание депозита</target>
+</phrase>
+<phrase>
+    <source>Withdrawing deposit</source>
+    <target>Вывод депозита</target>
+</phrase>
+<phrase>
+    <source>Ready</source>
+    <target>Готово</target>
+</phrase>
+<phrase>
+    <source>Synchronizing</source>
+    <target>Синхронизация</target>
+</phrase>
+<phrase>
+    <source>Synchronized</source>
+    <target>Синхронизировано</target>
+</phrase>
+<phrase>
+    <source>Warning</source>
+    <target>Внимание</target>
 </phrase>
 <phrase>
     <source>Optimizing</source>
@@ -2025,7 +2328,7 @@ Are you sure?</source>
     <target>Вывод средств</target>
 </phrase>
 <phrase>
-    <source>Ready</source>
+    <source>READY</source>
     <target>Готово</target>
 </phrase>
 <phrase>
@@ -2053,7 +2356,28 @@ Are you sure?</source>
     <target>Была Проблема. Пожалуйста Перезапустите Кошелек.</target>
 </phrase>
 <phrase>
-    <source>&lt;span style=&apos;color: orange;&apos;&gt;%1&lt;/span&gt;&lt;br /&gt;Height: %2&lt;br /&gt;%4&lt;br /&gt;%3</source>
+    <source>Unable to create the wallet.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Unable to create a new wallet at the path provided. 
+Please choose another location.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>New wallet file</source>
+    <target>Новый файл кошелька</target>
+</phrase>
+<phrase>
+    <source>Wallets (*.wallet)</source>
+    <target>Кошельки (*.wallet)</target>
+</phrase>
+<phrase>
+    <source>You must confirm that you have safely stored the mnemonic seed and understand that the Conceal Team cannot restore this wallet and is not responsible for loss of funds.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>The words entered does not match the seed. Please try again.</source>
     <target></target>
 </phrase>
 <phrase>
@@ -2073,6 +2397,70 @@ Are you sure?</source>
     <target>Добро пожаловать в кошелек Conceal</target>
 </phrase>
 <phrase>
+    <source>Create a new wallet address along with a secret seed phrase</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Already have a wallet? open the wallet and access your assets</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Import an existing wallet with the secret seed phrase and access your CCX</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Advanced users can import using other keys</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Create a new wallet</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Wallet Path</source>
+    <target>Путь к файлу кошелька</target>
+</phrase>
+<phrase>
+    <source>Where would you like to save your wallet?</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Choose a path where you would like to save your wallet.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>BACK</source>
+    <target>НАЗАД</target>
+</phrase>
+<phrase>
+    <source>Mnemonic seed</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Please save the following mnemonic seed safely, it is used to recover your wallet (or import it on another machine).</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Don&apos;t lose your seed or you might lose your wallet (and funds) forever.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Copy seed</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Mnemonic seed confirmation</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>Enter your seed to confirm you have saved it.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>I have safely stored the mnemonic seed and I understand that the Conceal Team cannot restore this wallet and is not responsible for loss of funds.</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>■  Conceal is a decentralized blockchain bank.</source>
     <target>■  Conceal - это децентрализованный блокчейн-банк.</target>
 </phrase>
@@ -2089,15 +2477,15 @@ Are you sure?</source>
     <target>■  Вы контролируете приватные ключи, открывающие доступ к вашим средствам.</target>
 </phrase>
 <phrase>
-    <source>The Conceal Wallet</source>
-    <target>Кошелек Conceal</target>
-</phrase>
-<phrase>
     <source>NEXT</source>
     <target>ДАЛЕЕ</target>
 </phrase>
 <phrase>
-    <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/conceal-small.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+    <source>■  Conceal Desktop is a free, open-source interface.</source>
+    <target></target>
+</phrase>
+<phrase>
+    <source>How does Conceal Desktop work?</source>
     <target></target>
 </phrase>
 <phrase>
@@ -2107,6 +2495,10 @@ Are you sure?</source>
 <phrase>
     <source>a seed, and a wallet address.</source>
     <target>мнемоническую фразу и адрес кошелька.</target>
+</phrase>
+<phrase>
+    <source>TextLabel</source>
+    <target>Текстовый ярлык</target>
 </phrase>
 <phrase>
     <source>■  If you send your public address to someone then they can send you CCX.</source>
@@ -2165,12 +2557,16 @@ Are you sure?</source>
     <target>Начало работы</target>
 </phrase>
 <phrase>
+    <source>WELCOME TO CONCEAL DESKTOP</source>
+    <target></target>
+</phrase>
+<phrase>
     <source>CREATE NEW WALLET</source>
     <target>СОЗДАТЬ НОВЫЙ КОШЕЛЕК</target>
 </phrase>
 <phrase>
     <source>OPEN EXISTING WALLET</source>
-    <target>ОТКРЫТЬ СУЩЕСТВУЮЩИЙ КОШЕЛЕК</target>
+    <target>ОТКРЫТЫЙ БУМАЖНИК</target>
 </phrase>
 <phrase>
     <source>IMPORT PRIVATE KEYS</source>
@@ -2229,10 +2625,6 @@ Are you sure?</source>
     <target>Приватный ключ для просмотра (Private View Key)</target>
 </phrase>
 <phrase>
-    <source>...</source>
-    <target></target>
-</phrase>
-<phrase>
     <source>CANCEL</source>
     <target>ОТМЕНИТЬ</target>
 </phrase>
@@ -2255,14 +2647,6 @@ Are you sure?</source>
 <phrase>
     <source>Optimize Wallet</source>
     <target>Оптимизировать кошелек</target>
-</phrase>
-<phrase>
-    <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:15px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Lato&apos;; font-size:15px;&quot;&gt;This process will optimize your wallet for large transactions. The optimization will take approximately 22 minutes. Please note that you will not be able to spend any of your funds until the optimization process is complete. In some cases, the wallet might need optimization more than once.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-    <target></target>
 </phrase>
 <phrase>
     <source>Optimization recommended for this wallet</source>

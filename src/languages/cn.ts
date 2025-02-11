@@ -819,7 +819,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="330"/>
-        <location filename="../gui/ui/overviewframe.ui" line="9162"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9272"/>
         <source>NEW MESSAGE</source>
         <translation>新消息</translation>
     </message>
@@ -828,22 +828,22 @@ Please wait...</source>
         <translation type="vanished">联系我们</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5010"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5075"/>
         <source>Discord</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5347"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5340"/>
         <source>Telegram</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5046"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5111"/>
         <source>Twitter</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5275"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5183"/>
         <source>Medium</source>
         <translation></translation>
     </message>
@@ -900,7 +900,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">这是您的交易记录。 它是所有进出交易，存款和优化的列表。 如果有任何不符之处，请重新扫描您的钱包以清除列表中所有失败的交易。 双击单个整体以获得更详细的视图。</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9122"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9232"/>
         <source>MESSAGE OVERVIEW</source>
         <translation>消息概述</translation>
     </message>
@@ -913,97 +913,102 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">此钱包的传入和传出消息的列表。</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7545"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7610"/>
         <source>Connection</source>
         <translation>连接设置</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7372"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7437"/>
         <source>Custom Remote Node</source>
         <translation>自定义远程节点</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7497"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7562"/>
         <source>Built-in Node</source>
         <translation>内置节点</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7405"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7470"/>
         <source>Automatic Remote Node</source>
         <translation>自动远程节点</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7467"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7532"/>
         <source>Set connection type</source>
         <translation>连接设置</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7438"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8145"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7503"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8210"/>
         <source>SAVE</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7864"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7929"/>
         <source>Optimization</source>
         <translation>优化中</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7741"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7806"/>
         <source>Auto optimization</source>
         <translation>自动优化</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5710"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5631"/>
         <source>Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7108"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5775"/>
+        <source>Web Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/overviewframe.ui" line="7173"/>
         <source>Click to Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7160"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7225"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7207"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7272"/>
         <source>Show QR Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7254"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7319"/>
         <source>Lock Wallet</source>
         <translation type="unfinished">锁钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7638"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7703"/>
         <source>Large transactions</source>
         <translation>大型交易</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7674"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7739"/>
         <source>OPTIMIZE</source>
         <translation type="unfinished">优化</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7777"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7842"/>
         <source>START</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7806"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7871"/>
         <source>Rescan wallet</source>
         <translation>重置钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7603"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8172"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8260"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8316"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8608"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7668"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8237"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8325"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8381"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8718"/>
         <source>ENABLE</source>
         <translation>打开</translation>
     </message>
@@ -1016,62 +1021,62 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">重置钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7703"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7768"/>
         <source>(Optimization not required)</source>
         <translation>（不需要优化）</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7918"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7983"/>
         <source>Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8100"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8165"/>
         <source>Preferences</source>
         <translation>优先</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8356"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8421"/>
         <source>Start Maximized</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8017"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8082"/>
         <source>Font Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8224"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8289"/>
         <source>Close to tray</source>
         <translation>窗口最小化</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7953"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8018"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8055"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8120"/>
         <source>Currency</source>
         <translation>货币</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8483"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8548"/>
         <source>Chinese</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8393"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8458"/>
         <source>English</source>
         <translation>英文</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8528"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8593"/>
         <source>Russian</source>
         <translation>俄语</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8438"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8503"/>
         <source>Turkish</source>
         <translation>土耳其</translation>
     </message>
@@ -1080,42 +1085,42 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">汇入钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8663"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8773"/>
         <source>IMPORT TRACKING WALLET</source>
         <translation>导入仅查看钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8860"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8970"/>
         <source>IMPORT PRIVATE KEYS</source>
         <translation>导入密钥</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7991"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8056"/>
         <source>Minimize to tray</source>
         <translation>减少到最小</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8983"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9093"/>
         <source>Wallet Operations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9021"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9131"/>
         <source>New/Existing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8941"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9051"/>
         <source>NEW WALLET</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8711"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8821"/>
         <source>Import</source>
         <translation>导入</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8741"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8851"/>
         <source>IMPORT SEED</source>
         <translation>导入种子</translation>
     </message>
@@ -1132,22 +1137,22 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">打开已存在钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8887"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8997"/>
         <source>ENCRYPT WALLET</source>
         <translation>加密钱包</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8803"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8913"/>
         <source>Backup</source>
         <translation>后备</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8914"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9024"/>
         <source>BACKUP KEYS</source>
         <translation>KEYS</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8833"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8943"/>
         <source>BACKUP WALLET FILE</source>
         <translation>钱包文件</translation>
     </message>
@@ -1306,65 +1311,75 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5049"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5085"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5157"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5206"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5242"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5278"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5350"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5677"/>
-        <location filename="../gui/ui/overviewframe.ui" line="5713"/>
+        <location filename="../gui/ui/overviewframe.ui" line="4996"/>
+        <source>BUY/MARKETS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/overviewframe.ui" line="5029"/>
+        <source>TOOLS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/overviewframe.ui" line="5114"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5186"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5235"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5271"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5343"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5598"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5634"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5778"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5814"/>
         <source>sm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5082"/>
-        <source>BitMart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5674"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5595"/>
         <source>Wiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="4964"/>
+        <location filename="../gui/ui/overviewframe.ui" line="4963"/>
         <source>COMMUNITY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6034"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6099"/>
         <source>Withdraw Deposit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6118"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6183"/>
         <source>NEW DEPOSIT</source>
         <translation>新存款</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6270"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6335"/>
         <source>How long should your deposit last?</source>
         <translation>您的存款应持续多长时间？</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8583"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8638"/>
+        <source>French</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/ui/overviewframe.ui" line="8693"/>
         <source>Auto refresh data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9719"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9829"/>
         <source>Status</source>
         <translation type="unfinished">状态</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6186"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6251"/>
         <source>How much do you want to deposit?</source>
         <translation>您要存多少钱？</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6710"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6775"/>
         <source>Deposit Details</source>
         <translation>存款明细</translation>
     </message>
@@ -1373,22 +1388,22 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">利息标签</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6512"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6577"/>
         <source>Interest rate:</source>
         <translation>利息:</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6608"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6673"/>
         <source>Rewards you will earn:</source>
         <translation>奖励您将获得：</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6442"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6507"/>
         <source>Fees for this deposit:</source>
         <translation>押金的费用：</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6544"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6609"/>
         <source>Length on the blockchain:</source>
         <translation>区块链上的长度：</translation>
     </message>
@@ -1397,7 +1412,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">新存款</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5896"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5961"/>
         <source>DEPOSIT HISTORY</source>
         <translation>历史数据</translation>
     </message>
@@ -1414,7 +1429,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">您所有存款的完整历史记录。 双击单个存款以获得更详细的视图。</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7089"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7154"/>
         <source>CONCEAL.NETWORK</source>
         <translation>我的CONCEAL钱包</translation>
     </message>
@@ -1462,7 +1477,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="1033"/>
-        <location filename="../gui/ui/overviewframe.ui" line="8768"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8878"/>
         <source>OPEN WALLET</source>
         <translation>打开钱包</translation>
     </message>
@@ -1506,42 +1521,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5239"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5811"/>
         <source>GitHub</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5118"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5232"/>
         <source>Market Place</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5710"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5268"/>
         <source>TradeOgre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-    <location filename="../gui/ui/overviewframe.ui" line="5203"/>
-    <source>Medium</source>
-    <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/ui/overviewframe.ui" line="5911"/>
+        <location filename="../gui/ui/overviewframe.ui" line="5976"/>
         <source>A complete history of all your deposits. Double-click an individual deposit for a more detailed view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6814"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6879"/>
         <source>Make Deposit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6914"/>
+        <location filename="../gui/ui/overviewframe.ui" line="6979"/>
         <source>This wallet is locked. Please click below to unlock your wallet.</source>
         <translation>该钱包已被锁定。 请点击下面解锁您的钱包。</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="6950"/>
+        <location filename="../gui/ui/overviewframe.ui" line="7015"/>
         <source>UNLOCK WALLET</source>
         <translation>解锁钱包</translation>
     </message>
@@ -1550,12 +1560,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">状态</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9599"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9709"/>
         <source>Current Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9638"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9748"/>
         <source>Portfolio (CCX)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1568,17 +1578,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">高度</translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9180"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9290"/>
         <source>A list of incoming and outgoing messages for this wallet. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9401"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9511"/>
         <source>Portfolio (USD)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="9521"/>
+        <location filename="../gui/ui/overviewframe.ui" line="9631"/>
         <source>Current Height</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1623,15 +1633,15 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="99"/>
+        <location filename="../gui/OverviewFrame.cpp" line="98"/>
         <source>blocks</source>
         <translation>区块</translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="78"/>
         <location filename="../gui/WelcomeFrame.cpp" line="123"/>
         <location filename="../gui/WelcomeFrame.cpp" line="130"/>
         <location filename="../gui/WelcomeFrame.cpp" line="173"/>
-        <location filename="../main.cpp" line="78"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -1653,7 +1663,7 @@ Check that port %2 is not already in use.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/SplashScreen.cpp" line="25"/>
+        <location filename="../gui/SplashScreen.cpp" line="27"/>
         <source>STARTING WALLET</source>
         <translation>正在加载钱包</translation>
     </message>
@@ -1673,12 +1683,12 @@ Would you like to go to the download page?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpdateManager.cpp" line="97"/>
+        <location filename="../UpdateManager.cpp" line="96"/>
         <source>Conceal Desktop Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpdateManager.cpp" line="98"/>
+        <location filename="../UpdateManager.cpp" line="97"/>
         <source>There is an update available.
 Would you like to go to the download page?</source>
         <translation type="unfinished"></translation>
@@ -1899,7 +1909,7 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
 <context>
     <name>Updater</name>
     <message>
-        <location filename="../UpdateManager.cpp" line="82"/>
+        <location filename="../UpdateManager.cpp" line="81"/>
         <source>Error: %1</source>
         <translation>错误：%1</translation>
     </message>
@@ -1922,17 +1932,17 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
 <context>
     <name>WalletGui::AddressBookModel</name>
     <message>
-        <location filename="../gui/AddressBookModel.cpp" line="87"/>
+        <location filename="../gui/AddressBookModel.cpp" line="85"/>
         <source>Label</source>
         <translation>标签</translation>
     </message>
     <message>
-        <location filename="../gui/AddressBookModel.cpp" line="89"/>
+        <location filename="../gui/AddressBookModel.cpp" line="87"/>
         <source>Address</source>
         <translation>地址</translation>
     </message>
     <message>
-        <location filename="../gui/AddressBookModel.cpp" line="91"/>
+        <location filename="../gui/AddressBookModel.cpp" line="89"/>
         <source>Payment ID</source>
         <translation>付款ID</translation>
     </message>
@@ -1948,28 +1958,28 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
 <context>
     <name>WalletGui::CommandLineParser</name>
     <message>
-        <location filename="../CommandLineParser.cpp" line="18"/>
+        <location filename="../CommandLineParser.cpp" line="19"/>
         <source>Used to deploy test nets. Checkpoints and hardcoded seeds are ignored, network id is changed. Use it with –data-dir flag. The wallet must be launched with –testnet flag</source>
         <translation>用于部署测试网络。检查点和硬编码种子被忽略，网络ID被更改。与–data dir标志一起使用。钱包必须以–testnet标志启动</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="20"/>
+        <location filename="../CommandLineParser.cpp" line="21"/>
         <source>Interface for p2p network protocol</source>
         <translation>P2P网络协议接口</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="20"/>
+        <location filename="../CommandLineParser.cpp" line="21"/>
         <source>ip</source>
         <translation>IP</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="21"/>
+        <location filename="../CommandLineParser.cpp" line="22"/>
         <source>Port for p2p network protocol</source>
         <translation>P2P网络协议端口</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="21"/>
-        <location filename="../CommandLineParser.cpp" line="23"/>
+        <location filename="../CommandLineParser.cpp" line="22"/>
+        <location filename="../CommandLineParser.cpp" line="24"/>
         <source>port</source>
         <translation>端口</translation>
     </message>
@@ -1978,69 +1988,69 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
         <translation type="vanished">P2P网络协议的外部端口（如果端口转发与NAT一起使用）</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="22"/>
+        <location filename="../CommandLineParser.cpp" line="23"/>
         <source>External port for p2p network protocol (if port forwarding used with NAT)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="24"/>
+        <location filename="../CommandLineParser.cpp" line="25"/>
         <source>Allow local ip add to peer list, mostly in debug purposes</source>
         <translation>允许本地ip添加到节点列表，主要用于调试目的</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="25"/>
+        <location filename="../CommandLineParser.cpp" line="26"/>
         <source>Manually add peer to local peerlist</source>
         <translation>手动添加节点到本地节点列表</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="25"/>
+        <location filename="../CommandLineParser.cpp" line="26"/>
         <source>peer</source>
         <translation>同等</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="26"/>
+        <location filename="../CommandLineParser.cpp" line="27"/>
         <source>Specify list of peers to connect to and attempt to keep the connection open</source>
         <translation>指定要连接的对等方列表并尝试保持连接打开</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="27"/>
-        <location filename="../CommandLineParser.cpp" line="29"/>
+        <location filename="../CommandLineParser.cpp" line="28"/>
         <location filename="../CommandLineParser.cpp" line="30"/>
+        <location filename="../CommandLineParser.cpp" line="31"/>
         <source>node</source>
         <translation>节点</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="28"/>
+        <location filename="../CommandLineParser.cpp" line="29"/>
         <source>Specify list of peers to connect to only. If this option is given the options add-priority-node and seed-node are ignored</source>
-        <translation>指定仅连接到的对等方列表。如果给定此选项，则忽略"添加优先级节点"和"种子节点"选项</translation>
+        <translation>指定仅连接到的对等方列表。如果给定此选项，则忽略&quot;添加优先级节点&quot;和&quot;种子节点&quot;选项</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="30"/>
+        <location filename="../CommandLineParser.cpp" line="31"/>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
         <translation>连接到节点以检索目标地址，然后断开连接</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="31"/>
+        <location filename="../CommandLineParser.cpp" line="32"/>
         <source>Do not announce yourself as peerlist candidate</source>
         <translation>不要宣布你自己是节点列表候选人</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="32"/>
+        <location filename="../CommandLineParser.cpp" line="33"/>
         <source>Specify data directory</source>
         <translation>特定目录数据</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="32"/>
+        <location filename="../CommandLineParser.cpp" line="33"/>
         <source>directory</source>
         <translation>目录</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="33"/>
+        <location filename="../CommandLineParser.cpp" line="34"/>
         <source>Run application in minimized mode</source>
         <translation>以最小化模式运行应用程序</translation>
     </message>
     <message>
-        <location filename="../CommandLineParser.cpp" line="34"/>
+        <location filename="../CommandLineParser.cpp" line="35"/>
         <source>Conceal Desktop</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2076,92 +2086,92 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
 <context>
     <name>WalletGui::DepositModel</name>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="81"/>
+        <location filename="../gui/DepositModel.cpp" line="82"/>
         <source>Status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="83"/>
+        <location filename="../gui/DepositModel.cpp" line="84"/>
         <source>Amount</source>
         <translation>金额</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="85"/>
+        <location filename="../gui/DepositModel.cpp" line="86"/>
         <source>Interest</source>
         <translation>利息</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="87"/>
+        <location filename="../gui/DepositModel.cpp" line="88"/>
         <source>Sum</source>
         <translation>总和</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="89"/>
+        <location filename="../gui/DepositModel.cpp" line="90"/>
         <source>Rate</source>
         <translation>比率</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="91"/>
+        <location filename="../gui/DepositModel.cpp" line="92"/>
         <source>Term</source>
         <translation>期限</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="93"/>
+        <location filename="../gui/DepositModel.cpp" line="94"/>
         <source>Unlock height</source>
         <translation>解锁高度</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="95"/>
+        <location filename="../gui/DepositModel.cpp" line="96"/>
         <source>Unlock time</source>
         <translation>解锁时间</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="97"/>
+        <location filename="../gui/DepositModel.cpp" line="98"/>
         <source>Creating transaction</source>
         <translation>正在创建事务</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="99"/>
+        <location filename="../gui/DepositModel.cpp" line="100"/>
         <source>Creating height</source>
         <translation>正在创建高度</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="101"/>
+        <location filename="../gui/DepositModel.cpp" line="102"/>
         <source>Creating time</source>
         <translation>正在创建时间</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="103"/>
+        <location filename="../gui/DepositModel.cpp" line="104"/>
         <source>Spending transaction</source>
         <translation>支出交易</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="105"/>
+        <location filename="../gui/DepositModel.cpp" line="106"/>
         <source>Spending height</source>
         <translation>支出高度</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="107"/>
+        <location filename="../gui/DepositModel.cpp" line="108"/>
         <source>Spending time</source>
         <translation>支出时间</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="109"/>
+        <location filename="../gui/DepositModel.cpp" line="110"/>
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="169"/>
+        <location filename="../gui/DepositModel.cpp" line="170"/>
         <source>Locked</source>
         <translation>锁住</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="171"/>
+        <location filename="../gui/DepositModel.cpp" line="172"/>
         <source>Unlocked</source>
         <translation>解锁</translation>
     </message>
     <message>
-        <location filename="../gui/DepositModel.cpp" line="173"/>
+        <location filename="../gui/DepositModel.cpp" line="174"/>
         <source>Spent</source>
         <translation>支出</translation>
     </message>
@@ -2348,54 +2358,54 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
         <translation type="vanished">新钱包文件</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="483"/>
+        <location filename="../gui/MainWindow.cpp" line="482"/>
         <source>Wallets (*.wallet)</source>
         <translation>钱包 (*.wallet)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="376"/>
+        <location filename="../gui/MainWindow.cpp" line="373"/>
         <source>Open .wallet/.keys file</source>
         <translation>打开 .wallet/.keys 文件</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="151"/>
+        <location filename="../gui/MainWindow.cpp" line="150"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="154"/>
+        <location filename="../gui/MainWindow.cpp" line="153"/>
         <source>Quit Conceal Desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="378"/>
+        <location filename="../gui/MainWindow.cpp" line="375"/>
         <source>Wallet (*.wallet *.keys)</source>
         <translation>钱包 (*.wallet *.keys)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="481"/>
+        <location filename="../gui/MainWindow.cpp" line="480"/>
         <source>Backup wallet to...</source>
         <translation>将钱包备份到…</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="498"/>
+        <location filename="../gui/MainWindow.cpp" line="497"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="498"/>
+        <location filename="../gui/MainWindow.cpp" line="497"/>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
         <translation>您的钱包将被重置并从区块链中恢复。
 你确定吗？</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="579"/>
+        <location filename="../gui/MainWindow.cpp" line="577"/>
         <source>Wallet error</source>
         <translation>钱包错误</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="582"/>
+        <location filename="../gui/MainWindow.cpp" line="580"/>
         <source>Wallet</source>
         <translation>钱包</translation>
     </message>
@@ -2454,32 +2464,32 @@ Are you sure?</source>
 <context>
     <name>WalletGui::MessagesModel</name>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="78"/>
+        <location filename="../gui/MessagesModel.cpp" line="73"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="80"/>
+        <location filename="../gui/MessagesModel.cpp" line="75"/>
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="82"/>
+        <location filename="../gui/MessagesModel.cpp" line="77"/>
         <source>Height</source>
         <translation>高度</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="84"/>
+        <location filename="../gui/MessagesModel.cpp" line="79"/>
         <source>Message</source>
         <translation>消息</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="86"/>
+        <location filename="../gui/MessagesModel.cpp" line="81"/>
         <source>Transaction Hash</source>
         <translation type="unfinished">交易哈希</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="90"/>
+        <location filename="../gui/MessagesModel.cpp" line="85"/>
         <source>Message Size</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2488,7 +2498,7 @@ Are you sure?</source>
         <translation type="vanished">交易哈希</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="88"/>
+        <location filename="../gui/MessagesModel.cpp" line="83"/>
         <source>Amount</source>
         <translation>金额</translation>
     </message>
@@ -2497,12 +2507,12 @@ Are you sure?</source>
         <translation type="vanished">消息大小</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="162"/>
+        <location filename="../gui/MessagesModel.cpp" line="157"/>
         <source>Out</source>
         <translation>出来</translation>
     </message>
     <message>
-        <location filename="../gui/MessagesModel.cpp" line="164"/>
+        <location filename="../gui/MessagesModel.cpp" line="159"/>
         <source>In</source>
         <translation></translation>
     </message>
@@ -2547,30 +2557,30 @@ Are you sure?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="381"/>
-        <location filename="../gui/OverviewFrame.cpp" line="392"/>
-        <location filename="../gui/OverviewFrame.cpp" line="407"/>
-        <location filename="../gui/OverviewFrame.cpp" line="417"/>
-        <location filename="../gui/OverviewFrame.cpp" line="428"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1792"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1810"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2180"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2196"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2229"/>
+        <location filename="../gui/OverviewFrame.cpp" line="385"/>
+        <location filename="../gui/OverviewFrame.cpp" line="396"/>
+        <location filename="../gui/OverviewFrame.cpp" line="411"/>
+        <location filename="../gui/OverviewFrame.cpp" line="421"/>
+        <location filename="../gui/OverviewFrame.cpp" line="432"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1785"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1803"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2177"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2193"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2226"/>
         <source>CLICK TO DISABLE</source>
         <translation>点击禁用</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="385"/>
-        <location filename="../gui/OverviewFrame.cpp" line="396"/>
-        <location filename="../gui/OverviewFrame.cpp" line="403"/>
-        <location filename="../gui/OverviewFrame.cpp" line="413"/>
-        <location filename="../gui/OverviewFrame.cpp" line="424"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1786"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1805"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2185"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2201"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2223"/>
+        <location filename="../gui/OverviewFrame.cpp" line="389"/>
+        <location filename="../gui/OverviewFrame.cpp" line="400"/>
+        <location filename="../gui/OverviewFrame.cpp" line="407"/>
+        <location filename="../gui/OverviewFrame.cpp" line="417"/>
+        <location filename="../gui/OverviewFrame.cpp" line="428"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1779"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1798"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2182"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2198"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2220"/>
         <source>CLICK TO ENABLE</source>
         <translation>点击启用</translation>
     </message>
@@ -2587,24 +2597,24 @@ Are you sure?</source>
         <translation type="vanished">同步</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1226"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1479"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1230"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1483"/>
         <source>Failed to lookup Conceal ID</source>
         <translation>搜索失败</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1242"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1495"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1246"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1499"/>
         <source>Could not check Conceal ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1250"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1254"/>
         <source>Invalid recipient address</source>
         <translation>接收地址无效</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1269"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1273"/>
         <source>Invalid payment ID</source>
         <translation>付款ID无效</translation>
     </message>
@@ -2617,27 +2627,27 @@ Are you sure?</source>
         <translation type="vanished">请注意，没有付款ID，是否确定要继续？</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1316"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1320"/>
         <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
         <translation>不充足的资金。 请确保您有足够的资金支付金额和费用。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1542"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1546"/>
         <source>Message too long. Please ensure that the message is less than 260 characters.</source>
         <translation>讯息太长。 请确保该消息少于260个字符。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1584"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1588"/>
         <source>You don&apos;t have enough balance in your account!</source>
         <translation>您的帐户余额不足！</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1597"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1601"/>
         <source>Deposit Confirmation</source>
         <translation>存款确认</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1598"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1602"/>
         <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
         <translation>请注意，一旦资金锁定在存款中，在到期之前您将无法访问。是否确定要继续？</translation>
     </message>
@@ -2654,72 +2664,72 @@ Are you sure?</source>
         <translation type="vanished">自动优化已启用。 您的钱包将每15分钟自动优化一次。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="583"/>
+        <location filename="../gui/OverviewFrame.cpp" line="587"/>
         <source>Data updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="728"/>
+        <location filename="../gui/OverviewFrame.cpp" line="732"/>
         <source>Market data from coingecko.com - Last updated: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="855"/>
+        <location filename="../gui/OverviewFrame.cpp" line="859"/>
         <source>Portfolio (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="858"/>
+        <location filename="../gui/OverviewFrame.cpp" line="862"/>
         <source>Available Balance: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="882"/>
-        <location filename="../gui/OverviewFrame.cpp" line="969"/>
-        <location filename="../gui/OverviewFrame.cpp" line="998"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1166"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1458"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1575"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1729"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1756"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1779"/>
+        <location filename="../gui/OverviewFrame.cpp" line="886"/>
+        <location filename="../gui/OverviewFrame.cpp" line="973"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1002"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1170"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1462"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1579"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1733"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1760"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1772"/>
         <source>This is a tracking wallet.
 This action is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="888"/>
+        <location filename="../gui/OverviewFrame.cpp" line="892"/>
         <source>BANKING</source>
         <translation type="unfinished">银行业务</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="901"/>
+        <location filename="../gui/OverviewFrame.cpp" line="905"/>
         <source>TRANSACTIONS</source>
         <translation type="unfinished">交易</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="910"/>
+        <location filename="../gui/OverviewFrame.cpp" line="914"/>
         <source>CONCEAL.NETWORK</source>
         <translation type="unfinished">我的CONCEAL钱包</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="927"/>
+        <location filename="../gui/OverviewFrame.cpp" line="931"/>
         <source>ABOUT</source>
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="937"/>
+        <location filename="../gui/OverviewFrame.cpp" line="941"/>
         <source>WALLET SETTINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="950"/>
+        <location filename="../gui/OverviewFrame.cpp" line="954"/>
         <source>INBOX</source>
         <translation type="unfinished">收件箱</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="975"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1087"/>
+        <location filename="../gui/OverviewFrame.cpp" line="979"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1091"/>
         <source>SEND FUNDS</source>
         <translation type="unfinished">发送资金</translation>
     </message>
@@ -2728,57 +2738,57 @@ This action is not available.</source>
         <translation type="obsolete">新消息</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1035"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1924"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1039"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1921"/>
         <source>Address copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1041"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1045"/>
         <source>Synchronization is in progress.
 This option is not available until your wallet is synchronized with the network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1004"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1094"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1008"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1098"/>
         <source>SEND MESSAGE</source>
         <translation type="unfinished">发送消息</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1371"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1375"/>
         <source>ADDRESS BOOK</source>
         <translation type="unfinished">地址簿</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1422"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1426"/>
         <source>Warning: you have reached the maximum message size of 260 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1787"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1780"/>
         <source>Auto optimization disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1794"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1787"/>
         <source>Auto optimization enabled.
 Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1846"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1843"/>
         <source>Language and Currency settings saved</source>
         <translation>语言和货币设置已保存</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1847"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1883"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1844"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1880"/>
         <source>Please restart the wallet for the new settings to take effect.</source>
         <translation>请重新启动钱包以使新设置生效。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1882"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1879"/>
         <source>Connection settings saved</source>
         <translation>连接设置已保存</translation>
     </message>
@@ -2791,7 +2801,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">更改联系资料</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1930"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1927"/>
         <source>Payment ID copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2808,17 +2818,17 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">错误密码.</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2084"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2081"/>
         <source>Lock Wallet</source>
         <translation>锁钱包</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2085"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2082"/>
         <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
         <translation>您想锁好钱包吗？ 当您的钱包被锁定时，它将继续与网络同步。 您需要输入您的钱包密码才能解锁。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2161"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2158"/>
         <source>Select CSV file</source>
         <translation></translation>
     </message>
@@ -2850,22 +2860,27 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/TransactionFrame.cpp" line="60"/>
+        <location filename="../gui/TransactionFrame.cpp" line="75"/>
+        <source>Deposit Unlock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/TransactionFrame.cpp" line="78"/>
         <source>Incoming TX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/TransactionFrame.cpp" line="67"/>
+        <location filename="../gui/TransactionFrame.cpp" line="66"/>
         <source>Outgoing TX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/TransactionFrame.cpp" line="71"/>
+        <location filename="../gui/TransactionFrame.cpp" line="69"/>
         <source>Optimization</source>
         <translation>优化中</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionFrame.cpp" line="75"/>
+        <location filename="../gui/TransactionFrame.cpp" line="72"/>
         <source>New Deposit</source>
         <translation>新存款</translation>
     </message>
@@ -2873,69 +2888,84 @@ Your wallet will be optimized automatically every 15 minutes.</source>
 <context>
     <name>WalletGui::TransactionsModel</name>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="122"/>
+        <location filename="../gui/TransactionsModel.cpp" line="115"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="124"/>
+        <location filename="../gui/TransactionsModel.cpp" line="117"/>
         <source>Type</source>
         <translation>类型</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="126"/>
+        <location filename="../gui/TransactionsModel.cpp" line="119"/>
         <source>Address</source>
         <translation>地址</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="128"/>
+        <location filename="../gui/TransactionsModel.cpp" line="121"/>
         <source>Amount</source>
         <translation>金额</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="130"/>
+        <location filename="../gui/TransactionsModel.cpp" line="123"/>
         <source>Fee</source>
         <translation>费用</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="132"/>
+        <location filename="../gui/TransactionsModel.cpp" line="125"/>
         <source>Height</source>
         <translation>高度</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="134"/>
+        <location filename="../gui/TransactionsModel.cpp" line="127"/>
         <source>Payment ID</source>
         <translation>付款ID</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="136"/>
+        <location filename="../gui/TransactionsModel.cpp" line="129"/>
         <source>Message</source>
         <translation>消息</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="138"/>
+        <location filename="../gui/TransactionsModel.cpp" line="131"/>
         <source>Transaction Hash</source>
         <translation>交易哈希</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="229"/>
+        <location filename="../gui/TransactionsModel.cpp" line="220"/>
         <source>unconfirmed</source>
         <translation>未确认</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="229"/>
+        <location filename="../gui/TransactionsModel.cpp" line="220"/>
         <source>confirmations</source>
         <translation>确认</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="293"/>
+        <location filename="../gui/TransactionsModel.cpp" line="282"/>
         <source>me (%1)</source>
         <translation>我(%1)</translation>
     </message>
     <message>
-        <location filename="../gui/TransactionsModel.cpp" line="297"/>
+        <location filename="../gui/TransactionsModel.cpp" line="286"/>
         <source>(n/a)</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/TransactionsModel.cpp" line="304"/>
+        <source>Unconfirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/TransactionsModel.cpp" line="311"/>
+        <source>Confirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/TransactionsModel.cpp" line="470"/>
+        <source>not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3036,12 +3066,12 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="720"/>
+        <location filename="../WalletAdapter.cpp" line="646"/>
         <source>Unencrypted</source>
         <translation>未加密</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="723"/>
+        <location filename="../WalletAdapter.cpp" line="649"/>
         <source>Encrypted</source>
         <translation>加密</translation>
     </message>
@@ -3054,7 +3084,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="730"/>
+        <location filename="../WalletAdapter.cpp" line="656"/>
         <source>There was a problem, please restart your wallet.</source>
         <translation>请重新启动钱包以使新设置生效。</translation>
     </message>

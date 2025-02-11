@@ -786,20 +786,25 @@ Please wait...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8438"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8503"/>
         <source>Turkish</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="7953"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8018"/>
         <source>Language</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/ui/overviewframe.ui" line="8528"/>
+        <location filename="../gui/ui/overviewframe.ui" line="8593"/>
         <source>Russian</source>
         <translation></translation>
     </message>
+    <message>
+    <location filename="../gui/ui/overviewframe.ui" line="8638"/>
+    <source>French</source>
+    <translation></translation>
+</message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="261"/>
         <source>COPY PAYMENT ID</source>

@@ -183,6 +183,7 @@ namespace WalletGui
     m_ui->m_language->addItem("TRY");
     m_ui->m_language->addItem("CNY");
     m_ui->m_language->addItem("AUD");
+    m_ui->m_language->addItem("CAD");
     m_ui->m_language->addItem("NZD");
     m_ui->m_language->addItem("SGD");
     m_ui->m_language->addItem("LKR");
@@ -348,6 +349,10 @@ namespace WalletGui
     {
       m_ui->m_chinese->setChecked(true);
     }
+    else if (language.compare("fr") == 0)
+    {
+      m_ui->m_french->setChecked(true);
+    }
     else
     {
       m_ui->m_english->setChecked(true);
@@ -486,11 +491,11 @@ namespace WalletGui
     numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
     if (numUnlockedOutputs >= 100)
     {
-      m_ui->m_optimizationMessage->setText("Recommended [" + QString::number(numUnlockedOutputs) + "]");
+      m_ui->m_optimizationMessage->setText(tr("Recommended") + " [" + QString::number(numUnlockedOutputs) + "]");
     }
     else
     {
-      m_ui->m_optimizationMessage->setText("Not required [" + QString::number(numUnlockedOutputs) + "]");
+      m_ui->m_optimizationMessage->setText(tr("Not required") + " [" + QString::number(numUnlockedOutputs) + "]");
     }
 
     if (!Settings::instance().isEncrypted())
@@ -525,7 +530,7 @@ namespace WalletGui
     }
     else
     {
-      m_ui->b2_encryptWalletButton->setText("CHANGE PASSWORD");
+      m_ui->b2_encryptWalletButton->setText(tr("CHANGE PASSWORD"));
     }
 
     /* Don't show the LOCK button if the wallet is not encrypted */
@@ -1813,6 +1818,10 @@ namespace WalletGui
     else if (m_ui->m_chinese->isChecked())
     {
       language = "cn";
+    }
+    else if (m_ui->m_french->isChecked())
+    {
+      language = "fr";
     }
     else
     {

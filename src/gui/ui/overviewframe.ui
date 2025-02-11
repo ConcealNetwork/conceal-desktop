@@ -8434,13 +8434,13 @@ padding-left: 5px;
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
@@ -8479,13 +8479,13 @@ padding-left: 5px;
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
@@ -8524,13 +8524,13 @@ padding-left: 5px;
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
@@ -8569,13 +8569,13 @@ padding-left: 5px;
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>150</width>
+                  <width>130</width>
                   <height>20</height>
                  </size>
                 </property>
@@ -8604,6 +8604,51 @@ padding-left: 5px;
                 </attribute>
                </widget>
               </item>
+              <item>
+                <widget class="QRadioButton" name="m_french">
+                  <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                  <size>
+                    <width>130</width>
+                    <height>20</height>
+                  </size>
+                  </property>
+                  <property name="maximumSize">
+                  <size>
+                    <width>130</width>
+                    <height>20</height>
+                  </size>
+                  </property>
+                  <property name="font">
+                  <font>
+                    <family>Poppins</family>
+                  </font>
+                  </property>
+                  <property name="styleSheet">
+                  <string notr="true">color: #fff; 
+
+                border: 0px;</string>
+                  </property>
+                  <property name="text">
+                  <string>French</string>
+                  </property>
+                  <property name="icon">
+                  <iconset resource="../../resources.qrc">
+                    <normaloff>:/images/flags/fr</normaloff>:/images/flags/fr</iconset>
+                  </property>
+                  <property name="checked">
+                  <bool>false</bool>
+                  </property>
+                  <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                  </attribute>
+                </widget>
+                </item>
               <item>
                <spacer name="horizontalSpacer_11">
                 <property name="orientation">

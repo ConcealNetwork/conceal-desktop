@@ -56,6 +56,7 @@
         <file alias="ru">images/ru.png</file>
         <file alias="cn">images/cn.png</file>
         <file alias="tr">images/tr.png</file>
+        <file alias="fr">images/fr.png</file>
     </qresource>
     <qresource prefix="/">
         <file>fonts/Poppins-Regular.ttf</file>
@@ -70,6 +71,7 @@
         <file alias="cn">languages/cn.qm</file>
         <file alias="ru">languages/ru.qm</file>
         <file alias="tr">languages/tr.qm</file>
+        <file alias="fr">languages/fr.qm</file>
     </qresource>
     <qresource prefix="/translations/qt">
         <file alias="ru">languages/qt/qtbase_ru.qm</file>
