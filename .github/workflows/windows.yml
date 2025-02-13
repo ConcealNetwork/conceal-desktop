@@ -28,7 +28,7 @@ jobs:
         if: steps.restore-boost.outputs.cache-hit != 'true'
         shell: powershell
         run: |
-          $Url = "https://sourceforge.net/projects/boost/files/boost-binaries/1.83.0/boost_1_83_0-msvc-14.3-64.exe"
+          $Url = "https://archives.boost.io/release/1.83.0/binaries/boost_1_83_0-msvc-14.3-64.exe"
           (New-Object System.Net.WebClient).DownloadFile($Url, "$env:TEMP\boost.exe")
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
