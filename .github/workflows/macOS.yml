@@ -8,13 +8,13 @@ on:
 jobs:
   build-macos:
     name: macOS
-    runs-on: macos-12
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
-          brew install boost qt@5
+          brew install boost@1.85 qt@5
 
       - name: Clone conceal-core
         run: |
@@ -31,8 +31,10 @@ jobs:
           app_name="conceal-desktop.app"
 
           lrelease src/languages/*.ts
-          make -j4 build-release
+          mkdir -p "$build_folder"
           cd "$build_folder"
+          cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBOOST_ROOT=/usr/local/opt/boost@1.85
+          make -j3 
           macdeployqt "$app_name"
           cpack
           mkdir "$release_name"
