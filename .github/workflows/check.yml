@@ -82,6 +82,7 @@ jobs:
           lrelease src/languages/cn.ts
           lrelease src/languages/ru.ts
           lrelease src/languages/tr.ts
+          lrelease src/languages/fr.ts
           New-Item "$build_folder\$release_folder" -ItemType Directory
           cd "$build_folder"
 

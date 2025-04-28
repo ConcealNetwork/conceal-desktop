@@ -17,5 +17,6 @@ Then follow these steps:
 - Start Inno Setup, load `ConcealInstaller.iss` and compile it.
 - When the compilation is finished, the installer will be in the `bin` directory.
 
+
 ## Credits
 Special thanks to DomGries who created [InnoDependencyInstaller](https://github.com/DomGries/InnoDependencyInstaller) which is the base of the Conceal Desktop installer.

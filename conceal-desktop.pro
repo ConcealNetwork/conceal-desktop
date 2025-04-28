@@ -708,4 +708,5 @@ RESOURCES += src/resources.qrc
 TRANSLATIONS += src/languages/cn.ts \
                 src/languages/en.ts \
                 src/languages/ru.ts \
-                src/languages/tr.ts
+                src/languages/tr.ts \
+                src/languages/fr.ts

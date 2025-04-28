@@ -200,21 +200,19 @@ bool WalletAdapter::importLegacyWallet(const QString &_password) {
   Settings::instance().setEncrypted(!_password.isEmpty());
   try {
     fileName.replace(fileName.lastIndexOf(".keys"), 5, ".wallet");
-    
-      m_wallet.reset();
-      return false;
     Settings::instance().setWalletFile(fileName);
     return true;
-  } catch (std::system_error& _err) {
+  } catch (const std::system_error& _err) {
     if (_err.code().value() == cn::error::WRONG_PASSWORD) {
       Settings::instance().setEncrypted(true);
       Q_EMIT openWalletWithPasswordSignal(!_password.isEmpty());
     }
-  } catch (std::runtime_error&) {
+    m_wallet.reset();
+    return false;
+  } catch (const std::exception&) {  // Catches both runtime_error and other exceptions
+    m_wallet.reset();
+    return false;
   }
-
-  m_wallet.reset();
-  return false;
 }
 
 void WalletAdapter::close() {
@@ -375,23 +373,24 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
                                     const QVector<cn::WalletMessage>& _messages,
                                     quint64 _mixin)
 {
-  QMutexLocker locker(&m_mutex);
   try
   {
     crypto::SecretKey _transactionsk;
     cn::TransactionParameters sendParams;
+    { QMutexLocker locker(&m_mutex);
     sendParams.destinations = std::vector<cn::WalletOrder>(_transfers.begin(), _transfers.end());
     sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
     sendParams.changeDestination = m_wallet->getAddress(0);
-
+    }
     if (!_paymentId.isEmpty()) {
       cn::addPaymentIdToExtra(_paymentId.toStdString(), sendParams.extra);
     }
-
+    { QMutexLocker locker(&m_mutex);
     m_sentTransactionId = m_wallet->transfer(sendParams, _transactionsk);
     Q_EMIT walletStateChangedSignal(tr("Sending transaction"), "");
     LoggerAdapter::instance().log("Transaction sent by WalletGreen");
+    }
   }
   catch (std::system_error&)
   {
@@ -407,11 +406,13 @@ quint64 WalletAdapter::getTransferCount(cn::TransactionId id) const {
 }
 
 void WalletAdapter::optimizeWallet() {
-  QMutexLocker locker(&m_mutex);
+  LoggerAdapter::instance().log("attempt to optimize wallet");
   try {
+    QMutexLocker locker(&m_mutex);
     m_sentTransactionId = m_wallet->createOptimizationTransaction(m_wallet->getAddress(0));
     Q_EMIT walletStateChangedSignal(tr("Optimizing wallet"), "");
   } catch (std::system_error&) {
+    LoggerAdapter::instance().log("quit silently optimize, criteria not met");
   }
 }
 

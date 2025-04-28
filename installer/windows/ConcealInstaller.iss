@@ -8,9 +8,9 @@
 #define Dependency_NoExampleSetup
 
 #define AppSetupName 'Conceal Desktop'
-#define AppVersion '6.6.2'
+#define AppVersion '6.7.3'
 #define AppPublisher 'Conceal Network'
-#define AppCopyright 'Copyright (C) Conceal Network 2020'
+#define AppCopyright 'Copyright (C) Conceal Network 2025'
 #define AppURL 'https://conceal.network'
 #define UpdateURL 'https://github.com/ConcealNetwork/conceal-desktop/releases'
 #define AppExe 'conceal-desktop.exe'
