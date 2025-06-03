@@ -125,14 +125,14 @@ jobs:
 
   build-appimage:
     name: AppImage
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev openssl
+          sudo apt-get install -y qtbase5-dev qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev openssl
 
       - name: Clone conceal-core
         run: |
@@ -170,47 +170,6 @@ jobs:
         with:
           name: ${{ steps.appimage.outputs.release_name }}
           path: ${{ steps.appimage.outputs.release_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  build-ubuntu20:
-    name: Ubuntu 20.04
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@master
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
-
-      - name: Clone conceal-core
-        run: |
-          rm -rf cryptonote
-          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
-          ./.github/checkout.sh
-
-      - name: Build
-        id: build
-        run: |
-          ccx_version=${GITHUB_SHA::7}
-          release_name=ccx-desktop-ubuntu-2004-dev-"$ccx_version"
-
-          lrelease src/languages/*.ts
-          make -j2 build-release
-          mkdir $release_name
-          mkdir -p $release_name/icon
-          mv build/release/conceal-desktop $release_name
-          cp conceal-desktop.desktop $release_name
-          cp src/images/conceal.png $release_name/icon
-
-          echo "release_name=${release_name}" >> $GITHUB_OUTPUT
-
-      - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ steps.build.outputs.release_name }}
-          path: ${{ steps.build.outputs.release_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
