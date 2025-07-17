@@ -83,7 +83,7 @@ namespace WalletGui
   Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
   Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int BASE_FEE = 1000;
-  Q_DECL_CONSTEXPR int REMOTE_FEE = 100000;
+  Q_DECL_CONSTEXPR int REMOTE_FEE = 10000;
 
   /* Convert months to the number of blocks */
   QString monthsToBlocks(int _months)
