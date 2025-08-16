@@ -36,6 +36,8 @@ jobs:
           mv $build_folder/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
+          cp ubuntu-shortcut-creator.sh $release_name
+          chmod 755 $release_name/ubuntu-shortcut-creator.sh
           tar -czf "$release_name".tar.gz "$release_name"
           sha256=$(shasum -a 256 "$release_name".tar.gz | awk '{print toupper($1)}')
 
