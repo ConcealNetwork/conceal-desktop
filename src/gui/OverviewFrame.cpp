@@ -83,7 +83,8 @@ namespace WalletGui
   Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
   Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int BASE_FEE = 1000;
-  Q_DECL_CONSTEXPR int REMOTE_FEE = 100000;
+  Q_DECL_CONSTEXPR int REMOTE_FEE = 10000;
+  Q_DECL_CONSTEXPR int MESSAGE_COST = 100;  // 0.0001 CCX (100 atomic units)
 
   /* Convert months to the number of blocks */
   QString monthsToBlocks(int _months)
@@ -1463,6 +1464,13 @@ namespace WalletGui
       return;
     }
 
+    /* Check if user has enough balance for message cost */
+    if (MESSAGE_COST > WalletAdapter::instance().getActualBalance())
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance to send a message!"), QtCriticalMsg));
+      return;
+    }
+
     QVector<cn::WalletOrder> transfers;
     QVector<cn::WalletOrder> feeTransfer;
     cn::WalletOrder walletTransfer;
@@ -1502,7 +1510,7 @@ namespace WalletGui
 
     /* Start building the transaction */
     walletTransfer.address = address.toStdString();
-    uint64_t amount = 100;
+    uint64_t amount = MESSAGE_COST;  // Use the proper message cost (0.0001 CCX)
     walletTransfer.amount = amount;
     transfers.push_back(walletTransfer);
     messages.append({ address.toStdString(), messageString.toStdString() });
@@ -1516,7 +1524,7 @@ namespace WalletGui
     if (m_ui->m_ttlCheck->checkState() == Qt::Checked)
     {
       ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
-      fee = 0;
+      fee = 0;  // TTL messages have no fee
       selfDestructiveMessage = true;
     }
 

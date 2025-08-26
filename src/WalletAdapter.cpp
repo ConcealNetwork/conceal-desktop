@@ -431,6 +431,8 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
     sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
     sendParams.changeDestination = m_wallet->getAddress(0);
+    sendParams.ttl = _ttl;
+    sendParams.fee = _fee;
     m_sentMessageId = m_wallet->transfer(sendParams, _transactionsk);
     Q_EMIT walletStateChangedSignal(tr("Sending message"), "");
   }
