@@ -203,6 +203,8 @@ jobs:
           mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
+          cp ubuntu-shortcut-creator.sh $release_name
+          chmod 755 $release_name/ubuntu-shortcut-creator.sh
 
           echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
@@ -244,6 +246,8 @@ jobs:
           mv build/release/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
+          cp ubuntu-shortcut-creator.sh $release_name
+          chmod 755 $release_name/ubuntu-shortcut-creator.sh
 
           echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
