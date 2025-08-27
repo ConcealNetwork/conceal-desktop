@@ -774,7 +774,7 @@ Lütfen bekle...</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5268"/>
-        <source>TradeOgre</source>
+        <source>NonKYC</source>
         <translation></translation>
     </message>
     <message>
