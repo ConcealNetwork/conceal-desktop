@@ -193,7 +193,7 @@ private:
   Q_SLOT void encryptWalletClicked();
   Q_SLOT void webwalletClicked();
   Q_SLOT void websiteClicked();
-  Q_SLOT void tradeogreClicked();
+  Q_SLOT void tradingClicked();
   Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);

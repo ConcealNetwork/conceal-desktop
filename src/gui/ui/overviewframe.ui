@@ -5237,7 +5237,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="10">
-             <widget class="QPushButton" name="sm_tradeogreButton">
+             <widget class="QPushButton" name="sm_tradingButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5265,7 +5265,7 @@ color: orange;
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>TradeOgre</string>
+               <string>NonKYC</string>
               </property>          
               <property name="type" stdset="0">
                <string>sm</string>
@@ -5417,7 +5417,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="9">
-             <widget class="QLabel" name="m_tradeogreIcon">
+             <widget class="QLabel" name="m_tradingIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5448,7 +5448,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/tradeogre</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/trading</pixmap>
               </property>
              </widget>
             </item>
@@ -10824,10 +10824,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_tradeogreButton</sender>
+   <sender>sm_tradingButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>tradeogreClicked()</slot>
+   <slot>tradingClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>976</x>
@@ -11209,7 +11209,7 @@ color: orange;
   <slot>encryptWalletClicked()</slot>
   <slot>addressChanged(QString)</slot>
   <slot>websiteClicked()</slot>
-  <slot>tradeogreClicked()</slot>
+  <slot>tradingClicked()</slot>
   <slot>webwalletClicked()</slot>
   <slot>wikiClicked()</slot>
   <slot>helpClicked()</slot>

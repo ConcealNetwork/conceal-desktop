@@ -1532,7 +1532,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5268"/>
-        <source>TradeOgre</source>
+        <source>NonKYC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -2028,9 +2028,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://wallet.conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::tradeogreClicked()
+  void OverviewFrame::tradingClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://nonkyc.io/market/CCX_BTC", QUrl::TolerantMode));
   }
 
   void OverviewFrame::wikiClicked()

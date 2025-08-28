@@ -637,8 +637,8 @@ Merci de patienter...</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5268"/>
-        <source>TradeOgre</source>
-        <translation>TradeOgre</translation>
+        <source>NonKYC</source>
+        <translation>NonKYC</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5111"/>
