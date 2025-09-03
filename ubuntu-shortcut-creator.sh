@@ -17,7 +17,7 @@ if [[ "$TERM" =~ xterm* ]] || [[ "$TERM" =~ screen* ]] || [[ "$TERM" =~ tmux* ]]
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     YELLOW='\033[1;33m'
-    BLUE='\033[0;34m'
+    ORANGE='\033[0;33m'
     BOLD='\033[1m'
     NC='\033[0m' # No Color
 else
@@ -25,15 +25,36 @@ else
     RED=''
     GREEN=''
     YELLOW=''
-    BLUE=''
+    ORANGE=''
     BOLD=''
     NC=''
 fi
 
 NEED_QT_DEPENDENCY=false
+
+# Detect distribution and package manager
+if command -v apt >/dev/null 2>&1; then
+    DISTRO="debian"
+    PKG_MANAGER="apt"
+    PKG_CHECK="dpkg -l"
+    PKG_NAME="libqt5charts5"
+elif command -v pacman >/dev/null 2>&1; then
+    DISTRO="arch"
+    PKG_MANAGER="pacman"
+    PKG_CHECK="pacman -Q"
+    PKG_NAME="qt5-charts"
+else
+    DISTRO="unknown"
+    PKG_MANAGER="unknown"
+    PKG_CHECK=""
+    PKG_NAME=""
+fi
+
 # Check if Qt dependencies are actually needed
-if ! dpkg -l | grep -q libqt5charts5; then
-    NEED_QT_DEPENDENCY=true
+if [ "$DISTRO" != "unknown" ]; then
+    if ! $PKG_CHECK | grep -q "$PKG_NAME"; then
+        NEED_QT_DEPENDENCY=true
+    fi
 fi
 
 # Function to install Qt dependencies
@@ -46,19 +67,18 @@ if [ "$NEED_QT_DEPENDENCY" = true ]; then
         echo -e "${YELLOW}Qt dependency installation skipped by user${NC}"
     else
         echo -e "${YELLOW}${BOLD}Checking for Qt dependencies...${NC}"
-        # Try to install libqt5charts5 which handles dependencies on both Ubuntu 22 and 24
-        if command -v apt >/dev/null 2>&1; then
-            echo -e "${BLUE}Installing Qt5 Charts package (includes all necessary Qt5 libraries)...${NC}"
+        if [ "$DISTRO" = "debian" ]; then
+            echo -e "${ORANGE}Installing Qt5 Charts package (includes all necessary Qt5 libraries)...${NC}"
             apt-get update -qq
             apt install -y -qq libqt5charts5
             echo -e "${GREEN}Qt5 Charts package installed successfully${NC}"
-        elif command -v pacman >/dev/null 2>&1; then
-            echo -e "${BLUE}Installing Qt5 Charts package (includes all necessary Qt5 libraries)...${NC}"
+        elif [ "$DISTRO" = "arch" ]; then
+            echo -e "${ORANGE}Installing Qt5 Charts package (includes all necessary Qt5 libraries)...${NC}"
             pacman -S -q qt5-charts
             echo -e "${GREEN}Qt5 Charts package installed successfully${NC}"
         else
             echo -e "${YELLOW}${BOLD}Warning: Could not install Qt dependencies automatically.${NC}"
-            echo -e "Please install libqt5charts5 for your distribution."
+            echo -e "Please install Qt5 Charts package for your distribution."
             echo -e "The application may not work without it."
         fi
     fi
@@ -95,7 +115,7 @@ if [ -f "$DESKTOP_FILE" ]; then
         sleep 1
         exit 1
     fi
-    echo -e "${BLUE}Overwriting existing desktop file...${NC}"
+    echo -e "${ORANGE}Overwriting existing desktop file...${NC}"
 fi
 
 BINARY_PATH_BUILD="${SCRIPT_DIR}/bin/conceal-desktop"
@@ -106,12 +126,12 @@ if [ -f "$BINARY_PATH_BUILD" ]; then
     BINARY_PATH="$BINARY_PATH_BUILD"
     ICON_PATH="${SCRIPT_DIR}/src/images/conceal.png"
     NEED_QT_DEPENDENCY=false
-    echo -e "${BLUE}Detected: Manual build case${NC}"
+    echo -e "${ORANGE}Detected: Manual build case${NC}"
 elif [ -f "$BINARY_PATH_RELEASE" ]; then
     BINARY_PATH="$BINARY_PATH_RELEASE"
     ICON_PATH="${SCRIPT_DIR}/icon/conceal.png"
     NEED_QT_DEPENDENCY=true
-    echo -e "${BLUE}Detected: Release zip case${NC}"
+    echo -e "${ORANGE}Detected: Release zip case${NC}"
 else
     echo -e "${RED}${BOLD}Error: Binary not found at:${NC}"
     echo -e "  ${RED}$BINARY_PATH_BUILD${NC} (manual build)"
@@ -125,11 +145,11 @@ if [ ! -f "$ICON_PATH" ]; then
     exit 1
 fi
 
-echo -e "${BLUE}Using binary: ${BOLD}$BINARY_PATH${NC}"
-echo -e "${BLUE}Using icon: ${BOLD}$ICON_PATH${NC}"
+echo -e "${ORANGE}Using binary: ${BOLD}$BINARY_PATH${NC}"
+echo -e "${ORANGE}Using icon: ${BOLD}$ICON_PATH${NC}"
 
 # Create desktop file
-echo -e "${BLUE}Creating desktop shortcut...${NC}"
+echo -e "${ORANGE}Creating desktop shortcut...${NC}"
 cat > "$DESKTOP_FILE" << EOF
 [Desktop Entry]
 Encoding=UTF-8

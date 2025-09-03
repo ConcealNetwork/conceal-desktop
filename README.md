@@ -34,6 +34,7 @@ No one owns Conceal, everyone can take part.
 -   Medium: <https://medium.com/@ConcealNetwork>
 -   Bitcoin Talk: <https://bitcointalk.org/index.php?topic=4515873>
 -   Paperwallet: <https://conceal.network/paperwallet>
+-   WebWallet: <https://wallet.conceal.network>
 
 ## Compiling Conceal from source
 
@@ -70,6 +71,11 @@ make clean
 ```
 
 If the build is successful the binary will be in the `bin` folder.
+
+Run the script `ubuntu-shortcut-creator.sh` to create a shortcut with icon.
+```bash
+sudo ./ubuntu-shortcut-creator.sh
+```
 
 ### Windows 10
 
@@ -143,6 +149,4 @@ Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, For
 
 ## Copyright
 
-© 2018-2023 Conceal Network & Conceal Devs
-© 2017-2018 The Circle Foundation & Conceal Devs
-© 2011-2017 The Cryptonote developers
+Copyright (c) 2017-2025 Conceal Community, Conceal Network & Conceal Devs
