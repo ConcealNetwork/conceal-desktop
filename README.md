@@ -53,7 +53,7 @@ You may download them from:
 On Ubuntu it is possible to install them using apt:
 
 ```bash
-sudo apt install git gcc make cmake libboost-all-dev qt5-default
+sudo apt install git gcc make cmake libboost-all-dev qtbase5-dev libqt5charts5-dev
 ```
 
 #### Building

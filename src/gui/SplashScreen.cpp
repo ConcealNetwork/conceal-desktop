@@ -49,24 +49,8 @@ SplashScreen::SplashScreen(QWidget* parent) : QWidget(parent)
 
 void SplashScreen::centerOnScreen(QApplication* app)
 {
-  try {
-    // Try geometric centering first - no screen null check
-    QScreen *screen = app->primaryScreen();
-    QRect availableGeometry = screen->availableGeometry();
-    QSize splashSize = size();
-    
-    int x = (availableGeometry.width() - splashSize.width()) / 2;
-    int y = (availableGeometry.height() - splashSize.height()) / 2;
-    
-    x = qMax(0, qMin(x, availableGeometry.width() - splashSize.width()));
-    y = qMax(0, qMin(y, availableGeometry.height() - splashSize.height()));
-    
-    move(availableGeometry.x() + x, availableGeometry.y() + y);
-  } catch (...) {
-    QRect availableGeometry = app->primaryScreen() ? app->primaryScreen()->availableGeometry() : QRect(0, 0, 1920, 1080);
-    setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), availableGeometry));
-  }
-
+  setGeometry(QStyle::alignedRect(
+      Qt::LeftToRight, Qt::AlignCenter, size(), app->desktop()->availableGeometry()));
 }
 
 void SplashScreen::showMessage(const QString& message, Qt::Alignment alignment, const QColor& color)

@@ -221,7 +221,7 @@ void MainWindow::positionWithinAvailableGeometry()
     if (process.exitCode() == 0) {
       QString dockPos = process.readAllStandardOutput().trimmed();
       if (dockPos.contains("LEFT")) {
-        // Ubuntu with left dock - move 70px to the right
+        // Ubuntu with collapsible left dock - move 80px to the right
         int newX = 80;
         if (newX + windowSize.width() <= availableGeometry.width()) {
           move(newX, availableGeometry.y());
@@ -231,7 +231,7 @@ void MainWindow::positionWithinAvailableGeometry()
     }
   }
   } catch (...) {
-    qDebug() << "MainWindow - Ubuntu Positioning failed, using hardcoded without move";
+    // do nothing
   }
 
 }
