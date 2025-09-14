@@ -11,7 +11,9 @@
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteCore/CryptoNoteTools.h>
 
+#include <QApplication>
 #include <QCloseEvent>
+#include <QDesktopWidget>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QLocale>
@@ -169,6 +171,9 @@ void MainWindow::initUi()
 
   if (Settings::instance().getMaximizedStatus() == "enabled") {
     showMaximized();
+  } else {
+    // Position window within available geometry to avoid overlapping OS navigation bars
+    positionWithinAvailableGeometry();
   }
     
   setRemoteWindowTitle();
@@ -188,6 +193,21 @@ void MainWindow::initUi()
   // OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
   EditableStyle::setStyles(Settings::instance().getFontSize());
+}
+
+void MainWindow::positionWithinAvailableGeometry()
+{
+  // Get the available screen geometry (excludes taskbars, docks, etc.)
+  QRect availableGeometry = QApplication::desktop()->availableGeometry();
+  
+  // Position window at (0,0) but ensure it's within the available geometry
+  // This prevents the window from appearing behind taskbars or docks
+  int x = availableGeometry.x();
+  int y = availableGeometry.y();
+  
+  // Keep the original window size from UI file (1270x650)
+  // Just move the position to be within available area
+  move(x, y);
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON
