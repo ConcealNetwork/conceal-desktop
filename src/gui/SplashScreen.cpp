@@ -49,44 +49,24 @@ SplashScreen::SplashScreen(QWidget* parent) : QWidget(parent)
 
 void SplashScreen::centerOnScreen(QApplication* app)
 {
-  // Initialize to false - only set to true if evaluation succeeds
-  bool isGnomeMutter = false;
-  
-  // Safely evaluate environment to detect GNOME/Mutter
   try {
-    QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP");
-    QString sessionType = qgetenv("XDG_SESSION_TYPE");
+    // Try geometric centering first - no screen null check
+    QScreen *screen = app->primaryScreen();
+    QRect availableGeometry = screen->availableGeometry();
+    QSize splashSize = size();
     
-    isGnomeMutter = (sessionType == "wayland" && 
-                    (desktopEnv.contains("GNOME") || desktopEnv.contains("ubuntu:GNOME") || 
-                     desktopEnv.contains("gnome") || desktopEnv.contains("Ubuntu"))); 
+    int x = (availableGeometry.width() - splashSize.width()) / 2;
+    int y = (availableGeometry.height() - splashSize.height()) / 2;
+    
+    x = qMax(0, qMin(x, availableGeometry.width() - splashSize.width()));
+    y = qMax(0, qMin(y, availableGeometry.height() - splashSize.height()));
+    
+    move(availableGeometry.x() + x, availableGeometry.y() + y);
   } catch (...) {
     QRect availableGeometry = app->primaryScreen() ? app->primaryScreen()->availableGeometry() : QRect(0, 0, 1920, 1080);
-    setGeometry(QStyle::alignedRect(
-        Qt::LeftToRight, Qt::AlignCenter, size(), availableGeometry));
-    return;
-  }
-  
-  if (isGnomeMutter) {
-    // GNOME/Mutter way: use move() with computed values
-    QScreen *screen = app->primaryScreen();
-    if (screen) {
-      QRect availableGeometry = screen->availableGeometry();
-      QSize splashSize = size();
-      
-      int x = (availableGeometry.width() - splashSize.width()) / 2;
-      int y = (availableGeometry.height() - splashSize.height()) / 2;
-      
-      x = qMax(0, qMin(x, availableGeometry.width() - splashSize.width()));
-      y = qMax(0, qMin(y, availableGeometry.height() - splashSize.height()));
-      
-      move(availableGeometry.x() + x, availableGeometry.y() + y);
-      return;
-    }
-  }
-    // Traditional way for non-GNOME/Mutter
-    QRect availableGeometry = app->primaryScreen() ? app->primaryScreen()->availableGeometry() : QRect(0, 0, 1920, 1080);
     setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), availableGeometry));
+  }
+
 }
 
 void SplashScreen::showMessage(const QString& message, Qt::Alignment alignment, const QColor& color)

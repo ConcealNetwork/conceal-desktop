@@ -231,7 +231,7 @@ void MainWindow::positionWithinAvailableGeometry()
     }
   }
   } catch (...) {
-    qDebug() << "MainWindow - Positioning failed, using hardcoded without move";
+    qDebug() << "MainWindow - Ubuntu Positioning failed, using hardcoded without move";
   }
 
 }
