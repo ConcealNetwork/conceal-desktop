@@ -13,11 +13,13 @@
 
 #include <QApplication>
 #include <QCloseEvent>
-#include <QDesktopWidget>
+#include <QDebug>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QLocale>
 #include <QMessageBox>
+#include <QProcess>
+#include <QScreen>
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
@@ -197,17 +199,41 @@ void MainWindow::initUi()
 
 void MainWindow::positionWithinAvailableGeometry()
 {
-  // Get the available screen geometry (excludes taskbars, docks, etc.)
-  QRect availableGeometry = QApplication::desktop()->availableGeometry();
+  try {
+  // Get screen information for safety checks
+  QScreen *screen = QApplication::primaryScreen();
+
+  QRect screenGeometry = screen->geometry();
+  QRect availableGeometry = screen->availableGeometry();
+  QSize windowSize = size();
   
-  // Position window at (0,0) but ensure it's within the available geometry
-  // This prevents the window from appearing behind taskbars or docks
-  int x = availableGeometry.x();
-  int y = availableGeometry.y();
+  // Simple check: Ubuntu + left dock
+  QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP");
   
-  // Keep the original window size from UI file (1270x650)
-  // Just move the position to be within available area
-  move(x, y);
+  bool isUbuntu = desktopEnv.contains("ubuntu") || desktopEnv.contains("Ubuntu") || desktopEnv.contains("Unity");
+  
+  if (isUbuntu) {
+    // Check dock position for all Ubuntu variants (including Unity)
+    QProcess process;
+    process.start("gsettings", QStringList() << "get" << "org.gnome.shell.extensions.dash-to-dock" << "dock-position");
+    process.waitForFinished(500);
+    
+    if (process.exitCode() == 0) {
+      QString dockPos = process.readAllStandardOutput().trimmed();
+      if (dockPos.contains("LEFT")) {
+        // Ubuntu with left dock - move 70px to the right
+        int newX = 80;
+        if (newX + windowSize.width() <= availableGeometry.width()) {
+          move(newX, availableGeometry.y());
+        } 
+        return;
+      }
+    }
+  }
+  } catch (...) {
+    qDebug() << "MainWindow - Positioning failed, using hardcoded without move";
+  }
+
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON

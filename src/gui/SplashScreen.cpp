@@ -56,46 +56,37 @@ void SplashScreen::centerOnScreen(QApplication* app)
   try {
     QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP");
     QString sessionType = qgetenv("XDG_SESSION_TYPE");
+    
     isGnomeMutter = (sessionType == "wayland" && 
-                    (desktopEnv.contains("GNOME") || desktopEnv.contains("ubuntu:GNOME")));
+                    (desktopEnv.contains("GNOME") || desktopEnv.contains("ubuntu:GNOME") || 
+                     desktopEnv.contains("gnome") || desktopEnv.contains("Ubuntu"))); 
   } catch (...) {
-    // Keep isGnomeMutter = false if evaluation fails
+    QRect availableGeometry = app->primaryScreen() ? app->primaryScreen()->availableGeometry() : QRect(0, 0, 1920, 1080);
+    setGeometry(QStyle::alignedRect(
+        Qt::LeftToRight, Qt::AlignCenter, size(), availableGeometry));
+    return;
   }
   
-  if (!isGnomeMutter) {
-    // Use the original working code for all other environments
-    setGeometry(QStyle::alignedRect(
-        Qt::LeftToRight, Qt::AlignCenter, size(), app->desktop()->availableGeometry()));
-  } else {
-    // Special handling for GNOME/Mutter under Wayland
-    try {
-      QScreen *screen = app->primaryScreen();
-      if (screen) {
-        QRect availableGeometry = screen->availableGeometry();
-        QSize splashSize = size();
-        
-        // Calculate center position
-        int x = (availableGeometry.width() - splashSize.width()) / 2;
-        int y = (availableGeometry.height() - splashSize.height()) / 2;
-        
-        // Ensure the splash stays within screen bounds
-        x = qMax(0, qMin(x, availableGeometry.width() - splashSize.width()));
-        y = qMax(0, qMin(y, availableGeometry.height() - splashSize.height()));
-        
-        // Set geometry with center position
-        setGeometry(availableGeometry.x() + x, availableGeometry.y() + y, 
-                    splashSize.width(), splashSize.height());
-      } else {
-        // Fallback to original method if screen is null
-        setGeometry(QStyle::alignedRect(
-            Qt::LeftToRight, Qt::AlignCenter, size(), app->desktop()->availableGeometry()));
-      }
-    } catch (...) {
-      // Fallback to original method if anything goes wrong
-      setGeometry(QStyle::alignedRect(
-          Qt::LeftToRight, Qt::AlignCenter, size(), app->desktop()->availableGeometry()));
+  if (isGnomeMutter) {
+    // GNOME/Mutter way: use move() with computed values
+    QScreen *screen = app->primaryScreen();
+    if (screen) {
+      QRect availableGeometry = screen->availableGeometry();
+      QSize splashSize = size();
+      
+      int x = (availableGeometry.width() - splashSize.width()) / 2;
+      int y = (availableGeometry.height() - splashSize.height()) / 2;
+      
+      x = qMax(0, qMin(x, availableGeometry.width() - splashSize.width()));
+      y = qMax(0, qMin(y, availableGeometry.height() - splashSize.height()));
+      
+      move(availableGeometry.x() + x, availableGeometry.y() + y);
+      return;
     }
   }
+    // Traditional way for non-GNOME/Mutter
+    QRect availableGeometry = app->primaryScreen() ? app->primaryScreen()->availableGeometry() : QRect(0, 0, 1920, 1080);
+    setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), availableGeometry));
 }
 
 void SplashScreen::showMessage(const QString& message, Qt::Alignment alignment, const QColor& color)
