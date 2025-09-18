@@ -443,7 +443,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
-        <source>Conceal Desktop 6.2.1</source>
+        <source>Conceal Desktop 6.7.3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1633,15 +1633,15 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="98"/>
+        <location filename="../gui/OverviewFrame.cpp" line="99"/>
         <source>blocks</source>
         <translation>区块</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="78"/>
         <location filename="../gui/WelcomeFrame.cpp" line="123"/>
         <location filename="../gui/WelcomeFrame.cpp" line="130"/>
         <location filename="../gui/WelcomeFrame.cpp" line="173"/>
+        <location filename="../main.cpp" line="78"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -2175,6 +2175,17 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
         <source>Spent</source>
         <translation>支出</translation>
     </message>
+    <message>
+        <location filename="../gui/DepositModel.cpp" line="205"/>
+        <source>Investment</source>
+        <translation type="unfinished">投资</translation>
+    </message>
+    <message>
+        <location filename="../gui/DepositModel.cpp" line="208"/>
+        <location filename="../gui/DepositModel.cpp" line="211"/>
+        <source>Deposit</source>
+        <translation>存款</translation>
+    </message>
 </context>
 <context>
     <name>WalletGui::ImportGUIKeyDialog</name>
@@ -2358,54 +2369,54 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
         <translation type="vanished">新钱包文件</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="482"/>
+        <location filename="../gui/MainWindow.cpp" line="528"/>
         <source>Wallets (*.wallet)</source>
         <translation>钱包 (*.wallet)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="373"/>
+        <location filename="../gui/MainWindow.cpp" line="419"/>
         <source>Open .wallet/.keys file</source>
         <translation>打开 .wallet/.keys 文件</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="150"/>
+        <location filename="../gui/MainWindow.cpp" line="154"/>
         <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="153"/>
+        <location filename="../gui/MainWindow.cpp" line="157"/>
         <source>Quit Conceal Desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="375"/>
+        <location filename="../gui/MainWindow.cpp" line="421"/>
         <source>Wallet (*.wallet *.keys)</source>
         <translation>钱包 (*.wallet *.keys)</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="480"/>
+        <location filename="../gui/MainWindow.cpp" line="526"/>
         <source>Backup wallet to...</source>
         <translation>将钱包备份到…</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="497"/>
+        <location filename="../gui/MainWindow.cpp" line="543"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="497"/>
+        <location filename="../gui/MainWindow.cpp" line="543"/>
         <source>Your wallet will be reset and restored from blockchain.
 Are you sure?</source>
         <translation>您的钱包将被重置并从区块链中恢复。
 你确定吗？</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="577"/>
+        <location filename="../gui/MainWindow.cpp" line="623"/>
         <source>Wallet error</source>
         <translation>钱包错误</translation>
     </message>
     <message>
-        <location filename="../gui/MainWindow.cpp" line="580"/>
+        <location filename="../gui/MainWindow.cpp" line="626"/>
         <source>Wallet</source>
         <translation>钱包</translation>
     </message>
@@ -2552,35 +2563,35 @@ Are you sure?</source>
         <translation type="vanished">删除</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="239"/>
+        <location filename="../gui/OverviewFrame.cpp" line="240"/>
         <source>Month(s)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="385"/>
-        <location filename="../gui/OverviewFrame.cpp" line="396"/>
-        <location filename="../gui/OverviewFrame.cpp" line="411"/>
-        <location filename="../gui/OverviewFrame.cpp" line="421"/>
-        <location filename="../gui/OverviewFrame.cpp" line="432"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1785"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1803"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2177"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2193"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2226"/>
+        <location filename="../gui/OverviewFrame.cpp" line="386"/>
+        <location filename="../gui/OverviewFrame.cpp" line="397"/>
+        <location filename="../gui/OverviewFrame.cpp" line="412"/>
+        <location filename="../gui/OverviewFrame.cpp" line="422"/>
+        <location filename="../gui/OverviewFrame.cpp" line="433"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1793"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1811"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2185"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2201"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2234"/>
         <source>CLICK TO DISABLE</source>
         <translation>点击禁用</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="389"/>
-        <location filename="../gui/OverviewFrame.cpp" line="400"/>
-        <location filename="../gui/OverviewFrame.cpp" line="407"/>
-        <location filename="../gui/OverviewFrame.cpp" line="417"/>
-        <location filename="../gui/OverviewFrame.cpp" line="428"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1779"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1798"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2182"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2198"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2220"/>
+        <location filename="../gui/OverviewFrame.cpp" line="390"/>
+        <location filename="../gui/OverviewFrame.cpp" line="401"/>
+        <location filename="../gui/OverviewFrame.cpp" line="408"/>
+        <location filename="../gui/OverviewFrame.cpp" line="418"/>
+        <location filename="../gui/OverviewFrame.cpp" line="429"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1787"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1806"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2190"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2206"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2228"/>
         <source>CLICK TO ENABLE</source>
         <translation>点击启用</translation>
     </message>
@@ -2597,24 +2608,24 @@ Are you sure?</source>
         <translation type="vanished">同步</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1230"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1483"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1231"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1491"/>
         <source>Failed to lookup Conceal ID</source>
         <translation>搜索失败</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1246"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1499"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1247"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1507"/>
         <source>Could not check Conceal ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1254"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1255"/>
         <source>Invalid recipient address</source>
         <translation>接收地址无效</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1273"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1274"/>
         <source>Invalid payment ID</source>
         <translation>付款ID无效</translation>
     </message>
@@ -2627,27 +2638,27 @@ Are you sure?</source>
         <translation type="vanished">请注意，没有付款ID，是否确定要继续？</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1320"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1321"/>
         <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
         <translation>不充足的资金。 请确保您有足够的资金支付金额和费用。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1546"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1554"/>
         <source>Message too long. Please ensure that the message is less than 260 characters.</source>
         <translation>讯息太长。 请确保该消息少于260个字符。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1588"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1596"/>
         <source>You don&apos;t have enough balance in your account!</source>
         <translation>您的帐户余额不足！</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1601"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1609"/>
         <source>Deposit Confirmation</source>
         <translation>存款确认</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1602"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1610"/>
         <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
         <translation>请注意，一旦资金锁定在存款中，在到期之前您将无法访问。是否确定要继续？</translation>
     </message>
@@ -2664,72 +2675,72 @@ Are you sure?</source>
         <translation type="vanished">自动优化已启用。 您的钱包将每15分钟自动优化一次。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="587"/>
+        <location filename="../gui/OverviewFrame.cpp" line="588"/>
         <source>Data updated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="732"/>
+        <location filename="../gui/OverviewFrame.cpp" line="733"/>
         <source>Market data from coingecko.com - Last updated: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="859"/>
+        <location filename="../gui/OverviewFrame.cpp" line="860"/>
         <source>Portfolio (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="862"/>
+        <location filename="../gui/OverviewFrame.cpp" line="863"/>
         <source>Available Balance: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="886"/>
-        <location filename="../gui/OverviewFrame.cpp" line="973"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1002"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1170"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1462"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1579"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1733"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1760"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1772"/>
+        <location filename="../gui/OverviewFrame.cpp" line="887"/>
+        <location filename="../gui/OverviewFrame.cpp" line="974"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1003"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1171"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1463"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1587"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1741"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1768"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1780"/>
         <source>This is a tracking wallet.
 This action is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="892"/>
+        <location filename="../gui/OverviewFrame.cpp" line="893"/>
         <source>BANKING</source>
         <translation type="unfinished">银行业务</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="905"/>
+        <location filename="../gui/OverviewFrame.cpp" line="906"/>
         <source>TRANSACTIONS</source>
         <translation type="unfinished">交易</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="914"/>
+        <location filename="../gui/OverviewFrame.cpp" line="915"/>
         <source>CONCEAL.NETWORK</source>
         <translation type="unfinished">我的CONCEAL钱包</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="931"/>
+        <location filename="../gui/OverviewFrame.cpp" line="932"/>
         <source>ABOUT</source>
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="941"/>
+        <location filename="../gui/OverviewFrame.cpp" line="942"/>
         <source>WALLET SETTINGS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="954"/>
+        <location filename="../gui/OverviewFrame.cpp" line="955"/>
         <source>INBOX</source>
         <translation type="unfinished">收件箱</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="979"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1091"/>
+        <location filename="../gui/OverviewFrame.cpp" line="980"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1092"/>
         <source>SEND FUNDS</source>
         <translation type="unfinished">发送资金</translation>
     </message>
@@ -2738,57 +2749,77 @@ This action is not available.</source>
         <translation type="obsolete">新消息</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1039"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1921"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1040"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1929"/>
         <source>Address copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1045"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1046"/>
         <source>Synchronization is in progress.
 This option is not available until your wallet is synchronized with the network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1008"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1098"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1009"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1099"/>
         <source>SEND MESSAGE</source>
         <translation type="unfinished">发送消息</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1375"/>
+        <location filename="../gui/OverviewFrame.cpp" line="495"/>
+        <source>Recommended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/OverviewFrame.cpp" line="499"/>
+        <source>Not required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/OverviewFrame.cpp" line="534"/>
+        <source>CHANGE PASSWORD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/OverviewFrame.cpp" line="1376"/>
         <source>ADDRESS BOOK</source>
         <translation type="unfinished">地址簿</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1426"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1427"/>
         <source>Warning: you have reached the maximum message size of 260 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1780"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1470"/>
+        <source>You don&apos;t have enough balance to send a message!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/OverviewFrame.cpp" line="1788"/>
         <source>Auto optimization disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1787"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1795"/>
         <source>Auto optimization enabled.
 Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1843"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1851"/>
         <source>Language and Currency settings saved</source>
         <translation>语言和货币设置已保存</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1844"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1880"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1852"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1888"/>
         <source>Please restart the wallet for the new settings to take effect.</source>
         <translation>请重新启动钱包以使新设置生效。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1879"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1887"/>
         <source>Connection settings saved</source>
         <translation>连接设置已保存</translation>
     </message>
@@ -2801,7 +2832,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">更改联系资料</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1927"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1935"/>
         <source>Payment ID copied to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2818,17 +2849,17 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">错误密码.</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2081"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2089"/>
         <source>Lock Wallet</source>
         <translation>锁钱包</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2082"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2090"/>
         <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
         <translation>您想锁好钱包吗？ 当您的钱包被锁定时，它将继续与网络同步。 您需要输入您的钱包密码才能解锁。</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2158"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2166"/>
         <source>Select CSV file</source>
         <translation></translation>
     </message>
@@ -3005,38 +3036,38 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation>正在优化钱包</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="435"/>
+        <location filename="../WalletAdapter.cpp" line="437"/>
         <source>Sending message</source>
         <translation>正在发送消息</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="450"/>
+        <location filename="../WalletAdapter.cpp" line="452"/>
         <source>Creating deposit</source>
         <translation>正在创建存款</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="462"/>
+        <location filename="../WalletAdapter.cpp" line="464"/>
         <source>Withdrawing deposit</source>
         <translation>正在提取存款</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="498"/>
-        <location filename="../WalletAdapter.cpp" line="520"/>
+        <location filename="../WalletAdapter.cpp" line="500"/>
+        <location filename="../WalletAdapter.cpp" line="522"/>
         <source>Ready</source>
         <translation>准备就绪</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="532"/>
+        <location filename="../WalletAdapter.cpp" line="534"/>
         <source>Synchronizing</source>
         <translation>正在同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="655"/>
+        <location filename="../WalletAdapter.cpp" line="657"/>
         <source>Synchronized</source>
         <translation>已同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="655"/>
+        <location filename="../WalletAdapter.cpp" line="657"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -3066,12 +3097,12 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">同步</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="646"/>
+        <location filename="../WalletAdapter.cpp" line="648"/>
         <source>Unencrypted</source>
         <translation>未加密</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="649"/>
+        <location filename="../WalletAdapter.cpp" line="651"/>
         <source>Encrypted</source>
         <translation>加密</translation>
     </message>
@@ -3084,7 +3115,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
         <translation type="vanished">警告</translation>
     </message>
     <message>
-        <location filename="../WalletAdapter.cpp" line="656"/>
+        <location filename="../WalletAdapter.cpp" line="658"/>
         <source>There was a problem, please restart your wallet.</source>
         <translation>请重新启动钱包以使新设置生效。</translation>
     </message>

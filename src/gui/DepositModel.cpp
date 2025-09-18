@@ -202,13 +202,13 @@ QVariant DepositModel::getDisplayRole(const QModelIndex& _index) const {
   case COLUMN_TYPE: {
     quint32 term = _index.data(ROLE_DEPOSIT_TERM).value<quint32>();
     if (term % 64800 == 0) {
-      return QString("Investment");
+      return tr("Investment");
     }
     if (term % CurrencyAdapter::instance().getCurrency().depositMinTermV3() == 0) {
-      return QString("Deposit");
+      return tr("Deposit");
     }
     if (term % 5040 == 0) {
-      return QString("Deposit");
+      return tr("Deposit");
     }
   }
 
