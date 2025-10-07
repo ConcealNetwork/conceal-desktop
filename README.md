@@ -150,3 +150,4 @@ Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, For
 ## Copyright
 
 Copyright (c) 2017-2025 Conceal Community, Conceal Network & Conceal Devs
+
