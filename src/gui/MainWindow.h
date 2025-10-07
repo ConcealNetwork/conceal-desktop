@@ -58,6 +58,7 @@ private:
 
   void connectToSignals();
   void initUi();
+  void positionWithinAvailableGeometry();
 
   void minimizeToTray(bool _on);
   void showMessage(const QString& _text, QtMsgType _type);

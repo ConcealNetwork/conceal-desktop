@@ -83,7 +83,8 @@ namespace WalletGui
   Q_DECL_CONSTEXPR int MAX_TTL = 14 * HOUR_SECONDS;
   Q_DECL_CONSTEXPR int TTL_STEP = 5 * MINUTE_SECONDS;
   Q_DECL_CONSTEXPR int BASE_FEE = 1000;
-  Q_DECL_CONSTEXPR int REMOTE_FEE = 100000;
+  Q_DECL_CONSTEXPR int REMOTE_FEE = 10000;
+  Q_DECL_CONSTEXPR int MESSAGE_COST = 100;  // 0.0001 CCX (100 atomic units)
 
   /* Convert months to the number of blocks */
   QString monthsToBlocks(int _months)
@@ -183,6 +184,7 @@ namespace WalletGui
     m_ui->m_language->addItem("TRY");
     m_ui->m_language->addItem("CNY");
     m_ui->m_language->addItem("AUD");
+    m_ui->m_language->addItem("CAD");
     m_ui->m_language->addItem("NZD");
     m_ui->m_language->addItem("SGD");
     m_ui->m_language->addItem("LKR");
@@ -348,6 +350,10 @@ namespace WalletGui
     {
       m_ui->m_chinese->setChecked(true);
     }
+    else if (language.compare("fr") == 0)
+    {
+      m_ui->m_french->setChecked(true);
+    }
     else
     {
       m_ui->m_english->setChecked(true);
@@ -486,11 +492,11 @@ namespace WalletGui
     numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
     if (numUnlockedOutputs >= 100)
     {
-      m_ui->m_optimizationMessage->setText("Recommended [" + QString::number(numUnlockedOutputs) + "]");
+      m_ui->m_optimizationMessage->setText(tr("Recommended") + " [" + QString::number(numUnlockedOutputs) + "]");
     }
     else
     {
-      m_ui->m_optimizationMessage->setText("Not required [" + QString::number(numUnlockedOutputs) + "]");
+      m_ui->m_optimizationMessage->setText(tr("Not required") + " [" + QString::number(numUnlockedOutputs) + "]");
     }
 
     if (!Settings::instance().isEncrypted())
@@ -525,7 +531,7 @@ namespace WalletGui
     }
     else
     {
-      m_ui->b2_encryptWalletButton->setText("CHANGE PASSWORD");
+      m_ui->b2_encryptWalletButton->setText(tr("CHANGE PASSWORD"));
     }
 
     /* Don't show the LOCK button if the wallet is not encrypted */
@@ -1458,6 +1464,13 @@ namespace WalletGui
       return;
     }
 
+    /* Check if user has enough balance for message cost */
+    if (MESSAGE_COST > WalletAdapter::instance().getActualBalance())
+    {
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(tr("You don't have enough balance to send a message!"), QtCriticalMsg));
+      return;
+    }
+
     QVector<cn::WalletOrder> transfers;
     QVector<cn::WalletOrder> feeTransfer;
     cn::WalletOrder walletTransfer;
@@ -1497,7 +1510,7 @@ namespace WalletGui
 
     /* Start building the transaction */
     walletTransfer.address = address.toStdString();
-    uint64_t amount = 100;
+    uint64_t amount = MESSAGE_COST;  // Use the proper message cost (0.0001 CCX)
     walletTransfer.amount = amount;
     transfers.push_back(walletTransfer);
     messages.append({ address.toStdString(), messageString.toStdString() });
@@ -1511,7 +1524,7 @@ namespace WalletGui
     if (m_ui->m_ttlCheck->checkState() == Qt::Checked)
     {
       ttl = QDateTime::currentDateTimeUtc().toTime_t() + m_ui->m_ttlSlider->value() * MIN_TTL;
-      fee = 0;
+      fee = 0;  // TTL messages have no fee
       selfDestructiveMessage = true;
     }
 
@@ -1814,6 +1827,10 @@ namespace WalletGui
     {
       language = "cn";
     }
+    else if (m_ui->m_french->isChecked())
+    {
+      language = "fr";
+    }
     else
     {
       language = "en";
@@ -1983,7 +2000,7 @@ namespace WalletGui
 
   void OverviewFrame::telegramClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://t.co/55klBHKGUR", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://t.me/concealcommunity", QUrl::TolerantMode));
   }
 
   void OverviewFrame::githubClicked()
@@ -1991,9 +2008,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://github.com/ConcealNetwork", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::redditClicked()
+  void OverviewFrame::marketplaceClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://www.reddit.com/r/ConcealNetwork/", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://conceal.network/marketplace/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::mediumClicked()
@@ -2011,9 +2028,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://wallet.conceal.network", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::tradeogreClicked()
+  void OverviewFrame::tradingClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://tradeogre.com/exchange/BTC-CCX", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://nonkyc.io/market/CCX_BTC", QUrl::TolerantMode));
   }
 
   void OverviewFrame::wikiClicked()

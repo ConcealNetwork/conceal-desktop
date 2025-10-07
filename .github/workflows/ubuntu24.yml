@@ -1,4 +1,4 @@
-name: Ubuntu 20.04
+name: Ubuntu 24.04
 
 on:
   push:
@@ -6,16 +6,16 @@ on:
       - "*"
 
 jobs:
-  build-ubuntu20:
-    name: Ubuntu 20.04
-    runs-on: ubuntu-20.04
+  build-ubuntu24:
+    name: Ubuntu 24.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@master
 
       - name: Install dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y qt5-default qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
+          sudo apt install -y qtbase5-dev qttools5-dev qttools5-dev-tools libqt5charts5-dev libboost-all-dev
 
       - name: Clone conceal-core
         run: |
@@ -26,7 +26,7 @@ jobs:
         id: build
         run: |
           ccx_version=$(echo "$GITHUB_REF" | sed 's|refs/tags/||')
-          release_name=ccx-desktop-ubuntu-2004-v"$ccx_version"
+          release_name=ccx-desktop-ubuntu-2404-v"$ccx_version"
           build_folder="build/release"
 
           lrelease src/languages/*.ts
@@ -36,6 +36,8 @@ jobs:
           mv $build_folder/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
+          cp ubuntu-shortcut-creator.sh $release_name
+          chmod 755 $release_name/ubuntu-shortcut-creator.sh
           tar -czf "$release_name".tar.gz "$release_name"
           sha256=$(shasum -a 256 "$release_name".tar.gz | awk '{print toupper($1)}')
 
@@ -44,12 +46,12 @@ jobs:
           echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.0.4
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
           body: |
-            [Download for Ubuntu 20.04](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
+            [Download for Ubuntu 24.04](../../releases/download/${{ steps.build.outputs.ccx_version }}/${{ steps.build.outputs.release_name }}) **${{ steps.build.outputs.release_name }}**
             `SHA256 : ${{ steps.build.outputs.sha256 }}`
           append_body: true
         env:

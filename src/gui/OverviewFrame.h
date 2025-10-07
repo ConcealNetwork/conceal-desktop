@@ -185,7 +185,7 @@ private:
   Q_SLOT void telegramClicked();  
   Q_SLOT void twitterClicked();
   Q_SLOT void githubClicked();
-  Q_SLOT void redditClicked();
+  Q_SLOT void marketplaceClicked();
   Q_SLOT void mediumClicked();
   Q_SLOT void lockWallet();
   Q_SLOT void exportCSV();
@@ -193,7 +193,7 @@ private:
   Q_SLOT void encryptWalletClicked();
   Q_SLOT void webwalletClicked();
   Q_SLOT void websiteClicked();
-  Q_SLOT void tradeogreClicked();
+  Q_SLOT void tradingClicked();
   Q_SLOT void wikiClicked();
   Q_SLOT void helpClicked();
   Q_SLOT void addressEditTextChanged(QString text);

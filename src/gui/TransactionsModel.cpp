@@ -411,6 +411,8 @@ namespace WalletGui
       } else if (transactionAddress == WalletAdapter::instance().getAddress()) {
         if (_transaction.fee == cn::parameters::MINIMUM_FEE) {
           return static_cast<quint8>(TransactionType::DEPOSIT_UNLOCK);
+        } else if (_transaction.totalAmount < 0 && _transaction.blockHeight == cn::WALLET_UNCONFIRMED_TRANSACTION_HEIGHT) {
+          return static_cast<quint8>(TransactionType::OUTPUT);
         } else if (_transaction.totalAmount == -1000) {
           return static_cast<quint8>(TransactionType::INOUT);
         } else if (_transaction.totalAmount < 0) {
@@ -619,7 +621,7 @@ namespace WalletGui
   {
     quint32 firstRow = m_transactionRow.value(_id).first;
     quint32 lastRow = firstRow + m_transactionRow.value(_id).second - 1;
-    Q_EMIT dataChanged(index(firstRow, COLUMN_DATE), index(lastRow, COLUMN_DATE));
+    Q_EMIT dataChanged(index(firstRow, COLUMN_DATE), index(lastRow, COLUMN_TYPE));
   }
 
   void TransactionsModel::lastKnownHeightUpdated(quint64 _height)

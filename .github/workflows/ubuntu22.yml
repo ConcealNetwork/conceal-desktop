@@ -36,6 +36,8 @@ jobs:
           mv $build_folder/conceal-desktop $release_name
           cp conceal-desktop.desktop $release_name
           cp src/images/conceal.png $release_name/icon
+          cp ubuntu-shortcut-creator.sh $release_name
+          chmod 755 $release_name/ubuntu-shortcut-creator.sh
           tar -czf "$release_name".tar.gz "$release_name"
           sha256=$(shasum -a 256 "$release_name".tar.gz | awk '{print toupper($1)}')
 
@@ -44,7 +46,7 @@ jobs:
           echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.0.4
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}

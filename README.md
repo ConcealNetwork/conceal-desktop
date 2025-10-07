@@ -23,17 +23,18 @@ No one owns Conceal, everyone can take part.
 ## Resources
 
 -   Web: <https://conceal.network>
+-   Market Place: <https://conceal.network/marketplace>
 -   GitHub: <https://github.com/ConcealNetwork>
 -   Wiki: <https://conceal.network/wiki>
 -   Explorer: <https://explorer.conceal.network>
 -   Discord: <https://discord.gg/YbpHVSd>
 -   Twitter: <https://twitter.com/ConcealNetwork>
--   Telegram Official (News Feed): <https://t.me/concealnetwork>
--   Telegram User Group (Chat Group): <https://t.me/concealnetworkusers>
+-   Telegram Official (News Feed): <https://t.me/concealcommunity>
+-   Telegram User Group (Chat Group): <https://t.me/concealcommunity>
 -   Medium: <https://medium.com/@ConcealNetwork>
--   Reddit: <https://www.reddit.com/r/ConcealNetwork>
 -   Bitcoin Talk: <https://bitcointalk.org/index.php?topic=4515873>
 -   Paperwallet: <https://conceal.network/paperwallet>
+-   WebWallet: <https://wallet.conceal.network>
 
 ## Compiling Conceal from source
 
@@ -52,7 +53,7 @@ You may download them from:
 On Ubuntu it is possible to install them using apt:
 
 ```bash
-sudo apt install git gcc make cmake libboost-all-dev qt5-default
+sudo apt install git gcc make cmake libboost-all-dev qtbase5-dev libqt5charts5-dev
 ```
 
 #### Building
@@ -70,6 +71,11 @@ make clean
 ```
 
 If the build is successful the binary will be in the `bin` folder.
+
+Run the script `ubuntu-shortcut-creator.sh` to create a shortcut with icon.
+```bash
+sudo ./ubuntu-shortcut-creator.sh
+```
 
 ### Windows 10
 
@@ -143,4 +149,5 @@ Special thanks goes out to the developers from Cryptonote, Bytecoin, Monero, For
 
 ## Copyright
 
-Copyright (c) 2017-2024 Conceal Community, Conceal Network & Conceal Devs
+Copyright (c) 2017-2025 Conceal Community, Conceal Network & Conceal Devs
+

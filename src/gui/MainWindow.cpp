@@ -11,11 +11,15 @@
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteCore/CryptoNoteTools.h>
 
+#include <QApplication>
 #include <QCloseEvent>
+#include <QDebug>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QLocale>
 #include <QMessageBox>
+#include <QProcess>
+#include <QScreen>
 #include <QSystemTrayIcon>
 #include <QTimer>
 #include <QThread>
@@ -169,6 +173,9 @@ void MainWindow::initUi()
 
   if (Settings::instance().getMaximizedStatus() == "enabled") {
     showMaximized();
+  } else {
+    // Position window within available geometry to avoid overlapping OS navigation bars
+    positionWithinAvailableGeometry();
   }
     
   setRemoteWindowTitle();
@@ -188,6 +195,45 @@ void MainWindow::initUi()
   // OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
   EditableStyle::setStyles(Settings::instance().getFontSize());
+}
+
+void MainWindow::positionWithinAvailableGeometry()
+{
+  try {
+  // Get screen information for safety checks
+  QScreen *screen = QApplication::primaryScreen();
+
+  QRect screenGeometry = screen->geometry();
+  QRect availableGeometry = screen->availableGeometry();
+  QSize windowSize = size();
+  
+  // Simple check: Ubuntu + left dock
+  QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP");
+  
+  bool isUbuntu = desktopEnv.contains("ubuntu") || desktopEnv.contains("Ubuntu") || desktopEnv.contains("Unity");
+  
+  if (isUbuntu) {
+    // Check dock position for all Ubuntu variants (including Unity)
+    QProcess process;
+    process.start("gsettings", QStringList() << "get" << "org.gnome.shell.extensions.dash-to-dock" << "dock-position");
+    process.waitForFinished(500);
+    
+    if (process.exitCode() == 0) {
+      QString dockPos = process.readAllStandardOutput().trimmed();
+      if (dockPos.contains("LEFT")) {
+        // Ubuntu with collapsible left dock - move 80px to the right
+        int newX = 80;
+        if (newX + windowSize.width() <= availableGeometry.width()) {
+          move(newX, availableGeometry.y());
+        } 
+        return;
+      }
+    }
+  }
+  } catch (...) {
+    // do nothing
+  }
+
 }
 
 #ifndef QT_NO_SYSTEMTRAYICON

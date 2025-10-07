@@ -6,10 +6,10 @@
         <file alias="medium">icons/medium.png</file>
         <file alias="twitter">icons/twitter.png</file>
         <file alias="github">icons/github.png</file>
-        <file alias="reddit">icons/reddit.png</file>
+        <file alias="marketplace">icons/conceal3.png</file>
         <file alias="stex">icons/stex.png</file>
         <file alias="wiki">icons/wiki.png</file>
-        <file alias="tradeogre">icons/tradeogre.png</file>
+        <file alias="trading">icons/nonkyc.png</file>
         <file alias="hotbit">icons/hotbit.png</file>
         <file alias="conceal">icons/conceal.png</file>
         <!-- Clock icons -->
@@ -56,6 +56,7 @@
         <file alias="ru">images/ru.png</file>
         <file alias="cn">images/cn.png</file>
         <file alias="tr">images/tr.png</file>
+        <file alias="fr">images/fr.png</file>
     </qresource>
     <qresource prefix="/">
         <file>fonts/Poppins-Regular.ttf</file>
@@ -70,6 +71,7 @@
         <file alias="cn">languages/cn.qm</file>
         <file alias="ru">languages/ru.qm</file>
         <file alias="tr">languages/tr.qm</file>
+        <file alias="fr">languages/fr.qm</file>
     </qresource>
     <qresource prefix="/translations/qt">
         <file alias="ru">languages/qt/qtbase_ru.qm</file>
