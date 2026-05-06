@@ -9,8 +9,10 @@ jobs:
   build-ubuntu24:
     name: Ubuntu 24.04
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -46,7 +48,7 @@ jobs:
           echo "ccx_version=${ccx_version}" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2.0.4
+        uses: softprops/action-gh-release@v3
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}
