@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2026 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -40,6 +40,7 @@
 #include "QRLabel.h"
 #include "RecentTransactionsModel.h"
 #include "Settings.h"
+#include "SortedDepositModel.h"
 #include "SortedMessagesModel.h"
 #include "SortedTransactionsModel.h"
 #include "TransactionDetailsDialog.h"
@@ -1645,9 +1646,15 @@ namespace WalletGui
     {
       return;
     }
+    const QModelIndex srcDeposit =
+        SortedDepositModel::instance().mapToSource(m_depositModel->mapToSource(_index));
+    if (!srcDeposit.isValid())
+    {
+      return;
+    }
     m_ui->darkness->show();
     m_ui->darkness->raise();
-    DepositDetailsDialog dlg(_index, this);
+    DepositDetailsDialog dlg(srcDeposit, this);
     dlg.exec();
     m_ui->darkness->hide();
   }
