@@ -44,8 +44,11 @@ OptimizationManager::~OptimizationManager()
 {
 }
 
-void OptimizationManager::walletOpened()
+void OptimizationManager::walletOpened(int _error)
 {
+  if (_error != 0) {
+    return;
+  }
   Q_ASSERT(m_checkTimerId == -1);
   m_checkTimerId = startTimer(CHECK_TIMER_INTERVAL);
 }

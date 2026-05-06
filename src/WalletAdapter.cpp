@@ -142,7 +142,13 @@ void WalletAdapter::open(const QString& _password) {
     try {
       m_wallet->load(Settings::instance().getWalletFile().toStdString(), _password.toStdString());
       LoggerAdapter::instance().log("loaded");
-    } catch (std::system_error&) {
+    } catch (const std::exception&) {
+      /* Wrong password is usually std::system_error; some Windows/MSVC or crypto paths throw
+         other std::exception — uncaught leaves no retry and can abort the process. Tear down
+         the wallet so the embedded node does not keep observer callbacks on invalid state. */
+      m_wallet->removeObserver(this);
+      m_wallet.reset();
+      Settings::instance().setEncrypted(true);
       Q_EMIT openWalletWithPasswordSignal(!_password.isEmpty());
     }
   }
