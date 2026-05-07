@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2017 Karbowanec developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2026 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,6 +10,7 @@
 #include "WalletAdapter.h"
 #include "LoggerAdapter.h"
 
+#include <Common/StringTools.h>
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteCore/TransactionExtra.h>
 #include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
@@ -142,7 +143,13 @@ void WalletAdapter::open(const QString& _password) {
     try {
       m_wallet->load(Settings::instance().getWalletFile().toStdString(), _password.toStdString());
       LoggerAdapter::instance().log("loaded");
-    } catch (std::system_error&) {
+    } catch (const std::exception&) {
+      /* Wrong password is usually std::system_error; some Windows/MSVC or crypto paths throw
+         other std::exception — uncaught leaves no retry and can abort the process. Tear down
+         the wallet so the embedded node does not keep observer callbacks on invalid state. */
+      m_wallet->removeObserver(this);
+      m_wallet.reset();
+      Settings::instance().setEncrypted(true);
       Q_EMIT openWalletWithPasswordSignal(!_password.isEmpty());
     }
   }
@@ -441,6 +448,29 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
   }
 }
 
+bool WalletAdapter::findTransactionIdByHashHex(const QString& _hashHexUpper, cn::TransactionId& _outId) const {
+  if (!m_wallet) {
+    return false;
+  }
+  const QString norm = _hashHexUpper.toUpper();
+  try {
+    const quint64 n = getTransactionCount();
+    for (quint64 i = 0; i < n; ++i) {
+      cn::WalletTransaction wt;
+      if (!getTransaction(static_cast<cn::TransactionId>(i), wt)) {
+        continue;
+      }
+      const QString h = QString::fromStdString(common::podToHex(wt.hash)).toUpper();
+      if (h == norm) {
+        _outId = static_cast<cn::TransactionId>(i);
+        return true;
+      }
+    }
+  } catch (std::system_error&) {
+  }
+  return false;
+}
+
 void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
 {
   QMutexLocker locker(&m_mutex);
@@ -450,6 +480,10 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
     std::string tx_hash;
     m_wallet->createDeposit(_amount, _term, address, address, tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Creating deposit"), "");
+    const QString qHash = QString::fromStdString(tx_hash).toUpper();
+    cn::TransactionId txId = cn::WALLET_INVALID_TRANSACTION_ID;
+    findTransactionIdByHashHex(qHash, txId);
+    Q_EMIT walletDepositPendingSignal(txId, qHash, _amount, _term);
   }
   catch (std::system_error&)
   {

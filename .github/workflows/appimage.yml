@@ -9,8 +9,10 @@ jobs:
   build-appimage:
     name: AppImage
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -50,7 +52,7 @@ jobs:
           echo "sha256=${sha256}" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2.0.4
+        uses: softprops/action-gh-release@v3
         with:
           files: ${{ steps.build.outputs.release_name }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}

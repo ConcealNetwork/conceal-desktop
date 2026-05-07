@@ -29,7 +29,7 @@ public:
 
   void checkOptimization();
 
-  Q_SLOT void walletOpened();
+  Q_SLOT void walletOpened(int _error);
   Q_SLOT void walletClosed();
   Q_SLOT void synchronizationProgressUpdated();
   Q_SLOT void synchronizationCompleted();

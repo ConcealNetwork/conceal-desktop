@@ -9,13 +9,15 @@ jobs:
   build-windows:
     name: Windows
     runs-on: windows-2022
+    permissions:
+      contents: write
     env:
       BOOST_ROOT: C:/local/boost_1_83_0
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v2
+        uses: microsoft/setup-msbuild@v3
 
       - name: Restore Boost
         uses: actions/cache@v4
@@ -117,7 +119,7 @@ jobs:
           echo "asset_path=${asset_path}" >> $env:GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2.0.4
+        uses: softprops/action-gh-release@v3
         with:
           files: ${{ steps.pack.outputs.asset_path }}
           name: Conceal Desktop v${{ steps.build.outputs.ccx_version }}

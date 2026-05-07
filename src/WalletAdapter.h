@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2017 Karbowanec developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2026 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -121,6 +121,7 @@ private:
   void notifyAboutLastTransaction();
 
   static void renameFile(const QString& _old_name, const QString& _new_name);
+  bool findTransactionIdByHashHex(const QString& _hashHexUpper, cn::TransactionId& _outId) const;
   Q_SLOT void updateBlockStatusText();
   Q_SLOT void updateBlockStatusTextWithDelay();
 
@@ -151,6 +152,8 @@ Q_SIGNALS:
   void reloadWalletTransactionsSignal();
   void updateBlockStatusTextSignal();
   void updateBlockStatusTextWithDelaySignal();
+  void walletDepositPendingSignal(cn::TransactionId _transactionId, const QString& _transactionHashHex,
+                                 quint64 _amount, quint32 _term);
 };
 
 
