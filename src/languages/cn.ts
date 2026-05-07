@@ -443,7 +443,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
-        <source>Conceal Desktop 6.7.4-beta-1</source>
+        <source>Conceal Desktop 6.7.4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
