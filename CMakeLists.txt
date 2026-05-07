@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
+if(POLICY CMP0167)
+  cmake_policy(SET CMP0167 OLD)
+endif()
+
 include(CryptoNoteWallet.cmake)
 include(QREncode.cmake)
 
@@ -29,21 +33,42 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5Charts)
 
-set(Boost_NO_BOOST_CMAKE ON)
-set(Boost_USE_STATIC_LIBS ON)
-if(WIN32)
-  set(Boost_USE_STATIC_RUNTIME OFF)
-else(WIN32)
-  set(Boost_USE_STATIC_RUNTIME ON)
-endif(WIN32)
+option(STATIC "Use static Boost libraries" ON)
 
-find_package(Boost 1.55 REQUIRED COMPONENTS date_time filesystem program_options regex serialization system thread chrono)
-if ((${Boost_MAJOR_VERSION} EQUAL 1) AND (${Boost_MINOR_VERSION} EQUAL 54))
+if(STATIC)
+  set(Boost_NO_BOOST_CMAKE ON)
+  set(Boost_USE_STATIC_LIBS ON)
+  if(WIN32)
+    set(Boost_USE_STATIC_RUNTIME OFF)
+  else()
+    set(Boost_USE_STATIC_RUNTIME ON)
+  endif()
+endif()
+
+#set(Boost_DEBUG on)
+
+set(BOOST_COMPONENTS filesystem thread date_time chrono regex serialization program_options)
+
+if(APPLE)
+  find_package(Boost 1.55 COMPONENTS system ${BOOST_COMPONENTS})
+  if(NOT Boost_FOUND)
+    message(STATUS "Boost.System library not found; retrying without system component")
+    find_package(Boost 1.55 REQUIRED COMPONENTS ${BOOST_COMPONENTS})
+  endif()
+else()
+  find_package(Boost 1.55 REQUIRED COMPONENTS system ${BOOST_COMPONENTS})
+endif()
+
+if((${Boost_MAJOR_VERSION} EQUAL 1) AND (${Boost_MINOR_VERSION} EQUAL 54))
 	message(SEND_ERROR "Boost version 1.54 is unsupported, more details are available here http://goo.gl/RrCFmA")
 endif ()
 
-include_directories(${Boost_INCLUDE_DIRS})
+include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
+
+if(Boost_VERSION AND NOT Boost_VERSION VERSION_LESS 1.90.0)
+  add_definitions(-DBOOST_ASIO_HAS_IO_CONTEXT)
+endif()
 
 set(VERSION "")
 configure_file("cryptonote/src/version.h.in" "version.h")
