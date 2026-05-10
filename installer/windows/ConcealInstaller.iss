@@ -65,14 +65,10 @@ Root: HKLM; Subkey: "Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Unins
 [Files]
 Source: "{#LicenseFile}"; DestDir: "{app}";
 Source: "build\{#AppExe}"; DestDir: "{app}"; DestName: "{#AppExe}";
-Source: "build\Qt5Core.dll"; DestDir: "{app}";
-Source: "build\Qt5Gui.dll"; DestDir: "{app}";
-Source: "build\Qt5Network.dll"; DestDir: "{app}";
-Source: "build\Qt5Widgets.dll"; DestDir: "{app}";
-Source: "build\Qt5Charts.dll"; DestDir: "{app}";
-Source: "build\libcrypto*.dll"; DestDir: "{app}";
-Source: "build\libssl*.dll"; DestDir: "{app}";
-Source: "build\platforms\qwindows.dll"; DestDir: "{app}/platforms";
+; Ship everything windeployqt produced (Qt DLLs, plugin folders, VC++ runtime,
+; matching OpenSSL 1.1 DLLs). Recursive so platforms/, styles/, imageformats/,
+; iconengines/, etc. are all included.
+Source: "build\*"; DestDir: "{app}"; Excludes: "{#AppExe}"; Flags: recursesubdirs createallsubdirs ignoreversion
 
 
 [Icons]
@@ -84,6 +80,10 @@ Name: "{commondesktop}\{#AppSetupName}"; Filename: "{app}\{#AppExe}"; Tasks: des
 Filename: "{app}\{#AppExe}"; Description: "{cm:LaunchProgram,{#AppSetupName}}"; Flags: nowait postinstall skipifsilent
 
 [InstallDelete]
+// Remove stale OpenSSL 3 DLLs from any prior 6.7.x install (they break Qt5 TLS).
+Type: files; Name: "{app}\libssl-3-x64.dll"
+Type: files; Name: "{app}\libcrypto-3-x64.dll"
+
 // Uninstall the old version (Remove the files installed by the old installer)
 Type: filesandordirs; Name: "{code:OldVersionPath}\bearer"
 Type: filesandordirs; Name: "{code:OldVersionPath}\iconengines"
@@ -134,6 +134,14 @@ begin
 			Result := false;
 		end;
 	end;
+end;
+
+function InitializeSetup(): Boolean;
+begin
+  Result := InitializeConcealDesktopSetup();
+  if not Result then Exit;
+
+  Dependency_AddVC2015To2022;
 end;
 
 
