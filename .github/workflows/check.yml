@@ -96,11 +96,16 @@ jobs:
           echo "release_folder=${release_folder}" >> $env:GITHUB_OUTPUT
           echo "release_name=${release_name}" >> $env:GITHUB_OUTPUT
 
-      - name: Install OpenSSL 1.1
+      - name: Install vcpkg and OpenSSL
         shell: powershell
         run: |
-          choco install openssl --version=1.1.1.2300 -y --no-progress
-          Add-Content $env:GITHUB_ENV "OPENSSL_BIN=C:\Program Files\OpenSSL-Win64\bin"
+
+          git clone https://github.com/microsoft/vcpkg.git C:\vcpkg
+          cd C:\vcpkg
+          git checkout a69b65229b3956b7f45abd81671b7330114bcaad
+          .\bootstrap-vcpkg.bat
+          .\vcpkg.exe install openssl:x64-windows
+          Add-Content $env:GITHUB_ENV "OPENSSL_BIN=C:\vcpkg\installed\x64-windows\bin"
 
       - name: Pack
         shell: powershell
@@ -113,8 +118,8 @@ jobs:
           cd "$build_folder/$release_folder"
           mkdir "Final"
 
-          cp "$env:OPENSSL_BIN\libssl-1_1-x64.dll" "Final/"
-          cp "$env:OPENSSL_BIN\libcrypto-1_1-x64.dll" "Final/"
+          cp "$env:OPENSSL_BIN\libssl-1_1.dll" "Final/"
+          cp "$env:OPENSSL_BIN\libcrypto-1_1.dll" "Final/"
 
           $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
           $vc_crt = (Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC143.CRT" | Select-Object -First 1).FullName
