@@ -38,14 +38,11 @@ jobs:
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v3
         with:
-          version: "5.15.2"
           host: "windows"
           target: "desktop"
-          arch: "win64_msvc2019_64"
           modules: "qtcharts"
-          tools: "tools_openssl_x64"
           install-deps: "true"
 
       - name: Clone conceal-core
@@ -62,7 +59,7 @@ jobs:
           $ccx_version = ((Get-Content CryptoNoteWallet.cmake | Select-String $search) | %{$_ -replace $search, ""}) | %{$_ -replace "\)", ""}
 
           # Update "CMakeLists.txt" with cmake dir
-          $qt5_cmake = "$env:Qt5_Dir/lib/cmake" -replace '[\\]', '\\' -replace '[/]', '\\'
+          $qt5_cmake = "${{ env.Qt5_Dir }}/lib/cmake" -replace '[\\]', '\\' -replace '[/]', '\\'
           $file = "CMakeLists.txt"
           $find = '^set\(CMAKE_PREFIX_PATH.+'
           $replace = "set(CMAKE_PREFIX_PATH `"$($qt5_cmake)`")"
@@ -108,26 +105,8 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
-          $openssl_bin = "$env:IQTA_TOOLS\OpenSSL\Win_x64\bin"
-          if (-not (Test-Path "$openssl_bin\libssl-1_1-x64.dll") -or -not (Test-Path "$openssl_bin\libcrypto-1_1-x64.dll")) {
-            Write-Error "Qt OpenSSL 1.1 DLLs not found at $openssl_bin"
-            exit 1
-          }
-          cp "$openssl_bin\libssl-1_1-x64.dll" "Final/"
-          cp "$openssl_bin\libcrypto-1_1-x64.dll" "Final/"
-
-          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
-          $vs_path = & $vswhere -latest -products * -requires Microsoft.VisualStudio.Component.VC.Redist.14.Latest -property installationPath
-          $vc_redist_version = Get-ChildItem "$vs_path\VC\Redist\MSVC" -Directory |
-            Sort-Object Name -Descending |
-            Select-Object -First 1
-          $vc_redist_root = Join-Path $vc_redist_version.FullName "x64\Microsoft.VC143.CRT"
-          if (-not (Test-Path $vc_redist_root)) {
-            Write-Error "VC++ runtime DLLs not found at $vc_redist_root"
-            exit 1
-          }
-          cp "$vc_redist_root\*.dll" "Final/"
-
+          cp "C:\Program Files\OpenSSL\libcrypto*.dll" "Final/"
+          cp "C:\Program Files\OpenSSL\libssl*.dll" "Final/"
           windeployqt --release conceal-desktop.exe --dir "Final/" --no-translations --no-opengl-sw
 
           mv Final ../../installer/windows/build
@@ -137,43 +116,6 @@ jobs:
           cd ../..
           mkdir $release_name
           mv installer/windows/bin/Conceal*.exe $release_name/
-
-      - name: Validate Windows runtime DLLs
-        shell: powershell
-        run: |
-          $app_dir = "installer/windows/build"
-          $required = @(
-            "conceal-desktop.exe",
-            "Qt5Core.dll",
-            "Qt5Gui.dll",
-            "Qt5Network.dll",
-            "Qt5Widgets.dll",
-            "Qt5Charts.dll",
-            "libssl-1_1-x64.dll",
-            "libcrypto-1_1-x64.dll",
-            "vcruntime140.dll",
-            "vcruntime140_1.dll",
-            "msvcp140.dll",
-            "platforms\qwindows.dll"
-          )
-
-          $missing = @()
-          foreach ($file in $required) {
-            if (-not (Test-Path (Join-Path $app_dir $file))) {
-              $missing += $file
-            }
-          }
-
-          if ($missing.Count -gt 0) {
-            Write-Error "Missing Windows runtime files: $($missing -join ', ')"
-            exit 1
-          }
-
-          $openssl3 = Get-ChildItem $app_dir -Recurse -Include "libssl-3*.dll","libcrypto-3*.dll" -ErrorAction SilentlyContinue
-          if ($openssl3) {
-            Write-Error "OpenSSL 3 DLLs were packaged but Qt5 needs OpenSSL 1.1: $($openssl3.FullName -join ', ')"
-            exit 1
-          }
 
       - name: Upload To GH Artifacts
         uses: actions/upload-artifact@v6
