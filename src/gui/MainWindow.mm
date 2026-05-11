@@ -14,7 +14,7 @@ namespace WalletGui {
 
 namespace {
 
-void dockClickHandler(id self, SEL _cmd) {
+BOOL dockClickHandler(id self, SEL _cmd, NSApplication* sender, BOOL hasVisibleWindows) {
   Q_UNUSED(self)
   Q_UNUSED(_cmd)
   Q_UNUSED(sender)
