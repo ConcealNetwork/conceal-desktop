@@ -107,8 +107,8 @@ jobs:
           cd "$build_folder/$release_folder"
           mkdir "Final"
 
-          cp "..\..\installer\windows\openssl\libssl-1_1-x64.dll" "Final\libssl-1_1.dll"
-          cp "..\..\installer\windows\openssl\libcrypto-1_1-x64.dll" "Final\libcrypto-1_1.dll"
+          cp "..\..\installer\windows\openssl\libssl-1_1-x64.dll" "Final\libssl-1_1-x64.dll"
+          cp "..\..\installer\windows\openssl\libcrypto-1_1-x64.dll" "Final\libcrypto-1_1-x64.dll"
 
           $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
           $vc_crt = (Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC143.CRT" | Select-Object -First 1).FullName

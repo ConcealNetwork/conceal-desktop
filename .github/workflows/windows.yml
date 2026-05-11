@@ -103,8 +103,8 @@ jobs:
           cd "$build_folder/$release_folder"
           mkdir "Final"
 
-          cp "..\..\installer\windows\openssl\libssl-1_1-x64.dll" "Final\libssl-1_1.dll"
-          cp "..\..\installer\windows\openssl\libcrypto-1_1-x64.dll" "Final\libcrypto-1_1.dll"
+          cp "..\..\installer\windows\openssl\libssl-1_1-x64.dll" "Final\libssl-1_1-x64.dll"
+          cp "..\..\installer\windows\openssl\libcrypto-1_1-x64.dll" "Final\libcrypto-1_1-x64.dll"
 
           # VC++ 2015-2022 runtime DLLs (vcruntime140, msvcp140).
           $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
