@@ -96,6 +96,12 @@ jobs:
           echo "release_folder=${release_folder}" >> $env:GITHUB_OUTPUT
           echo "release_name=${release_name}" >> $env:GITHUB_OUTPUT
 
+      - name: Install OpenSSL 1.1
+        shell: powershell
+        run: |
+          choco install openssl --version=1.1.1.2300 -y --no-progress
+          Add-Content $env:GITHUB_ENV "OPENSSL_BIN=C:\Program Files\OpenSSL-Win64\bin"
+
       - name: Pack
         shell: powershell
         id: pack
@@ -107,10 +113,8 @@ jobs:
           cd "$build_folder/$release_folder"
           mkdir "Final"
 
-          # Qt5_Dir points to …\msvc2019_64\lib\cmake; go up two levels to reach …\msvc2019_64\bin.
-          $qt_bin = (Get-Item $env:Qt5_Dir).Parent.Parent.FullName + "\bin"
-          cp "$qt_bin\libssl-1_1-x64.dll" "Final/"
-          cp "$qt_bin\libcrypto-1_1-x64.dll" "Final/"
+          cp "$env:OPENSSL_BIN\libssl-1_1-x64.dll" "Final/"
+          cp "$env:OPENSSL_BIN\libcrypto-1_1-x64.dll" "Final/"
 
           $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
           $vc_crt = (Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC143.CRT" | Select-Object -First 1).FullName
