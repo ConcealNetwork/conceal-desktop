@@ -293,6 +293,10 @@ void MessagesModel::processNextChunk(quint64 generation) {
 
 void MessagesModel::appendTransaction(cn::TransactionId _transactionId,
                                       quint32& _insertedRowCount) {
+  if (m_transactionRow.contains(_transactionId)) {
+    return;
+  }
+
   cn::WalletTransaction transaction;
   if (!WalletAdapter::instance().getTransaction(_transactionId, transaction)) {
     return;
