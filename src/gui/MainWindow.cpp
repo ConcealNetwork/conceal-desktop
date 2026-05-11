@@ -810,6 +810,10 @@ void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 #endif
 
 void MainWindow::notify(const QString& message) {
+  if (QThread::currentThread() != QCoreApplication::instance()->thread()) {
+    QMetaObject::invokeMethod(this, "notify", Qt::QueuedConnection, Q_ARG(QString, message));
+    return;
+  }
   notification->notify(message);
 }
 

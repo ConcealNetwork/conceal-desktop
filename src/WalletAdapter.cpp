@@ -246,6 +246,8 @@ bool WalletAdapter::save(const QString& _file, bool _details, bool _cache) {
     m_wallet->save(level);
   } catch (std::system_error&) {
     return false;
+  } catch (std::exception&) {
+    return false;
   }
   Q_EMIT walletStateChangedSignal(tr("Saving data"), "");
 
@@ -493,6 +495,7 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
     const QString qHash = QString::fromStdString(tx_hash).toUpper();
     cn::TransactionId txId = cn::WALLET_INVALID_TRANSACTION_ID;
     findTransactionIdByHashHex(qHash, txId);
+    m_depositId = txId;
     Q_EMIT walletDepositPendingSignal(txId, qHash, _amount, _term);
   }
   catch (std::system_error&)
@@ -506,6 +509,10 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds,
     std::string tx_hash;
     m_wallet->withdrawDeposit(_depositIds[0], tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
+    const QString qHash = QString::fromStdString(tx_hash).toUpper();
+    cn::TransactionId txId = cn::WALLET_INVALID_TRANSACTION_ID;
+    findTransactionIdByHashHex(qHash, txId);
+    m_depositWithdrawalId = txId;
   } catch (std::system_error&) {
   }
 }
