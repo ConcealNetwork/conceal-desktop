@@ -415,7 +415,8 @@ void MainWindow::openWallet()
   {
     walletDirectory = Settings::instance().getDefaultWalletDir();
   }
-
+  raise();
+  activateWindow();
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
                                                   walletDirectory,
                                                   tr("Wallet (*.wallet *.keys)"));
@@ -523,6 +524,8 @@ void MainWindow::importKey()
 
 void MainWindow::backupWallet()
 {
+  raise();
+  activateWindow();
   QString filePath = QFileDialog::getSaveFileName(this, tr("Backup wallet to..."),
                                                   Settings::instance().getDefaultWalletDir(),
                                                   tr("Wallets (*.wallet)"));
