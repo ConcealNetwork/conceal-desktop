@@ -10,6 +10,7 @@
 #include <QMetaEnum>
 #include <QPixmap>
 #include <QTextStream>
+#include <QTimer>
 
 
 
@@ -253,19 +254,40 @@ QVariant MessagesModel::getUserRole(const QModelIndex& _index, int _role, cn::Tr
 }
 
 void MessagesModel::reloadWalletTransactions() {
+  ++m_reloadGeneration;
   beginResetModel();
   m_transactionRow.clear();
   m_messages.clear();
+  m_reloadTransactionId = 0;
   endResetModel();
 
-  quint32 rowCount = 0;
-  for (cn::TransactionId transactionId = 0; transactionId < WalletAdapter::instance().getTransactionCount(); ++transactionId) {
-    appendTransaction(transactionId, rowCount);
+  quint64 gen = m_reloadGeneration;
+  QTimer::singleShot(0, this, [this, gen]() { processNextChunk(gen); });
+}
+
+void MessagesModel::processNextChunk(quint64 generation) {
+  if (generation != m_reloadGeneration) {
+    return;
   }
 
-  if (rowCount > 0) {
-    beginInsertRows(QModelIndex(), 0, rowCount - 1);
+  const cn::TransactionId CHUNK_SIZE = 100;
+  const cn::TransactionId total = WalletAdapter::instance().getTransactionCount();
+  const cn::TransactionId end = std::min(m_reloadTransactionId + CHUNK_SIZE, total);
+
+  quint32 oldRowCount = static_cast<quint32>(m_messages.size());
+  quint32 insertedRowCount = 0;
+
+  for (; m_reloadTransactionId < end; ++m_reloadTransactionId) {
+    appendTransaction(m_reloadTransactionId, insertedRowCount);
+  }
+
+  if (insertedRowCount > 0) {
+    beginInsertRows(QModelIndex(), oldRowCount, oldRowCount + insertedRowCount - 1);
     endInsertRows();
+  }
+
+  if (m_reloadTransactionId < total) {
+    QTimer::singleShot(0, this, [this, generation]() { processNextChunk(generation); });
   }
 }
 
@@ -284,6 +306,7 @@ void MessagesModel::appendTransaction(cn::TransactionId _transactionId,
 
   m_transactionRow[_transactionId] = qMakePair(m_messages.size(), transaction.messages.size());
 
+  m_messages.reserve(m_messages.size() + static_cast<int>(transaction.messages.size()));
   for (const auto& txMessage : transaction.messages) {
     Message message(QString::fromStdString(txMessage));
     m_messages.append(TransactionMessageId(_transactionId, message));
@@ -331,6 +354,7 @@ void MessagesModel::lastKnownHeightUpdated(quint64)
 }
 
 void MessagesModel::reset() {
+  ++m_reloadGeneration;
   beginResetModel();
   m_messages.clear();
   m_transactionRow.clear();
