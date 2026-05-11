@@ -8,6 +8,8 @@
 *.so
 *.so.*
 *.dll
+!installer/windows/openssl/libssl-1_1-x64.dll
+!installer/windows/openssl/libcrypto-1_1-x64.dll
 *.dylib
 
 # Qt-es
