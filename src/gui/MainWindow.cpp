@@ -415,11 +415,15 @@ void MainWindow::openWallet()
   {
     walletDirectory = Settings::instance().getDefaultWalletDir();
   }
-  raise();
-  activateWindow();
+#ifdef Q_OS_MAC
+  QFileDialog::Options dlgOpts = QFileDialog::DontUseNativeDialog;
+#else
+  QFileDialog::Options dlgOpts;
+#endif
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
                                                   walletDirectory,
-                                                  tr("Wallet (*.wallet *.keys)"));
+                                                  tr("Wallet (*.wallet *.keys)"),
+                                                  nullptr, dlgOpts);
   
   if (!filePath.isEmpty())
   {
@@ -524,11 +528,15 @@ void MainWindow::importKey()
 
 void MainWindow::backupWallet()
 {
-  raise();
-  activateWindow();
+#ifdef Q_OS_MAC
+  QFileDialog::Options dlgOpts = QFileDialog::DontUseNativeDialog;
+#else
+  QFileDialog::Options dlgOpts;
+#endif
   QString filePath = QFileDialog::getSaveFileName(this, tr("Backup wallet to..."),
                                                   Settings::instance().getDefaultWalletDir(),
-                                                  tr("Wallets (*.wallet)"));
+                                                  tr("Wallets (*.wallet)"),
+                                                  nullptr, dlgOpts);
   if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
   {
     filePath.append(".wallet");
