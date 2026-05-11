@@ -35,8 +35,9 @@ jobs:
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
+          version: "5.15.2"
           host: "windows"
           target: "desktop"
           modules: "qtcharts"
@@ -101,8 +102,15 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
-          cp "C:\Program Files\OpenSSL\libcrypto*.dll" "Final/"
-          cp "C:\Program Files\OpenSSL\libssl*.dll" "Final/"
+
+          cp "$env:Qt5_Dir\bin\libssl-1_1-x64.dll" "Final/"
+          cp "$env:Qt5_Dir\bin\libcrypto-1_1-x64.dll" "Final/"
+
+          # VC++ 2015-2022 runtime DLLs (vcruntime140, msvcp140).
+          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
+          $vc_crt = (Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC143.CRT" | Select-Object -First 1).FullName
+          cp "$vc_crt\vcruntime140.dll","$vc_crt\vcruntime140_1.dll","$vc_crt\msvcp140.dll" "Final/"
+
           windeployqt --release conceal-desktop.exe --dir "Final/" --no-translations --no-opengl-sw
 
           mv Final ../../installer/windows/build
