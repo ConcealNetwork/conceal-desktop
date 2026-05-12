@@ -323,7 +323,7 @@ Merci de patienter...</translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
-        <source>Conceal Desktop 6.7.4</source>
+        <source>Conceal Desktop 6.7.7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
