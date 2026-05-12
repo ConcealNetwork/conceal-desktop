@@ -30,6 +30,7 @@ public:
   static MainWindow& instance();
   void scrollToTransaction(const QModelIndex& _index);
   void quit();
+  Q_SLOT void notify(const QString& message);
 
 protected:
   void closeEvent(QCloseEvent* _event) Q_DECL_OVERRIDE;
@@ -89,7 +90,6 @@ private:
   Q_SLOT void setStartOnLogin(bool _on);
   Q_SLOT void setMinimizeToTray(bool _on);
   Q_SLOT void setCloseToTray(bool _on);
-  Q_SLOT void notify(const QString& message);
   Q_SLOT void welcomeFrame();
 
 #ifdef Q_OS_MAC

@@ -14,17 +14,21 @@ namespace WalletGui {
 
 namespace {
 
-void dockClickHandler(id self, SEL _cmd) {
+BOOL dockClickHandler(id self, SEL _cmd, NSApplication* sender, BOOL hasVisibleWindows) {
   Q_UNUSED(self)
   Q_UNUSED(_cmd)
+  Q_UNUSED(sender)
+  Q_UNUSED(hasVisibleWindows)
   MainWindow::instance().restoreFromDock();
+  return YES;
 }
 
 }
 
 void MainWindow::installDockHandler() {
     Class cls = [[[NSApplication sharedApplication] delegate] class];
-    if (!class_replaceMethod(cls, @selector(applicationShouldHandleReopen:hasVisibleWindows:), (IMP) dockClickHandler, "v@:")) {
+    if (!class_replaceMethod(cls, @selector(applicationShouldHandleReopen:hasVisibleWindows:),
+        (IMP) dockClickHandler, "c@:@c")) {  // BOOL, id, SEL, id, BOOL
       NSLog(@"MainWindow::installDockHandler() : class_addMethod failed!");
     }
 }
