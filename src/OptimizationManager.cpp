@@ -7,17 +7,16 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <QTime>
+#include <QEventLoop>
 #include <QTimer>
-#include <QThread>
 #include <QTimerEvent>
-#include <QMessageBox>
 
 #include "OptimizationManager.h"
 #include "WalletAdapter.h"
 #include "gui/WalletEvents.h"
 #include "NodeAdapter.h"
 #include "Settings.h"
+#include "LoggerAdapter.h"
 
 namespace WalletGui
 {
@@ -32,7 +31,8 @@ OptimizationManager::OptimizationManager(QObject *_parent) : QObject(_parent),
                                                              m_checkTimerId(-1),
                                                              m_optimizationTimerId(-1),
                                                              m_currentOptimizationInterval(0),
-                                                             m_isSynchronized(false)
+                                                             m_isSynchronized(false),
+                                                             m_isOptimizing(false)
 {
   connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this, &OptimizationManager::walletOpened);
   connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &OptimizationManager::walletClosed);
@@ -98,36 +98,45 @@ void OptimizationManager::checkOptimization()
   if ((Settings::instance().getAutoOptimizationStatus() == "enabled") && WalletAdapter::instance().isOpen())
   {
     ensureStarted();
+  }  
+  else
+  {
+    ensureStopped();
   }
 }
 
 void OptimizationManager::optimize()
 {
-  if (Settings::instance().isTrackingMode())
+  if (m_isOptimizing)
+    return;
+
+  if (Settings::instance().isTrackingMode() || !WalletAdapter::instance().isOpen() || !m_isSynchronized)
+    return;
+
+  m_isOptimizing = true;
+  int i = 0;
+  quint64 numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+  while (numUnlockedOutputs > 100 && i < 3)
   {
-    /* Tracking wallet. Do nothing */
-  }
-  else
-  {
- quint64 numUnlockedOutputs;
-  if (WalletAdapter::instance().isOpen() && m_isSynchronized)
-  {
-    while (WalletAdapter::instance().getNumUnlockedOutputs() > 100)
+    quint64 trackNumUnlockedOutputs = numUnlockedOutputs;
+    WalletAdapter::instance().optimizeWallet();
+    delay();
+    i++;
+    numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
+    if (trackNumUnlockedOutputs != numUnlockedOutputs)
     {
-      numUnlockedOutputs = WalletAdapter::instance().getNumUnlockedOutputs();
-      if (numUnlockedOutputs == 0)
-        break;
-      WalletAdapter::instance().optimizeWallet();
-      delay();
+      LoggerAdapter::instance().log("optimization triggered, utxo count changed, optimization stopped");
+      break;
     }
   }
-  }  
- 
+  m_isOptimizing = false;
 }
 
 void OptimizationManager::delay()
 {
-  QThread::sleep(2);
+  QEventLoop loop;
+  QTimer::singleShot(15000, &loop, &QEventLoop::quit);
+  loop.exec();
 }
 
 void OptimizationManager::ensureStarted()
@@ -138,6 +147,8 @@ void OptimizationManager::ensureStarted()
     {
       return;
     }
+    killTimer(m_optimizationTimerId);
+    m_optimizationTimerId = -1;
   }
   m_currentOptimizationInterval = Settings::instance().getOptimizationInterval();
   m_optimizationTimerId = startTimer(m_currentOptimizationInterval);

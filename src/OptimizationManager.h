@@ -42,6 +42,7 @@ private:
   int m_optimizationTimerId;
   quint64 m_currentOptimizationInterval;
   bool m_isSynchronized;
+  bool m_isOptimizing;
 
   void delay();
   void optimize();
