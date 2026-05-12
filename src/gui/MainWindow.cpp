@@ -192,7 +192,7 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-  // OptimizationManager *optimizationManager = new OptimizationManager(this);
+  OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
   EditableStyle::setStyles(Settings::instance().getFontSize());
 }
