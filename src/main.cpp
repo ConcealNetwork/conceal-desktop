@@ -152,7 +152,14 @@ int main(int argc, char* argv[])
   d->checkForUpdate();
   MainWindow::instance().show();
 
-  WalletAdapter::instance().open("");
+  if (Settings::instance().isEncrypted()) {
+    // Already known from the previous session — skip the file probe entirely.
+    Q_EMIT WalletAdapter::instance().openWalletWithPasswordSignal(false);
+  } else {
+    // Unknown or unencrypted: open("") will probe the file and either load
+    // it directly or prompt for a password if it turns out to be encrypted.
+    WalletAdapter::instance().open("");
+  }
   QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, []() {
     MainWindow::instance().quit();
     if (WalletAdapter::instance().isOpen())
