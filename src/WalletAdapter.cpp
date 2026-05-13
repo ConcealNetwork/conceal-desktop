@@ -587,13 +587,12 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds,
 bool WalletAdapter::changePassword(const QString& _oldPassword, const QString& _newPassword) {
   try {
     m_wallet->changePassword(_oldPassword.toStdString(), _newPassword.toStdString());
+    Settings::instance().setEncrypted(!_newPassword.isEmpty());
+    save(true, true);
     return true;
   } catch (std::system_error&) {
     return false;
   }
-
-  Settings::instance().setEncrypted(!_newPassword.isEmpty());
-  return save(true, true);
 }
 
 void WalletAdapter::setWalletFile(const QString& _path) {
