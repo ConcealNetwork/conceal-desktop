@@ -17,10 +17,14 @@
 #include <Mnemonics/Mnemonics.h>
 #include <Wallet/LegacyKeysImporter.h>
 #include <Wallet/WalletErrors.h>
+#include <Wallet/WalletIndices.h>
+#include <crypto/crypto.h>
 
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QVector>
+#include <fstream>
+#include <cstring>
 
 #include "NodeAdapter.h"
 #include "Settings.h"
@@ -126,7 +130,70 @@ quint64 WalletAdapter::getPendingDepositBalance() const {
   }
 }
 
+// Probe the wallet file to check if it requires a non-empty password.
+// Reads only the 89-byte prefix, derives the empty-string chacha8 key,
+// decrypts the view key pair, and verifies the EC keypair is valid.
+// Returns true  → file needs a real password (encrypted).
+// Returns false → empty password works (or file is unreadable / not yet created).
+static bool walletFileNeedsPassword(const QString& path)
+{
+  if (path.isEmpty() || !QFile::exists(path))
+    return false;
+
+  // Mirror of WalletGreen::ContainerStoragePrefix (packed layout).
+#pragma pack(push, 1)
+  struct FilePrefix {
+    uint8_t           version;
+    crypto::chacha8_iv nextIv;
+    cn::EncryptedWalletRecord encryptedViewKeys;
+  };
+#pragma pack(pop)
+
+  FilePrefix prefix{};
+  {
+    std::ifstream f(path.toStdString(), std::ios::binary);
+    if (!f.read(reinterpret_cast<char*>(&prefix), sizeof(prefix)))
+      return true;  // truncated / unreadable → assume needs password
+  }
+
+  // Derive chacha8 key from the empty string, exactly as WalletGreen does.
+  crypto::cn_context ctx;
+  crypto::chacha8_key emptyKey;
+  crypto::generate_chacha8_key(ctx, "", emptyKey);
+
+  // Decrypt the view key record.
+  const auto& cipher = prefix.encryptedViewKeys;
+  uint8_t buffer[sizeof(cipher.data)];
+  crypto::chacha8(cipher.data, sizeof(cipher.data), emptyKey, cipher.iv,
+                  reinterpret_cast<char*>(buffer));
+
+  // Decrypted layout: [PublicKey:32][SecretKey:32][timestamp:8]
+  crypto::PublicKey storedPub;
+  crypto::SecretKey secretKey;
+  std::memcpy(&storedPub, buffer, sizeof(storedPub));
+  std::memcpy(&secretKey, buffer + sizeof(storedPub), sizeof(secretKey));
+
+  // If the empty-password key was correct the secret key must yield the
+  // stored public key via scalar multiplication on ed25519.
+  crypto::PublicKey derivedPub;
+  if (!crypto::secret_key_to_public_key(secretKey, derivedPub))
+    return true;  // not a valid scalar → definitely needs a real password
+
+  return derivedPub != storedPub;  // mismatch → needs real password
+}
+
 void WalletAdapter::open(const QString& _password) {
+  // When no password is provided, probe the file first so we never attempt
+  // load() on an encrypted wallet with an empty key.  On Windows this avoids
+  // a fiber-context crash in WalletGreen::~WalletGreen() when the destructor
+  // is called from the Qt main thread after a failed load.
+  if (_password.isEmpty() &&
+      walletFileNeedsPassword(Settings::instance().getWalletFile())) {
+    Settings::instance().setEncrypted(true);
+    Q_EMIT openWalletWithPasswordSignal(false);
+    return;
+  }
+
   Settings::instance().setEncrypted(!_password.isEmpty());
   Q_EMIT walletStateChangedSignal(tr("Opening wallet"),"");
 
@@ -530,6 +597,9 @@ bool WalletAdapter::changePassword(const QString& _oldPassword, const QString& _
 }
 
 void WalletAdapter::setWalletFile(const QString& _path) {
+  if (_path != Settings::instance().getWalletFile()) {
+    Settings::instance().setEncrypted(false);
+  }
   Settings::instance().setWalletFile(_path);
 }
 
