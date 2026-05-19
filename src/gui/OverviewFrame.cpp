@@ -125,7 +125,9 @@ namespace WalletGui
 
     QSize sizeHint(const QStyleOptionViewItem &_option, const QModelIndex &_index) const Q_DECL_OVERRIDE
     {
-      return QSize(346, 32);
+      Q_UNUSED(_index);
+      const int width = _option.rect.width() > 0 ? _option.rect.width() : 346;
+      return QSize(width, 61);
     }
   };
 
@@ -272,6 +274,9 @@ namespace WalletGui
     m_ui->verticalLayout_9->addWidget(m_chart);
 #endif
 
+    m_recentTransactionsEditorTimer.setSingleShot(true);
+    m_recentTransactionsEditorTimer.setInterval(0);
+
     /* Connect signals */
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendMessageCompletedSignal, this, &OverviewFrame::sendMessageCompleted, Qt::QueuedConnection);
@@ -283,8 +288,29 @@ namespace WalletGui
     connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &OverviewFrame::actualInvestmentBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingInvestmentBalanceUpdatedSignal, this, &OverviewFrame::pendingInvestmentBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &OverviewFrame::reset, Qt::QueuedConnection);
-    connect(m_transactionModel.data(), &QAbstractItemModel::rowsInserted, this, &OverviewFrame::transactionsInserted);
-    connect(m_transactionModel.data(), &QAbstractItemModel::layoutChanged, this, &OverviewFrame::layoutChanged);
+
+    connect(&m_recentTransactionsEditorTimer, &QTimer::timeout,
+            this, &OverviewFrame::refreshRecentTransactionEditors);
+
+    connect(m_transactionModel.data(), &QAbstractItemModel::rowsInserted,
+            this, &OverviewFrame::scheduleRecentTransactionEditors);
+    connect(m_transactionModel.data(), &QAbstractItemModel::layoutChanged,
+            this, &OverviewFrame::scheduleRecentTransactionEditors);
+    connect(m_transactionModel.data(), &QAbstractItemModel::modelReset,
+            this, &OverviewFrame::scheduleRecentTransactionEditors);
+
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletSynchronizationProgressUpdatedSignal,
+            this, &OverviewFrame::onWalletSynchronizationProgress, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletInitCompletedSignal, this,
+            [this](int error, const QString &) {
+              if (error == 0) {
+                QTimer::singleShot(0, this, &OverviewFrame::tryEnableRecentActivityIfSynced);
+              }
+            },
+            Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::reloadWalletTransactionsSignal, this,
+            [this]() { QTimer::singleShot(0, this, &OverviewFrame::tryEnableRecentActivityIfSynced); },
+            Qt::QueuedConnection);
 
     connect(&WalletAdapter::instance(), &WalletAdapter::updateWalletAddressSignal, this, &OverviewFrame::updateWalletAddress);
     connect(m_priceProvider, &PriceProvider::priceFoundSignal, this, &OverviewFrame::onPriceFound);
@@ -303,9 +329,11 @@ namespace WalletGui
     m_ui->m_tickerLabel4->setText(CurrencyAdapter::instance().getCurrencyTicker().toUpper());
     m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
     m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
-    disableAddressBookButtons();
-
+    m_ui->m_recentActivitySyncLabel->setText(
+        QCoreApplication::translate("WalletGui::WalletAdapter", "Synchronizing"));
     walletSynced = false;
+    updateRecentActivityVisibility();
+    disableAddressBookButtons();
 
     /** Get current currency from the config file and update 
      * the dropdown in settings to show the correct currency */
@@ -466,8 +494,11 @@ namespace WalletGui
 
   void OverviewFrame::walletSynchronized(int _error, const QString &_error_text)
   {
+    if (_error != 0) {
+      return;
+    }
+
     showCurrentWalletName();
-    walletSynced = true;
 
     /* Check saved sizes and ensure they are within the acceptable parameters */
     int startingFontSize = Settings::instance().getFontSize();
@@ -506,15 +537,82 @@ namespace WalletGui
     }
 
     updatePortfolio();
+    tryEnableRecentActivityIfSynced();
   }
 
-  void OverviewFrame::transactionsInserted(const QModelIndex &_parent, int _first, int _last)
+  void OverviewFrame::tryEnableRecentActivityIfSynced()
   {
-    for (quint32 i = _first; i <= _last; ++i)
-    {
-      QModelIndex recentModelIndex = m_transactionModel->index(i, 0);
-      m_ui->m_recentTransactionsView->openPersistentEditor(recentModelIndex);
+    if (walletSynced || !WalletAdapter::instance().isOpen() || !WalletAdapter::instance().isSynchronized()) {
+      return;
     }
+
+    walletSynced = true;
+    updateRecentActivityVisibility();
+    refreshRecentTransactionEditors();
+  }
+
+  void OverviewFrame::onWalletSynchronizationProgress(quint64 /*_current*/, quint64 /*_total*/)
+  {
+    if (walletSynced)
+    {
+      walletSynced = false;
+      clearRecentTransactionEditors();
+      updateRecentActivityVisibility();
+    }
+  }
+
+  void OverviewFrame::updateRecentActivityVisibility()
+  {
+    const bool showList = walletSynced;
+    m_ui->m_recentTransactionsView->setVisible(showList);
+    m_ui->m_recentActivitySyncLabel->setVisible(!showList);
+  }
+
+  void OverviewFrame::clearRecentTransactionEditors()
+  {
+    QTreeView *view = m_ui->m_recentTransactionsView;
+    const int rows = m_transactionModel->rowCount();
+    for (int i = 0; i < rows; ++i)
+    {
+      const QModelIndex idx = m_transactionModel->index(i, 0);
+      if (idx.isValid() && view->indexWidget(idx))
+        view->closePersistentEditor(idx);
+    }
+  }
+
+  void OverviewFrame::scheduleRecentTransactionEditors()
+  {
+    if (!walletSynced)
+      return;
+    if (!m_recentTransactionsEditorTimer.isActive())
+      m_recentTransactionsEditorTimer.start();
+  }
+
+  void OverviewFrame::refreshRecentTransactionEditors()
+  {
+    if (!walletSynced)
+      return;
+
+    QTreeView *view = m_ui->m_recentTransactionsView;
+    const int rows = m_transactionModel->rowCount();
+
+    for (int r = rows; r < 32; ++r)
+    {
+      const QModelIndex idx = m_transactionModel->index(r, 0);
+      if (idx.isValid() && view->indexWidget(idx))
+        view->closePersistentEditor(idx);
+    }
+
+    for (int i = 0; i < rows; ++i)
+    {
+      const QModelIndex idx = m_transactionModel->index(i, 0);
+      if (!idx.isValid() || view->indexWidget(idx))
+        continue;
+      view->openPersistentEditor(idx);
+    }
+
+    view->viewport()->update();
+    showCurrentWalletName();
   }
 
   void OverviewFrame::updateWalletAddress(const QString &_address)
@@ -757,16 +855,6 @@ namespace WalletGui
         m_actualFee = m_actualFee + REMOTE_FEE;
       }
     }
-  }
-
-  void OverviewFrame::layoutChanged()
-  {
-    for (int i = 0; i <= m_transactionModel->rowCount(); ++i)
-    {
-      QModelIndex recent_index = m_transactionModel->index(i, 0);
-      m_ui->m_recentTransactionsView->openPersistentEditor(recent_index);
-    }
-    showCurrentWalletName();
   }
 
   /* What happens when the available balance changes */
@@ -1021,7 +1109,8 @@ namespace WalletGui
   void OverviewFrame::reset()
   {
     walletSynced = false;
-    layoutChanged();
+    clearRecentTransactionEditors();
+    updateRecentActivityVisibility();
     updatePortfolio();
     m_priceProvider->getPrice();
     m_addressProvider->getAddress();

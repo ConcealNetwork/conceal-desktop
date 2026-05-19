@@ -265,6 +265,10 @@ void WalletAdapter::createWithKeys(const cn::AccountKeys& _keys) {
     addObserver();
 }
 
+bool WalletAdapter::isSynchronized() const {
+  return m_isSynchronized.load();
+}
+
 bool WalletAdapter::isOpen() const {
   return m_wallet.get() != nullptr;
 }

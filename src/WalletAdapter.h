@@ -57,6 +57,7 @@ public:
   bool getAccountKeys(cn::AccountKeys& _keys);
   bool getMnemonicSeed(std::string& _seed);
   bool isOpen() const;
+  bool isSynchronized() const;
   void sendTransaction(QVector<cn::WalletOrder>& _transfers,
                        quint64 _fee,
                        const QString& _payment_id,
