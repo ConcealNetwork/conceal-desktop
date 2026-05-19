@@ -125,7 +125,9 @@ namespace WalletGui
 
     QSize sizeHint(const QStyleOptionViewItem &_option, const QModelIndex &_index) const Q_DECL_OVERRIDE
     {
-      return QSize(346, 32);
+      Q_UNUSED(_index);
+      const int width = _option.rect.width() > 0 ? _option.rect.width() : 346;
+      return QSize(width, 61);
     }
   };
 
@@ -328,7 +330,7 @@ namespace WalletGui
     m_ui->m_recentTransactionsView->setItemDelegate(new RecentTransactionsDelegate(this));
     m_ui->m_recentTransactionsView->setModel(m_transactionModel.data());
     m_ui->m_recentActivitySyncLabel->setText(
-        QCoreApplication::translate("WalletAdapter", "Synchronizing"));
+        QCoreApplication::translate("WalletGui::WalletAdapter", "Synchronizing"));
     walletSynced = false;
     updateRecentActivityVisibility();
     disableAddressBookButtons();
@@ -609,6 +611,7 @@ namespace WalletGui
       view->openPersistentEditor(idx);
     }
 
+    view->viewport()->update();
     showCurrentWalletName();
   }
 

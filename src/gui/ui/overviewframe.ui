@@ -4821,7 +4821,7 @@ border: none;</string>
                   <string notr="true">border: none;</string>
                   </property>
                   <property name="text">
-                  <string notr="true">Synchronizing</string>
+                  <string/>
                   </property>
                   <property name="alignment">
                   <set>Qt::AlignCenter</set>
