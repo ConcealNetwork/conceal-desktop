@@ -1367,14 +1367,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>WalletAdapter</name>
-    <message>
-        <location filename="../gui/OverviewFrame.cpp" line="331"/>
-        <source>Synchronizing</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>WalletGui::AddressBookModel</name>
     <message>
         <location filename="../gui/AddressBookModel.cpp" line="85"/>
@@ -1901,247 +1893,247 @@ Are you sure?</source>
 <context>
     <name>WalletGui::OverviewFrame</name>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="241"/>
+        <location filename="../gui/OverviewFrame.cpp" line="243"/>
         <source>Month(s)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="413"/>
-        <location filename="../gui/OverviewFrame.cpp" line="424"/>
-        <location filename="../gui/OverviewFrame.cpp" line="439"/>
-        <location filename="../gui/OverviewFrame.cpp" line="449"/>
-        <location filename="../gui/OverviewFrame.cpp" line="460"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1886"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1904"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2278"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2294"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2327"/>
+        <location filename="../gui/OverviewFrame.cpp" line="415"/>
+        <location filename="../gui/OverviewFrame.cpp" line="426"/>
+        <location filename="../gui/OverviewFrame.cpp" line="441"/>
+        <location filename="../gui/OverviewFrame.cpp" line="451"/>
+        <location filename="../gui/OverviewFrame.cpp" line="462"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1889"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1907"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2281"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2297"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2330"/>
         <source>CLICK TO DISABLE</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="417"/>
-        <location filename="../gui/OverviewFrame.cpp" line="428"/>
-        <location filename="../gui/OverviewFrame.cpp" line="435"/>
-        <location filename="../gui/OverviewFrame.cpp" line="445"/>
-        <location filename="../gui/OverviewFrame.cpp" line="456"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1880"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1899"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2283"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2299"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2321"/>
+        <location filename="../gui/OverviewFrame.cpp" line="419"/>
+        <location filename="../gui/OverviewFrame.cpp" line="430"/>
+        <location filename="../gui/OverviewFrame.cpp" line="437"/>
+        <location filename="../gui/OverviewFrame.cpp" line="447"/>
+        <location filename="../gui/OverviewFrame.cpp" line="458"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1883"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1902"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2286"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2302"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2324"/>
         <source>CLICK TO ENABLE</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="525"/>
+        <location filename="../gui/OverviewFrame.cpp" line="527"/>
         <source>Recommended</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="529"/>
+        <location filename="../gui/OverviewFrame.cpp" line="531"/>
         <source>Not required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="630"/>
+        <location filename="../gui/OverviewFrame.cpp" line="633"/>
         <source>CHANGE PASSWORD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="829"/>
+        <location filename="../gui/OverviewFrame.cpp" line="832"/>
         <source>Market data from coingecko.com - Last updated: %1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="946"/>
+        <location filename="../gui/OverviewFrame.cpp" line="949"/>
         <source>Portfolio (</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="949"/>
+        <location filename="../gui/OverviewFrame.cpp" line="952"/>
         <source>Available Balance: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1318"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1578"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1321"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1581"/>
         <source>Failed to lookup Conceal ID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1334"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1594"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1337"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1597"/>
         <source>Could not check Conceal ID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1342"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1345"/>
         <source>Invalid recipient address</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1361"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1364"/>
         <source>Invalid payment ID</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1408"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1411"/>
         <source>Insufficient funds. Please ensure that you have enough funds for the amount plus fees.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1557"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1560"/>
         <source>You don&apos;t have enough balance to send a message!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1641"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1644"/>
         <source>Message too long. Please ensure that the message is less than 260 characters.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1683"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1686"/>
         <source>You don&apos;t have enough balance in your account!</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1696"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1699"/>
         <source>Deposit Confirmation</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1697"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1700"/>
         <source>Please note that once funds are locked in a deposit, you will not have access until maturity. Are you sure you want to proceed?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="973"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1060"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1089"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1258"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1550"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1674"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1834"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1861"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1873"/>
+        <location filename="../gui/OverviewFrame.cpp" line="976"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1063"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1092"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1261"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1553"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1677"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1837"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1864"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1876"/>
         <source>This is a tracking wallet.
 This action is not available.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="684"/>
+        <location filename="../gui/OverviewFrame.cpp" line="687"/>
         <source>Data updated</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="979"/>
+        <location filename="../gui/OverviewFrame.cpp" line="982"/>
         <source>BANKING</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="992"/>
+        <location filename="../gui/OverviewFrame.cpp" line="995"/>
         <source>TRANSACTIONS</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1001"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1004"/>
         <source>CONCEAL.NETWORK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1018"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1021"/>
         <source>ABOUT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1028"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1031"/>
         <source>WALLET SETTINGS</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1041"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1044"/>
         <source>INBOX</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1066"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1179"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1069"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1182"/>
         <source>SEND FUNDS</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1127"/>
-        <location filename="../gui/OverviewFrame.cpp" line="2022"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1130"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2025"/>
         <source>Address copied to clipboard</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1133"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1136"/>
         <source>Synchronization is in progress.
 This option is not available until your wallet is synchronized with the network.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1095"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1186"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1098"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1189"/>
         <source>SEND MESSAGE</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1463"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1466"/>
         <source>ADDRESS BOOK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1514"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1517"/>
         <source>Warning: you have reached the maximum message size of 260 characters.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1881"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1884"/>
         <source>Auto optimization disabled</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1888"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1891"/>
         <source>Auto optimization enabled.
 Your wallet will be optimized automatically every 15 minutes.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1944"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1947"/>
         <source>Language and Currency settings saved</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1945"/>
-        <location filename="../gui/OverviewFrame.cpp" line="1981"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1948"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1984"/>
         <source>Please restart the wallet for the new settings to take effect.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="1980"/>
+        <location filename="../gui/OverviewFrame.cpp" line="1983"/>
         <source>Connection settings saved</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2028"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2031"/>
         <source>Payment ID copied to clipboard</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2182"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2185"/>
         <source>Lock Wallet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2183"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2186"/>
         <source>Would you like to lock your wallet? While your wallet is locked, it will continue to synchronize with the network. You will need to enter your wallet password to unlock it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="2259"/>
+        <location filename="../gui/OverviewFrame.cpp" line="2262"/>
         <source>Select CSV file</source>
         <translation></translation>
     </message>
@@ -2317,6 +2309,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     </message>
     <message>
         <location filename="../WalletAdapter.cpp" line="659"/>
+        <location filename="../gui/OverviewFrame.cpp" line="333"/>
         <source>Synchronizing</source>
         <translation></translation>
     </message>

@@ -1921,9 +1921,8 @@ Please generate a new wallet in order to get the 25 word Mnemonic seed and trans
 <context>
     <name>WalletAdapter</name>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="+231"/>
         <source>Synchronizing</source>
-        <translation type="unfinished">正在同步</translation>
+        <translation type="obsolete">正在同步</translation>
     </message>
 </context>
 <context>
@@ -2578,7 +2577,7 @@ Are you sure?</source>
         <translation type="vanished">删除</translation>
     </message>
     <message>
-        <location filename="../gui/OverviewFrame.cpp" line="-90"/>
+        <location filename="../gui/OverviewFrame.cpp" line="+143"/>
         <source>Month(s)</source>
         <translation></translation>
     </message>
@@ -2588,7 +2587,7 @@ Are you sure?</source>
         <location line="+15"/>
         <location line="+10"/>
         <location line="+11"/>
-        <location line="+1426"/>
+        <location line="+1427"/>
         <location line="+18"/>
         <location line="+374"/>
         <location line="+16"/>
@@ -2597,12 +2596,12 @@ Are you sure?</source>
         <translation>点击禁用</translation>
     </message>
     <message>
-        <location line="-1910"/>
+        <location line="-1911"/>
         <location line="+11"/>
         <location line="+7"/>
         <location line="+10"/>
         <location line="+11"/>
-        <location line="+1424"/>
+        <location line="+1425"/>
         <location line="+19"/>
         <location line="+384"/>
         <location line="+16"/>
@@ -2782,7 +2781,7 @@ This option is not available until your wallet is synchronized with the network.
         <translation type="unfinished">发送消息</translation>
     </message>
     <message>
-        <location line="-661"/>
+        <location line="-662"/>
         <source>Recommended</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2792,7 +2791,7 @@ This option is not available until your wallet is synchronized with the network.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+101"/>
+        <location line="+102"/>
         <source>CHANGE PASSWORD</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3073,6 +3072,7 @@ Your wallet will be optimized automatically every 15 minutes.</source>
     </message>
     <message>
         <location line="+12"/>
+        <location filename="../gui/OverviewFrame.cpp" line="-1929"/>
         <source>Synchronizing</source>
         <translation>正在同步</translation>
     </message>
