@@ -548,7 +548,7 @@ namespace WalletGui
 
     walletSynced = true;
     updateRecentActivityVisibility();
-    scheduleRecentTransactionEditors();
+    refreshRecentTransactionEditors();
   }
 
   void OverviewFrame::onWalletSynchronizationProgress(quint64 /*_current*/, quint64 /*_total*/)
