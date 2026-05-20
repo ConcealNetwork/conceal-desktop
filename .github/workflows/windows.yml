@@ -20,7 +20,7 @@ jobs:
         uses: microsoft/setup-msbuild@v3
 
       - name: Restore Boost
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: restore-boost
         with:
           path: ${{env.BOOST_ROOT}}
@@ -47,7 +47,7 @@ jobs:
         shell: powershell
         run: |
           Remove-Item cryptonote -Recurse -Force -ErrorAction Ignore
-          git clone https://github.com/ConcealNetwork/conceal-core cryptonote
+          git clone https://github.com/ConcealNetwork/conceal-core.git cryptonote
 
       - name: Pre-build setup
         shell: powershell
