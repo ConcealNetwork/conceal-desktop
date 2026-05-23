@@ -8,9 +8,9 @@
 #define Dependency_NoExampleSetup
 
 #define AppSetupName 'Conceal Desktop'
-#define AppVersion '6.7.3'
+#define AppVersion '6.7.7'
 #define AppPublisher 'Conceal Network'
-#define AppCopyright 'Copyright (C) Conceal Network 2025'
+#define AppCopyright 'Copyright (C) Conceal Network 2018 - 2026'
 #define AppURL 'https://conceal.network'
 #define UpdateURL 'https://github.com/ConcealNetwork/conceal-desktop/releases'
 #define AppExe 'conceal-desktop.exe'
@@ -70,8 +70,11 @@ Source: "build\Qt5Gui.dll"; DestDir: "{app}";
 Source: "build\Qt5Network.dll"; DestDir: "{app}";
 Source: "build\Qt5Widgets.dll"; DestDir: "{app}";
 Source: "build\Qt5Charts.dll"; DestDir: "{app}";
-Source: "build\libcrypto*.dll"; DestDir: "{app}";
-Source: "build\libssl*.dll"; DestDir: "{app}";
+Source: "build\libcrypto-1_1-x64.dll"; DestDir: "{app}";
+Source: "build\libssl-1_1-x64.dll"; DestDir: "{app}";
+Source: "build\vcruntime140.dll"; DestDir: "{app}";
+Source: "build\vcruntime140_1.dll"; DestDir: "{app}";
+Source: "build\msvcp140.dll"; DestDir: "{app}";
 Source: "build\platforms\qwindows.dll"; DestDir: "{app}/platforms";
 
 

@@ -20,29 +20,35 @@ namespace WalletGui
   {
     this->parent = parent;
     m_ui->setupUi(this);
-    int startingFontSize = Settings::instance().getFontSize();
-    setStyles(startingFontSize);
+    Settings& settings = Settings::instance();
+    setStyles(settings.getFontSize());
     hide();
     setWindowFlags(Qt::FramelessWindowHint);
-    timer = new QTimer();
+    timer = new QTimer(this);
+    timer->setSingleShot(true);
+    connect(timer, &QTimer::timeout, this, &Notification::fadeOut);
   }
 
   Notification::Notification(const Notification& notification)
   {
-    timer = new QTimer();
-    timer = notification.timer;
     parent = notification.parent;
     m_ui = new Ui::Notification;
     *m_ui = *notification.m_ui;
+    timer = new QTimer(this);
+    timer->setSingleShot(true);
+    connect(timer, &QTimer::timeout, this, &Notification::fadeOut);
   }
 
   Notification& Notification::operator=(const Notification& notification)
   {
     if (this != &notification)
     {
-      timer = new QTimer();
-      timer = notification.timer;
+      delete timer;
+      timer = new QTimer(this);
+      timer->setSingleShot(true);
+      connect(timer, &QTimer::timeout, this, &Notification::fadeOut);
       parent = notification.parent;
+      delete m_ui;
       m_ui = new Ui::Notification;
       *m_ui = *notification.m_ui;
     }
@@ -52,26 +58,29 @@ namespace WalletGui
   Notification::~Notification()
   {
     delete m_ui;
-    delete timer;
   }
 
   void Notification::fadeOut()
   {
-    QGraphicsOpacityEffect* effect = new QGraphicsOpacityEffect();
-    QPropertyAnimation* animation = new QPropertyAnimation(effect, "opacity");
+    QGraphicsOpacityEffect* effect = new QGraphicsOpacityEffect(this);
+    QPropertyAnimation* animation = new QPropertyAnimation(effect, "opacity", this);
     setGraphicsEffect(effect);
     animation->setDuration(500);
     animation->setStartValue(1);
     animation->setEndValue(0);
     animation->setEasingCurve(QEasingCurve::OutBack);
     animation->start(QPropertyAnimation::DeleteWhenStopped);
-    connect(animation, SIGNAL(finished()), this, SLOT(hide()));
+    connect(animation, &QPropertyAnimation::finished, this, [this]() {
+      setGraphicsEffect(nullptr);
+      hide();
+    });
   }
 
   void Notification::notify(const QString& message)
   {
-    int nLines = message.split("\n").size();
-    int minimumSize = nLines * Settings::instance().getFontSize();
+    int nLines = message.count('\n') + 1;
+    Settings& settings = Settings::instance();
+    int minimumSize = nLines * settings.getFontSize();
     minimumSize = minimumSize > 25 ? minimumSize : 25;
     m_ui->notification->setText(message);
     m_ui->notification->setMinimumHeight(minimumSize);
@@ -87,7 +96,7 @@ namespace WalletGui
     animation->setEasingCurve(QEasingCurve::InBack);
     animation->start(QPropertyAnimation::DeleteWhenStopped);
     show();
-    connect(timer, &QTimer::timeout, this, &Notification::fadeOut);
+    timer->stop();
     timer->start(2000 * nLines);
   }
 

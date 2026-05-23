@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.embeddedhtml": "html",
+        ".fantomasignore": "ignore",
         "algorithm": "cpp",
         "array": "cpp",
         "atomic": "cpp",
@@ -77,6 +79,18 @@
         "sparsetable": "cpp",
         "locale": "cpp",
         "regex": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "qmessagebox": "cpp",
+        "qstringlist": "cpp",
+        "qtcore": "cpp",
+        "qurl": "cpp",
+        "qfiledialog": "cpp",
+        "qvector": "cpp",
+        "qdebug": "cpp",
+        "qprocess": "cpp",
+        "qsystemtrayicon": "cpp",
+        "qtranslator": "cpp",
+        "qaction": "cpp",
+        "qmenu": "cpp"
     }
 }

@@ -2,7 +2,7 @@
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2017 Karbowanec developers
 // Copyright (c) 2017-2018 The Circle Foundation & Conceal Devs
-// Copyright (c) 2018-2023 Conceal Network & Conceal Devs
+// Copyright (c) 2018-2026 Conceal Network & Conceal Devs
 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -10,16 +10,21 @@
 #include "WalletAdapter.h"
 #include "LoggerAdapter.h"
 
+#include <Common/StringTools.h>
 #include <CryptoNoteCore/Account.h>
 #include <CryptoNoteCore/TransactionExtra.h>
 #include <CryptoNoteProtocol/CryptoNoteProtocolHandler.h>
 #include <Mnemonics/Mnemonics.h>
 #include <Wallet/LegacyKeysImporter.h>
 #include <Wallet/WalletErrors.h>
+#include <Wallet/WalletIndices.h>
+#include <crypto/crypto.h>
 
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QVector>
+#include <fstream>
+#include <cstring>
 
 #include "NodeAdapter.h"
 #include "Settings.h"
@@ -125,7 +130,70 @@ quint64 WalletAdapter::getPendingDepositBalance() const {
   }
 }
 
+// Probe the wallet file to check if it requires a non-empty password.
+// Reads only the 89-byte prefix, derives the empty-string chacha8 key,
+// decrypts the view key pair, and verifies the EC keypair is valid.
+// Returns true  → file needs a real password (encrypted).
+// Returns false → empty password works (or file is unreadable / not yet created).
+static bool walletFileNeedsPassword(const QString& path)
+{
+  if (path.isEmpty() || !QFile::exists(path))
+    return false;
+
+  // Mirror of WalletGreen::ContainerStoragePrefix (packed layout).
+#pragma pack(push, 1)
+  struct FilePrefix {
+    uint8_t           version;
+    crypto::chacha8_iv nextIv;
+    cn::EncryptedWalletRecord encryptedViewKeys;
+  };
+#pragma pack(pop)
+
+  FilePrefix prefix{};
+  {
+    std::ifstream f(path.toStdString(), std::ios::binary);
+    if (!f.read(reinterpret_cast<char*>(&prefix), sizeof(prefix)))
+      return true;  // truncated / unreadable → assume needs password
+  }
+
+  // Derive chacha8 key from the empty string, exactly as WalletGreen does.
+  crypto::cn_context ctx;
+  crypto::chacha8_key emptyKey;
+  crypto::generate_chacha8_key(ctx, "", emptyKey);
+
+  // Decrypt the view key record.
+  const auto& cipher = prefix.encryptedViewKeys;
+  uint8_t buffer[sizeof(cipher.data)];
+  crypto::chacha8(cipher.data, sizeof(cipher.data), emptyKey, cipher.iv,
+                  reinterpret_cast<char*>(buffer));
+
+  // Decrypted layout: [PublicKey:32][SecretKey:32][timestamp:8]
+  crypto::PublicKey storedPub;
+  crypto::SecretKey secretKey;
+  std::memcpy(&storedPub, buffer, sizeof(storedPub));
+  std::memcpy(&secretKey, buffer + sizeof(storedPub), sizeof(secretKey));
+
+  // If the empty-password key was correct the secret key must yield the
+  // stored public key via scalar multiplication on ed25519.
+  crypto::PublicKey derivedPub;
+  if (!crypto::secret_key_to_public_key(secretKey, derivedPub))
+    return true;  // not a valid scalar → definitely needs a real password
+
+  return derivedPub != storedPub;  // mismatch → needs real password
+}
+
 void WalletAdapter::open(const QString& _password) {
+  // When no password is provided, probe the file first so we never attempt
+  // load() on an encrypted wallet with an empty key.  On Windows this avoids
+  // a fiber-context crash in WalletGreen::~WalletGreen() when the destructor
+  // is called from the Qt main thread after a failed load.
+  if (_password.isEmpty() &&
+      walletFileNeedsPassword(Settings::instance().getWalletFile())) {
+    Settings::instance().setEncrypted(true);
+    Q_EMIT openWalletWithPasswordSignal(false);
+    return;
+  }
+
   Settings::instance().setEncrypted(!_password.isEmpty());
   Q_EMIT walletStateChangedSignal(tr("Opening wallet"),"");
 
@@ -142,7 +210,13 @@ void WalletAdapter::open(const QString& _password) {
     try {
       m_wallet->load(Settings::instance().getWalletFile().toStdString(), _password.toStdString());
       LoggerAdapter::instance().log("loaded");
-    } catch (std::system_error&) {
+    } catch (const std::exception&) {
+      /* Wrong password is usually std::system_error; some Windows/MSVC or crypto paths throw
+         other std::exception — uncaught leaves no retry and can abort the process. Tear down
+         the wallet so the embedded node does not keep observer callbacks on invalid state. */
+      m_wallet->removeObserver(this);
+      m_wallet.reset();
+      Settings::instance().setEncrypted(true);
       Q_EMIT openWalletWithPasswordSignal(!_password.isEmpty());
     }
   }
@@ -191,6 +265,10 @@ void WalletAdapter::createWithKeys(const cn::AccountKeys& _keys) {
     addObserver();
 }
 
+bool WalletAdapter::isSynchronized() const {
+  return m_isSynchronized.load();
+}
+
 bool WalletAdapter::isOpen() const {
   return m_wallet.get() != nullptr;
 }
@@ -216,15 +294,17 @@ bool WalletAdapter::importLegacyWallet(const QString &_password) {
 }
 
 void WalletAdapter::close() {
-  QMutexLocker locker(&m_mutex);
-  save(true, true);
-  m_wallet->removeObserver(this);
-  m_isSynchronized = false;
-  m_newTransactionsNotificationTimer.stop();
-  m_lastWalletTransactionId = std::numeric_limits<quint64>::max();
-  Q_EMIT walletCloseCompletedSignal();
-  QCoreApplication::processEvents();
+  {
+    QMutexLocker locker(&m_mutex);
+    if (!m_wallet) return;
+    save(true, true);
+    m_wallet->removeObserver(this);
+    m_isSynchronized = false;
+    m_newTransactionsNotificationTimer.stop();
+    m_lastWalletTransactionId = std::numeric_limits<quint64>::max();
+  }
   m_wallet.reset();
+  Q_EMIT walletCloseCompletedSignal();
 }
 
 bool WalletAdapter::save(bool _details, bool _cache) {
@@ -236,6 +316,8 @@ bool WalletAdapter::save(const QString& _file, bool _details, bool _cache) {
     cn::WalletSaveLevel level = _details ? cn::WalletSaveLevel::SAVE_ALL : cn::WalletSaveLevel::SAVE_KEYS_ONLY;
     m_wallet->save(level);
   } catch (std::system_error&) {
+    return false;
+  } catch (std::exception&) {
     return false;
   }
   Q_EMIT walletStateChangedSignal(tr("Saving data"), "");
@@ -254,6 +336,7 @@ void WalletAdapter::reset() {
 
 quint64 WalletAdapter::getTransactionCount() const 
 {
+  if (!m_wallet) return 0;
   try 
   {
     return m_wallet->getTransactionCount();
@@ -278,6 +361,7 @@ quint64 WalletAdapter::getTransferCount() const
 
 quint64 WalletAdapter::getDepositCount() const 
 {
+  if (!m_wallet) return 0;
   try 
   {
     return m_wallet->getWalletDepositCount();
@@ -290,6 +374,7 @@ quint64 WalletAdapter::getDepositCount() const
 
 bool WalletAdapter::getTransaction(cn::TransactionId _id, cn::WalletTransaction& _transaction) const
 {
+  if (!m_wallet) return false;
   try 
   {
     _transaction= m_wallet->getTransaction(_id);
@@ -303,6 +388,7 @@ bool WalletAdapter::getTransaction(cn::TransactionId _id, cn::WalletTransaction&
 
 bool WalletAdapter::getTransfer(size_t transactionIndex, size_t transferIndex, cn::WalletTransfer& transfer) const
 {
+  if (!m_wallet) return false;
   try 
   {
     transfer = m_wallet->getTransactionTransfer(transactionIndex, transferIndex);
@@ -315,6 +401,7 @@ bool WalletAdapter::getTransfer(size_t transactionIndex, size_t transferIndex, c
 }
 
 bool WalletAdapter::getDeposit(cn::DepositId _id, cn::Deposit& _deposit) {
+  if (!m_wallet) return false;
   try 
   {
     _deposit = m_wallet->getDeposit(_id);
@@ -328,6 +415,7 @@ bool WalletAdapter::getDeposit(cn::DepositId _id, cn::Deposit& _deposit) {
 
 bool WalletAdapter::getAccountKeys(cn::AccountKeys& _keys) 
 {
+  if (!m_wallet) return false;
   try 
   {
     cn::KeyPair viewKey = m_wallet->getViewKey();
@@ -398,10 +486,12 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
 }
 
 quint64 WalletAdapter::getNumUnlockedOutputs() const {
+  if (!m_wallet) return 0;
   return m_wallet->getUnspentOutputsCount();
 }
 
 quint64 WalletAdapter::getTransferCount(cn::TransactionId id) const {
+  if (!m_wallet) return 0;
   return m_wallet->getTransactionTransferCount(id);
 }
 
@@ -441,6 +531,29 @@ void WalletAdapter::sendMessage(QVector<cn::WalletOrder>& _transfers,
   }
 }
 
+bool WalletAdapter::findTransactionIdByHashHex(const QString& _hashHexUpper, cn::TransactionId& _outId) const {
+  if (!m_wallet) {
+    return false;
+  }
+  const QString norm = _hashHexUpper.toUpper();
+  try {
+    const quint64 n = getTransactionCount();
+    for (quint64 i = 0; i < n; ++i) {
+      cn::WalletTransaction wt;
+      if (!getTransaction(static_cast<cn::TransactionId>(i), wt)) {
+        continue;
+      }
+      const QString h = QString::fromStdString(common::podToHex(wt.hash)).toUpper();
+      if (h == norm) {
+        _outId = static_cast<cn::TransactionId>(i);
+        return true;
+      }
+    }
+  } catch (std::system_error&) {
+  }
+  return false;
+}
+
 void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
 {
   QMutexLocker locker(&m_mutex);
@@ -450,6 +563,11 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
     std::string tx_hash;
     m_wallet->createDeposit(_amount, _term, address, address, tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Creating deposit"), "");
+    const QString qHash = QString::fromStdString(tx_hash).toUpper();
+    cn::TransactionId txId = cn::WALLET_INVALID_TRANSACTION_ID;
+    findTransactionIdByHashHex(qHash, txId);
+    m_depositId = txId;
+    Q_EMIT walletDepositPendingSignal(txId, qHash, _amount, _term);
   }
   catch (std::system_error&)
   {
@@ -462,6 +580,10 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds,
     std::string tx_hash;
     m_wallet->withdrawDeposit(_depositIds[0], tx_hash);
     Q_EMIT walletStateChangedSignal(tr("Withdrawing deposit"), "");
+    const QString qHash = QString::fromStdString(tx_hash).toUpper();
+    cn::TransactionId txId = cn::WALLET_INVALID_TRANSACTION_ID;
+    findTransactionIdByHashHex(qHash, txId);
+    m_depositWithdrawalId = txId;
   } catch (std::system_error&) {
   }
 }
@@ -469,16 +591,18 @@ void WalletAdapter::withdrawUnlockedDeposits(QVector<cn::DepositId> _depositIds,
 bool WalletAdapter::changePassword(const QString& _oldPassword, const QString& _newPassword) {
   try {
     m_wallet->changePassword(_oldPassword.toStdString(), _newPassword.toStdString());
+    Settings::instance().setEncrypted(!_newPassword.isEmpty());
+    save(true, true);
     return true;
   } catch (std::system_error&) {
     return false;
   }
-
-  Settings::instance().setEncrypted(!_newPassword.isEmpty());
-  return save(true, true);
 }
 
 void WalletAdapter::setWalletFile(const QString& _path) {
+  if (_path != Settings::instance().getWalletFile()) {
+    Settings::instance().setEncrypted(false);
+  }
   Settings::instance().setWalletFile(_path);
 }
 
@@ -487,6 +611,7 @@ void WalletAdapter::initCompleted(std::error_code _error) {
 }
 
 void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText) {
+  if (!m_wallet) return;
   switch(_error) {
   case 0: {
     Q_EMIT walletActualBalanceUpdatedSignal(m_wallet->getActualBalance());
@@ -668,6 +793,7 @@ void WalletAdapter::updateBlockStatusTextWithDelay() {
 }
 
 bool WalletAdapter::checkWalletPassword(const QString& _password) {
+  if (!m_wallet) return false;
   try {
     std::string password = _password.toStdString();
     m_wallet->changePassword(password, password);
@@ -679,6 +805,7 @@ bool WalletAdapter::checkWalletPassword(const QString& _password) {
 
 crypto::SecretKey WalletAdapter::getTxKey(crypto::Hash& txid)
 {
+  if (!m_wallet) return cn::NULL_SECRET_KEY;
   return m_wallet->getTransactionDeterministicSecretKey(txid);
 }
 

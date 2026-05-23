@@ -2,7 +2,7 @@
 
 # Conceal Desktop (GUI Wallet)
 
-Latest Release: v6.7.3
+Latest Release: v6.7.7
 
 Maintained by Conceal Devs.
 

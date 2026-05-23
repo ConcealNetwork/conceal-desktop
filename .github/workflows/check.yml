@@ -12,16 +12,18 @@ jobs:
   build-windows:
     name: Windows
     runs-on: windows-2022
+    permissions:
+      contents: write
     env:
       BOOST_ROOT: C:/local/boost_1_83_0
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v2
+        uses: microsoft/setup-msbuild@v3
 
       - name: Restore Boost
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         id: restore-boost
         with:
           path: ${{env.BOOST_ROOT}}
@@ -36,8 +38,9 @@ jobs:
           Start-Process -Wait -FilePath "$env:TEMP\boost.exe" "/SILENT","/SP-","/SUPPRESSMSGBOXES","/DIR=${env:BOOST_ROOT}"
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
+        uses: jurplel/install-qt-action@v4
         with:
+          version: "5.15.2"
           host: "windows"
           target: "desktop"
           modules: "qtcharts"
@@ -103,8 +106,14 @@ jobs:
 
           cd "$build_folder/$release_folder"
           mkdir "Final"
-          cp "C:\Program Files\OpenSSL\libcrypto*.dll" "Final/"
-          cp "C:\Program Files\OpenSSL\libssl*.dll" "Final/"
+
+          cp "..\..\installer\windows\openssl\libssl-1_1-x64.dll" "Final\libssl-1_1-x64.dll"
+          cp "..\..\installer\windows\openssl\libcrypto-1_1-x64.dll" "Final\libcrypto-1_1-x64.dll"
+
+          $vs = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -property installationPath
+          $vc_crt = (Get-ChildItem "$vs\VC\Redist\MSVC\*\x64\Microsoft.VC143.CRT" | Select-Object -First 1).FullName
+          cp "$vc_crt\vcruntime140.dll","$vc_crt\vcruntime140_1.dll","$vc_crt\msvcp140.dll" "Final/"
+
           windeployqt --release conceal-desktop.exe --dir "Final/" --no-translations --no-opengl-sw
 
           mv Final ../../installer/windows/build
@@ -116,7 +125,7 @@ jobs:
           mv installer/windows/bin/Conceal*.exe $release_name/
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -126,8 +135,10 @@ jobs:
   build-appimage:
     name: AppImage
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -166,7 +177,7 @@ jobs:
           echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.appimage.outputs.release_name }}
           path: ${{ steps.appimage.outputs.release_name }}
@@ -176,8 +187,10 @@ jobs:
   build-ubuntu22:
     name: Ubuntu 22.04
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -209,7 +222,7 @@ jobs:
           echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -219,8 +232,10 @@ jobs:
   build-ubuntu24:
     name: Ubuntu 24.04
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
@@ -252,7 +267,7 @@ jobs:
           echo "release_name=${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.release_name }}
@@ -261,13 +276,15 @@ jobs:
 
   build-macos:
     name: macOS
-    runs-on: macos-13
+    runs-on: macos-15-intel
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
-          brew install boost@1.85 qt@5
+          brew install boost qt@5
 
       - name: Clone conceal-core
         run: |
@@ -281,13 +298,13 @@ jobs:
           export PATH="/usr/local/opt/qt@5/bin:$PATH"
           build_folder="build/release"
           ccx_version=${GITHUB_SHA::7}
-          release_name="ccx-desktop-macOS-dev-$ccx_version"
+          release_name="ccx-desktop-macOS-intel-dev-$ccx_version"
           app_name="conceal-desktop.app"
 
           lrelease src/languages/*.ts
           mkdir -p "$build_folder"
           cd "$build_folder"
-          cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBOOST_ROOT=/usr/local/opt/boost@1.85
+          cmake ../.. -DCMAKE_BUILD_TYPE=Release -DBOOST_ROOT="$(brew --prefix boost)"
           make -j3 
           macdeployqt "$app_name"
           cpack
@@ -299,7 +316,7 @@ jobs:
           echo "artifact_path=${build_folder}/${release_name}" >> $GITHUB_OUTPUT
 
       - name: Upload To GH Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.build.outputs.release_name }}
           path: ${{ steps.build.outputs.artifact_path }}

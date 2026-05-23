@@ -15,8 +15,6 @@
 
 #include "Settings.h"
 #include "gui/MainWindow.h"
-#include "gui/Notification.h"
-
 using namespace WalletGui;
 
 Updater::Updater(QObject* parent) : QObject(parent)
@@ -79,8 +77,7 @@ void Updater::replyFinished(QNetworkReply* reply)
   if (reply->error())
   {
     QString error = QString(tr("Error: %1")).arg(reply->errorString());
-    Notification* notification = new Notification(&MainWindow::instance());
-    notification->notify("Unable to check for update\n" + error);
+    MainWindow::instance().notify("Unable to check for update\n" + error);
   }
   else
   {

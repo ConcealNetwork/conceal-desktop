@@ -8,6 +8,7 @@
 #include "DepositDetailsDialog.h"
 #include "CurrencyAdapter.h"
 #include "DepositModel.h"
+#include "Settings.h"
 
 #include "ui_depositdetailsdialog.h"
 
@@ -35,7 +36,11 @@ DepositDetailsDialog::DepositDetailsDialog(const QModelIndex &_index, QWidget* _
   "</body></html>") {
   m_ui->setupUi(this);
 
-  QModelIndex depositIndex = DepositModel::instance().index(_index.data(DepositModel::ROLE_ROW).toUInt(), 0);
+  const int depositRow = (_index.model() == &DepositModel::instance())
+                             ? _index.row()
+                             : _index.data(DepositModel::ROLE_ROW).toInt();
+  const QModelIndex depositIndex = DepositModel::instance().index(depositRow, 0);
+
   QString depositAmount = depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_AMOUNT).data().toString() + " " +
     CurrencyAdapter::instance().getCurrencyTicker().toUpper();
   QString depositInterest = depositIndex.sibling(depositIndex.row(), DepositModel::COLUMN_INTEREST).data().toString() + " " +

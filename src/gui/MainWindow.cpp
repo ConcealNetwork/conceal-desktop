@@ -192,7 +192,7 @@ void MainWindow::initUi()
   installDockHandler();
 #endif
 
-  // OptimizationManager *optimizationManager = new OptimizationManager(this);
+  OptimizationManager *optimizationManager = new OptimizationManager(this);
   notification = new Notification(this);
   EditableStyle::setStyles(Settings::instance().getFontSize());
 }
@@ -415,10 +415,15 @@ void MainWindow::openWallet()
   {
     walletDirectory = Settings::instance().getDefaultWalletDir();
   }
-
+#ifdef Q_OS_MAC
+  QFileDialog::Options dlgOpts = QFileDialog::DontUseNativeDialog;
+#else
+  QFileDialog::Options dlgOpts;
+#endif
   QString filePath = QFileDialog::getOpenFileName(this, tr("Open .wallet/.keys file"),
                                                   walletDirectory,
-                                                  tr("Wallet (*.wallet *.keys)"));
+                                                  tr("Wallet (*.wallet *.keys)"),
+                                                  nullptr, dlgOpts);
   
   if (!filePath.isEmpty())
   {
@@ -523,9 +528,15 @@ void MainWindow::importKey()
 
 void MainWindow::backupWallet()
 {
+#ifdef Q_OS_MAC
+  QFileDialog::Options dlgOpts = QFileDialog::DontUseNativeDialog;
+#else
+  QFileDialog::Options dlgOpts;
+#endif
   QString filePath = QFileDialog::getSaveFileName(this, tr("Backup wallet to..."),
                                                   Settings::instance().getDefaultWalletDir(),
-                                                  tr("Wallets (*.wallet)"));
+                                                  tr("Wallets (*.wallet)"),
+                                                  nullptr, dlgOpts);
   if (!filePath.isEmpty() && !filePath.endsWith(".wallet"))
   {
     filePath.append(".wallet");
@@ -799,6 +810,10 @@ void MainWindow::trayActivated(QSystemTrayIcon::ActivationReason _reason)
 #endif
 
 void MainWindow::notify(const QString& message) {
+  if (QThread::currentThread() != QCoreApplication::instance()->thread()) {
+    QMetaObject::invokeMethod(this, "notify", Qt::QueuedConnection, Q_ARG(QString, message));
+    return;
+  }
   notification->notify(message);
 }
 

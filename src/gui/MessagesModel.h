@@ -52,6 +52,8 @@ public:
 private:
   QVector<TransactionMessageId> m_messages;
   QHash<cn::TransactionId, QPair<quint32, quint32> > m_transactionRow;
+  cn::TransactionId m_reloadTransactionId = 0;
+  quint64 m_reloadGeneration = 0;
 
   MessagesModel();
   ~MessagesModel() override = default;
@@ -63,6 +65,7 @@ private:
     const Message& _message) const;
 
   void reloadWalletTransactions();
+  void processNextChunk(quint64 generation);
   void resetPoolTotal();
   void appendTransaction(cn::TransactionId _id, quint32& _row_count);
   void appendTransaction(cn::TransactionId _id);

@@ -29,7 +29,7 @@ public:
 
   void checkOptimization();
 
-  Q_SLOT void walletOpened();
+  Q_SLOT void walletOpened(int _error);
   Q_SLOT void walletClosed();
   Q_SLOT void synchronizationProgressUpdated();
   Q_SLOT void synchronizationCompleted();
@@ -42,6 +42,7 @@ private:
   int m_optimizationTimerId;
   quint64 m_currentOptimizationInterval;
   bool m_isSynchronized;
+  bool m_isOptimizing;
 
   void delay();
   void optimize();

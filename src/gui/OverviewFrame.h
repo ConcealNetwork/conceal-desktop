@@ -99,13 +99,18 @@ private:
   QLabel *m_chart;
 #endif
 
+  QTimer m_recentTransactionsEditorTimer;
 
   void onPriceFound(QJsonObject &result);
   void onExchangeFound(QString &_exchange);
-  void transactionsInserted(const QModelIndex &_parent, int _first, int _last);
-  void transactionsRemoved(const QModelIndex &_parent, int _first, int _last);
+  void scheduleRecentTransactionEditors();
+  void refreshRecentTransactionEditors();
+  void clearRecentTransactionEditors();
+  void updateRecentActivityVisibility();
+  void tryEnableRecentActivityIfSynced();
+  void onWalletSynchronizationProgress(quint64 _current, quint64 _total);
   void downloadFinished(QNetworkReply *reply);
-  void layoutChanged();
+ 
   void loadChart();
   void setStatusBarText(const QString &_text, const QString &_height);
   void updateWalletAddress(const QString &_address);
