@@ -461,11 +461,18 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
                                     const QVector<cn::WalletMessage>& _messages,
                                     quint64 _mixin)
 {
+  Q_UNUSED(_fee);
+  Q_UNUSED(_mixin);
   try
   {
     crypto::SecretKey _transactionsk;
     cn::TransactionParameters sendParams;
     { QMutexLocker locker(&m_mutex);
+    if (!m_wallet) {
+      Q_EMIT walletSendTransactionCompletedSignal(
+          cn::WALLET_INVALID_TRANSACTION_ID, -1, tr("Wallet is not open"));
+      return;
+    }
     sendParams.destinations = std::vector<cn::WalletOrder>(_transfers.begin(), _transfers.end());
     sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
@@ -480,8 +487,19 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
     LoggerAdapter::instance().log("Transaction sent by WalletGreen");
     }
   }
-  catch (std::system_error&)
+  catch (const std::system_error& e)
   {
+    const QString err = QString::fromStdString(e.code().message());
+    LoggerAdapter::instance().log(QString("Send failed: %1").arg(err).toStdString());
+    Q_EMIT walletSendTransactionCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, e.code().value(), err);
+  }
+  catch (const std::exception& e)
+  {
+    const QString err = QString::fromStdString(e.what());
+    LoggerAdapter::instance().log(QString("Send failed: %1").arg(err).toStdString());
+    Q_EMIT walletSendTransactionCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, err);
   }
 }
 
@@ -556,7 +574,14 @@ bool WalletAdapter::findTransactionIdByHashHex(const QString& _hashHexUpper, cn:
 
 void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
 {
+  Q_UNUSED(_fee);
+  Q_UNUSED(_mixIn);
   QMutexLocker locker(&m_mutex);
+  if (!m_wallet) {
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, tr("Wallet is not open"));
+    return;
+  }
   try
   {
     std::string address = m_wallet->getAddress(0);
@@ -568,9 +593,21 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
     findTransactionIdByHashHex(qHash, txId);
     m_depositId = txId;
     Q_EMIT walletDepositPendingSignal(txId, qHash, _amount, _term);
+    Q_EMIT walletCreateDepositCompletedSignal(txId, 0, QString());
   }
-  catch (std::system_error&)
+  catch (const std::system_error& e)
   {
+    const QString err = QString::fromStdString(e.code().message());
+    LoggerAdapter::instance().log(QString("Deposit failed: %1").arg(err).toStdString());
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, e.code().value(), err);
+  }
+  catch (const std::exception& e)
+  {
+    const QString err = QString::fromStdString(e.what());
+    LoggerAdapter::instance().log(QString("Deposit failed: %1").arg(err).toStdString());
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, err);
   }
 }
 
