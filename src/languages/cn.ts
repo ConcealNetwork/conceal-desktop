@@ -443,7 +443,7 @@ Please wait...</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>Conceal Desktop 6.7.7</source>
+        <source>Conceal Desktop 6.7.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

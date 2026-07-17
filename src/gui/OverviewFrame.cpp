@@ -288,6 +288,7 @@ namespace WalletGui
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingDepositBalanceUpdatedSignal, this, &OverviewFrame::pendingDepositBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &OverviewFrame::actualInvestmentBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingInvestmentBalanceUpdatedSignal, this, &OverviewFrame::pendingInvestmentBalanceUpdated, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletDepositsUpdatedSignal, this, [this](const QVector<cn::DepositId> &) { updatePortfolio(); }, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &OverviewFrame::reset, Qt::QueuedConnection);
 
     connect(&m_recentTransactionsEditorTimer, &QTimer::timeout,
@@ -953,6 +954,9 @@ namespace WalletGui
     m_ui->m_balanceLabel->setText(tr("Available Balance: ") +
                                   CurrencyAdapter::instance().formatAmount(actualBalance) +
                                   " CCX");  // Send funds screen
+    m_ui->m_depositAvailableLabel->setText(
+        CurrencyAdapter::instance().formatAmount(WalletAdapter::instance().getWalletMaximum()) +
+        " " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
     // Update styles
     QString styleSheet;

@@ -6330,6 +6330,68 @@ border-radius: 5px;
                 </widget>
                </item>
                <item row="1" column="0">
+                <widget class="QLabel" name="label_depositAvailable">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;</string>
+                 </property>
+                 <property name="text">
+                  <string>Available</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="m_depositAvailableLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>190</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000 CCX</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
                 <widget class="QLabel" name="label_3">
                  <property name="minimumSize">
                   <size>
@@ -6367,7 +6429,7 @@ border-radius: 5px;
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
+               <item row="2" column="1">
                 <widget class="QSpinBox" name="m_timeSpin">
                  <property name="minimumSize">
                   <size>
