@@ -130,6 +130,7 @@ private:
   void updatePortfolio();
   void sendTransactionCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
+  void createDepositCompleted(cn::TransactionId _transactionId, int _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
   bool askForWalletPassword(bool _error = false);

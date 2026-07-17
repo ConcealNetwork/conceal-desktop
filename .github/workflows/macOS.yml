@@ -16,6 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          brew untap aws/tap || true
           brew install boost qt@5
 
       - name: Clone conceal-core
