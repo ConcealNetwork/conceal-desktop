@@ -647,8 +647,8 @@ Merci de patienter...</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5211"/>
-        <source>Medium</source>
-        <translation>Medium</translation>
+        <source>Substack</source>
+        <translation>Substack</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5989"/>

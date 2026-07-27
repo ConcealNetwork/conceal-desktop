@@ -20,7 +20,7 @@ void append_pattern(int version, FILE *fp)
 
 	frame = QRspec_newFrame(version);
 	width = QRspec_getWidth(version);
-	fwrite(frame, 1, width * width, fp);
+	fwrite(frame, 1, (size_t)width * (size_t)width, fp);
 	free(frame);
 }
 
