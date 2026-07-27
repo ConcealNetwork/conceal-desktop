@@ -804,7 +804,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5211"/>
-        <source>Medium</source>
+        <source>Substack</source>
         <translation></translation>
     </message>
     <message>

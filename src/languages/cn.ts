@@ -844,7 +844,7 @@ Please wait...</source>
     </message>
     <message>
         <location line="+72"/>
-        <source>Medium</source>
+        <source>Substack</source>
         <translation></translation>
     </message>
     <message>

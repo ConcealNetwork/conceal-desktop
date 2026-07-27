@@ -5180,7 +5180,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="7">
-             <widget class="QPushButton" name="sm_mediumButton">
+             <widget class="QPushButton" name="sm_substackButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5208,7 +5208,7 @@ color: orange;
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Medium</string>
+               <string>Substack</string>
               </property>
               <property name="type" stdset="0">
                <string>sm</string>
@@ -5373,7 +5373,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="6">
-             <widget class="QLabel" name="m_mediumIcon">
+             <widget class="QLabel" name="m_substackIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5404,7 +5404,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/substack</pixmap>
               </property>
              </widget>
             </item>
@@ -10658,10 +10658,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_mediumButton</sender>
+   <sender>sm_substackButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>mediumClicked()</slot>
+   <slot>substackClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1076</x>
@@ -11293,7 +11293,7 @@ color: orange;
   <slot>setPercentage25()</slot>
   <slot>setPercentage50()</slot>
   <slot>setPercentage100()</slot>
-  <slot>mediumClicked()</slot>
+  <slot>substackClicked()</slot>
   <slot>lockWallet()</slot>
   <slot>unlockWallet()</slot>
   <slot>encryptWalletClicked()</slot>

@@ -3,7 +3,7 @@
         <!-- Social media & Exchanges icons -->
         <file alias="discord">icons/discord.png</file>
         <file alias="telegram">icons/telegram.png</file>
-        <file alias="medium">icons/medium.png</file>
+        <file alias="substack">icons/substack.png</file>
         <file alias="twitter">icons/twitter.png</file>
         <file alias="github">icons/github.png</file>
         <file alias="marketplace">icons/conceal3.png</file>

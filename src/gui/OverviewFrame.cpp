@@ -2125,9 +2125,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network/marketplace/", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::mediumClicked()
+  void OverviewFrame::substackClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://concealnetwork.substack.com/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::websiteClicked()

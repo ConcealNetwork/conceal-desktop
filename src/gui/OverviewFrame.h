@@ -192,7 +192,7 @@ private:
   Q_SLOT void twitterClicked();
   Q_SLOT void githubClicked();
   Q_SLOT void marketplaceClicked();
-  Q_SLOT void mediumClicked();
+  Q_SLOT void substackClicked();
   Q_SLOT void lockWallet();
   Q_SLOT void exportCSV();
   Q_SLOT void unlockWallet();
