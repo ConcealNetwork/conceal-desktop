@@ -381,7 +381,7 @@ static void test_encode3(void)
 	input = QRinput_new2(0, QR_ECLEVEL_L);
 	QRinput_append(input, QR_MODE_NUM, 7, (unsigned char *)"0123456");
 	code2 = QRcode_encodeInput(input);
-	testEnd(memcmp(code1->data, code2->data, code1->width * code1->width));
+	testEnd(memcmp(code1->data, code2->data, (size_t)code1->width * (size_t)code1->width));
 
 	QRcode_free(code1);
 	QRcode_free(code2);
