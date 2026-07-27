@@ -127,7 +127,8 @@ static void test_newframe(void)
 {
 	unsigned char buf[QRSPEC_WIDTH_MAX * QRSPEC_WIDTH_MAX];
 	int i, width;
-	size_t len, frame_size;
+	size_t len;
+	size_t frame_size;
 	FILE *fp;
 	unsigned char *frame;
 	QRcode *qrcode;
