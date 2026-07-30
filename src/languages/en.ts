@@ -310,7 +310,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
-        <source>Conceal Desktop 6.7.7</source>
+        <source>Conceal Desktop 6.7.8</source>
         <translation></translation>
     </message>
     <message>
@@ -622,7 +622,7 @@ Please wait...</source>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5211"/>
-        <source>Medium</source>
+        <source>Substack</source>
         <translation></translation>
     </message>
     <message>

@@ -2,7 +2,7 @@
 
 # Conceal Desktop (GUI Wallet)
 
-Latest Release: v6.7.7
+Latest Release: v6.7.8
 
 Maintained by Conceal Devs.
 
@@ -31,7 +31,7 @@ No one owns Conceal, everyone can take part.
 -   Twitter: <https://twitter.com/ConcealNetwork>
 -   Telegram Official (News Feed): <https://t.me/concealcommunity>
 -   Telegram User Group (Chat Group): <https://t.me/concealcommunity>
--   Medium: <https://medium.com/@ConcealNetwork>
+-   Substack: <https://concealnetwork.substack.com/>
 -   Bitcoin Talk: <https://bitcointalk.org/index.php?topic=4515873>
 -   Paperwallet: <https://conceal.network/paperwallet>
 -   WebWallet: <https://wallet.conceal.network>

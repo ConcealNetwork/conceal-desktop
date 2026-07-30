@@ -5180,7 +5180,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="7">
-             <widget class="QPushButton" name="sm_mediumButton">
+             <widget class="QPushButton" name="sm_substackButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5208,7 +5208,7 @@ color: orange;
                <string notr="true"/>
               </property>
               <property name="text">
-               <string>Medium</string>
+               <string>Substack</string>
               </property>
               <property name="type" stdset="0">
                <string>sm</string>
@@ -5373,7 +5373,7 @@ color: orange;
              </widget>
             </item>
             <item row="2" column="6">
-             <widget class="QLabel" name="m_mediumIcon">
+             <widget class="QLabel" name="m_substackIcon">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -5404,7 +5404,7 @@ color: orange;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../resources.qrc">:/icons/medium</pixmap>
+               <pixmap resource="../../resources.qrc">:/icons/substack</pixmap>
               </property>
              </widget>
             </item>
@@ -6330,6 +6330,68 @@ border-radius: 5px;
                 </widget>
                </item>
                <item row="1" column="0">
+                <widget class="QLabel" name="label_depositAvailable">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;</string>
+                 </property>
+                 <property name="text">
+                  <string>Available</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="m_depositAvailableLabel">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>190</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Poppins</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #ddd;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">0.000000 CCX</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
                 <widget class="QLabel" name="label_3">
                  <property name="minimumSize">
                   <size>
@@ -6367,7 +6429,7 @@ border-radius: 5px;
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
+               <item row="2" column="1">
                 <widget class="QSpinBox" name="m_timeSpin">
                  <property name="minimumSize">
                   <size>
@@ -10596,10 +10658,10 @@ color: orange;
    </hints>
   </connection>
   <connection>
-   <sender>sm_mediumButton</sender>
+   <sender>sm_substackButton</sender>
    <signal>clicked()</signal>
    <receiver>OverviewFrame</receiver>
-   <slot>mediumClicked()</slot>
+   <slot>substackClicked()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>1076</x>
@@ -11231,7 +11293,7 @@ color: orange;
   <slot>setPercentage25()</slot>
   <slot>setPercentage50()</slot>
   <slot>setPercentage100()</slot>
-  <slot>mediumClicked()</slot>
+  <slot>substackClicked()</slot>
   <slot>lockWallet()</slot>
   <slot>unlockWallet()</slot>
   <slot>encryptWalletClicked()</slot>

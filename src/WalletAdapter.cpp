@@ -105,12 +105,17 @@ quint64 WalletAdapter::getActualInvestmentBalance() const {
   return 0;
 }
 
-/* Get the current maximum we can send because of dust outputs without optimizing the wallet */
+/* Spendable amount for deposits/transfers: unlocked balance minus dust outputs */
 quint64 WalletAdapter::getWalletMaximum() const
 {
   try
   {
-    return m_wallet ? m_wallet->getActualBalance() : 0;
+    if (!m_wallet) {
+      return 0;
+    }
+    const quint64 actual = m_wallet->getActualBalance();
+    const quint64 dust = m_wallet->getDustBalance();
+    return actual > dust ? actual - dust : 0;
   }
   catch (std::system_error&)
   {
@@ -461,11 +466,18 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
                                     const QVector<cn::WalletMessage>& _messages,
                                     quint64 _mixin)
 {
+  Q_UNUSED(_fee);
+  Q_UNUSED(_mixin);
   try
   {
     crypto::SecretKey _transactionsk;
     cn::TransactionParameters sendParams;
     { QMutexLocker locker(&m_mutex);
+    if (!m_wallet) {
+      Q_EMIT walletSendTransactionCompletedSignal(
+          cn::WALLET_INVALID_TRANSACTION_ID, -1, tr("Wallet is not open"));
+      return;
+    }
     sendParams.destinations = std::vector<cn::WalletOrder>(_transfers.begin(), _transfers.end());
     sendParams.messages = std::vector<cn::WalletMessage>(_messages.begin(), _messages.end());
     sendParams.unlockTimestamp = 0;
@@ -480,8 +492,19 @@ void WalletAdapter::sendTransaction(QVector<cn::WalletOrder>& _transfers,
     LoggerAdapter::instance().log("Transaction sent by WalletGreen");
     }
   }
-  catch (std::system_error&)
+  catch (const std::system_error& e)
   {
+    const QString err = QString::fromStdString(e.code().message());
+    LoggerAdapter::instance().log(QString("Send failed: %1").arg(err).toStdString());
+    Q_EMIT walletSendTransactionCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, e.code().value(), err);
+  }
+  catch (const std::exception& e)
+  {
+    const QString err = QString::fromStdString(e.what());
+    LoggerAdapter::instance().log(QString("Send failed: %1").arg(err).toStdString());
+    Q_EMIT walletSendTransactionCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, err);
   }
 }
 
@@ -556,7 +579,14 @@ bool WalletAdapter::findTransactionIdByHashHex(const QString& _hashHexUpper, cn:
 
 void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint64 _mixIn)
 {
+  Q_UNUSED(_fee);
+  Q_UNUSED(_mixIn);
   QMutexLocker locker(&m_mutex);
+  if (!m_wallet) {
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, tr("Wallet is not open"));
+    return;
+  }
   try
   {
     std::string address = m_wallet->getAddress(0);
@@ -568,9 +598,24 @@ void WalletAdapter::deposit(quint32 _term, quint64 _amount, quint64 _fee, quint6
     findTransactionIdByHashHex(qHash, txId);
     m_depositId = txId;
     Q_EMIT walletDepositPendingSignal(txId, qHash, _amount, _term);
+    Q_EMIT walletCreateDepositCompletedSignal(txId, 0, QString());
   }
-  catch (std::system_error&)
+  catch (const std::system_error& e)
   {
+    /* e.what() keeps the detail attached to the error code (e.g. which
+       amount lacked mixins: "amount=... available=... required=...");
+       e.code().message() would drop it. */
+    const QString err = QString::fromStdString(e.what());
+    LoggerAdapter::instance().log(QString("Deposit failed: %1").arg(err).toStdString());
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, e.code().value(), err);
+  }
+  catch (const std::exception& e)
+  {
+    const QString err = QString::fromStdString(e.what());
+    LoggerAdapter::instance().log(QString("Deposit failed: %1").arg(err).toStdString());
+    Q_EMIT walletCreateDepositCompletedSignal(
+        cn::WALLET_INVALID_TRANSACTION_ID, -1, err);
   }
 }
 
@@ -616,10 +661,10 @@ void WalletAdapter::onWalletInitCompleted(int _error, const QString& _errorText)
   case 0: {
     Q_EMIT walletActualBalanceUpdatedSignal(m_wallet->getActualBalance());
     Q_EMIT walletPendingBalanceUpdatedSignal(m_wallet->getPendingBalance());
-    Q_EMIT walletActualDepositBalanceUpdatedSignal(m_wallet->getLockedDepositBalance());
-    Q_EMIT walletPendingDepositBalanceUpdatedSignal(m_wallet->getUnlockedDepositBalance());
+    Q_EMIT walletActualDepositBalanceUpdatedSignal(m_wallet->getUnlockedDepositBalance());
+    Q_EMIT walletPendingDepositBalanceUpdatedSignal(m_wallet->getLockedDepositBalance());
     Q_EMIT walletActualInvestmentBalanceUpdatedSignal(0);
-    Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(0);    
+    Q_EMIT walletPendingInvestmentBalanceUpdatedSignal(0);
     Q_EMIT updateWalletAddressSignal(QString::fromStdString(m_wallet->getAddress(0)));
     Q_EMIT reloadWalletTransactionsSignal();
     Q_EMIT walletStateChangedSignal(tr("Ready"),"");

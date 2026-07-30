@@ -130,6 +130,7 @@ private:
   void updatePortfolio();
   void sendTransactionCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
   void sendMessageCompleted(cn::TransactionId _transactionId, bool _error, const QString &_errorText);
+  void createDepositCompleted(cn::TransactionId _transactionId, int _error, const QString &_errorText);
   void delay();
   bool checkWalletPassword(bool _error=false);
   bool askForWalletPassword(bool _error = false);
@@ -191,7 +192,7 @@ private:
   Q_SLOT void twitterClicked();
   Q_SLOT void githubClicked();
   Q_SLOT void marketplaceClicked();
-  Q_SLOT void mediumClicked();
+  Q_SLOT void substackClicked();
   Q_SLOT void lockWallet();
   Q_SLOT void exportCSV();
   Q_SLOT void unlockWallet();

@@ -8,7 +8,7 @@
 #define Dependency_NoExampleSetup
 
 #define AppSetupName 'Conceal Desktop'
-#define AppVersion '6.7.7'
+#define AppVersion '6.7.8'
 #define AppPublisher 'Conceal Network'
 #define AppCopyright 'Copyright (C) Conceal Network 2018 - 2026'
 #define AppURL 'https://conceal.network'

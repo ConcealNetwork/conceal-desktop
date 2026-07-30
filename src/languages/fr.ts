@@ -323,7 +323,7 @@ Merci de patienter...</translation>
     </message>
     <message>
         <location filename="../gui/ui/mainpassworddialog.ui" line="298"/>
-        <source>Conceal Desktop 6.7.7</source>
+        <source>Conceal Desktop 6.7.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -647,8 +647,8 @@ Merci de patienter...</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5211"/>
-        <source>Medium</source>
-        <translation>Medium</translation>
+        <source>Substack</source>
+        <translation>Substack</translation>
     </message>
     <message>
         <location filename="../gui/ui/overviewframe.ui" line="5989"/>

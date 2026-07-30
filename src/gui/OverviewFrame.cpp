@@ -280,6 +280,7 @@ namespace WalletGui
     /* Connect signals */
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendTransactionCompletedSignal, this, &OverviewFrame::sendTransactionCompleted, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletSendMessageCompletedSignal, this, &OverviewFrame::sendMessageCompleted, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletCreateDepositCompletedSignal, this, &OverviewFrame::createDepositCompleted, Qt::QueuedConnection);
 
     connect(&WalletAdapter::instance(), &WalletAdapter::walletActualBalanceUpdatedSignal, this, &OverviewFrame::actualBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingBalanceUpdatedSignal, this, &OverviewFrame::pendingBalanceUpdated, Qt::QueuedConnection);
@@ -287,6 +288,7 @@ namespace WalletGui
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingDepositBalanceUpdatedSignal, this, &OverviewFrame::pendingDepositBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletActualInvestmentBalanceUpdatedSignal, this, &OverviewFrame::actualInvestmentBalanceUpdated, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletPendingInvestmentBalanceUpdatedSignal, this, &OverviewFrame::pendingInvestmentBalanceUpdated, Qt::QueuedConnection);
+    connect(&WalletAdapter::instance(), &WalletAdapter::walletDepositsUpdatedSignal, this, [this](const QVector<cn::DepositId> &) { updatePortfolio(); }, Qt::QueuedConnection);
     connect(&WalletAdapter::instance(), &WalletAdapter::walletCloseCompletedSignal, this, &OverviewFrame::reset, Qt::QueuedConnection);
 
     connect(&m_recentTransactionsEditorTimer, &QTimer::timeout,
@@ -952,6 +954,9 @@ namespace WalletGui
     m_ui->m_balanceLabel->setText(tr("Available Balance: ") +
                                   CurrencyAdapter::instance().formatAmount(actualBalance) +
                                   " CCX");  // Send funds screen
+    m_ui->m_depositAvailableLabel->setText(
+        CurrencyAdapter::instance().formatAmount(WalletAdapter::instance().getWalletMaximum()) +
+        " " + CurrencyAdapter::instance().getCurrencyTicker().toUpper());
 
     // Update styles
     QString styleSheet;
@@ -1704,29 +1709,40 @@ namespace WalletGui
       return;
     }
 
-    /* Initiate the desposit */
+    /* Initiate the deposit; remote fee / navigation happen in createDepositCompleted */
     WalletAdapter::instance().deposit(term, amount, BASE_FEE);
+  }
 
-    /* Remote node fee */
-    QVector<cn::WalletOrder> walletTransfers;
+  void OverviewFrame::createDepositCompleted(cn::TransactionId _id, int _error, const QString &_errorText)
+  {
+    Q_UNUSED(_id);
+    if (_error != 0)
+    {
+      const QString message = _errorText.isEmpty()
+                                  ? tr("Deposit failed.")
+                                  : tr("Deposit failed: %1").arg(_errorText);
+      QCoreApplication::postEvent(&MainWindow::instance(), new ShowMessageEvent(message, QtCriticalMsg));
+      Q_EMIT notifySignal(message);
+      return;
+    }
+
+    /* Remote node fee (only after a successful deposit) */
     QString connection = Settings::instance().getConnection();
     if ((connection.compare("remote") == 0) || (connection.compare("autoremote") == 0))
     {
-      if (!OverviewFrame::remote_node_fee_address.isEmpty())
+      if (!OverviewFrame::remote_node_fee_address.isEmpty() && WalletAdapter::instance().isOpen())
       {
+        QVector<cn::WalletOrder> walletTransfers;
         QVector<cn::WalletMessage> walletMessages;
         cn::WalletOrder walletTransfer;
         walletTransfer.address = OverviewFrame::remote_node_fee_address.toStdString();
         walletTransfer.amount = REMOTE_FEE;
         walletTransfers.push_back(walletTransfer);
-        /* If the wallet is open we proceed */
-        if (WalletAdapter::instance().isOpen())
-        {
-          /* Send the transaction */
-          WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", walletMessages);
-        }
+        WalletAdapter::instance().sendTransaction(walletTransfers, BASE_FEE, "", walletMessages);
       }
     }
+
+    dashboardClicked();
   }
 
   void OverviewFrame::showDepositDetails(const QModelIndex &_index)
@@ -2109,9 +2125,9 @@ namespace WalletGui
     QDesktopServices::openUrl(QUrl("https://conceal.network/marketplace/", QUrl::TolerantMode));
   }
 
-  void OverviewFrame::mediumClicked()
+  void OverviewFrame::substackClicked()
   {
-    QDesktopServices::openUrl(QUrl("https://medium.com/@ConcealNetwork", QUrl::TolerantMode));
+    QDesktopServices::openUrl(QUrl("https://concealnetwork.substack.com/", QUrl::TolerantMode));
   }
 
   void OverviewFrame::websiteClicked()

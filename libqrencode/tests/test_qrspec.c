@@ -128,6 +128,7 @@ static void test_newframe(void)
 	unsigned char buf[QRSPEC_WIDTH_MAX * QRSPEC_WIDTH_MAX];
 	int i, width;
 	size_t len;
+	size_t frame_size;
 	FILE *fp;
 	unsigned char *frame;
 	QRcode *qrcode;
@@ -142,8 +143,9 @@ static void test_newframe(void)
 	for(i=1; i<=QRSPEC_VERSION_MAX; i++) {
 		frame = QRspec_newFrame(i);
 		width = QRspec_getWidth(i);
-		len = fread(buf, 1, width * width, fp);
-		if((int)len != width * width) {
+		frame_size = (size_t)width * (size_t)width;
+		len = fread(buf, 1, frame_size, fp);
+		if((int)len != frame_size) {
 			perror("Failed to read the pattern file:");
 			abort();
 		}
