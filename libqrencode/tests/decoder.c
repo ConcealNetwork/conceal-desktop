@@ -85,16 +85,16 @@ static DataChunk *decodeNum(int *bits_length, unsigned char **bits, int version,
 	q = buf;
 	for(i=0; i<words; i++) {
 		val = bitToInt(p, 10);
-		sprintf(q, "%03d", val);
+		snprintf(q, (size_t)(buf + size + 1 - q), "%03d", val);
 		p += 10;
 		q += 3;
 	}
 	if(remain == 2) {
 		val = bitToInt(p, 7);
-		sprintf(q, "%02d", val);
+		snprintf(q, (size_t)(buf + size + 1 - q), "%02d", val);
 	} else if(remain == 1) {
 		val = bitToInt(p, 4);
-		sprintf(q, "%1d", val);
+		snprintf(q, (size_t)(buf + size + 1 - q), "%1d", val);
 	}
 	buf[size] = '\0';
 
@@ -143,13 +143,13 @@ static DataChunk *decodeAn(int *bits_length, unsigned char **bits, int version, 
 		val = bitToInt(p, 11);
 		ch = (int)(val / 45);
 		cl = (int)(val % 45);
-		sprintf(q, "%c%c", decodeAnTable[ch], decodeAnTable[cl]);
+		snprintf(q, (size_t)(buf + size + 1 - q), "%c%c", decodeAnTable[ch], decodeAnTable[cl]);
 		p += 11;
 		q += 2;
 	}
 	if(remain == 1) {
 		val = bitToInt(p, 6);
-		sprintf(q, "%c", decodeAnTable[val]);
+		snprintf(q, (size_t)(buf + size + 1 - q), "%c", decodeAnTable[val]);
 	}
 
 	chunk = DataChunk_new(QR_MODE_AN);
@@ -228,7 +228,7 @@ static DataChunk *decodeKanji(int *bits_length, unsigned char **bits, int versio
 		} else {
 			val += 0x8140;
 		}
-		sprintf(q, "%c%c", (val>>8) & 0xff, val & 0xff);
+		snprintf(q, (size_t)(buf + size * 2 + 1 - q), "%c%c", (val>>8) & 0xff, val & 0xff);
 		p += 13;
 		q += 2;
 	}
